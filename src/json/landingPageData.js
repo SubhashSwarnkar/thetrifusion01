@@ -73,7 +73,7 @@ export const Services = [
 export const Portfolios = [
   {
     id: "asd1293uasdads1",
-    title: "DailyConceptsIndia",
+    title: "DailyConcepts",
     imageUrl: Recruiting,
     type: "Mobile Apps",
     description:
