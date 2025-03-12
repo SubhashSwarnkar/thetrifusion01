@@ -54,7 +54,7 @@ export const Services = [
     animation: "right",
   },
   {
-    title: "Robotic Process Automation",
+    title: "RPA",
     imageUrl: UIUX,
     animation: "left",
   },

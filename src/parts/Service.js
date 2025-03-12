@@ -20,21 +20,22 @@ export default function Service({ data }) {
           </p>
         </Fade>
 
-        <div className="grid grid-rows-3 px-10 gap-8 sm:grid-cols-3 sm:grid-rows-1 sm:gap-6 xl:gap-16">
-          {
-            data.map((item, index) => (
-              // eslint-disable-next-line react/no-array-index-key
-              <Fade direction={item.animation} delay={300 * 1} key={index} triggerOnce>
-                <div>
-                  <div className="bg-white group rounded-2xl shadow-2xl border border-light-theme-purple transform transition duration-500 hover:scale-105">
-                    <img src={item.imageUrl} alt="Service" className="w-full rounded-t-2xl" />
-                    <h2 className="text-theme-blue text-center text-xl py-7 rounded-b-2xl">{item.title}</h2>
-                  </div>
-                </div>
-              </Fade>
-            ))
-          }
+        <div className="grid grid-cols-2 px-10 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-16">
+  {data.map((item, index) => (
+    // eslint-disable-next-line react/no-array-index-key
+    <Fade direction={item.animation} delay={300 * index} key={index} triggerOnce>
+      <div>
+        <div className="bg-white group rounded-2xl shadow-2xl border border-light-theme-purple transform transition duration-500 hover:scale-105">
+          <img src={item.imageUrl} alt="Service" className="w-full rounded-t-2xl" />
+          <h2 className="text-theme-blue text-center text-xs sm:text-sm md:text-lg py-6 sm:py-6 rounded-b-2xl">
+            {item.title}
+          </h2>
         </div>
+      </div>
+    </Fade>
+  ))}
+</div>
+
       </div>
     </div>
   );
