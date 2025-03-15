@@ -1,6 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable react/jsx-filename-extension */
-/* eslint-disable import/extensions */
 import React from "react";
 
 import { Fade } from "react-awesome-reveal";
@@ -13,7 +10,7 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className="w-full lg:w-1/2 xl:pl-12 sm:pr-2 mt-8">
-        <h1 className="text-5xl sm:text-6xl text-theme-blue font-bold leading-tight mb-5">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl text-theme-blue font-bold leading-tight mb-5 text-center sm:text-left">
           Growing Your Business <br />
           Is Our Calling
         </h1>

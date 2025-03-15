@@ -1,71 +1,67 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-useless-escape */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable max-len */
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable react/jsx-filename-extension */
-/* eslint-disable react/prop-types */
-import React from 'react';
+import React from "react";
 
-import { Fade } from 'react-awesome-reveal';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import * as emailjs from '@emailjs/browser';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { ToastContainer, toast } from 'react-toastify';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import 'react-toastify/dist/ReactToastify.css';
+import { Fade } from "react-awesome-reveal";
 
-import { Form } from 'elements/Form';
-import Button from 'elements/Button';
+import * as emailjs from "@emailjs/browser";
+
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
+import { Form } from "elements/Form";
+import Button from "elements/Button";
 
 export const DiscussForm = (actions) => {
   const { data, resetForm } = actions;
   const submitEmail = () => {
-    const {
-      name, company, email, phone, projectIdea,
-    } = data;
+    const { name, company, email, phone, projectIdea } = data;
 
     const templateParams = {
-      from_name: `${name} - ${company} ( ${phone} - ${email} )`,
-      to_name: 'thetrifusion',
+      from_name: `${name} - ${company} ( ${phone} - ${email} - ${projectIdea})`,
+      to_name: "thetrifusion",
       message: projectIdea,
     };
 
     if (
-      name !== ''
-      && company !== ''
-      && email !== ''
-      && phone !== ''
-      && projectIdea !== ''
+      name !== "" &&
+      company !== "" &&
+      email !== "" &&
+      phone !== "" &&
+      projectIdea !== ""
     ) {
-      emailjs.send(
-        'service_vbs5oio',
-        'template_7nvbirx',
-        templateParams,
-        'user_csqIxzN5mKsl1yw4ffJzV',
-      )
-        .then(() => {
-          toast.success('Success! we\'\ll get back to you soon. Thank you!');
-          resetForm();
-        }, (error) => {
-          toast.error(error);
-        });
+      emailjs
+        .send(
+          "service_vbs5oio",
+          "template_7nvbirx",
+          templateParams,
+          "n0euqkm11TGyLICcv"
+        )
+        .then(
+          () => {
+            toast.success("Success! we'll get back to you soon. Thank you!");
+            resetForm();
+          },
+          (error) => {
+            toast.error(error);
+          }
+        );
     } else {
-      toast.error('Please fill out the blank form.');
+      toast.error("Please fill out the blank form.");
     }
   };
 
   return (
     <section className="flex flex-col container mx-auto mt-10 justify-center">
-
       <Fade direction="down" triggerOnce>
-        <h1 className="text-5xl text-theme-blue text-center font-bold">Lets Discuss</h1>
+        <h1 className="text-5xl text-theme-blue text-center font-bold">
+          Lets Discuss
+        </h1>
       </Fade>
 
       <Fade direction="up" triggerOnce>
         <p className="font-light text-lg text-gray-400 text-center mb-12">
-          {/* eslint-disable-next-line react/no-unescaped-entities */}
-          Please fill out the form below to discuss your project and we'll get back to you in less than 24 hours.
+          Please fill out the form below to discuss your project and we'll get
+          back to you in less than 24 hours.
         </p>
       </Fade>
 
@@ -135,7 +131,6 @@ export const DiscussForm = (actions) => {
       </Fade>
 
       <ToastContainer />
-
     </section>
   );
 };

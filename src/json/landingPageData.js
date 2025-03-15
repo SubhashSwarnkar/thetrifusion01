@@ -1,5 +1,3 @@
-/* eslint-disable import/extensions */
-
 // Services Img Imports
 import Web from "../assets/images/Services/Web.png";
 import Mobile from "../assets/images/Services/Mobile.png";

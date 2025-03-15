@@ -1,18 +1,15 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable react/prop-types */
-/* eslint-disable react/jsx-filename-extension */
-/* eslint-disable import/extensions */
+import React from "react";
 
-import React from 'react';
-
-import { Fade } from 'react-awesome-reveal';
+import { Fade } from "react-awesome-reveal";
 
 export default function Service({ data }) {
   return (
     <div className="bg-gray-50">
       <div className="container mx-auto pt-20 pb-28">
         <Fade direction="right" triggerOnce>
-          <h1 className="text-5xl text-theme-blue text-center font-bold">Our Service</h1>
+          <h1 className="text-5xl text-theme-blue text-center font-bold">
+            Our Service
+          </h1>
         </Fade>
         <Fade direction="left" triggerOnce>
           <p className="font-light text-lg text-gray-400 text-center mb-12">
@@ -21,21 +18,28 @@ export default function Service({ data }) {
         </Fade>
 
         <div className="grid grid-cols-2 px-10 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-16">
-  {data.map((item, index) => (
-    // eslint-disable-next-line react/no-array-index-key
-    <Fade direction={item.animation} delay={300 * index} key={index} triggerOnce>
-      <div>
-        <div className="bg-white group rounded-2xl shadow-2xl border border-light-theme-purple transform transition duration-500 hover:scale-105">
-          <img src={item.imageUrl} alt="Service" className="w-full rounded-t-2xl" />
-          <h2 className="text-theme-blue text-center text-xs sm:text-sm md:text-lg py-6 sm:py-6 rounded-b-2xl">
-            {item.title}
-          </h2>
+          {data.map((item, index) => (
+            <Fade
+              direction={item.animation}
+              delay={300 * index}
+              key={index}
+              triggerOnce
+            >
+              <div>
+                <div className="bg-white group rounded-2xl shadow-2xl border border-light-theme-purple transform transition duration-500 hover:scale-105">
+                  <img
+                    src={item.imageUrl}
+                    alt="Service"
+                    className="w-full rounded-t-2xl"
+                  />
+                  <h2 className="text-theme-blue text-center text-xs sm:text-sm md:text-lg py-6 sm:py-6 rounded-b-2xl">
+                    {item.title}
+                  </h2>
+                </div>
+              </div>
+            </Fade>
+          ))}
         </div>
-      </div>
-    </Fade>
-  ))}
-</div>
-
       </div>
     </div>
   );

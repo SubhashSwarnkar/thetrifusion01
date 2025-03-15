@@ -1,8 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable import/extensions */
-/* eslint-disable max-len */
-/* eslint-disable react/jsx-filename-extension */
-/* eslint-disable react/prop-types */
 import React from "react";
 
 import Fade from "react-awesome-reveal";
@@ -116,8 +111,7 @@ export default function PortfolioDetail({ data }) {
             </div>
 
             <p className="font-light italic text-gray-400 mt-16 mx-8 sm:mx-16 xl:mx-28">
-              * This project is just example. <br />
-              {" "}
+              * This project is just example. <br />{" "}
               <Button
                 type="link"
                 href={item.credit}
