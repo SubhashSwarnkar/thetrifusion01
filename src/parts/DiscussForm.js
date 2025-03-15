@@ -17,7 +17,7 @@ export const DiscussForm = (actions) => {
     const { name, company, email, phone, projectIdea } = data;
 
     const templateParams = {
-      from_name: `${name} - ${company} ( ${phone} - ${email} - ${projectIdea})`,
+      from_name: `${name} - ${company} ( ${phone} - ${email} )---(${projectIdea})`,
       to_name: "thetrifusion",
       message: projectIdea,
     };
@@ -60,6 +60,7 @@ export const DiscussForm = (actions) => {
 
       <Fade direction="up" triggerOnce>
         <p className="font-light text-lg text-gray-400 text-center mb-12">
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
           Please fill out the form below to discuss your project and we'll get
           back to you in less than 24 hours.
         </p>
