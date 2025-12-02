@@ -14,6 +14,10 @@ section {
   @apply flex flex-col py-4 mb-4 justify-between;
 }
 
+.header nav {
+  @apply flex items-center;
+}
+
 .hero {
   @apply container px-5 flex flex-col mx-auto;
 }
@@ -51,6 +55,12 @@ section {
   /* Color of the arrow icon */
 }
 
+.dark .swiper-button-next,
+.dark .swiper-button-prev {
+  background-color: rgba(160, 157, 157, 0.5);
+  color: #fff;
+}
+
 /* Custom styles for the arrow icons */
 .swiper-button-next::after,
 .swiper-button-prev::after {
@@ -66,6 +76,12 @@ section {
   /* Arrow thickness */
   display: inline-block;
   padding: 5px;
+}
+
+.dark .swiper-button-next::after,
+.dark .swiper-button-prev::after {
+  color: #fff;
+  border-color: #fff;
 }
 
 /* Rotate arrows to point in the correct direction */
@@ -84,6 +100,12 @@ section {
 .swiper-button-prev:hover {
   background-color: rgba(0, 0, 0, 0.4);
   /* Darker background on hover */
+}
+
+.dark .swiper-button-next:hover,
+.dark .swiper-button-prev:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  /* Lighter background on hover in dark mode */
 }
 
 h1,

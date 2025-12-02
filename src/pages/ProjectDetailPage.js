@@ -11,7 +11,7 @@ import Footer from 'parts/Footer';
 
 import { Portfolios } from 'json/landingPageData';
 
-export const ProjectDetailPage = () => {
+const ProjectDetailPage = () => {
   const { id } = useParams();
   const detailData = Portfolios.filter((item) => item.id === id);
   useEffect(() => {
@@ -25,3 +25,5 @@ export const ProjectDetailPage = () => {
     </>
   );
 };
+
+export default ProjectDetailPage;

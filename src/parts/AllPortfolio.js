@@ -18,17 +18,17 @@ export default function AllPortfolio({ data }) {
           <TabList>
             <div className="flex flex-row mb-5">
               <Tab>
-                <button className="font-normal px-5 py-2 mr-3 text-theme-purple text-lg border border-theme-purple rounded-full transition duration-300 hover:bg-theme-purple hover:text-white focus:outline-none focus:bg-theme-purple focus:text-white">
+                <button className="font-normal px-5 py-2 mr-3 text-theme-purple dark:text-purple-400 text-lg border border-theme-purple dark:border-purple-400 rounded-full transition duration-300 hover:bg-theme-purple dark:hover:bg-purple-600 hover:text-white focus:outline-none focus:bg-theme-purple dark:focus:bg-purple-600 focus:text-white">
                   Mobile
                 </button>
               </Tab>
               <Tab>
-                <button className="font-normal px-5 py-2 mr-3 text-theme-purple text-lg border border-theme-purple rounded-full transition duration-300 hover:bg-theme-purple hover:text-white focus:outline-none focus:bg-theme-purple focus:text-white">
+                <button className="font-normal px-5 py-2 mr-3 text-theme-purple dark:text-purple-400 text-lg border border-theme-purple dark:border-purple-400 rounded-full transition duration-300 hover:bg-theme-purple dark:hover:bg-purple-600 hover:text-white focus:outline-none focus:bg-theme-purple dark:focus:bg-purple-600 focus:text-white">
                   Website
                 </button>
               </Tab>
               <Tab>
-                <button className="font-normal px-8 py-2 text-theme-purple text-lg border border-theme-purple rounded-full transition duration-300 hover:bg-theme-purple hover:text-white focus:outline-none focus:bg-theme-purple focus:text-white">
+                <button className="font-normal px-8 py-2 text-theme-purple dark:text-purple-400 text-lg border border-theme-purple dark:border-purple-400 rounded-full transition duration-300 hover:bg-theme-purple dark:hover:bg-purple-600 hover:text-white focus:outline-none focus:bg-theme-purple dark:focus:bg-purple-600 focus:text-white">
                   UI/UX
                 </button>
               </Tab>
@@ -44,7 +44,7 @@ export default function AllPortfolio({ data }) {
                   delay={500 * index}
                   key={index}
                 >
-                  <Button type="link" href={`/project/${item.id}`}>
+                  <Button type="link" href={`/portfolio/${item.id}`}>
                     <div className="group rounded-2xl shadow-xl w-auto m-3 transform transition duration-500 hover:scale-110 portofolio-card">
                       <div className="relative">
                         <img
@@ -78,10 +78,10 @@ export default function AllPortfolio({ data }) {
                         </div>
                       </div>
                       <div className="py-4">
-                        <h2 className="text-theme-blue text-center text-xl">
+                        <h2 className="text-theme-blue dark:text-white text-center text-xl">
                           {item.title}
                         </h2>
-                        <p className="font-light text-gray-400 text-center">
+                        <p className="font-light text-gray-400 dark:text-gray-300 text-center">
                           {item.type}
                         </p>
                       </div>
@@ -95,7 +95,7 @@ export default function AllPortfolio({ data }) {
             <div className="grid grid-cols-2 sm:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
               {website.map((item, index) => (
                 <Fade bottom delay={500 * index} key={index}>
-                  <Button type="link" href={`/project/${item.id}`}>
+                  <Button type="link" href={`/portfolio/${item.id}`}>
                     <div className="group rounded-2xl shadow-xl w-auto w-11/12 m-3 transform transition duration-500 hover:scale-110 portofolio-card">
                       <div className="relative">
                         <img
@@ -129,10 +129,10 @@ export default function AllPortfolio({ data }) {
                         </div>
                       </div>
                       <div className="py-4">
-                        <h2 className="text-theme-blue text-center text-xl">
+                        <h2 className="text-theme-blue dark:text-white text-center text-xl">
                           {item.title}
                         </h2>
-                        <p className="font-light text-gray-400 text-center">
+                        <p className="font-light text-gray-400 dark:text-gray-300 text-center">
                           {item.type}
                         </p>
                       </div>
@@ -146,7 +146,7 @@ export default function AllPortfolio({ data }) {
             <div className="grid grid-cols-2 sm:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
               {data.map((item, index) => (
                 <Fade bottom triggerOnce delay={500 * index} key={index}>
-                  <Button type="link" href={`/project/${item.id}`}>
+                  <Button type="link" href={`/portfolio/${item.id}`}>
                     <div className="group rounded-2xl shadow-xl w-auto w-11/12 m-3 transform transition duration-500 hover:scale-110 portofolio-card">
                       <div className="relative">
                         <img
@@ -180,10 +180,10 @@ export default function AllPortfolio({ data }) {
                         </div>
                       </div>
                       <div className="py-4">
-                        <h2 className="text-theme-blue text-center text-xl">
+                        <h2 className="text-theme-blue dark:text-white text-center text-xl">
                           {item.title}
                         </h2>
-                        <p className="font-light text-gray-400 text-center">
+                        <p className="font-light text-gray-400 dark:text-gray-300 text-center">
                           {item.type}
                         </p>
                       </div>

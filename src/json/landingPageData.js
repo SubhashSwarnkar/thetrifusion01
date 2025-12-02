@@ -17,15 +17,9 @@ import Collaborative from "../assets/images/Advantages/Collaborative.png";
 import Management from "../assets/images/Advantages/Management.png";
 import Favorite from "../assets/images/Advantages/Favorite.png";
 
-// Testimonials
-import Sasha from "../assets/images/Testimonials/Sasha.jpg";
-import Reiner from "../assets/images/Testimonials/Reiner.jpg";
-import Kruger from "../assets/images/Testimonials/Kruger.jpg";
-
-// TeamMembers
+// TeamMembers - Shared imports for testimonials and team
 import CEO from "../assets/images/TeamMembers/CEO.png";
 import HRD from "../assets/images/TeamMembers/HRD.jpg";
-
 import ProjectManager from "../assets/images/TeamMembers/Project-manager.png";
 import Frontend1 from "../assets/images/TeamMembers/Frontend1.png";
 import Frontend2 from "../assets/images/TeamMembers/Frontend2.png";
@@ -117,7 +111,7 @@ export const Portfolios = [
     credit: "https://resto-4tn.pages.dev/",
   },
   {
-    id: "asd1293ulkmnbj6",
+    id: "asd1293ualime001",
     title: "Alime",
     imageUrl: Freelance,
     type: "Website",
@@ -125,7 +119,7 @@ export const Portfolios = [
     credit: "https://alimephotographer.pages.dev/",
   },
   {
-    id: "asd1293ulkmnbj6",
+    id: "asd1293uapplab002",
     title: "AppLab",
     imageUrl: ManagementApp,
     type: "Mobile Apps",
@@ -133,7 +127,7 @@ export const Portfolios = [
     credit: "https://app-lab.pages.dev/",
   },
   {
-    id: "asd1293ulkmnbj6",
+    id: "asd1293udentista003",
     title: "Dentista",
     imageUrl: Surtido,
     type: "Website",
@@ -141,7 +135,7 @@ export const Portfolios = [
     credit: "https://dentista-dental-clinic.vercel.app/",
   },
   {
-    id: "asd1293ulkmnbj6",
+    id: "asd1293utravelix004",
     title: "Travelix",
     imageUrl: Recruiting,
     type: "Website",
@@ -149,7 +143,7 @@ export const Portfolios = [
     credit: "https://travelix-neon.vercel.app/",
   },
   {
-    id: "asd1293ulkmnbj6",
+    id: "asd1293udentacare005",
     title: "DentaCare",
     imageUrl: Freelance,
     type: "Website",
@@ -157,7 +151,7 @@ export const Portfolios = [
     credit: "https://dente-ua67.vercel.app/",
   },
   {
-    id: "asd1293ulkmnbj6",
+    id: "asd1293umacro006",
     title: "Macro",
     imageUrl: ManagementApp,
     type: "Website",
@@ -198,26 +192,51 @@ export const Advantages = [
 export const Testimonials = [
   {
     id: 1,
-    name: "Sasha Rose",
-    company: "Owner, Surveyor Corps",
+    name: "Priya Sharma",
+    company: "Founder, TechStart India, Mumbai",
     testimoni:
-      "Thanks for Racxstudio, you guys are the best! Keep up the great work!",
-    imageUrl: Sasha,
+      "TheTriFusion transformed our business with their exceptional web development services. Our website traffic increased by 300% within 3 months. Highly professional team and outstanding results!",
+    imageUrl: UIUX1,
   },
   {
     id: 2,
-    name: "Kruger Khan",
-    company: "Director, Shultan Oil",
+    name: "Rajesh Kumar",
+    company: "CEO, Digital Solutions Pvt Ltd, Delhi",
     testimoni:
-      "I just wanted to let you know that it’s been great working with Racxstudio.",
-    imageUrl: Kruger,
+      "Working with TheTriFusion has been a game-changer for our company. They delivered our mobile app on time and within budget. Their attention to detail and technical expertise is remarkable.",
+    imageUrl: CEO,
   },
   {
     id: 3,
-    name: "Reiner John",
-    company: "CEO, Marley CO",
-    testimoni: "Racxstudio is so great. Thank you so much for a job well done.",
-    imageUrl: Reiner,
+    name: "Anjali Patel",
+    company: "Director, E-commerce Hub, Bangalore",
+    testimoni: 
+      "TheTriFusion created a stunning e-commerce platform for us. The user experience is flawless, and sales have doubled since launch. Best investment we've made for our business!",
+    imageUrl: HRD,
+  },
+  {
+    id: 4,
+    name: "Vikram Singh",
+    company: "Owner, Fitness Zone, Pune",
+    testimoni:
+      "Our gym website designed by TheTriFusion is absolutely amazing! It's modern, responsive, and has helped us attract 200+ new members. Excellent service and support throughout the project.",
+    imageUrl: Frontend1,
+  },
+  {
+    id: 5,
+    name: "Meera Reddy",
+    company: "Principal, EduTech Academy, Hyderabad",
+    testimoni:
+      "TheTriFusion developed our educational platform with such precision and care. The learning management system they built has revolutionized how we deliver courses. Truly exceptional work!",
+    imageUrl: Backend1,
+  },
+  {
+    id: 6,
+    name: "Amit Verma",
+    company: "Managing Director, Restaurant Chain, Jaipur",
+    testimoni:
+      "TheTriFusion's digital marketing services have transformed our restaurant business. Online orders increased by 400%, and our brand visibility has never been better. Highly recommended!",
+    imageUrl: ProjectManager,
   },
 ];
 

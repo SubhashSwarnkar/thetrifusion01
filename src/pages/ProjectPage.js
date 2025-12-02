@@ -9,6 +9,7 @@ import HeroPortfolio from 'parts/HeroPortfolio';
 import Discuss from 'parts/Discuss';
 import Footer from 'parts/Footer';
 import AllPortfolio from 'parts/AllPortfolio';
+import AllPortfolioEnhanced from 'parts/AllPortfolioEnhanced';
 
 import { Portfolios } from 'json/landingPageData';
 
@@ -22,7 +23,7 @@ export default class ProjectPage extends Component {
       <>
         <Header />
         <HeroPortfolio />
-        <AllPortfolio data={Portfolios} />
+        <AllPortfolioEnhanced data={Portfolios} />
         <Discuss />
         <Footer />
       </>
