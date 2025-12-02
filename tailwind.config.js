@@ -4,7 +4,7 @@ import { fontFamily as _fontFamily } from "tailwindcss/defaultTheme";
 
 module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
-  darkMode: 'class', // Enable dark mode with class toggle
+  darkMode: false, // Dark mode disabled
   theme: {
     fontFamily: {
       sans: ["Poppins", ..._fontFamily.sans],

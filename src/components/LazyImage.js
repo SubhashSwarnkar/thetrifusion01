@@ -30,7 +30,7 @@ export default function LazyImage({ src, alt, className, ...props }) {
   return (
     <div ref={imgRef} className={`relative ${className || ""}`}>
       {!isLoaded && (
-        <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 animate-pulse rounded-lg" />
+        <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-lg" />
       )}
       {isInView && (
         <img

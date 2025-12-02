@@ -159,7 +159,7 @@ export default function TemplateDetailPage() {
               <div className="mb-8">
                 <button
                   onClick={() => setIsPreviewOpen(true)}
-                  className="block w-full text-center mb-4 px-6 py-3 border-2 border-theme-purple text-theme-purple dark:text-purple-400 dark:border-purple-400 rounded-full hover:bg-light-theme-purple dark:hover:bg-purple-900/20 transition duration-200 font-medium"
+                  className="block w-full text-center mb-4 px-6 py-3 border-2 border-theme-purple text-theme-purple rounded-full hover:bg-light-theme-purple transition duration-200 font-medium"
                 >
                   <svg
                     className="w-5 h-5 inline-block mr-2"
@@ -185,7 +185,7 @@ export default function TemplateDetailPage() {
 
                 {isPurchased ? (
                   <div className="space-y-4">
-                    <div className="bg-green-50 dark:bg-green-900/20 border-2 border-green-500 rounded-lg p-4 mb-4">
+                    <div className="bg-green-50 border-2 border-green-500 rounded-lg p-4 mb-4">
                       <div className="flex items-center mb-2">
                         <svg
                           className="w-6 h-6 text-green-500 mr-2"
@@ -200,11 +200,11 @@ export default function TemplateDetailPage() {
                             d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                           />
                         </svg>
-                        <h3 className="text-lg font-bold text-green-700 dark:text-green-400">
+                        <h3 className="text-lg font-bold text-green-700">
                           Purchase Confirmed!
                         </h3>
                       </div>
-                      <p className="text-sm text-green-600 dark:text-green-300 mb-4">
+                      <p className="text-sm text-green-600 mb-4">
                         You have successfully purchased this template. You can download it now or anytime later.
                       </p>
                       {template.downloadAvailable ? (
@@ -241,7 +241,7 @@ export default function TemplateDetailPage() {
                           )}
                         </button>
                       ) : (
-                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                        <p className="text-sm text-gray-600">
                           Download will be available soon. You will receive an email with download instructions.
                         </p>
                       )}
@@ -249,7 +249,7 @@ export default function TemplateDetailPage() {
                     {(() => {
                       const purchase = getTemplatePurchase(template.id);
                       return purchase && (
-                        <div className="text-sm text-gray-600 dark:text-gray-400">
+                        <div className="text-sm text-gray-600">
                           <p>Purchased on: {new Date(purchase.purchasedAt).toLocaleDateString()}</p>
                           {purchase.downloadCount > 0 && (
                             <p>Downloads: {purchase.downloadCount}</p>
@@ -261,36 +261,36 @@ export default function TemplateDetailPage() {
                 ) : (
                 <div className="space-y-4">
                   <div>
-                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name *</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Name *</label>
                     <input
                       type="text"
                       value={customerInfo.name}
                       onChange={(e) => setCustomerInfo({...customerInfo, name: e.target.value})}
                       placeholder="Your name"
                       required
-                        className="w-full p-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-theme-purple focus:border-theme-purple transition duration-200"
+                        className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme-purple focus:border-theme-purple transition duration-200"
                     />
                   </div>
                   <div>
-                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email *</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Email *</label>
                     <input
                       type="email"
                       value={customerInfo.email}
                       onChange={(e) => setCustomerInfo({...customerInfo, email: e.target.value})}
                       placeholder="your@email.com"
                       required
-                        className="w-full p-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-theme-purple focus:border-theme-purple transition duration-200"
+                        className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme-purple focus:border-theme-purple transition duration-200"
                     />
                   </div>
                   <div>
-                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Phone *</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Phone *</label>
                     <input
                       type="tel"
                       value={customerInfo.phone}
                       onChange={(e) => setCustomerInfo({...customerInfo, phone: e.target.value})}
                       placeholder="+91 1234567890"
                       required
-                        className="w-full p-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-theme-purple focus:border-theme-purple transition duration-200"
+                        className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme-purple focus:border-theme-purple transition duration-200"
                     />
                   </div>
                   

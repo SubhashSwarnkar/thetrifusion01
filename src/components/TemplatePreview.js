@@ -98,24 +98,24 @@ export default function TemplatePreview({ template, isOpen, onClose }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4">
-      <div className="relative w-full h-full max-w-7xl max-h-[90vh] bg-white dark:bg-gray-800 rounded-lg shadow-2xl flex flex-col">
+      <div className="relative w-full h-full max-w-7xl max-h-[90vh] bg-white rounded-lg shadow-2xl flex flex-col">
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+        <div className="flex items-center justify-between p-4 border-b border-gray-200">
           <div>
-            <h2 className="text-xl font-bold text-theme-blue dark:text-white">
+            <h2 className="text-xl font-bold text-theme-blue">
               {template.name} - Preview
             </h2>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
+            <p className="text-sm text-gray-600">
               {template.category}
             </p>
           </div>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors"
+            className="p-2 hover:bg-gray-100 rounded-full transition-colors"
             aria-label="Close preview"
           >
             <svg
-              className="w-6 h-6 text-gray-600 dark:text-gray-400"
+              className="w-6 h-6 text-gray-600"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -133,16 +133,16 @@ export default function TemplatePreview({ template, isOpen, onClose }) {
         {/* Preview Content */}
         <div className="flex-1 relative overflow-hidden">
           {loading && (
-            <div className="absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-gray-900">
+            <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
               <div className="text-center">
                 <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-theme-purple mx-auto mb-4"></div>
-                <p className="text-gray-600 dark:text-gray-400">Loading preview...</p>
+                <p className="text-gray-600">Loading preview...</p>
               </div>
             </div>
           )}
 
           {error ? (
-            <div className="absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-gray-900">
+            <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
               <div className="text-center p-8">
                 <svg
                   className="w-16 h-16 text-red-500 mx-auto mb-4"
@@ -157,8 +157,8 @@ export default function TemplatePreview({ template, isOpen, onClose }) {
                     d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                <p className="text-red-600 dark:text-red-400 mb-4">{error}</p>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
+                <p className="text-red-600 mb-4">{error}</p>
+                <p className="text-gray-600 text-sm">
                   The template preview is not available. Please contact support or purchase the template to access the files.
                 </p>
               </div>
@@ -166,10 +166,10 @@ export default function TemplatePreview({ template, isOpen, onClose }) {
           ) : previewUrl ? (
             <>
               {loading && (
-                <div className="absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-gray-900 z-10">
+                <div className="absolute inset-0 flex items-center justify-center bg-gray-100 z-10">
                   <div className="text-center">
                     <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-theme-purple mx-auto mb-4"></div>
-                    <p className="text-gray-600 dark:text-gray-400">Loading preview...</p>
+                    <p className="text-gray-600">Loading preview...</p>
                   </div>
                 </div>
               )}
@@ -242,9 +242,9 @@ export default function TemplatePreview({ template, isOpen, onClose }) {
               />
             </>
           ) : (
-            <div className="absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-gray-900">
+            <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
               <div className="text-center p-8">
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-gray-600">
                   Preview not available for this template.
                 </p>
               </div>
@@ -253,8 +253,8 @@ export default function TemplatePreview({ template, isOpen, onClose }) {
         </div>
 
         {/* Footer */}
-        <div className="p-4 border-t border-gray-200 dark:border-gray-700 flex items-center justify-between bg-gray-50 dark:bg-gray-900">
-          <div className="text-sm text-gray-600 dark:text-gray-400">
+        <div className="p-4 border-t border-gray-200 flex items-center justify-between bg-gray-50">
+          <div className="text-sm text-gray-600">
             <span className="font-semibold text-theme-purple">
               ₹{template.price.toLocaleString()}
             </span>
@@ -267,7 +267,7 @@ export default function TemplatePreview({ template, isOpen, onClose }) {
           <div className="flex gap-2">
             <button
               onClick={onClose}
-              className="px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+              className="px-4 py-2 border-2 border-gray-300 text-gray-700 rounded-full hover:bg-gray-100 transition-colors"
             >
               Close
             </button>

@@ -16,7 +16,7 @@ export default function Header() {
   const path = location.pathname;
 
   return (
-    <header className="header bg-white dark:bg-gray-900 border-gray-100 dark:border-gray-800">
+    <header className="header bg-white border-gray-100">
       <div className="flex justify-between px-4 lg:px-0">
         <BrandIcon />
 
@@ -55,7 +55,7 @@ export default function Header() {
         <Button
           className={`${
             path.startsWith("/blog") ? "active-link" : ""
-          } font-medium text-base px-4 py-2 text-theme-blue dark:text-gray-200 hover:text-theme-purple dark:hover:text-purple-400 transition-colors duration-200`}
+          } font-medium text-base px-4 py-2 text-theme-blue hover:text-theme-purple transition-colors duration-200`}
           type="link"
           href="/blog"
         >
@@ -64,7 +64,7 @@ export default function Header() {
         <Button
           className={`${
             path === "/" ? "active-link" : ""
-          } font-medium text-base px-4 py-2 text-theme-blue dark:text-gray-200 hover:text-theme-purple dark:hover:text-purple-400 transition-colors duration-200`}
+          } font-medium text-base px-4 py-2 text-theme-blue hover:text-theme-purple transition-colors duration-200`}
           type="link"
           href="/"
         >
@@ -73,7 +73,7 @@ export default function Header() {
         <Button
           className={`${
             path.startsWith("/services") ? "active-link" : ""
-          } font-medium text-base px-4 py-2 text-theme-blue dark:text-gray-200 hover:text-theme-purple dark:hover:text-purple-400 transition-colors duration-200`}
+          } font-medium text-base px-4 py-2 text-theme-blue hover:text-theme-purple transition-colors duration-200`}
           type="link"
           href="/services"
         >
@@ -82,7 +82,7 @@ export default function Header() {
         <Button
           className={`${
             path.startsWith("/portfolio") || path.startsWith("/project") ? "active-link" : ""
-          } font-medium text-base px-4 py-2 text-theme-blue dark:text-gray-200 hover:text-theme-purple dark:hover:text-purple-400 transition-colors duration-200`}
+          } font-medium text-base px-4 py-2 text-theme-blue hover:text-theme-purple transition-colors duration-200`}
           type="link"
           href="/portfolio"
         >
@@ -91,7 +91,7 @@ export default function Header() {
         <Button
           className={`${
             path.startsWith("/pricing") ? "active-link" : ""
-          } font-medium text-base px-4 py-2 text-theme-blue dark:text-gray-200 hover:text-theme-purple dark:hover:text-purple-400 transition-colors duration-200`}
+          } font-medium text-base px-4 py-2 text-theme-blue hover:text-theme-purple transition-colors duration-200`}
           type="link"
           href="/pricing"
         >
@@ -105,9 +105,9 @@ export default function Header() {
               path.startsWith("/timeline") || 
               path.startsWith("/pricing/calculator") ||
               path.startsWith("/templates/selector")
-                ? "text-theme-purple dark:text-purple-400"
-                : "text-theme-blue dark:text-gray-200"
-            } font-medium text-base px-4 py-2 hover:text-theme-purple dark:hover:text-purple-400 transition-colors duration-200 flex items-center`}
+                ? "text-theme-purple"
+                : "text-theme-blue"
+            } font-medium text-base px-4 py-2 hover:text-theme-purple transition-colors duration-200 flex items-center`}
             onMouseEnter={() => setIsToolsOpen(true)}
             onMouseLeave={() => setIsToolsOpen(false)}
           >
@@ -136,42 +136,42 @@ export default function Header() {
             leaveTo="opacity-0 translate-y-1"
           >
             <div
-              className="absolute top-full left-0 mt-1 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 z-50 py-2"
+              className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-xl border border-gray-200 z-50 py-2"
               onMouseEnter={() => setIsToolsOpen(true)}
               onMouseLeave={() => setIsToolsOpen(false)}
             >
               <Button
                 type="link"
                 href="/pricing/calculator"
-                className="block w-full text-left px-4 py-2.5 text-gray-700 dark:text-gray-300 hover:bg-light-theme-purple dark:hover:bg-gray-700 hover:text-theme-purple transition-colors duration-200 text-sm"
+                className="block w-full text-left px-4 py-2.5 text-gray-700 hover:bg-light-theme-purple hover:text-theme-purple transition-colors duration-200 text-sm"
               >
                 <span className="mr-2">💰</span>Price Calculator
               </Button>
               <Button
                 type="link"
                 href="/timeline"
-                className="block w-full text-left px-4 py-2.5 text-gray-700 dark:text-gray-300 hover:bg-light-theme-purple dark:hover:bg-gray-700 hover:text-theme-purple transition-colors duration-200 text-sm"
+                className="block w-full text-left px-4 py-2.5 text-gray-700 hover:bg-light-theme-purple hover:text-theme-purple transition-colors duration-200 text-sm"
               >
                 <span className="mr-2">⏱️</span>Timeline Calculator
               </Button>
               <Button
                 type="link"
                 href="/planner"
-                className="block w-full text-left px-4 py-2.5 text-gray-700 dark:text-gray-300 hover:bg-light-theme-purple dark:hover:bg-gray-700 hover:text-theme-purple transition-colors duration-200 text-sm"
+                className="block w-full text-left px-4 py-2.5 text-gray-700 hover:bg-light-theme-purple hover:text-theme-purple transition-colors duration-200 text-sm"
               >
                 <span className="mr-2">📋</span>Page Planner
               </Button>
               <Button
                 type="link"
                 href="/estimate"
-                className="block w-full text-left px-4 py-2.5 text-gray-700 dark:text-gray-300 hover:bg-light-theme-purple dark:hover:bg-gray-700 hover:text-theme-purple transition-colors duration-200 text-sm"
+                className="block w-full text-left px-4 py-2.5 text-gray-700 hover:bg-light-theme-purple hover:text-theme-purple transition-colors duration-200 text-sm"
               >
                 <span className="mr-2">🤖</span>AI Estimator
               </Button>
               <Button
                 type="link"
                 href="/templates/selector"
-                className="block w-full text-left px-4 py-2.5 text-gray-700 dark:text-gray-300 hover:bg-light-theme-purple dark:hover:bg-gray-700 hover:text-theme-purple transition-colors duration-200 text-sm"
+                className="block w-full text-left px-4 py-2.5 text-gray-700 hover:bg-light-theme-purple hover:text-theme-purple transition-colors duration-200 text-sm"
               >
                 <span className="mr-2">🎨</span>Template Selector
               </Button>
@@ -181,7 +181,7 @@ export default function Header() {
         <Button
           className={`${
             path.startsWith("/templates") && !path.startsWith("/templates/selector") ? "active-link" : ""
-          } font-medium text-base px-4 py-2 text-theme-blue dark:text-gray-200 hover:text-theme-purple dark:hover:text-purple-400 transition-colors duration-200`}
+          } font-medium text-base px-4 py-2 text-theme-blue hover:text-theme-purple transition-colors duration-200`}
           type="link"
           href="/templates"
         >
@@ -190,7 +190,7 @@ export default function Header() {
         <Button
           className={`${
             path === "/about" ? "active-link" : ""
-          } font-medium text-base px-4 py-2 text-theme-blue dark:text-gray-200 hover:text-theme-purple dark:hover:text-purple-400 transition-colors duration-200`}
+          } font-medium text-base px-4 py-2 text-theme-blue hover:text-theme-purple transition-colors duration-200`}
           type="link"
           href="/about"
         >
@@ -215,11 +215,11 @@ export default function Header() {
         leaveTo="opacity-0"
       >
         <div className="transition duration-300 ease-in data-[closed]:opacity-0">
-          <nav className="z-50 flex flex-col text-theme-blue dark:text-gray-200 my-6 absolute bg-white dark:bg-gray-900 w-full border-b-2 border-gray-200 dark:border-gray-700 lg:hidden shadow-lg">
+          <nav className="z-50 flex flex-col text-theme-blue my-6 absolute bg-white w-full border-b-2 border-gray-200 lg:hidden shadow-lg">
             <Button
               className={`${
                 path.startsWith("/blog") ? "active-link" : ""
-              } font-medium px-6 py-3 text-left hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200`}
+              } font-medium px-6 py-3 text-left hover:bg-gray-50 transition-colors duration-200`}
               type="link"
               href="/blog"
             >
@@ -373,7 +373,7 @@ export default function Header() {
             >
               Team
             </Button>
-            <div className="px-6 py-4 border-t border-gray-200 dark:border-gray-700">
+            <div className="px-6 py-4 border-t border-gray-200">
               <Button
                 className="font-semibold w-full text-center px-6 py-3 bg-theme-purple text-white rounded-full hover:bg-dark-theme-purple transition-all duration-200 shadow-md"
                 type="link"

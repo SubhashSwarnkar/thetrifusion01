@@ -51,7 +51,7 @@ export default function TemplatesPage() {
                 className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium transition duration-200 text-sm sm:text-base ${
                   selectedIndustry === industry.id
                     ? "bg-theme-purple text-white shadow-lg"
-                    : "bg-white dark:bg-gray-800 text-theme-blue dark:text-white border-2 border-theme-purple dark:border-purple-400 hover:bg-light-theme-purple dark:hover:bg-gray-700"
+                    : "bg-white text-theme-blue border-2 border-theme-purple hover:bg-light-theme-purple"
                 }`}
               >
                 {industry.name} ({industry.count})
@@ -68,8 +68,8 @@ export default function TemplatesPage() {
               delay={index * 100}
               triggerOnce
             >
-              <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-light-theme-purple dark:border-gray-700 overflow-hidden transform transition duration-500 hover:scale-105 flex flex-col">
-                <div className="relative h-48 bg-gray-200 dark:bg-gray-700">
+              <div className="bg-white rounded-2xl shadow-xl border border-light-theme-purple overflow-hidden transform transition duration-500 hover:scale-105 flex flex-col">
+                <div className="relative h-48 bg-gray-200">
                   {template.isNew && (
                     <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium z-10">
                       New
@@ -88,22 +88,22 @@ export default function TemplatesPage() {
                       Download
                     </div>
                   )}
-                  <div className="w-full h-full flex items-center justify-center text-6xl text-gray-400 dark:text-gray-500">
+                  <div className="w-full h-full flex items-center justify-center text-6xl text-gray-400">
                     {template.category.charAt(0)}
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-2xl text-theme-blue dark:text-white font-bold mb-2">
+                  <h3 className="text-2xl text-theme-blue font-bold mb-2">
                     {template.name}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">{template.description}</p>
+                  <p className="text-gray-600 mb-4">{template.description}</p>
                   <div className="flex items-center justify-between mb-4">
                     <div>
-                      <span className="text-2xl font-bold text-theme-purple dark:text-purple-400">
+                      <span className="text-2xl font-bold text-theme-purple">
                         ₹{template.price.toLocaleString()}
                       </span>
                       {template.originalPrice && (
-                        <span className="text-gray-400 dark:text-gray-500 line-through ml-2">
+                        <span className="text-gray-400 line-through ml-2">
                           ₹{template.originalPrice.toLocaleString()}
                         </span>
                       )}

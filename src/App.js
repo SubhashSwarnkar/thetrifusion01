@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
-import { useTheme } from "contexts/ThemeContext";
 
 import LoadingPage from "components/LoadingPage";
 
@@ -38,8 +37,6 @@ import "react-toastify/dist/ReactToastify.css";
 import "./assets/css/styles.css";
 
 function App() {
-  const { darkMode } = useTheme();
-  
   return (
     <>
       <SEOHead />
@@ -84,7 +81,7 @@ function App() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme={darkMode ? "dark" : "light"}
+        theme="light"
       />
     </>
   );
