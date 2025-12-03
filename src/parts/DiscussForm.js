@@ -53,13 +53,13 @@ export const DiscussForm = (actions) => {
   return (
     <section className="flex flex-col container mx-auto mt-10 justify-center">
       <Fade direction="down" triggerOnce>
-        <h1 className="text-5xl text-theme-blue text-center font-bold">
+        <h1 className="text-5xl text-theme-blue dark:text-white text-center font-bold">
           Lets Discuss
         </h1>
       </Fade>
 
       <Fade direction="up" triggerOnce>
-        <p className="font-light text-lg text-gray-400 text-center mb-12">
+        <p className="font-light text-lg text-gray-400 dark:text-gray-300 text-center mb-12">
           {/* eslint-disable-next-line react/no-unescaped-entities */}
           Please fill out the form below to discuss your project and we'll get
           back to you in less than 24 hours.

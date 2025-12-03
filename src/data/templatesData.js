@@ -111,6 +111,7 @@ const agencyIndividualTemplates = generateIndividualTemplates(
   350
 );
 
+<<<<<<< HEAD
 // Generate individual education templates (1-41)
 const educationProjects = Array.from({ length: 41 }, (_, i) => i + 1);
 const educationIndividualTemplates = generateIndividualTemplates(
@@ -280,6 +281,20 @@ export const templates = [
       previewUrl: "/templates-preview/Restaurant/Restaurant/1/index.html",
       previewImage: info.image,
       description: "Complete restaurant website template collection with multiple designs, menu displays, online reservations, and gallery showcase.",
+=======
+export const templates = [
+  {
+    id: "restaurant-template-full",
+    name: "Restaurant Template Collection",
+    industry: "restaurant",
+    category: "Restaurant & Food",
+    price: 9999,
+    originalPrice: 14999,
+    demoUrl: "#",
+    previewUrl: "/templates-preview/Restaurant/Restaurant/1/index.html",
+    previewImage: "/assets/images/templates/restaurant-collection.jpg",
+    description: "Complete restaurant website template collection with multiple designs, menu displays, online reservations, and gallery showcase.",
+>>>>>>> fdad20ee8ae212bc44bfd00c6cd31076b8c97286
     features: [
       "Multiple Restaurant Designs",
       "Menu Display System",
@@ -294,6 +309,7 @@ export const templates = [
     tags: ["restaurant", "food", "dining", "cafe", "collection"],
     isPopular: true,
     isNew: true,
+<<<<<<< HEAD
       templatePath: "templets/Restaurant/Restaurant",
       downloadAvailable: true
     };
@@ -311,6 +327,22 @@ export const templates = [
       previewUrl: "/templates-preview/Photography/Photography/1/index.html",
       previewImage: info.image,
       description: "Professional photography portfolio template collection with stunning galleries, portfolio showcases, and client booking features.",
+=======
+    templatePath: "templets/Restaurant/Restaurant",
+    downloadAvailable: true
+  },
+  {
+    id: "photography-template-full",
+    name: "Photography Portfolio Collection",
+    industry: "photography",
+    category: "Photography & Portfolio",
+    price: 8999,
+    originalPrice: 12999,
+    demoUrl: "#",
+    previewUrl: "/templates-preview/Photography/Photography/1/index.html",
+    previewImage: "/assets/images/templates/photography-collection.jpg",
+    description: "Professional photography portfolio template collection with stunning galleries, portfolio showcases, and client booking features.",
+>>>>>>> fdad20ee8ae212bc44bfd00c6cd31076b8c97286
     features: [
       "Multiple Portfolio Designs",
       "Image Gallery System",
@@ -325,6 +357,7 @@ export const templates = [
     tags: ["photography", "portfolio", "gallery", "collection"],
     isPopular: true,
     isNew: true,
+<<<<<<< HEAD
       templatePath: "templets/Photography/Photography",
       downloadAvailable: true
     };
@@ -342,6 +375,22 @@ export const templates = [
       previewUrl: "/templates-preview/Digital_Agency/Digital_Agency/1/index.html",
       previewImage: info.image,
       description: "Complete digital agency website template collection with modern designs, service showcases, case studies, and team sections.",
+=======
+    templatePath: "templets/Photography/Photography",
+    downloadAvailable: true
+  },
+  {
+    id: "digital-agency-template-full",
+    name: "Digital Agency Template Collection",
+    industry: "agency",
+    category: "Digital Agency",
+    price: 11999,
+    originalPrice: 17999,
+    demoUrl: "#",
+    previewUrl: "/templates-preview/Digital_Agency/Digital_Agency/1/index.html",
+    previewImage: "/assets/images/templates/digital-agency-collection.jpg",
+    description: "Complete digital agency website template collection with modern designs, service showcases, case studies, and team sections.",
+>>>>>>> fdad20ee8ae212bc44bfd00c6cd31076b8c97286
     features: [
       "Multiple Agency Designs",
       "Service Showcases",
@@ -356,6 +405,7 @@ export const templates = [
     tags: ["agency", "digital", "business", "collection"],
     isPopular: true,
     isNew: true,
+<<<<<<< HEAD
       templatePath: "templets/Digital_Agency/Digital_Agency",
       downloadAvailable: true
     };
@@ -761,11 +811,17 @@ export const templates = [
       downloadAvailable: true
     };
   })(),
+=======
+    templatePath: "templets/Digital_Agency/Digital_Agency",
+    downloadAvailable: true
+  },
+>>>>>>> fdad20ee8ae212bc44bfd00c6cd31076b8c97286
   // Individual Restaurant Templates
   ...restaurantIndividualTemplates,
   // Individual Photography Templates
   ...photographyIndividualTemplates,
   // Individual Digital Agency Templates
+<<<<<<< HEAD
   ...agencyIndividualTemplates,
   // Individual Education Templates
   ...educationIndividualTemplates,
@@ -793,12 +849,16 @@ export const templates = [
   ...yogaIndividualTemplates,
   // Individual E-Book Templates
   ...ebookIndividualTemplates
+=======
+  ...agencyIndividualTemplates
+>>>>>>> fdad20ee8ae212bc44bfd00c6cd31076b8c97286
 ];
 
 export const industries = [
   { id: "all", name: "All Templates", count: templates.length },
   { id: "restaurant", name: "Restaurant & Food", count: templates.filter(t => t.industry === "restaurant").length },
   { id: "photography", name: "Photography & Portfolio", count: templates.filter(t => t.industry === "photography").length },
+<<<<<<< HEAD
   { id: "agency", name: "Digital Agency", count: templates.filter(t => t.industry === "agency").length },
   { id: "education", name: "Education", count: templates.filter(t => t.industry === "education").length },
   { id: "fashion-designer", name: "Fashion Designer", count: templates.filter(t => t.industry === "fashion-designer").length },
@@ -813,6 +873,9 @@ export const industries = [
   { id: "webapp-app", name: "Web App", count: templates.filter(t => t.industry === "webapp-app").length },
   { id: "yoga", name: "Yoga", count: templates.filter(t => t.industry === "yoga").length },
   { id: "e-book", name: "E-Book", count: templates.filter(t => t.industry === "e-book").length }
+=======
+  { id: "agency", name: "Digital Agency", count: templates.filter(t => t.industry === "agency").length }
+>>>>>>> fdad20ee8ae212bc44bfd00c6cd31076b8c97286
 ];
 
 export const getTemplateById = (id) => {
