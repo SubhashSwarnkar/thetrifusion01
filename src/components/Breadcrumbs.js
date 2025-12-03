@@ -39,13 +39,13 @@ export default function Breadcrumbs() {
   };
 
   return (
-    <nav className="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 py-3" aria-label="Breadcrumb">
+    <nav className="bg-gray-50 border-b border-gray-200 py-3" aria-label="Breadcrumb">
       <div className="container mx-auto px-5">
         <ol className="flex items-center space-x-2 text-sm">
           <li>
             <Link
               to="/"
-              className="text-gray-500 dark:text-gray-400 hover:text-theme-purple dark:hover:text-purple-400 transition duration-200"
+              className="text-gray-500 hover:text-theme-purple transition duration-200"
             >
               Home
             </Link>
@@ -58,7 +58,7 @@ export default function Breadcrumbs() {
             return (
               <li key={name} className="flex items-center">
                 <svg
-                  className="w-4 h-4 text-gray-400 dark:text-gray-500 mx-2"
+                  className="w-4 h-4 text-gray-400 mx-2"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -69,13 +69,13 @@ export default function Breadcrumbs() {
                   />
                 </svg>
                 {isLast ? (
-                  <span className="text-theme-purple dark:text-purple-400 font-medium" aria-current="page">
+                  <span className="text-theme-purple font-medium" aria-current="page">
                     {displayName}
                   </span>
                 ) : (
                   <Link
                     to={routeTo}
-                    className="text-gray-500 dark:text-gray-400 hover:text-theme-purple dark:hover:text-purple-400 transition duration-200"
+                    className="text-gray-500 hover:text-theme-purple transition duration-200"
                   >
                     {displayName}
                   </Link>

@@ -9,12 +9,12 @@ export default function HeroTeam() {
     <section className="hero sm:items-center lg:items-start sm:flex-row">
       <div className="w-full sm:w-1/2 flex flex-col px-5  sm:mb-0 sm:px-12 sm:mt-6 lg:mt-6 xl:mt-20">
         <Fade direction="up" triggerOnce>
-          <h1 className="text-4xl sm:text-6xl text-theme-blue dark:text-white font-bold leading-tight mb-3 mt-5 text-center sm:text-left">
+          <h1 className="text-4xl sm:text-6xl text-theme-blue font-bold leading-tight mb-3 mt-5 text-center sm:text-left">
             Our Team
           </h1>
         </Fade>
         <Fade direction="up" delay={500} triggerOnce>
-          <p className="font-light text-lg sm:text-xl text-gray-400 dark:text-gray-300 leading-relaxed text-center sm:text-left">
+          <p className="font-light text-lg sm:text-xl text-gray-400 leading-relaxed text-center sm:text-left">
             Our team is full of passionate people and ready to make your dream
             software come true.
           </p>

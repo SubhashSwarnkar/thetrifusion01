@@ -60,10 +60,10 @@ export default function PricingPage() {
       <section className="container mx-auto px-5 py-20">
         <Fade direction="up" triggerOnce>
           <div className="text-center mb-16">
-            <h1 className="text-5xl text-theme-blue dark:text-white font-bold mb-5">
+            <h1 className="text-5xl text-theme-blue font-bold mb-5">
               Pricing Plans
             </h1>
-            <p className="font-light text-xl text-gray-400 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="font-light text-xl text-gray-400 max-w-2xl mx-auto">
               Choose the perfect plan for your business needs. All plans include responsive design and modern features.
             </p>
           </div>
@@ -78,10 +78,10 @@ export default function PricingPage() {
               triggerOnce
             >
               <div
-                className={`bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 sm:p-8 border-2 flex flex-col ${
+                className={`bg-white rounded-2xl shadow-xl p-6 sm:p-8 border-2 flex flex-col ${
                   plan.popular
-                    ? "border-theme-purple dark:border-purple-400 transform scale-105 lg:scale-105 md:scale-100"
-                    : "border-light-theme-purple dark:border-gray-700"
+                    ? "border-theme-purple transform scale-105 lg:scale-105 md:scale-100"
+                    : "border-light-theme-purple"
                 }`}
               >
                 {plan.popular && (
@@ -89,21 +89,21 @@ export default function PricingPage() {
                     Most Popular
                   </div>
                 )}
-                <h3 className="text-2xl text-theme-blue dark:text-white font-bold mb-2">
+                <h3 className="text-2xl text-theme-blue font-bold mb-2">
                   {plan.name}
                 </h3>
                 <div className="mb-4">
-                  <span className="text-4xl font-bold text-theme-purple dark:text-purple-400">
+                  <span className="text-4xl font-bold text-theme-purple">
                     {plan.price}
                   </span>
-                  <span className="text-gray-500 dark:text-gray-400">/project</span>
+                  <span className="text-gray-500">/project</span>
                 </div>
-                <p className="text-gray-600 dark:text-gray-300 mb-6">{plan.description}</p>
+                <p className="text-gray-600 mb-6">{plan.description}</p>
                 <ul className="space-y-3 mb-8 flex-grow">
                   {plan.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start">
                       <svg
-                        className="w-5 h-5 text-theme-purple dark:text-purple-400 mr-2 mt-1 flex-shrink-0"
+                        className="w-5 h-5 text-theme-purple mr-2 mt-1 flex-shrink-0"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -116,7 +116,7 @@ export default function PricingPage() {
                           d="M5 13l4 4L19 7"
                         />
                       </svg>
-                      <span className="text-sm sm:text-base text-gray-700 dark:text-gray-300">{feature}</span>
+                      <span className="text-sm sm:text-base text-gray-700">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -133,7 +133,7 @@ export default function PricingPage() {
 
         <Fade direction="up" triggerOnce>
           <div className="text-center">
-            <p className="text-gray-600 dark:text-gray-300 mb-4">
+            <p className="text-gray-600 mb-4">
               Need a custom solution? Use our calculator to get an estimate.
             </p>
             <Link

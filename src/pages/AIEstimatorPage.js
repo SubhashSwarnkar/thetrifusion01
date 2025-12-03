@@ -64,10 +64,10 @@ export default function AIEstimatorPage() {
       <section className="container mx-auto px-5 py-20">
         <Fade direction="up" triggerOnce>
           <div className="text-center mb-16">
-            <h1 className="text-5xl text-theme-blue dark:text-white font-bold mb-5">
+            <h1 className="text-5xl text-theme-blue font-bold mb-5">
               AI Project Estimator
             </h1>
-            <p className="font-light text-xl text-gray-400 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="font-light text-xl text-gray-400 max-w-2xl mx-auto">
               Describe your project idea and get instant AI-powered estimates for cost, timeline, and features.
             </p>
           </div>
@@ -75,7 +75,7 @@ export default function AIEstimatorPage() {
 
         <Fade direction="up" triggerOnce>
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-light-theme-purple dark:border-gray-700 overflow-hidden">
+            <div className="bg-white rounded-2xl shadow-xl border border-light-theme-purple overflow-hidden">
               <div className="h-96 sm:h-[500px] overflow-y-auto p-4 sm:p-6 space-y-4">
                 {messages.map((message, index) => (
                   <div
@@ -88,7 +88,7 @@ export default function AIEstimatorPage() {
                       className={`max-w-[80%] rounded-lg p-4 ${
                         message.role === "user"
                           ? "bg-theme-purple text-white"
-                          : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200"
+                          : "bg-gray-100 text-gray-800"
                       }`}
                     >
                       <div className="whitespace-pre-wrap">{message.content}</div>
@@ -97,11 +97,11 @@ export default function AIEstimatorPage() {
                 ))}
                 {loading && (
                   <div className="flex justify-start">
-                    <div className="bg-gray-100 dark:bg-gray-700 rounded-lg p-4">
+                    <div className="bg-gray-100 rounded-lg p-4">
                       <div className="flex space-x-2">
-                        <div className="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full animate-bounce"></div>
-                        <div className="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full animate-bounce" style={{ animationDelay: "0.2s" }}></div>
-                        <div className="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full animate-bounce" style={{ animationDelay: "0.4s" }}></div>
+                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0.2s" }}></div>
+                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0.4s" }}></div>
                       </div>
                     </div>
                   </div>
@@ -116,7 +116,7 @@ export default function AIEstimatorPage() {
                     onChange={(e) => setInput(e.target.value)}
                     onKeyPress={handleKeyPress}
                     placeholder="Describe your project idea..."
-                    className="flex-1 p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-theme-purple focus:border-theme-purple resize-none bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                    className="flex-1 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme-purple focus:border-theme-purple resize-none bg-white text-gray-900"
                     rows="2"
                   />
                   <button
@@ -130,10 +130,10 @@ export default function AIEstimatorPage() {
               </div>
             </div>
 
-            <div className="mt-6 text-center text-gray-600 dark:text-gray-300">
+            <div className="mt-6 text-center text-gray-600">
               <p>
                 Need more accurate estimates?{" "}
-                <a href="/contact" className="text-theme-purple dark:text-purple-400 hover:underline">
+                <a href="/contact" className="text-theme-purple hover:underline">
                   Contact us directly
                 </a>
               </p>

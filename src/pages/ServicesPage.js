@@ -18,10 +18,10 @@ export default function ServicesPage() {
       <section className="container mx-auto px-5 py-20">
         <Fade direction="up" triggerOnce>
           <div className="text-center mb-16">
-            <h1 className="text-5xl text-theme-blue dark:text-white font-bold mb-5">
+            <h1 className="text-5xl text-theme-blue font-bold mb-5">
               Our Services
             </h1>
-            <p className="font-light text-lg text-gray-400 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="font-light text-lg text-gray-400 max-w-2xl mx-auto">
               We offer comprehensive digital solutions to help your business grow and succeed in the digital world.
             </p>
           </div>
@@ -36,15 +36,15 @@ export default function ServicesPage() {
               triggerOnce
             >
               <Link to={`/services/${service.slug}`}>
-              <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-light-theme-purple dark:border-gray-700 p-5 sm:p-6 transform transition duration-500 hover:scale-105 cursor-pointer h-full">
+              <div className="bg-white rounded-2xl shadow-xl border border-light-theme-purple p-5 sm:p-6 transform transition duration-500 hover:scale-105 cursor-pointer h-full">
                 <div className="text-5xl mb-4">{service.icon}</div>
-                <h2 className="text-2xl text-theme-blue dark:text-white font-bold mb-3">
+                <h2 className="text-2xl text-theme-blue font-bold mb-3">
                   {service.title}
                 </h2>
-                <p className="font-light text-gray-400 dark:text-gray-300 mb-4">
+                <p className="font-light text-gray-400 mb-4">
                   {service.shortDescription}
                 </p>
-                <div className="flex items-center text-theme-purple dark:text-purple-400 font-medium">
+                <div className="flex items-center text-theme-purple font-medium">
                   Learn More
                   <svg
                     className="w-5 h-5 ml-2"

@@ -67,10 +67,10 @@ export default function PriceCalculatorPage() {
       <section className="container mx-auto px-5 py-20">
         <Fade direction="up" triggerOnce>
           <div className="text-center mb-16">
-            <h1 className="text-5xl text-theme-blue dark:text-white font-bold mb-5">
+            <h1 className="text-5xl text-theme-blue font-bold mb-5">
               Price Calculator
             </h1>
-            <p className="font-light text-xl text-gray-400 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="font-light text-xl text-gray-400 max-w-2xl mx-auto">
               Get an instant estimate for your project. Fill in the details below and see the pricing breakdown.
             </p>
           </div>
@@ -78,20 +78,20 @@ export default function PriceCalculatorPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           <Fade direction="left" triggerOnce>
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 sm:p-8 border border-light-theme-purple dark:border-gray-700">
-              <h2 className="text-2xl text-theme-blue dark:text-white font-bold mb-6">
+            <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 border border-light-theme-purple">
+              <h2 className="text-2xl text-theme-blue font-bold mb-6">
                 Project Details
               </h2>
 
               <div className="space-y-6">
                 <div>
-                  <label className="block text-theme-blue dark:text-white font-medium mb-2">
+                  <label className="block text-theme-blue font-medium mb-2">
                     Industry
                   </label>
                   <select
                     value={industry}
                     onChange={(e) => setIndustry(e.target.value)}
-                    className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-theme-purple focus:border-theme-purple bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme-purple focus:border-theme-purple bg-white text-gray-900"
                   >
                     <option value="">Select Industry</option>
                     {industries
@@ -105,13 +105,13 @@ export default function PriceCalculatorPage() {
                 </div>
 
                 <div>
-                  <label className="block text-theme-blue dark:text-white font-medium mb-2">
+                  <label className="block text-theme-blue font-medium mb-2">
                     Project Type
                   </label>
                   <select
                     value={projectType}
                     onChange={(e) => setProjectType(e.target.value)}
-                    className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-theme-purple focus:border-theme-purple bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme-purple focus:border-theme-purple bg-white text-gray-900"
                   >
                     <option value="">Select Project Type</option>
                     {projectTypes.map((type) => (
@@ -123,13 +123,13 @@ export default function PriceCalculatorPage() {
                 </div>
 
                 <div>
-                  <label className="block text-theme-blue dark:text-white font-medium mb-2">
+                  <label className="block text-theme-blue font-medium mb-2">
                     Timeline
                   </label>
                   <select
                     value={timeline}
                     onChange={(e) => setTimeline(e.target.value)}
-                    className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-theme-purple focus:border-theme-purple bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme-purple focus:border-theme-purple bg-white text-gray-900"
                   >
                     <option value="">Select Timeline</option>
                     {timelines.map((tl) => (
@@ -141,14 +141,14 @@ export default function PriceCalculatorPage() {
                 </div>
 
                 <div>
-                  <label className="block text-theme-blue dark:text-white font-medium mb-4">
+                  <label className="block text-theme-blue font-medium mb-4">
                     Additional Features
                   </label>
                   <div className="space-y-2 max-h-64 overflow-y-auto pr-2">
                     {features.map((feature) => (
                       <label
                         key={feature.id}
-                        className="flex items-center p-3 border border-gray-200 dark:border-gray-600 rounded-lg hover:bg-light-theme-purple dark:hover:bg-gray-700 cursor-pointer transition duration-200"
+                        className="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-light-theme-purple cursor-pointer transition duration-200"
                       >
                         <input
                           type="checkbox"
@@ -156,7 +156,7 @@ export default function PriceCalculatorPage() {
                           onChange={() => handleFeatureToggle(feature.id)}
                           className="w-5 h-5 text-theme-purple focus:ring-theme-purple rounded"
                         />
-                        <span className="ml-3 text-gray-700 dark:text-gray-300">{feature.name}</span>
+                        <span className="ml-3 text-gray-700">{feature.name}</span>
                       </label>
                     ))}
                   </div>
@@ -174,50 +174,50 @@ export default function PriceCalculatorPage() {
           </Fade>
 
           <Fade direction="right" triggerOnce>
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 sm:p-8 border border-light-theme-purple dark:border-gray-700">
-              <h2 className="text-2xl text-theme-blue dark:text-white font-bold mb-6">
+            <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 border border-light-theme-purple">
+              <h2 className="text-2xl text-theme-blue font-bold mb-6">
                 Price Estimate
               </h2>
 
               {priceResult ? (
                 <div className="space-y-6">
-                  <div className="bg-light-theme-purple dark:bg-gray-700 rounded-lg p-6">
-                    <div className="text-sm text-gray-600 dark:text-gray-300 mb-2">Total Price</div>
-                    <div className="text-4xl font-bold text-theme-purple dark:text-purple-400">
+                  <div className="bg-light-theme-purple rounded-lg p-6">
+                    <div className="text-sm text-gray-600 mb-2">Total Price</div>
+                    <div className="text-4xl font-bold text-theme-purple">
                       ₹{priceResult.totalPrice.toLocaleString()}
                     </div>
                   </div>
 
                   <div className="space-y-4">
                     <div className="flex justify-between">
-                      <span className="text-gray-600 dark:text-gray-300">Base Price</span>
-                      <span className="font-medium dark:text-white">₹{priceResult.basePrice.toLocaleString()}</span>
+                      <span className="text-gray-600">Base Price</span>
+                      <span className="font-medium">₹{priceResult.basePrice.toLocaleString()}</span>
                     </div>
                     {priceResult.featureCost > 0 && (
                       <div className="flex justify-between">
-                        <span className="text-gray-600 dark:text-gray-300">Additional Features</span>
-                        <span className="font-medium dark:text-white">₹{priceResult.featureCost.toLocaleString()}</span>
+                        <span className="text-gray-600">Additional Features</span>
+                        <span className="font-medium">₹{priceResult.featureCost.toLocaleString()}</span>
                       </div>
                     )}
                   </div>
 
-                  <div className="border-t dark:border-gray-700 pt-4">
-                    <h3 className="font-bold text-theme-blue dark:text-white mb-3">Breakdown</h3>
+                  <div className="border-t pt-4">
+                    <h3 className="font-bold text-theme-blue mb-3">Breakdown</h3>
                     <div className="space-y-2 text-sm">
                       <div className="flex justify-between">
-                        <span className="text-gray-600 dark:text-gray-300">Industry:</span>
+                        <span className="text-gray-600">Industry:</span>
                         <span className="dark:text-white">{priceResult.breakdown.industry}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600 dark:text-gray-300">Project Type:</span>
+                        <span className="text-gray-600">Project Type:</span>
                         <span className="dark:text-white">{priceResult.breakdown.projectType}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600 dark:text-gray-300">Timeline:</span>
+                        <span className="text-gray-600">Timeline:</span>
                         <span className="dark:text-white">{priceResult.breakdown.timeline}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600 dark:text-gray-300">Estimated Days:</span>
+                        <span className="text-gray-600">Estimated Days:</span>
                         <span className="dark:text-white">{priceResult.breakdown.estimatedDays} days</span>
                       </div>
                     </div>
@@ -230,7 +230,7 @@ export default function PriceCalculatorPage() {
                   </div>
                 </div>
               ) : (
-                <div className="text-center py-12 text-gray-500 dark:text-gray-400">
+                <div className="text-center py-12 text-gray-500">
                   <p>Fill in the project details and click "Calculate Price" to see your estimate.</p>
                 </div>
               )}

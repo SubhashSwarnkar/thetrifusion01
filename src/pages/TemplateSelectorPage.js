@@ -32,10 +32,10 @@ export default function TemplateSelectorPage() {
       <section className="container mx-auto px-5 py-20">
         <Fade direction="up" triggerOnce>
           <div className="text-center mb-16">
-            <h1 className="text-5xl text-theme-blue dark:text-white font-bold mb-5">
+            <h1 className="text-5xl text-theme-blue font-bold mb-5">
               Select Your Industry
             </h1>
-            <p className="font-light text-xl text-gray-400 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="font-light text-xl text-gray-400 max-w-2xl mx-auto">
               Choose your industry to see relevant website templates designed specifically for your business type.
             </p>
           </div>
@@ -47,17 +47,17 @@ export default function TemplateSelectorPage() {
               <button
                 key={industry.id}
                 onClick={() => setSelectedIndustry(industry)}
-                className={`p-6 rounded-2xl border-2 transform transition duration-300 hover:scale-105 bg-white dark:bg-gray-800 ${
+                className={`p-6 rounded-2xl border-2 transform transition duration-300 hover:scale-105 bg-white ${
                   selectedIndustry?.id === industry.id
-                    ? "border-theme-purple dark:border-purple-400 bg-light-theme-purple dark:bg-gray-700"
-                    : "border-gray-200 dark:border-gray-600 hover:border-theme-purple dark:hover:border-purple-400"
+                    ? "border-theme-purple bg-light-theme-purple"
+                    : "border-gray-200 hover:border-theme-purple"
                 }`}
               >
                 <div className="text-5xl mb-3">{industry.icon}</div>
-                <h3 className="text-lg font-bold text-theme-blue dark:text-white mb-2">
+                <h3 className="text-lg font-bold text-theme-blue mb-2">
                   {industry.name}
                 </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">{industry.description}</p>
+                <p className="text-sm text-gray-600">{industry.description}</p>
               </button>
             ))}
           </div>
@@ -66,7 +66,7 @@ export default function TemplateSelectorPage() {
         {selectedIndustry && (
           <Fade direction="up" triggerOnce>
             <div>
-              <h2 className="text-3xl text-theme-blue dark:text-white font-bold mb-8 text-center">
+              <h2 className="text-3xl text-theme-blue font-bold mb-8 text-center">
                 Templates for {selectedIndustry.name}
               </h2>
               
@@ -79,24 +79,35 @@ export default function TemplateSelectorPage() {
                       delay={index * 100}
                       triggerOnce
                     >
-                      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-light-theme-purple dark:border-gray-700 overflow-hidden transform transition duration-500 hover:scale-105">
-                        <div className="relative h-48 bg-gray-200">
+                      <div className="bg-white rounded-2xl shadow-xl border border-light-theme-purple overflow-hidden transform transition duration-500 hover:scale-105">
+                        <div className="relative h-48 bg-gray-200 overflow-hidden">
                           {template.isNew && (
-                            <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium z-10">
                               New
                             </div>
                           )}
                           {template.isPopular && (
-                            <div className="absolute top-4 left-4 bg-theme-purple text-white px-3 py-1 rounded-full text-sm font-medium">
+                            <div className="absolute top-4 left-4 bg-theme-purple text-white px-3 py-1 rounded-full text-sm font-medium z-10">
                               Popular
                             </div>
                           )}
-                          <div className="w-full h-full flex items-center justify-center text-6xl">
+                          {template.previewImage ? (
+                            <img 
+                              src={template.previewImage} 
+                              alt={template.name}
+                              className="w-full h-full object-cover"
+                              onError={(e) => {
+                                e.target.style.display = 'none';
+                                e.target.nextSibling.style.display = 'flex';
+                              }}
+                            />
+                          ) : null}
+                          <div className={`w-full h-full flex items-center justify-center text-6xl ${template.previewImage ? 'hidden' : ''}`}>
                             {template.category.charAt(0)}
                           </div>
                         </div>
                         <div className="p-6">
-                          <h3 className="text-2xl text-theme-blue dark:text-white font-bold mb-2">
+                          <h3 className="text-2xl text-theme-blue font-bold mb-2">
                             {template.name}
                           </h3>
                           <p className="text-gray-600 mb-4">{template.description}</p>

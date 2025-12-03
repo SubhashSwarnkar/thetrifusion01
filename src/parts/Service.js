@@ -11,14 +11,14 @@ const getServiceSlug = (title) => {
 
 export default function Service({ data }) {
   return (
-    <div className="bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 py-20">
+    <div className="bg-gradient-to-b from-white to-gray-50 py-20">
       <div className="container mx-auto px-5">
         <Fade direction="up" triggerOnce>
           <div className="text-center mb-16">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl text-theme-blue dark:text-white font-bold mb-5">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl text-theme-blue font-bold mb-5">
               Our Services
             </h1>
-            <p className="font-light text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="font-light text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
               We are ready to scale up your business with our comprehensive range of services.
             </p>
           </div>
@@ -38,7 +38,7 @@ export default function Service({ data }) {
               >
                 {slug ? (
                   <Link to={`/services/${slug}`}>
-                    <div className="bg-white dark:bg-gray-800 group rounded-2xl shadow-xl border border-light-theme-purple dark:border-gray-700 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer h-full flex flex-col">
+                    <div className="bg-white group rounded-2xl shadow-xl border border-light-theme-purple overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer h-full flex flex-col">
                       <div className="relative overflow-hidden">
                         <img
                           src={item.imageUrl}
@@ -49,7 +49,7 @@ export default function Service({ data }) {
                       </div>
                       <div className="p-6 flex-1 flex flex-col">
                         <div className="flex items-center justify-between mb-3">
-                          <h2 className="text-xl sm:text-2xl text-theme-blue dark:text-white font-bold">
+                          <h2 className="text-xl sm:text-2xl text-theme-blue font-bold">
                             {item.title}
                           </h2>
                           {serviceData && (
@@ -57,7 +57,7 @@ export default function Service({ data }) {
                           )}
                         </div>
                         {serviceData && (
-                          <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-2">
+                          <p className="text-gray-600 text-sm mb-4 line-clamp-2">
                             {serviceData.shortDescription}
                           </p>
                         )}

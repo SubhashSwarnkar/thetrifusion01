@@ -43,10 +43,10 @@ export default function AboutPage() {
       <section className="container mx-auto px-5 py-20">
         <Fade direction="up" triggerOnce>
           <div className="text-center mb-16">
-            <h1 className="text-5xl text-theme-blue dark:text-white font-bold mb-5">
+            <h1 className="text-5xl text-theme-blue font-bold mb-5">
               About TheTriFusion
             </h1>
-            <p className="font-light text-xl text-gray-400 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="font-light text-xl text-gray-400 max-w-3xl mx-auto">
               Growing Your Business Is Our Calling
             </p>
           </div>
@@ -54,8 +54,8 @@ export default function AboutPage() {
 
         <Fade direction="up" triggerOnce>
           <div className="max-w-4xl mx-auto mb-16">
-            <h2 className="text-3xl text-theme-blue dark:text-white font-bold mb-6">Our Story</h2>
-            <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-4">
+            <h2 className="text-3xl text-theme-blue font-bold mb-6">Our Story</h2>
+            <p className="text-gray-700 text-lg leading-relaxed mb-4">
               TheTriFusion was founded with a vision to help businesses thrive in the digital world. 
               We combine creativity, technology, and strategic thinking to deliver solutions that make 
               a real difference.
@@ -77,10 +77,10 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-16">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl sm:text-4xl font-bold text-theme-purple dark:text-purple-400 mb-2">
+                <div className="text-3xl sm:text-4xl font-bold text-theme-purple mb-2">
                   {stat.number}
                 </div>
-                <div className="text-sm sm:text-base text-gray-600 dark:text-gray-300">{stat.label}</div>
+                <div className="text-sm sm:text-base text-gray-600">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -88,19 +88,19 @@ export default function AboutPage() {
 
         <Fade direction="up" triggerOnce>
           <div className="mb-16">
-            <h2 className="text-3xl text-theme-blue dark:text-white font-bold mb-8 text-center">
+            <h2 className="text-3xl text-theme-blue font-bold mb-8 text-center">
               Our Values
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {values.map((value, index) => (
                 <div
                   key={index}
-                  className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-5 sm:p-6 border border-light-theme-purple dark:border-gray-700 transform transition duration-300 hover:scale-105"
+                  className="bg-white rounded-xl shadow-lg p-5 sm:p-6 border border-light-theme-purple transform transition duration-300 hover:scale-105"
                 >
-                  <h3 className="text-lg sm:text-xl text-theme-blue dark:text-white font-bold mb-3">
+                  <h3 className="text-lg sm:text-xl text-theme-blue font-bold mb-3">
                     {value.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">{value.description}</p>
+                  <p className="text-sm sm:text-base text-gray-600">{value.description}</p>
                 </div>
               ))}
             </div>
@@ -109,10 +109,10 @@ export default function AboutPage() {
 
         <Fade direction="up" triggerOnce>
           <div className="text-center">
-            <h2 className="text-3xl text-theme-blue dark:text-white font-bold mb-6">
+            <h2 className="text-3xl text-theme-blue font-bold mb-6">
               Meet Our Team
             </h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-8">
+            <p className="text-gray-600 mb-8">
               We're a diverse team of talented individuals passionate about creating amazing digital experiences.
             </p>
             <Link

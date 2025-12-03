@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { Fade } from "react-awesome-reveal";
 import { Transition } from "@headlessui/react";
@@ -15,13 +15,47 @@ export default function Header() {
   const location = useLocation();
   const path = location.pathname;
 
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsCollapse(false);
+    setIsMobileToolsOpen(false);
+  }, [location.pathname]);
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isCollapse && !event.target.closest('.mobile-menu') && !event.target.closest('button[aria-label="Toggle navigation menu"]')) {
+        setIsCollapse(false);
+        setIsMobileToolsOpen(false);
+      }
+    };
+
+    if (isCollapse) {
+      document.addEventListener('click', handleClickOutside);
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isCollapse]);
+
+  const handleLinkClick = () => {
+    setIsCollapse(false);
+    setIsMobileToolsOpen(false);
+  };
+
   return (
-    <header className="header bg-white border-gray-100">
-      <div className="flex justify-between px-4 lg:px-0">
+    <header className="header bg-white border-gray-100 relative">
+      <div className="flex justify-between items-center px-4 lg:px-0 w-full">
         <BrandIcon />
 
         <button
-          className="block text-theme-blue lg:hidden focus:outline-none focus:ring-2 focus:ring-theme-purple rounded p-1"
+          className="block text-theme-blue lg:hidden focus:outline-none focus:ring-2 focus:ring-theme-purple rounded p-1 z-50"
           onClick={() => setIsCollapse(!isCollapse)}
           aria-label="Toggle navigation menu"
           aria-expanded={isCollapse}
@@ -205,23 +239,42 @@ export default function Header() {
         </Button>
       </nav>
 
+      {/* Backdrop overlay */}
       <Transition
         show={isCollapse}
-        enter="transition-opacity duration-400"
+        enter="transition-opacity duration-300"
         enterFrom="opacity-0"
         enterTo="opacity-100"
-        leave="transition-opacity duration-400"
+        leave="transition-opacity duration-200"
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >
-        <div className="transition duration-300 ease-in data-[closed]:opacity-0">
-          <nav className="z-50 flex flex-col text-theme-blue my-6 absolute bg-white w-full border-b-2 border-gray-200 lg:hidden shadow-lg">
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden"
+          onClick={() => setIsCollapse(false)}
+          aria-hidden="true"
+        />
+      </Transition>
+
+      {/* Mobile Menu */}
+      <Transition
+        show={isCollapse}
+        enter="transition ease-out duration-300"
+        enterFrom="opacity-0 -translate-y-2"
+        enterTo="opacity-100 translate-y-0"
+        leave="transition ease-in duration-200"
+        leaveFrom="opacity-100 translate-y-0"
+        leaveTo="opacity-0 -translate-y-2"
+      >
+        <div className="mobile-menu lg:hidden absolute left-0 right-0 top-full z-40 bg-white overflow-y-auto max-h-[calc(100vh-80px)] shadow-lg">
+          <nav className="flex flex-col text-theme-blue border-t-2 border-gray-200">
             <Button
               className={`${
                 path.startsWith("/blog") ? "active-link" : ""
               } font-medium px-6 py-3 text-left hover:bg-gray-50 transition-colors duration-200`}
               type="link"
               href="/blog"
+              onClick={handleLinkClick}
             >
               Blogs
             </Button>
@@ -231,6 +284,7 @@ export default function Header() {
               } font-medium px-6 py-3 text-left hover:bg-gray-50 transition-colors duration-200`}
               type="link"
               href="/"
+              onClick={handleLinkClick}
             >
               Home
             </Button>
@@ -240,6 +294,7 @@ export default function Header() {
               } font-medium px-6 py-3 text-left hover:bg-gray-50 transition-colors duration-200`}
               type="link"
               href="/services"
+              onClick={handleLinkClick}
             >
               Services
             </Button>
@@ -249,6 +304,7 @@ export default function Header() {
               } font-medium px-6 py-3 text-left hover:bg-gray-50 transition-colors duration-200`}
               type="link"
               href="/portfolio"
+              onClick={handleLinkClick}
             >
               Portfolio
             </Button>
@@ -258,6 +314,7 @@ export default function Header() {
               } font-medium px-6 py-3 text-left hover:bg-gray-50 transition-colors duration-200`}
               type="link"
               href="/pricing"
+              onClick={handleLinkClick}
             >
               Pricing
             </Button>
@@ -304,6 +361,7 @@ export default function Header() {
                   type="link"
                   href="/pricing/calculator"
                   className="block w-full text-left px-10 py-2.5 text-gray-700 hover:text-theme-purple hover:bg-gray-100 transition-colors duration-200 text-sm"
+                  onClick={handleLinkClick}
                 >
                   <span className="mr-2">💰</span>Price Calculator
                 </Button>
@@ -311,6 +369,7 @@ export default function Header() {
                   type="link"
                   href="/timeline"
                   className="block w-full text-left px-10 py-2.5 text-gray-700 hover:text-theme-purple hover:bg-gray-100 transition-colors duration-200 text-sm"
+                  onClick={handleLinkClick}
                 >
                   <span className="mr-2">⏱️</span>Timeline Calculator
                 </Button>
@@ -318,6 +377,7 @@ export default function Header() {
                   type="link"
                   href="/planner"
                   className="block w-full text-left px-10 py-2.5 text-gray-700 hover:text-theme-purple hover:bg-gray-100 transition-colors duration-200 text-sm"
+                  onClick={handleLinkClick}
                 >
                   <span className="mr-2">📋</span>Page Planner
                 </Button>
@@ -325,6 +385,7 @@ export default function Header() {
                   type="link"
                   href="/estimate"
                   className="block w-full text-left px-10 py-2.5 text-gray-700 hover:text-theme-purple hover:bg-gray-100 transition-colors duration-200 text-sm"
+                  onClick={handleLinkClick}
                 >
                   <span className="mr-2">🤖</span>AI Estimator
                 </Button>
@@ -332,6 +393,7 @@ export default function Header() {
                   type="link"
                   href="/templates/selector"
                   className="block w-full text-left px-10 py-2.5 text-gray-700 hover:text-theme-purple hover:bg-gray-100 transition-colors duration-200 text-sm"
+                  onClick={handleLinkClick}
                 >
                   <span className="mr-2">🎨</span>Template Selector
                 </Button>
@@ -343,6 +405,7 @@ export default function Header() {
               } font-medium px-6 py-3 text-left hover:bg-gray-50 transition-colors duration-200`}
               type="link"
               href="/templates"
+              onClick={handleLinkClick}
             >
               Templates
             </Button>
@@ -352,6 +415,7 @@ export default function Header() {
               } font-medium px-6 py-3 text-left hover:bg-gray-50 transition-colors duration-200`}
               type="link"
               href="/about"
+              onClick={handleLinkClick}
             >
               About
             </Button>
@@ -361,6 +425,7 @@ export default function Header() {
               } font-medium px-6 py-3 text-left hover:bg-gray-50 transition-colors duration-200`}
               type="link"
               href="/contact"
+              onClick={handleLinkClick}
             >
               Contact
             </Button>
@@ -370,6 +435,7 @@ export default function Header() {
               } font-medium px-6 py-3 text-left hover:bg-gray-50 transition-colors duration-200`}
               type="link"
               href="/team"
+              onClick={handleLinkClick}
             >
               Team
             </Button>
@@ -378,6 +444,7 @@ export default function Header() {
                 className="font-semibold w-full text-center px-6 py-3 bg-theme-purple text-white rounded-full hover:bg-dark-theme-purple transition-all duration-200 shadow-md"
                 type="link"
                 href="/contact"
+                onClick={handleLinkClick}
               >
                 Get Started
               </Button>

@@ -6,19 +6,19 @@ import BuildWebsite from "../assets/images/hero/BuildWebsite.png";
 
 export default function Hero() {
   return (
-    <section className="hero bg-gradient-to-br from-white via-gray-50 to-light-theme-purple/10 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-20">
+    <section className="hero bg-gradient-to-br from-white via-gray-50 to-light-theme-purple/10 py-20">
       <div className="container mx-auto px-5">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           <div className="w-full lg:w-1/2 text-center lg:text-left">
             <Fade direction="right" triggerOnce>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-theme-blue dark:text-white font-bold leading-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-theme-blue font-bold leading-tight mb-6">
                 Growing Your Business{" "}
-                <span className="text-theme-purple dark:text-purple-400">Is Our Calling</span>
+                <span className="text-theme-purple">Is Our Calling</span>
               </h1>
             </Fade>
 
             <Fade direction="right" delay={200} triggerOnce>
-              <p className="font-light text-lg sm:text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
+              <p className="font-light text-lg sm:text-xl text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
                 We provide expert developers & designers using the latest technologies to help
                 you scale up your business and achieve digital success.
               </p>
@@ -49,7 +49,7 @@ export default function Hero() {
                 </Button>
                 <Link
                   to="/contact"
-                  className="flex items-center justify-center px-8 py-4 text-theme-purple dark:text-purple-400 text-lg bg-white dark:bg-gray-800 border-2 border-theme-purple dark:border-purple-400 rounded-full shadow-lg hover:bg-light-theme-purple dark:hover:bg-gray-700 transition-all duration-300 hover:shadow-xl hover:scale-105"
+                  className="flex items-center justify-center px-8 py-4 text-theme-purple text-lg bg-white border-2 border-theme-purple rounded-full shadow-lg hover:bg-light-theme-purple transition-all duration-300 hover:shadow-xl hover:scale-105"
                 >
                   Get Started
                   <svg
@@ -70,7 +70,7 @@ export default function Hero() {
             </Fade>
 
             <Fade direction="right" delay={600} triggerOnce>
-              <div className="mt-12 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-gray-600 dark:text-gray-300">
+              <div className="mt-12 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-gray-600">
                 <div className="flex items-center">
                   <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -96,9 +96,9 @@ export default function Hero() {
           <div className="w-full lg:w-1/2 flex justify-center items-center order-first lg:order-last">
             <Fade direction="left" triggerOnce>
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-theme-purple/20 to-theme-blue/20 rounded-full blur-3xl transform scale-150"></div>
+                <div className="absolute inset-0 "></div>
                 <img 
-                  className="relative z-10 w-full max-w-lg transform hover:scale-105 transition-transform duration-500" 
+                  className="relative z-10 w-full max-w-lg" 
                   src={BuildWebsite} 
                   alt="Build Website" 
                 />

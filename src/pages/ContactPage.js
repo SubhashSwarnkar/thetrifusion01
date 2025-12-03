@@ -54,10 +54,10 @@ export default function ContactPage() {
       <section className="container mx-auto px-5 py-20">
         <Fade direction="up" triggerOnce>
           <div className="text-center mb-16">
-            <h1 className="text-5xl text-theme-blue dark:text-white font-bold mb-5">
+            <h1 className="text-5xl text-theme-blue font-bold mb-5">
               Get In Touch
             </h1>
-            <p className="font-light text-xl text-gray-400 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="font-light text-xl text-gray-400 max-w-2xl mx-auto">
               Have a project in mind? Let's discuss how we can help bring your vision to life.
             </p>
           </div>
@@ -66,7 +66,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
           <Fade direction="left" triggerOnce>
             <div>
-              <h2 className="text-2xl sm:text-3xl text-theme-blue dark:text-white font-bold mb-6">
+              <h2 className="text-2xl sm:text-3xl text-theme-blue font-bold mb-6">
                 Contact Information
               </h2>
               <div className="space-y-4 sm:space-y-6">
@@ -87,12 +87,12 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-theme-blue dark:text-white mb-1">
+                    <h3 className="text-lg font-bold text-theme-blue mb-1">
                       Email
                     </h3>
                     <a
                       href="mailto:TheTrifusion@gmail.com"
-                      className="text-gray-600 dark:text-gray-300 hover:text-theme-purple dark:hover:text-purple-400"
+                      className="text-gray-600 hover:text-theme-purple"
                     >
                       TheTrifusion@gmail.com
                     </a>
@@ -100,7 +100,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="w-12 h-12 bg-theme-purple dark:bg-purple-600 rounded-full flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-theme-purple rounded-full flex items-center justify-center mr-4">
                     <svg
                       className="w-6 h-6 text-white"
                       fill="none"
@@ -122,17 +122,17 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-theme-blue dark:text-white mb-1">
+                    <h3 className="text-lg font-bold text-theme-blue mb-1">
                       Location
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300">
+                    <p className="text-gray-600">
                       Bhilwara, Rajasthan, India
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="w-12 h-12 bg-theme-purple dark:bg-purple-600 rounded-full flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-theme-purple rounded-full flex items-center justify-center mr-4">
                     <svg
                       className="w-6 h-6 text-white"
                       fill="none"
@@ -148,7 +148,7 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-theme-blue dark:text-white mb-1">
+                    <h3 className="text-lg font-bold text-theme-blue mb-1">
                       Social Media
                     </h3>
                     <div className="flex space-x-4">
@@ -156,7 +156,7 @@ export default function ContactPage() {
                         href="https://www.instagram.com/thetrifusion/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-600 dark:text-gray-300 hover:text-theme-purple dark:hover:text-purple-400"
+                        className="text-gray-600 hover:text-theme-purple"
                       >
                         Instagram
                       </a>
@@ -164,7 +164,7 @@ export default function ContactPage() {
                         href="https://www.linkedin.com/company/the-trifusion/posts/?feedView=all"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-600 dark:text-gray-300 hover:text-theme-purple dark:hover:text-purple-400"
+                        className="text-gray-600 hover:text-theme-purple"
                       >
                         LinkedIn
                       </a>
@@ -190,10 +190,10 @@ export default function ContactPage() {
         <Fade direction="up" triggerOnce>
           <div className="mb-16">
             <div className="text-center mb-12">
-              <h2 className="text-4xl text-theme-blue dark:text-white font-bold mb-4">
+              <h2 className="text-4xl text-theme-blue font-bold mb-4">
                 Frequently Asked Questions
               </h2>
-              <p className="font-light text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              <p className="font-light text-lg text-gray-600 max-w-2xl mx-auto">
                 Quick answers to common questions. Need more help?{" "}
                 <Link to="/faq" className="text-theme-purple hover:underline">
                   View all FAQs
@@ -205,13 +205,13 @@ export default function ContactPage() {
               {displayedFaqs.map((faq) => (
                 <div
                   key={faq.id}
-                  className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden"
+                  className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden"
                 >
                   <button
                     onClick={() => toggleFaq(faq.id)}
-                    className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
+                    className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
                   >
-                    <h3 className="text-lg font-semibold text-theme-blue dark:text-white pr-4">
+                    <h3 className="text-lg font-semibold text-theme-blue pr-4">
                       {faq.question}
                     </h3>
                     <svg
@@ -232,7 +232,7 @@ export default function ContactPage() {
                   </button>
                   {openFaqs.includes(faq.id) && (
                     <div className="px-6 pb-4">
-                      <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                      <p className="text-gray-600 leading-relaxed">
                         {faq.answer}
                       </p>
                     </div>

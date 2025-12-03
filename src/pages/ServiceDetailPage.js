@@ -25,10 +25,10 @@ export default function ServiceDetailPage() {
         <Fade direction="up" triggerOnce>
           <div className="text-center mb-16">
             <div className="text-6xl mb-4">{service.icon}</div>
-            <h1 className="text-5xl text-theme-blue dark:text-white font-bold mb-5">
+            <h1 className="text-5xl text-theme-blue font-bold mb-5">
               {service.title}
             </h1>
-            <p className="font-light text-xl text-gray-400 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="font-light text-xl text-gray-400 max-w-3xl mx-auto">
               {service.description}
             </p>
           </div>
@@ -47,14 +47,14 @@ export default function ServiceDetailPage() {
           </Fade>
           <Fade direction="right" triggerOnce>
             <div>
-              <h2 className="text-2xl sm:text-3xl text-theme-blue dark:text-white font-bold mb-6">
+              <h2 className="text-2xl sm:text-3xl text-theme-blue font-bold mb-6">
                 Key Features
               </h2>
               <ul className="space-y-3">
                 {service.features.map((feature, index) => (
                   <li key={index} className="flex items-start">
                     <svg
-                      className="w-5 h-5 sm:w-6 sm:h-6 text-theme-purple dark:text-purple-400 mr-3 mt-1 flex-shrink-0"
+                      className="w-5 h-5 sm:w-6 sm:h-6 text-theme-purple mr-3 mt-1 flex-shrink-0"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -67,7 +67,7 @@ export default function ServiceDetailPage() {
                         d="M5 13l4 4L19 7"
                       />
                     </svg>
-                    <span className="text-gray-700 dark:text-gray-300 text-base sm:text-lg">{feature}</span>
+                    <span className="text-gray-700 text-base sm:text-lg">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -77,22 +77,22 @@ export default function ServiceDetailPage() {
 
         <Fade direction="up" triggerOnce>
           <div className="mb-16">
-            <h2 className="text-3xl text-theme-blue dark:text-white font-bold mb-8 text-center">
+            <h2 className="text-3xl text-theme-blue font-bold mb-8 text-center">
               Our Process
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {service.process.map((step, index) => (
                 <div
                   key={index}
-                  className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-5 sm:p-6 border border-light-theme-purple dark:border-gray-700 transform transition duration-300 hover:scale-105"
+                  className="bg-white rounded-xl shadow-lg p-5 sm:p-6 border border-light-theme-purple transform transition duration-300 hover:scale-105"
                 >
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-theme-purple dark:bg-purple-600 text-white rounded-full flex items-center justify-center text-lg sm:text-xl font-bold mb-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-theme-purple text-white rounded-full flex items-center justify-center text-lg sm:text-xl font-bold mb-4">
                     {step.step}
                   </div>
-                  <h3 className="text-lg sm:text-xl text-theme-blue dark:text-white font-bold mb-2">
+                  <h3 className="text-lg sm:text-xl text-theme-blue font-bold mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">{step.description}</p>
+                  <p className="text-sm sm:text-base text-gray-600">{step.description}</p>
                 </div>
               ))}
             </div>

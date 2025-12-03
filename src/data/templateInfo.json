@@ -1,0 +1,1912 @@
+{
+  "restaurant-individual-1": {
+    "name": "Restaurant",
+    "image": null,
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/1"
+  },
+  "restaurant-individual-2": {
+    "name": "Appetizer",
+    "image": "/templates-preview/Restaurant/Restaurant/2/images/bg_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/2"
+  },
+  "restaurant-individual-3": {
+    "name": "Burger King",
+    "image": "/templates-preview/Restaurant/Restaurant/3/food-website-template.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/3"
+  },
+  "restaurant-individual-4": {
+    "name": "Burger",
+    "image": "/templates-preview/Restaurant/Restaurant/4/img/banner/banner.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/4"
+  },
+  "restaurant-individual-5": {
+    "name": "Buri",
+    "image": "/templates-preview/Restaurant/Restaurant/5/img/banner_bg.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/5"
+  },
+  "restaurant-individual-6": {
+    "name": "Cake",
+    "image": "/templates-preview/Restaurant/Restaurant/6/img/hero/hero-1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/6"
+  },
+  "restaurant-individual-7": {
+    "name": "Caviar",
+    "image": "/templates-preview/Restaurant/Restaurant/7/img/bg-img/hero-1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/7"
+  },
+  "restaurant-individual-8": {
+    "name": "ChocoLux",
+    "image": "/templates-preview/Restaurant/Restaurant/8/images/about-img.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/8"
+  },
+  "restaurant-individual-9": {
+    "name": "Delicious - Food Blog Template | Home",
+    "image": "/templates-preview/Restaurant/Restaurant/9/img/bg-img/about.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/9"
+  },
+  "restaurant-individual-10": {
+    "name": "Colorlib Diner",
+    "image": "/templates-preview/Restaurant/Restaurant/10/img/about_1.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/10"
+  },
+  "restaurant-individual-11": {
+    "name": "Dingo",
+    "image": "/templates-preview/Restaurant/Restaurant/11/img/banner_bg.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/11"
+  },
+  "restaurant-individual-12": {
+    "name": "Eatery Cafe and Restaurant Template",
+    "image": "/templates-preview/Restaurant/Restaurant/12/images/about-image.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/12"
+  },
+  "restaurant-individual-13": {
+    "name": "Eatery",
+    "image": "/templates-preview/Restaurant/Restaurant/13/img/hero_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/13"
+  },
+  "restaurant-individual-14": {
+    "name": "Colorlib Template - EatWell",
+    "image": "/templates-preview/Restaurant/Restaurant/14/images/about_img_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/14"
+  },
+  "restaurant-individual-15": {
+    "name": "Feliciano -",
+    "image": "/templates-preview/Restaurant/Restaurant/15/images/about-1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/15"
+  },
+  "restaurant-individual-16": {
+    "name": "flatter",
+    "image": "/templates-preview/Restaurant/Restaurant/16/img/banner/banner-2.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/16"
+  },
+  "restaurant-individual-17": {
+    "name": "Food Bar",
+    "image": "/templates-preview/Restaurant/Restaurant/17/img/banner/banner-2.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/17"
+  },
+  "restaurant-individual-18": {
+    "name": "Foodee &mdash;",
+    "image": "/templates-preview/Restaurant/Restaurant/18/images/0103-served-plate_128.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/18"
+  },
+  "restaurant-individual-19": {
+    "name": "Food Funday Restaurant - One page HTML Responsive",
+    "image": "/templates-preview/Restaurant/Restaurant/19/images/about-main.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/19"
+  },
+  "restaurant-individual-20": {
+    "name": "Foodfun",
+    "image": "/templates-preview/Restaurant/Restaurant/20/assets/images/banner-bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/20"
+  },
+  "restaurant-individual-21": {
+    "name": "FoodEque",
+    "image": "/templates-preview/Restaurant/Restaurant/21/images/Home/banner1.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/21"
+  },
+  "restaurant-individual-22": {
+    "name": "Foodwagon |",
+    "image": "/templates-preview/Restaurant/Restaurant/22/assets/video/beach.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/22"
+  },
+  "restaurant-individual-23": {
+    "name": "Grand Coffee",
+    "image": "/templates-preview/Restaurant/Restaurant/23/images/banner-bg.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/23"
+  },
+  "restaurant-individual-24": {
+    "name": "Green Special - Restaurant Responsive HTML5 OnePage Template",
+    "image": "/templates-preview/Restaurant/Restaurant/24/images/bg.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/24"
+  },
+  "restaurant-individual-25": {
+    "name": "Gusto",
+    "image": "/templates-preview/Restaurant/Restaurant/25/img/chef.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/25"
+  },
+  "restaurant-individual-26": {
+    "name": "Kusina -",
+    "image": "/templates-preview/Restaurant/Restaurant/26/images/about.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/26"
+  },
+  "restaurant-individual-27": {
+    "name": "Mamma's Kitchen",
+    "image": "/templates-preview/Restaurant/Restaurant/27/images/Logo_main.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/27"
+  },
+  "restaurant-individual-28": {
+    "name": "Marco",
+    "image": "/templates-preview/Restaurant/Restaurant/28/img/blog/ads-banner.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/28"
+  },
+  "restaurant-individual-29": {
+    "name": "Meal &mdash;",
+    "image": "/templates-preview/Restaurant/Restaurant/29/images/bg_hero.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/29"
+  },
+  "restaurant-individual-30": {
+    "name": "MeatKing",
+    "image": "/templates-preview/Restaurant/Restaurant/30/img/chefs/1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/30"
+  },
+  "restaurant-individual-31": {
+    "name": "OsteriaX | Home",
+    "image": "/templates-preview/Restaurant/Restaurant/31/assets/img/about-us.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/31"
+  },
+  "restaurant-individual-32": {
+    "name": "Home",
+    "image": "/templates-preview/Restaurant/Restaurant/32/images/avatar-01.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/32"
+  },
+  "restaurant-individual-33": {
+    "name": "Restaurant",
+    "image": "/templates-preview/Restaurant/Restaurant/33/img/banner/banner.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/33"
+  },
+  "restaurant-individual-34": {
+    "name": "Restaurantly Bootstrap Template - Index",
+    "image": "/templates-preview/Restaurant/Restaurant/34/assets/img/hero-bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/34"
+  },
+  "restaurant-individual-35": {
+    "name": "Restaurant",
+    "image": "/templates-preview/Restaurant/Restaurant/35/images/bagel.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/35"
+  },
+  "restaurant-individual-36": {
+    "name": "Resto -",
+    "image": "/templates-preview/Restaurant/Restaurant/36/img/hero-1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/36"
+  },
+  "restaurant-individual-37": {
+    "name": "Restaurant HTML Template",
+    "image": "/templates-preview/Restaurant/Restaurant/37/img/avatar.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/37"
+  },
+  "restaurant-individual-38": {
+    "name": "SteakShop Restaurant",
+    "image": "/templates-preview/Restaurant/Restaurant/38/img/banner/banner-2.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/38"
+  },
+  "restaurant-individual-39": {
+    "name": "Taste.it -",
+    "image": "/templates-preview/Restaurant/Restaurant/39/images/about.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/39"
+  },
+  "restaurant-individual-40": {
+    "name": "Taste -",
+    "image": "/templates-preview/Restaurant/Restaurant/40/images/about_img_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/40"
+  },
+  "restaurant-individual-41": {
+    "name": "Tasty &mdash;",
+    "image": "/templates-preview/Restaurant/Restaurant/41/images/hero_1.jpeg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/41"
+  },
+  "restaurant-individual-42": {
+    "name": "The Grill by Distinctive Themes",
+    "image": "/templates-preview/Restaurant/Restaurant/42/assets/img/drag.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/42"
+  },
+  "restaurant-individual-43": {
+    "name": "The Venue",
+    "image": "/templates-preview/Restaurant/Restaurant/43/images/home.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/43"
+  },
+  "restaurant-individual-44": {
+    "name": "Touché",
+    "image": "/templates-preview/Restaurant/Restaurant/44/css/nivo-lightbox/close.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/44"
+  },
+  "restaurant-individual-45": {
+    "name": "Yavin Webpage Title",
+    "image": "/templates-preview/Restaurant/Restaurant/45/images/article-details-large.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/45"
+  },
+  "restaurant-individual-46": {
+    "name": "Yummy Blog - Food Blog Template",
+    "image": "/templates-preview/Restaurant/Restaurant/46/img/about-img/1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/46"
+  },
+  "photography-individual-1": {
+    "name": "Alime - Photography HTML Template",
+    "image": "/templates-preview/Photography/Photography/1/img/bg-img/1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/1"
+  },
+  "photography-individual-2": {
+    "name": "Bato Template",
+    "image": "/templates-preview/Photography/Photography/2/images/about.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/2"
+  },
+  "photography-individual-3": {
+    "name": "Boto | Photography HTML Template",
+    "image": "/templates-preview/Photography/Photography/3/img/blog-single/banner.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/3"
+  },
+  "photography-individual-4": {
+    "name": "Cassi | Photo Studio HTML Template",
+    "image": "/templates-preview/Photography/Photography/4/img/blog/1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/4"
+  },
+  "photography-individual-5": {
+    "name": "CleanPhotography - Photography &amp; Portfolio Template",
+    "image": "/templates-preview/Photography/Photography/5/uploads/banner-01.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/5"
+  },
+  "photography-individual-6": {
+    "name": "Theme",
+    "image": "/templates-preview/Photography/Photography/6/images/fulls/01.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/6"
+  },
+  "photography-individual-7": {
+    "name": "Clickr | Landing, Ecommerce &amp; Business Templatee",
+    "image": "/templates-preview/Photography/Photography/7/assets/video/beach.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/7"
+  },
+  "photography-individual-8": {
+    "name": "Drone Photography",
+    "image": null,
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/8"
+  },
+  "photography-individual-9": {
+    "name": "Elit Photography&mdash;",
+    "image": "/templates-preview/Photography/Photography/9/images/blog_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/9"
+  },
+  "photography-individual-10": {
+    "name": "Ethereal by HTML5 UP",
+    "image": "/templates-preview/Photography/Photography/10/images/bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/10"
+  },
+  "photography-individual-11": {
+    "name": "Halen",
+    "image": "/templates-preview/Photography/Photography/11/img/banner/banner1.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/11"
+  },
+  "photography-individual-12": {
+    "name": "Jaine - Personal Portfolio",
+    "image": "/templates-preview/Photography/Photography/12/assets/img/favicon.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/12"
+  },
+  "photography-individual-13": {
+    "name": "Louie - F b",
+    "image": "/templates-preview/Photography/Photography/13/images/author-2.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/13"
+  },
+  "photography-individual-14": {
+    "name": "Moonlight CSS Template",
+    "image": "/templates-preview/Photography/Photography/14/img/about_image.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/14"
+  },
+  "photography-individual-15": {
+    "name": "Mostudio -",
+    "image": "/templates-preview/Photography/Photography/15/images/about.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/15"
+  },
+  "photography-individual-16": {
+    "name": "Multiverse by HTML5 UP",
+    "image": "/templates-preview/Photography/Photography/16/images/fulls/01.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/16"
+  },
+  "photography-individual-17": {
+    "name": "NISSA - PHOTOGRAPHY STUDIO HTML TEMPLATE",
+    "image": "/templates-preview/Photography/Photography/17/img/about-bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/17"
+  },
+  "photography-individual-18": {
+    "name": "Photographer | HTML Template",
+    "image": "/templates-preview/Photography/Photography/18/img/about.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/18"
+  },
+  "photography-individual-19": {
+    "name": "PHOTOGRAPHER - Responsive html Bootstrap 3 based theme",
+    "image": "/templates-preview/Photography/Photography/19/img/bike_water1-1000x600.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/19"
+  },
+  "photography-individual-20": {
+    "name": "Photography",
+    "image": "/templates-preview/Photography/Photography/20/img/about-img.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/20"
+  },
+  "photography-individual-21": {
+    "name": "Photo Graphy",
+    "image": "/templates-preview/Photography/Photography/21/assets/landscape1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/21"
+  },
+  "photography-individual-22": {
+    "name": "PhotographItem-Responsive Theme",
+    "image": "/templates-preview/Photography/Photography/22/images/about_us.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/22"
+  },
+  "photography-individual-23": {
+    "name": "Photosen &mdash;",
+    "image": "/templates-preview/Photography/Photography/23/images/hero_bg_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/23"
+  },
+  "photography-individual-24": {
+    "name": "PhotoShoot - Photography &amp; Portfolio Template",
+    "image": "/templates-preview/Photography/Photography/24/uploads/banner-01.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/24"
+  },
+  "photography-individual-25": {
+    "name": "Phozogy | Template",
+    "image": "/templates-preview/Photography/Photography/25/img/hero/hero-1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/25"
+  },
+  "photography-individual-26": {
+    "name": "Proshoot Photography",
+    "image": "/templates-preview/Photography/Photography/26/img/banner/common-banner.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/26"
+  },
+  "photography-individual-27": {
+    "name": "Photography | Template",
+    "image": null,
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/27"
+  },
+  "photography-individual-28": {
+    "name": "shotgear",
+    "image": "/templates-preview/Photography/Photography/28/img/banner_bg.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/28"
+  },
+  "photography-individual-29": {
+    "name": "Snappy",
+    "image": "/templates-preview/Photography/Photography/29/images/banner.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/29"
+  },
+  "photography-individual-30": {
+    "name": "Snapshot -",
+    "image": "/templates-preview/Photography/Photography/30/images/about-2.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/30"
+  },
+  "photography-individual-31": {
+    "name": "Studio - Creative Photography Template | Home",
+    "image": "/templates-preview/Photography/Photography/31/img/bg-img/1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/31"
+  },
+  "photography-individual-32": {
+    "name": "Tulen | Photography HTML Template",
+    "image": "/templates-preview/Photography/Photography/32/img/about-bg.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/32"
+  },
+  "photography-individual-33": {
+    "name": "Uliya",
+    "image": "/templates-preview/Photography/Photography/33/images/hero-bg.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/33"
+  },
+  "agency-individual-1": {
+    "name": "Home",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/1/assets/images/mbr-1-1036x1036.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/1"
+  },
+  "agency-individual-2": {
+    "name": "Amoeba Bootstrap Template - Home",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/2/assets/img/hero-background.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/2"
+  },
+  "agency-individual-3": {
+    "name": "Applab | Landing, Corporate &amp; Business Templatee",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/3/assets/video/beach.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/3"
+  },
+  "agency-individual-4": {
+    "name": "Archs &mdash; Onepage Template by Colorlib",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/4/images/hero_bg_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/4"
+  },
+  "agency-individual-5": {
+    "name": "BBS",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/5/img/banner.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/5"
+  },
+  "agency-individual-6": {
+    "name": "Fanadesh",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/6/images/hero-bg.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/6"
+  },
+  "agency-individual-7": {
+    "name": "BizCraft - Responsive Html5 Template",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/7/images/banner/banner1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/7"
+  },
+  "agency-individual-8": {
+    "name": "BizPro || Responsive html5 template",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/8/images/blog/1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/8"
+  },
+  "agency-individual-9": {
+    "name": "Service-Company-Website",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/9/images/banner-bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/9"
+  },
+  "agency-individual-10": {
+    "name": "busicol",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/10/img/banner/about_banner.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/10"
+  },
+  "agency-individual-11": {
+    "name": "Clickr | Landing, Ecommerce &amp; Business Templatee",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/11/assets/video/beach.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/11"
+  },
+  "agency-individual-12": {
+    "name": "Nextme",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/12/img/hero.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/12"
+  },
+  "agency-individual-13": {
+    "name": "Business HTML-5 Template",
+    "image": null,
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/13"
+  },
+  "agency-individual-14": {
+    "name": "Theme",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/14/images/about-1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/14"
+  },
+  "agency-individual-15": {
+    "name": "DataWarehouse | Landing, Corporate &amp; Business Templatee",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/15/assets/video/beach.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/15"
+  },
+  "agency-individual-16": {
+    "name": "diigo",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/16/images/banner.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/16"
+  },
+  "agency-individual-17": {
+    "name": "digitalex",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/17/images/about.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/17"
+  },
+  "agency-individual-18": {
+    "name": "dizzi",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/18/img/banner_bg.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/18"
+  },
+  "agency-individual-19": {
+    "name": "DG Marketing | Home Page",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/19/assets/img/first-section-image----.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/19"
+  },
+  "agency-individual-20": {
+    "name": "Fabls HTML Template",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/20/thumbnail.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/20"
+  },
+  "agency-individual-21": {
+    "name": "Findstate",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/21/images/about.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/21"
+  },
+  "agency-individual-22": {
+    "name": "Glint",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/22/images/hero-bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/22"
+  },
+  "agency-individual-23": {
+    "name": "Grunt",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/23/images/glint_hero_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/23"
+  },
+  "agency-individual-24": {
+    "name": "Holmes Real Estate",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/24/img/banner-bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/24"
+  },
+  "agency-individual-25": {
+    "name": "Industrie",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/25/images/hero_bg_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/25"
+  },
+  "agency-individual-26": {
+    "name": "Industries",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/26/images/hero_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/26"
+  },
+  "agency-individual-27": {
+    "name": "Innova",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/27/images/hero_2.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/27"
+  },
+  "agency-individual-28": {
+    "name": "ITSolution",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/28/images/about-1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/28"
+  },
+  "agency-individual-29": {
+    "name": "Jobest | Landing, Corporate &amp; Business Templatee",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/29/assets/video/beach.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/29"
+  },
+  "agency-individual-30": {
+    "name": "Klean | Landing, Corporate &amp; Business Templatee",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/30/assets/video/beach.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/30"
+  },
+  "agency-individual-31": {
+    "name": "Kreative",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/31/images/author-img.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/31"
+  },
+  "agency-individual-32": {
+    "name": "Labs - Design Studio",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/32/img/01.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/32"
+  },
+  "agency-individual-33": {
+    "name": "labspa",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/33/images/banner.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/33"
+  },
+  "agency-individual-34": {
+    "name": "Lambda",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/34/img/client-1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/34"
+  },
+  "agency-individual-35": {
+    "name": "LaslesVPN | Landing &amp; Corporate Template",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/35/assets/video/beach.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/35"
+  },
+  "agency-individual-36": {
+    "name": "Liquor Store",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/36/images/about.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/36"
+  },
+  "agency-individual-37": {
+    "name": "Finance HTML-5 Template",
+    "image": null,
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/37"
+  },
+  "agency-individual-38": {
+    "name": "Transportation HTML-5 Template",
+    "image": null,
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/38"
+  },
+  "agency-individual-39": {
+    "name": "Marco -",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/39/images/bg_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/39"
+  },
+  "agency-individual-40": {
+    "name": "MaxiBiz Bootstrap Business Template",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/40/img/404.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/40"
+  },
+  "agency-individual-41": {
+    "name": "Neos",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/41/images/hero_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/41"
+  },
+  "agency-individual-42": {
+    "name": "NewBiz Bootstrap Template",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/42/img/clients/client-1.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/42"
+  },
+  "agency-individual-43": {
+    "name": "News HTML-5 Template",
+    "image": null,
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/43"
+  },
+  "agency-individual-44": {
+    "name": "Template Webpage Title",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/44/images/article-details-large.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/44"
+  },
+  "agency-individual-45": {
+    "name": "Onix Digital Marketing HTML5 Template",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/45/assets/images/banner-right-image.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/45"
+  },
+  "agency-individual-46": {
+    "name": "CLose Call",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/46/assets/video/beach.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/46"
+  },
+  "agency-individual-47": {
+    "name": "ostacor",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/47/images/banner-customers.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/47"
+  },
+  "agency-individual-48": {
+    "name": "Title page",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/48/assets/images/img-home.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/48"
+  },
+  "agency-individual-49": {
+    "name": "QuickCloud - Hosting Responsive HTML5 Template",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/49/images/banner.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/49"
+  },
+  "agency-individual-50": {
+    "name": "Ramayana -",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/50/assets/images/main-banner.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/50"
+  },
+  "agency-individual-51": {
+    "name": "Rapid Bootstrap Template",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/51/img/about-img.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/51"
+  },
+  "agency-individual-52": {
+    "name": "Ronald",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/52/img/banner/banner-2.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/52"
+  },
+  "agency-individual-53": {
+    "name": "SEO",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/53/SEO Doc/img/logo.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/53"
+  },
+  "agency-individual-54": {
+    "name": "Services",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/54/images/hero_bg_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/54"
+  },
+  "agency-individual-55": {
+    "name": "Soft Landing Page by Tooplate",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/55/images/home-bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/55"
+  },
+  "agency-individual-56": {
+    "name": "Softy Pinko - Bootstrap 4.0 Theme",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/56/assets/images/banner-bg.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/56"
+  },
+  "agency-individual-57": {
+    "name": "Solution -",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/57/images/banner-img.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/57"
+  },
+  "agency-individual-59": {
+    "name": "Tangre Furniture",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/59/img/banner-bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/59"
+  },
+  "agency-individual-60": {
+    "name": "Klassy Cafe - Restaurant HTML Template",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/60/assets/images/about-thumb-01.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/60"
+  },
+  "agency-individual-61": {
+    "name": "Space Dynamic - SEO HTML5 Template",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/61/assets/images/banner-right-image.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/61"
+  },
+  "agency-individual-62": {
+    "name": "SEO Dream -",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/62/assets/images/banner-dec-left.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/62"
+  },
+  "agency-individual-63": {
+    "name": "The Seo Company",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/63/images/call-to-action.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/63"
+  },
+  "agency-individual-64": {
+    "name": "The Town HTML CSS Template",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/64/img/gallery-img-01.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/64"
+  },
+  "agency-individual-65": {
+    "name": "Watch shop | eCommers",
+    "image": null,
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/65"
+  },
+  "agency-individual-66": {
+    "name": "Trafalgar | Landing, Corporate &amp; Business Templatee",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/66/assets/video/beach.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/66"
+  },
+  "agency-individual-67": {
+    "name": "traffico | Landing, Responsive &amp; Business Templatee",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/67/assets/video/beach.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/67"
+  },
+  "agency-individual-68": {
+    "name": "Free Bootstrap HTML template",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/68/assets/img/1.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/68"
+  },
+  "agency-individual-69": {
+    "name": "uBeasa &mdash;",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/69/images/diamond-03.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/69"
+  },
+  "agency-individual-70": {
+    "name": "ubutia | Home",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/70/assets/images/1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/70"
+  },
+  "agency-individual-71": {
+    "name": "Ultim8 -",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/71/images/about.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/71"
+  },
+  "agency-individual-72": {
+    "name": "Unearth",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/72/images/hero_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/72"
+  },
+  "agency-individual-73": {
+    "name": "Vortex - Startup Landing Page",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/73/assets/img/banner.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/73"
+  },
+  "agency-individual-74": {
+    "name": "Webiz Digital Agency | Bootstrap Template",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/74/images/ground@-min.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/74"
+  },
+  "agency-individual-75": {
+    "name": "WooLanding | Landing, Corporate &amp; Business Templatee",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/75/assets/video/beach.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/75"
+  },
+  "agency-individual-76": {
+    "name": "Zoufarm | Landing, Corporate &amp; Business Templatee",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/76/assets/video/beach.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/76"
+  },
+  "agency-individual-77": {
+    "name": "Eflyer",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/77/images/banner-bg.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/77"
+  },
+  "education-individual-1": {
+    "name": "Academics",
+    "image": "/templates-preview/Education/Education/1/images/hero_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/1"
+  },
+  "education-individual-3": {
+    "name": "Art Factory",
+    "image": "/templates-preview/Education/Education/3/assets/images/banner-bg.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/3"
+  },
+  "education-individual-4": {
+    "name": "Magazine News",
+    "image": null,
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/4"
+  },
+  "education-individual-5": {
+    "name": "Brighton",
+    "image": "/templates-preview/Education/Education/5/images/about-img.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/5"
+  },
+  "education-individual-6": {
+    "name": "Browse",
+    "image": "/templates-preview/Education/Education/6/images/hero_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/6"
+  },
+  "education-individual-7": {
+    "name": "Coaching",
+    "image": "/templates-preview/Education/Education/7/images/coach_hero_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/7"
+  },
+  "education-individual-8": {
+    "name": "Course",
+    "image": "/templates-preview/Education/Education/8/images/author.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/8"
+  },
+  "education-individual-9": {
+    "name": "Courses | Education",
+    "image": null,
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/9"
+  },
+  "education-individual-10": {
+    "name": "Eclipse Education",
+    "image": "/templates-preview/Education/Education/10/img/banner-bg.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/10"
+  },
+  "education-individual-11": {
+    "name": "Education",
+    "image": "/templates-preview/Education/Education/11/img/banner-bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/11"
+  },
+  "education-individual-12": {
+    "name": "Eduland &minus; Education & Courses HTML5 Template",
+    "image": "/templates-preview/Education/Education/12/images/author1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/12"
+  },
+  "education-individual-13": {
+    "name": "HTML Education Template",
+    "image": "/templates-preview/Education/Education/13/img/home-background.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/13"
+  },
+  "education-individual-14": {
+    "name": "Elearn",
+    "image": "/templates-preview/Education/Education/14/images/home_logo.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/14"
+  },
+  "education-individual-15": {
+    "name": "ProBootstrap:Enlight &mdash;",
+    "image": "/templates-preview/Education/Education/15/css/default-skin/default-skin.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/15"
+  },
+  "education-individual-16": {
+    "name": "Etrain",
+    "image": "/templates-preview/Education/Education/16/img/banner_bg.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/16"
+  },
+  "education-individual-17": {
+    "name": "Executive | Landing, Corporate &amp; Business Templatee",
+    "image": "/templates-preview/Education/Education/17/assets/video/beach.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/17"
+  },
+  "education-individual-18": {
+    "name": "Hello World",
+    "image": "/templates-preview/Education/Education/18/images/hero-bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/18"
+  },
+  "education-individual-19": {
+    "name": "Fox University -",
+    "image": "/templates-preview/Education/Education/19/images/about-2.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/19"
+  },
+  "education-individual-20": {
+    "name": "Hesed",
+    "image": "/templates-preview/Education/Education/20/images/hero-bg-3000.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/20"
+  },
+  "education-individual-21": {
+    "name": "Joson",
+    "image": "/templates-preview/Education/Education/21/images/hero-bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/21"
+  },
+  "education-individual-22": {
+    "name": "Kiddos -",
+    "image": "/templates-preview/Education/Education/22/images/bg_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/22"
+  },
+  "education-individual-23": {
+    "name": "Kiddy &mdash; b",
+    "image": "/templates-preview/Education/Education/23/images/hero_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/23"
+  },
+  "education-individual-24": {
+    "name": "Known - Education HTML Template",
+    "image": "/templates-preview/Education/Education/24/images/author-image1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/24"
+  },
+  "education-individual-25": {
+    "name": "Learn IT Education",
+    "image": "/templates-preview/Education/Education/25/img/banner/banner-2.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/25"
+  },
+  "education-individual-26": {
+    "name": "Lingua",
+    "image": "/templates-preview/Education/Education/26/images/blog_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/26"
+  },
+  "education-individual-27": {
+    "name": "DirectoryListing",
+    "image": null,
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/27"
+  },
+  "education-individual-28": {
+    "name": "little squirrel | Landing, Responsive &amp; Business Templatee",
+    "image": "/templates-preview/Education/Education/28/assets/video/beach.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/28"
+  },
+  "education-individual-29": {
+    "name": "Nikki - Blog &amp; Magazine Template",
+    "image": "/templates-preview/Education/Education/29/img/blog-img/1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/29"
+  },
+  "education-individual-30": {
+    "name": "OneSchool",
+    "image": "/templates-preview/Education/Education/30/images/hero_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/30"
+  },
+  "education-individual-31": {
+    "name": "Education | Template",
+    "image": null,
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/31"
+  },
+  "education-individual-32": {
+    "name": "Animal | Template",
+    "image": null,
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/32"
+  },
+  "education-individual-33": {
+    "name": "Pet Sitting -",
+    "image": "/templates-preview/Education/Education/33/images/about-1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/33"
+  },
+  "education-individual-34": {
+    "name": "Shahala",
+    "image": "/templates-preview/Education/Education/34/assets/images/article-banner.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/34"
+  },
+  "education-individual-35": {
+    "name": "Template",
+    "image": "/templates-preview/Education/Education/35/images/angularjs.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/35"
+  },
+  "education-individual-36": {
+    "name": "SmartEDU - Education Responsive HTML5 Template",
+    "image": "/templates-preview/Education/Education/36/images/banner.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/36"
+  },
+  "education-individual-37": {
+    "name": "StudyLab -",
+    "image": "/templates-preview/Education/Education/37/images/about-1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/37"
+  },
+  "education-individual-38": {
+    "name": "Tutor &mdash;",
+    "image": "/templates-preview/Education/Education/38/images/hero_bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/38"
+  },
+  "education-individual-39": {
+    "name": "Unicat",
+    "image": "/templates-preview/Education/Education/39/images/banner_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/39"
+  },
+  "education-individual-40": {
+    "name": "WebUni - Education Template",
+    "image": "/templates-preview/Education/Education/40/img/add.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/40"
+  },
+  "education-individual-41": {
+    "name": "Education",
+    "image": "/templates-preview/Education/Education/41/img/banner/banner.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/41"
+  },
+  "fashion-designer-individual-1": {
+    "name": "Hazze | Template",
+    "image": "/templates-preview/Fashion-designer/Fashion-designer/1/img/hero-bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Fashion-designer/Fashion-designer/1"
+  },
+  "fashion-designer-individual-2": {
+    "name": "INSTYLR | Fashion HTML Template",
+    "image": "/templates-preview/Fashion-designer/Fashion-designer/2/img/about-img.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Fashion-designer/Fashion-designer/2"
+  },
+  "fashion-designer-individual-3": {
+    "name": "Look -",
+    "image": "/templates-preview/Fashion-designer/Fashion-designer/3/images/bg_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Fashion-designer/Fashion-designer/3"
+  },
+  "fashion-designer-individual-4": {
+    "name": "Stylistic -",
+    "image": "/templates-preview/Fashion-designer/Fashion-designer/4/images/bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Fashion-designer/Fashion-designer/4"
+  },
+  "law-firm-individual-1": {
+    "name": "Adalot",
+    "image": "/templates-preview/Law-firm/Law-firm/1/img/banner/banner.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Law-firm/Law-firm/1"
+  },
+  "law-firm-individual-2": {
+    "name": "ariclaw",
+    "image": "/templates-preview/Law-firm/Law-firm/2/img/banner_bg.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Law-firm/Law-firm/2"
+  },
+  "law-firm-individual-3": {
+    "name": "Foste",
+    "image": "/templates-preview/Law-firm/Law-firm/3/images/banner-bg.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Law-firm/Law-firm/3"
+  },
+  "law-firm-individual-4": {
+    "name": "Judge",
+    "image": "/templates-preview/Law-firm/Law-firm/4/images/about.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Law-firm/Law-firm/4"
+  },
+  "law-firm-individual-5": {
+    "name": "Judicial &mdash;",
+    "image": "/templates-preview/Law-firm/Law-firm/5/images/hero_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Law-firm/Law-firm/5"
+  },
+  "law-firm-individual-6": {
+    "name": "Justice &mdash;",
+    "image": "/templates-preview/Law-firm/Law-firm/6/images/img_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Law-firm/Law-firm/6"
+  },
+  "law-firm-individual-7": {
+    "name": "Lawyer HTML-5 Template",
+    "image": "/templates-preview/Law-firm/Law-firm/7/Lawyer Doc/img/logo.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Law-firm/Law-firm/7"
+  },
+  "law-firm-individual-8": {
+    "name": "Kanun - Law Firm Website Template",
+    "image": "/templates-preview/Law-firm/Law-firm/8/img/about.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Law-firm/Law-firm/8"
+  },
+  "law-firm-individual-9": {
+    "name": "Lawfirm Template",
+    "image": "/templates-preview/Law-firm/Law-firm/9/images/blog-1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Law-firm/Law-firm/9"
+  },
+  "law-firm-individual-10": {
+    "name": "Law Firm -",
+    "image": "/templates-preview/Law-firm/Law-firm/10/images/about-1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Law-firm/Law-firm/10"
+  },
+  "law-firm-individual-11": {
+    "name": "LAWFUL LAWFIRM",
+    "image": "/templates-preview/Law-firm/Law-firm/11/img/banner/banner-2.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Law-firm/Law-firm/11"
+  },
+  "law-firm-individual-12": {
+    "name": "Lawmaker &mdash;",
+    "image": "/templates-preview/Law-firm/Law-firm/12/images/hero_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Law-firm/Law-firm/12"
+  },
+  "law-firm-individual-13": {
+    "name": "Law &mdash;",
+    "image": "/templates-preview/Law-firm/Law-firm/13/assets/images/1900x1200_img_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Law-firm/Law-firm/13"
+  },
+  "law-firm-individual-14": {
+    "name": "Lawyer",
+    "image": "/templates-preview/Law-firm/Law-firm/14/img/banner/banner.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Law-firm/Law-firm/14"
+  },
+  "law-firm-individual-15": {
+    "name": "Legalcare -",
+    "image": "/templates-preview/Law-firm/Law-firm/15/images/about.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Law-firm/Law-firm/15"
+  },
+  "law-firm-individual-16": {
+    "name": "Notary &mdash;",
+    "image": "/templates-preview/Law-firm/Law-firm/16/images/hero_bg_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Law-firm/Law-firm/16"
+  },
+  "law-firm-individual-17": {
+    "name": "Star Law Firm",
+    "image": "/templates-preview/Law-firm/Law-firm/17/assets/images/about-banner-img.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Law-firm/Law-firm/17"
+  },
+  "law-firm-individual-18": {
+    "name": "Texas Lawers",
+    "image": "/templates-preview/Law-firm/Law-firm/18/assets/images/logo-main.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Law-firm/Law-firm/18"
+  },
+  "law-firm-individual-19": {
+    "name": "Lawyer HTML-5 Template",
+    "image": null,
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Law-firm/Law-firm/19"
+  },
+  "medical-doctor-individual-1": {
+    "name": "Acupuncture &mdash;",
+    "image": "/templates-preview/Medical-Doctor/Medical-Doctor/1/images/hero_bg_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/1"
+  },
+  "medical-doctor-individual-2": {
+    "name": "Aesthetic | Template",
+    "image": "/templates-preview/Medical-Doctor/Medical-Doctor/2/img/hero-bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/2"
+  },
+  "medical-doctor-individual-3": {
+    "name": "CareMed",
+    "image": "/templates-preview/Medical-Doctor/Medical-Doctor/3/images/home_background_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/3"
+  },
+  "medical-doctor-individual-4": {
+    "name": "Chiropractic -",
+    "image": "/templates-preview/Medical-Doctor/Medical-Doctor/4/images/about.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/4"
+  },
+  "medical-doctor-individual-5": {
+    "name": "Convid",
+    "image": "/templates-preview/Medical-Doctor/Medical-Doctor/5/images/banner-bg.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/5"
+  },
+  "medical-doctor-individual-6": {
+    "name": "Covido",
+    "image": "/templates-preview/Medical-Doctor/Medical-Doctor/6/images/banner.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/6"
+  },
+  "medical-doctor-individual-7": {
+    "name": "DentaCare -",
+    "image": "/templates-preview/Medical-Doctor/Medical-Doctor/7/images/about-2.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/7"
+  },
+  "medical-doctor-individual-8": {
+    "name": "DentalPro",
+    "image": "/templates-preview/Medical-Doctor/Medical-Doctor/8/images/cover-bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/8"
+  },
+  "medical-doctor-individual-9": {
+    "name": "Dente &mdash;",
+    "image": "/templates-preview/Medical-Doctor/Medical-Doctor/9/images/hero_bg_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/9"
+  },
+  "medical-doctor-individual-10": {
+    "name": "Denstista -",
+    "image": "/templates-preview/Medical-Doctor/Medical-Doctor/10/images/about.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/10"
+  },
+  "medical-doctor-individual-11": {
+    "name": "Docmed",
+    "image": "/templates-preview/Medical-Doctor/Medical-Doctor/11/img/banner/about_banner.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/11"
+  },
+  "medical-doctor-individual-12": {
+    "name": "Dr.care -",
+    "image": "/templates-preview/Medical-Doctor/Medical-Doctor/12/images/about.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/12"
+  },
+  "medical-doctor-individual-13": {
+    "name": "Dr PRO",
+    "image": "/templates-preview/Medical-Doctor/Medical-Doctor/13/images/home_overlay.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/13"
+  },
+  "medical-doctor-individual-14": {
+    "name": "Health - Medical Website Template",
+    "image": "/templates-preview/Medical-Doctor/Medical-Doctor/14/images/about-bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/14"
+  },
+  "medical-doctor-individual-15": {
+    "name": "Life Care - Responsive HTML5 Multi Page Template",
+    "image": "/templates-preview/Medical-Doctor/Medical-Doctor/15/images/banner2.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/15"
+  },
+  "medical-doctor-individual-16": {
+    "name": "Medcare Medical",
+    "image": "/templates-preview/Medical-Doctor/Medical-Doctor/16/img/banner/banner-2.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/16"
+  },
+  "medical-doctor-individual-17": {
+    "name": "Medical HTML-5 Template",
+    "image": null,
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/17"
+  },
+  "medical-doctor-individual-18": {
+    "name": "Medic Care",
+    "image": "/templates-preview/Medical-Doctor/Medical-Doctor/18/images/gallery/female-doctor-with-presenting-hand-gesture.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/18"
+  },
+  "medical-doctor-individual-19": {
+    "name": "medical",
+    "image": "/templates-preview/Medical-Doctor/Medical-Doctor/19/img/banner_bg.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/19"
+  },
+  "medical-doctor-individual-20": {
+    "name": "Medi",
+    "image": "/templates-preview/Medical-Doctor/Medical-Doctor/20/img/banner/banner.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/20"
+  },
+  "medical-doctor-individual-21": {
+    "name": "Medino",
+    "image": "/templates-preview/Medical-Doctor/Medical-Doctor/21/assets/images/banner-bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/21"
+  },
+  "medical-doctor-individual-22": {
+    "name": "Mediplus -",
+    "image": "/templates-preview/Medical-Doctor/Medical-Doctor/22/images/about.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/22"
+  },
+  "medical-doctor-individual-23": {
+    "name": "Medilife - Health &amp; Medical Template | Home",
+    "image": "/templates-preview/Medical-Doctor/Medical-Doctor/23/img/bg-img/hero1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/23"
+  },
+  "medical-doctor-individual-24": {
+    "name": "Novena- Health & Care Medical template",
+    "image": "/templates-preview/Medical-Doctor/Medical-Doctor/24/images/bg/banner.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/24"
+  },
+  "medical-doctor-individual-25": {
+    "name": "Pharma &mdash;",
+    "image": "/templates-preview/Medical-Doctor/Medical-Doctor/25/images/hero_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/25"
+  },
+  "medical-doctor-individual-26": {
+    "name": "Pharmative &mdash;",
+    "image": "/templates-preview/Medical-Doctor/Medical-Doctor/26/images/hero_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/26"
+  },
+  "medical-doctor-individual-27": {
+    "name": "Physical Theraphy &mdash;",
+    "image": "/templates-preview/Medical-Doctor/Medical-Doctor/27/images/hero_bg_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/27"
+  },
+  "music-concert-individual-1": {
+    "name": "DJoz | Template",
+    "image": "/templates-preview/Music-Concert/Music-Concert/1/img/hero-bg.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Music-Concert/Music-Concert/1"
+  },
+  "music-concert-individual-2": {
+    "name": "EventCon",
+    "image": "/templates-preview/Music-Concert/Music-Concert/2/img/banner/banner.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Music-Concert/Music-Concert/2"
+  },
+  "music-concert-individual-3": {
+    "name": "Event - Landing Page",
+    "image": "/templates-preview/Music-Concert/Music-Concert/3/images/bg.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Music-Concert/Music-Concert/3"
+  },
+  "music-concert-individual-4": {
+    "name": "Insertion HTML5 Template",
+    "image": "/templates-preview/Music-Concert/Music-Concert/4/img/gradient-blue.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Music-Concert/Music-Concert/4"
+  },
+  "music-concert-individual-5": {
+    "name": "Mixtape",
+    "image": "/templates-preview/Music-Concert/Music-Concert/5/images/about.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Music-Concert/Music-Concert/5"
+  },
+  "music-concert-individual-6": {
+    "name": "Music",
+    "image": "/templates-preview/Music-Concert/Music-Concert/6/img/20_01_Home.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Music-Concert/Music-Concert/6"
+  },
+  "music-concert-individual-7": {
+    "name": "Musico",
+    "image": "/templates-preview/Music-Concert/Music-Concert/7/img/banner/about_banner.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Music-Concert/Music-Concert/7"
+  },
+  "music-concert-individual-8": {
+    "name": "One Music - Modern Music HTML5 Template",
+    "image": "/templates-preview/Music-Concert/Music-Concert/8/img/bg-img/a1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Music-Concert/Music-Concert/8"
+  },
+  "music-concert-individual-9": {
+    "name": "Podcast &mdash;",
+    "image": "/templates-preview/Music-Concert/Music-Concert/9/images/hero_bg_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Music-Concert/Music-Concert/9"
+  },
+  "music-concert-individual-10": {
+    "name": "SolMusic | HTML Template",
+    "image": "/templates-preview/Music-Concert/Music-Concert/10/img/hero-bg.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Music-Concert/Music-Concert/10"
+  },
+  "ngo-individual-1": {
+    "name": "Charifit",
+    "image": "/templates-preview/NGo/NGo/1/img/banner/banner.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/NGo/NGo/1"
+  },
+  "ngo-individual-2": {
+    "name": "Charity | Teamplate",
+    "image": null,
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/NGo/NGo/2"
+  },
+  "ngo-individual-3": {
+    "name": "Doni Charity",
+    "image": "/templates-preview/NGo/NGo/3/images/banner-bg.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/NGo/NGo/3"
+  },
+  "ngo-individual-4": {
+    "name": "Environmental",
+    "image": null,
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/NGo/NGo/4"
+  },
+  "ngo-individual-5": {
+    "name": "Foundation &mdash;",
+    "image": "/templates-preview/NGo/NGo/5/images/hero_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/NGo/NGo/5"
+  },
+  "ngo-individual-6": {
+    "name": "Fundraiser &mdash;",
+    "image": "/templates-preview/NGo/NGo/6/images/hero_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/NGo/NGo/6"
+  },
+  "ngo-individual-7": {
+    "name": "TheGazette - News Magazine HTML5 Template | Home",
+    "image": "/templates-preview/NGo/NGo/7/img/bg-img/1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/NGo/NGo/7"
+  },
+  "ngo-individual-8": {
+    "name": "GiveHope &mdash;",
+    "image": "/templates-preview/NGo/NGo/8/images/bg_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/NGo/NGo/8"
+  },
+  "ngo-individual-9": {
+    "name": "Notes",
+    "image": "/templates-preview/NGo/NGo/9/images/about/1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/NGo/NGo/9"
+  },
+  "ngo-individual-10": {
+    "name": "Unicare -",
+    "image": "/templates-preview/NGo/NGo/10/images/about-3.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/NGo/NGo/10"
+  },
+  "ngo-individual-11": {
+    "name": "Welfare -",
+    "image": "/templates-preview/NGo/NGo/11/images/bg_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/NGo/NGo/11"
+  },
+  "pet-individual-1": {
+    "name": "Animal",
+    "image": "/templates-preview/Pet/Pet/1/img/banner/banner.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Pet/Pet/1"
+  },
+  "pet-individual-2": {
+    "name": "Environmental",
+    "image": null,
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Pet/Pet/2"
+  },
+  "pet-individual-3": {
+    "name": "Animal | Template",
+    "image": null,
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Pet/Pet/3"
+  },
+  "pet-individual-4": {
+    "name": "Pet Sitting -",
+    "image": "/templates-preview/Pet/Pet/4/images/about-1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Pet/Pet/4"
+  },
+  "real-estate-individual-1": {
+    "name": "Aler",
+    "image": "/templates-preview/RReal-estate/RReal-estate/1/img/hero/hero-1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/1"
+  },
+  "real-estate-individual-2": {
+    "name": "Apart",
+    "image": "/templates-preview/RReal-estate/RReal-estate/2/images/hero_bg_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/2"
+  },
+  "real-estate-individual-3": {
+    "name": "Arclabs Architecture",
+    "image": "/templates-preview/RReal-estate/RReal-estate/3/img/blog/ads-banner.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/3"
+  },
+  "real-estate-individual-4": {
+    "name": "Agency - Home",
+    "image": "/templates-preview/RReal-estate/RReal-estate/4/assets/img/main_logo.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/4"
+  },
+  "real-estate-individual-5": {
+    "name": "Bell",
+    "image": "/templates-preview/RReal-estate/RReal-estate/5/img/cover.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/5"
+  },
+  "real-estate-individual-6": {
+    "name": "Plywood",
+    "image": "/templates-preview/RReal-estate/RReal-estate/6/image/arrow.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/6"
+  },
+  "real-estate-individual-7": {
+    "name": "Ecoverde",
+    "image": "/templates-preview/RReal-estate/RReal-estate/7/images/about-2.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/7"
+  },
+  "real-estate-individual-8": {
+    "name": "EstateAgency",
+    "image": "/templates-preview/RReal-estate/RReal-estate/8/img/about-1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/8"
+  },
+  "real-estate-individual-9": {
+    "name": "Findstate",
+    "image": "/templates-preview/RReal-estate/RReal-estate/9/images/about.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/9"
+  },
+  "real-estate-individual-10": {
+    "name": "GARO ESTATE | Home page",
+    "image": "/templates-preview/RReal-estate/RReal-estate/10/assets/img/ads.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/10"
+  },
+  "real-estate-individual-11": {
+    "name": "Template",
+    "image": "/templates-preview/RReal-estate/RReal-estate/11/images/img_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/11"
+  },
+  "real-estate-individual-12": {
+    "name": "Holmes Real Estate",
+    "image": "/templates-preview/RReal-estate/RReal-estate/12/img/banner-bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/12"
+  },
+  "real-estate-individual-13": {
+    "name": "Homeland",
+    "image": "/templates-preview/RReal-estate/RReal-estate/13/images/hero_bg_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/13"
+  },
+  "real-estate-individual-14": {
+    "name": "Hus",
+    "image": "/templates-preview/RReal-estate/RReal-estate/14/img/banner/banner.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/14"
+  },
+  "real-estate-individual-15": {
+    "name": "Directory Landing Page",
+    "image": "/templates-preview/RReal-estate/RReal-estate/15/assets/img/controls.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/15"
+  },
+  "real-estate-individual-16": {
+    "name": "Mondy",
+    "image": "/templates-preview/RReal-estate/RReal-estate/16/img/hero-bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/16"
+  },
+  "real-estate-individual-17": {
+    "name": "Oneder",
+    "image": "/templates-preview/RReal-estate/RReal-estate/17/images/hero_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/17"
+  },
+  "real-estate-individual-18": {
+    "name": "Pivot",
+    "image": "/templates-preview/RReal-estate/RReal-estate/18/img/person_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/18"
+  },
+  "real-estate-individual-19": {
+    "name": "Real Estate",
+    "image": "/templates-preview/RReal-estate/RReal-estate/19/assets/images/desktop-hero.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/19"
+  },
+  "real-estate-individual-20": {
+    "name": "Realtors",
+    "image": "/templates-preview/RReal-estate/RReal-estate/20/images/hero_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/20"
+  },
+  "real-estate-individual-21": {
+    "name": "rhino",
+    "image": "/templates-preview/RReal-estate/RReal-estate/21/images/banner2.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/21"
+  },
+  "real-estate-individual-22": {
+    "name": "Roofing",
+    "image": "/templates-preview/RReal-estate/RReal-estate/22/images/about.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/22"
+  },
+  "real-estate-individual-23": {
+    "name": "Royal Estate",
+    "image": "/templates-preview/RReal-estate/RReal-estate/23/images/about.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/23"
+  },
+  "real-estate-individual-24": {
+    "name": "RReal-estate Template #24",
+    "image": "/templates-preview/RReal-estate/RReal-estate/24/screenshot.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/24"
+  },
+  "real-estate-individual-25": {
+    "name": "Home",
+    "image": "/templates-preview/RReal-estate/RReal-estate/25/img/bg-img/hero1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/25"
+  },
+  "real-estate-individual-26": {
+    "name": "Stayhome",
+    "image": "/templates-preview/RReal-estate/RReal-estate/26/images/about.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/26"
+  },
+  "real-estate-individual-27": {
+    "name": "Teaser",
+    "image": "/templates-preview/RReal-estate/RReal-estate/27/images/hero-bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/27"
+  },
+  "real-estate-individual-28": {
+    "name": "The Town",
+    "image": "/templates-preview/RReal-estate/RReal-estate/28/img/gallery-img-01.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/28"
+  },
+  "real-estate-individual-29": {
+    "name": "Uptown",
+    "image": "/templates-preview/RReal-estate/RReal-estate/29/images/about.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/29"
+  },
+  "real-estate-individual-30": {
+    "name": "Warehouse",
+    "image": "/templates-preview/RReal-estate/RReal-estate/30/images/hero_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/30"
+  },
+  "real-estate-individual-31": {
+    "name": "Car Rent",
+    "image": "/templates-preview/RReal-estate/RReal-estate/31/images/hero_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/31"
+  },
+  "tour-travels-individual-1": {
+    "name": "Adventure",
+    "image": "/templates-preview/Tour Travels/Tour Travels/1/img/about-img.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Tour Travels/Tour Travels/1"
+  },
+  "tour-travels-individual-2": {
+    "name": "129 Beyond Travel Agency",
+    "image": "/templates-preview/Tour Travels/Tour Travels/2/img/banner/banner-img.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Tour Travels/Tour Travels/2"
+  },
+  "tour-travels-individual-3": {
+    "name": "Character Responsive HTML5 Template",
+    "image": "/templates-preview/Tour Travels/Tour Travels/3/img/image-01.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Tour Travels/Tour Travels/3"
+  },
+  "tour-travels-individual-4": {
+    "name": "Clickaholic",
+    "image": "/templates-preview/Tour Travels/Tour Travels/4/images/banner-image-1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Tour Travels/Tour Travels/4"
+  },
+  "tour-travels-individual-5": {
+    "name": "DirEngine -",
+    "image": "/templates-preview/Tour Travels/Tour Travels/5/images/about.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Tour Travels/Tour Travels/5"
+  },
+  "tour-travels-individual-6": {
+    "name": "Ecoland -",
+    "image": "/templates-preview/Tour Travels/Tour Travels/6/images/about.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Tour Travels/Tour Travels/6"
+  },
+  "tour-travels-individual-7": {
+    "name": "Travel HTML-5 Template",
+    "image": "/templates-preview/Tour Travels/Tour Travels/7/Travel Doc/img/logo.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Tour Travels/Tour Travels/7"
+  },
+  "tour-travels-individual-8": {
+    "name": "Harborlights -",
+    "image": "/templates-preview/Tour Travels/Tour Travels/8/images/about-1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Tour Travels/Tour Travels/8"
+  },
+  "tour-travels-individual-9": {
+    "name": "Hiroto | Template",
+    "image": "/templates-preview/Tour Travels/Tour Travels/9/img/hero.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Tour Travels/Tour Travels/9"
+  },
+  "tour-travels-individual-10": {
+    "name": "Montana",
+    "image": "/templates-preview/Tour Travels/Tour Travels/10/img/banner/about_banner.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Tour Travels/Tour Travels/10"
+  },
+  "tour-travels-individual-11": {
+    "name": "Places &mdash;",
+    "image": "/templates-preview/Tour Travels/Tour Travels/11/assets/images/bg_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Tour Travels/Tour Travels/11"
+  },
+  "tour-travels-individual-12": {
+    "name": "Safario Travel - Home",
+    "image": "/templates-preview/Tour Travels/Tour Travels/12/img/banner/banner.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Tour Travels/Tour Travels/12"
+  },
+  "tour-travels-individual-13": {
+    "name": "Sona | Template",
+    "image": "/templates-preview/Tour Travels/Tour Travels/13/img/hero/hero-1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Tour Travels/Tour Travels/13"
+  },
+  "tour-travels-individual-14": {
+    "name": "Stayhom",
+    "image": "/templates-preview/Tour Travels/Tour Travels/14/images/about.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Tour Travels/Tour Travels/14"
+  },
+  "tour-travels-individual-15": {
+    "name": "travel",
+    "image": "/templates-preview/Tour Travels/Tour Travels/15/img/banner_bg.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Tour Travels/Tour Travels/15"
+  },
+  "tour-travels-individual-16": {
+    "name": "Travel",
+    "image": "/templates-preview/Tour Travels/Tour Travels/16/assets/logo/favicon.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Tour Travels/Tour Travels/16"
+  },
+  "tour-travels-individual-17": {
+    "name": "Traveler",
+    "image": "/templates-preview/Tour Travels/Tour Travels/17/images/img_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Tour Travels/Tour Travels/17"
+  },
+  "tour-travels-individual-18": {
+    "name": "Travalers &mdash;",
+    "image": "/templates-preview/Tour Travels/Tour Travels/18/images/hero_bg_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Tour Travels/Tour Travels/18"
+  },
+  "tour-travels-individual-19": {
+    "name": "Travel",
+    "image": "/templates-preview/Tour Travels/Tour Travels/19/img/blog/ads-banner.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Tour Travels/Tour Travels/19"
+  },
+  "tour-travels-individual-20": {
+    "name": "Travelix",
+    "image": "/templates-preview/Tour Travels/Tour Travels/20/images/home_slider.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Tour Travels/Tour Travels/20"
+  },
+  "tour-travels-individual-21": {
+    "name": "Trave",
+    "image": "/templates-preview/Tour Travels/Tour Travels/21/assets/logo/favicon.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Tour Travels/Tour Travels/21"
+  },
+  "tour-travels-individual-22": {
+    "name": "TripBiz",
+    "image": "/templates-preview/Tour Travels/Tour Travels/22/images/hero-bg.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Tour Travels/Tour Travels/22"
+  },
+  "tour-travels-individual-23": {
+    "name": "Trips &mdash;",
+    "image": "/templates-preview/Tour Travels/Tour Travels/23/images/hero_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Tour Travels/Tour Travels/23"
+  },
+  "tour-travels-individual-24": {
+    "name": "Triship",
+    "image": "/templates-preview/Tour Travels/Tour Travels/24/images/about-bg.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Tour Travels/Tour Travels/24"
+  },
+  "tour-travels-individual-25": {
+    "name": "voyage | Landing, Corporate &amp; Business Templatee",
+    "image": "/templates-preview/Tour Travels/Tour Travels/25/assets/video/beach.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Tour Travels/Tour Travels/25"
+  },
+  "webapp-app-individual-1": {
+    "name": "Apex App : Home",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/1/assets/images/download-bg.jpeg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/1"
+  },
+  "webapp-app-individual-2": {
+    "name": "Applab | Landing, Corporate &amp; Business Templatee",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/2/assets/video/beach.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/2"
+  },
+  "webapp-app-individual-3": {
+    "name": "AppLab",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/3/img/banner/banner.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/3"
+  },
+  "webapp-app-individual-4": {
+    "name": "Appley -",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/4/img/banner.jpeg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/4"
+  },
+  "webapp-app-individual-5": {
+    "name": "App landing | Template",
+    "image": null,
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/5"
+  },
+  "webapp-app-individual-6": {
+    "name": "APP Plus:",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/6/images/download_bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/6"
+  },
+  "webapp-app-individual-7": {
+    "name": "App &mdash;",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/7/img/banner-bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/7"
+  },
+  "webapp-app-individual-8": {
+    "name": "Approach &mdash; b",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/8/images/hero_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/8"
+  },
+  "webapp-app-individual-9": {
+    "name": "Appru",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/9/img/banner-2.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/9"
+  },
+  "webapp-app-individual-10": {
+    "name": "Awesome",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/10/assets/img/blue.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/10"
+  },
+  "webapp-app-individual-11": {
+    "name": "Beam - Free Bootstrap Template",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/11/imgs/hero-bubble.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/11"
+  },
+  "webapp-app-individual-12": {
+    "name": "Dazzle",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/12/images/hero-bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/12"
+  },
+  "webapp-app-individual-13": {
+    "name": "Weather App Landing page",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/13/assets/images/homebg.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/13"
+  },
+  "webapp-app-individual-14": {
+    "name": "Kairos",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/14/images/hero-app-screens-1600.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/14"
+  },
+  "webapp-app-individual-15": {
+    "name": "Lifetrakr",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/15/images/app-screenshot/app-screenshot-four.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/15"
+  },
+  "webapp-app-individual-16": {
+    "name": "L U C Y",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/16/css/nivo-lightbox/close.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/16"
+  },
+  "webapp-app-individual-17": {
+    "name": "Mind Craft",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/17/assets/icon/Dedicated support.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/17"
+  },
+  "webapp-app-individual-18": {
+    "name": "MobApp - App Landing Page Template",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/18/images/client.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/18"
+  },
+  "webapp-app-individual-19": {
+    "name": "Mobiapp -",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/19/device-mockups/iphone_6_plus/iphone_6_plus_black_land.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/19"
+  },
+  "webapp-app-individual-20": {
+    "name": "New Age -",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/20/assets/img/portrait_black.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/20"
+  },
+  "webapp-app-individual-21": {
+    "name": "Nexus SaaS",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/21/img/banner/banner-2.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/21"
+  },
+  "webapp-app-individual-22": {
+    "name": "P O L O - Showcase Your App",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/22/assets/img/screenshot-1.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/22"
+  },
+  "webapp-app-individual-23": {
+    "name": "potoub",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/23/images/banner.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/23"
+  },
+  "webapp-app-individual-24": {
+    "name": "ProApp - Responsive Landing Page HTML5 Template",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/24/uploads/screenshot_01.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/24"
+  },
+  "webapp-app-individual-25": {
+    "name": "Rain",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/25/img/apple.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/25"
+  },
+  "webapp-app-individual-26": {
+    "name": "New Template —",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/26/assets/img/appstore.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/26"
+  },
+  "webapp-app-individual-27": {
+    "name": "New Template — Slides 4.0.5 Template Generator",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/27/assets/img/appstore.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/27"
+  },
+  "webapp-app-individual-28": {
+    "name": "Small Apps | Bootstrap App Landing Template",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/28/screenshots/homepage-2.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/28"
+  },
+  "webapp-app-individual-29": {
+    "name": "SoftLand Bootstrap Template",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/29/img/hero-bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/29"
+  },
+  "webapp-app-individual-31": {
+    "name": "WebApp &mdash;",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/31/images/img_2.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/31"
+  },
+  "yoga-individual-1": {
+    "name": "Meditative -",
+    "image": "/templates-preview/Yoga/Yoga/1/images/bg_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Yoga/Yoga/1"
+  },
+  "yoga-individual-2": {
+    "name": "Physical Theraphy &mdash;",
+    "image": "/templates-preview/Yoga/Yoga/2/images/hero_bg_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Yoga/Yoga/2"
+  },
+  "yoga-individual-3": {
+    "name": "Pilates",
+    "image": "/templates-preview/Yoga/Yoga/3/img/content-left.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Yoga/Yoga/3"
+  },
+  "yoga-individual-4": {
+    "name": "Yoga",
+    "image": "/templates-preview/Yoga/Yoga/4/img/advanced-yoga-poses.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Yoga/Yoga/4"
+  },
+  "yoga-individual-5": {
+    "name": "Yogaflex",
+    "image": "/templates-preview/Yoga/Yoga/5/img/banner-bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Yoga/Yoga/5"
+  },
+  "yoga-individual-6": {
+    "name": "Yogalax -",
+    "image": "/templates-preview/Yoga/Yoga/6/images/bg_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Yoga/Yoga/6"
+  },
+  "yoga-individual-7": {
+    "name": "Zogin | Template",
+    "image": "/templates-preview/Yoga/Yoga/7/img/hero/hero-1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Yoga/Yoga/7"
+  },
+  "e-book-individual-1": {
+    "name": "Amazon eBook",
+    "image": "/templates-preview/e-book/e-book/1/images/blogger.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/e-book/e-book/1"
+  },
+  "e-book-individual-2": {
+    "name": "Booke Colorlib Template",
+    "image": "/templates-preview/e-book/e-book/2/images/glint_hero_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/e-book/e-book/2"
+  },
+  "e-book-individual-3": {
+    "name": "Book",
+    "image": "/templates-preview/e-book/e-book/3/img/about-img.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/e-book/e-book/3"
+  },
+  "e-book-individual-4": {
+    "name": "Kindle : Home",
+    "image": "/templates-preview/e-book/e-book/4/assets/images/author-signature.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/e-book/e-book/4"
+  },
+  "restaurant-template-full": {
+    "name": "Restaurant Template Collection",
+    "image": null,
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Restaurant/Restaurant/1"
+  },
+  "photography-template-full": {
+    "name": "Photography Template Collection",
+    "image": "/templates-preview/Photography/Photography/1/img/bg-img/1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Photography/Photography/1"
+  },
+  "agency-template-full": {
+    "name": "Digital_Agency Template Collection",
+    "image": "/templates-preview/Digital_Agency/Digital_Agency/1/assets/images/mbr-1-1036x1036.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Digital_Agency/Digital_Agency/1"
+  },
+  "education-template-full": {
+    "name": "Education Template Collection",
+    "image": "/templates-preview/Education/Education/1/images/hero_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Education/Education/1"
+  },
+  "fashion-designer-template-full": {
+    "name": "Fashion-designer Template Collection",
+    "image": "/templates-preview/Fashion-designer/Fashion-designer/1/img/hero-bg.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Fashion-designer/Fashion-designer/1"
+  },
+  "law-firm-template-full": {
+    "name": "Law-firm Template Collection",
+    "image": "/templates-preview/Law-firm/Law-firm/1/img/banner/banner.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Law-firm/Law-firm/1"
+  },
+  "medical-doctor-template-full": {
+    "name": "Medical-Doctor Template Collection",
+    "image": "/templates-preview/Medical-Doctor/Medical-Doctor/1/images/hero_bg_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Medical-Doctor/Medical-Doctor/1"
+  },
+  "music-concert-template-full": {
+    "name": "Music-Concert Template Collection",
+    "image": "/templates-preview/Music-Concert/Music-Concert/1/img/hero-bg.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Music-Concert/Music-Concert/1"
+  },
+  "ngo-template-full": {
+    "name": "NGo Template Collection",
+    "image": "/templates-preview/NGo/NGo/1/img/banner/banner.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/NGo/NGo/1"
+  },
+  "pet-template-full": {
+    "name": "Pet Template Collection",
+    "image": "/templates-preview/Pet/Pet/1/img/banner/banner.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Pet/Pet/1"
+  },
+  "real-estate-template-full": {
+    "name": "RReal-estate Template Collection",
+    "image": "/templates-preview/RReal-estate/RReal-estate/1/img/hero/hero-1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/RReal-estate/RReal-estate/1"
+  },
+  "tour-travels-template-full": {
+    "name": "Tour Travels Template Collection",
+    "image": "/templates-preview/Tour Travels/Tour Travels/1/img/about-img.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Tour Travels/Tour Travels/1"
+  },
+  "webapp-app-template-full": {
+    "name": "Webapp-APp Template Collection",
+    "image": "/templates-preview/Webapp-APp/Webapp-APp/1/assets/images/download-bg.jpeg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Webapp-APp/Webapp-APp/1"
+  },
+  "yoga-template-full": {
+    "name": "Yoga Template Collection",
+    "image": "/templates-preview/Yoga/Yoga/1/images/bg_1.jpg",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/Yoga/Yoga/1"
+  },
+  "e-book-template-full": {
+    "name": "e-book Template Collection",
+    "image": "/templates-preview/e-book/e-book/1/images/blogger.png",
+    "templatePath": "C:/Users/HP/thetrifusion01/src/templets/e-book/e-book/1"
+  }
+}

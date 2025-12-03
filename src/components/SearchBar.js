@@ -78,10 +78,10 @@ export default function SearchBar({ placeholder = "Search..." }) {
           onChange={(e) => setQuery(e.target.value)}
           onFocus={() => query.trim().length > 2 && setShowResults(true)}
           placeholder={placeholder}
-          className="w-full sm:w-64 px-4 py-2 pl-10 pr-10 border border-gray-300 dark:border-gray-600 rounded-full focus:outline-none focus:ring-2 focus:ring-theme-purple focus:border-theme-purple text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+          className="w-full sm:w-64 px-4 py-2 pl-10 pr-10 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-theme-purple focus:border-theme-purple text-sm bg-white text-gray-900"
         />
         <svg
-          className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-gray-500"
+          className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -100,7 +100,7 @@ export default function SearchBar({ placeholder = "Search..." }) {
               setQuery("");
               setShowResults(false);
             }}
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300"
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -111,39 +111,39 @@ export default function SearchBar({ placeholder = "Search..." }) {
 
       {/* Search Results Dropdown */}
       {showResults && results.length > 0 && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 z-50 max-h-96 overflow-y-auto">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-xl border border-gray-200 z-50 max-h-96 overflow-y-auto">
           {results.map((result, index) => (
             <button
               key={index}
               onClick={() => handleResultClick(result)}
-              className="w-full text-left px-4 py-3 hover:bg-light-theme-purple dark:hover:bg-gray-700 transition duration-200 border-b border-gray-100 dark:border-gray-700 last:border-b-0"
+              className="w-full text-left px-4 py-3 hover:bg-light-theme-purple transition duration-200 border-b border-gray-100 last:border-b-0"
             >
               <div className="flex items-start">
                 {result.type === "faq" ? (
                   <>
                     <span className="text-theme-purple mr-3 mt-1">❓</span>
                     <div className="flex-1">
-                      <p className="text-sm font-medium text-theme-blue dark:text-white">{result.question}</p>
-                      <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-1">{result.answer}</p>
-                      <span className="text-xs text-theme-purple dark:text-purple-400 mt-1 inline-block">FAQ</span>
+                      <p className="text-sm font-medium text-theme-blue">{result.question}</p>
+                      <p className="text-xs text-gray-500 mt-1 line-clamp-1">{result.answer}</p>
+                      <span className="text-xs text-theme-purple mt-1 inline-block">FAQ</span>
                     </div>
                   </>
                 ) : (
                   <>
                     <span className="text-theme-purple mr-3 mt-1">📄</span>
                     <div className="flex-1">
-                      <p className="text-sm font-medium text-theme-blue dark:text-white">{result.title}</p>
-                      <span className="text-xs text-gray-500 dark:text-gray-400 mt-1 inline-block">Page</span>
+                      <p className="text-sm font-medium text-theme-blue">{result.title}</p>
+                      <span className="text-xs text-gray-500 mt-1 inline-block">Page</span>
                     </div>
                   </>
                 )}
               </div>
             </button>
           ))}
-          <div className="px-4 py-2 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+          <div className="px-4 py-2 bg-gray-50 border-t border-gray-200">
             <button
               onClick={handleSearch}
-              className="text-sm text-theme-purple dark:text-purple-400 hover:underline font-medium"
+              className="text-sm text-theme-purple hover:underline font-medium"
             >
               See all results for "{query}"
             </button>

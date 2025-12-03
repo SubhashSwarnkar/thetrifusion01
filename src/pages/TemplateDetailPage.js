@@ -114,8 +114,21 @@ export default function TemplateDetailPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-12">
           <Fade direction="left" triggerOnce>
-            <div className="bg-gray-200 rounded-2xl h-64 sm:h-80 lg:h-96 flex items-center justify-center">
-              <div className="text-5xl sm:text-6xl">{template.category.charAt(0)}</div>
+            <div className="bg-gray-200 rounded-2xl h-64 sm:h-80 lg:h-96 overflow-hidden relative">
+              {template.previewImage ? (
+                <img 
+                  src={template.previewImage} 
+                  alt={template.name}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+              ) : null}
+              <div className={`w-full h-full flex items-center justify-center ${template.previewImage ? 'hidden' : ''}`}>
+                <div className="text-5xl sm:text-6xl">{template.category.charAt(0)}</div>
+              </div>
             </div>
           </Fade>
 

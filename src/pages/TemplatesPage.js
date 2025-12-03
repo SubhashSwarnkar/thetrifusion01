@@ -69,7 +69,7 @@ export default function TemplatesPage() {
               triggerOnce
             >
               <div className="bg-white rounded-2xl shadow-xl border border-light-theme-purple overflow-hidden transform transition duration-500 hover:scale-105 flex flex-col">
-                <div className="relative h-48 bg-gray-200">
+                <div className="relative h-48 bg-gray-200 overflow-hidden">
                   {template.isNew && (
                     <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium z-10">
                       New
@@ -88,7 +88,18 @@ export default function TemplatesPage() {
                       Download
                     </div>
                   )}
-                  <div className="w-full h-full flex items-center justify-center text-6xl text-gray-400">
+                  {template.previewImage ? (
+                    <img 
+                      src={template.previewImage} 
+                      alt={template.name}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                  ) : null}
+                  <div className={`w-full h-full flex items-center justify-center text-6xl text-gray-400 ${template.previewImage ? 'hidden' : ''}`}>
                     {template.category.charAt(0)}
                   </div>
                 </div>

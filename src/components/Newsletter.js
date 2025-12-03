@@ -49,7 +49,7 @@ export default function Newsletter({ compact = false }) {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email"
-          className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-full focus:outline-none focus:ring-2 focus:ring-theme-purple dark:bg-gray-800 dark:text-white"
+          className="flex-1 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-theme-purple bg-white text-gray-900"
           required
         />
         <button
@@ -65,7 +65,7 @@ export default function Newsletter({ compact = false }) {
 
   return (
     <Fade direction="up" triggerOnce>
-      <section className="bg-gradient-to-r from-theme-purple to-theme-blue py-16 dark:from-gray-800 dark:to-gray-900">
+      <section className="bg-gradient-to-r from-theme-purple to-theme-blue py-16">
         <div className="container mx-auto px-5">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">

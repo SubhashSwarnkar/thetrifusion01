@@ -20,12 +20,12 @@ export default function Testimonial({ data }) {
   return (
     <section className="container mx-auto">
       <Fade direction="up">
-        <h1 className="text-5xl text-theme-blue dark:text-white text-center font-bold">
+        <h1 className="text-5xl text-theme-blue text-center font-bold">
           Testimonials
         </h1>
       </Fade>
       <Fade direction="up" delay={500}>
-        <p className="font-light text-lg text-gray-400 dark:text-gray-300 text-center mb-3 sm:mb-3 xl:mb-4">
+        <p className="font-light text-lg text-gray-400 text-center mb-3 sm:mb-3 xl:mb-4">
           What they said about us.
         </p>
       </Fade>
@@ -39,7 +39,7 @@ export default function Testimonial({ data }) {
       >
         {data.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="flex-col xl:w-full rounded-2xl shadow-xl sm:shadow-2xl border border-light-theme-purple dark:border-gray-700 bg-white dark:bg-gray-800 px-6 sm:px-8 py-6 mx-2 mb-6 mt-6 xl:mx-auto sm:mx-6 sm:mb-12 transform transition duration-300 hover:shadow-2xl">
+            <div className="flex-col xl:w-full rounded-2xl shadow-xl sm:shadow-2xl border border-light-theme-purple bg-white px-6 sm:px-8 py-6 mx-2 mb-6 mt-6 xl:mx-auto sm:mx-6 sm:mb-12 transform transition duration-300 hover:shadow-2xl">
               <div className="flex items-center mb-5">
                 <div className="relative">
                   <img
@@ -50,8 +50,8 @@ export default function Testimonial({ data }) {
                   <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-white"></div>
                 </div>
                 <div className="flex-col pl-4 sm:pl-5">
-                  <h2 className="text-theme-blue dark:text-white text-lg sm:text-xl md:text-2xl font-bold">{item.name}</h2>
-                  <p className="font-light text-gray-500 dark:text-gray-400 text-xs sm:text-sm md:text-base">{item.company}</p>
+                  <h2 className="text-theme-blue text-lg sm:text-xl md:text-2xl font-bold">{item.name}</h2>
+                  <p className="font-light text-gray-500 text-xs sm:text-sm md:text-base">{item.company}</p>
                 </div>
               </div>
               <div className="flex items-start mb-3 pl-0 sm:pl-5">
@@ -61,7 +61,7 @@ export default function Testimonial({ data }) {
                   </svg>
                 ))}
               </div>
-              <p className="font-light text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 pl-0 sm:pl-5 pt-2 pb-1 leading-relaxed italic">
+              <p className="font-light text-base sm:text-lg md:text-xl text-gray-600 pl-0 sm:pl-5 pt-2 pb-1 leading-relaxed italic">
                 "{item.testimoni}"
               </p>
             </div>

@@ -9,7 +9,7 @@ export default function AllTeam({ data }) {
         {data.map((item, index) => (
           <Fade bottom triggerOnce delay={200 * 2} key={index}>
             <div>
-              <div className="flex flex-col w-44 h-60 sm:w-56 sm:h-72 rounded-xl  shadow-xl border border-light-theme-purple dark:border-gray-700 bg-white dark:bg-gray-800 justify-center transform transition duration-500 hover:scale-105">
+              <div className="flex flex-col w-44 h-60 sm:w-56 sm:h-72 rounded-xl  shadow-xl border border-light-theme-purple bg-white justify-center transform transition duration-500 hover:scale-105">
                 <div className="flex justify-center xl:mb-5">
                   <img
                     src={item.imageUrl}
@@ -17,10 +17,10 @@ export default function AllTeam({ data }) {
                     className="flex w-32 h-32 rounded-full"
                   />
                 </div>
-                <h2 className="text-theme-blue dark:text-white text-center text-xl">
+                <h2 className="text-theme-blue text-center text-xl">
                   {item.name}
                 </h2>
-                <p className="font-light text-gray-400 dark:text-gray-300 text-center mb-3">
+                <p className="font-light text-gray-400 text-center mb-3">
                   {item.position}
                 </p>
               </div>

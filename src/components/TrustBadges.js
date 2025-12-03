@@ -17,7 +17,7 @@ export default function TrustBadges() {
   ];
 
   return (
-    <section className="bg-gray-50 dark:bg-gray-900 py-16">
+    <section className="bg-gray-50 py-16">
       <div className="container mx-auto px-5">
         {/* Stats */}
         <Fade direction="up" triggerOnce>
@@ -25,13 +25,13 @@ export default function TrustBadges() {
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center transform transition duration-300 hover:scale-105"
+                className="bg-white rounded-xl shadow-lg p-6 text-center transform transition duration-300 hover:scale-105"
               >
                 <div className="text-4xl mb-3">{stat.icon}</div>
-                <div className="text-3xl sm:text-4xl font-bold text-theme-purple dark:text-purple-400 mb-2">
+                <div className="text-3xl sm:text-4xl font-bold text-theme-purple mb-2">
                   {stat.number}
                 </div>
-                <div className="text-sm sm:text-base text-gray-600 dark:text-gray-300">{stat.label}</div>
+                <div className="text-sm sm:text-base text-gray-600">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -40,14 +40,14 @@ export default function TrustBadges() {
         {/* Certifications/Badges */}
         <Fade direction="up" delay={200} triggerOnce>
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
-            <p className="text-gray-600 dark:text-gray-300 font-medium text-sm sm:text-base">Trusted by:</p>
+            <p className="text-gray-600 font-medium text-sm sm:text-base">Trusted by:</p>
             {certifications.map((cert, index) => (
               <div
                 key={index}
-                className="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-2 rounded-lg shadow-md"
+                className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-md"
               >
                 <span className="text-2xl">{cert.icon}</span>
-                <span className="text-sm sm:text-base text-gray-700 dark:text-gray-300 font-medium">
+                <span className="text-sm sm:text-base text-gray-700 font-medium">
                   {cert.name}
                 </span>
               </div>

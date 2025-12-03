@@ -49,12 +49,12 @@ export default function BlogPage() {
       <Breadcrumbs />
       <section className="container mx-auto px-5 py-20">
         <Fade direction="up" triggerOnce>
-          <h1 className="text-4xl sm:text-5xl text-theme-blue dark:text-white text-center font-bold mb-3">
+          <h1 className="text-4xl sm:text-5xl text-theme-blue text-center font-bold mb-3">
             Our Blog
           </h1>
         </Fade>
         <Fade direction="up" delay={200} triggerOnce>
-          <p className="font-light text-lg text-gray-400 dark:text-gray-300 text-center mb-12">
+          <p className="font-light text-lg text-gray-400 text-center mb-12">
             Stay updated with the latest trends, tips, and insights in web development, mobile apps, and digital marketing.
           </p>
         </Fade>
@@ -68,10 +68,10 @@ export default function BlogPage() {
                 placeholder="Search blog posts..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-6 py-4 pl-12 pr-12 border-2 border-gray-300 dark:border-gray-600 rounded-full focus:outline-none focus:ring-2 focus:ring-theme-purple focus:border-theme-purple text-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                className="w-full px-6 py-4 pl-12 pr-12 border-2 border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-theme-purple focus:border-theme-purple text-lg bg-white text-gray-900"
               />
               <svg
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400 dark:text-gray-500"
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -86,7 +86,7 @@ export default function BlogPage() {
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery("")}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300"
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -107,7 +107,7 @@ export default function BlogPage() {
                 className={`px-6 py-3 rounded-full font-medium transition duration-200 ${
                   selectedCategory === category.id
                     ? "bg-theme-purple text-white shadow-lg"
-                    : "bg-white dark:bg-gray-800 text-theme-blue dark:text-white border-2 border-theme-purple dark:border-purple-400 hover:bg-light-theme-purple dark:hover:bg-gray-700"
+                    : "bg-white text-theme-blue border-2 border-theme-purple hover:bg-light-theme-purple"
                 }`}
               >
                 <span className="mr-2">{category.icon}</span>
@@ -123,7 +123,7 @@ export default function BlogPage() {
             {displayedPosts.map((post, index) => (
               <Fade key={post.id} direction="up" delay={index * 100} triggerOnce>
                 <Link to={`/blog/${post.slug}`}>
-                  <article className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-light-theme-purple dark:border-gray-700 overflow-hidden transform transition duration-300 hover:scale-105 cursor-pointer h-full flex flex-col">
+                  <article className="bg-white rounded-2xl shadow-xl border border-light-theme-purple overflow-hidden transform transition duration-300 hover:scale-105 cursor-pointer h-full flex flex-col">
                     <div className="relative h-48 bg-gray-200 overflow-hidden">
                       <img
                         src={post.imageUrl}
@@ -138,15 +138,15 @@ export default function BlogPage() {
                       )}
                     </div>
                     <div className="p-6 flex-grow flex flex-col">
-                      <div className="flex items-center gap-3 mb-3 text-sm text-gray-500 dark:text-gray-400">
+                      <div className="flex items-center gap-3 mb-3 text-sm text-gray-500">
                         <span>{formatDate(post.date)}</span>
                         <span>•</span>
                         <span>{post.readTime}</span>
                       </div>
-                      <h2 className="text-xl sm:text-2xl text-theme-blue dark:text-white font-bold mb-3 line-clamp-2">
+                      <h2 className="text-xl sm:text-2xl text-theme-blue font-bold mb-3 line-clamp-2">
                         {post.title}
                       </h2>
-                      <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3 flex-grow">
+                      <p className="text-gray-600 mb-4 line-clamp-3 flex-grow">
                         {post.excerpt}
                       </p>
                       <div className="flex items-center justify-between mt-auto">

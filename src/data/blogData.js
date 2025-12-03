@@ -24,7 +24,7 @@ export const blogPosts = [
     readTime: "5 min read",
     excerpt: "Discover the latest web development trends that will shape the digital landscape in 2024. From AI integration to progressive web apps, stay ahead of the curve.",
     content: "Full blog post content here...",
-    imageUrl: "/assets/images/Services/Web.png",
+    imageUrl: "/assets/images/Web.png",
     featured: true,
   },
   {
@@ -37,7 +37,7 @@ export const blogPosts = [
     readTime: "7 min read",
     excerpt: "A comprehensive guide to choosing between React Native, Flutter, and native development for your mobile app project.",
     content: "Full blog post content here...",
-    imageUrl: "/assets/images/Services/Mobile.png",
+    imageUrl: "/assets/images/Mobile.png",
     featured: true,
   },
   {
@@ -50,7 +50,7 @@ export const blogPosts = [
     readTime: "6 min read",
     excerpt: "Learn the fundamental UI/UX design principles that can help developers create more user-friendly and intuitive applications.",
     content: "Full blog post content here...",
-    imageUrl: "/assets/images/Services/Design.png",
+    imageUrl: "/assets/images/Design.png",
     featured: false,
   },
   {
@@ -63,7 +63,7 @@ export const blogPosts = [
     readTime: "8 min read",
     excerpt: "Effective digital marketing strategies that small businesses can implement to grow their online presence and attract more customers.",
     content: "Full blog post content here...",
-    imageUrl: "/assets/images/Services/Web.png",
+    imageUrl: "/assets/images/Web.png",
     featured: false,
   },
   {
@@ -76,7 +76,7 @@ export const blogPosts = [
     readTime: "6 min read",
     excerpt: "Explore the emerging trends in e-commerce and how businesses can prepare for the future of online shopping.",
     content: "Full blog post content here...",
-    imageUrl: "/assets/images/Services/Web.png",
+    imageUrl: "/assets/images/Management.png",
     featured: false,
   },
   {
@@ -89,7 +89,7 @@ export const blogPosts = [
     readTime: "9 min read",
     excerpt: "A detailed comparison of the three most popular JavaScript frameworks to help you make an informed decision for your next project.",
     content: "Full blog post content here...",
-    imageUrl: "/assets/images/Services/Web.png",
+    imageUrl: "/assets/images/Web.png",
     featured: false,
   },
   {
@@ -102,7 +102,7 @@ export const blogPosts = [
     readTime: "7 min read",
     excerpt: "Learn the best practices for building web applications that can scale with your business growth.",
     content: "Full blog post content here...",
-    imageUrl: "/assets/images/Services/Web.png",
+    imageUrl: "/assets/images/Web.png",
     featured: false,
   },
   {
@@ -115,7 +115,7 @@ export const blogPosts = [
     readTime: "5 min read",
     excerpt: "Essential security practices every mobile app developer should implement to protect user data and prevent vulnerabilities.",
     content: "Full blog post content here...",
-    imageUrl: "/assets/images/Services/Mobile.png",
+    imageUrl: "/assets/images/Mobile.png",
     featured: false,
   },
 ];

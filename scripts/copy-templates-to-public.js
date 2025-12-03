@@ -38,7 +38,25 @@ function copyDirectory(src, dest) {
 }
 
 // Copy each template category
-const categories = ['Restaurant', 'Photography', 'Digital_Agency'];
+// Note: Category names must match the directory structure in src/templets/
+const categories = [
+  'Restaurant',
+  'Photography',
+  'Digital_Agency',
+  'Education',
+  'Fashion-designer',
+  'Law-firm',
+  'Medical-Doctor',
+  'Music-Concert',
+  'NGo',
+  'Pet',
+  'RReal-estate',
+  'Titan-master',
+  'Tour Travels',
+  'Webapp-APp',
+  'Yoga',
+  'e-book'
+];
 
 categories.forEach(category => {
   const srcPath = path.join(sourceDir, category, category);

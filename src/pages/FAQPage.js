@@ -46,12 +46,12 @@ export default function FAQPage() {
       <Breadcrumbs />
       <section className="container mx-auto px-5 py-20">
         <Fade direction="up" triggerOnce>
-          <h1 className="text-4xl sm:text-5xl text-theme-blue dark:text-white text-center font-bold mb-3">
+          <h1 className="text-4xl sm:text-5xl text-theme-blue text-center font-bold mb-3">
             Frequently Asked Questions
           </h1>
         </Fade>
         <Fade direction="up" delay={200} triggerOnce>
-          <p className="font-light text-lg text-gray-400 dark:text-gray-300 text-center mb-12">
+          <p className="font-light text-lg text-gray-400 text-center mb-12">
             Find answers to common questions about our services, pricing, and processes.
           </p>
         </Fade>
@@ -65,10 +65,10 @@ export default function FAQPage() {
                 placeholder="Search FAQs..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-6 py-4 pl-12 border-2 border-gray-300 dark:border-gray-600 rounded-full focus:outline-none focus:ring-2 focus:ring-theme-purple focus:border-theme-purple text-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                className="w-full px-6 py-4 pl-12 border-2 border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-theme-purple focus:border-theme-purple text-lg bg-white text-gray-900"
               />
               <svg
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400 dark:text-gray-500"
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -83,7 +83,7 @@ export default function FAQPage() {
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery("")}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300"
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -102,7 +102,7 @@ export default function FAQPage() {
               className={`px-6 py-3 rounded-full font-medium transition duration-200 ${
                 selectedCategory === "all"
                   ? "bg-theme-purple text-white shadow-lg"
-                  : "bg-white dark:bg-gray-800 text-theme-blue dark:text-white border-2 border-theme-purple dark:border-purple-400 hover:bg-light-theme-purple dark:hover:bg-gray-700"
+                  : "bg-white text-theme-blue border-2 border-theme-purple hover:bg-light-theme-purple"
               }`}
             >
               All Categories
@@ -114,7 +114,7 @@ export default function FAQPage() {
                 className={`px-6 py-3 rounded-full font-medium transition duration-200 ${
                   selectedCategory === category.id
                     ? "bg-theme-purple text-white shadow-lg"
-                    : "bg-white dark:bg-gray-800 text-theme-blue dark:text-white border-2 border-theme-purple dark:border-purple-400 hover:bg-light-theme-purple dark:hover:bg-gray-700"
+                    : "bg-white text-theme-blue border-2 border-theme-purple hover:bg-light-theme-purple"
                 }`}
               >
                 <span className="mr-2">{category.icon}</span>
@@ -133,19 +133,19 @@ export default function FAQPage() {
               
               return (
                 <Fade key={faq.id} direction="up" delay={index * 50} triggerOnce>
-                  <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-light-theme-purple dark:border-gray-700 mb-4 overflow-hidden">
+                  <div className="bg-white rounded-xl shadow-lg border border-light-theme-purple mb-4 overflow-hidden">
                     <button
                       onClick={() => toggleFaq(faq.id)}
-                      className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700 transition duration-200"
+                      className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition duration-200"
                     >
                       <div className="flex items-center flex-1">
                         <span className="text-2xl mr-3">{category?.icon || "❓"}</span>
-                        <h3 className="text-lg sm:text-xl text-theme-blue dark:text-white font-bold pr-4">
+                        <h3 className="text-lg sm:text-xl text-theme-blue font-bold pr-4">
                           {faq.question}
                         </h3>
                       </div>
                       <svg
-                        className={`w-6 h-6 text-theme-purple dark:text-purple-400 transform transition-transform duration-200 flex-shrink-0 ${
+                        className={`w-6 h-6 text-theme-purple transform transition-transform duration-200 flex-shrink-0 ${
                           isOpen ? "rotate-180" : ""
                         }`}
                         fill="none"
@@ -166,11 +166,11 @@ export default function FAQPage() {
                       }`}
                     >
                       <div className="px-6 pb-5 pt-2">
-                        <p className="text-gray-600 dark:text-gray-300 text-base sm:text-lg leading-relaxed mb-4">
+                        <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-4">
                           {faq.answer}
                         </p>
-                        <div className="flex items-center gap-4 pt-3 border-t border-gray-200 dark:border-gray-700">
-                          <span className="text-sm text-gray-500 dark:text-gray-400">Was this helpful?</span>
+                        <div className="flex items-center gap-4 pt-3 border-t border-gray-200">
+                          <span className="text-sm text-gray-500">Was this helpful?</span>
                           <button
                             onClick={() => handleHelpful(faq.id, true)}
                             className="px-4 py-2 bg-green-100 text-green-700 rounded-lg hover:bg-green-200 transition duration-200 text-sm font-medium"
@@ -193,7 +193,7 @@ export default function FAQPage() {
           ) : (
             <Fade direction="up" triggerOnce>
               <div className="text-center py-12">
-                <p className="text-xl text-gray-500 dark:text-gray-400 mb-4">No FAQs found matching your search.</p>
+                <p className="text-xl text-gray-500 mb-4">No FAQs found matching your search.</p>
                 <button
                   onClick={() => {
                     setSearchQuery("");
@@ -210,11 +210,11 @@ export default function FAQPage() {
 
         {/* Contact CTA */}
         <Fade direction="up" delay={500} triggerOnce>
-          <div className="max-w-2xl mx-auto mt-12 p-8 bg-light-theme-purple dark:bg-gray-800 rounded-2xl text-center">
-            <h2 className="text-2xl sm:text-3xl text-theme-blue dark:text-white font-bold mb-4">
+          <div className="max-w-2xl mx-auto mt-12 p-8 bg-light-theme-purple rounded-2xl text-center">
+            <h2 className="text-2xl sm:text-3xl text-theme-blue font-bold mb-4">
               Still have questions?
             </h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
+            <p className="text-gray-600 mb-6">
               Can't find the answer you're looking for? Please get in touch with our friendly team.
             </p>
             <a

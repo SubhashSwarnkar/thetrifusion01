@@ -61,10 +61,10 @@ export default function TimelineCalculatorPage() {
       <section className="container mx-auto px-5 py-20">
         <Fade direction="up" triggerOnce>
           <div className="text-center mb-16">
-            <h1 className="text-5xl text-theme-blue dark:text-white font-bold mb-5">
+            <h1 className="text-5xl text-theme-blue font-bold mb-5">
               Timeline Calculator
             </h1>
-            <p className="font-light text-xl text-gray-400 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="font-light text-xl text-gray-400 max-w-2xl mx-auto">
               Estimate how long your project will take to complete. Get a detailed timeline with milestones.
             </p>
           </div>
@@ -72,20 +72,20 @@ export default function TimelineCalculatorPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           <Fade direction="left" triggerOnce>
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 sm:p-8 border border-light-theme-purple dark:border-gray-700">
-              <h2 className="text-2xl text-theme-blue dark:text-white font-bold mb-6">
+            <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 border border-light-theme-purple">
+              <h2 className="text-2xl text-theme-blue font-bold mb-6">
                 Project Details
               </h2>
 
               <div className="space-y-6">
                 <div>
-                  <label className="block text-theme-blue dark:text-white font-medium mb-2">
+                  <label className="block text-theme-blue font-medium mb-2">
                     Project Type
                   </label>
                   <select
                     value={projectType}
                     onChange={(e) => setProjectType(e.target.value)}
-                    className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-theme-purple focus:border-theme-purple bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme-purple focus:border-theme-purple bg-white text-gray-900"
                   >
                     <option value="">Select Project Type</option>
                     {projectTypes.map((type) => (
@@ -97,13 +97,13 @@ export default function TimelineCalculatorPage() {
                 </div>
 
                 <div>
-                  <label className="block text-theme-blue dark:text-white font-medium mb-2">
+                  <label className="block text-theme-blue font-medium mb-2">
                     Complexity
                   </label>
                   <select
                     value={complexity}
                     onChange={(e) => setComplexity(e.target.value)}
-                    className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-theme-purple focus:border-theme-purple bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme-purple focus:border-theme-purple bg-white text-gray-900"
                   >
                     <option value="">Select Complexity</option>
                     {complexities.map((comp) => (
@@ -115,14 +115,14 @@ export default function TimelineCalculatorPage() {
                 </div>
 
                 <div>
-                  <label className="block text-theme-blue dark:text-white font-medium mb-4">
+                  <label className="block text-theme-blue font-medium mb-4">
                     Additional Features
                   </label>
                   <div className="space-y-2 max-h-64 overflow-y-auto">
                     {features.map((feature) => (
                       <label
                         key={feature.id}
-                        className="flex items-center p-3 border border-gray-200 dark:border-gray-600 rounded-lg hover:bg-light-theme-purple dark:hover:bg-gray-700 cursor-pointer"
+                        className="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-light-theme-purple cursor-pointer"
                       >
                         <input
                           type="checkbox"
@@ -130,7 +130,7 @@ export default function TimelineCalculatorPage() {
                           onChange={() => handleFeatureToggle(feature.id)}
                           className="w-5 h-5 text-theme-purple focus:ring-theme-purple rounded"
                         />
-                        <span className="ml-3 text-gray-700 dark:text-gray-300">{feature.name}</span>
+                        <span className="ml-3 text-gray-700">{feature.name}</span>
                       </label>
                     ))}
                   </div>
@@ -148,36 +148,36 @@ export default function TimelineCalculatorPage() {
           </Fade>
 
           <Fade direction="right" triggerOnce>
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 sm:p-8 border border-light-theme-purple dark:border-gray-700">
-              <h2 className="text-2xl text-theme-blue dark:text-white font-bold mb-6">
+            <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 border border-light-theme-purple">
+              <h2 className="text-2xl text-theme-blue font-bold mb-6">
                 Estimated Timeline
               </h2>
 
               {timelineResult ? (
                 <div className="space-y-6">
-                  <div className="bg-light-theme-purple dark:bg-gray-700 rounded-lg p-6">
-                    <div className="text-sm text-gray-600 dark:text-gray-300 mb-2">Total Duration</div>
-                    <div className="text-4xl font-bold text-theme-purple dark:text-purple-400">
+                  <div className="bg-light-theme-purple rounded-lg p-6">
+                    <div className="text-sm text-gray-600 mb-2">Total Duration</div>
+                    <div className="text-4xl font-bold text-theme-purple">
                       {timelineResult.totalDays} Days
                     </div>
-                    <div className="text-gray-600 dark:text-gray-300 mt-2">
+                    <div className="text-gray-600 mt-2">
                       ({timelineResult.weeks} weeks / {timelineResult.months} months)
                     </div>
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-theme-blue dark:text-white mb-4">Project Milestones</h3>
+                    <h3 className="font-bold text-theme-blue mb-4">Project Milestones</h3>
                     <div className="space-y-3">
                       {timelineResult.milestones.map((milestone, index) => (
                         <div key={index} className="flex items-center">
-                          <div className="w-8 h-8 bg-theme-purple dark:bg-purple-600 text-white rounded-full flex items-center justify-center font-bold mr-3">
+                          <div className="w-8 h-8 bg-theme-purple text-white rounded-full flex items-center justify-center font-bold mr-3">
                             {index + 1}
                           </div>
                           <div className="flex-1">
-                            <div className="font-medium text-theme-blue dark:text-white">
+                            <div className="font-medium text-theme-blue">
                               {milestone.name}
                             </div>
-                            <div className="text-sm text-gray-600 dark:text-gray-300">
+                            <div className="text-sm text-gray-600">
                               {milestone.days} days
                             </div>
                           </div>
@@ -186,9 +186,9 @@ export default function TimelineCalculatorPage() {
                     </div>
                   </div>
 
-                  <div className="border-t dark:border-gray-700 pt-4">
-                    <div className="text-sm text-gray-600 dark:text-gray-300 mb-2">Estimated Completion</div>
-                    <div className="font-medium dark:text-white">
+                  <div className="border-t pt-4">
+                    <div className="text-sm text-gray-600 mb-2">Estimated Completion</div>
+                    <div className="font-medium">
                       {timelineResult.estimatedCompletion.toLocaleDateString()}
                     </div>
                   </div>
@@ -200,7 +200,7 @@ export default function TimelineCalculatorPage() {
                   </div>
                 </div>
               ) : (
-                <div className="text-center py-12 text-gray-500 dark:text-gray-400">
+                <div className="text-center py-12 text-gray-500">
                   <p>Fill in the project details and click "Calculate Timeline" to see your estimate.</p>
                 </div>
               )}

@@ -40,30 +40,30 @@ export default function BlogDetailPage() {
           <div className="mb-8">
             <Link
               to="/blog"
-              className="text-theme-purple dark:text-purple-400 hover:underline mb-4 inline-block"
+              className="text-theme-purple hover:underline mb-4 inline-block"
             >
               ← Back to Blog
             </Link>
-            <div className="flex items-center gap-3 mb-4 text-sm text-gray-500 dark:text-gray-400">
+            <div className="flex items-center gap-3 mb-4 text-sm text-gray-500">
               <span>{formatDate(post.date)}</span>
               <span>•</span>
               <span>{post.readTime}</span>
               <span>•</span>
-              <span className="px-3 py-1 bg-light-theme-purple dark:bg-gray-700 text-theme-purple dark:text-purple-400 rounded-full text-sm font-medium">
+              <span className="px-3 py-1 bg-light-theme-purple text-theme-purple rounded-full text-sm font-medium">
                 {category?.name || post.category}
               </span>
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl text-theme-blue dark:text-white font-bold mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl text-theme-blue font-bold mb-4">
               {post.title}
             </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">{post.excerpt}</p>
+            <p className="text-lg text-gray-600 mb-6">{post.excerpt}</p>
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-theme-purple dark:bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+              <div className="w-12 h-12 bg-theme-purple rounded-full flex items-center justify-center text-white font-bold text-lg">
                 {post.author.charAt(0)}
               </div>
               <div>
-                <p className="font-medium text-theme-blue dark:text-white">{post.author}</p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">Published on {formatDate(post.date)}</p>
+                <p className="font-medium text-theme-blue">{post.author}</p>
+                <p className="text-sm text-gray-500">Published on {formatDate(post.date)}</p>
               </div>
             </div>
           </div>

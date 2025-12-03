@@ -64,14 +64,14 @@ export default class LandingPage extends Component {
         </section>
         
         {/* Quick Tools Section */}
-        <section className="bg-white dark:bg-gray-900 py-20">
+        <section className="bg-white py-20">
           <div className="container mx-auto px-5">
             <Fade direction="up" triggerOnce>
               <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl text-theme-blue dark:text-white font-bold mb-4">
+                <h2 className="text-4xl md:text-5xl text-theme-blue font-bold mb-4">
                   Plan Your Project
                 </h2>
-                <p className="font-light text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                <p className="font-light text-lg text-gray-600 max-w-2xl mx-auto">
                   Use our powerful tools to estimate cost, timeline, and plan your website with ease
                 </p>
               </div>
@@ -80,12 +80,12 @@ export default class LandingPage extends Component {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
               <Fade direction="up" delay={100} triggerOnce>
                 <Link to="/pricing/calculator" className="group">
-                  <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-lg p-6 border border-light-theme-purple dark:border-gray-700 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer h-full">
+                  <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg p-6 border border-light-theme-purple transform transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer h-full">
                     <div className="text-5xl mb-4 transform group-hover:scale-110 transition-transform duration-300">💰</div>
-                    <h3 className="text-xl text-theme-blue dark:text-white font-bold mb-3">
+                    <h3 className="text-xl text-theme-blue font-bold mb-3">
                       Price Calculator
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                    <p className="text-gray-600 text-sm mb-4">
                       Get instant price estimates for your project
                     </p>
                     <div className="flex items-center text-theme-purple font-medium group-hover:translate-x-2 transition-transform duration-300">
@@ -100,12 +100,12 @@ export default class LandingPage extends Component {
               
               <Fade direction="up" delay={200} triggerOnce>
                 <Link to="/estimate" className="group">
-                  <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-lg p-6 border border-light-theme-purple dark:border-gray-700 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer h-full">
+                  <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg p-6 border border-light-theme-purple transform transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer h-full">
                     <div className="text-5xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🤖</div>
-                    <h3 className="text-xl text-theme-blue dark:text-white font-bold mb-3">
+                    <h3 className="text-xl text-theme-blue font-bold mb-3">
                       AI Estimator
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                    <p className="text-gray-600 text-sm mb-4">
                       Get AI-powered project estimates and recommendations
                     </p>
                     <div className="flex items-center text-theme-purple font-medium group-hover:translate-x-2 transition-transform duration-300">
@@ -120,12 +120,12 @@ export default class LandingPage extends Component {
               
               <Fade direction="up" delay={300} triggerOnce>
                 <Link to="/planner" className="group">
-                  <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-lg p-6 border border-light-theme-purple dark:border-gray-700 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer h-full">
+                  <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg p-6 border border-light-theme-purple transform transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer h-full">
                     <div className="text-5xl mb-4 transform group-hover:scale-110 transition-transform duration-300">📋</div>
-                    <h3 className="text-xl text-theme-blue dark:text-white font-bold mb-3">
+                    <h3 className="text-xl text-theme-blue font-bold mb-3">
                       Page Planner
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                    <p className="text-gray-600 text-sm mb-4">
                       Visualize and plan your website structure
                     </p>
                     <div className="flex items-center text-theme-purple font-medium group-hover:translate-x-2 transition-transform duration-300">
@@ -140,12 +140,12 @@ export default class LandingPage extends Component {
               
               <Fade direction="up" delay={400} triggerOnce>
                 <Link to="/timeline" className="group">
-                  <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-lg p-6 border border-light-theme-purple dark:border-gray-700 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer h-full">
+                  <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg p-6 border border-light-theme-purple transform transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer h-full">
                     <div className="text-5xl mb-4 transform group-hover:scale-110 transition-transform duration-300">⏱️</div>
-                    <h3 className="text-xl text-theme-blue dark:text-white font-bold mb-3">
+                    <h3 className="text-xl text-theme-blue font-bold mb-3">
                       Timeline Calculator
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                    <p className="text-gray-600 text-sm mb-4">
                       Estimate project delivery timeline
                     </p>
                     <div className="flex items-center text-theme-purple font-medium group-hover:translate-x-2 transition-transform duration-300">
