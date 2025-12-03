@@ -1,146 +1,154 @@
-import React from "react";
-
 // Blog Data
+// Using placeholder images since blog images don't exist yet
+
+// Blog Categories
 export const blogCategories = [
-  { id: "all", name: "All Posts", icon: "📝" },
-  { id: "web-development", name: "Web Development", icon: "🌐" },
-  { id: "mobile-development", name: "Mobile Development", icon: "📱" },
-  { id: "ui-ux", name: "UI/UX Design", icon: "🎨" },
-  { id: "digital-marketing", name: "Digital Marketing", icon: "📈" },
-  { id: "business", name: "Business", icon: "💼" },
-  { id: "technology", name: "Technology", icon: "⚡" },
-  { id: "cloud-devops", name: "Cloud & DevOps", icon: "☁️" },
-  { id: "software-development", name: "Software Development", icon: "💻" },
+  {
+    id: "all",
+    name: "All Posts",
+    icon: "📰",
+  },
+  {
+    id: "web-development",
+    name: "Web Development",
+    icon: "🌐",
+  },
+  {
+    id: "mobile-apps",
+    name: "Mobile Apps",
+    icon: "📱",
+  },
+  {
+    id: "ui-ux",
+    name: "UI/UX Design",
+    icon: "🎨",
+  },
+  {
+    id: "digital-marketing",
+    name: "Digital Marketing",
+    icon: "📈",
+  },
+  {
+    id: "technology",
+    name: "Technology",
+    icon: "💻",
+  },
 ];
 
+// Blog Posts
 export const blogPosts = [
   {
     id: 1,
     title: "10 Essential Web Development Trends for 2024",
     slug: "10-essential-web-development-trends-2024",
+    excerpt: "Discover the latest web development trends that are shaping the digital landscape in 2024. From AI integration to progressive web apps, stay ahead of the curve.",
+    description: "A comprehensive guide to the most important web development trends for 2024",
+    content: "",
     category: "web-development",
     author: "TheTriFusion Team",
     date: "2024-01-15",
     readTime: "5 min read",
-    excerpt: "Discover the latest web development trends that will shape the digital landscape in 2024. From AI integration to progressive web apps, stay ahead of the curve.",
-    content: "Full blog post content here...",
-    imageUrl: "/assets/images/Web.png",
+    imageUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800",
     featured: true,
+    tags: ["web development", "trends", "2024", "technology"],
   },
   {
     id: 2,
-    title: "How to Choose the Right Mobile App Development Framework",
-    slug: "choose-right-mobile-app-development-framework",
-    category: "mobile-development",
+    title: "Building Responsive Mobile Apps: Best Practices",
+    slug: "building-responsive-mobile-apps-best-practices",
+    excerpt: "Learn the best practices for creating responsive and user-friendly mobile applications that work seamlessly across all devices and screen sizes.",
+    description: "Expert tips for building responsive mobile applications",
+    content: "",
+    category: "mobile-apps",
     author: "TheTriFusion Team",
     date: "2024-01-10",
     readTime: "7 min read",
-    excerpt: "A comprehensive guide to choosing between React Native, Flutter, and native development for your mobile app project.",
-    content: "Full blog post content here...",
-    imageUrl: "/assets/images/Mobile.png",
-    featured: true,
+    imageUrl: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800",
+    featured: false,
+    tags: ["mobile apps", "responsive design", "best practices"],
   },
   {
     id: 3,
-    title: "UI/UX Design Principles Every Developer Should Know",
-    slug: "ui-ux-design-principles-for-developers",
+    title: "The Future of UI/UX Design: What to Expect",
+    slug: "future-of-ui-ux-design-what-to-expect",
+    excerpt: "Explore the evolving landscape of UI/UX design and discover what trends and innovations are shaping the future of user experience.",
+    description: "Insights into the future of UI/UX design",
+    content: "",
     category: "ui-ux",
     author: "TheTriFusion Team",
     date: "2024-01-05",
     readTime: "6 min read",
-    excerpt: "Learn the fundamental UI/UX design principles that can help developers create more user-friendly and intuitive applications.",
-    content: "Full blog post content here...",
-    imageUrl: "/assets/images/Design.png",
+    imageUrl: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
     featured: false,
+    tags: ["UI/UX", "design", "future trends"],
   },
   {
     id: 4,
-    title: "Digital Marketing Strategies for Small Businesses in 2024",
-    slug: "digital-marketing-strategies-small-businesses-2024",
+    title: "Digital Marketing Strategies That Actually Work",
+    slug: "digital-marketing-strategies-that-actually-work",
+    excerpt: "Uncover proven digital marketing strategies that drive real results for businesses of all sizes. From SEO to social media, learn what works.",
+    description: "Effective digital marketing strategies for modern businesses",
+    content: "",
     category: "digital-marketing",
     author: "TheTriFusion Team",
-    date: "2024-01-01",
+    date: "2023-12-28",
     readTime: "8 min read",
-    excerpt: "Effective digital marketing strategies that small businesses can implement to grow their online presence and attract more customers.",
-    content: "Full blog post content here...",
-    imageUrl: "/assets/images/Web.png",
+    imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
     featured: false,
+    tags: ["digital marketing", "SEO", "social media"],
   },
   {
     id: 5,
-    title: "The Future of E-commerce: Trends and Predictions",
-    slug: "future-of-ecommerce-trends-predictions",
-    category: "business",
-    author: "TheTriFusion Team",
-    date: "2023-12-28",
-    readTime: "6 min read",
-    excerpt: "Explore the emerging trends in e-commerce and how businesses can prepare for the future of online shopping.",
-    content: "Full blog post content here...",
-    imageUrl: "/assets/images/Management.png",
-    featured: false,
-  },
-  {
-    id: 6,
-    title: "React vs Vue vs Angular: Which Framework to Choose?",
-    slug: "react-vs-vue-vs-angular-which-framework",
-    category: "web-development",
-    author: "TheTriFusion Team",
-    date: "2023-12-25",
-    readTime: "9 min read",
-    excerpt: "A detailed comparison of the three most popular JavaScript frameworks to help you make an informed decision for your next project.",
-    content: "Full blog post content here...",
-    imageUrl: "/assets/images/Web.png",
-    featured: false,
-  },
-  {
-    id: 7,
-    title: "Building Scalable Web Applications: Best Practices",
-    slug: "building-scalable-web-applications-best-practices",
+    title: "React vs Vue: Which Framework Should You Choose?",
+    slug: "react-vs-vue-which-framework-should-you-choose",
+    excerpt: "A detailed comparison between React and Vue.js to help you make an informed decision for your next web development project.",
+    description: "Comprehensive comparison of React and Vue.js frameworks",
+    content: "",
     category: "web-development",
     author: "TheTriFusion Team",
     date: "2023-12-20",
-    readTime: "7 min read",
-    excerpt: "Learn the best practices for building web applications that can scale with your business growth.",
-    content: "Full blog post content here...",
-    imageUrl: "/assets/images/Web.png",
-    featured: false,
+    readTime: "10 min read",
+    imageUrl: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800",
+    featured: true,
+    tags: ["React", "Vue", "JavaScript", "frameworks"],
   },
   {
-    id: 8,
-    title: "Mobile App Security: Essential Tips for Developers",
-    slug: "mobile-app-security-essential-tips",
-    category: "mobile-development",
+    id: 6,
+    title: "How to Optimize Your Website for Better Performance",
+    slug: "how-to-optimize-your-website-for-better-performance",
+    excerpt: "Learn essential techniques to improve your website's loading speed, user experience, and overall performance.",
+    description: "Website optimization tips for better performance",
+    content: "",
+    category: "web-development",
     author: "TheTriFusion Team",
     date: "2023-12-15",
-    readTime: "5 min read",
-    excerpt: "Essential security practices every mobile app developer should implement to protect user data and prevent vulnerabilities.",
-    content: "Full blog post content here...",
-    imageUrl: "/assets/images/Mobile.png",
+    readTime: "6 min read",
+    imageUrl: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800",
     featured: false,
+    tags: ["performance", "optimization", "web development"],
   },
 ];
 
-// Helper functions
-export const getBlogBySlug = (slug) => {
+// Get blog post by slug
+export function getBlogBySlug(slug) {
   return blogPosts.find((post) => post.slug === slug);
-};
+}
 
-export const getBlogsByCategory = (categoryId) => {
-  if (categoryId === "all") return blogPosts;
+// Get blogs by category
+export function getBlogsByCategory(categoryId) {
+  if (categoryId === "all") {
+    return blogPosts;
+  }
   return blogPosts.filter((post) => post.category === categoryId);
-};
+}
 
-export const getFeaturedBlogs = () => {
-  return blogPosts.filter((post) => post.featured);
-};
-
-export const searchBlogs = (query) => {
+// Search blogs
+export function searchBlogs(query) {
   const lowerQuery = query.toLowerCase();
   return blogPosts.filter(
     (post) =>
       post.title.toLowerCase().includes(lowerQuery) ||
       post.excerpt.toLowerCase().includes(lowerQuery) ||
-      post.content.toLowerCase().includes(lowerQuery)
+      post.tags.some((tag) => tag.toLowerCase().includes(lowerQuery))
   );
-};
-
+}
