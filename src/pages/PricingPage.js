@@ -1,147 +1,166 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "parts/Header";
 import Footer from "parts/Footer";
 import Breadcrumbs from "components/Breadcrumbs";
-import { Fade } from "react-awesome-reveal";
+import { Fade, Zoom } from "react-awesome-reveal";
+import { getAllServicePricingPlans } from "data/servicePricingData";
 
 export default function PricingPage() {
+  const [selectedService, setSelectedService] = useState(null);
+  const [allServicePlans] = useState(getAllServicePricingPlans());
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const pricingPlans = [
-    {
-      name: "Basic",
-      price: "₹15,000",
-      description: "Perfect for small businesses getting started",
-      features: [
-        "Up to 5 pages",
-        "Responsive design",
-        "Contact form",
-        "Basic SEO",
-        "1 month support"
-      ]
-    },
-    {
-      name: "Standard",
-      price: "₹35,000",
-      description: "Ideal for growing businesses",
-      features: [
-        "Up to 10 pages",
-        "CMS integration",
-        "Payment gateway",
-        "Advanced SEO",
-        "3 months support",
-        "Analytics setup"
-      ],
-      popular: true
-    },
-    {
-      name: "Premium",
-      price: "₹75,000",
-      description: "Complete solution for established businesses",
-      features: [
-        "Unlimited pages",
-        "Custom features",
-        "Admin panel",
-        "API integration",
-        "6 months support",
-        "Priority support",
-        "Performance optimization"
-      ]
-    }
-  ];
+  const handleServiceSelect = (serviceId) => {
+    setSelectedService(serviceId === selectedService ? null : serviceId);
+  };
 
   return (
     <>
       <Header />
       <Breadcrumbs />
-      <section className="container mx-auto px-5 py-20">
+      
+      <section className="container mx-auto px-5 py-12">
+        {/* Service Filter */}
         <Fade direction="up" triggerOnce>
-          <div className="text-center mb-16">
-            <h1 className="text-5xl text-theme-blue font-bold mb-5">
-              Pricing Plans
-            </h1>
-            <p className="font-light text-xl text-gray-400 max-w-2xl mx-auto">
-              Choose the perfect plan for your business needs. All plans include responsive design and modern features.
-            </p>
+          <div className="mb-12">
+            <h2 className="text-2xl md:text-3xl text-theme-blue font-bold mb-6 text-center">
+              Select a Service
+            </h2>
+            <div className="flex flex-wrap justify-center gap-3 mb-8">
+              <button
+                onClick={() => setSelectedService(null)}
+                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                  selectedService === null
+                    ? "bg-gradient-to-r from-theme-purple to-dark-theme-purple text-white shadow-lg"
+                    : "bg-white text-theme-blue border-2 border-gray-200 hover:border-theme-purple"
+                }`}
+              >
+                All Services
+              </button>
+              {allServicePlans.map((servicePlan) => (
+                <button
+                  key={servicePlan.serviceId}
+                  onClick={() => handleServiceSelect(servicePlan.serviceId)}
+                  className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                    selectedService === servicePlan.serviceId
+                      ? "bg-gradient-to-r from-theme-purple to-dark-theme-purple text-white shadow-lg"
+                      : "bg-white text-theme-blue border-2 border-gray-200 hover:border-theme-purple"
+                  }`}
+                >
+                  {servicePlan.serviceTitle}
+                </button>
+              ))}
+            </div>
           </div>
         </Fade>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-12">
-          {pricingPlans.map((plan, index) => (
-            <Fade
-              key={plan.name}
-              direction="up"
-              delay={index * 100}
-              triggerOnce
-            >
-              <div
-                className={`bg-white rounded-2xl shadow-xl p-6 sm:p-8 border-2 flex flex-col ${
-                  plan.popular
-                    ? "border-theme-purple transform scale-105 lg:scale-105 md:scale-100"
-                    : "border-light-theme-purple"
-                }`}
-              >
-                {plan.popular && (
-                  <div className="bg-theme-purple text-white text-center py-2 rounded-full mb-4 text-sm font-medium">
-                    Most Popular
+        {/* Pricing Plans */}
+        {allServicePlans
+          .filter(servicePlan => !selectedService || servicePlan.serviceId === selectedService)
+          .map((servicePlan, serviceIndex) => (
+            <div key={servicePlan.serviceId} className="mb-20">
+              <Fade direction="up" triggerOnce delay={serviceIndex * 100}>
+                <div className="text-center mb-12">
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <span className="text-4xl">{servicePlan.serviceIcon}</span>
+                    <h2 className="text-3xl md:text-4xl text-theme-blue font-bold">
+                      {servicePlan.serviceTitle}
+                    </h2>
                   </div>
-                )}
-                <h3 className="text-2xl text-theme-blue font-bold mb-2">
-                  {plan.name}
-                </h3>
-                <div className="mb-4">
-                  <span className="text-4xl font-bold text-theme-purple">
-                    {plan.price}
-                  </span>
-                  <span className="text-gray-500">/project</span>
+                  <div className="w-24 h-1 bg-gradient-to-r from-theme-purple to-dark-theme-purple mx-auto rounded-full mb-4"></div>
+                  <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                    {servicePlan.serviceDescription}
+                  </p>
                 </div>
-                <p className="text-gray-600 mb-6">{plan.description}</p>
-                <ul className="space-y-3 mb-8 flex-grow">
-                  {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <svg
-                        className="w-5 h-5 text-theme-purple mr-2 mt-1 flex-shrink-0"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                      <span className="text-sm sm:text-base text-gray-700">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  to="/pricing/calculator"
-                  className="block w-full text-center px-6 py-3 bg-theme-purple text-white rounded-full hover:bg-dark-theme-purple transition duration-200 font-medium"
-                >
-                  Get Started
-                </Link>
-              </div>
-            </Fade>
-          ))}
-        </div>
+              </Fade>
 
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-12">
+                {servicePlan.plans.map((plan, planIndex) => (
+                  <Zoom key={plan.name} delay={planIndex * 100} triggerOnce>
+                    <div
+                      className={`bg-white rounded-2xl shadow-xl p-6 sm:p-8 border-2 flex flex-col transform transition-all duration-300 hover:scale-105 ${
+                        plan.popular
+                          ? "border-theme-purple scale-105 lg:scale-105 md:scale-100 shadow-2xl"
+                          : "border-gray-200 hover:border-theme-purple"
+                      }`}
+                    >
+                      {plan.popular && (
+                        <div className="bg-gradient-to-r from-theme-purple to-dark-theme-purple text-white text-center py-2 rounded-full mb-4 text-sm font-semibold">
+                          Most Popular
+                        </div>
+                      )}
+                      <h3 className="text-2xl text-theme-blue font-bold mb-2">
+                        {plan.name}
+                      </h3>
+                      <div className="mb-4">
+                        <span className="text-4xl md:text-5xl font-bold text-theme-purple">
+                          {plan.price}
+                        </span>
+                        <span className="text-gray-500 text-sm ml-2">/project</span>
+                      </div>
+                      <p className="text-gray-600 mb-6 min-h-[3rem]">{plan.description}</p>
+                      <ul className="space-y-3 mb-8 flex-grow">
+                        {plan.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-start">
+                            <div className="flex-shrink-0 w-5 h-5 bg-gradient-to-br from-theme-purple to-dark-theme-purple rounded-full flex items-center justify-center mr-3 mt-0.5">
+                              <svg
+                                className="w-3 h-3 text-white"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={3}
+                                  d="M5 13l4 4L19 7"
+                                />
+                              </svg>
+                            </div>
+                            <span className="text-sm sm:text-base text-gray-700 leading-relaxed">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <Link
+                        to={`/services/${servicePlan.serviceSlug}`}
+                        className="block w-full text-center px-6 py-3 bg-gradient-to-r from-theme-purple to-dark-theme-purple text-white rounded-full hover:shadow-xl hover:scale-105 transform transition-all duration-300 font-semibold"
+                      >
+                        Get Started
+                      </Link>
+                    </div>
+                  </Zoom>
+                ))}
+              </div>
+            </div>
+          ))}
+
+        {/* CTA Section */}
         <Fade direction="up" triggerOnce>
-          <div className="text-center">
-            <p className="text-gray-600 mb-4">
-              Need a custom solution? Use our calculator to get an estimate.
+          <div className="bg-gradient-to-r from-theme-purple via-purple-600 to-dark-theme-purple rounded-3xl p-8 md:p-12 text-white text-center mb-12">
+            <h3 className="text-3xl md:text-4xl font-bold mb-4">
+              Need a Custom Solution?
+            </h3>
+            <p className="text-lg md:text-xl opacity-95 mb-6 max-w-2xl mx-auto">
+              Use our calculator to get an accurate estimate based on your specific requirements.
             </p>
-            <Link
-              to="/pricing/calculator"
-              className="inline-block px-8 py-4 bg-theme-blue text-white rounded-full text-lg font-medium hover:bg-opacity-90 transition duration-200"
-            >
-              Price Calculator
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/pricing/calculator"
+                className="inline-block px-8 py-4 bg-white text-theme-purple rounded-full text-lg font-semibold hover:bg-gray-100 hover:scale-105 transform transition-all duration-300 shadow-lg"
+              >
+                Price Calculator
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-block px-8 py-4 bg-transparent border-2 border-white text-white rounded-full text-lg font-semibold hover:bg-white hover:text-theme-purple hover:scale-105 transform transition-all duration-300"
+              >
+                Contact Us
+              </Link>
+            </div>
           </div>
         </Fade>
       </section>

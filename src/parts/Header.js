@@ -7,18 +7,19 @@ import { useLocation } from "react-router-dom";
 import Button from "../elements/Button";
 import BrandIcon from "./BrandIcon";
 import SearchBar from "../components/SearchBar";
+import { services } from "../data/servicesData";
 
 export default function Header() {
   const [isCollapse, setIsCollapse] = useState(false);
-  const [isToolsOpen, setIsToolsOpen] = useState(false);
-  const [isMobileToolsOpen, setIsMobileToolsOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const location = useLocation();
   const path = location.pathname;
 
   // Close mobile menu when route changes
   useEffect(() => {
     setIsCollapse(false);
-    setIsMobileToolsOpen(false);
+    setIsMobileServicesOpen(false);
   }, [location.pathname]);
 
   // Close mobile menu when clicking outside
@@ -26,7 +27,7 @@ export default function Header() {
     const handleClickOutside = (event) => {
       if (isCollapse && !event.target.closest('.mobile-menu') && !event.target.closest('button[aria-label="Toggle navigation menu"]')) {
         setIsCollapse(false);
-        setIsMobileToolsOpen(false);
+        setIsMobileServicesOpen(false);
       }
     };
 
@@ -46,7 +47,7 @@ export default function Header() {
 
   const handleLinkClick = () => {
     setIsCollapse(false);
-    setIsMobileToolsOpen(false);
+    setIsMobileServicesOpen(false);
   };
 
   return (
@@ -104,15 +105,57 @@ export default function Header() {
         >
           Home
         </Button>
-        <Button
-          className={`${
-            path.startsWith("/services") ? "active-link" : ""
-          } font-medium text-base px-4 py-2 text-theme-blue hover:text-theme-purple transition-colors duration-200`}
-          type="link"
-          href="/services"
-        >
-          Services
-        </Button>
+        <div className="relative group">
+          <button
+            className={`${
+              path.startsWith("/services") ? "text-theme-purple" : "text-theme-blue"
+            } font-medium text-base px-4 py-2 hover:text-theme-purple transition-colors duration-200 flex items-center`}
+            onMouseEnter={() => setIsServicesOpen(true)}
+            onMouseLeave={() => setIsServicesOpen(false)}
+          >
+            Services
+            <svg
+              className="ml-1 w-4 h-4 transition-transform duration-200"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+          <Transition
+            show={isServicesOpen}
+            enter="transition ease-out duration-200"
+            enterFrom="opacity-0 translate-y-1"
+            enterTo="opacity-100 translate-y-0"
+            leave="transition ease-in duration-150"
+            leaveFrom="opacity-100 translate-y-0"
+            leaveTo="opacity-0 translate-y-1"
+          >
+            <div
+              className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-xl border border-gray-200 z-50 py-2 max-h-96 overflow-y-auto"
+              onMouseEnter={() => setIsServicesOpen(true)}
+              onMouseLeave={() => setIsServicesOpen(false)}
+            >
+              {services.map((service) => (
+                <Button
+                  key={service.id}
+                  type="link"
+                  href={`/services/${service.slug}`}
+                  className="block w-full text-left px-4 py-2.5 text-gray-700 hover:bg-light-theme-purple hover:text-theme-purple transition-colors duration-200 text-sm"
+                >
+                  <span className="mr-2">{service.icon}</span>
+                  {service.title}
+                </Button>
+              ))}
+            </div>
+          </Transition>
+        </div>
         <Button
           className={`${
             path.startsWith("/portfolio") || path.startsWith("/project") ? "active-link" : ""
@@ -131,87 +174,6 @@ export default function Header() {
         >
           Pricing
         </Button>
-        <div className="relative group">
-          <button
-            className={`${
-              path.startsWith("/estimate") || 
-              path.startsWith("/planner") || 
-              path.startsWith("/timeline") || 
-              path.startsWith("/pricing/calculator") ||
-              path.startsWith("/templates/selector")
-                ? "text-theme-purple"
-                : "text-theme-blue"
-            } font-medium text-base px-4 py-2 hover:text-theme-purple transition-colors duration-200 flex items-center`}
-            onMouseEnter={() => setIsToolsOpen(true)}
-            onMouseLeave={() => setIsToolsOpen(false)}
-          >
-            Tools
-            <svg
-              className="ml-1 w-4 h-4 transition-transform duration-200"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </button>
-          <Transition
-            show={isToolsOpen}
-            enter="transition ease-out duration-200"
-            enterFrom="opacity-0 translate-y-1"
-            enterTo="opacity-100 translate-y-0"
-            leave="transition ease-in duration-150"
-            leaveFrom="opacity-100 translate-y-0"
-            leaveTo="opacity-0 translate-y-1"
-          >
-            <div
-              className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-xl border border-gray-200 z-50 py-2"
-              onMouseEnter={() => setIsToolsOpen(true)}
-              onMouseLeave={() => setIsToolsOpen(false)}
-            >
-              <Button
-                type="link"
-                href="/pricing/calculator"
-                className="block w-full text-left px-4 py-2.5 text-gray-700 hover:bg-light-theme-purple hover:text-theme-purple transition-colors duration-200 text-sm"
-              >
-                <span className="mr-2">💰</span>Price Calculator
-              </Button>
-              <Button
-                type="link"
-                href="/timeline"
-                className="block w-full text-left px-4 py-2.5 text-gray-700 hover:bg-light-theme-purple hover:text-theme-purple transition-colors duration-200 text-sm"
-              >
-                <span className="mr-2">⏱️</span>Timeline Calculator
-              </Button>
-              <Button
-                type="link"
-                href="/planner"
-                className="block w-full text-left px-4 py-2.5 text-gray-700 hover:bg-light-theme-purple hover:text-theme-purple transition-colors duration-200 text-sm"
-              >
-                <span className="mr-2">📋</span>Page Planner
-              </Button>
-              <Button
-                type="link"
-                href="/estimate"
-                className="block w-full text-left px-4 py-2.5 text-gray-700 hover:bg-light-theme-purple hover:text-theme-purple transition-colors duration-200 text-sm"
-              >
-                <span className="mr-2">🤖</span>AI Estimator
-              </Button>
-              <Button
-                type="link"
-                href="/templates/selector"
-                className="block w-full text-left px-4 py-2.5 text-gray-700 hover:bg-light-theme-purple hover:text-theme-purple transition-colors duration-200 text-sm"
-              >
-                <span className="mr-2">🎨</span>Template Selector
-              </Button>
-            </div>
-          </Transition>
-        </div>
         <Button
           className={`${
             path.startsWith("/templates") && !path.startsWith("/templates/selector") ? "active-link" : ""
@@ -288,16 +250,53 @@ export default function Header() {
             >
               Home
             </Button>
-            <Button
+            <button
               className={`${
                 path.startsWith("/services") ? "active-link" : ""
-              } font-medium px-6 py-3 text-left hover:bg-gray-50 transition-colors duration-200`}
-              type="link"
-              href="/services"
-              onClick={handleLinkClick}
+              } font-medium px-6 py-3 text-left hover:bg-gray-50 transition-colors duration-200 w-full flex items-center justify-between`}
+              onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
             >
-              Services
-            </Button>
+              <span>Services</span>
+              <svg
+                className={`w-4 h-4 transform transition-transform duration-200 ${
+                  isMobileServicesOpen ? "rotate-180" : ""
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <Transition
+              show={isMobileServicesOpen}
+              enter="transition ease-out duration-200"
+              enterFrom="opacity-0 max-h-0"
+              enterTo="opacity-100 max-h-96"
+              leave="transition ease-in duration-150"
+              leaveFrom="opacity-100 max-h-96"
+              leaveTo="opacity-0 max-h-0"
+            >
+              <div className="overflow-hidden bg-gray-50">
+                {services.map((service) => (
+                  <Button
+                    key={service.id}
+                    type="link"
+                    href={`/services/${service.slug}`}
+                    className="block w-full text-left px-10 py-2.5 text-gray-700 hover:text-theme-purple hover:bg-gray-100 transition-colors duration-200 text-sm"
+                    onClick={handleLinkClick}
+                  >
+                    <span className="mr-2">{service.icon}</span>
+                    {service.title}
+                  </Button>
+                ))}
+              </div>
+            </Transition>
             <Button
               className={`${
                 path.startsWith("/portfolio") || path.startsWith("/project") ? "active-link" : ""
@@ -318,87 +317,6 @@ export default function Header() {
             >
               Pricing
             </Button>
-            <button
-              className={`${
-                path.startsWith("/estimate") || 
-                path.startsWith("/planner") || 
-                path.startsWith("/timeline") || 
-                path.startsWith("/pricing/calculator") ||
-                path.startsWith("/templates/selector")
-                  ? "active-link"
-                  : ""
-              } font-medium px-6 py-3 text-left hover:bg-gray-50 transition-colors duration-200 w-full flex items-center justify-between`}
-              onClick={() => setIsMobileToolsOpen(!isMobileToolsOpen)}
-            >
-              <span>Tools</span>
-              <svg
-                className={`w-4 h-4 transform transition-transform duration-200 ${
-                  isMobileToolsOpen ? "rotate-180" : ""
-                }`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </button>
-            <Transition
-              show={isMobileToolsOpen}
-              enter="transition ease-out duration-200"
-              enterFrom="opacity-0 max-h-0"
-              enterTo="opacity-100 max-h-96"
-              leave="transition ease-in duration-150"
-              leaveFrom="opacity-100 max-h-96"
-              leaveTo="opacity-0 max-h-0"
-            >
-              <div className="overflow-hidden bg-gray-50">
-                <Button
-                  type="link"
-                  href="/pricing/calculator"
-                  className="block w-full text-left px-10 py-2.5 text-gray-700 hover:text-theme-purple hover:bg-gray-100 transition-colors duration-200 text-sm"
-                  onClick={handleLinkClick}
-                >
-                  <span className="mr-2">💰</span>Price Calculator
-                </Button>
-                <Button
-                  type="link"
-                  href="/timeline"
-                  className="block w-full text-left px-10 py-2.5 text-gray-700 hover:text-theme-purple hover:bg-gray-100 transition-colors duration-200 text-sm"
-                  onClick={handleLinkClick}
-                >
-                  <span className="mr-2">⏱️</span>Timeline Calculator
-                </Button>
-                <Button
-                  type="link"
-                  href="/planner"
-                  className="block w-full text-left px-10 py-2.5 text-gray-700 hover:text-theme-purple hover:bg-gray-100 transition-colors duration-200 text-sm"
-                  onClick={handleLinkClick}
-                >
-                  <span className="mr-2">📋</span>Page Planner
-                </Button>
-                <Button
-                  type="link"
-                  href="/estimate"
-                  className="block w-full text-left px-10 py-2.5 text-gray-700 hover:text-theme-purple hover:bg-gray-100 transition-colors duration-200 text-sm"
-                  onClick={handleLinkClick}
-                >
-                  <span className="mr-2">🤖</span>AI Estimator
-                </Button>
-                <Button
-                  type="link"
-                  href="/templates/selector"
-                  className="block w-full text-left px-10 py-2.5 text-gray-700 hover:text-theme-purple hover:bg-gray-100 transition-colors duration-200 text-sm"
-                  onClick={handleLinkClick}
-                >
-                  <span className="mr-2">🎨</span>Template Selector
-                </Button>
-              </div>
-            </Transition>
             <Button
               className={`${
                 path.startsWith("/templates") && !path.startsWith("/templates/selector") ? "active-link" : ""
