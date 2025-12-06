@@ -10,15 +10,10 @@ const ServiceDetailPage = lazy(() => import("pages/ServiceDetailPage"));
 const ProjectPage = lazy(() => import("pages/ProjectPage"));
 const ProjectDetailPage = lazy(() => import("pages/ProjectDetailPage"));
 const PricingPage = lazy(() => import("pages/PricingPage"));
-const PriceCalculatorPage = lazy(() => import("pages/PriceCalculatorPage"));
 const AboutPage = lazy(() => import("pages/AboutPage"));
 const ContactPage = lazy(() => import("pages/ContactPage"));
 const TemplatesPage = lazy(() => import("pages/TemplatesPage"));
-const TemplateSelectorPage = lazy(() => import("pages/TemplateSelectorPage"));
 const TemplateDetailPage = lazy(() => import("pages/TemplateDetailPage"));
-const AIEstimatorPage = lazy(() => import("pages/AIEstimatorPage"));
-const PagePlannerPage = lazy(() => import("pages/PagePlannerPage"));
-const TimelineCalculatorPage = lazy(() => import("pages/TimelineCalculatorPage"));
 const TeamPage = lazy(() => import("pages/TeamPage"));
 const DiscussProjectPage = lazy(() => import("pages/DiscussProjectPage"));
 const NotFoundPage = lazy(() => import("pages/NotFoundPage"));
@@ -50,15 +45,10 @@ function App() {
           <Route path="/project/:id" element={<ProjectDetailPage />} />
           <Route path="/portfolio/:id" element={<ProjectDetailPage />} />
           <Route path="/pricing" element={<PricingPage />} />
-          <Route path="/pricing/calculator" element={<PriceCalculatorPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/templates" element={<TemplatesPage />} />
-          <Route path="/templates/selector" element={<TemplateSelectorPage />} />
           <Route path="/templates/:id" element={<TemplateDetailPage />} />
-          <Route path="/estimate" element={<AIEstimatorPage />} />
-          <Route path="/planner" element={<PagePlannerPage />} />
-          <Route path="/timeline" element={<TimelineCalculatorPage />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/discuss-project" element={<DiscussProjectPage />} />
           <Route path="/faq" element={<FAQPage />} />

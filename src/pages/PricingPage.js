@@ -145,22 +145,14 @@ export default function PricingPage() {
               Need a Custom Solution?
             </h3>
             <p className="text-lg md:text-xl opacity-95 mb-6 max-w-2xl mx-auto">
-              Use our calculator to get an accurate estimate based on your specific requirements.
+              Contact us to discuss your specific requirements and get a tailored quote.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/pricing/calculator"
-                className="inline-block px-8 py-4 bg-white text-theme-purple rounded-full text-lg font-semibold hover:bg-gray-100 hover:scale-105 transform transition-all duration-300 shadow-lg"
-              >
-                Price Calculator
-              </Link>
-              <Link
-                to="/contact"
-                className="inline-block px-8 py-4 bg-transparent border-2 border-white text-white rounded-full text-lg font-semibold hover:bg-white hover:text-theme-purple hover:scale-105 transform transition-all duration-300"
-              >
-                Contact Us
-              </Link>
-            </div>
+            <Link
+              to="/contact"
+              className="inline-block px-8 py-4 bg-white text-theme-purple rounded-full text-lg font-semibold hover:bg-gray-100 hover:scale-105 transform transition-all duration-300 shadow-lg"
+            >
+              Contact Us
+            </Link>
           </div>
         </Fade>
       </section>
