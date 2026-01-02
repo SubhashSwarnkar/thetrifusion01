@@ -17,7 +17,7 @@ export default function SEO({
   const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   const metaDescription = description || defaultDescription;
   const metaKeywords = keywords || defaultKeywords;
-  const metaImage = image || `${siteUrl}/logo.png`; // Fallback to logo or default og image
+  const metaImage = image || `${siteUrl}/logo.svg`; // Fallback to logo or default og image
   const metaUrl = url ? `${siteUrl}${url}` : siteUrl;
 
   return (
