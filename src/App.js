@@ -1,7 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
+import { HelmetProvider } from 'react-helmet-async';
 
 import LoadingPage from "components/LoadingPage";
+
 
 // Lazy load pages for better performance
 const LandingPage = lazy(() => import("pages/LandingPage"));
@@ -24,7 +26,6 @@ const AppointmentPage = lazy(() => import("pages/AppointmentPage"));
 import ScrollToTop from "components/ScrollToTop";
 import WhatsAppButton from "components/WhatsAppButton";
 import LiveChat from "components/LiveChat";
-import SEOHead from "components/SEOHead";
 import Breadcrumbs from "components/Breadcrumbs";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -33,8 +34,7 @@ import "./assets/css/styles.css";
 
 function App() {
   return (
-    <>
-      <SEOHead />
+    <HelmetProvider>
       <Suspense fallback={<LoadingPage />}>
         <Routes>
           <Route path="/" element={<LandingPage />} />
@@ -58,6 +58,7 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
+
       <ScrollToTop />
       <WhatsAppButton />
       <LiveChat />
@@ -73,7 +74,7 @@ function App() {
         pauseOnHover
         theme="light"
       />
-    </>
+    </HelmetProvider>
   );
 }
 

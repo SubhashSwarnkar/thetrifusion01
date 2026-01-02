@@ -5,6 +5,7 @@ import Footer from "parts/Footer";
 import Breadcrumbs from "components/Breadcrumbs";
 import { services } from "data/servicesData";
 import { Fade } from "react-awesome-reveal";
+import SEO from "components/common/SEO";
 
 export default function ServicesPage() {
   useEffect(() => {
@@ -13,6 +14,10 @@ export default function ServicesPage() {
 
   return (
     <>
+      <SEO 
+        title="Our Services" 
+        description="Explore our comprehensive digital solutions including web development, mobile apps, UI/UX design, and more."
+      />
       <Header />
       <Breadcrumbs />
       <section className="container mx-auto px-5 py-20">

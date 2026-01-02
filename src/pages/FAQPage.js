@@ -4,6 +4,7 @@ import Footer from "parts/Footer";
 import Breadcrumbs from "components/Breadcrumbs";
 import { Fade } from "react-awesome-reveal";
 import { faqCategories, faqs, getFaqsByCategory, searchFaqs } from "data/faqData";
+import SEO from "components/common/SEO";
 
 export default function FAQPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -42,6 +43,10 @@ export default function FAQPage() {
 
   return (
     <>
+      <SEO 
+        title="FAQ" 
+        description="Find answers to frequently asked questions about TheTriFusion's services, process, and pricing."
+      />
       <Header />
       <Breadcrumbs />
       <section className="container mx-auto px-5 py-20">

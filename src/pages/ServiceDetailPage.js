@@ -5,6 +5,7 @@ import Footer from "parts/Footer";
 import { getServiceBySlug } from "data/servicesData";
 import { Fade, Zoom } from "react-awesome-reveal";
 import NotFoundPage from "./NotFoundPage";
+import SEO from "components/common/SEO";
 
 export default function ServiceDetailPage() {
   const { slug } = useParams();
@@ -20,6 +21,11 @@ export default function ServiceDetailPage() {
 
   return (
     <>
+      <SEO 
+        title={service.title} 
+        description={service.description}
+        image={service.imageUrl}
+      />
       <Header />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-light-theme-purple via-white to-light-theme-purple py-16 md:py-24 overflow-hidden">
@@ -146,7 +152,7 @@ export default function ServiceDetailPage() {
               <div className="absolute -inset-4 bg-gradient-to-r from-theme-purple to-dark-theme-purple rounded-3xl opacity-20 blur-2xl"></div>
               <div className="relative">
               <img
-                src={service.imageUrl}
+                src={service.featuresImage || service.imageUrl}
                 alt={service.title}
                   className="w-full rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
                 loading="lazy"

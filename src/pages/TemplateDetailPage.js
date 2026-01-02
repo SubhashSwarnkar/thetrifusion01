@@ -15,6 +15,7 @@ import {
   getTemplatePurchase 
 } from "utils/templateDownload";
 import TemplatePreview from "components/TemplatePreview";
+import SEO from "components/common/SEO";
 
 export default function TemplateDetailPage() {
   const { id } = useParams();
@@ -86,6 +87,13 @@ export default function TemplateDetailPage() {
 
   return (
     <>
+      <SEO 
+        title={template.name} 
+        description={template.description}
+        keywords={template.keywords}
+        image={template.previewImage}
+        type="product"
+      />
       <Header />
       <section className="container mx-auto px-5 py-20">
         <Fade direction="up" triggerOnce>

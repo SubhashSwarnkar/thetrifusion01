@@ -6,6 +6,7 @@ import Breadcrumbs from "components/Breadcrumbs";
 import { Fade } from "react-awesome-reveal";
 import { getBlogBySlug, blogCategories } from "data/blogData";
 import NotFoundPage from "./NotFoundPage";
+import SEO from "components/common/SEO";
 
 export default function BlogDetailPage() {
   const { slug } = useParams();
@@ -32,6 +33,12 @@ export default function BlogDetailPage() {
 
   return (
     <>
+      <SEO 
+        title={post.title} 
+        description={post.excerpt}
+        image={post.imageUrl}
+        type="article"
+      />
       <Header />
       <Breadcrumbs />
       <article className="container mx-auto px-5 py-20 max-w-4xl">

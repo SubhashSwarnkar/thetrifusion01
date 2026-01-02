@@ -5,6 +5,7 @@ import Footer from "parts/Footer";
 import Breadcrumbs from "components/Breadcrumbs";
 import { Fade, Zoom } from "react-awesome-reveal";
 import { getAllServicePricingPlans } from "data/servicePricingData";
+import SEO from "components/common/SEO";
 
 export default function PricingPage() {
   const [selectedService, setSelectedService] = useState(null);
@@ -20,6 +21,10 @@ export default function PricingPage() {
 
   return (
     <>
+      <SEO 
+        title="Pricing" 
+        description="View our transparent pricing plans for web development, mobile apps, and design services."
+      />
       <Header />
       <Breadcrumbs />
       

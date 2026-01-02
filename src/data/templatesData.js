@@ -26,11 +26,21 @@ const generateIndividualTemplates = (category, industry, basePath, projectNumber
   };
   const categoryName = categoryNames[industry] || category;
   
+  // Varied description patterns to avoid repetition
+  const descriptionPatterns = [
+    "Elevate your {category} business with {name}. This modern template features a fully responsive design, ensuring your site looks stunning on all devices.",
+    "{name} is a premium solution for {category} websites. It comes packed with essential features, clean code, and a user-friendly interface.",
+    "Create a professional online presence with {name}. Designed specifically for {category}, it offers a sleek layout and easy customization options.",
+    "Stand out from the competition with {name}, a high-quality {category} template. Perfect for showcasing your services and attracting new clients.",
+    "Looking for a unique {category} website? {name} delivers a creative design with smooth animations and robust functionality.",
+    "Launch your {category} site in minutes with {name}. This template combines aesthetic appeal with practical features for maximum impact.",
+    "{name} offers a sophisticated design for {category} professionals. Fully optimized for speed and SEO to help you grow your audience."
+  ];
+
   projectNumbers.forEach((num, index) => {
     // Vary prices based on project number and index
-    const priceMultiplier = 1 + (index % 5) * 0.1; // Vary by 10% increments
-    const price = Math.round(basePrice * priceMultiplier);
-    const originalPrice = Math.round(price * 1.5);
+    const price = 299;
+    const originalPrice = 3000;
     
     // Determine if popular or new based on index
     const isPopular = index % 7 === 0 || index % 11 === 0;
@@ -46,6 +56,26 @@ const generateIndividualTemplates = (category, industry, basePath, projectNumber
     // Use extracted image or fallback to default
     const templateImage = extractedInfo.image || `/assets/images/templates/${industry}-${num}.jpg`;
     
+    // Generate unique description
+    const patternIndex = index % descriptionPatterns.length;
+    let description = descriptionPatterns[patternIndex]
+      .replace(/{category}/g, categoryName) // Use display name
+      .replace(/{name}/g, templateName);
+
+    // Generate SEO Keywords
+    const keywords = [
+      templateName,
+      categoryName,
+      industry,
+      `${categoryName} website template`,
+      `${industry} html template`,
+      "responsive website",
+      "bootstrap template",
+      "premium template",
+      "web design",
+      "downloadable template"
+    ].join(", ");
+
     templates.push({
       id: templateId,
       name: templateName,
@@ -56,7 +86,8 @@ const generateIndividualTemplates = (category, industry, basePath, projectNumber
       demoUrl: "#",
       previewUrl: `/templates-preview/${basePath.replace("templets/", "")}/${num}/index.html`,
       previewImage: templateImage,
-      description: `Professional ${category.toLowerCase()} website template #${num} with modern design, fully responsive layout, and all essential features for your business.`,
+      description: description,
+      keywords: keywords,
       features: [
         "Fully Responsive Design",
         "Modern UI/UX",
@@ -274,8 +305,8 @@ export const templates = [
       name: info.name,
       industry: "restaurant",
       category: "Restaurant & Food",
-      price: 9999,
-      originalPrice: 14999,
+      price: 299,
+      originalPrice: 3000,
       demoUrl: "#",
       previewUrl: "/templates-preview/Restaurant/Restaurant/1/index.html",
       previewImage: info.image,
@@ -305,8 +336,8 @@ export const templates = [
       name: info.name,
       industry: "photography",
       category: "Photography & Portfolio",
-      price: 8999,
-      originalPrice: 12999,
+      price: 299,
+      originalPrice: 3000,
       demoUrl: "#",
       previewUrl: "/templates-preview/Photography/Photography/1/index.html",
       previewImage: info.image,
@@ -336,8 +367,8 @@ export const templates = [
       name: info.name,
       industry: "agency",
       category: "Digital Agency",
-      price: 11999,
-      originalPrice: 17999,
+      price: 299,
+      originalPrice: 3000,
       demoUrl: "#",
       previewUrl: "/templates-preview/Digital_Agency/Digital_Agency/1/index.html",
       previewImage: info.image,
@@ -367,8 +398,8 @@ export const templates = [
       name: info.name,
       industry: "education",
       category: "Education",
-      price: 10999,
-      originalPrice: 15999,
+      price: 299,
+      originalPrice: 3000,
       demoUrl: "#",
       previewUrl: "/templates-preview/Education/Education/1/index.html",
       previewImage: info.image,
@@ -398,8 +429,8 @@ export const templates = [
       name: info.name,
       industry: "fashion-designer",
       category: "Fashion Designer",
-      price: 8999,
-      originalPrice: 12999,
+      price: 299,
+      originalPrice: 3000,
       demoUrl: "#",
       previewUrl: "/templates-preview/Fashion-designer/Fashion-designer/1/index.html",
       previewImage: info.image,
@@ -429,8 +460,8 @@ export const templates = [
       name: info.name,
       industry: "law-firm",
       category: "Law Firm",
-      price: 11499,
-      originalPrice: 16999,
+      price: 299,
+      originalPrice: 3000,
       demoUrl: "#",
       previewUrl: "/templates-preview/Law-firm/Law-firm/1/index.html",
       previewImage: info.image,
@@ -460,8 +491,8 @@ export const templates = [
       name: info.name,
       industry: "medical-doctor",
       category: "Medical Doctor",
-      price: 11299,
-      originalPrice: 16499,
+      price: 299,
+      originalPrice: 3000,
       demoUrl: "#",
       previewUrl: "/templates-preview/Medical-Doctor/Medical-Doctor/1/index.html",
       previewImage: info.image,
@@ -491,8 +522,8 @@ export const templates = [
       name: info.name,
       industry: "music-concert",
       category: "Music Concert",
-      price: 9499,
-      originalPrice: 13999,
+      price: 299,
+      originalPrice: 3000,
       demoUrl: "#",
       previewUrl: "/templates-preview/Music-Concert/Music-Concert/1/index.html",
       previewImage: info.image,
@@ -522,8 +553,8 @@ export const templates = [
       name: info.name,
       industry: "ngo",
       category: "NGO",
-      price: 8499,
-      originalPrice: 12499,
+      price: 299,
+      originalPrice: 3000,
       demoUrl: "#",
       previewUrl: "/templates-preview/NGo/NGo/1/index.html",
       previewImage: info.image,
@@ -553,8 +584,8 @@ export const templates = [
       name: info.name,
       industry: "pet",
       category: "Pet",
-      price: 7999,
-      originalPrice: 11999,
+      price: 299,
+      originalPrice: 3000,
       demoUrl: "#",
       previewUrl: "/templates-preview/Pet/Pet/1/index.html",
       previewImage: info.image,
@@ -584,8 +615,8 @@ export const templates = [
       name: info.name,
       industry: "real-estate",
       category: "Real Estate",
-      price: 11699,
-      originalPrice: 17199,
+      price: 299,
+      originalPrice: 3000,
       demoUrl: "#",
       previewUrl: "/templates-preview/RReal-estate/RReal-estate/1/index.html",
       previewImage: info.image,
@@ -615,8 +646,8 @@ export const templates = [
       name: info.name,
       industry: "titan-master",
       category: "Titan Master",
-      price: 12999,
-      originalPrice: 18999,
+      price: 299,
+      originalPrice: 3000,
       demoUrl: "#",
       previewUrl: "/templates-preview/Titan-master/Titan-master/1/index.html",
       previewImage: info.image,
@@ -645,8 +676,8 @@ export const templates = [
       name: info.name,
       industry: "tour-travels",
       category: "Tour Travels",
-      price: 10499,
-      originalPrice: 15499,
+      price: 299,
+      originalPrice: 3000,
       demoUrl: "#",
       previewUrl: "/templates-preview/Tour Travels/Tour Travels/1/index.html",
       previewImage: info.image,
@@ -676,8 +707,8 @@ export const templates = [
       name: info.name,
       industry: "webapp-app",
       category: "Web App",
-      price: 12199,
-      originalPrice: 18199,
+      price: 299,
+      originalPrice: 3000,
       demoUrl: "#",
       previewUrl: "/templates-preview/Webapp-APp/Webapp-APp/1/index.html",
       previewImage: info.image,
@@ -706,8 +737,8 @@ export const templates = [
       name: info.name,
       industry: "yoga",
       category: "Yoga",
-      price: 9199,
-      originalPrice: 13499,
+      price: 299,
+      originalPrice: 3000,
       demoUrl: "#",
       previewUrl: "/templates-preview/Yoga/Yoga/1/index.html",
       previewImage: info.image,
@@ -737,8 +768,8 @@ export const templates = [
       name: info.name,
       industry: "e-book",
       category: "E-Book",
-      price: 7499,
-      originalPrice: 10999,
+      price: 299,
+      originalPrice: 3000,
       demoUrl: "#",
       previewUrl: "/templates-preview/e-book/e-book/1/index.html",
       previewImage: info.image,

@@ -27,7 +27,12 @@ export default function RazorpayButton({
       const orderData = await createRazorpayOrder(
         amount,
         "INR",
-        `template_${templateId}_${Date.now()}`
+        `template_${templateId}_${Date.now()}`,
+        {
+          name: customerName,
+          email: customerEmail,
+          phone: customerPhone
+        }
       );
 
       // Initiate payment

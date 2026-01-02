@@ -15,20 +15,34 @@ export const loadRazorpayScript = () => {
   });
 };
 
-export const createRazorpayOrder = async (amount, currency = "INR", receipt = null) => {
-  // This should call your backend API to create an order
-  // For now, returning a mock order structure
-  // TODO: Replace with actual API call
-  
-  const orderId = `order_${Date.now()}`;
-  
-  return {
-    id: orderId,
-    amount: amount * 100, // Razorpay expects amount in paise
-    currency: currency,
-    receipt: receipt || orderId,
-    status: "created"
-  };
+export const createRazorpayOrder = async (amount, currency = "INR", receipt = null, customerDetails = {}) => {
+  try {
+    const response = await fetch("http://localhost:5000/api/create-order", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        amount,
+        currency,
+        receipt: receipt || `receipt_${Date.now()}`,
+        customerName: customerDetails.name,
+        customerEmail: customerDetails.email,
+        customerPhone: customerDetails.phone,
+      }),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || "Failed to create order");
+    }
+
+    const order = await response.json();
+    return order;
+  } catch (error) {
+    console.error("Error creating Razorpay order:", error);
+    throw error;
+  }
 };
 
 export const initiatePayment = async (orderData, options = {}) => {
@@ -38,19 +52,45 @@ export const initiatePayment = async (orderData, options = {}) => {
     throw new Error("Razorpay SDK failed to load");
   }
 
-  const razorpayKey = process.env.REACT_APP_RAZORPAY_KEY_ID || "rzp_test_1DP5mmOlF5G5ag";
+  const razorpayKey = process.env.REACT_APP_RAZORPAY_KEY_ID;
+
+  if (!razorpayKey) {
+    // Fallback or warning if key is missing in frontend
+    console.warn("REACT_APP_RAZORPAY_KEY_ID is not set in frontend .env");
+  }
 
   const paymentOptions = {
     key: razorpayKey,
-    amount: orderData.amount,
+    amount: orderData.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
     currency: orderData.currency,
     name: "TheTriFusion",
     description: options.description || "Template Purchase",
-    order_id: orderData.id,
-    handler: function (response) {
-      // Handle successful payment
-      if (options.onSuccess) {
-        options.onSuccess(response);
+    image: "/logo192.png", // Optional: Add your logo
+    order_id: orderData.id, // This is the order_id created in the backend
+    handler: async function (response) {
+      try {
+        // Verify payment with backend
+        const verificationResult = await verifyPayment(
+          response.razorpay_payment_id,
+          response.razorpay_order_id,
+          response.razorpay_signature
+        );
+
+        if (verificationResult.success) {
+          if (options.onSuccess) {
+            options.onSuccess(response, orderData);
+          }
+        } else {
+          throw new Error("Payment verification failed");
+        }
+      } catch (error) {
+        console.error("Payment verification error:", error);
+        if (options.onError) {
+          options.onError(error);
+        } else {
+            // Default error handling
+            alert("Payment verification failed: " + error.message);
+        }
       }
     },
     prefill: {
@@ -77,10 +117,8 @@ export const initiatePayment = async (orderData, options = {}) => {
 };
 
 export const verifyPayment = async (paymentId, orderId, signature) => {
-  // This should call your backend API to verify the payment
-  // TODO: Replace with actual API call
   try {
-    const response = await fetch(`${process.env.REACT_APP_API_URL || ""}/api/verify-payment`, {
+    const response = await fetch("http://localhost:5000/api/verify-payment", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -93,10 +131,9 @@ export const verifyPayment = async (paymentId, orderId, signature) => {
     });
 
     const data = await response.json();
-    return data.success;
+    return data;
   } catch (error) {
     console.error("Payment verification error:", error);
-    return false;
+    return { success: false, error: error.message };
   }
 };
-

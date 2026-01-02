@@ -10,6 +10,7 @@ import {
   getBlogsByCategory,
   searchBlogs,
 } from "data/blogData";
+import SEO from "components/common/SEO";
 
 export default function BlogPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -45,6 +46,10 @@ export default function BlogPage() {
 
   return (
     <>
+      <SEO 
+        title="Blog" 
+        description="Insights, tutorials, and trends in software development, design, and technology."
+      />
       <Header />
       <Breadcrumbs />
       <section className="container mx-auto px-5 py-20">

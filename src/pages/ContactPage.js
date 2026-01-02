@@ -6,6 +6,7 @@ import Breadcrumbs from "components/Breadcrumbs";
 import { DiscussForm } from "parts/DiscussForm";
 import { Fade } from "react-awesome-reveal";
 import { faqs, getFaqsByCategory } from "data/faqData";
+import SEO from "components/common/SEO";
 
 export default function ContactPage() {
   const [data, setData] = React.useState({
@@ -49,6 +50,10 @@ export default function ContactPage() {
 
   return (
     <>
+      <SEO 
+        title="Contact Us" 
+        description="Get in touch with TheTriFusion team. Discuss your project, schedule a consultation, or just say hello."
+      />
       <Header />
       <Breadcrumbs />
       <section className="container mx-auto px-5 py-20">

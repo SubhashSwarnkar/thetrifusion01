@@ -31,6 +31,8 @@ module.exports = {
         "theme-purple": "#6610f2",
         "dark-theme-purple": "#520dc2",
         "theme-blue": "#152C5B",
+        "theme-cyan": "#06b6d4",
+        "theme-pink": "#ec4899",
       },
       margin: {
         "-112": "-28rem",
@@ -40,6 +42,8 @@ module.exports = {
       },
       animation: {
         "bounce-x": "bouncex 1s infinite",
+        "float": "float 6s ease-in-out infinite",
+        "wave": "wave 10s linear infinite",
       },
       keyframes: {
         bouncex: {
@@ -51,6 +55,15 @@ module.exports = {
             transform: "translateY(0)",
             animationTimingFunction: "cubic-bezier(0, 0, 0.2, 1)",
           },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-20px)" },
+        },
+        wave: {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
         },
       },
       spacing: {

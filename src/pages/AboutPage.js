@@ -4,6 +4,7 @@ import Header from "parts/Header";
 import Footer from "parts/Footer";
 import Breadcrumbs from "components/Breadcrumbs";
 import { Fade } from "react-awesome-reveal";
+import SEO from "components/common/SEO";
 
 export default function AboutPage() {
   useEffect(() => {
@@ -38,6 +39,10 @@ export default function AboutPage() {
 
   return (
     <>
+      <SEO 
+        title="About Us" 
+        description="Learn about TheTriFusion, our story, values, and the team behind our success in software development and digital solutions."
+      />
       <Header />
       <Breadcrumbs />
       <section className="container mx-auto px-5 py-20">

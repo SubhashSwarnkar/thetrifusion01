@@ -3,6 +3,7 @@ import Web from "../assets/images/Services/Web.png";
 import Mobile from "../assets/images/Services/Mobile.png";
 import UIUX from "../assets/images/Services/Design.png";
 import BuildWebsite from "../assets/images/hero/BuildWebsite.png";
+import SoftwareFeatures from "../assets/images/Services/SoftwareFeatures.png";
 
 export const services = [
   {
@@ -12,6 +13,7 @@ export const services = [
     description: "As the premier software company, we empower your growth and innovation with a future-forward vision for software development. We focus on your long-term goals, ensuring you are equipped to thrive in this competitive environment.",
     shortDescription: "Future-ready software solutions that combine advanced technologies and industry experience.",
     imageUrl: Web,
+    featuresImage: SoftwareFeatures,
     icon: "💻",
     bannerTitle: "Our Software Development Services",
     bannerDescription: "We provide software development services that combine advanced technologies and industry experience, ensuring you receive a tailored, future-ready software solution.",

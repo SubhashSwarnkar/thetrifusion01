@@ -10,6 +10,7 @@ import Discuss from 'parts/Discuss';
 import Footer from 'parts/Footer';
 import AllPortfolio from 'parts/AllPortfolio';
 import AllPortfolioEnhanced from 'parts/AllPortfolioEnhanced';
+import SEO from 'components/common/SEO';
 
 import { Portfolios } from 'json/landingPageData';
 
@@ -21,6 +22,10 @@ export default class ProjectPage extends Component {
   render() {
     return (
       <>
+        <SEO 
+          title="Portfolio" 
+          description="Explore our portfolio of successful projects including web applications, mobile apps, and brand designs."
+        />
         <Header />
         <HeroPortfolio />
         <AllPortfolioEnhanced data={Portfolios} />

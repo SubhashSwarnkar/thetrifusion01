@@ -2,34 +2,38 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 import Button from "../elements/Button";
-import BuildWebsite from "../assets/images/hero/BuildWebsite.png";
+import HeroVideo from "../assets/images/hero/grok-video-a50935b7-1f97-482b-a269-949d5dedccc5 (1).mp4";
+import SplashCursor from "components/SplashCursor";
 
 export default function Hero() {
   return (
-    <section className="hero bg-gradient-to-br from-white via-gray-50 to-light-theme-purple/10 py-20">
+    <section className="hero relative overflow-hidden py-20 z-10">
+      <div className="absolute inset-0 z-[-1]">
+        <SplashCursor />
+      </div>
       <div className="container mx-auto px-5">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           <div className="w-full lg:w-1/2 text-center lg:text-left">
-            <Fade direction="right" triggerOnce>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-theme-blue font-bold leading-tight mb-6">
+            <Fade direction="up" triggerOnce>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-gray-900">
                 Growing Your Business{" "}
-                <span className="text-theme-purple">Is Our Calling</span>
+                <span className="text-gradient">Is Our Calling</span>
               </h1>
             </Fade>
 
-            <Fade direction="right" delay={200} triggerOnce>
+            <Fade direction="up" delay={200} triggerOnce>
               <p className="font-light text-lg sm:text-xl text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
                 We provide expert developers & designers using the latest technologies to help
                 you scale up your business and achieve digital success.
               </p>
             </Fade>
 
-            <Fade direction="right" delay={400} triggerOnce>
+            <Fade direction="up" delay={400} triggerOnce>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button
                   href="/portfolio"
                   type="link"
-                  className="flex items-center justify-center px-8 py-4 text-white text-lg bg-theme-purple rounded-full shadow-xl hover:bg-dark-theme-purple transition-all duration-300 hover:shadow-2xl hover:scale-105"
+                  className="btn-wave flex items-center justify-center px-8 py-4 text-white text-lg rounded-full shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105"
                 >
                   See Our Work
                   <svg
@@ -97,11 +101,16 @@ export default function Hero() {
             <Fade direction="left" triggerOnce>
               <div className="relative">
                 <div className="absolute inset-0 "></div>
-                <img 
-                  className="relative z-10 w-full max-w-lg" 
-                  src={BuildWebsite} 
-                  alt="Build Website" 
-                />
+                <video 
+                  className="relative z-10 w-full max-w-2xl rounded-2xl object-cover" 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                >
+                  <source src={HeroVideo} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </Fade>
           </div>

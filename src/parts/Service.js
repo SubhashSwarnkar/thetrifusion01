@@ -105,7 +105,7 @@ export default function Service({ data }) {
           <div className="text-center mt-12">
             <Link
               to="/services"
-              className="inline-block px-8 py-4 bg-theme-purple text-white rounded-full text-lg font-medium hover:bg-dark-theme-purple transition duration-200 shadow-lg hover:shadow-xl"
+              className="inline-block px-8 py-4 btn-wave text-white rounded-full text-lg font-medium transition duration-200 shadow-lg hover:shadow-xl"
             >
               View All Services
             </Link>
