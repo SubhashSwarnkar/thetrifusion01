@@ -29,22 +29,106 @@ export default function TemplateDetailPage() {
   const [isPurchased, setIsPurchased] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+  const [templateState, setTemplateState] = useState(null);
+  const [timeLeft, setTimeLeft] = useState("");
+
+  // Get or initialize template state (same logic as TemplatesPage)
+  const getTemplateState = (tId) => {
+    const isCollection = tId.includes("template-full");
+    if (isCollection) return null;
+
+    const storageKey = `template_state_${tId}`;
+    const saved = localStorage.getItem(storageKey);
+    const now = new Date().getTime();
+    
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      if (now < parsed.endTime) {
+        return parsed;
+      }
+    }
+    
+    const isOffer = Math.random() > 0.3; 
+    const duration = 12 * 60 * 60 * 1000; 
+    
+    const randomOffset = Math.floor(Math.random() * (11 * 60 * 60 * 1000));
+    const endTime = now + duration - randomOffset;
+    
+    const offerPrice = Math.floor(Math.random() * (699 - 299 + 1)) + 299;
+    const normalPrice = Math.floor(Math.random() * (6999 - 1999 + 1)) + 1999;
+    
+    const newState = {
+      mode: "offer",
+      endTime: endTime,
+      offerPrice: offerPrice,
+      normalPrice: normalPrice
+    };
+    
+    localStorage.setItem(storageKey, JSON.stringify(newState));
+    return newState;
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
     if (template) {
       setIsPurchased(isTemplatePurchased(template.id));
+      const state = getTemplateState(template.id);
+      setTemplateState(state);
     }
   }, [id, template]);
+
+  // Timer effect (same logic as TemplatesPage)
+  useEffect(() => {
+    if (!template || !templateState) return;
+    const isCollection = template.id.includes("template-full");
+    if (isCollection) return;
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      let current = templateState;
+      
+      if (now > current.endTime) {
+        const isOfferNow = current.mode === "offer";
+        const nextMode = isOfferNow ? "normal" : "offer";
+        const nextDuration = isOfferNow ? 5 * 60 * 60 * 1000 : 12 * 60 * 60 * 1000;
+        
+        const nextState = {
+          ...current,
+          mode: nextMode,
+          endTime: now + nextDuration
+        };
+        
+        localStorage.setItem(`template_state_${template.id}`, JSON.stringify(nextState));
+        setTemplateState(nextState);
+        current = nextState;
+      }
+      
+      const distance = current.endTime - now;
+      if (distance < 0) {
+          setTimeLeft("00h 00m 00s");
+          return;
+      }
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      setTimeLeft(`${hours}h ${minutes}m ${seconds}s`);
+    }, 1000);
+    
+    return () => clearInterval(timer);
+  }, [template, templateState]);
 
   const handlePaymentSuccess = (paymentResponse, orderData) => {
     // Store purchase information
     if (template) {
+      const isCollection = template.id.includes("template-full");
+      const templatePrice = template.price || 499;
+      
       storePurchase(template.id, {
         paymentId: paymentResponse.razorpay_payment_id,
         orderId: paymentResponse.razorpay_order_id,
         signature: paymentResponse.razorpay_signature,
-        amount: template.price,
+        amount: templatePrice,
         customerName: customerInfo.name,
         customerEmail: customerInfo.email,
         customerPhone: customerInfo.phone
@@ -84,6 +168,10 @@ export default function TemplateDetailPage() {
   if (!template) {
     return <NotFoundPage />;
   }
+
+  // Always use template price (499) - removed dynamic pricing
+  const isCollection = template.id.includes("template-full");
+  const currentPrice = template.price || 499;
 
   return (
     <>
@@ -167,13 +255,8 @@ export default function TemplateDetailPage() {
               <div className="mb-6">
                 <div className="flex items-baseline gap-3">
                   <span className="text-4xl font-bold text-theme-purple">
-                    ₹{template.price.toLocaleString()}
+                    ₹{currentPrice.toLocaleString()}
                   </span>
-                  {template.originalPrice && (
-                    <span className="text-xl text-gray-400 line-through">
-                      ₹{template.originalPrice.toLocaleString()}
-                    </span>
-                  )}
                 </div>
               </div>
 
@@ -316,7 +399,7 @@ export default function TemplateDetailPage() {
                   </div>
                   
                   <RazorpayButton
-                    amount={template.price}
+                    amount={currentPrice}
                     templateId={template.id}
                     templateName={template.name}
                     customerName={customerInfo.name}

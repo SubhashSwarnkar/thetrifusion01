@@ -43,110 +43,78 @@ export const getTemplatePurchase = (templateId) => {
 };
 
 /**
- * Download template files
- * Note: For large template folders, this should ideally be handled by a backend API
- * that serves pre-zipped files or provides a download link
+ * Download template files via backend API
  */
 export const downloadTemplate = async (templateId, templatePath, templateName) => {
   try {
-    // Check if template is purchased
+    // Check if template is purchased locally (for UI state)
     if (!isTemplatePurchased(templateId)) {
       throw new Error('Template not purchased. Please complete the purchase first.');
     }
 
-    // Update download count
+    // Get purchase info to get customer email
     const purchases = getPurchases();
-    if (purchases[templateId]) {
-      purchases[templateId].downloadCount = (purchases[templateId].downloadCount || 0) + 1;
-      purchases[templateId].lastDownloadedAt = new Date().toISOString();
-      localStorage.setItem('templatePurchases', JSON.stringify(purchases));
+    const purchase = purchases[templateId];
+    
+    if (!purchase || !purchase.customerEmail) {
+      throw new Error('Purchase information not found. Please contact support.');
     }
 
-    // Check if backend API is available
-    const apiUrl = process.env.REACT_APP_API_URL;
+    // Use backend API to download zipped template
+    const apiUrl = process.env.REACT_APP_API_URL || 'http://43.204.211.69:5000';
     
-    if (apiUrl) {
-      // Option 1: Use backend API to download zipped template
-      try {
-        const response = await fetch(`${apiUrl}/api/templates/${templateId}/download`, {
+    try {
+      const response = await fetch(
+        `${apiUrl}/api/templates/${templateId}/download`,
+        {
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${localStorage.getItem('authToken') || ''}`
-          }
-        });
-
-        if (response.ok) {
-          const blob = await response.blob();
-          const url = window.URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          a.href = url;
-          a.download = `${templateName.replace(/\s+/g, '_')}.zip`;
-          document.body.appendChild(a);
-          a.click();
-          window.URL.revokeObjectURL(url);
-          document.body.removeChild(a);
-          
-          return {
-            success: true,
-            message: 'Download started successfully!'
-          };
+            'accept': 'application/json',
+          },
         }
-      } catch (apiError) {
-        console.warn('Backend API not available, using alternative method:', apiError);
+      );
+
+      if (response.status === 403) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || errorData.message || 'Purchase verification failed. Please ensure payment is completed.');
       }
+
+      if (response.status === 404) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || errorData.message || 'Template not found. Please contact support.');
+      }
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || errorData.message || 'Download failed. Please try again or contact support.');
+      }
+
+      // Get the zip file as blob
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${templateName.replace(/\s+/g, '_')}_${Date.now()}.zip`;
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+      document.body.removeChild(a);
+
+      // Update download count
+      if (purchases[templateId]) {
+        purchases[templateId].downloadCount = (purchases[templateId].downloadCount || 0) + 1;
+        purchases[templateId].lastDownloadedAt = new Date().toISOString();
+        localStorage.setItem('templatePurchases', JSON.stringify(purchases));
+      }
+      
+      return {
+        success: true,
+        message: 'Download started successfully!'
+      };
+    } catch (apiError) {
+      console.error('Download API error:', apiError);
+      throw apiError;
     }
-
-    // Option 2: For development/local setup, provide instructions
-    // In production, you should always use a backend API
-    const purchase = purchases[templateId];
-    const downloadInfo = {
-      templateId,
-      templateName,
-      templatePath,
-      purchaseDate: purchase?.purchasedAt,
-      customerEmail: purchase?.customerEmail
-    };
-
-    // Store download request info (for backend processing)
-    localStorage.setItem(`downloadRequest_${templateId}`, JSON.stringify(downloadInfo));
-
-    // Show instructions to user
-    const message = `
-      Template Download Request
-      
-      Template: ${templateName}
-      Template ID: ${templateId}
-      
-      For large template collections, please contact our support team with your purchase details.
-      We will provide you with a secure download link.
-      
-      Email: support@thetrifusion.com
-      Include your purchase email: ${purchase?.customerEmail || 'N/A'}
-    `;
-
-    // Copy download info to clipboard if possible
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(JSON.stringify(downloadInfo, null, 2));
-    }
-
-    // Open email client or show instructions
-    const emailSubject = encodeURIComponent(`Template Download Request - ${templateName}`);
-    const emailBody = encodeURIComponent(
-      `Hello,\n\nI would like to download the template I purchased:\n\n` +
-      `Template: ${templateName}\n` +
-      `Template ID: ${templateId}\n` +
-      `Purchase Email: ${purchase?.customerEmail || 'N/A'}\n` +
-      `Purchase Date: ${purchase?.purchasedAt || 'N/A'}\n\n` +
-      `Please provide the download link.\n\nThank you!`
-    );
-    
-    window.open(`mailto:support@thetrifusion.com?subject=${emailSubject}&body=${emailBody}`, '_blank');
-    
-    return {
-      success: true,
-      message: 'Download request processed. Please check your email or contact support.',
-      requiresBackend: true
-    };
   } catch (error) {
     console.error('Download error:', error);
     throw error;
@@ -154,35 +122,34 @@ export const downloadTemplate = async (templateId, templatePath, templateName) =
 };
 
 /**
- * Alternative: Direct file download using fetch (for smaller files)
- * For large template folders, use backend API instead
+ * Check purchase status from backend
  */
-export const downloadTemplateDirect = async (templateId, templatePath, templateName) => {
-  // This is a placeholder for direct download
-  // In production, implement backend API that:
-  // 1. Zips the template folder
-  // 2. Returns the zip file as a blob
-  // 3. Triggers browser download
-  
-  const response = await fetch(`/api/templates/${templateId}/download`, {
-    method: 'GET',
-    headers: {
-      'Authorization': `Bearer ${localStorage.getItem('authToken')}` // If using auth
+export const checkPurchaseStatus = async (templateId, customerEmail) => {
+  try {
+    const apiUrl = process.env.REACT_APP_API_URL || 'http://43.204.211.69:5000';
+    const response = await fetch(
+      `${apiUrl}/api/templates/${templateId}/check-purchase`,
+      {
+        method: 'GET',
+        headers: {
+          'accept': 'application/json',
+        },
+      }
+    );
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      return { 
+        purchased: false, 
+        error: errorData.error || errorData.message || 'Failed to check purchase status' 
+      };
     }
-  });
 
-  if (!response.ok) {
-    throw new Error('Download failed');
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Check purchase error:', error);
+    return { purchased: false, error: error.message };
   }
-
-  const blob = await response.blob();
-  const url = window.URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = `${templateName}.zip`;
-  document.body.appendChild(a);
-  a.click();
-  window.URL.revokeObjectURL(url);
-  document.body.removeChild(a);
 };
 

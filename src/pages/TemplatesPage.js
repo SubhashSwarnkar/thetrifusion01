@@ -91,7 +91,8 @@ const TemplateCard = ({ template, index, onPreview, onCollectionClick }) => {
     return () => clearInterval(timer);
   }, [template.id, templateState, isCollection]);
 
-  const currentPrice = !isCollection && templateState ? (templateState.mode === "offer" ? templateState.offerPrice : templateState.normalPrice) : 0;
+  // Always use template price (499) - removed dynamic pricing
+  const currentPrice = template.price || 499;
 
   return (
     <Fade
@@ -148,14 +149,9 @@ const TemplateCard = ({ template, index, onPreview, onCollectionClick }) => {
           <div className="flex items-center justify-between mb-4 mt-auto">
             {!isCollection ? (
               <div>
-                <span className={`text-2xl font-bold ${templateState.mode === "offer" ? "text-red-500" : "text-theme-blue"}`}>
+                <span className="text-2xl font-bold text-theme-purple">
                   ₹{currentPrice.toLocaleString()}
                 </span>
-                {templateState.mode === "offer" && (
-                  <span className="text-gray-400 line-through ml-2 text-sm">
-                    ₹{templateState.normalPrice.toLocaleString()}
-                  </span>
-                )}
               </div>
             ) : (
                 <div className="text-theme-purple font-medium">

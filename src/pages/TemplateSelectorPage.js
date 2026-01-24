@@ -114,13 +114,8 @@ export default function TemplateSelectorPage() {
                           <div className="flex items-center justify-between mb-4">
                             <div>
                               <span className="text-2xl font-bold text-theme-purple">
-                                ₹{template.price.toLocaleString()}
+                                ₹{(template.price || 499).toLocaleString()}
                               </span>
-                              {template.originalPrice && (
-                                <span className="text-gray-400 line-through ml-2">
-                                  ₹{template.originalPrice.toLocaleString()}
-                                </span>
-                              )}
                             </div>
                           </div>
                           <div className="flex gap-2">

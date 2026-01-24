@@ -32,7 +32,9 @@ export default function RazorpayButton({
           name: customerName,
           email: customerEmail,
           phone: customerPhone
-        }
+        },
+        templateId,
+        templateName
       );
 
       // Initiate payment

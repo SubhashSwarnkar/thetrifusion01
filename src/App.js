@@ -27,6 +27,7 @@ import ScrollToTop from "components/ScrollToTop";
 import WhatsAppButton from "components/WhatsAppButton";
 import LiveChat from "components/LiveChat";
 import Breadcrumbs from "components/Breadcrumbs";
+import DevToolsBlocker from "components/DevToolsBlocker";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -59,6 +60,7 @@ function App() {
         </Routes>
       </Suspense>
 
+      <DevToolsBlocker />
       <ScrollToTop />
       <WhatsAppButton />
       <LiveChat />

@@ -15,26 +15,30 @@ export const loadRazorpayScript = () => {
   });
 };
 
-export const createRazorpayOrder = async (amount, currency = "INR", receipt = null, customerDetails = {}) => {
+export const createRazorpayOrder = async (amount, currency = "INR", receipt = null, customerDetails = {}, templateId = null, templateName = null) => {
   try {
-    const response = await fetch("http://localhost:5000/api/create-order", {
+    const apiUrl = process.env.REACT_APP_API_URL || "http://43.204.211.69:5000";
+    const response = await fetch(`${apiUrl}/api/create-order`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "accept": "application/json",
       },
       body: JSON.stringify({
         amount,
         currency,
         receipt: receipt || `receipt_${Date.now()}`,
-        customerName: customerDetails.name,
-        customerEmail: customerDetails.email,
-        customerPhone: customerDetails.phone,
+        customerName: customerDetails.name || "",
+        customerEmail: customerDetails.email || "",
+        customerPhone: customerDetails.phone || "",
+        templateId: templateId || "",
+        templateName: templateName || "",
       }),
     });
 
     if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.error || "Failed to create order");
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(errorData.error || errorData.message || "Failed to create order");
     }
 
     const order = await response.json();
@@ -118,10 +122,12 @@ export const initiatePayment = async (orderData, options = {}) => {
 
 export const verifyPayment = async (paymentId, orderId, signature) => {
   try {
-    const response = await fetch("http://localhost:5000/api/verify-payment", {
+    const apiUrl = process.env.REACT_APP_API_URL || "http://43.204.211.69:5000";
+    const response = await fetch(`${apiUrl}/api/verify-payment`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "accept": "application/json",
       },
       body: JSON.stringify({
         paymentId,
@@ -129,6 +135,14 @@ export const verifyPayment = async (paymentId, orderId, signature) => {
         signature
       })
     });
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      return { 
+        success: false, 
+        error: errorData.error || errorData.message || "Payment verification failed" 
+      };
+    }
 
     const data = await response.json();
     return data;

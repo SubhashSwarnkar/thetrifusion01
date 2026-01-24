@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 export default function TemplatePreview({ template, isOpen, onClose }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [viewMode, setViewMode] = useState('desktop'); // 'mobile', 'tablet', 'desktop'
 
   // Generate preview URL based on template path
   const getPreviewUrl = () => {
@@ -45,11 +46,12 @@ export default function TemplatePreview({ template, isOpen, onClose }) {
 
   const baseUrl = getBaseUrl();
   
-  // Reset loading state when template or preview URL changes
+  // Reset loading state and view mode when template or preview URL changes
   useEffect(() => {
     if (isOpen && template) {
       setLoading(true);
       setError(null);
+      setViewMode('desktop'); // Reset to desktop view when opening a new template
     }
   }, [isOpen, template?.id, previewUrl]);
 
@@ -109,6 +111,83 @@ export default function TemplatePreview({ template, isOpen, onClose }) {
               {template.category}
             </p>
           </div>
+          
+          {/* View Mode Switcher - Centered */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center gap-2 bg-gray-100 rounded-lg p-1">
+            <button
+              onClick={() => setViewMode('mobile')}
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+                viewMode === 'mobile'
+                  ? 'bg-white text-theme-purple shadow-sm'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+              title="Mobile View"
+            >
+              <svg
+                className="w-5 h-5 inline-block mr-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                />
+              </svg>
+              Mobile
+            </button>
+            <button
+              onClick={() => setViewMode('tablet')}
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+                viewMode === 'tablet'
+                  ? 'bg-white text-theme-purple shadow-sm'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+              title="Tablet View"
+            >
+              <svg
+                className="w-5 h-5 inline-block mr-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                />
+              </svg>
+              Tablet
+            </button>
+            <button
+              onClick={() => setViewMode('desktop')}
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+                viewMode === 'desktop'
+                  ? 'bg-white text-theme-purple shadow-sm'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+              title="Desktop View"
+            >
+              <svg
+                className="w-5 h-5 inline-block mr-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+              Desktop
+            </button>
+          </div>
+
           <button
             onClick={onClose}
             className="p-2 hover:bg-gray-100 rounded-full transition-colors"
@@ -131,138 +210,147 @@ export default function TemplatePreview({ template, isOpen, onClose }) {
         </div>
 
         {/* Preview Content */}
-        <div className="flex-1 relative overflow-hidden">
-          {loading && (
-            <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
-              <div className="text-center">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-theme-purple mx-auto mb-4"></div>
-                <p className="text-gray-600">Loading preview...</p>
-              </div>
-            </div>
-          )}
-
-          {error ? (
-            <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
-              <div className="text-center p-8">
-                <svg
-                  className="w-16 h-16 text-red-500 mx-auto mb-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-                <p className="text-red-600 mb-4">{error}</p>
-                <p className="text-gray-600 text-sm">
-                  The template preview is not available. Please contact support or purchase the template to access the files.
-                </p>
-              </div>
-            </div>
-          ) : previewUrl ? (
-            <>
-              {loading && (
-                <div className="absolute inset-0 flex items-center justify-center bg-gray-100 z-10">
-                  <div className="text-center">
-                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-theme-purple mx-auto mb-4"></div>
-                    <p className="text-gray-600">Loading preview...</p>
-                  </div>
+        <div className="flex-1 relative overflow-auto bg-gray-200 flex items-center justify-center p-4">
+          <div
+            className={`relative bg-white shadow-2xl transition-all duration-300 ${
+              viewMode === 'mobile'
+                ? 'w-[375px] h-[667px]'
+                : viewMode === 'tablet'
+                ? 'w-[768px] h-[1024px]'
+                : 'w-full h-full'
+            }`}
+            style={{
+              maxWidth: viewMode === 'desktop' ? '100%' : undefined,
+              maxHeight: viewMode === 'desktop' ? '100%' : undefined,
+            }}
+          >
+            {loading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-100 z-10">
+                <div className="text-center">
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-theme-purple mx-auto mb-4"></div>
+                  <p className="text-gray-600">Loading preview...</p>
                 </div>
-              )}
-              <iframe
-                key={`${template.id}-${previewUrl}`}
-                src={previewUrl}
-                className="w-full h-full border-0"
-                title={`${template.name} Preview`}
-                allowFullScreen
-                onLoad={(e) => {
-                  handleIframeLoad();
-                  // Fix base path for relative assets in the template
-                  // This ensures CSS, JS, and image files load correctly
-                  try {
-                    const iframe = e.target;
-                    if (iframe && iframe.contentDocument && baseUrl) {
-                      const doc = iframe.contentDocument;
-                      
-                      // Check if base tag exists, if not add it
-                      let baseTag = doc.querySelector('base');
-                      if (!baseTag) {
-                        baseTag = doc.createElement('base');
-                        baseTag.href = baseUrl;
-                        const head = doc.head || doc.getElementsByTagName('head')[0];
-                        if (head) {
-                          head.insertBefore(baseTag, head.firstChild);
-                        }
-                      } else {
-                        // Update existing base tag if needed
-                        const currentBase = new URL(baseTag.href || '', window.location.origin);
-                        const expectedBase = new URL(baseUrl, window.location.origin);
-                        if (currentBase.pathname !== expectedBase.pathname) {
-                          baseTag.href = baseUrl;
-                        }
-                      }
-                      
-                      // Also fix any relative paths in link, script, and img tags
-                      const fixRelativePaths = (elements, attribute) => {
-                        elements.forEach(el => {
-                          const attrValue = el.getAttribute(attribute);
-                          if (attrValue && !attrValue.startsWith('http') && !attrValue.startsWith('//') && !attrValue.startsWith('/')) {
-                            // It's a relative path, ensure it resolves correctly
-                            const newPath = new URL(attrValue, baseUrl).pathname;
-                            el.setAttribute(attribute, newPath);
-                          }
-                        });
-                      };
-                      
-                      fixRelativePaths(doc.querySelectorAll('link[href]'), 'href');
-                      fixRelativePaths(doc.querySelectorAll('script[src]'), 'src');
-                      fixRelativePaths(doc.querySelectorAll('img[src]'), 'src');
-                    }
-                  } catch (err) {
-                    // Cross-origin restrictions might prevent access, that's okay
-                    // Templates should have correct base paths in their HTML
-                    console.log('Could not modify iframe content (may be cross-origin):', err.message);
-                  }
-                }}
-                onError={handleIframeError}
-                sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-modals allow-top-navigation"
-                allow="fullscreen"
-                style={{ 
-                  display: loading ? 'none' : 'block',
-                  minHeight: '100%',
-                  width: '100%',
-                  height: '100%'
-                }}
-                loading="eager"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </>
-          ) : (
-            <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
-              <div className="text-center p-8">
-                <p className="text-gray-600">
-                  Preview not available for this template.
-                </p>
               </div>
-            </div>
-          )}
+            )}
+
+            {error ? (
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+                <div className="text-center p-8">
+                  <svg
+                    className="w-16 h-16 text-red-500 mx-auto mb-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <p className="text-red-600 mb-4">{error}</p>
+                  <p className="text-gray-600 text-sm">
+                    The template preview is not available. Please contact support or purchase the template to access the files.
+                  </p>
+                </div>
+              </div>
+            ) : previewUrl ? (
+              <>
+                {loading && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-gray-100 z-10">
+                    <div className="text-center">
+                      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-theme-purple mx-auto mb-4"></div>
+                      <p className="text-gray-600">Loading preview...</p>
+                    </div>
+                  </div>
+                )}
+                <iframe
+                  key={`${template.id}-${previewUrl}`}
+                  src={previewUrl}
+                  className="w-full h-full border-0"
+                  title={`${template.name} Preview`}
+                  allowFullScreen
+                  onLoad={(e) => {
+                    handleIframeLoad();
+                    // Fix base path for relative assets in the template
+                    // This ensures CSS, JS, and image files load correctly
+                    try {
+                      const iframe = e.target;
+                      if (iframe && iframe.contentDocument && baseUrl) {
+                        const doc = iframe.contentDocument;
+                        
+                        // Check if base tag exists, if not add it
+                        let baseTag = doc.querySelector('base');
+                        if (!baseTag) {
+                          baseTag = doc.createElement('base');
+                          baseTag.href = baseUrl;
+                          const head = doc.head || doc.getElementsByTagName('head')[0];
+                          if (head) {
+                            head.insertBefore(baseTag, head.firstChild);
+                          }
+                        } else {
+                          // Update existing base tag if needed
+                          const currentBase = new URL(baseTag.href || '', window.location.origin);
+                          const expectedBase = new URL(baseUrl, window.location.origin);
+                          if (currentBase.pathname !== expectedBase.pathname) {
+                            baseTag.href = baseUrl;
+                          }
+                        }
+                        
+                        // Also fix any relative paths in link, script, and img tags
+                        const fixRelativePaths = (elements, attribute) => {
+                          elements.forEach(el => {
+                            const attrValue = el.getAttribute(attribute);
+                            if (attrValue && !attrValue.startsWith('http') && !attrValue.startsWith('//') && !attrValue.startsWith('/')) {
+                              // It's a relative path, ensure it resolves correctly
+                              const newPath = new URL(attrValue, baseUrl).pathname;
+                              el.setAttribute(attribute, newPath);
+                            }
+                          });
+                        };
+                        
+                        fixRelativePaths(doc.querySelectorAll('link[href]'), 'href');
+                        fixRelativePaths(doc.querySelectorAll('script[src]'), 'src');
+                        fixRelativePaths(doc.querySelectorAll('img[src]'), 'src');
+                      }
+                    } catch (err) {
+                      // Cross-origin restrictions might prevent access, that's okay
+                      // Templates should have correct base paths in their HTML
+                      console.log('Could not modify iframe content (may be cross-origin):', err.message);
+                    }
+                  }}
+                  onError={handleIframeError}
+                  sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-modals allow-top-navigation"
+                  allow="fullscreen"
+                  style={{ 
+                    display: loading ? 'none' : 'block',
+                    minHeight: '100%',
+                    width: '100%',
+                    height: '100%'
+                  }}
+                  loading="eager"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </>
+            ) : (
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+                <div className="text-center p-8">
+                  <p className="text-gray-600">
+                    Preview not available for this template.
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Footer */}
         <div className="p-4 border-t border-gray-200 flex items-center justify-between bg-gray-50">
           <div className="text-sm text-gray-600">
             <span className="font-semibold text-theme-purple">
-              ₹{template.price.toLocaleString()}
+              ₹{(template.price || 499).toLocaleString()}
             </span>
-            {template.originalPrice && (
-              <span className="line-through ml-2">
-                ₹{template.originalPrice.toLocaleString()}
-              </span>
-            )}
           </div>
           <div className="flex gap-2">
             <button
