@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const paymentRoutes = require('./routes/paymentRoutes');
+const templateRoutes = require('./routes/templateRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -19,6 +20,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 // Routes
 app.use('/api', paymentRoutes);
+app.use('/api', templateRoutes);
 
 // Health check
 app.get('/', (req, res) => {

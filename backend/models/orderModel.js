@@ -26,6 +26,13 @@ const orderSchema = new mongoose.Schema({
   customerPhone: {
     type: String,
   },
+  templateId: {
+    type: String,
+    required: true,
+  },
+  templateName: {
+    type: String,
+  },
   status: {
     type: String,
     enum: ['created', 'paid', 'failed'],
