@@ -95,12 +95,312 @@ export default function TemplatePreview({ template, isOpen, onClose }) {
     setError(`Failed to load preview. The template file may not be available at: ${previewUrl}. Please ensure templates are copied to the public folder and the development server has been restarted.`);
   };
 
+  // Dev Tools Protection - Comprehensive security measures
+  useEffect(() => {
+    if (!isOpen) {
+      // Remove body class when preview closes
+      document.body.classList.remove('template-preview-active');
+      return;
+    }
+
+    // Add body class when preview opens
+    document.body.classList.add('template-preview-active');
+
+    // Security script to inject into iframe
+    const securityScript = `
+      (function() {
+        'use strict';
+        
+        // Disable right-click context menu
+        document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }, true);
+        
+        // Disable text selection
+        document.addEventListener('selectstart', function(e) {
+          e.preventDefault();
+          return false;
+        }, true);
+        
+        // Disable drag
+        document.addEventListener('dragstart', function(e) {
+          e.preventDefault();
+          return false;
+        }, true);
+        
+        // Block keyboard shortcuts for dev tools
+        document.addEventListener('keydown', function(e) {
+          // F12
+          if (e.keyCode === 123) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+          // Ctrl+Shift+I (DevTools)
+          if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+          // Ctrl+Shift+J (Console)
+          if (e.ctrlKey && e.shiftKey && e.keyCode === 74) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+          // Ctrl+Shift+C (Inspect Element)
+          if (e.ctrlKey && e.shiftKey && e.keyCode === 67) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+          // Ctrl+U (View Source)
+          if (e.ctrlKey && e.keyCode === 85) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+          // Ctrl+S (Save Page)
+          if (e.ctrlKey && e.keyCode === 83) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+          // Ctrl+P (Print)
+          if (e.ctrlKey && e.keyCode === 80) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+          // Ctrl+Shift+P (Command Palette)
+          if (e.ctrlKey && e.shiftKey && e.keyCode === 80) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+          // Ctrl+Shift+K (Console in Firefox)
+          if (e.ctrlKey && e.shiftKey && e.keyCode === 75) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+        }, true);
+        
+        // Disable console (quietly, without detection)
+        const noop = function() {};
+        const methods = ['log', 'debug', 'info', 'warn', 'error', 'assert', 'dir', 'dirxml', 'group', 'groupEnd', 'time', 'timeEnd', 'count', 'trace', 'profile', 'profileEnd'];
+        methods.forEach(function(method) {
+          if (window.console && window.console[method]) {
+            window.console[method] = noop;
+          }
+        });
+        
+        // Disable common debugging functions
+        try {
+          Object.defineProperty(window, 'console', {
+            get: function() {
+              return {};
+            },
+            set: function() {}
+          });
+        } catch(ex) {
+          // Ignore if can't override
+        }
+      })();
+    `;
+
+    // Block keyboard shortcuts on parent window
+    const handleKeyDown = (e) => {
+      // F12
+      if (e.keyCode === 123) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        return false;
+      }
+      // Ctrl+Shift+I
+      if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        return false;
+      }
+      // Ctrl+Shift+J
+      if (e.ctrlKey && e.shiftKey && e.keyCode === 74) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        return false;
+      }
+      // Ctrl+Shift+C
+      if (e.ctrlKey && e.shiftKey && e.keyCode === 67) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        return false;
+      }
+      // Ctrl+U
+      if (e.ctrlKey && e.keyCode === 85) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        return false;
+      }
+      // Ctrl+S
+      if (e.ctrlKey && e.keyCode === 83) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        return false;
+      }
+      // Ctrl+P
+      if (e.ctrlKey && e.keyCode === 80) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        return false;
+      }
+      // Ctrl+Shift+P
+      if (e.ctrlKey && e.shiftKey && e.keyCode === 80) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        return false;
+      }
+      // Ctrl+Shift+K
+      if (e.ctrlKey && e.shiftKey && e.keyCode === 75) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        return false;
+      }
+    };
+
+    // Disable right-click on parent
+    const handleContextMenu = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    };
+
+    // Disable text selection on parent
+    const handleSelectStart = (e) => {
+      e.preventDefault();
+      return false;
+    };
+
+    // Disable drag on parent
+    const handleDragStart = (e) => {
+      e.preventDefault();
+      return false;
+    };
+
+    // Add event listeners with capture phase
+    document.addEventListener('keydown', handleKeyDown, true);
+    document.addEventListener('contextmenu', handleContextMenu, true);
+    document.addEventListener('selectstart', handleSelectStart, true);
+    document.addEventListener('dragstart', handleDragStart, true);
+
+    // Try to inject security script into iframe
+    const injectSecurityScript = () => {
+      try {
+        const iframe = document.querySelector(`iframe[title="${template.name} Preview"]`);
+        if (iframe && iframe.contentDocument && iframe.contentDocument.body) {
+          const script = iframe.contentDocument.createElement('script');
+          script.textContent = securityScript;
+          iframe.contentDocument.head.appendChild(script);
+        }
+      } catch (err) {
+        // Cross-origin restrictions - that's okay, we'll rely on parent protection
+      }
+    };
+
+    // Try to inject after a delay to ensure iframe is loaded
+    const injectTimeout = setTimeout(injectSecurityScript, 1000);
+
+    // Detect dev tools on parent window - more accurate detection
+    let devtoolsDetector = null;
+    let detectionTimeout = null;
+    
+    const detectDevTools = () => {
+      const threshold = 200; // Increased threshold to reduce false positives
+      const requiredChecks = 3; // Require multiple consecutive detections
+      let checkCount = 0;
+      let baselineHeight = window.outerHeight - window.innerHeight;
+      let baselineWidth = window.outerWidth - window.innerWidth;
+      
+      // Set baseline after a short delay to account for modal opening
+      setTimeout(() => {
+        baselineHeight = window.outerHeight - window.innerHeight;
+        baselineWidth = window.outerWidth - window.innerWidth;
+      }, 1000);
+      
+      const checkInterval = setInterval(() => {
+        const heightDiff = window.outerHeight - window.innerHeight;
+        const widthDiff = window.outerWidth - window.innerWidth;
+        
+        // Only check if difference is significant AND sustained
+        if ((heightDiff > threshold || widthDiff > threshold) && 
+            (Math.abs(heightDiff - baselineHeight) > 100 || Math.abs(widthDiff - baselineWidth) > 100)) {
+          checkCount++;
+          // Only close if detected multiple times consecutively
+          if (checkCount >= requiredChecks) {
+            // Dev tools detected - close preview
+            onClose();
+            clearInterval(checkInterval);
+          }
+        } else {
+          checkCount = 0; // Reset counter if not detected
+        }
+      }, 500);
+      devtoolsDetector = checkInterval;
+    };
+
+    // Start detection after a delay to avoid false positives from modal opening
+    detectionTimeout = setTimeout(detectDevTools, 1500);
+
+    // Cleanup function
+    return () => {
+      document.body.classList.remove('template-preview-active');
+      document.removeEventListener('keydown', handleKeyDown, true);
+      document.removeEventListener('contextmenu', handleContextMenu, true);
+      document.removeEventListener('selectstart', handleSelectStart, true);
+      document.removeEventListener('dragstart', handleDragStart, true);
+      clearTimeout(injectTimeout);
+      clearTimeout(detectionTimeout);
+      if (devtoolsDetector) {
+        clearInterval(devtoolsDetector);
+      }
+    };
+  }, [isOpen, template, onClose]);
+
   // Don't render if not open or no template
   if (!isOpen || !template) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4">
-      <div className="relative w-full h-full max-w-7xl max-h-[90vh] bg-white rounded-lg shadow-2xl flex flex-col">
+    <>
+      <style>{`
+        /* Prevent text selection and dev tools on preview */
+        body.template-preview-active {
+          user-select: none !important;
+          -webkit-user-select: none !important;
+          -moz-user-select: none !important;
+          -ms-user-select: none !important;
+        }
+        body.template-preview-active * {
+          user-select: none !important;
+          -webkit-user-select: none !important;
+          -moz-user-select: none !important;
+          -ms-user-select: none !important;
+        }
+        body.template-preview-active iframe {
+          pointer-events: auto;
+        }
+      `}</style>
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4">
+        <div className="relative w-full h-full max-w-7xl max-h-[90vh] bg-white rounded-lg shadow-2xl flex flex-col">
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-gray-200">
           <div>
@@ -210,7 +510,15 @@ export default function TemplatePreview({ template, isOpen, onClose }) {
         </div>
 
         {/* Preview Content */}
-        <div className="flex-1 relative overflow-auto bg-gray-200 flex items-center justify-center p-4">
+        <div 
+          className="flex-1 relative overflow-auto bg-gray-200 flex items-center justify-center p-4"
+          style={{
+            userSelect: 'none',
+            WebkitUserSelect: 'none',
+            MozUserSelect: 'none',
+            msUserSelect: 'none',
+          }}
+        >
           <div
             className={`relative bg-white shadow-2xl transition-all duration-300 ${
               viewMode === 'mobile'
@@ -222,6 +530,10 @@ export default function TemplatePreview({ template, isOpen, onClose }) {
             style={{
               maxWidth: viewMode === 'desktop' ? '100%' : undefined,
               maxHeight: viewMode === 'desktop' ? '100%' : undefined,
+              userSelect: 'none',
+              WebkitUserSelect: 'none',
+              MozUserSelect: 'none',
+              msUserSelect: 'none',
             }}
           >
             {loading && (
@@ -279,6 +591,53 @@ export default function TemplatePreview({ template, isOpen, onClose }) {
                       const iframe = e.target;
                       if (iframe && iframe.contentDocument && baseUrl) {
                         const doc = iframe.contentDocument;
+                        
+                        // Inject security script to prevent dev tools in iframe
+                        const securityScript = `
+                          (function() {
+                            'use strict';
+                            document.addEventListener('contextmenu', function(e) {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              return false;
+                            }, true);
+                            document.addEventListener('selectstart', function(e) {
+                              e.preventDefault();
+                              return false;
+                            }, true);
+                            document.addEventListener('dragstart', function(e) {
+                              e.preventDefault();
+                              return false;
+                            }, true);
+                            document.addEventListener('keydown', function(e) {
+                              if (e.keyCode === 123 || 
+                                  (e.ctrlKey && e.shiftKey && [73, 74, 67, 80, 75].includes(e.keyCode)) ||
+                                  (e.ctrlKey && [85, 83, 80].includes(e.keyCode))) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                return false;
+                              }
+                            }, true);
+                            // Removed aggressive dev tools detection from iframe
+                            // Rely on parent window detection and keyboard blocking only
+                            const noop = function() {};
+                            const methods = ['log', 'debug', 'info', 'warn', 'error', 'assert', 'dir', 'dirxml', 'group', 'groupEnd', 'time', 'timeEnd', 'count', 'trace', 'profile', 'profileEnd'];
+                            methods.forEach(function(method) {
+                              if (window.console && window.console[method]) {
+                                window.console[method] = noop;
+                              }
+                            });
+                            try {
+                              Object.defineProperty(window, 'console', {
+                                get: function() { return {}; },
+                                set: function() {}
+                              });
+                            } catch(ex) {}
+                          })();
+                        `;
+                        const script = doc.createElement('script');
+                        script.textContent = securityScript;
+                        doc.head.appendChild(script);
                         
                         // Check if base tag exists, if not add it
                         let baseTag = doc.querySelector('base');
@@ -369,6 +728,7 @@ export default function TemplatePreview({ template, isOpen, onClose }) {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
