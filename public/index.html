@@ -10,61 +10,7 @@
     <!-- Theme Color -->
     <meta name="theme-color" content="#000000" />
 
-    <!-- DevTools Protection - Early initialization -->
-    <script>
-      // Block right-click immediately
-      document.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
-        return false;
-      }, true);
-
-      // Block F12 and common DevTools shortcuts
-      document.addEventListener('keydown', function(e) {
-        // F12
-        if (e.keyCode === 123) {
-          e.preventDefault();
-          e.stopPropagation();
-          return false;
-        }
-        // Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
-        if (e.ctrlKey && e.shiftKey && [73, 74, 67].includes(e.keyCode)) {
-          e.preventDefault();
-          e.stopPropagation();
-          return false;
-        }
-        // Ctrl+U (View Source)
-        if (e.ctrlKey && e.keyCode === 85) {
-          e.preventDefault();
-          e.stopPropagation();
-          return false;
-        }
-      }, true);
-
-      // Clear console immediately
-      if (typeof console !== 'undefined') {
-        console.clear();
-      }
-    </script>
-
-    <style>
-      /* Prevent text selection */
-      * {
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        -webkit-touch-callout: none;
-        -webkit-tap-highlight-color: transparent;
-      }
-      
-      /* Allow text selection for input fields and textareas */
-      input, textarea, [contenteditable="true"] {
-        -webkit-user-select: text;
-        -moz-user-select: text;
-        -ms-user-select: text;
-        user-select: text;
-      }
-    </style>
+    <!-- DevTools Protection - Disabled to allow dev mode -->
 
     <!-- SEO is managed by react-helmet-async in SEO.js -->
 
