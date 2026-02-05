@@ -138,8 +138,8 @@ export const verifyPayment = async (paymentId, orderId, signature) => {
         "accept": "application/json",
       },
       body: JSON.stringify({
-        paymentId,
         orderId,
+        paymentId,
         signature
       })
     });
