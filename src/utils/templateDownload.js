@@ -68,6 +68,8 @@ export const downloadTemplate = async (templateId, templatePath, templateName) =
         `${apiUrl}/api/templates/${templateId}/download`,
         {
           method: 'GET',
+          mode: 'cors', // Explicitly set CORS mode
+          credentials: 'omit', // Don't send credentials for cross-origin requests
           headers: {
             'accept': 'application/json',
           },
@@ -131,6 +133,8 @@ export const checkPurchaseStatus = async (templateId, customerEmail) => {
       `${apiUrl}/api/templates/${templateId}/check-purchase`,
       {
         method: 'GET',
+        mode: 'cors', // Explicitly set CORS mode
+        credentials: 'omit', // Don't send credentials for cross-origin requests
         headers: {
           'accept': 'application/json',
         },

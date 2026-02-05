@@ -17,9 +17,11 @@ export const loadRazorpayScript = () => {
 
 export const createRazorpayOrder = async (amount, currency = "INR", receipt = null, customerDetails = {}, templateId = null, templateName = null) => {
   try {
-    const apiUrl = process.env.REACT_APP_API_URL || "http://43.204.211.69:5000";
+    const apiUrl = process.env.REACT_APP_API_URL || "https://api.thetrifusion.in/";
     const response = await fetch(`${apiUrl}/api/create-order`, {
       method: "POST",
+      mode: "cors", // Explicitly set CORS mode
+      credentials: "omit", // Don't send credentials for cross-origin requests
       headers: {
         "Content-Type": "application/json",
         "accept": "application/json",
@@ -45,6 +47,10 @@ export const createRazorpayOrder = async (amount, currency = "INR", receipt = nu
     return order;
   } catch (error) {
     console.error("Error creating Razorpay order:", error);
+    // Check if it's a CORS error
+    if (error.message.includes('CORS') || error.message.includes('cross-origin') || error.name === 'TypeError') {
+      throw new Error("CORS error: The API server needs to allow requests from thetrifusion.in. Please contact the backend administrator to add thetrifusion.in to the allowed origins.");
+    }
     throw error;
   }
 };
@@ -122,9 +128,11 @@ export const initiatePayment = async (orderData, options = {}) => {
 
 export const verifyPayment = async (paymentId, orderId, signature) => {
   try {
-    const apiUrl = process.env.REACT_APP_API_URL || "http://43.204.211.69:5000";
+    const apiUrl = process.env.REACT_APP_API_URL || "https://api.thetrifusion.in/";
     const response = await fetch(`${apiUrl}/api/verify-payment`, {
       method: "POST",
+      mode: "cors", // Explicitly set CORS mode
+      credentials: "omit", // Don't send credentials for cross-origin requests
       headers: {
         "Content-Type": "application/json",
         "accept": "application/json",
@@ -148,6 +156,13 @@ export const verifyPayment = async (paymentId, orderId, signature) => {
     return data;
   } catch (error) {
     console.error("Payment verification error:", error);
+    // Check if it's a CORS error
+    if (error.message.includes('CORS') || error.message.includes('cross-origin') || error.name === 'TypeError') {
+      return { 
+        success: false, 
+        error: "CORS error: The API server needs to allow requests from thetrifusion.in. Please contact the backend administrator."
+      };
+    }
     return { success: false, error: error.message };
   }
 };
