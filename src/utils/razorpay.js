@@ -17,7 +17,7 @@ export const loadRazorpayScript = () => {
 
 export const createRazorpayOrder = async (amount, currency = "INR", receipt = null, customerDetails = {}, templateId = null, templateName = null) => {
   try {
-    const apiUrl = process.env.REACT_APP_API_URL || "https://api.thetrifusion.in/";
+    const apiUrl = process.env.REACT_APP_API_URL || "https://api.thetrifusion.in";
     const response = await fetch(`${apiUrl}/api/create-order`, {
       method: "POST",
       mode: "cors", // Explicitly set CORS mode
