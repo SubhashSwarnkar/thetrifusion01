@@ -1,5 +1,17 @@
 // Razorpay Payment Integration Utilities
 
+/**
+ * Get the API base URL with proper formatting
+ */
+const getApiUrl = () => {
+  const apiUrl = process.env.REACT_APP_API_URL || "https://api.thetrifusion.in";
+  // Remove trailing slash if present
+  return apiUrl.replace(/\/$/, '');
+};
+
+/**
+ * Load Razorpay checkout script
+ */
 export const loadRazorpayScript = () => {
   return new Promise((resolve) => {
     if (window.Razorpay) {
@@ -15,23 +27,42 @@ export const loadRazorpayScript = () => {
   });
 };
 
+/**
+ * Create a Razorpay order using the backend API
+ * @param {number} amount - Amount in rupees
+ * @param {string} currency - Currency code (default: "INR")
+ * @param {string|null} receipt - Receipt ID
+ * @param {object} customerDetails - Customer information
+ * @param {string|null} templateId - Template ID
+ * @param {string|null} templateName - Template name
+ * @returns {Promise<object>} Razorpay order object
+ */
 export const createRazorpayOrder = async (amount, currency = "INR", receipt = null, customerDetails = {}, templateId = null, templateName = null) => {
   try {
-    const apiUrl = process.env.REACT_APP_API_URL || "https://api.thetrifusion.in";
+    // Validate input
+    if (!amount || typeof amount !== 'number' || amount <= 0) {
+      throw new Error("Invalid amount. Amount must be a positive number.");
+    }
+
+    if (!customerDetails.email || !customerDetails.email.trim()) {
+      throw new Error("Customer email is required.");
+    }
+
+    const apiUrl = getApiUrl();
     const response = await fetch(`${apiUrl}/api/create-order`, {
       method: "POST",
-      mode: "cors", // Explicitly set CORS mode
-      credentials: "omit", // Don't send credentials for cross-origin requests
+      mode: "cors",
+      credentials: "omit",
       headers: {
         "Content-Type": "application/json",
         "accept": "application/json",
       },
       body: JSON.stringify({
-        amount,
-        currency,
+        amount: Number(amount),
+        currency: currency.toUpperCase(),
         receipt: receipt || `receipt_${Date.now()}`,
         customerName: customerDetails.name || "",
-        customerEmail: customerDetails.email || "",
+        customerEmail: customerDetails.email.trim(),
         customerPhone: customerDetails.phone || "",
         templateId: templateId || "",
         templateName: templateName || "",
@@ -40,46 +71,70 @@ export const createRazorpayOrder = async (amount, currency = "INR", receipt = nu
 
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
-      throw new Error(errorData.error || errorData.message || "Failed to create order");
+      const errorMessage = errorData.message || errorData.error || `Failed to create order (${response.status})`;
+      throw new Error(errorMessage);
     }
 
     const order = await response.json();
+    
+    // Validate order response
+    if (!order || !order.id) {
+      throw new Error("Invalid order response from server");
+    }
+
     return order;
   } catch (error) {
     console.error("Error creating Razorpay order:", error);
-    // Check if it's a CORS error
-    if (error.message.includes('CORS') || error.message.includes('cross-origin') || error.name === 'TypeError') {
-      throw new Error("CORS error: The API server needs to allow requests from thetrifusion.in. Please contact the backend administrator to add thetrifusion.in to the allowed origins.");
+    
+    // Handle network/CORS errors
+    if (error.name === 'TypeError' || error.message.includes('fetch')) {
+      throw new Error("Network error: Unable to connect to payment server. Please check your internet connection.");
     }
+    
+    if (error.message.includes('CORS') || error.message.includes('cross-origin')) {
+      throw new Error("CORS error: The API server needs to allow requests from your domain. Please contact support.");
+    }
+    
     throw error;
   }
 };
 
+/**
+ * Initiate Razorpay payment
+ * @param {object} orderData - Order data from createRazorpayOrder
+ * @param {object} options - Payment options and callbacks
+ * @returns {Promise<object>} Razorpay instance
+ */
 export const initiatePayment = async (orderData, options = {}) => {
-  await loadRazorpayScript();
-
-  if (!window.Razorpay) {
-    throw new Error("Razorpay SDK failed to load");
+  // Load Razorpay script
+  const scriptLoaded = await loadRazorpayScript();
+  
+  if (!scriptLoaded || !window.Razorpay) {
+    throw new Error("Razorpay SDK failed to load. Please refresh the page and try again.");
   }
 
+  // Validate Razorpay key
   const razorpayKey = process.env.REACT_APP_RAZORPAY_KEY_ID;
-
   if (!razorpayKey) {
-    // Fallback or warning if key is missing in frontend
-    console.warn("REACT_APP_RAZORPAY_KEY_ID is not set in frontend .env");
+    throw new Error("Razorpay key is not configured. Please contact support.");
+  }
+
+  // Validate order data
+  if (!orderData || !orderData.id) {
+    throw new Error("Invalid order data. Please create an order first.");
   }
 
   const paymentOptions = {
     key: razorpayKey,
-    amount: orderData.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-    currency: orderData.currency,
+    amount: orderData.amount, // Amount is in currency subunits (paise for INR)
+    currency: orderData.currency || "INR",
     name: "TheTriFusion",
     description: options.description || "Template Purchase",
-    image: "/logo192.png", // Optional: Add your logo
-    order_id: orderData.id, // This is the order_id created in the backend
+    image: "/logo192.png",
+    order_id: orderData.id, // Order ID from backend API
     handler: async function (response) {
       try {
-        // Verify payment with backend
+        // Verify payment signature with backend API
         const verificationResult = await verifyPayment(
           response.razorpay_payment_id,
           response.razorpay_order_id,
@@ -87,19 +142,21 @@ export const initiatePayment = async (orderData, options = {}) => {
         );
 
         if (verificationResult.success) {
+          // Payment verified successfully
           if (options.onSuccess) {
-            options.onSuccess(response, orderData);
+            options.onSuccess(response, orderData, verificationResult);
           }
         } else {
-          throw new Error("Payment verification failed");
+          const errorMessage = verificationResult.error || "Payment verification failed";
+          throw new Error(errorMessage);
         }
       } catch (error) {
         console.error("Payment verification error:", error);
         if (options.onError) {
-          options.onError(error);
+          options.onError(error, response, orderData);
         } else {
-            // Default error handling
-            alert("Payment verification failed: " + error.message);
+          // Default error handling
+          alert("Payment verification failed: " + error.message);
         }
       }
     },
@@ -117,22 +174,46 @@ export const initiatePayment = async (orderData, options = {}) => {
           options.onDismiss();
         }
       }
+    },
+    // Additional options for better UX
+    retry: {
+      enabled: true,
+      max_count: 3
     }
   };
 
-  const razorpay = new window.Razorpay(paymentOptions);
-  razorpay.open();
-
-  return razorpay;
+  try {
+    const razorpay = new window.Razorpay(paymentOptions);
+    razorpay.open();
+    return razorpay;
+  } catch (error) {
+    console.error("Error opening Razorpay checkout:", error);
+    throw new Error("Failed to open payment gateway. Please try again.");
+  }
 };
 
+/**
+ * Verify payment signature using the backend API
+ * @param {string} paymentId - Razorpay payment ID
+ * @param {string} orderId - Razorpay order ID
+ * @param {string} signature - Payment signature from Razorpay
+ * @returns {Promise<object>} Verification result
+ */
 export const verifyPayment = async (paymentId, orderId, signature) => {
   try {
-    const apiUrl = process.env.REACT_APP_API_URL || "https://api.thetrifusion.in/";
+    // Validate input
+    if (!paymentId || !orderId || !signature) {
+      return {
+        success: false,
+        error: "Missing payment verification parameters"
+      };
+    }
+
+    const apiUrl = getApiUrl();
     const response = await fetch(`${apiUrl}/api/verify-payment`, {
       method: "POST",
-      mode: "cors", // Explicitly set CORS mode
-      credentials: "omit", // Don't send credentials for cross-origin requests
+      mode: "cors",
+      credentials: "omit",
       headers: {
         "Content-Type": "application/json",
         "accept": "application/json",
@@ -148,21 +229,40 @@ export const verifyPayment = async (paymentId, orderId, signature) => {
       const errorData = await response.json().catch(() => ({}));
       return { 
         success: false, 
-        error: errorData.error || errorData.message || "Payment verification failed" 
+        error: errorData.message || errorData.error || `Payment verification failed (${response.status})`
       };
     }
 
     const data = await response.json();
+    
+    // Ensure response has success field
+    if (data.success === undefined) {
+      data.success = true;
+    }
+    
     return data;
   } catch (error) {
     console.error("Payment verification error:", error);
-    // Check if it's a CORS error
-    if (error.message.includes('CORS') || error.message.includes('cross-origin') || error.name === 'TypeError') {
+    
+    // Handle network errors
+    if (error.name === 'TypeError' || error.message.includes('fetch')) {
       return { 
         success: false, 
-        error: "CORS error: The API server needs to allow requests from thetrifusion.in. Please contact the backend administrator."
+        error: "Network error: Unable to verify payment. Please check your internet connection."
       };
     }
-    return { success: false, error: error.message };
+    
+    // Handle CORS errors
+    if (error.message.includes('CORS') || error.message.includes('cross-origin')) {
+      return { 
+        success: false, 
+        error: "CORS error: Unable to verify payment. Please contact support."
+      };
+    }
+    
+    return { 
+      success: false, 
+      error: error.message || "Payment verification failed"
+    };
   }
 };

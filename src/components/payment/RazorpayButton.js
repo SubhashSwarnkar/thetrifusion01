@@ -15,15 +15,22 @@ export default function RazorpayButton({
   const [loading, setLoading] = useState(false);
 
   const handlePayment = async () => {
+    // Validate amount
     if (!amount || amount <= 0) {
       toast.error("Invalid amount");
+      return;
+    }
+
+    // Validate customer email (required for payment)
+    if (!customerEmail || !customerEmail.trim()) {
+      toast.error("Please provide your email address");
       return;
     }
 
     setLoading(true);
 
     try {
-      // Create order
+      // Step 1: Create order using backend API (/api/create-order)
       const orderData = await createRazorpayOrder(
         amount,
         "INR",
@@ -37,17 +44,25 @@ export default function RazorpayButton({
         templateName
       );
 
-      // Initiate payment
+      // Step 2: Initiate Razorpay payment with the order
       await initiatePayment(orderData, {
         description: `Purchase: ${templateName}`,
         customerName,
         customerEmail,
         customerPhone,
-        onSuccess: (response) => {
+        onSuccess: (response, orderData, verificationResult) => {
           setLoading(false);
           toast.success("Payment successful!");
           if (onSuccess) {
-            onSuccess(response, orderData);
+            onSuccess(response, orderData, verificationResult);
+          }
+        },
+        onError: (error, response, orderData) => {
+          setLoading(false);
+          const errorMessage = error?.message || "Payment verification failed";
+          toast.error(errorMessage);
+          if (onError) {
+            onError(error, response, orderData);
           }
         },
         onDismiss: () => {
@@ -58,7 +73,11 @@ export default function RazorpayButton({
     } catch (error) {
       setLoading(false);
       console.error("Payment error:", error);
-      toast.error("Payment failed. Please try again.");
+      
+      // Show specific error messages
+      const errorMessage = error?.message || "Payment failed. Please try again.";
+      toast.error(errorMessage);
+      
       if (onError) {
         onError(error);
       }
