@@ -50,6 +50,8 @@ export default function RazorpayButton({
         customerName,
         customerEmail,
         customerPhone,
+        templateId,
+        templateName,
         onSuccess: (response, orderData, verificationResult) => {
           setLoading(false);
           toast.success("Payment successful!");
