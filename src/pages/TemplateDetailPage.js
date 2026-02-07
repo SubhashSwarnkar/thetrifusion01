@@ -16,6 +16,7 @@ import {
 } from "utils/templateDownload";
 import TemplatePreview from "components/TemplatePreview";
 import SEO from "components/common/SEO";
+import CustomizationModal from "components/CustomizationModal";
 
 export default function TemplateDetailPage() {
   const { id } = useParams();
@@ -29,6 +30,7 @@ export default function TemplateDetailPage() {
   const [isPurchased, setIsPurchased] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+  const [isCustomizationModalOpen, setIsCustomizationModalOpen] = useState(false);
   const [templateState, setTemplateState] = useState(null);
   const [timeLeft, setTimeLeft] = useState("");
 
@@ -163,6 +165,18 @@ export default function TemplateDetailPage() {
     } finally {
       setIsDownloading(false);
     }
+  };
+
+  const handleCustomizationAccept = () => {
+    setIsCustomizationModalOpen(false);
+    // Navigate to contact page with template info in state
+    navigate("/contact", {
+      state: {
+        customizationRequest: true,
+        templateName: template.name,
+        templateId: template.id
+      }
+    });
   };
 
   if (!template) {
@@ -315,7 +329,7 @@ export default function TemplateDetailPage() {
                         <button
                           onClick={handleDownload}
                           disabled={isDownloading}
-                          className="w-full px-6 py-3 bg-green-600 text-white rounded-full hover:bg-green-700 transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed font-medium flex items-center justify-center"
+                          className="w-full px-6 py-3 bg-green-600 text-white rounded-full hover:bg-green-700 transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed font-medium flex items-center justify-center mb-3"
                         >
                           {isDownloading ? (
                             <>
@@ -345,10 +359,31 @@ export default function TemplateDetailPage() {
                           )}
                         </button>
                       ) : (
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-gray-600 mb-3">
                           Download will be available soon. You will receive an email with download instructions.
                         </p>
                       )}
+                      
+                      {/* Customization Button */}
+                      <button
+                        onClick={() => setIsCustomizationModalOpen(true)}
+                        className="w-full px-6 py-3 bg-theme-purple text-white rounded-full hover:bg-purple-700 transition duration-200 font-medium flex items-center justify-center"
+                      >
+                        <svg
+                          className="w-5 h-5 mr-2"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                          />
+                        </svg>
+                        Customize This Template
+                      </button>
                     </div>
                     {(() => {
                       const purchase = getTemplatePurchase(template.id);
@@ -445,6 +480,12 @@ export default function TemplateDetailPage() {
         template={template}
         isOpen={isPreviewOpen}
         onClose={() => setIsPreviewOpen(false)}
+      />
+      <CustomizationModal
+        isOpen={isCustomizationModalOpen}
+        onClose={() => setIsCustomizationModalOpen(false)}
+        onAccept={handleCustomizationAccept}
+        templateName={template.name}
       />
       <ToastContainer position="top-right" autoClose={3000} />
       <Footer />

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Header from "parts/Header";
 import Footer from "parts/Footer";
 import Breadcrumbs from "components/Breadcrumbs";
@@ -7,8 +7,10 @@ import { DiscussForm } from "parts/DiscussForm";
 import { Fade } from "react-awesome-reveal";
 import { faqs, getFaqsByCategory } from "data/faqData";
 import SEO from "components/common/SEO";
+import { toast } from "react-toastify";
 
 export default function ContactPage() {
+  const location = useLocation();
   const [data, setData] = React.useState({
     name: "",
     company: "",
@@ -18,10 +20,32 @@ export default function ContactPage() {
   });
   const [openFaqs, setOpenFaqs] = useState([]);
   const [displayedFaqs] = useState(faqs.slice(0, 5)); // Show first 5 FAQs
+  const [customizationInfo, setCustomizationInfo] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+    
+    // Check if user came from customization request
+    if (location.state && location.state.customizationRequest) {
+      setCustomizationInfo({
+        templateName: location.state.templateName,
+        templateId: location.state.templateId
+      });
+      
+      // Pre-fill project idea with template customization request
+      if (location.state.templateName) {
+        setData(prev => ({
+          ...prev,
+          projectIdea: `I would like to customize the "${location.state.templateName}" template. Please contact me to discuss customization options.`
+        }));
+      }
+      
+      // Show success message
+      toast.info(`Customization request for "${location.state.templateName}" - Please fill out the form below.`, {
+        autoClose: 5000
+      });
+    }
+  }, [location.state]);
 
   const toggleFaq = (faqId) => {
     setOpenFaqs((prev) =>
@@ -67,6 +91,60 @@ export default function ContactPage() {
             </p>
           </div>
         </Fade>
+
+        {/* Customization Request Banner */}
+        {customizationInfo && (
+          <Fade direction="down" triggerOnce>
+            <div className="mb-8 bg-gradient-to-r from-theme-purple to-purple-600 rounded-xl p-6 text-white shadow-lg">
+              <div className="flex items-start">
+                <div className="flex-shrink-0">
+                  <svg
+                    className="w-8 h-8"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                    />
+                  </svg>
+                </div>
+                <div className="ml-4 flex-1">
+                  <h3 className="text-xl font-bold mb-2">
+                    Template Customization Request
+                  </h3>
+                  <p className="text-purple-100 mb-2">
+                    You're requesting customization for: <strong>{customizationInfo.templateName}</strong>
+                  </p>
+                  <p className="text-sm text-purple-200">
+                    Fill out the form below with your details and customization requirements. Our team will get back to you with a customized solution.
+                  </p>
+                </div>
+                <button
+                  onClick={() => setCustomizationInfo(null)}
+                  className="ml-4 text-white hover:text-purple-200 transition-colors"
+                >
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </Fade>
+        )}
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
           <Fade direction="left" triggerOnce>

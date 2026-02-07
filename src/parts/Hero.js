@@ -3,14 +3,10 @@ import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 import Button from "../elements/Button";
 import HeroVideo from "../assets/images/hero/grok-video-a50935b7-1f97-482b-a269-949d5dedccc5 (1).mp4";
-import SplashCursor from "components/SplashCursor";
 
 export default function Hero() {
   return (
     <section className="hero relative overflow-hidden py-20 z-10">
-      <div className="absolute inset-0 z-[-1]">
-        <SplashCursor />
-      </div>
       <div className="container mx-auto px-5">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           <div className="w-full lg:w-1/2 text-center lg:text-left">

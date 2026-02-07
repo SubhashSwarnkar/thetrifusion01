@@ -43,7 +43,7 @@ export const getTemplatePurchase = (templateId) => {
 };
 
 /**
- * Download template files via backend API
+ * Download template files directly from public folder
  */
 export const downloadTemplate = async (templateId, templatePath, templateName) => {
   try {
@@ -52,55 +52,55 @@ export const downloadTemplate = async (templateId, templatePath, templateName) =
       throw new Error('Template not purchased. Please complete the purchase first.');
     }
 
-    // Get purchase info to get customer email
+    // Get purchase info
     const purchases = getPurchases();
     const purchase = purchases[templateId];
     
-    if (!purchase || !purchase.customerEmail) {
+    if (!purchase) {
       throw new Error('Purchase information not found. Please contact support.');
     }
 
-    // Use backend API to download zipped template
-    const apiUrl = process.env.REACT_APP_API_URL || 'http://43.204.211.69:5000';
+    // Download zip file directly from public folder
+    // Zip files should be stored in public/templates-zip/{templateId}.zip
+    const zipFileName = `${templateId}.zip`;
+    const zipFileUrl = `/templates-zip/${zipFileName}`;
     
     try {
-      const response = await fetch(
-        `${apiUrl}/api/templates/${templateId}/download`,
-        {
-          method: 'GET',
-          mode: 'cors', // Explicitly set CORS mode
-          credentials: 'omit', // Don't send credentials for cross-origin requests
-          headers: {
-            'accept': 'application/json',
-          },
-        }
-      );
-
-      if (response.status === 403) {
-        const errorData = await response.json().catch(() => ({}));
-        throw new Error(errorData.error || errorData.message || 'Purchase verification failed. Please ensure payment is completed.');
-      }
+      // Fetch the zip file from public folder
+      const response = await fetch(zipFileUrl, {
+        method: 'GET',
+        cache: 'no-cache'
+      });
 
       if (response.status === 404) {
-        const errorData = await response.json().catch(() => ({}));
-        throw new Error(errorData.error || errorData.message || 'Template not found. Please contact support.');
+        throw new Error(`Template zip file not found. Please ensure ${zipFileName} exists in the public/templates-zip folder.`);
       }
 
       if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}));
-        throw new Error(errorData.error || errorData.message || 'Download failed. Please try again or contact support.');
+        throw new Error(`Failed to download template. Status: ${response.status}`);
       }
 
       // Get the zip file as blob
       const blob = await response.blob();
+      
+      // Check if blob is valid
+      if (blob.size === 0) {
+        throw new Error('Downloaded file is empty. Please check the zip file.');
+      }
+
+      // Create download link and trigger download
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
       a.download = `${templateName.replace(/\s+/g, '_')}_${Date.now()}.zip`;
       document.body.appendChild(a);
       a.click();
-      window.URL.revokeObjectURL(url);
-      document.body.removeChild(a);
+      
+      // Cleanup
+      setTimeout(() => {
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+      }, 100);
 
       // Update download count
       if (purchases[templateId]) {
@@ -113,9 +113,9 @@ export const downloadTemplate = async (templateId, templatePath, templateName) =
         success: true,
         message: 'Download started successfully!'
       };
-    } catch (apiError) {
-      console.error('Download API error:', apiError);
-      throw apiError;
+    } catch (fetchError) {
+      console.error('Download fetch error:', fetchError);
+      throw fetchError;
     }
   } catch (error) {
     console.error('Download error:', error);
