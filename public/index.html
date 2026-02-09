@@ -10,7 +10,72 @@
     <!-- Theme Color -->
     <meta name="theme-color" content="#000000" />
 
-    <!-- DevTools Protection - Disabled to allow dev mode -->
+    <!-- DevTools Protection -->
+    <style>
+      /* Prevent text selection */
+      * {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      /* Allow text selection for input and textarea */
+      input, textarea {
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+      }
+    </style>
+    <script>
+      // Early DevTools Protection - Runs before React loads
+      (function() {
+        'use strict';
+        
+        // Block right-click immediately
+        document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }, true);
+        
+        // Block keyboard shortcuts immediately
+        document.addEventListener('keydown', function(e) {
+          // F12
+          if (e.keyCode === 123) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+          // Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C, Ctrl+Shift+K, Ctrl+Shift+E
+          if (e.ctrlKey && e.shiftKey && [73, 74, 67, 75, 69].includes(e.keyCode)) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+          // Ctrl+U, Ctrl+S, Ctrl+P
+          if (e.ctrlKey && [85, 83, 80].includes(e.keyCode)) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+        }, true);
+        
+        // Block text selection
+        document.addEventListener('selectstart', function(e) {
+          if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+            e.preventDefault();
+            return false;
+          }
+        }, true);
+        
+        // Block drag start
+        document.addEventListener('dragstart', function(e) {
+          e.preventDefault();
+          return false;
+        }, true);
+      })();
+    </script>
 
     <!-- SEO is managed by react-helmet-async in SEO.js -->
 

@@ -118,7 +118,13 @@ export default function TemplatePreview({ template, isOpen, onClose }) {
   return (
     <>
       <style>{`
-        /* Text selection and dev tools allowed - restrictions removed */
+        /* Prevent text selection in preview container */
+        body.template-preview-active {
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
         body.template-preview-active iframe {
           pointer-events: auto;
         }
@@ -316,47 +322,185 @@ export default function TemplatePreview({ template, isOpen, onClose }) {
                       if (iframe && iframe.contentDocument && baseUrl) {
                         const doc = iframe.contentDocument;
                         
-                        // Inject security script to prevent dev tools in iframe
+                        // Inject comprehensive security script to prevent dev tools in iframe
                         const securityScript = `
                           (function() {
                             'use strict';
+                            let devToolsDetected = false;
+                            let detectionCount = 0;
+                            let consoleDetectionCount = 0;
+                            const REQUIRED_DETECTIONS = 5; // Require multiple detections to avoid false positives
+                            const REQUIRED_CONSOLE_DETECTIONS = 8;
+                            
+                            // Block right-click context menu
                             document.addEventListener('contextmenu', function(e) {
                               e.preventDefault();
                               e.stopPropagation();
                               return false;
                             }, true);
+                            
+                            // Block text selection (allow for inputs)
                             document.addEventListener('selectstart', function(e) {
-                              e.preventDefault();
-                              return false;
+                              if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+                                e.preventDefault();
+                                return false;
+                              }
                             }, true);
+                            
+                            // Block drag start
                             document.addEventListener('dragstart', function(e) {
-                              e.preventDefault();
-                              return false;
+                              if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+                                e.preventDefault();
+                                return false;
+                              }
                             }, true);
-                            document.addEventListener('keydown', function(e) {
-                              if (e.keyCode === 123 || 
-                                  (e.ctrlKey && e.shiftKey && [73, 74, 67, 80, 75].includes(e.keyCode)) ||
-                                  (e.ctrlKey && [85, 83, 80].includes(e.keyCode))) {
+                            
+                            // Block keyboard shortcuts for DevTools
+                            function blockKeyboardShortcuts(e) {
+                              // F12
+                              if (e.keyCode === 123) {
                                 e.preventDefault();
                                 e.stopPropagation();
                                 return false;
                               }
-                            }, true);
-                            // Removed aggressive dev tools detection from iframe
-                            // Rely on parent window detection and keyboard blocking only
-                            const noop = function() {};
-                            const methods = ['log', 'debug', 'info', 'warn', 'error', 'assert', 'dir', 'dirxml', 'group', 'groupEnd', 'time', 'timeEnd', 'count', 'trace', 'profile', 'profileEnd'];
-                            methods.forEach(function(method) {
-                              if (window.console && window.console[method]) {
-                                window.console[method] = noop;
+                              // Ctrl+Shift+I
+                              if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                return false;
+                              }
+                              // Ctrl+Shift+J
+                              if (e.ctrlKey && e.shiftKey && e.keyCode === 74) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                return false;
+                              }
+                              // Ctrl+Shift+C
+                              if (e.ctrlKey && e.shiftKey && e.keyCode === 67) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                return false;
+                              }
+                              // Ctrl+U (View Source)
+                              if (e.ctrlKey && e.keyCode === 85) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                return false;
+                              }
+                              // Ctrl+S (Save Page)
+                              if (e.ctrlKey && e.keyCode === 83) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                return false;
+                              }
+                              // Ctrl+P (Print)
+                              if (e.ctrlKey && e.keyCode === 80) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                return false;
+                              }
+                              // Ctrl+Shift+K (Firefox DevTools)
+                              if (e.ctrlKey && e.shiftKey && e.keyCode === 75) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                return false;
+                              }
+                              // Ctrl+Shift+E (Chrome DevTools - Network)
+                              if (e.ctrlKey && e.shiftKey && e.keyCode === 69) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                return false;
+                              }
+                            }
+                            
+                            document.addEventListener('keydown', blockKeyboardShortcuts, true);
+                            document.addEventListener('keyup', blockKeyboardShortcuts, true);
+                            document.addEventListener('keypress', blockKeyboardShortcuts, true);
+                            
+                            // Detect DevTools using window size - more conservative
+                            function detectDevTools() {
+                              const widthThreshold = 250; // Higher threshold for iframes
+                              const heightThreshold = 250;
+                              const heightDiff = window.outerHeight - window.innerHeight;
+                              const widthDiff = window.outerWidth - window.innerWidth;
+                              
+                              if (heightDiff > heightThreshold || widthDiff > widthThreshold) {
+                                detectionCount++;
+                                if (detectionCount >= REQUIRED_DETECTIONS) {
+                                  devToolsDetected = true;
+                                  return true;
+                                }
+                              } else {
+                                detectionCount = Math.max(0, detectionCount - 1);
+                              }
+                              return false;
+                            }
+                            
+                            // Console-based DevTools detection - more conservative
+                            let devtools = { open: false };
+                            const element = new Image();
+                            Object.defineProperty(element, 'id', {
+                              get: function() {
+                                devtools.open = true;
+                                return 'devtools-detector';
                               }
                             });
-                            try {
-                              Object.defineProperty(window, 'console', {
-                                get: function() { return {}; },
-                                set: function() {}
-                              });
-                            } catch(ex) {}
+                            
+                            setInterval(function() {
+                              devtools.open = false;
+                              try {
+                                console.log(element);
+                                console.clear();
+                              } catch (e) {}
+                              if (devtools.open) {
+                                consoleDetectionCount++;
+                                if (consoleDetectionCount >= REQUIRED_CONSOLE_DETECTIONS) {
+                                  devToolsDetected = true;
+                                }
+                              } else {
+                                consoleDetectionCount = Math.max(0, consoleDetectionCount - 1);
+                              }
+                            }, 1500);
+                            
+                            // Check for DevTools periodically - less frequent, more conservative
+                            setInterval(function() {
+                              // Only check if not already detected
+                              if (!devToolsDetected && (detectDevTools() || devToolsDetected)) {
+                                devToolsDetected = true;
+                                // Don't replace body content - just block access
+                                // The keyboard shortcuts already prevent opening DevTools
+                              }
+                            }, 2000);
+                            
+                            // Clear console repeatedly
+                            setInterval(function() {
+                              if (typeof console !== 'undefined') {
+                                console.clear();
+                                console.log('%cStop!', 'color: red; font-size: 50px; font-weight: bold;');
+                                console.log('%cThis is a browser feature intended for developers. If someone told you to copy-paste something here, it is a scam and will give them access to your account.', 'color: red; font-size: 16px;');
+                                console.log('%cDo not enter any code here.', 'color: red; font-size: 16px;');
+                              }
+                            }, 1000);
+                            
+                            // Add debugger statement to slow down DevTools - only if detected
+                            setInterval(function() {
+                              if (devToolsDetected) {
+                                try {
+                                  eval('debugger');
+                                } catch (e) {}
+                              }
+                            }, 1000);
+                            
+                            // Disable console methods
+                            const noop = function() {};
+                            const methods = ['debug', 'info', 'dir', 'dirxml', 'group', 'groupEnd', 'time', 'timeEnd', 'count', 'trace', 'profile', 'profileEnd'];
+                            methods.forEach(function(method) {
+                              try {
+                                if (console[method]) {
+                                  console[method] = noop;
+                                }
+                              } catch (e) {}
+                            });
                           })();
                         `;
                         const script = doc.createElement('script');

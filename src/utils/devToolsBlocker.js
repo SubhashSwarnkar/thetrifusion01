@@ -9,28 +9,43 @@ let devToolsCheckInterval = null;
  */
 let consoleDetector = null;
 let devToolsDetected = false;
+let detectionCount = 0;
+const REQUIRED_DETECTIONS = 3; // Require 3 consecutive detections to avoid false positives
 
 const detectDevTools = () => {
   if (devToolsDetected) return true;
 
-  const widthThreshold = 160;
-  const heightThreshold = 160;
+  const widthThreshold = 200; // Increased threshold to reduce false positives
+  const heightThreshold = 200;
   
-  // Method 1: Window size detection
+  // Method 1: Window size detection - only trigger if consistently detected
+  const heightDiff = window.outerHeight - window.innerHeight;
+  const widthDiff = window.outerWidth - window.innerWidth;
+  
   if (
-    window.outerHeight - window.innerHeight > heightThreshold ||
-    window.outerWidth - window.innerWidth > widthThreshold
+    heightDiff > heightThreshold ||
+    widthDiff > widthThreshold
   ) {
-    devToolsDetected = true;
-    return true;
+    detectionCount++;
+    // Only trigger after multiple consecutive detections
+    if (detectionCount >= REQUIRED_DETECTIONS) {
+      devToolsDetected = true;
+      return true;
+    }
+  } else {
+    // Reset counter if no detection
+    detectionCount = 0;
   }
 
   return false;
 };
 
 /**
- * Console-based DevTools detection
+ * Console-based DevTools detection - More conservative approach
  */
+let consoleDetectionCount = 0;
+const REQUIRED_CONSOLE_DETECTIONS = 5; // Require more detections for console method
+
 const initConsoleDetection = () => {
   if (consoleDetector) return;
   
@@ -39,7 +54,6 @@ const initConsoleDetection = () => {
   Object.defineProperty(element, 'id', {
     get: function() {
       devtools.open = true;
-      devToolsDetected = true;
       return 'devtools-detector';
     }
   });
@@ -55,7 +69,14 @@ const initConsoleDetection = () => {
     }
     
     if (devtools.open) {
-      devToolsDetected = true;
+      consoleDetectionCount++;
+      // Only trigger after multiple consecutive detections
+      if (consoleDetectionCount >= REQUIRED_CONSOLE_DETECTIONS) {
+        devToolsDetected = true;
+      }
+    } else {
+      // Reset counter if no detection
+      consoleDetectionCount = Math.max(0, consoleDetectionCount - 1);
     }
   }, 1000);
 };
@@ -177,17 +198,14 @@ const clearConsole = () => {
 };
 
 /**
- * Detect and handle DevTools opening
+ * Detect and handle DevTools opening - Only block, don't replace content
  */
 const checkDevTools = () => {
-  if (detectDevTools() || devToolsDetected) {
+  // Only check if not already detected to avoid repeated checks
+  if (!devToolsDetected && (detectDevTools() || devToolsDetected)) {
     devToolsOpen = true;
-    // Show warning message
-    if (document.body) {
-      document.body.innerHTML = '<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; font-family: Arial, sans-serif; background: #000; color: #fff; text-align: center; padding: 20px;"><h1 style="font-size: 48px; margin-bottom: 20px;">⚠️ Developer Tools Detected</h1><p style="font-size: 18px; max-width: 600px;">This website does not allow developer tools. Please close the developer tools to continue.</p></div>';
-    }
-    // Optionally redirect
-    // setTimeout(() => { window.location.href = 'about:blank'; }, 2000);
+    // Don't replace body content as it breaks the app
+    // Just set the flag - the blocking is handled by keyboard shortcuts
   }
 };
 
@@ -207,19 +225,29 @@ export const initDevToolsBlocker = () => {
   document.addEventListener('contextmenu', blockContextMenu, true);
   document.addEventListener('mousedown', blockKeyboardShortcuts, true);
 
-  // Block text selection (optional - comment out if you want users to select text)
-  // document.addEventListener('selectstart', (e) => e.preventDefault(), true);
-  // document.addEventListener('dragstart', (e) => e.preventDefault(), true);
+  // Block text selection (allow for input and textarea)
+  document.addEventListener('selectstart', (e) => {
+    if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+      e.preventDefault();
+      return false;
+    }
+  }, true);
+  document.addEventListener('dragstart', (e) => {
+    if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+      e.preventDefault();
+      return false;
+    }
+  }, true);
 
   // Clear console periodically
   setInterval(clearConsole, 1000);
 
-  // Check for DevTools periodically using window size detection
-  devToolsCheckInterval = setInterval(checkDevTools, 500);
+  // Check for DevTools periodically using window size detection - less frequent to reduce false positives
+  devToolsCheckInterval = setInterval(checkDevTools, 2000);
 
-  // Add debugger statement to slow down DevTools
+  // Add debugger statement to slow down DevTools - only if detected
   setInterval(() => {
-    if (!devToolsDetected) {
+    if (devToolsDetected) {
       try {
         // This will pause execution if DevTools is open
         eval('debugger');
