@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Header from "parts/Header";
 import Footer from "parts/Footer";
+import { motion, AnimatePresence } from "framer-motion";
 import { calculatePrice } from "data/pricingData";
 import { industries } from "data/industriesData";
-import { Fade } from "react-awesome-reveal";
+import SEO from "components/common/SEO";
 
 export default function PriceCalculatorPage() {
   const [industry, setIndustry] = useState("");
@@ -17,12 +18,12 @@ export default function PriceCalculatorPage() {
   }, []);
 
   const projectTypes = [
-    { id: "website", name: "Website" },
-    { id: "mobile-app", name: "Mobile App" },
-    { id: "web-app", name: "Web Application" },
-    { id: "design", name: "UI/UX Design" },
-    { id: "branding", name: "Branding" },
-    { id: "marketing", name: "Digital Marketing" }
+    { id: "website", name: "Website", icon: "🌐" },
+    { id: "mobile-app", name: "Mobile App", icon: "📱" },
+    { id: "web-app", name: "Web Application", icon: "💻" },
+    { id: "design", name: "UI/UX Design", icon: "🎨" },
+    { id: "branding", name: "Branding", icon: "🏷️" },
+    { id: "marketing", name: "Digital Marketing", icon: "📈" }
   ];
 
   const timelines = [
@@ -33,7 +34,7 @@ export default function PriceCalculatorPage() {
     { id: "flexible", name: "Flexible (2 months)", multiplier: 0.8 }
   ];
 
-  const features = [
+  const featuresList = [
     { id: "basic-pages", name: "Basic Pages (1-5 pages)" },
     { id: "standard-pages", name: "Standard Pages (6-10 pages)" },
     { id: "premium-pages", name: "Premium Pages (11-20 pages)" },
@@ -62,101 +63,149 @@ export default function PriceCalculatorPage() {
   };
 
   return (
-    <>
+    <div className="min-h-screen bg-[#FDFCFE]">
+      <SEO 
+        title="Project Price Calculator | TheTriFusion" 
+        description="Get an instant, transparent cost estimate for your next digital project. Fast, accurate pricing calculation."
+      />
       <Header />
-      <section className="container mx-auto px-5 py-20">
-        <Fade direction="up" triggerOnce>
-          <div className="text-center mb-16">
-            <h1 className="text-5xl text-theme-blue font-bold mb-5">
-              Price Calculator
+      
+      {/* Background decoration */}
+      <div className="fixed inset-0 pointer-events-none opacity-40 z-0 overflow-hidden">
+        <motion.div 
+          animate={{ x: [0, 30, 0], y: [0, 50, 0] }}
+          transition={{ duration: 20, repeat: Infinity }}
+          className="absolute top-[10%] left-[5%] w-96 h-96 bg-theme-purple/10 rounded-full blur-[100px]"
+        />
+        <motion.div 
+          animate={{ x: [0, -40, 0], y: [0, -30, 0] }}
+          transition={{ duration: 25, repeat: Infinity }}
+          className="absolute bottom-[20%] right-[10%] w-[500px] h-[500px] bg-theme-cyan/5 rounded-full blur-[120px]"
+        />
+      </div>
+
+      <section className="relative z-10 pt-32 pb-20">
+        <div className="container mx-auto px-5 text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="max-w-3xl mx-auto"
+          >
+            <h1 className="text-5xl md:text-7xl font-bold text-theme-blue mb-8 tracking-tight">
+              Project <span className="text-theme-purple">Estimator</span>
             </h1>
-            <p className="font-light text-xl text-gray-400 max-w-2xl mx-auto">
-              Get an instant estimate for your project. Fill in the details below and see the pricing breakdown.
+            <p className="text-xl text-gray-500 font-light leading-relaxed">
+              Plan your budget with confidence. Use our intelligent calculator to get a realistic estimate based on your specific industry and technical requirements.
             </p>
-          </div>
-        </Fade>
+          </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          <Fade direction="left" triggerOnce>
-            <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 border border-light-theme-purple">
-              <h2 className="text-2xl text-theme-blue font-bold mb-6">
-                Project Details
-              </h2>
-
-              <div className="space-y-6">
+        <div className="container mx-auto px-5 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          {/* Left: Configuration Panel */}
+          <div className="lg:col-span-7 space-y-12">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="bg-white p-8 md:p-12 rounded-[3rem] border border-gray-100 shadow-xl"
+            >
+              <div className="space-y-10">
+                {/* Industry Selection */}
                 <div>
-                  <label className="block text-theme-blue font-medium mb-2">
-                    Industry
-                  </label>
-                  <select
-                    value={industry}
-                    onChange={(e) => setIndustry(e.target.value)}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme-purple focus:border-theme-purple bg-white text-gray-900"
-                  >
-                    <option value="">Select Industry</option>
-                    {industries
-                      .filter((ind) => ind.id !== "default")
-                      .map((ind) => (
-                        <option key={ind.id} value={ind.id}>
-                          {ind.name}
-                        </option>
-                      ))}
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-theme-blue font-medium mb-2">
-                    Project Type
-                  </label>
-                  <select
-                    value={projectType}
-                    onChange={(e) => setProjectType(e.target.value)}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme-purple focus:border-theme-purple bg-white text-gray-900"
-                  >
-                    <option value="">Select Project Type</option>
-                    {projectTypes.map((type) => (
-                      <option key={type.id} value={type.id}>
-                        {type.name}
-                      </option>
+                  <h3 className="text-xl font-bold text-theme-blue mb-6 flex items-center gap-3">
+                    <span className="w-8 h-8 rounded-lg bg-light-theme-purple/20 flex items-center justify-center text-theme-purple">1</span>
+                    Selection Industry
+                  </h3>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                    {industries.filter(i => i.id !== 'default').map((ind) => (
+                      <button
+                        key={ind.id}
+                        onClick={() => setIndustry(ind.id)}
+                        className={`p-4 rounded-2xl border text-sm font-medium transition-all duration-300 ${
+                          industry === ind.id 
+                            ? "border-theme-purple bg-light-theme-purple/10 text-theme-purple shadow-sm" 
+                            : "border-gray-100 bg-gray-50 text-gray-400 hover:border-theme-purple/30"
+                        }`}
+                      >
+                        {ind.name}
+                      </button>
                     ))}
-                  </select>
+                  </div>
                 </div>
 
+                {/* Project Type */}
                 <div>
-                  <label className="block text-theme-blue font-medium mb-2">
-                    Timeline
-                  </label>
+                  <h3 className="text-xl font-bold text-theme-blue mb-6 flex items-center gap-3">
+                    <span className="w-8 h-8 rounded-lg bg-light-theme-purple/20 flex items-center justify-center text-theme-purple">2</span>
+                    Project Type
+                  </h3>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                    {projectTypes.map((type) => (
+                      <button
+                        key={type.id}
+                        onClick={() => setProjectType(type.id)}
+                        className={`p-6 rounded-2xl border flex flex-col items-center gap-3 transition-all duration-300 ${
+                          projectType === type.id 
+                            ? "border-theme-purple bg-theme-purple text-white shadow-lg" 
+                            : "border-gray-100 bg-gray-50 text-gray-500 hover:border-theme-purple/30"
+                        }`}
+                      >
+                        <span className="text-3xl">{type.icon}</span>
+                        <span className="text-sm font-bold uppercase tracking-wider">{type.name}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Timeline */}
+                <div>
+                  <h3 className="text-xl font-bold text-theme-blue mb-6 flex items-center gap-3">
+                    <span className="w-8 h-8 rounded-lg bg-light-theme-purple/20 flex items-center justify-center text-theme-purple">3</span>
+                    Timeline Expectation
+                  </h3>
                   <select
                     value={timeline}
                     onChange={(e) => setTimeline(e.target.value)}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme-purple focus:border-theme-purple bg-white text-gray-900"
+                    className="w-full p-5 bg-gray-50 border border-gray-100 rounded-2xl text-theme-blue focus:ring-2 focus:ring-theme-purple/20 focus:border-theme-purple font-medium outline-none transition-all"
                   >
-                    <option value="">Select Timeline</option>
+                    <option value="">Select Priority</option>
                     {timelines.map((tl) => (
-                      <option key={tl.id} value={tl.id}>
-                        {tl.name}
-                      </option>
+                      <option key={tl.id} value={tl.id}>{tl.name}</option>
                     ))}
                   </select>
                 </div>
 
+                {/* Additional Features */}
                 <div>
-                  <label className="block text-theme-blue font-medium mb-4">
-                    Additional Features
-                  </label>
-                  <div className="space-y-2 max-h-64 overflow-y-auto pr-2">
-                    {features.map((feature) => (
+                  <h3 className="text-xl font-bold text-theme-blue mb-6 flex items-center gap-3">
+                    <span className="w-8 h-8 rounded-lg bg-light-theme-purple/20 flex items-center justify-center text-theme-purple">4</span>
+                    Special Features
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {featuresList.map((feature) => (
                       <label
                         key={feature.id}
-                        className="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-light-theme-purple cursor-pointer transition duration-200"
+                        className={`p-4 rounded-xl border-2 cursor-pointer transition-all duration-300 flex items-center gap-4 ${
+                          selectedFeatures.includes(feature.id)
+                            ? "border-theme-purple bg-light-theme-purple/10 text-theme-purple"
+                            : "border-gray-50 bg-gray-50 text-gray-500 hover:border-gray-100 shadow-sm hover:shadow-md"
+                        }`}
                       >
+                        <div className={`w-5 h-5 rounded flex items-center justify-center border-2 transition-all ${
+                          selectedFeatures.includes(feature.id) ? "bg-theme-purple border-theme-purple" : "border-gray-300"
+                        }`}>
+                          {selectedFeatures.includes(feature.id) && (
+                            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                            </svg>
+                          )}
+                        </div>
                         <input
                           type="checkbox"
                           checked={selectedFeatures.includes(feature.id)}
                           onChange={() => handleFeatureToggle(feature.id)}
-                          className="w-5 h-5 text-theme-purple focus:ring-theme-purple rounded"
+                          className="hidden"
                         />
-                        <span className="ml-3 text-gray-700">{feature.name}</span>
+                        <span className="text-sm font-semibold">{feature.name}</span>
                       </label>
                     ))}
                   </div>
@@ -165,81 +214,101 @@ export default function PriceCalculatorPage() {
                 <button
                   onClick={handleCalculate}
                   disabled={!industry || !projectType || !timeline}
-                  className="w-full px-6 py-4 bg-theme-purple text-white rounded-full text-lg font-medium hover:bg-dark-theme-purple transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full py-6 bg-theme-purple text-white rounded-2xl text-xl font-bold shadow-2xl shadow-theme-purple/30 hover:bg-dark-theme-purple transition-all active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Calculate Price
+                  Generate Estimate
                 </button>
               </div>
+            </motion.div>
+          </div>
+
+          {/* Right: Results Panel */}
+          <div className="lg:col-span-5 relative">
+            <div className="sticky top-32">
+              <AnimatePresence mode="wait">
+                {priceResult ? (
+                  <motion.div
+                    key="results"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    className="bg-theme-blue p-8 md:p-12 rounded-[3rem] text-white overflow-hidden shadow-2xl"
+                  >
+                    {/* Background glows */}
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-theme-purple/20 rounded-full blur-[80px]"></div>
+                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-theme-cyan/20 rounded-full blur-[80px]"></div>
+
+                    <div className="relative z-10">
+                      <h2 className="text-2xl font-bold mb-10 opacity-80 uppercase tracking-widest">Investment Summary</h2>
+                      
+                      <div className="mb-12">
+                        <p className="text-blue-200 text-sm font-bold uppercase tracking-wide mb-4">Estimated Total</p>
+                        <div className="flex items-baseline gap-2">
+                          <span className="text-6xl font-bold">₹{priceResult.totalPrice.toLocaleString()}</span>
+                        </div>
+                      </div>
+
+                      <div className="space-y-6 mb-12">
+                        <div className="flex justify-between items-center py-4 border-b border-white/10">
+                          <span className="text-blue-100/60 font-light">Base Architecture</span>
+                          <span className="font-bold font-mono">₹{priceResult.basePrice.toLocaleString()}</span>
+                        </div>
+                        {priceResult.featureCost > 0 && (
+                          <div className="flex justify-between items-center py-4 border-b border-white/10">
+                            <span className="text-blue-100/60 font-light">Feature Enhancements</span>
+                            <span className="font-bold font-mono">₹{priceResult.featureCost.toLocaleString()}</span>
+                          </div>
+                        )}
+                        <div className="flex justify-between items-center py-4">
+                          <span className="text-blue-100/60 font-light">Delivery Timeline</span>
+                          <span className="text-theme-cyan font-bold">{priceResult.breakdown.estimatedDays} Days</span>
+                        </div>
+                      </div>
+
+                      <div className="bg-white/5 p-6 rounded-2xl border border-white/10 mb-12">
+                        <p className="text-xs text-blue-200 uppercase tracking-widest mb-4 font-bold">Selected Config</p>
+                        <div className="flex flex-wrap gap-2">
+                          <span className="px-3 py-1 bg-theme-purple/40 rounded-full text-xs font-semibold">{priceResult.breakdown.industry}</span>
+                          <span className="px-3 py-1 bg-theme-purple/40 rounded-full text-xs font-semibold">{priceResult.breakdown.projectType}</span>
+                        </div>
+                      </div>
+
+                      <div className="space-y-4">
+                        <button className="w-full py-5 bg-white text-theme-blue rounded-2xl font-bold hover:bg-gray-100 transition-all flex items-center justify-center gap-3 group">
+                          Receive Official Proposal
+                          <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                          </svg>
+                        </button>
+                        <button className="w-full py-5 bg-transparent border-2 border-white/20 text-white rounded-2xl font-bold hover:bg-white/5 transition-all">
+                          Save Configuration
+                        </button>
+                      </div>
+                    </div>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="placeholder"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="bg-gray-100 p-12 rounded-[3rem] border border-dashed border-gray-300 text-center py-40"
+                  >
+                    <div className="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-8 text-4xl">
+                      📊
+                    </div>
+                    <h2 className="text-2xl font-bold text-theme-blue mb-4">Awaiting Parameters</h2>
+                    <p className="text-gray-500 font-light">
+                      Configure your project requirements on the left to generate a live investment projection.
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
-          </Fade>
-
-          <Fade direction="right" triggerOnce>
-            <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 border border-light-theme-purple">
-              <h2 className="text-2xl text-theme-blue font-bold mb-6">
-                Price Estimate
-              </h2>
-
-              {priceResult ? (
-                <div className="space-y-6">
-                  <div className="bg-light-theme-purple rounded-lg p-6">
-                    <div className="text-sm text-gray-600 mb-2">Total Price</div>
-                    <div className="text-4xl font-bold text-theme-purple">
-                      ₹{priceResult.totalPrice.toLocaleString()}
-                    </div>
-                  </div>
-
-                  <div className="space-y-4">
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Base Price</span>
-                      <span className="font-medium">₹{priceResult.basePrice.toLocaleString()}</span>
-                    </div>
-                    {priceResult.featureCost > 0 && (
-                      <div className="flex justify-between">
-                        <span className="text-gray-600">Additional Features</span>
-                        <span className="font-medium">₹{priceResult.featureCost.toLocaleString()}</span>
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="border-t pt-4">
-                    <h3 className="font-bold text-theme-blue mb-3">Breakdown</h3>
-                    <div className="space-y-2 text-sm">
-                      <div className="flex justify-between">
-                        <span className="text-gray-600">Industry:</span>
-                        <span className="dark:text-white">{priceResult.breakdown.industry}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600">Project Type:</span>
-                        <span className="dark:text-white">{priceResult.breakdown.projectType}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600">Timeline:</span>
-                        <span className="dark:text-white">{priceResult.breakdown.timeline}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600">Estimated Days:</span>
-                        <span className="dark:text-white">{priceResult.breakdown.estimatedDays} days</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="pt-4">
-                    <button className="w-full px-6 py-3 bg-theme-blue text-white rounded-full hover:bg-opacity-90 transition duration-200">
-                      Get Quote
-                    </button>
-                  </div>
-                </div>
-              ) : (
-                <div className="text-center py-12 text-gray-500">
-                  <p>Fill in the project details and click "Calculate Price" to see your estimate.</p>
-                </div>
-              )}
-            </div>
-          </Fade>
+          </div>
         </div>
       </section>
+
       <Footer />
-    </>
+    </div>
   );
 }
-
