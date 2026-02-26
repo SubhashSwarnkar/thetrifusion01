@@ -39,14 +39,17 @@ export default function Breadcrumbs() {
   };
 
   return (
-    <nav className="bg-gray-50 border-b border-gray-200 py-3" aria-label="Breadcrumb">
+    <nav className="bg-white/50 backdrop-blur-sm pt-28 pb-6 border-b border-gray-100" aria-label="Breadcrumb">
       <div className="container mx-auto px-5">
-        <ol className="flex items-center space-x-2 text-sm">
+        <ol className="flex items-center flex-wrap gap-2 text-xs uppercase tracking-widest font-bold">
           <li>
             <Link
               to="/"
-              className="text-gray-500 hover:text-theme-purple transition duration-200"
+              className="text-gray-400 hover:text-theme-purple transition duration-300 flex items-center gap-2"
             >
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
               Home
             </Link>
           </li>
@@ -57,25 +60,15 @@ export default function Breadcrumbs() {
 
             return (
               <li key={name} className="flex items-center">
-                <svg
-                  className="w-4 h-4 text-gray-400 mx-2"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                <span className="text-gray-300 mx-1 font-light">/</span>
                 {isLast ? (
-                  <span className="text-theme-purple font-medium" aria-current="page">
+                  <span className="text-theme-purple px-2 py-1 rounded-md bg-light-theme-purple/20" aria-current="page">
                     {displayName}
                   </span>
                 ) : (
                   <Link
                     to={routeTo}
-                    className="text-gray-500 hover:text-theme-purple transition duration-200"
+                    className="text-gray-400 hover:text-theme-purple transition duration-300"
                   >
                     {displayName}
                   </Link>

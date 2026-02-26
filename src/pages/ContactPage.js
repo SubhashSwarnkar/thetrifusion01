@@ -79,315 +79,196 @@ export default function ContactPage() {
         description="Get in touch with TheTriFusion team. Discuss your project, schedule a consultation, or just say hello."
       />
       <Header />
-      <Breadcrumbs />
-      <section className="container mx-auto px-5 py-20">
-        <Fade direction="up" triggerOnce>
-          <div className="text-center mb-16">
-            <h1 className="text-5xl text-theme-blue font-bold mb-5">
-              Get In Touch
-            </h1>
-            <p className="font-light text-xl text-gray-400 max-w-2xl mx-auto">
-              Have a project in mind? Let's discuss how we can help bring your vision to life.
-            </p>
-          </div>
-        </Fade>
+      
+      <main className="overflow-hidden">
+        <Breadcrumbs />
 
-        {/* Customization Request Banner */}
-        {customizationInfo && (
-          <Fade direction="down" triggerOnce>
-            <div className="mb-8 bg-gradient-to-r from-theme-purple to-purple-600 rounded-xl p-6 text-white shadow-lg">
-              <div className="flex items-start">
-                <div className="flex-shrink-0">
-                  <svg
-                    className="w-8 h-8"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
-                    />
-                  </svg>
-                </div>
-                <div className="ml-4 flex-1">
-                  <h3 className="text-xl font-bold mb-2">
-                    Template Customization Request
-                  </h3>
-                  <p className="text-purple-100 mb-2">
-                    You're requesting customization for: <strong>{customizationInfo.templateName}</strong>
-                  </p>
-                  <p className="text-sm text-purple-200">
-                    Fill out the form below with your details and customization requirements. Our team will get back to you with a customized solution.
-                  </p>
-                </div>
-                <button
-                  onClick={() => setCustomizationInfo(null)}
-                  className="ml-4 text-white hover:text-purple-200 transition-colors"
-                >
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </Fade>
-        )}
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
-          <Fade direction="left" triggerOnce>
-            <div>
-              <h2 className="text-2xl sm:text-3xl text-theme-blue font-bold mb-6">
-                Contact Information
-              </h2>
-              <div className="space-y-4 sm:space-y-6">
-                <div className="flex items-start">
-                  <div className="w-12 h-12 bg-theme-purple rounded-full flex items-center justify-center mr-4">
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-theme-blue mb-1">
-                      Email
-                    </h3>
-                    <a
-                      href="mailto:TheTrifusion@gmail.com"
-                      className="text-gray-600 hover:text-theme-purple"
-                    >
-                      TheTrifusion@gmail.com
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <div className="w-12 h-12 bg-theme-purple rounded-full flex items-center justify-center mr-4">
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-theme-blue mb-1">
-                      Location
-                    </h3>
-                    <p className="text-gray-600">
-                      Bhilwara, Rajasthan, India
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <div className="w-12 h-12 bg-theme-purple rounded-full flex items-center justify-center mr-4">
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-theme-blue mb-1">
-                      Social Media
-                    </h3>
-                    <div className="flex space-x-4">
-                      <a
-                        href="https://www.instagram.com/thetrifusion/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-600 hover:text-theme-purple"
-                      >
-                        Instagram
-                      </a>
-                      <a
-                        href="https://www.linkedin.com/company/the-trifusion/posts/?feedView=all"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-600 hover:text-theme-purple"
-                      >
-                        LinkedIn
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Fade>
-
-          <Fade direction="right" triggerOnce>
-            <div>
-              <DiscussForm
-                data={data}
-                onChange={onChange}
-                resetForm={resetForm}
-              />
-            </div>
-          </Fade>
-        </div>
-
-        {/* FAQ Section */}
-        <Fade direction="up" triggerOnce>
-          <div className="mb-16">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl text-theme-blue font-bold mb-4">
-                Frequently Asked Questions
-              </h2>
-              <p className="font-light text-lg text-gray-600 max-w-2xl mx-auto">
-                Quick answers to common questions. Need more help?{" "}
-                <Link to="/faq" className="text-theme-purple hover:underline">
-                  View all FAQs
-                </Link>
-              </p>
-            </div>
-
-            <div className="max-w-3xl mx-auto space-y-4">
-              {displayedFaqs.map((faq) => (
-                <div
-                  key={faq.id}
-                  className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden"
-                >
-                  <button
-                    onClick={() => toggleFaq(faq.id)}
-                    className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
-                  >
-                    <h3 className="text-lg font-semibold text-theme-blue pr-4">
-                      {faq.question}
-                    </h3>
-                    <svg
-                      className={`w-5 h-5 text-theme-purple flex-shrink-0 transform transition-transform duration-200 ${
-                        openFaqs.includes(faq.id) ? "rotate-180" : ""
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </button>
-                  {openFaqs.includes(faq.id) && (
-                    <div className="px-6 pb-4">
-                      <p className="text-gray-600 leading-relaxed">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </Fade>
-
-        {/* Appointment/Consultation Section */}
-        <Fade direction="up" triggerOnce>
-          <div className="bg-gradient-to-r from-theme-purple to-theme-blue rounded-2xl p-8 md:p-12 text-white">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-8">
-                <div className="text-5xl mb-4">📅</div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  Book a Free Consultation
-                </h2>
-                <p className="text-lg text-white/90 max-w-2xl mx-auto">
-                  Schedule a consultation to discuss your project and get expert advice from our team.
+        <section className="relative pt-10 pb-20 bg-white">
+          {/* Background Decorations */}
+          <div className="absolute top-0 right-0 w-[50rem] h-[50rem] bg-light-theme-purple/30 rounded-full blur-[120px] -z-10 animate-float opacity-50"></div>
+          <div className="absolute bottom-0 left-0 w-[40rem] h-[40rem] bg-theme-cyan/10 rounded-full blur-[100px] -z-10 animate-float opacity-40" style={{animationDelay: '2s'}}></div>
+          
+          <div className="container mx-auto px-5">
+            <Fade direction="up" triggerOnce>
+              <div className="text-center mb-20">
+                <span className="inline-block px-4 py-1.5 rounded-full bg-light-theme-purple/30 text-theme-purple font-bold text-xs uppercase tracking-[0.2em] mb-6">
+                  Get In Touch
+                </span>
+                <h1 className="text-6xl md:text-8xl font-black text-theme-blue mb-8 tracking-tighter leading-none">
+                  Let’s Build Something <br />
+                  <span className="text-gradient">Extraordinary</span>
+                </h1>
+                <p className="text-xl md:text-2xl text-gray-500 font-light max-w-3xl mx-auto leading-relaxed">
+                  Have a vision? We have the expertise. Let's start a conversation that transforms your business.
                 </p>
               </div>
+            </Fade>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                  <h3 className="text-xl font-bold mb-3">📞 Phone</h3>
-                  <a
-                    href="tel:+919799995083"
-                    className="text-white/90 hover:text-white transition-colors"
-                  >
-                    +91 9799995083
-                  </a>
+            {/* Customization Request Banner */}
+            {customizationInfo && (
+              <Fade direction="down" triggerOnce>
+                <div className="mb-12 relative overflow-hidden bg-theme-blue rounded-3xl p-8 text-white shadow-2xl border border-white/10 group">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-theme-purple/20 rounded-full blur-3xl -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-700"></div>
+                  <div className="flex flex-col md:flex-row items-center gap-8 relative z-10">
+                    <div className="w-20 h-20 bg-white/10 rounded-2xl flex items-center justify-center text-4xl border border-white/20">
+                      🎨
+                    </div>
+                    <div className="flex-1 text-center md:text-left">
+                      <h3 className="text-2xl font-black mb-2">
+                        Customizing: <span className="text-theme-cyan">{customizationInfo.templateName}</span>
+                      </h3>
+                      <p className="text-white/70 font-light text-lg">
+                        You're one step away from personalizing this masterpiece. Fill out the form below and we'll handle the rest.
+                      </p>
+                    </div>
+                    <button
+                      onClick={() => setCustomizationInfo(null)}
+                      className="px-6 py-2 bg-white/10 hover:bg-white/20 rounded-full text-sm font-bold transition-all border border-white/10"
+                    >
+                      Dismiss
+                    </button>
+                  </div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                  <h3 className="text-xl font-bold mb-3">✉️ Email</h3>
-                  <a
-                    href="mailto:TheTrifusion@gmail.com"
-                    className="text-white/90 hover:text-white transition-colors"
-                  >
-                    TheTrifusion@gmail.com
-                  </a>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                  <h3 className="text-xl font-bold mb-3">💬 WhatsApp</h3>
-                  <a
-                    href="https://wa.me/919799995083"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white/90 hover:text-white transition-colors"
-                  >
-                    Chat with us
-                  </a>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                  <h3 className="text-xl font-bold mb-3">📍 Location</h3>
-                  <p className="text-white/90">Bhilwara, Rajasthan, India</p>
-                </div>
+              </Fade>
+            )}
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-32 items-start">
+              {/* Contact Info */}
+              <div className="lg:col-span-5 space-y-12">
+                <Fade direction="left" triggerOnce>
+                  <div className="space-y-8">
+                    <h2 className="text-4xl font-black text-theme-blue tracking-tight">
+                      Contact <span className="text-theme-purple">Details</span>
+                    </h2>
+                    
+                    <div className="space-y-6">
+                      {[
+                        { 
+                          title: "Email Us", 
+                          value: "TheTrifusion@gmail.com", 
+                          icon: "✉️", 
+                          link: "mailto:TheTrifusion@gmail.com",
+                          color: "purple"
+                        },
+                        { 
+                          title: "Visit Us", 
+                          value: "Bhilwara, Rajasthan, India", 
+                          icon: "📍", 
+                          link: null,
+                          color: "cyan"
+                        },
+                        { 
+                          title: "Instagram", 
+                          value: "@thetrifusion", 
+                          icon: "📸", 
+                          link: "https://www.instagram.com/thetrifusion/",
+                          color: "pink"
+                        }
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-center gap-6 p-6 rounded-3xl bg-gray-50 border border-gray-100 group hover:bg-white hover:shadow-xl hover:border-transparent transition-all duration-500">
+                          <div className={`w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-500`}>
+                            {item.icon}
+                          </div>
+                          <div>
+                            <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">{item.title}</p>
+                            {item.link ? (
+                              <a href={item.link} className="text-xl font-bold text-theme-blue hover:text-theme-purple transition-colors">
+                                {item.value}
+                              </a>
+                            ) : (
+                              <p className="text-xl font-bold text-theme-blue">{item.value}</p>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </Fade>
+
+                {/* FAQ Preview */}
+                <Fade direction="left" triggerOnce delay={200}>
+                  <div className="p-8 rounded-[2.5rem] bg-theme-blue text-white relative overflow-hidden shadow-2xl">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-theme-purple/20 rounded-full blur-2xl"></div>
+                    <h3 className="text-2xl font-black mb-6 relative z-10">Common Questions</h3>
+                    <div className="space-y-4 relative z-10">
+                      {displayedFaqs.slice(0, 3).map((faq) => (
+                        <div key={faq.id} className="border-b border-white/10 pb-4">
+                          <button 
+                            onClick={() => toggleFaq(faq.id)}
+                            className="w-full text-left flex justify-between items-center group"
+                          >
+                            <span className="font-bold text-white/80 group-hover:text-white transition-colors">{faq.question}</span>
+                            <svg className={`w-4 h-4 transition-transform ${openFaqs.includes(faq.id) ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" /></svg>
+                          </button>
+                          {openFaqs.includes(faq.id) && (
+                            <p className="mt-2 text-sm text-white/60 font-light leading-relaxed">{faq.answer}</p>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                    <Link to="/faq" className="inline-block mt-8 text-sm font-bold text-theme-cyan hover:underline uppercase tracking-widest">
+                      View all FAQs →
+                    </Link>
+                  </div>
+                </Fade>
               </div>
 
-              <div className="text-center">
-                <Link
-                  to="/appointment"
-                  className="inline-block px-8 py-4 bg-white text-theme-purple rounded-full font-semibold hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
-                >
-                  Schedule Consultation
-                </Link>
+              {/* Form Section */}
+              <div className="lg:col-span-7">
+                <Fade direction="right" triggerOnce>
+                  <DiscussForm
+                    data={data}
+                    onChange={onChange}
+                    resetForm={resetForm}
+                  />
+                </Fade>
               </div>
             </div>
+
+            {/* Premium Consultation Section */}
+            <Fade direction="up" triggerOnce>
+              <div className="relative rounded-[4rem] overflow-hidden bg-theme-blue p-12 md:p-24 shadow-2xl mb-20 text-center">
+                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none"></div>
+                <div className="absolute -top-40 -left-40 w-[40rem] h-[40rem] bg-theme-purple/20 rounded-full blur-[120px]"></div>
+                <div className="absolute -bottom-40 -right-40 w-[40rem] h-[40rem] bg-theme-cyan/10 rounded-full blur-[120px]"></div>
+                
+                <div className="relative z-10">
+                  <div className="inline-block px-6 py-2 rounded-full bg-white/10 border border-white/20 text-white font-bold text-xs uppercase tracking-[0.2em] mb-8">
+                    Consultation
+                  </div>
+                  <h2 className="text-4xl md:text-7xl font-black text-white mb-8 tracking-tighter leading-none">
+                    Ready for a <br />
+                    <span className="text-gradient">Deep Dive?</span>
+                  </h2>
+                  <p className="text-white/70 text-xl md:text-2xl font-light mb-12 max-w-3xl mx-auto leading-relaxed">
+                    Schedule a 1-on-1 strategy session with our senior architects. No sales pitch, just real technical value.
+                  </p>
+                  
+                  <div className="flex flex-wrap justify-center gap-6 mb-16">
+                    <div className="px-8 py-5 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm group hover:bg-white/10 transition-all">
+                      <p className="text-xs font-bold text-white/40 uppercase tracking-widest mb-2">WhatsApp</p>
+                      <a href="https://wa.me/919799995083" target="_blank" rel="noreferrer" className="text-2xl font-black text-white hover:text-theme-cyan transition-colors">Chat Now</a>
+                    </div>
+                    <div className="px-8 py-5 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm group hover:bg-white/10 transition-all">
+                      <p className="text-xs font-bold text-white/40 uppercase tracking-widest mb-2">Direct Call</p>
+                      <a href="tel:+919799995083" className="text-2xl font-black text-white hover:text-theme-cyan transition-colors">+91 9799995083</a>
+                    </div>
+                  </div>
+
+                  <Link
+                    to="/appointment"
+                    className="inline-flex items-center gap-3 px-10 py-5 bg-white text-theme-blue rounded-full text-xl font-black hover:scale-105 transition-all active:scale-95 shadow-2xl shadow-black/40"
+                  >
+                    🚀 Schedule Consultation
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                  </Link>
+                </div>
+              </div>
+            </Fade>
           </div>
-        </Fade>
-      </section>
+        </section>
+      </main>
+
       <Footer />
     </>
   );

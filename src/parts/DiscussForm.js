@@ -42,96 +42,112 @@ export const DiscussForm = (actions) => {
             resetForm();
           },
           (error) => {
-            toast.error(error);
+            toast.error(error.text || "Failed to send message.");
           }
         );
     } else {
-      toast.error("Please fill out the blank form.");
+      toast.error("Please fill out all fields.");
     }
   };
 
   return (
-    <section className="flex flex-col container mx-auto mt-10 justify-center">
-      <Fade direction="down" triggerOnce>
-        <h1 className="text-5xl text-theme-blue dark:text-white text-center font-bold">
-          Lets Discuss
-        </h1>
-      </Fade>
+    <section className="flex flex-col container mx-auto justify-center">
+      <div className="bg-white/40 backdrop-blur-xl border border-white/40 shadow-2xl rounded-[3rem] p-8 md:p-12 relative overflow-hidden">
+        {/* Subtle background blob inside card */}
+        <div className="absolute top-0 right-0 w-32 h-32 bg-theme-purple/10 rounded-full blur-2xl"></div>
+        
+        <Fade direction="down" triggerOnce>
+          <h2 className="text-4xl text-theme-blue text-center font-black mb-4 tracking-tight">
+            Let's <span className="text-theme-purple">Collaborate</span>
+          </h2>
+        </Fade>
 
-      <Fade direction="up" triggerOnce>
-        <p className="font-light text-lg text-gray-400 dark:text-gray-300 text-center mb-12">
-          {/* eslint-disable-next-line react/no-unescaped-entities */}
-          Please fill out the form below to discuss your project and we'll get
-          back to you in less than 24 hours.
-        </p>
-      </Fade>
+        <Fade direction="up" triggerOnce>
+          <p className="font-light text-lg text-gray-500 text-center mb-12 max-w-xl mx-auto">
+            Fill out the form below and we'll connect within 24 hours to turn your vision into reality.
+          </p>
+        </Fade>
 
-      <Fade direction="up" triggerOnce>
-        <div className="flex flex-col">
-          <div className="flex flex-col sm:flex-row mx-auto">
-            <Form
-              id="name"
-              name="name"
-              type="text"
-              value={data.name}
-              placeholder="Your name"
-              className=""
-              onChange={actions.onChange}
-            />
-            <Form
-              id="company"
-              name="company"
-              type="text"
-              value={data.company}
-              placeholder="Your company"
-              className=""
-              onChange={actions.onChange}
-            />
+        <Fade direction="up" triggerOnce>
+          <div className="flex flex-col gap-6 max-w-3xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <Form
+                  id="name"
+                  name="name"
+                  type="text"
+                  value={data.name}
+                  placeholder="Full Name"
+                  className="w-full"
+                  onChange={actions.onChange}
+                />
+              </div>
+              <div className="space-y-2">
+                <Form
+                  id="company"
+                  name="company"
+                  type="text"
+                  value={data.company}
+                  placeholder="Company Name"
+                  className="w-full"
+                  onChange={actions.onChange}
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <Form
+                  id="email"
+                  name="email"
+                  type="email"
+                  value={data.email}
+                  placeholder="Work Email"
+                  className="w-full"
+                  onChange={actions.onChange}
+                />
+              </div>
+              <div className="space-y-2">
+                <Form
+                  id="phone"
+                  name="phone"
+                  type="number"
+                  value={data.phone}
+                  placeholder="Contact Number"
+                  className="w-full"
+                  onChange={actions.onChange}
+                />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <Form
+                id="projectIdea"
+                name="projectIdea"
+                type="textarea"
+                value={data.projectIdea}
+                placeholder="Briefly describe your project idea..."
+                className="w-full"
+                onChange={actions.onChange}
+              />
+            </div>
+
+            <button
+              className="group relative px-12 py-5 bg-theme-purple text-white rounded-2xl font-black text-xl shadow-xl shadow-theme-purple/20 overflow-hidden transition-all hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-3 mt-4"
+              type="button"
+              onClick={submitEmail}
+            >
+              <span className="relative z-10 flex items-center gap-2">
+                Send Message
+                <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-theme-purple to-theme-cyan opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </button>
           </div>
-
-          <div className="flex flex-col sm:flex-row mx-auto">
-            <Form
-              id="email"
-              name="email"
-              type="email"
-              value={data.email}
-              placeholder="Your email address"
-              className=""
-              onChange={actions.onChange}
-            />
-            <Form
-              id="phone"
-              name="phone"
-              type="number"
-              value={data.phone}
-              placeholder="Your contact number"
-              className=""
-              onChange={actions.onChange}
-            />
-          </div>
-
-          <div className="mx-auto">
-            <Form
-              id="projectIdea"
-              name="projectIdea"
-              type="textarea"
-              value={data.projectIdea}
-              placeholder="Explain about your project idea"
-              className=""
-              onChange={actions.onChange}
-            />
-          </div>
-          <Button
-            className="text-xl mx-auto px-12 py-3 mt-5 bg-theme-purple text-white rounded-full border-2 border-theme-purple hover:bg-dark-theme-purple border-purple-800 transition duration-200 focus:outline-none"
-            type="button"
-            onClick={submitEmail}
-          >
-            Submit
-          </Button>
-        </div>
-      </Fade>
-
-      <ToastContainer />
+        </Fade>
+      </div>
     </section>
   );
 };
