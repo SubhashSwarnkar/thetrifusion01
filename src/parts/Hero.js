@@ -1,5 +1,7 @@
+"use client";
+
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
 import Button from "../elements/Button";
 import HeroVideo from "../assets/images/hero/grok-video-a50935b7-1f97-482b-a269-949d5dedccc5 (1).mp4";
@@ -27,11 +29,11 @@ export default function Hero() {
             <Fade direction="up" delay={400} triggerOnce>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button
-                  href="/portfolio"
+                  href="/solutions"
                   type="link"
                   className="btn-wave flex items-center justify-center px-8 py-4 text-white text-lg rounded-full shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105"
                 >
-                  See Our Work
+                  Explore Solutions
                   <svg
                     className="ml-2 w-5 h-5 text-white"
                     xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +50,7 @@ export default function Hero() {
                   </svg>
                 </Button>
                 <Link
-                  to="/contact"
+                  href="/contact"
                   className="flex items-center justify-center px-8 py-4 text-theme-purple text-lg bg-white border-2 border-theme-purple rounded-full shadow-lg hover:bg-light-theme-purple transition-all duration-300 hover:shadow-xl hover:scale-105"
                 >
                   Get Started
@@ -65,6 +67,47 @@ export default function Hero() {
                       d="M13 7l5 5m0 0l-5 5m5-5H6"
                     />
                   </svg>
+                </Link>
+              </div>
+            </Fade>
+
+            <Fade direction="up" delay={500} triggerOnce>
+              <div className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3 text-sm">
+                <Link
+                  href="/solutions/best-software-company-india"
+                  className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
+                >
+                  Software company India
+                </Link>
+                <Link
+                  href="/solutions/ecommerce-website-development"
+                  className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
+                >
+                  Ecommerce websites
+                </Link>
+                <Link
+                  href="/solutions/digital-marketing-agency"
+                  className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
+                >
+                  Digital marketing
+                </Link>
+                <Link
+                  href="/solutions/online-store-development"
+                  className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
+                >
+                  Online stores
+                </Link>
+                <Link
+                  href="/solutions/mobile-app-development-company"
+                  className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
+                >
+                  Mobile apps
+                </Link>
+                <Link
+                  href="/solutions/web-development-company-india"
+                  className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
+                >
+                  Web development
                 </Link>
               </div>
             </Fade>
@@ -97,12 +140,14 @@ export default function Hero() {
             <Fade direction="left" triggerOnce>
               <div className="relative">
                 <div className="absolute inset-0 "></div>
-                <video 
-                  className="relative z-10 w-full max-w-2xl rounded-2xl object-cover" 
-                  autoPlay 
-                  loop 
-                  muted 
+                <video
+                  className="relative z-10 w-full max-w-2xl rounded-2xl object-cover"
+                  autoPlay
+                  loop
+                  muted
                   playsInline
+                  preload="metadata"
+                  poster="/images/Web.png"
                 >
                   <source src={HeroVideo} type="video/mp4" />
                   Your browser does not support the video tag.

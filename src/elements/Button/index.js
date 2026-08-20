@@ -1,5 +1,7 @@
+"use client";
+
 import React from "react";
-import { NavLink } from "react-router-dom";
+import Link from "next/link";
 
 import PropTypes from "prop-types";
 
@@ -33,14 +35,14 @@ export default function Button({
     }
 
     return (
-      <NavLink
-        to={href}
+      <Link
+        href={href}
         className={className}
         style={style}
         onClick={onClickHandler}
       >
         {children}
-      </NavLink>
+      </Link>
     );
   }
 

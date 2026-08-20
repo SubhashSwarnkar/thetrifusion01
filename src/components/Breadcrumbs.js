@@ -1,9 +1,12 @@
+"use client";
+
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Breadcrumbs() {
-  const location = useLocation();
-  const pathnames = location.pathname.split("/").filter((x) => x);
+  const pathname = usePathname();
+  const pathnames = pathname.split("/").filter((x) => x);
 
   // Don't show breadcrumbs on home page
   if (pathnames.length === 0) return null;
@@ -23,6 +26,7 @@ export default function Breadcrumbs() {
       team: "Team",
       faq: "FAQ",
       "discuss-project": "Discuss Project",
+      solutions: "Solutions",
     };
 
     // Handle dynamic routes
@@ -43,7 +47,7 @@ export default function Breadcrumbs() {
         <ol className="flex items-center flex-wrap gap-2 text-xs uppercase tracking-widest font-bold">
           <li>
             <Link
-              to="/"
+              href="/"
               className="text-gray-400 hover:text-theme-purple transition duration-300 flex items-center gap-2"
             >
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -66,7 +70,7 @@ export default function Breadcrumbs() {
                   </span>
                 ) : (
                   <Link
-                    to={routeTo}
+                    href={routeTo}
                     className="text-gray-400 hover:text-theme-purple transition duration-300"
                   >
                     {displayName}

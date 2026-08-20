@@ -1,43 +1,64 @@
+"use client";
+
 import { useEffect } from "react";
 
-export default function LiveChat() {
-  useEffect(() => {
-    // Tawk.to Live Chat Integration
-    // Replace 'YOUR_TAWK_TO_ID' with your actual Tawk.to property ID
-    // Get it from: https://dashboard.tawk.to/
-    
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = "https://embed.tawk.to/YOUR_TAWK_TO_ID/YOUR_WIDGET_ID";
-    script.charset = "UTF-8";
-    script.setAttribute("crossorigin", "*");
-    
-    // Only add if not already added
-    if (!document.getElementById("tawk-script")) {
-      script.id = "tawk-script";
-      document.body.appendChild(script);
-    }
+const TAWK_SRC = process.env.NEXT_PUBLIC_TAWK_SRC || "";
 
-    // Alternative: If you want to use a different chat service, you can modify this
-    // For now, this is a placeholder that can be easily configured
+function loadTawk() {
+  if (!TAWK_SRC || TAWK_SRC.includes("YOUR_TAWK")) return;
+  if (document.getElementById("tawk-script")) return;
 
-    return () => {
-      // Cleanup if needed
-      const tawkScript = document.getElementById("tawk-script");
-      if (tawkScript) {
-        // Note: Tawk.to doesn't need cleanup, but other services might
-      }
-    };
-  }, []);
-
-  return null; // This component doesn't render anything
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = TAWK_SRC;
+  script.charset = "UTF-8";
+  script.setAttribute("crossorigin", "*");
+  script.id = "tawk-script";
+  document.body.appendChild(script);
 }
 
-// Instructions for setup:
-// 1. Go to https://dashboard.tawk.to/
-// 2. Sign up or log in
-// 3. Create a new property or select existing
-// 4. Copy your Property ID and Widget ID
-// 5. Replace 'YOUR_TAWK_TO_ID' and 'YOUR_WIDGET_ID' above
-// 6. Customize your chat widget in Tawk.to dashboard
+/**
+ * Defer third-party chat until idle or first user interaction.
+ * Skips load when Tawk ID is not configured.
+ */
+export default function LiveChat() {
+  useEffect(() => {
+    if (!TAWK_SRC || TAWK_SRC.includes("YOUR_TAWK")) return undefined;
 
+    let loaded = false;
+    const run = () => {
+      if (loaded) return;
+      loaded = true;
+      loadTawk();
+      cleanup();
+    };
+
+    const onInteract = () => run();
+    const events = ["pointerdown", "keydown", "scroll", "touchstart"];
+    events.forEach((event) =>
+      window.addEventListener(event, onInteract, { once: true, passive: true })
+    );
+
+    let idleId;
+    if ("requestIdleCallback" in window) {
+      idleId = window.requestIdleCallback(run, { timeout: 8000 });
+    } else {
+      idleId = window.setTimeout(run, 6000);
+    }
+
+    function cleanup() {
+      events.forEach((event) =>
+        window.removeEventListener(event, onInteract)
+      );
+      if ("requestIdleCallback" in window && typeof idleId === "number") {
+        window.cancelIdleCallback?.(idleId);
+      } else if (idleId) {
+        window.clearTimeout(idleId);
+      }
+    }
+
+    return cleanup;
+  }, []);
+
+  return null;
+}

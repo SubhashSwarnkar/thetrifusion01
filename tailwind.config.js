@@ -1,10 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 
-import { fontFamily as _fontFamily } from "tailwindcss/defaultTheme";
+const { fontFamily: _fontFamily } = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
-  darkMode: false, // Dark mode disabled
+  content: [
+    "./src/app/**/*.{js,jsx}",
+    "./src/components/**/*.{js,jsx}",
+    "./src/parts/**/*.{js,jsx}",
+    "./src/views/**/*.{js,jsx}",
+    "./src/elements/**/*.{js,jsx}",
+  ],
+  darkMode: "media",
   theme: {
     fontFamily: {
       sans: ["Poppins", ..._fontFamily.sans],
@@ -42,8 +48,8 @@ module.exports = {
       },
       animation: {
         "bounce-x": "bouncex 1s infinite",
-        "float": "float 6s ease-in-out infinite",
-        "wave": "wave 10s linear infinite",
+        float: "float 6s ease-in-out infinite",
+        wave: "wave 10s linear infinite",
       },
       keyframes: {
         bouncex: {
@@ -74,9 +80,6 @@ module.exports = {
         193: "51rem",
       },
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [
     require("@tailwindcss/forms")({

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { Fade } from "react-awesome-reveal";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -20,9 +22,9 @@ export default function Testimonial({ data }) {
     <section className="container mx-auto px-4 py-16 sm:py-24">
       <Fade direction="up" triggerOnce>
         <div className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl text-theme-blue font-bold mb-4">
+          <h2 className="text-4xl sm:text-5xl text-theme-blue font-bold mb-4">
             Testimonials
-          </h1>
+          </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-theme-purple to-dark-theme-purple mx-auto rounded-full mb-6"></div>
           <p className="font-light text-lg text-gray-400 max-w-2xl mx-auto">
             See what our clients have to say about their experience working with us.

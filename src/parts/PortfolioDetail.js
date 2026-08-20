@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 import { Fade } from "react-awesome-reveal";
@@ -87,9 +89,9 @@ export default function PortfolioDetail({ data }) {
 
           <Fade bottom delay={300 * 1} triggerOnce>
             <div className="flex flex-col mt-16 mb-12 mx-8 sm:mx-16 xl:mx-28">
-              <h1 className="text-3xl text-theme-blue font-bold mb-3">
+              <h2 className="text-3xl text-theme-blue font-bold mb-3">
                 Project Detail
-              </h1>
+              </h2>
 
               <p className="font-light text-lg text-gray-400 text-justify">
                 {item.description}
@@ -97,9 +99,9 @@ export default function PortfolioDetail({ data }) {
             </div>
 
             <div className="flex flex-col mx-8 sm:mx-16 xl:mx-28">
-              <h1 className="text-3xl text-theme-blue font-bold mb-5">
+              <h2 className="text-3xl text-theme-blue font-bold mb-5">
                 Project Responsibilities
-              </h1>
+              </h2>
 
               <div className="flex flex-row flex-wrap gap-3 ml-1">
                 {item.responsibility.map((responsibility, idx) => (
@@ -114,9 +116,9 @@ export default function PortfolioDetail({ data }) {
             {item.techStack && (
               <Fade bottom delay={300 * 2} triggerOnce>
                 <div className="flex flex-col mx-8 sm:mx-16 xl:mx-28 mt-12">
-                  <h1 className="text-3xl text-theme-blue font-bold mb-5">
+                  <h2 className="text-3xl text-theme-blue font-bold mb-5">
                     Technologies Used
-                  </h1>
+                  </h2>
                   <div className="flex flex-row flex-wrap gap-3">
                     {item.techStack.map((tech, idx) => (
                       <div key={idx} className="px-6 py-3 bg-gray-100 text-gray-700 rounded-full shadow-md">
@@ -131,9 +133,9 @@ export default function PortfolioDetail({ data }) {
             {item.metrics && (
               <Fade bottom delay={300 * 3} triggerOnce>
                 <div className="flex flex-col mx-8 sm:mx-16 xl:mx-28 mt-12">
-                  <h1 className="text-3xl text-theme-blue font-bold mb-5">
+                  <h2 className="text-3xl text-theme-blue font-bold mb-5">
                     Project Results
-                  </h1>
+                  </h2>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {item.metrics.map((metric, idx) => (
                       <div key={idx} className="bg-gradient-to-br from-theme-purple to-theme-blue p-6 rounded-2xl text-white shadow-lg">
@@ -149,9 +151,9 @@ export default function PortfolioDetail({ data }) {
             {item.timeline && (
               <Fade bottom delay={300 * 4} triggerOnce>
                 <div className="flex flex-col mx-8 sm:mx-16 xl:mx-28 mt-12">
-                  <h1 className="text-3xl text-theme-blue font-bold mb-5">
+                  <h2 className="text-3xl text-theme-blue font-bold mb-5">
                     Project Timeline
-                  </h1>
+                  </h2>
                   <div className="space-y-4">
                     {item.timeline.map((milestone, idx) => (
                       <div key={idx} className="flex items-start gap-4">
@@ -175,9 +177,9 @@ export default function PortfolioDetail({ data }) {
             {item.clientTestimonial && (
               <Fade bottom delay={300 * 5} triggerOnce>
                 <div className="flex flex-col mx-8 sm:mx-16 xl:mx-28 mt-12 bg-gray-50 p-8 rounded-2xl">
-                  <h1 className="text-3xl text-theme-blue font-bold mb-5">
+                  <h2 className="text-3xl text-theme-blue font-bold mb-5">
                     Client Testimonial
-                  </h1>
+                  </h2>
                   <blockquote className="text-lg text-gray-700 italic mb-4">
                     "{item.clientTestimonial.quote}"
                   </blockquote>

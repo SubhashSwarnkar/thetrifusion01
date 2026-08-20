@@ -1,16 +1,17 @@
+"use client";
+
 import React from "react";
-
+import Image from "next/image";
 import { Fade } from "react-awesome-reveal";
-
 import Button from "../elements/Button";
 
 export default function Portfolio({ data }) {
   return (
     <section className="container mx-auto flex flex-col items-center mt-20">
       <Fade direction="right" triggerOnce>
-        <h1 className="text-5xl text-theme-blue dark:text-white text-center font-bold">
+        <h2 className="text-5xl text-theme-blue dark:text-white text-center font-bold">
           Our Selected Project
-        </h1>
+        </h2>
       </Fade>
       <Fade direction="left" triggerOnce>
         <p className="font-light text-lg text-gray-400 dark:text-gray-300 text-center mb-12">
@@ -29,10 +30,13 @@ export default function Portfolio({ data }) {
             <Button type="link" href={`/portfolio/${item.id}`}>
               <div className="group rounded-2xl shadow-xl w-auto m-3 transform transition duration-500 hover:scale-110 portofolio-card">
                 <div className="relative">
-                  <img
+                  <Image
                     src={item.imageUrl}
-                    alt="Portfolio"
-                    className="rounded-t-2xl z-0"
+                    alt={item.title || "Portfolio"}
+                    width={600}
+                    height={400}
+                    className="rounded-t-2xl z-0 w-full h-auto"
+                    unoptimized
                   />
                   <div className="absolute flex w-full h-full top-0 opacity-0 bg-black justify-center rounded-t-2xl rounded-b img-hover">
                     <button className="focus:outline-none">

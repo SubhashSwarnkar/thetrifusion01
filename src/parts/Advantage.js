@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 import Fade from "react-awesome-reveal";
@@ -7,9 +9,9 @@ export default function Advantage({ data }) {
     <div className="bg-gray-50 dark:bg-gray-900 py-20 mb-24 sm:mb-18 xl:mb-16">
       <div className="container mx-auto">
         <Fade bottom triggerOnce>
-          <h1 className="text-5xl text-theme-blue dark:text-white text-center font-bold">
+          <h2 className="text-5xl text-theme-blue dark:text-white text-center font-bold">
             Why Choose Us
-          </h1>
+          </h2>
 
           <p className="font-light text-lg text-gray-400 dark:text-gray-300 text-center mb-12 sm:mb-5 xl:mb-0">
             Why you should choose us to handle your project.

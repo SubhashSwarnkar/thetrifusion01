@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect } from 'react';
 import { initDevToolsBlocker, cleanupDevToolsBlocker } from 'utils/devToolsBlocker';
 

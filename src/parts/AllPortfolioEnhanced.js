@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { Fade } from "react-awesome-reveal";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";

@@ -3,13 +3,13 @@
   "name": "TheTriFusion - IT Solutions",
   "icons": [
     {
-      "src": "logo.svg",
+      "src": "/logo.svg",
       "type": "image/svg+xml",
       "sizes": "any"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#0f172a",
   "background_color": "#ffffff"
 }

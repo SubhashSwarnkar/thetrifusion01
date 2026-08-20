@@ -1,7 +1,10 @@
+"use client";
+
 import React, { useState, useEffect, useRef } from "react";
 import { Fade } from "react-awesome-reveal";
 import { Transition } from "@headlessui/react";
-import { useLocation, Link } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "../elements/Button";
 import BrandIcon from "./BrandIcon";
@@ -12,8 +15,8 @@ export default function Header() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const location = useLocation();
-  const path = location.pathname;
+  const pathname = usePathname();
+  const path = pathname;
   const timeoutRef = useRef(null);
 
   // Scroll handler
@@ -29,7 +32,7 @@ export default function Header() {
   useEffect(() => {
     setIsCollapse(false);
     setIsMobileServicesOpen(false);
-  }, [location.pathname]);
+  }, [pathname]);
 
   // Close mobile menu when clicking outside
   useEffect(() => {
@@ -84,6 +87,7 @@ export default function Header() {
           {[
             { name: "Home", to: "/" },
             { name: "Services", isDropdown: true },
+            { name: "Solutions", to: "/solutions" },
             { name: "Portfolio", to: "/portfolio" },
             { name: "Pricing", to: "/pricing" },
             { name: "Insights", to: "/blog" },
@@ -125,7 +129,7 @@ export default function Header() {
                       {services.map((service) => (
                         <Link
                           key={service.id}
-                          to={`/services/${service.slug}`}
+                          href={`/services/${service.slug}`}
                           onClick={handleLinkClick}
                           className="group/item p-4 rounded-2xl hover:bg-light-theme-purple/10 border border-transparent hover:border-light-theme-purple/20 transition-all duration-300"
                         >
@@ -141,7 +145,7 @@ export default function Header() {
                         </Link>
                       ))}
                       <div className="col-span-2 pt-6 mt-4 border-t border-gray-50 flex justify-center">
-                         <Link to="/services" onClick={handleLinkClick} className="group/btn relative px-8 py-3 overflow-hidden rounded-full bg-gray-50 text-theme-purple text-xs font-bold uppercase tracking-[0.2em] transition-all hover:text-white">
+                         <Link href="/services" onClick={handleLinkClick} className="group/btn relative px-8 py-3 overflow-hidden rounded-full bg-gray-50 text-theme-purple text-xs font-bold uppercase tracking-[0.2em] transition-all hover:text-white">
                            <span className="relative z-10">View All Specializations</span>
                            <div className="absolute inset-0 bg-theme-purple translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
                          </Link>
@@ -151,7 +155,7 @@ export default function Header() {
                 </div>
               ) : (
                 <Link
-                  to={item.to}
+                  href={item.to}
                   className={`px-5 py-2 text-sm font-bold transition-all rounded-full relative ${
                     path === item.to || (item.to !== "/" && path.startsWith(item.to)) 
                       ? "text-theme-purple bg-light-theme-purple/20" 
@@ -171,7 +175,7 @@ export default function Header() {
           ))}
 
           <Link
-            to="/contact"
+            href="/contact"
             className="ml-6 px-8 py-3 bg-theme-purple text-white rounded-full text-sm font-black shadow-[0_10px_20px_-5px_rgba(102,16,242,0.4)] hover:shadow-[0_15px_30px_-5px_rgba(102,16,242,0.6)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
           >
             Get Started
@@ -204,6 +208,7 @@ export default function Header() {
                 {[
                   { name: "Home", to: "/" },
                   { name: "Services", isDropdown: true },
+                  { name: "Solutions", to: "/solutions" },
                   { name: "Portfolio", to: "/portfolio" },
                   { name: "Pricing", to: "/pricing" },
                   { name: "Insights", to: "/blog" },
@@ -237,7 +242,7 @@ export default function Header() {
                               {services.map(s => (
                                 <Link 
                                   key={s.id} 
-                                  to={`/services/${s.slug}`} 
+                                  href={`/services/${s.slug}`} 
                                   onClick={handleLinkClick} 
                                   className="flex items-center gap-4 p-4 bg-gray-50/50 rounded-2xl group active:scale-95 transition-all"
                                 >
@@ -253,7 +258,7 @@ export default function Header() {
                       </div>
                     ) : (
                       <Link 
-                        to={item.to} 
+                        href={item.to} 
                         onClick={handleLinkClick}
                         className={`block py-4 text-4xl font-black transition-all ${
                           path === item.to ? "text-theme-purple translate-x-4" : "text-theme-blue"
@@ -273,7 +278,7 @@ export default function Header() {
                 className="mt-auto pt-10 pb-10"
               >
                 <Link 
-                  to="/contact" 
+                  href="/contact" 
                   onClick={handleLinkClick} 
                   className="block w-full text-center py-6 bg-theme-purple text-white rounded-3xl text-2xl font-black shadow-2xl shadow-theme-purple/30 group relative overflow-hidden"
                 >

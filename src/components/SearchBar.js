@@ -1,5 +1,7 @@
+"use client";
+
 import React, { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { searchFaqs } from "data/faqData";
 
 export default function SearchBar({ placeholder = "Search..." }) {
@@ -8,7 +10,7 @@ export default function SearchBar({ placeholder = "Search..." }) {
   const [isOpen, setIsOpen] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const searchRef = useRef(null);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -52,7 +54,7 @@ export default function SearchBar({ placeholder = "Search..." }) {
   const handleSearch = (e) => {
     e.preventDefault();
     if (query.trim()) {
-      navigate(`/search?q=${encodeURIComponent(query)}`);
+      router.push(`/search?q=${encodeURIComponent(query)}`);
       setShowResults(false);
       setQuery("");
     }
@@ -60,9 +62,9 @@ export default function SearchBar({ placeholder = "Search..." }) {
 
   const handleResultClick = (result) => {
     if (result.type === "faq") {
-      navigate(`/faq#faq-${result.id}`);
+      router.push(`/faq#faq-${result.id}`);
     } else {
-      navigate(result.url);
+      router.push(result.url);
     }
     setShowResults(false);
     setQuery("");

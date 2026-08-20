@@ -1,6 +1,17 @@
 {
-    "compilerOptions": {
-        "baseUrl": "src"
-    },
-    "include": ["src/**/*"]
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["./*"],
+      "components/*": ["components/*"],
+      "parts/*": ["parts/*"],
+      "views/*": ["views/*"],
+      "data/*": ["data/*"],
+      "elements/*": ["elements/*"],
+      "utils/*": ["utils/*"],
+      "json/*": ["json/*"],
+      "assets/*": ["assets/*"]
+    }
+  },
+  "include": ["src/**/*", "next.config.mjs"]
 }

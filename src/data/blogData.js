@@ -369,6 +369,91 @@ export const blogPosts = [
     readTime: "9 min read",
     author: "Astro Future",
     featured: true,
+  },
+  {
+    id: 21,
+    slug: "ecommerce-website-development-cost-india",
+    title:
+      "Ecommerce Website Development Cost in India: Features, Timeline and Pricing Factors",
+    excerpt:
+      "A practical breakdown of what drives ecommerce website cost in India — catalog complexity, payments, logistics, design depth, and timeline — without fake one-price quotes.",
+    content: `
+      <h2>Why ecommerce quotes vary so widely</h2>
+      <p>If you have asked three agencies for an ecommerce website quote in India, you have probably seen three very different numbers. That is normal. Cost tracks scope: how many products and variants you sell, how customized checkout must be, which payment and shipping partners you need, and how much design and admin tooling you expect on day one.</p>
+      <h3>Cost factors that matter</h3>
+      <p>Feature scope and catalog complexity usually dominate. A 50-SKU store with simple variants is a different build from a multi-warehouse catalog with B2B pricing. Payment gateways, shipping rules, coupons, invoices, and inventory sync add integration work. Design depth — template polish versus fully custom UI — also shifts effort. Finally, content migration and SEO redirects protect rankings when you replace an older store.</p>
+      <h3>Timeline ranges we see most often</h3>
+      <p>Lean ecommerce MVPs often land in roughly 4–10 weeks when requirements are clear. Marketplaces and heavy operational tooling take longer and should be phased. Rush timelines increase cost because they need more parallel work and tighter QA windows.</p>
+      <h3>How to brief an agency usefully</h3>
+      <p>Share must-have vs nice-to-have features, sample catalog size, payment/shipping preferences, reference sites, and a realistic go-live date. That lets partners like <a href="/solutions/ecommerce-website-development">TheTriFusion ecommerce team</a> propose scoped options instead of vague ballpark guesses.</p>
+      <h3>What we recommend next</h3>
+      <p>Use our <a href="/estimate">project estimator</a> or <a href="/appointment">book a discovery call</a> for a written scope. Avoid vendors who promise a fixed “complete ecommerce” price before understanding your catalog and operations.</p>
+    `,
+    category: "webdev",
+    image: "/assets/images/blog/ecommerce-cost.jpg",
+    imageUrl:
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800",
+    date: "2026-08-18",
+    updatedAt: "2026-08-20",
+    readTime: "8 min read",
+    author: "TheTriFusion Team",
+    featured: true,
+  },
+  {
+    id: 22,
+    slug: "custom-website-vs-shopify-vs-woocommerce",
+    title:
+      "Custom Website vs Shopify vs WooCommerce: Which Fits Indian Businesses?",
+    excerpt:
+      "Compare custom builds, Shopify, and WooCommerce for Indian retailers — control, cost factors, integrations, and when each option is the right call.",
+    content: `
+      <h2>Start with the business constraint, not the platform brand</h2>
+      <p>Indian businesses often choose a storefront stack based on ads they have seen. A better approach is matching constraints: speed to launch, catalog complexity, payment/shipping needs, in-house skills, and how unique your workflows are.</p>
+      <h3>Shopify</h3>
+      <p>Strong when you want fast launch, app ecosystem, and predictable hosting. Trade-offs include ongoing platform fees and limits when you need deeply custom operations.</p>
+      <h3>WooCommerce</h3>
+      <p>Fits teams comfortable with WordPress, wanting plugin flexibility and ownership of hosting. Trade-offs include maintenance, performance tuning, and security hygiene.</p>
+      <h3>Custom online store</h3>
+      <p>Best when your pricing rules, B2B flows, or admin operations do not fit templates cleanly. Custom builds take more discovery but avoid fighting the platform later. See our <a href="/solutions/online-store-development">online store development</a> approach for how we scope MVPs.</p>
+      <h3>Decision checklist</h3>
+      <p>If you need to sell quickly with a standard catalog, Shopify/WooCommerce can win. If you need unusual workflows, multi-role admin, or deep integration with existing ERP/CRM, custom often pays off. We help clients decide during discovery — not by defaulting to the same stack for everyone.</p>
+    `,
+    category: "webdev",
+    image: "/assets/images/blog/platforms.jpg",
+    imageUrl:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+    date: "2026-08-15",
+    updatedAt: "2026-08-20",
+    readTime: "7 min read",
+    author: "TheTriFusion Team",
+    featured: true,
+  },
+  {
+    id: 23,
+    slug: "dailyconcepts-ecommerce-case-notes",
+    title:
+      "Case Notes: Building DailyConcepts — Ecommerce + POS Admin Lessons",
+    excerpt:
+      "What we learned shipping DailyConcepts India: UI/UX focus, order management, checkout flow, and an admin POS panel that connects online and offline sales.",
+    content: `
+      <h2>Project context</h2>
+      <p>DailyConcepts India needed an ecommerce experience that felt smooth for shoppers while giving the business an admin panel capable of supporting Point of Sales style operations. The goal was not just a pretty storefront — it was reliable order handling across online and offline realities.</p>
+      <h3>What mattered in the build</h3>
+      <p>UI/UX clarity for browsing and checkout, efficient order management, and admin tooling that staff could actually use. Those priorities shaped information architecture more than decorative design trends.</p>
+      <h3>Practical takeaways for similar projects</h3>
+      <p>Map admin workflows as carefully as customer flows. Checkout edge cases (failed payments, address errors, inventory mismatches) deserve explicit QA. If POS and ecommerce share inventory, define the source of truth early.</p>
+      <h3>See the work and talk scope</h3>
+      <p>Explore the <a href="/portfolio/asd1293uasdads1">DailyConcepts portfolio entry</a>, related <a href="/solutions/ecommerce-website-development">ecommerce solution page</a>, or <a href="/contact">contact us</a> with your catalog and ops constraints for a scoped conversation.</p>
+    `,
+    category: "webdev",
+    image: "/assets/images/blog/case-daily.jpg",
+    imageUrl:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800",
+    date: "2026-08-12",
+    updatedAt: "2026-08-20",
+    readTime: "6 min read",
+    author: "TheTriFusion Team",
+    featured: true,
   }
 ];
 

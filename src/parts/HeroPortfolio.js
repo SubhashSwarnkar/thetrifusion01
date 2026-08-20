@@ -1,7 +1,8 @@
+"use client";
+
 import React from "react";
-
+import Image from "next/image";
 import { Fade } from "react-awesome-reveal";
-
 import heroPortfolio from "assets/images/hero/portfolioHero.png";
 
 export default function HeroPortfolio() {
@@ -23,7 +24,17 @@ export default function HeroPortfolio() {
       </div>
       <div className="w-full sm:w-1/2 sm:pr-12">
         <Fade direction="up" triggerOnce>
-          <img src={heroPortfolio} alt="Hero" />
+          <div className="relative w-full aspect-[4/3]">
+            <Image
+              src={heroPortfolio}
+              alt="Portfolio hero"
+              fill
+              sizes="(max-width: 640px) 100vw, 50vw"
+              className="object-contain"
+              priority
+              unoptimized
+            />
+          </div>
         </Fade>
       </div>
     </section>

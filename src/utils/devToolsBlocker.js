@@ -1,3 +1,5 @@
+"use client";
+
 // Developer Tools Blocker Utility
 // Note: This cannot completely prevent determined users, but makes it significantly harder
 

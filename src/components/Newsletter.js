@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import emailjs from "@emailjs/browser";
@@ -19,9 +21,9 @@ export default function Newsletter({ compact = false }) {
 
     try {
       // Option 1: Use EmailJS (already configured)
-      const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID || "your_service_id";
-      const templateId = process.env.REACT_APP_EMAILJS_NEWSLETTER_TEMPLATE_ID || "newsletter_template";
-      const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || "your_public_key";
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "your_service_id";
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_NEWSLETTER_TEMPLATE_ID || "newsletter_template";
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "your_public_key";
 
       await emailjs.send(serviceId, templateId, {
         email: email,

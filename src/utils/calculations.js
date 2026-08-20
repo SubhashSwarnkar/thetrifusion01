@@ -1,3 +1,5 @@
+"use client";
+
 // Calculation Utilities
 
 export const formatCurrency = (amount, currency = "INR") => {

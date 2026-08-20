@@ -1,7 +1,8 @@
+"use client";
+
 import React from "react";
-
+import Image from "next/image";
 import { Fade } from "react-awesome-reveal";
-
 import Team from "assets/images/hero/team.png";
 
 export default function HeroTeam() {
@@ -22,7 +23,17 @@ export default function HeroTeam() {
       </div>
       <div className="flex pt-5 w-full justify-center items-center order-first md:w-full lg:order-last lg:w-1/2">
         <Fade bottom triggerOnce delay={400 * 2}>
-          <img src={Team} alt="Hero" />
+          <div className="relative w-full max-w-lg aspect-[4/3]">
+            <Image
+              src={Team}
+              alt="Our team"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-contain"
+              priority
+              unoptimized
+            />
+          </div>
         </Fade>
       </div>
     </section>
