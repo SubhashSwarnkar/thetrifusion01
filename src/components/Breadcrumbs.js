@@ -17,7 +17,6 @@ export default function Breadcrumbs() {
       pricing: "Pricing",
       about: "About",
       contact: "Contact",
-      templates: "Templates",
       estimate: "AI Estimator",
       planner: "Page Planner",
       timeline: "Timeline Calculator",

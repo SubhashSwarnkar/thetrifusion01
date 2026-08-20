@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Header from "parts/Header";
 import Footer from "parts/Footer";
 import Breadcrumbs from "components/Breadcrumbs";
@@ -7,10 +7,8 @@ import { DiscussForm } from "parts/DiscussForm";
 import { Fade } from "react-awesome-reveal";
 import { faqs, getFaqsByCategory } from "data/faqData";
 import SEO from "components/common/SEO";
-import { toast } from "react-toastify";
 
 export default function ContactPage() {
-  const location = useLocation();
   const [data, setData] = React.useState({
     name: "",
     company: "",
@@ -20,32 +18,10 @@ export default function ContactPage() {
   });
   const [openFaqs, setOpenFaqs] = useState([]);
   const [displayedFaqs] = useState(faqs.slice(0, 5)); // Show first 5 FAQs
-  const [customizationInfo, setCustomizationInfo] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    
-    // Check if user came from customization request
-    if (location.state && location.state.customizationRequest) {
-      setCustomizationInfo({
-        templateName: location.state.templateName,
-        templateId: location.state.templateId
-      });
-      
-      // Pre-fill project idea with template customization request
-      if (location.state.templateName) {
-        setData(prev => ({
-          ...prev,
-          projectIdea: `I would like to customize the "${location.state.templateName}" template. Please contact me to discuss customization options.`
-        }));
-      }
-      
-      // Show success message
-      toast.info(`Customization request for "${location.state.templateName}" - Please fill out the form below.`, {
-        autoClose: 5000
-      });
-    }
-  }, [location.state]);
+  }, []);
 
   const toggleFaq = (faqId) => {
     setOpenFaqs((prev) =>
@@ -103,34 +79,6 @@ export default function ContactPage() {
                 </p>
               </div>
             </Fade>
-
-            {/* Customization Request Banner */}
-            {customizationInfo && (
-              <Fade direction="down" triggerOnce>
-                <div className="mb-12 relative overflow-hidden bg-theme-blue rounded-3xl p-8 text-white shadow-2xl border border-white/10 group">
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-theme-purple/20 rounded-full blur-3xl -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-700"></div>
-                  <div className="flex flex-col md:flex-row items-center gap-8 relative z-10">
-                    <div className="w-20 h-20 bg-white/10 rounded-2xl flex items-center justify-center text-4xl border border-white/20">
-                      🎨
-                    </div>
-                    <div className="flex-1 text-center md:text-left">
-                      <h3 className="text-2xl font-black mb-2">
-                        Customizing: <span className="text-theme-cyan">{customizationInfo.templateName}</span>
-                      </h3>
-                      <p className="text-white/70 font-light text-lg">
-                        You're one step away from personalizing this masterpiece. Fill out the form below and we'll handle the rest.
-                      </p>
-                    </div>
-                    <button
-                      onClick={() => setCustomizationInfo(null)}
-                      className="px-6 py-2 bg-white/10 hover:bg-white/20 rounded-full text-sm font-bold transition-all border border-white/10"
-                    >
-                      Dismiss
-                    </button>
-                  </div>
-                </div>
-              </Fade>
-            )}
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-32 items-start">
               {/* Contact Info */}

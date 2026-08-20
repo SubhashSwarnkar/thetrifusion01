@@ -14,8 +14,6 @@ const ProjectDetailPage = lazy(() => import("pages/ProjectDetailPage"));
 const PricingPage = lazy(() => import("pages/PricingPage"));
 const AboutPage = lazy(() => import("pages/AboutPage"));
 const ContactPage = lazy(() => import("pages/ContactPage"));
-const TemplatesPage = lazy(() => import("pages/TemplatesPage"));
-const TemplateDetailPage = lazy(() => import("pages/TemplateDetailPage"));
 const TeamPage = lazy(() => import("pages/TeamPage"));
 const DiscussProjectPage = lazy(() => import("pages/DiscussProjectPage"));
 const NotFoundPage = lazy(() => import("pages/NotFoundPage"));
@@ -48,8 +46,6 @@ function App() {
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/templates" element={<TemplatesPage />} />
-          <Route path="/templates/:id" element={<TemplateDetailPage />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/discuss-project" element={<DiscussProjectPage />} />
           <Route path="/faq" element={<FAQPage />} />

@@ -31,7 +31,6 @@ export default function SearchBar({ placeholder = "Search..." }) {
         { type: "page", title: "Services", url: "/services" },
         { type: "page", title: "Portfolio", url: "/portfolio" },
         { type: "page", title: "Pricing", url: "/pricing" },
-        { type: "page", title: "Templates", url: "/templates" },
         { type: "page", title: "About", url: "/about" },
         { type: "page", title: "Contact", url: "/contact" },
         { type: "page", title: "FAQ", url: "/faq" },

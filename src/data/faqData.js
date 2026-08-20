@@ -148,13 +148,13 @@ export const faqs = [
     id: 18,
     category: "payment",
     question: "What is your refund policy?",
-    answer: "Refunds are handled on a case-by-case basis. If you're not satisfied with our work, we'll work with you to resolve any issues. For template purchases, refunds are available within 7 days if the template hasn't been customized."
+    answer: "Refunds are handled on a case-by-case basis. If you're not satisfied with our work, we'll work with you to resolve any issues."
   },
   {
     id: 19,
     category: "payment",
     question: "When do I need to make payment?",
-    answer: "For custom projects, we typically require 30% upfront payment to begin work, 40% at milestone completion, and 30% upon final delivery. For templates, full payment is required before download."
+    answer: "For custom projects, we typically require 30% upfront payment to begin work, 40% at milestone completion, and 30% upon final delivery."
   },
   
   // Support & Maintenance

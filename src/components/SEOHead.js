@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { getServiceBySlug } from "data/servicesData";
-import { getTemplateById } from "data/templatesData";
 import { getBlogBySlug } from "data/blogData";
 import { Portfolios } from "json/landingPageData";
 
@@ -46,16 +45,6 @@ const seoData = {
     title: "Contact Us | TheTriFusion",
     description: "Get in touch with TheTriFusion. We're here to help with your web development, mobile app, and digital marketing needs.",
     keywords: "contact, get in touch, support, inquiry",
-  },
-  "/templates": {
-    title: "Website Templates | TheTriFusion",
-    description: "Browse our collection of professional website templates. Industry-specific templates for gym, restaurant, education, and more.",
-    keywords: "website templates, templates, pre-built websites",
-  },
-  "/templates/selector": {
-    title: "Select Your Industry Template | TheTriFusion",
-    description: "Choose your industry to find the perfect website template. Browse templates designed specifically for gym, restaurant, education, healthcare, and e-commerce businesses.",
-    keywords: "industry templates, website templates by industry, business templates, industry-specific websites",
   },
   "/estimate": {
     title: "AI Project Estimator | TheTriFusion",
@@ -128,19 +117,6 @@ export default function SEOHead() {
         };
       } else {
         seo = seoData["/portfolio"] || seoData["/"];
-      }
-    } else if (currentPath.startsWith("/templates/") && currentPath !== "/templates/selector") {
-      // Template detail page
-      const id = currentPath.split("/templates/")[1];
-      const template = getTemplateById(id);
-      if (template) {
-        seo = {
-          title: `${template.name} - ${template.category} Template | TheTriFusion`,
-          description: `${template.description} Buy ${template.name} template for ₹${template.price.toLocaleString()}. ${template.category} website template.`,
-          keywords: `${template.name}, ${template.category.toLowerCase()} template, website template, ${template.industry} template, pre-built website`,
-        };
-      } else {
-        seo = seoData["/templates"] || seoData["/"];
       }
     } else if (currentPath.startsWith("/blog/")) {
       // Blog detail page
