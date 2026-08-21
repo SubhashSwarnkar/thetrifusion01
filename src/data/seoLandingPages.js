@@ -551,6 +551,172 @@ export const seoLandingPages = [
     ],
     cta: "Modernize your CRM or ERP",
   },
+  {
+    slug: "website-development-company-bhilwara",
+    title:
+      "Website Development Company in Bhilwara | TheTriFusion",
+    h1: "Website Development Company in Bhilwara",
+    metaDescription:
+      "TheTriFusion is a website and software company in Bhilwara, Rajasthan. Custom websites, ecommerce stores, mobile apps, and digital marketing for local and pan-India businesses.",
+    primaryKeyword: "website development company in Bhilwara",
+    secondaryKeywords: [
+      "software company Bhilwara",
+      "web development Bhilwara",
+      "website designer Bhilwara",
+      "IT company Bhilwara Rajasthan",
+      "ecommerce website Bhilwara",
+    ],
+    intro:
+      "Need a website development company in Bhilwara? TheTriFusion builds business websites, ecommerce stores, and mobile apps for textile, retail, education, and growing brands — with on-site meetings in Bhilwara and delivery anywhere in India.",
+    sections: [
+      {
+        title: "Built in Bhilwara, delivered nationwide",
+        body: "You get a local team that understands Rajasthan business realities — bilingual communication (Hindi and English), GST-ready invoicing, UPI/Razorpay checkouts, and WhatsApp-first support — plus the same engineering quality used for pan-India clients.",
+      },
+      {
+        title: "What we build for Bhilwara businesses",
+        body: "Company websites, catalogue and wholesale portals, ecommerce for retail brands, school/college sites, booking systems, and custom software. We also handle Google Business setup, on-page SEO, and lead forms that notify you on WhatsApp.",
+      },
+      {
+        title: "How a local project typically runs",
+        body: "Discovery (in person or video) → written scope and estimate → design approval → development with weekly demos → QA → launch on your domain. Most marketing websites ship in 3–8 weeks depending on pages and integrations.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Is TheTriFusion a website company in Bhilwara?",
+        answer:
+          "Yes. We are based in Bhilwara, Rajasthan and build websites, ecommerce stores, mobile apps, and custom software for local businesses and clients across India.",
+      },
+      {
+        question: "Can I meet the team in Bhilwara before starting?",
+        answer:
+          "Yes. We offer discovery calls and in-person meetings in Bhilwara so you can discuss goals, budget, and timeline before any payment.",
+      },
+      {
+        question: "Do you also do SEO for Bhilwara searches?",
+        answer:
+          "Yes. Local SEO includes Google Business guidance, location pages, on-page keywords, and technical basics (speed, mobile, sitemap) so people searching in Bhilwara and Rajasthan can find you.",
+      },
+    ],
+    relatedServiceSlugs: [
+      "website-development",
+      "software-development",
+      "digital-marketing",
+      "ui-ux-design",
+    ],
+    cta: "Talk to a Bhilwara web team",
+  },
+  {
+    slug: "software-company-rajasthan",
+    title: "Software Company in Rajasthan | Web & App Development | TheTriFusion",
+    h1: "Software Company in Rajasthan",
+    metaDescription:
+      "Hire TheTriFusion — a software company in Rajasthan for websites, custom software, mobile apps, ecommerce, and digital marketing. Based in Bhilwara, serving Jaipur, Udaipur, and all of India.",
+    primaryKeyword: "software company in Rajasthan",
+    secondaryKeywords: [
+      "IT company Rajasthan",
+      "web development company Rajasthan",
+      "software development Jaipur Udaipur Bhilwara",
+      "app development Rajasthan",
+      "digital agency Rajasthan",
+    ],
+    intro:
+      "TheTriFusion is a software company in Rajasthan helping SMEs and startups ship websites, apps, and internal tools without metro-city agency overhead. We work from Bhilwara with clients in Jaipur, Udaipur, Kota, Jodhpur, and remote teams nationwide.",
+    sections: [
+      {
+        title: "Rajasthan-first, India-ready delivery",
+        body: "Founders here often need practical scope, clear Hindi/English communication, and costs that match SME budgets. We write milestones, share demos, and keep source code ownership with you.",
+      },
+      {
+        title: "Services across the state",
+        body: "Custom software, company websites, ecommerce, Android/iOS apps, UI/UX, CRM/ERP-style tools, and digital marketing. If you already have a site, we can rebuild, speed it up, or add SEO and lead capture.",
+      },
+      {
+        title: "When to choose a Rajasthan software partner",
+        body: "Choose a local partner when you want overlapping time zones, easier payments in INR, and the option to visit. Choose us when you also want modern Next.js/React stacks and documented handoff — not just a static brochure site.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Where in Rajasthan is TheTriFusion located?",
+        answer:
+          "Our base is Bhilwara, Rajasthan. We serve Jaipur, Udaipur, Kota, Jodhpur, and clients across India through remote collaboration.",
+      },
+      {
+        question: "Can you work with a Jaipur or Udaipur client remotely?",
+        answer:
+          "Yes. Most projects run on video calls, shared task boards, and weekly demos. We can travel for kickoff or launch when the project needs it.",
+      },
+      {
+        question: "What stack do you use?",
+        answer:
+          "Typical public sites use Next.js and React. Apps, ecommerce, and custom software are scoped to the product — we recommend the stack during discovery, not before we understand the problem.",
+      },
+    ],
+    relatedServiceSlugs: [
+      "software-development",
+      "website-development",
+      "mobile-app-development",
+      "digital-marketing",
+    ],
+    cta: "Start a Rajasthan software project",
+  },
+  {
+    slug: "web-development-company-jaipur",
+    title: "Web Development Company for Jaipur Businesses | TheTriFusion",
+    h1: "Web Development for Jaipur Businesses",
+    metaDescription:
+      "TheTriFusion builds websites, ecommerce stores, and apps for Jaipur businesses. A Rajasthan software team in Bhilwara with remote delivery and optional on-site visits to Jaipur.",
+    primaryKeyword: "web development company Jaipur",
+    secondaryKeywords: [
+      "website development Jaipur",
+      "software company Jaipur Rajasthan",
+      "ecommerce website Jaipur",
+      "app development Jaipur",
+      "hire web developers Jaipur",
+    ],
+    intro:
+      "Jaipur companies looking for a web development partner often need faster communication than an anonymous freelancer and clearer pricing than a large metro agency. TheTriFusion delivers websites, ecommerce, and apps from Rajasthan with structured discovery and weekly demos.",
+    sections: [
+      {
+        title: "A Rajasthan team that can work with Jaipur clients",
+        body: "We are based in Bhilwara — close enough for kickoff visits, far enough that overhead stays practical. Projects run on video, WhatsApp, and shared boards so Jaipur stakeholders stay in the loop without waiting on email chains.",
+      },
+      {
+        title: "What Jaipur businesses typically ask us to build",
+        body: "Service-business websites (tourism, education, healthcare, real estate), D2C ecommerce, booking/lead funnels, and internal tools. We pair design with SEO basics: titles, sitemap, mobile speed, and Google Business alignment.",
+      },
+      {
+        title: "Process before you sign",
+        body: "Share your goal and references. We return a scope outline, timeline range, and estimate. You approve design before heavy development. Launch includes domain, analytics, and a short handover so your team can update content.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Are you physically in Jaipur?",
+        answer:
+          "Our studio is in Bhilwara, Rajasthan. We regularly work with Jaipur clients remotely and can visit Jaipur for discovery or launch when needed.",
+      },
+      {
+        question: "How fast can a Jaipur business website launch?",
+        answer:
+          "A focused marketing website is often 3–8 weeks. Ecommerce or custom features take longer. Use our estimate tool or book a call for a range based on pages and integrations.",
+      },
+      {
+        question: "Do you handle hosting and Google ranking?",
+        answer:
+          "We can deploy, connect the domain, set up Analytics/Search Console, and implement on-page SEO. Rankings still depend on content, reviews, and competition — we will be honest about that in discovery.",
+      },
+    ],
+    relatedServiceSlugs: [
+      "website-development",
+      "digital-marketing",
+      "mobile-app-development",
+      "ui-ux-design",
+    ],
+    cta: "Plan a Jaipur web project",
+  },
 ];
 
 export const getSeoLandingBySlug = (slug) => {
@@ -567,11 +733,11 @@ export const getSolutionsForService = (serviceSlug) =>
     .map(enrichLandingPage);
 
 export const featuredSolutionSlugs = [
+  "website-development-company-bhilwara",
+  "software-company-rajasthan",
   "best-software-company-india",
   "ecommerce-website-development",
   "digital-marketing-agency",
-  "custom-software-development-company",
-  "mobile-app-development-company",
   "web-development-company-india",
 ];
 

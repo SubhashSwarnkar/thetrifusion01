@@ -73,6 +73,12 @@ export default function AboutPage() {
                 <p className="text-xl md:text-2xl text-gray-500 font-light leading-relaxed">
                   Founded with a vision to catalyze digital transformation, we merge peak engineering with disruptive creativity.
                 </p>
+                <p className="mt-6 text-base md:text-lg font-semibold text-theme-blue">
+                  Trifusion Infotech Private Limited
+                </p>
+                <p className="text-sm text-gray-400 mt-1">
+                  Registered private limited company · Bhilwara, Rajasthan
+                </p>
               </Fade>
             </div>
 
@@ -113,7 +119,7 @@ export default function AboutPage() {
                   </h2>
                   <div className="space-y-6 text-lg text-gray-600 font-light leading-relaxed">
                     <p>
-                      At TheTriFusion, we don't just build software. we architect success stories. Our approach is rooted in the belief that technology should be a multiplier for human potential.
+                      At TheTriFusion (Trifusion Infotech Private Limited), we don't just build software. we architect success stories. Our approach is rooted in the belief that technology should be a multiplier for human potential.
                     </p>
                     <p>
                       Our team of passionate developers, designers, and strategists work in a flat hierarchy, ensuring every bold idea gets the spotlight it deserves. We thrive on complexity and deliver elegance.

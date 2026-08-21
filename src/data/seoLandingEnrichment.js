@@ -332,11 +332,11 @@ const RELATED_BY_SLUG = {
   },
   "web-development-company-india": {
     relatedSolutionSlugs: [
+      "website-development-company-bhilwara",
       "ui-ux-design-agency",
       "ecommerce-website-development",
-      "digital-marketing-agency",
     ],
-    relatedBlogSlug: "ecommerce-website-development-cost-india",
+    relatedBlogSlug: "website-development-company-bhilwara",
   },
   "ui-ux-design-agency": {
     relatedSolutionSlugs: [
@@ -353,6 +353,30 @@ const RELATED_BY_SLUG = {
       "best-software-company-india",
     ],
     relatedBlogSlug: "dailyconcepts-ecommerce-case-notes",
+  },
+  "website-development-company-bhilwara": {
+    relatedSolutionSlugs: [
+      "software-company-rajasthan",
+      "web-development-company-jaipur",
+      "web-development-company-india",
+    ],
+    relatedBlogSlug: "website-development-company-bhilwara",
+  },
+  "software-company-rajasthan": {
+    relatedSolutionSlugs: [
+      "website-development-company-bhilwara",
+      "web-development-company-jaipur",
+      "custom-software-development-company",
+    ],
+    relatedBlogSlug: "website-development-company-bhilwara",
+  },
+  "web-development-company-jaipur": {
+    relatedSolutionSlugs: [
+      "website-development-company-bhilwara",
+      "software-company-rajasthan",
+      "web-development-company-india",
+    ],
+    relatedBlogSlug: "website-development-company-bhilwara",
   },
 };
 

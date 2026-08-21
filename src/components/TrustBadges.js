@@ -14,7 +14,7 @@ export default function TrustBadges() {
   const certifications = [
     { name: "ISO Certified", icon: "🏆" },
     { name: "Google Partner", icon: "🔍" },
-    { name: "Verified Business", icon: "✓" },
+    { name: "Pvt. Ltd. Company", icon: "🏢" },
     { name: "Award Winner", icon: "🎖️" },
   ];
 

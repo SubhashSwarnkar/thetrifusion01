@@ -9,7 +9,14 @@ const env = (key, fallback) => {
 
 export const siteConfig = {
   name: env("NEXT_PUBLIC_SITE_NAME", "TheTriFusion"),
-  legalName: env("NEXT_PUBLIC_LEGAL_NAME", "TheTriFusion"),
+  legalName: env(
+    "NEXT_PUBLIC_LEGAL_NAME",
+    "Trifusion Infotech Private Limited"
+  ),
+  legalNameShort: env(
+    "NEXT_PUBLIC_LEGAL_NAME_SHORT",
+    "Trifusion Infotech Pvt. Ltd."
+  ),
   tagline: "IT Solutions, Websites & Mobile Apps",
   url: env("NEXT_PUBLIC_SITE_URL", "https://www.thetrifusion.in").replace(
     /\/$/,
@@ -32,6 +39,14 @@ export const siteConfig = {
   country: env("NEXT_PUBLIC_COMPANY_COUNTRY", "IN"),
   countryName: "India",
   locale: "en_IN",
+  latitude: Number(env("NEXT_PUBLIC_COMPANY_LAT", "25.3463")),
+  longitude: Number(env("NEXT_PUBLIC_COMPANY_LNG", "74.6364")),
+  openingHours: env("NEXT_PUBLIC_OPENING_HOURS", "Mo-Sa 10:00-19:00"),
+  get mapsUrl() {
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+      `${this.legalName} ${this.city} ${this.region}`
+    )}`;
+  },
   defaultOgImagePath: "/images/Web.png",
   logoPath: "/logo.svg",
   get defaultOgImage() {

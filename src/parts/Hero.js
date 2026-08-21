@@ -13,6 +13,9 @@ export default function Hero() {
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           <div className="w-full lg:w-1/2 text-center lg:text-left">
             <Fade direction="up" triggerOnce>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-theme-purple mb-4">
+                Trifusion Infotech Pvt. Ltd.
+              </p>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-gray-900">
                 Growing Your Business{" "}
                 <span className="text-gradient">Is Our Calling</span>

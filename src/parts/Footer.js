@@ -24,6 +24,9 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-20">
             <div className="space-y-8">
               <BrandIcon />
+              <p className="text-white text-sm font-semibold tracking-wide">
+                Trifusion Infotech Private Limited
+              </p>
               <p className="text-white/60 text-lg font-light leading-relaxed max-w-sm">
                 Software development company in India for websites, ecommerce,
                 apps, MSP support, and digital marketing.
@@ -203,9 +206,9 @@ export default function Footer() {
           </div>
 
           <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-white/40 text-sm font-light">
-              © {currentYear} TheTriFusion. All rights reserved. Crafted for
-              excellence.
+            <p className="text-white/40 text-sm font-light text-center md:text-left">
+              © {currentYear} Trifusion Infotech Private Limited. All rights
+              reserved.
             </p>
             <div className="flex items-center gap-8 text-white/40 text-sm font-light">
               <Link href="/privacy" className="hover:text-white transition-colors">

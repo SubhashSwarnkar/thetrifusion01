@@ -136,6 +136,12 @@ export default function ContactPage() {
                         event: AnalyticsEvents.CLICK_EMAIL,
                       },
                       {
+                        title: "Registered Company",
+                        value: "Trifusion Infotech Pvt. Ltd.",
+                        icon: "🏢",
+                        link: null,
+                      },
+                      {
                         title: "Visit Us",
                         value: "Bhilwara, Rajasthan, India",
                         icon: "📍",

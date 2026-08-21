@@ -3,6 +3,7 @@ import JsonLd from "components/JsonLd";
 import GoogleAnalytics from "components/GoogleAnalytics";
 import { organizationSchema, websiteSchema } from "lib/schema";
 import { SITE_NAME, SITE_URL, pageMetadata, pages } from "lib/seoConfig";
+import { siteConfig } from "config/site";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 
@@ -27,12 +28,18 @@ export const metadata = {
   applicationName: SITE_NAME,
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,
-  publisher: SITE_NAME,
+  publisher: siteConfig.legalName,
   category: "technology",
   alternates: {
-    canonical: SITE_URL,
+    languages: {
+      "en-IN": SITE_URL,
+      "x-default": SITE_URL,
+    },
   },
-  openGraph: home.openGraph,
+  openGraph: {
+    ...home.openGraph,
+    localeAlternate: ["hi_IN"],
+  },
   twitter: home.twitter,
   robots: home.robots,
   icons: {
@@ -50,12 +57,16 @@ export const metadata = {
     : {}),
   other: {
     "theme-color": "#0f172a",
+    "geo.region": "IN-RJ",
+    "geo.placename": "Bhilwara",
+    "geo.position": "25.3463;74.6364",
+    ICBM: "25.3463, 74.6364",
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en-IN">
       <body className={poppins.className + " antialiased"}>
         <GoogleAnalytics />
         <JsonLd data={organizationSchema()} />

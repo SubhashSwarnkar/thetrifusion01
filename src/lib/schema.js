@@ -1,13 +1,19 @@
 import { siteConfig, absoluteSiteUrl } from "config/site";
 
 const HOME_DESCRIPTION =
-  "TheTriFusion is a software development company in India offering custom software, ecommerce websites, online stores, mobile apps, UI/UX, MSP support, and digital marketing for startups and enterprises.";
+  "Trifusion Infotech Private Limited (TheTriFusion) is a software development company in Bhilwara, Rajasthan offering custom software, ecommerce websites, mobile apps, UI/UX, and digital marketing for businesses across India.";
 
 export function organizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
-    name: siteConfig.name,
+    name: siteConfig.legalName,
+    legalName: siteConfig.legalName,
+    alternateName: [siteConfig.name, siteConfig.legalNameShort],
+    brand: {
+      "@type": "Brand",
+      name: siteConfig.name,
+    },
     url: siteConfig.url,
     logo: siteConfig.logoUrl,
     image: siteConfig.defaultOgImage,
@@ -22,7 +28,35 @@ export function organizationSchema() {
       addressRegion: siteConfig.region,
       addressCountry: siteConfig.country,
     },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: siteConfig.latitude,
+      longitude: siteConfig.longitude,
+    },
+    hasMap: siteConfig.mapsUrl,
+    openingHours: siteConfig.openingHours,
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ],
+      opens: "10:00",
+      closes: "19:00",
+    },
+    currenciesAccepted: "INR",
+    paymentAccepted: "UPI, Bank Transfer, Cards",
+    foundingLocation: {
+      "@type": "Place",
+      name: `${siteConfig.city}, ${siteConfig.region}, ${siteConfig.countryName}`,
+    },
     areaServed: [
+      { "@type": "City", name: siteConfig.city },
+      { "@type": "AdministrativeArea", name: siteConfig.region },
       { "@type": "Country", name: siteConfig.countryName },
       { "@type": "Place", name: "Worldwide" },
     ],
@@ -54,11 +88,28 @@ export function websiteSchema() {
     "@type": "WebSite",
     name: siteConfig.name,
     url: siteConfig.url,
+    inLanguage: "en-IN",
     description: HOME_DESCRIPTION,
     publisher: {
       "@type": "Organization",
-      name: siteConfig.name,
+      name: siteConfig.legalName,
+      brand: siteConfig.name,
     },
+  };
+}
+
+export function itemListSchema({ name, items = [] }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name,
+    numberOfItems: items.length,
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      url: absoluteSiteUrl(item.path),
+    })),
   };
 }
 
@@ -124,7 +175,7 @@ export function articleSchema(post) {
     },
     publisher: {
       "@type": "Organization",
-      name: siteConfig.name,
+      name: siteConfig.legalName,
       logo: {
         "@type": "ImageObject",
         url: siteConfig.logoUrl,

@@ -1,5 +1,7 @@
 import { siteConfig } from "config/site";
 
+export const LEGAL_NAME = siteConfig.legalName;
+export const LEGAL_NAME_SHORT = siteConfig.legalNameShort;
 export const WHATSAPP_NUMBER = siteConfig.whatsappNumber;
 export const COMPANY_EMAIL = siteConfig.email;
 export const COMPANY_PHONE_DISPLAY = siteConfig.phone;
@@ -7,7 +9,8 @@ export const LINKEDIN_URL = siteConfig.linkedin;
 export const INSTAGRAM_URL = siteConfig.instagram;
 
 export const NAP = {
-  name: siteConfig.name,
+  name: siteConfig.legalName,
+  brand: siteConfig.name,
   locality: siteConfig.city,
   region: siteConfig.region,
   country: siteConfig.countryName,
