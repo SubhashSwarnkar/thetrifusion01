@@ -8,34 +8,34 @@ export const DEFAULT_OG_IMAGE = siteConfig.defaultOgImage;
 export const pages = {
   "/": {
     title:
-      "Software Company in Bhilwara, Rajasthan | Web, Apps & Digital Marketing | TheTriFusion",
+      "Software Company in Jaipur, Rajasthan | Web, Apps & Digital Marketing | TheTriFusion",
     description:
-      "Trifusion Infotech Private Limited (TheTriFusion) is a software company in Bhilwara, Rajasthan offering websites, ecommerce, mobile apps, UI/UX, and digital marketing for businesses across India.",
+      "Trifusion Infotech Private Limited (TheTriFusion) is a software company in Jaipur, Rajasthan offering websites, ecommerce, mobile apps, UI/UX, and digital marketing for businesses across India.",
     keywords:
-      "software company Bhilwara, web development company Rajasthan, website development Bhilwara, software development company India, ecommerce website development, TheTriFusion",
+      "software company Jaipur, web development company Rajasthan, website development Jaipur, software development company India, ecommerce website development, TheTriFusion",
   },
   "/about": {
-    title: "About TheTriFusion | Software Agency in Bhilwara, Rajasthan",
+    title: "About TheTriFusion | Software Agency in Jaipur, Rajasthan",
     description:
-      "About Trifusion Infotech Private Limited (TheTriFusion) — a software agency in Bhilwara, Rajasthan delivering custom software, websites, mobile apps, ecommerce, and digital marketing across India.",
+      "About Trifusion Infotech Private Limited (TheTriFusion) — a software agency in Jaipur, Rajasthan delivering custom software, websites, mobile apps, ecommerce, and digital marketing across India.",
     keywords:
-      "software company Bhilwara, IT company Rajasthan, about TheTriFusion, software agency India, web development team Bhilwara",
+      "software company Jaipur, IT company Rajasthan, about TheTriFusion, software agency India, web development team Jaipur",
   },
   "/services": {
     title:
-      "IT Services in Bhilwara | Software, Websites, Apps & Marketing | TheTriFusion",
+      "IT Services in Jaipur | Software, Websites, Apps & Marketing | TheTriFusion",
     description:
-      "TheTriFusion services from Bhilwara, Rajasthan: custom software, ecommerce websites, mobile apps, UI/UX, CRM/ERP, MSP support, and digital marketing for Indian businesses.",
+      "TheTriFusion services from Jaipur, Rajasthan: custom software, ecommerce websites, mobile apps, UI/UX, CRM/ERP, MSP support, and digital marketing for Indian businesses.",
     keywords:
-      "IT services Bhilwara, website development Rajasthan, software development services, ecommerce website development, mobile app development India",
+      "IT services Jaipur, website development Rajasthan, software development services, ecommerce website development, mobile app development India",
   },
   "/solutions": {
     title:
-      "Digital Solutions Hub | Bhilwara, Rajasthan & India | TheTriFusion",
+      "Digital Solutions Hub | Jaipur, Rajasthan & India | TheTriFusion",
     description:
-      "TheTriFusion solution pages for website development in Bhilwara, software company Rajasthan, ecommerce, apps, and digital marketing.",
+      "TheTriFusion solution pages for website development in Jaipur, software company Rajasthan, ecommerce, apps, and digital marketing.",
     keywords:
-      "website development company Bhilwara, software company Rajasthan, web development Jaipur, ecommerce development, digital marketing agency India",
+      "website development company Jaipur, software company Rajasthan, web development Jaipur, ecommerce development, digital marketing agency India",
   },
   "/portfolio": {
     title: "Our Portfolio | TheTriFusion",
@@ -59,11 +59,11 @@ export const pages = {
       "price calculator, project cost estimator, website cost calculator, app pricing",
   },
   "/contact": {
-    title: "Contact TheTriFusion in Bhilwara | Software Company Rajasthan",
+    title: "Contact TheTriFusion in Jaipur | Software Company Rajasthan",
     description:
-      "Contact TheTriFusion in Bhilwara, Rajasthan for websites, apps, ecommerce, and digital marketing. Call, WhatsApp, or book a free consultation.",
+      "Contact TheTriFusion in Jaipur, Rajasthan for websites, apps, ecommerce, and digital marketing. Call, WhatsApp, or book a free consultation.",
     keywords:
-      "contact software company Bhilwara, hire web developers Rajasthan, website development quote Bhilwara, TheTriFusion contact",
+      "contact software company Jaipur, hire web developers Rajasthan, website development quote Jaipur, TheTriFusion contact",
   },
   "/team": {
     title: "Our Team | TheTriFusion",

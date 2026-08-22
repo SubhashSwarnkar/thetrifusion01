@@ -38,13 +38,13 @@ export const faqs = [
     id: 1,
     category: "general",
     question: "What is TheTriFusion?",
-    answer: "TheTriFusion is the brand of Trifusion Infotech Private Limited, a registered software company based in Bhilwara, Rajasthan, India. We specialize in web development, mobile app development, UI/UX design, digital marketing, and other IT services."
+    answer: "TheTriFusion is the brand of Trifusion Infotech Private Limited, a registered software company based in Jaipur, Rajasthan, India. We specialize in web development, mobile app development, UI/UX design, digital marketing, and other IT services."
   },
   {
     id: 2,
     category: "general",
     question: "Where is TheTriFusion located?",
-    answer: "We are located in Bhilwara, Rajasthan, India. However, we work with clients globally and provide remote services worldwide."
+    answer: "We are located in Jaipur, Rajasthan, India. However, we work with clients globally and provide remote services worldwide."
   },
   {
     id: 3,

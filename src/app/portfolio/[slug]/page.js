@@ -5,18 +5,18 @@ import { buildMetadata } from "lib/seoConfig";
 import { breadcrumbSchema, creativeWorkSchema } from "lib/schema";
 
 export function generateStaticParams() {
-  return Portfolios.map((project) => ({ id: project.id }));
+  return Portfolios.map((project) => ({ slug: project.id }));
 }
 
 export function generateMetadata({ params }) {
-  const project = Portfolios.find((item) => item.id === params.id);
+  const project = Portfolios.find((item) => item.id === params.slug);
 
   if (!project) {
     return buildMetadata({
       title: "Project Not Found | TheTriFusion",
       description: "The requested portfolio project could not be found.",
       keywords: "portfolio, TheTriFusion",
-      path: `/portfolio/${params.id}`,
+      path: `/portfolio/${params.slug}`,
       noIndex: true,
     });
   }
@@ -32,7 +32,7 @@ export function generateMetadata({ params }) {
 }
 
 export default function RoutePage({ params }) {
-  const project = Portfolios.find((item) => item.id === params.id);
+  const project = Portfolios.find((item) => item.id === params.slug);
 
   return (
     <>

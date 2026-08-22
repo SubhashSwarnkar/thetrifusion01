@@ -34,13 +34,13 @@ export const siteConfig = {
     "NEXT_PUBLIC_INSTAGRAM_URL",
     "https://instagram.com/thetrifusion"
   ),
-  city: env("NEXT_PUBLIC_COMPANY_CITY", "Bhilwara"),
+  city: env("NEXT_PUBLIC_COMPANY_CITY", "Jaipur"),
   region: env("NEXT_PUBLIC_COMPANY_REGION", "Rajasthan"),
   country: env("NEXT_PUBLIC_COMPANY_COUNTRY", "IN"),
   countryName: "India",
   locale: "en_IN",
-  latitude: Number(env("NEXT_PUBLIC_COMPANY_LAT", "25.3463")),
-  longitude: Number(env("NEXT_PUBLIC_COMPANY_LNG", "74.6364")),
+  latitude: Number(env("NEXT_PUBLIC_COMPANY_LAT", "26.9196")),
+  longitude: Number(env("NEXT_PUBLIC_COMPANY_LNG", "75.7878")),
   openingHours: env("NEXT_PUBLIC_OPENING_HOURS", "Mo-Sa 10:00-19:00"),
   get mapsUrl() {
     return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(

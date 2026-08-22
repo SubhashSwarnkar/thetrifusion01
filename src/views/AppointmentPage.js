@@ -89,7 +89,7 @@ export default function AppointmentPage() {
                     📍 Location
                   </h3>
                   <p className="text-gray-600">
-                    Bhilwara, Rajasthan, India
+                    Jaipur, Rajasthan, India
                   </p>
                 </div>
               </div>

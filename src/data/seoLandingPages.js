@@ -16,7 +16,7 @@ export const seoLandingPages = [
       "hire software company India",
     ],
     intro:
-      "Looking for the best software company in India? TheTriFusion delivers end-to-end digital products — custom software, web platforms, mobile apps, ecommerce stores, and growth-focused digital marketing — with transparent pricing and a delivery-first team based in Bhilwara, Rajasthan.",
+      "Looking for the best software company in India? TheTriFusion delivers end-to-end digital products — custom software, web platforms, mobile apps, ecommerce stores, and growth-focused digital marketing — with transparent pricing and a delivery-first team based in Jaipur, Rajasthan.",
     sections: [
       {
         title: "Why businesses choose TheTriFusion",
@@ -40,7 +40,7 @@ export const seoLandingPages = [
       {
         question: "Where is your software agency located?",
         answer:
-          "We are based in Bhilwara, Rajasthan, India, and work with clients across India and internationally through remote collaboration.",
+          "We are based in Jaipur, Rajasthan, India, and work with clients across India and internationally through remote collaboration.",
       },
       {
         question: "What makes you different from other IT companies in India?",
@@ -612,7 +612,7 @@ export const seoLandingPages = [
     title: "Software Company in Rajasthan | Web & App Development | TheTriFusion",
     h1: "Software Company in Rajasthan",
     metaDescription:
-      "Hire TheTriFusion — a software company in Rajasthan for websites, custom software, mobile apps, ecommerce, and digital marketing. Based in Bhilwara, serving Jaipur, Udaipur, and all of India.",
+      "Hire TheTriFusion — a software company in Rajasthan for websites, custom software, mobile apps, ecommerce, and digital marketing. Based in Jaipur, serving Udaipur, Jodhpur, and all of India.",
     primaryKeyword: "software company in Rajasthan",
     secondaryKeywords: [
       "IT company Rajasthan",
@@ -622,7 +622,7 @@ export const seoLandingPages = [
       "digital agency Rajasthan",
     ],
     intro:
-      "TheTriFusion is a software company in Rajasthan helping SMEs and startups ship websites, apps, and internal tools without metro-city agency overhead. We work from Bhilwara with clients in Jaipur, Udaipur, Kota, Jodhpur, and remote teams nationwide.",
+      "TheTriFusion is a software company in Rajasthan helping SMEs and startups ship websites, apps, and internal tools without metro-city agency overhead. We work from Jaipur with clients across Udaipur, Kota, Jodhpur, and remote teams nationwide.",
     sections: [
       {
         title: "Rajasthan-first, India-ready delivery",
@@ -641,7 +641,7 @@ export const seoLandingPages = [
       {
         question: "Where in Rajasthan is TheTriFusion located?",
         answer:
-          "Our base is Bhilwara, Rajasthan. We serve Jaipur, Udaipur, Kota, Jodhpur, and clients across India through remote collaboration.",
+          "Our base is Jaipur, Rajasthan. We serve Udaipur, Kota, Jodhpur, and clients across India through remote collaboration.",
       },
       {
         question: "Can you work with a Jaipur or Udaipur client remotely?",
@@ -667,7 +667,7 @@ export const seoLandingPages = [
     title: "Web Development Company for Jaipur Businesses | TheTriFusion",
     h1: "Web Development for Jaipur Businesses",
     metaDescription:
-      "TheTriFusion builds websites, ecommerce stores, and apps for Jaipur businesses. A Rajasthan software team in Bhilwara with remote delivery and optional on-site visits to Jaipur.",
+      "TheTriFusion builds websites, ecommerce stores, and apps for Jaipur businesses. A leading Rajasthan software team based in Jaipur with remote delivery and on-site support.",
     primaryKeyword: "web development company Jaipur",
     secondaryKeywords: [
       "website development Jaipur",
@@ -681,7 +681,7 @@ export const seoLandingPages = [
     sections: [
       {
         title: "A Rajasthan team that can work with Jaipur clients",
-        body: "We are based in Bhilwara — close enough for kickoff visits, far enough that overhead stays practical. Projects run on video, WhatsApp, and shared boards so Jaipur stakeholders stay in the loop without waiting on email chains.",
+        body: "We are based in Jaipur — close enough for kickoff visits, far enough that overhead stays practical. Projects run on video, WhatsApp, and shared boards so Jaipur stakeholders stay in the loop without waiting on email chains.",
       },
       {
         title: "What Jaipur businesses typically ask us to build",
@@ -696,7 +696,7 @@ export const seoLandingPages = [
       {
         question: "Are you physically in Jaipur?",
         answer:
-          "Our studio is in Bhilwara, Rajasthan. We regularly work with Jaipur clients remotely and can visit Jaipur for discovery or launch when needed.",
+          "Our studio is in Jaipur, Rajasthan. We regularly work with Jaipur clients remotely or in-person, and can meet for discovery or launch when needed.",
       },
       {
         question: "How fast can a Jaipur business website launch?",

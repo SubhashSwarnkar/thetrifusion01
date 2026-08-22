@@ -31,12 +31,12 @@ import UIUX1 from "../assets/images/TeamMembers/UIUX1.png";
 
 export const Services = [
   {
-    title: "Web Development",
+    title: "Website Development",
     imageUrl: Web,
     animation: "left",
   },
   {
-    title: "Mobile Development",
+    title: "Mobile App Development",
     imageUrl: Mobile,
     animation: "up",
   },
@@ -64,7 +64,7 @@ export const Services = [
 
 export const Portfolios = [
   {
-    id: "asd1293uasdads1",
+    id: "dailyconcepts-ecommerce-pos",
     title: "DailyConcepts",
     imageUrl: Recruiting,
     type: "Mobile Apps",
@@ -79,7 +79,7 @@ export const Portfolios = [
     credit: "https://dailyconceptsindia.com",
   },
   {
-    id: "asd1293uhjkhkjh2",
+    id: "meditative-yoga-platform",
     title: "Meditative",
     imageUrl: Stream,
     type: "Website",
@@ -87,7 +87,7 @@ export const Portfolios = [
     credit: "https://yoga-80f.pages.dev/",
   },
   {
-    id: "asd1293uvbvcbbd3",
+    id: "pet-sitting-services-website",
     title: "Pet Sitting",
     imageUrl: Freelance,
     type: "Website",
@@ -95,7 +95,7 @@ export const Portfolios = [
     credit: "https://petcare-c3n.pages.dev/services",
   },
   {
-    id: "asd1293ufgdfgs4",
+    id: "podcast-landing-page",
     title: "Podcast.",
     imageUrl: Aura,
     type: "Website",
@@ -103,7 +103,7 @@ export const Portfolios = [
     credit: "https://podcast-ctw.pages.dev/",
   },
   {
-    id: "asd1293ulskmnb5",
+    id: "resto-restaurant-website",
     title: "Resto",
     imageUrl: Surtido,
     type: "Website",
@@ -111,7 +111,7 @@ export const Portfolios = [
     credit: "https://resto-4tn.pages.dev/",
   },
   {
-    id: "asd1293ualime001",
+    id: "alime-photography-website",
     title: "Alime",
     imageUrl: Freelance,
     type: "Website",
@@ -119,7 +119,7 @@ export const Portfolios = [
     credit: "https://alimephotographer.pages.dev/",
   },
   {
-    id: "asd1293uapplab002",
+    id: "applab-mobile-app",
     title: "AppLab",
     imageUrl: ManagementApp,
     type: "Mobile Apps",
@@ -127,7 +127,7 @@ export const Portfolios = [
     credit: "https://app-lab.pages.dev/",
   },
   {
-    id: "asd1293udentista003",
+    id: "dentista-dental-clinic",
     title: "Dentista",
     imageUrl: Surtido,
     type: "Website",
@@ -135,7 +135,7 @@ export const Portfolios = [
     credit: "https://dentista-dental-clinic.vercel.app/",
   },
   {
-    id: "asd1293utravelix004",
+    id: "travelix-travel-booking-website",
     title: "Travelix",
     imageUrl: Recruiting,
     type: "Website",
@@ -143,7 +143,7 @@ export const Portfolios = [
     credit: "https://travelix-neon.vercel.app/",
   },
   {
-    id: "asd1293udentacare005",
+    id: "dentacare-dental-clinic",
     title: "DentaCare",
     imageUrl: Freelance,
     type: "Website",
@@ -151,7 +151,7 @@ export const Portfolios = [
     credit: "https://dente-ua67.vercel.app/",
   },
   {
-    id: "asd1293umacro006",
+    id: "macro-photography-website",
     title: "Macro",
     imageUrl: ManagementApp,
     type: "Website",

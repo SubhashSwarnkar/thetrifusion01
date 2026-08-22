@@ -58,9 +58,9 @@ export const metadata = {
   other: {
     "theme-color": "#0f172a",
     "geo.region": "IN-RJ",
-    "geo.placename": "Bhilwara",
-    "geo.position": "25.3463;74.6364",
-    ICBM: "25.3463, 74.6364",
+    "geo.placename": "Jaipur",
+    "geo.position": "26.9196;75.7878",
+    ICBM: "26.9196, 75.7878",
   },
 };
 

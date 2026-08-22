@@ -20,8 +20,8 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/project/:id",
-        destination: "/portfolio/:id",
+        source: "/project/:slug",
+        destination: "/portfolio/:slug",
         permanent: true,
       },
     ];

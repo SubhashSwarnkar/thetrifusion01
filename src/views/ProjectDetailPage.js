@@ -15,8 +15,8 @@ import SEO from 'components/common/SEO';
 import { Portfolios } from 'json/landingPageData';
 
 const ProjectDetailPage = () => {
-  const { id } = useParams();
-  const detailData = Portfolios.filter((item) => item.id === id);
+  const { slug } = useParams();
+  const detailData = Portfolios.filter((item) => item.id === slug);
   const project = detailData[0];
 
   useEffect(() => {

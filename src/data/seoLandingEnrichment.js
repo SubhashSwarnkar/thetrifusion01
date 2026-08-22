@@ -28,9 +28,9 @@ export const landingEnrichment = {
     timelineRange:
       "Most website MVPs: 3–8 weeks. Custom software or ecommerce builds: 6–16+ weeks depending on scope.",
     relatedPortfolioIds: [
-      "asd1293uasdads1",
-      "asd1293uhjkhkjh2",
-      "asd1293uapplab002",
+      "dailyconcepts-ecommerce-pos",
+      "meditative-yoga-platform",
+      "applab-mobile-app",
     ],
     buyerGuide: true,
     criteria: [
@@ -87,7 +87,7 @@ export const landingEnrichment = {
       {
         question: "Where is TheTriFusion based?",
         answer:
-          "Bhilwara, Rajasthan, India. We work with clients across India and internationally through remote collaboration.",
+          "Jaipur, Rajasthan, India. We work with clients across India and internationally through remote collaboration.",
       },
     ],
     cta: "Book a discovery / scope review",
@@ -106,7 +106,7 @@ export const landingEnrichment = {
     ],
     timelineRange:
       "Typical ecommerce MVP: 4–10 weeks. Complex catalogs/marketplaces: longer, delivered in phases.",
-    relatedPortfolioIds: ["asd1293uasdads1", "asd1293ulskmnb5"],
+    relatedPortfolioIds: ["dailyconcepts-ecommerce-pos", "resto-restaurant-website"],
     primaryCtaLabel: "Get a project estimate",
     primaryCtaHref: "/estimate",
   },
@@ -123,7 +123,7 @@ export const landingEnrichment = {
     ],
     timelineRange:
       "Lean online store: about 3–8 weeks. Marketplace features: phased after MVP.",
-    relatedPortfolioIds: ["asd1293uasdads1", "asd1293udentista003"],
+    relatedPortfolioIds: ["dailyconcepts-ecommerce-pos", "dentista-dental-clinic"],
     primaryCtaLabel: "Get a project estimate",
     primaryCtaHref: "/estimate",
   },
@@ -139,7 +139,7 @@ export const landingEnrichment = {
     ],
     timelineRange:
       "Campaign setup: 1–3 weeks. SEO compounds over months with consistent content and technical work.",
-    relatedPortfolioIds: ["asd1293uhjkhkjh2", "asd1293utravelix004"],
+    relatedPortfolioIds: ["meditative-yoga-platform", "travelix-travel-booking-website"],
     deliverables: [
       "SEO audit & on-page plan",
       "Ads account setup & tracking",
@@ -164,7 +164,7 @@ export const landingEnrichment = {
     ],
     timelineRange:
       "Focused MVP modules: 6–12 weeks. Broader platforms: phased roadmaps over multiple sprints.",
-    relatedPortfolioIds: ["asd1293uapplab002", "asd1293uasdads1"],
+    relatedPortfolioIds: ["applab-mobile-app", "dailyconcepts-ecommerce-pos"],
     primaryCtaLabel: "Get a project estimate",
     primaryCtaHref: "/estimate",
   },
@@ -181,7 +181,7 @@ export const landingEnrichment = {
     ],
     timelineRange:
       "Onboarding audit: about 1–2 weeks, then ongoing monthly support cycles.",
-    relatedPortfolioIds: ["asd1293uhjkhkjh2", "asd1293ualime001"],
+    relatedPortfolioIds: ["meditative-yoga-platform", "alime-photography-website"],
     deliverables: [
       "Health audit & priority list",
       "Updates & security patches",
@@ -206,7 +206,7 @@ export const landingEnrichment = {
     ],
     timelineRange:
       "Cross-platform MVP: often 8–16 weeks depending on features and backend complexity.",
-    relatedPortfolioIds: ["asd1293uasdads1", "asd1293uapplab002"],
+    relatedPortfolioIds: ["dailyconcepts-ecommerce-pos", "applab-mobile-app"],
     primaryCtaLabel: "Get a project estimate",
     primaryCtaHref: "/estimate",
   },
@@ -224,9 +224,9 @@ export const landingEnrichment = {
     timelineRange:
       "Marketing websites: often 2–6 weeks. Web apps: longer based on workflows.",
     relatedPortfolioIds: [
-      "asd1293uhjkhkjh2",
-      "asd1293uvbvcbbd3",
-      "asd1293ufgdfgs4",
+      "meditative-yoga-platform",
+      "pet-sitting-services-website",
+      "podcast-landing-page",
     ],
     primaryCtaLabel: "Get a project estimate",
     primaryCtaHref: "/estimate",
@@ -243,7 +243,7 @@ export const landingEnrichment = {
     ],
     timelineRange:
       "Focused UX sprint: 1–3 weeks. Full product UI systems: 3–8 weeks.",
-    relatedPortfolioIds: ["asd1293ualime001", "asd1293ufgdfgs4"],
+    relatedPortfolioIds: ["alime-photography-website", "podcast-landing-page"],
     deliverables: [
       "User flow mapping",
       "Wireframes",
@@ -267,7 +267,7 @@ export const landingEnrichment = {
     ],
     timelineRange:
       "Single CRM module MVP: often 6–12 weeks. Multi-module ERP: phased roadmap.",
-    relatedPortfolioIds: ["asd1293uapplab002", "asd1293uasdads1"],
+    relatedPortfolioIds: ["applab-mobile-app", "dailyconcepts-ecommerce-pos"],
     primaryCtaLabel: "Get a project estimate",
     primaryCtaHref: "/estimate",
   },

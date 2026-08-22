@@ -77,7 +77,7 @@ export default function AboutPage() {
                   Trifusion Infotech Private Limited
                 </p>
                 <p className="text-sm text-gray-400 mt-1">
-                  Registered private limited company · Bhilwara, Rajasthan
+                  Registered private limited company · Jaipur, Rajasthan
                 </p>
               </Fade>
             </div>

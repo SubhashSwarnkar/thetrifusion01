@@ -443,7 +443,7 @@ export const blogPosts = [
       <h3>Practical takeaways for similar projects</h3>
       <p>Map admin workflows as carefully as customer flows. Checkout edge cases (failed payments, address errors, inventory mismatches) deserve explicit QA. If POS and ecommerce share inventory, define the source of truth early.</p>
       <h3>See the work and talk scope</h3>
-      <p>Explore the <a href="/portfolio/asd1293uasdads1">DailyConcepts portfolio entry</a>, related <a href="/solutions/ecommerce-website-development">ecommerce solution page</a>, or <a href="/contact">contact us</a> with your catalog and ops constraints for a scoped conversation.</p>
+      <p>Explore the <a href="/portfolio/dailyconcepts-ecommerce-pos">DailyConcepts portfolio entry</a>, related <a href="/solutions/ecommerce-website-development">ecommerce solution page</a>, or <a href="/contact">contact us</a> with your catalog and ops constraints for a scoped conversation.</p>
     `,
     category: "webdev",
     image: "/assets/images/blog/case-daily.jpg",

@@ -158,7 +158,7 @@ export default function AllPortfolioEnhanced({ data }) {
           </div>
         </div>
 
-        <Tabs className="flex flex-col">
+        <Tabs forceRenderTabPanel={true} className="flex flex-col">
           <TabList>
             <div className="flex flex-row mb-5 flex-wrap gap-3">
               <Tab>

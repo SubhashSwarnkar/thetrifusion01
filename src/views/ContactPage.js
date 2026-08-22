@@ -143,7 +143,7 @@ export default function ContactPage() {
                       },
                       {
                         title: "Visit Us",
-                        value: "Bhilwara, Rajasthan, India",
+                        value: "Jaipur, Rajasthan, India",
                         icon: "📍",
                         link: null,
                       },
