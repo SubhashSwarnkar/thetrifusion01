@@ -10,6 +10,9 @@ import Freelance from "../assets/images/Portfolio/Freelance.png";
 import Aura from "../assets/images/Portfolio/Aura.png";
 import Surtido from "../assets/images/Portfolio/Surtido.png";
 import ManagementApp from "../assets/images/Portfolio/ManagementApp.png";
+import PlugOneImg from "../assets/images/Portfolio/PlugOne.jpg";
+import ConnectDairyImg from "../assets/images/Portfolio/ConnectDairy.jpg";
+import AtharvNarayanImg from "../assets/images/Portfolio/AtharvNarayan.jpg";
 
 // Advantages
 import Communicative from "../assets/images/Advantages/Communicative.png";
@@ -63,6 +66,54 @@ export const Services = [
 ];
 
 export const Portfolios = [
+  {
+    id: "plugone-ev-charging-platform",
+    title: "PlugOne",
+    imageUrl: PlugOneImg,
+    type: "Mobile Apps",
+    featured: true,
+    description:
+      "PlugOne is a smart EV charging aggregator platform that connects EV owners to nearby charging stations in real-time. It features an interactive map, charging status tracking, smart mobility dashboard, and seamless session management across multiple charging networks.",
+    responsibility: [
+      "Mobile App Development",
+      "UI/UX Design",
+      "Backend Integration",
+      "Maps & Real-time Tracking",
+    ],
+    credit: "#",
+  },
+  {
+    id: "connect-dairy-supply-chain",
+    title: "Connect Dairy",
+    imageUrl: ConnectDairyImg,
+    type: "Mobile Apps",
+    featured: true,
+    description:
+      "Connect Dairy is a modern dairy supply chain management platform that digitizes milk procurement, farmer onboarding, and route optimization. It offers real-time collection tracking, farmer activity dashboards, and live procurement analytics for dairy businesses.",
+    responsibility: [
+      "Web & Mobile Development",
+      "UI/UX Design",
+      "Dashboard & Analytics",
+      "Supply Chain Integration",
+    ],
+    credit: "#",
+  },
+  {
+    id: "atharv-narayan-wellness-website",
+    title: "Atharv Narayan",
+    imageUrl: AtharvNarayanImg,
+    type: "Website",
+    featured: true,
+    description:
+      "Atharv Narayan is a premium spiritual and ayurvedic wellness website featuring traditional Ayurvedic rituals, guided meditation paths, herbal shop, and curated spiritual journeys. Designed with Sanskrit-inspired aesthetics, golden accents, and a deeply immersive UI.",
+    responsibility: [
+      "Web Development",
+      "UI/UX Design",
+      "E-commerce Integration",
+      "Content Management",
+    ],
+    credit: "#",
+  },
   {
     id: "dailyconcepts-ecommerce-pos",
     title: "DailyConcepts",
