@@ -13,6 +13,8 @@ import ManagementApp from "../assets/images/Portfolio/ManagementApp.png";
 import PlugOneImg from "../assets/images/Portfolio/PlugOne.jpg";
 import ConnectDairyImg from "../assets/images/Portfolio/ConnectDairy.jpg";
 import AtharvNarayanImg from "../assets/images/Portfolio/AtharvNarayan.jpg";
+import ShopNovaImg from "../assets/images/Portfolio/ShopNova.jpg";
+import PaySwiftImg from "../assets/images/Portfolio/PaySwift.jpg";
 
 // Advantages
 import Communicative from "../assets/images/Advantages/Communicative.png";
@@ -208,6 +210,158 @@ export const Portfolios = [
     type: "Website",
     responsibility: ["Web Development", "UI/UX Design"],
     credit: "https://photography-dwap.vercel.app/",
+  },
+  {
+    id: "shopnova-ecommerce-platform",
+    title: "ShopNova",
+    imageUrl: ShopNovaImg,
+    type: "Website",
+    description:
+      "ShopNova is a premium full-featured e-commerce website with a luxury fashion focus. It includes a product grid with smart filters, hero banners, wishlist, multi-step checkout, cart management, and a fully responsive mobile experience. Built for high-conversion retail businesses.",
+    responsibility: [
+      "Web Development",
+      "UI/UX Design",
+      "E-commerce Integration",
+      "Payment Gateway",
+    ],
+    credit: "#",
+  },
+  {
+    id: "payswift-fintech-payment-gateway",
+    title: "PaySwift",
+    imageUrl: PaySwiftImg,
+    type: "Website",
+    description:
+      "PaySwift is a robust fintech payment gateway platform offering real-time transaction analytics, multi-currency support, API integration panel, settlement reports, webhook management, and a secure embeddable checkout widget. Designed for high-volume payment processing businesses.",
+    responsibility: [
+      "Web Development",
+      "UI/UX Design",
+      "Fintech API Integration",
+      "Payment Gateway",
+      "Security & Compliance",
+    ],
+    credit: "#",
+  },
+  {
+    id: "fittrack-ios-android-fitness-app",
+    title: "FitTrack",
+    imageUrl: Stream,
+    type: "Mobile Apps",
+    description:
+      "FitTrack is a cross-platform iOS & Android fitness tracking app featuring calorie burn ring charts, step counter, heart rate monitoring, weekly progress analytics, workout category library, and streak tracker. It connects to wearables and syncs health data in real time.",
+    responsibility: [
+      "iOS & Android Development",
+      "UI/UX Design",
+      "Wearable Integration",
+      "Health Data Analytics",
+    ],
+    credit: "#",
+  },
+  {
+    id: "dataforge-dsa-visualizer",
+    title: "DataForge",
+    imageUrl: Aura,
+    type: "Website",
+    description:
+      "DataForge is an interactive DSA (Data Structures & Algorithms) learning and visualization platform. It provides animated algorithm visualizations for sorting, graph traversal, trees, and dynamic programming. Includes coding challenges, complexity analysis, and a built-in code editor.",
+    responsibility: [
+      "Web Development",
+      "UI/UX Design",
+      "Algorithm Visualization",
+      "Interactive Code Editor",
+    ],
+    credit: "#",
+  },
+  {
+    id: "realnest-real-estate-app",
+    title: "RealNest",
+    imageUrl: Recruiting,
+    type: "Mobile Apps",
+    description:
+      "RealNest is a smart real estate property listing mobile app for iOS & Android. It features map-based property search, advanced filters (price, BHK, locality), virtual tour integration, EMI calculator, agent connect chat, and saved property wishlist — built to simplify home buying and renting.",
+    responsibility: [
+      "iOS & Android Development",
+      "UI/UX Design",
+      "Maps & Location Services",
+      "Virtual Tour Integration",
+    ],
+    credit: "#",
+  },
+  {
+    id: "eduspark-edtech-learning-platform",
+    title: "EduSpark",
+    imageUrl: Surtido,
+    type: "Website",
+    description:
+      "EduSpark is a modern EdTech learning management platform offering live classes, recorded video courses, quizzes, progress tracking, certification, and mentor-student interaction. Designed with engaging UI for students across K-12, competitive exams, and professional upskilling.",
+    responsibility: [
+      "Web Development",
+      "UI/UX Design",
+      "LMS Integration",
+      "Video Streaming",
+      "Gamification",
+    ],
+    credit: "#",
+  },
+  {
+    id: "cryptovault-crypto-tracker-app",
+    title: "CryptoVault",
+    imageUrl: ManagementApp,
+    type: "Mobile Apps",
+    description:
+      "CryptoVault is a sleek iOS & Android crypto portfolio tracker and wallet app. It displays live coin prices, portfolio P&L charts, market cap rankings, news feed, price alerts, and multi-wallet management — all in a dark-themed, data-rich UI optimized for crypto enthusiasts and traders.",
+    responsibility: [
+      "iOS & Android Development",
+      "UI/UX Design",
+      "Crypto API Integration",
+      "Real-time Data Streaming",
+    ],
+    credit: "#",
+  },
+  {
+    id: "medconnect-telemedicine-app",
+    title: "MedConnect",
+    imageUrl: Freelance,
+    type: "Mobile Apps",
+    description:
+      "MedConnect is a comprehensive telemedicine and healthcare mobile app for iOS & Android. It features online doctor consultations via video call, appointment booking, e-prescription, medical records management, lab report uploads, and a health vitals tracker — making quality healthcare accessible from anywhere.",
+    responsibility: [
+      "iOS & Android Development",
+      "UI/UX Design",
+      "Video Call Integration",
+      "Healthcare API & HIPAA Compliance",
+    ],
+    credit: "#",
+  },
+  {
+    id: "clouddesk-saas-project-management",
+    title: "CloudDesk",
+    imageUrl: Stream,
+    type: "Website",
+    description:
+      "CloudDesk is a powerful SaaS project management and team collaboration platform. It offers Kanban boards, sprint planning, time tracking, Gantt charts, file sharing, in-app chat, role-based permissions, and integrations with GitHub and Slack — built for modern agile development teams.",
+    responsibility: [
+      "Web Development",
+      "UI/UX Design",
+      "SaaS Architecture",
+      "Third-party Integrations",
+    ],
+    credit: "#",
+  },
+  {
+    id: "foodrush-food-delivery-app",
+    title: "FoodRush",
+    imageUrl: Aura,
+    type: "Mobile Apps",
+    description:
+      "FoodRush is a feature-rich food delivery app for iOS & Android connecting users with local restaurants. It includes real-time order tracking on map, restaurant discovery with filters, smart recommendations, live order status, multi-address management, and an integrated loyalty rewards program.",
+    responsibility: [
+      "iOS & Android Development",
+      "UI/UX Design",
+      "Real-time GPS Tracking",
+      "Payment Gateway Integration",
+    ],
+    credit: "#",
   },
 ];
 
