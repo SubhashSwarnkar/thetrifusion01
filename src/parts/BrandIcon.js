@@ -11,10 +11,7 @@ export default function BrandIcon() {
         <p className="text-theme-blue text-3xl sm:text-4xl md:text-5xl font-bold">
        TheTri<span className="text-theme-purple">Fusion</span>
         </p>
-        <p className="text-[10px] sm:text-xs font-semibold tracking-[0.14em] uppercase text-theme-purple mt-1">
-          Infotech Pvt. Ltd.
-        </p>
-        
+
       </div>
     </Button>
   );
