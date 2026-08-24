@@ -6,7 +6,6 @@ import ScrollToTop from "components/ScrollToTop";
 import ContextualWhatsApp from "components/ContextualWhatsApp";
 import LiveChat from "components/LiveChat";
 import DevToolsBlocker from "components/DevToolsBlocker";
-import PromoDialog from "components/PromoDialog";
 import AttributionCapture from "components/AttributionCapture";
 
 export default function Providers({ children }) {
@@ -18,7 +17,6 @@ export default function Providers({ children }) {
       <ScrollToTop />
       <ContextualWhatsApp />
       <LiveChat />
-      <PromoDialog />
       <ToastContainer
         position="top-right"
         autoClose={5000}

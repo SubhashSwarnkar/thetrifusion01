@@ -15,7 +15,7 @@ export default function AllTeam({ data }) {
                 <div className="flex justify-center xl:mb-5">
                   <img
                     src={item.imageUrl}
-                    alt="Team Member"
+                    alt={`${item.name}, ${item.position} at TheTriFusion`}
                     className="flex w-32 h-32 rounded-full"
                   />
                 </div>

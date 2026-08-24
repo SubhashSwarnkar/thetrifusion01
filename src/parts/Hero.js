@@ -16,16 +16,16 @@ export default function Hero() {
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-theme-purple mb-4">
                 Trifusion Infotech Pvt. Ltd.
               </p>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-gray-900">
-                Growing Your Business{" "}
-                <span className="text-gradient">Is Our Calling</span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold leading-tight mb-4 text-gray-900">
+                Software Development Company in{" "}
+                <span className="text-gradient">Jaipur, Rajasthan</span>
               </h1>
             </Fade>
 
             <Fade direction="up" delay={200} triggerOnce>
               <p className="font-light text-lg sm:text-xl text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
-                We provide expert developers & designers using the latest technologies to help
-                you scale up your business and achieve digital success.
+                Growing your business is our calling. Websites, mobile apps, UI/UX,
+                and digital marketing from Trifusion Infotech Private Limited.
               </p>
             </Fade>
 
@@ -107,10 +107,10 @@ export default function Hero() {
                   Mobile apps
                 </Link>
                 <Link
-                  href="/solutions/web-development-company-india"
+                  href="/solutions/web-development-company-jaipur"
                   className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
                 >
-                  Web development
+                  Web development Jaipur
                 </Link>
               </div>
             </Fade>
@@ -151,6 +151,7 @@ export default function Hero() {
                   playsInline
                   preload="metadata"
                   poster="/images/Web.png"
+                  aria-label="TheTriFusion software development work showcase video"
                 >
                   <source src={HeroVideo} type="video/mp4" />
                   Your browser does not support the video tag.

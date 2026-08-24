@@ -1,7 +1,7 @@
 import Providers from "components/Providers";
 import JsonLd from "components/JsonLd";
 import GoogleAnalytics from "components/GoogleAnalytics";
-import { organizationSchema, websiteSchema } from "lib/schema";
+import { organizationSchema, websiteSchema, localBusinessSchema } from "lib/schema";
 import { SITE_NAME, SITE_URL, pageMetadata, pages } from "lib/seoConfig";
 import { siteConfig } from "config/site";
 import { Poppins } from "next/font/google";
@@ -70,6 +70,7 @@ export default function RootLayout({ children }) {
       <body className={poppins.className + " antialiased"}>
         <GoogleAnalytics />
         <JsonLd data={organizationSchema()} />
+        <JsonLd data={localBusinessSchema()} />
         <JsonLd data={websiteSchema()} />
         <Providers>{children}</Providers>
       </body>

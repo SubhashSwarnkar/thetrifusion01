@@ -51,7 +51,7 @@ export default function AllPortfolio({ data }) {
                       <div className="relative">
                         <img
                           src={item.imageUrl}
-                          alt="Portfolio"
+                      alt={`${item.title} — ${item.type} project by TheTriFusion`}
                           className="rounded-t-2xl z-0"
                         />
                         <div className="absolute flex w-full h-full top-0 opacity-0 bg-black justify-center rounded-t-2xl rounded-b img-hover">
@@ -102,7 +102,7 @@ export default function AllPortfolio({ data }) {
                       <div className="relative">
                         <img
                           src={item.imageUrl}
-                          alt="Portfolio"
+                      alt={`${item.title} — ${item.type} project by TheTriFusion`}
                           className="rounded-t-2xl z-0"
                         />
                         <div className="absolute flex w-full h-full top-0 opacity-0 bg-black justify-center rounded-t-2xl rounded-b img-hover">
@@ -153,7 +153,7 @@ export default function AllPortfolio({ data }) {
                       <div className="relative">
                         <img
                           src={item.imageUrl}
-                          alt="Portfolio"
+                      alt={`${item.title} — ${item.type} project by TheTriFusion`}
                           className="rounded-t-2xl z-0"
                         />
                         <div className="absolute flex w-full h-full top-0 opacity-0 bg-black justify-center rounded-t-2xl rounded-b img-hover">

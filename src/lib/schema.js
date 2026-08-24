@@ -1,12 +1,12 @@
 import { siteConfig, absoluteSiteUrl } from "config/site";
 
 const HOME_DESCRIPTION =
-  "Trifusion Infotech Private Limited (TheTriFusion) is a software development company in Bhilwara, Rajasthan offering custom software, ecommerce websites, mobile apps, UI/UX, and digital marketing for businesses across India.";
+  "Trifusion Infotech Private Limited (TheTriFusion) is a software development company in Jaipur, Rajasthan offering custom software, ecommerce websites, mobile apps, UI/UX, and digital marketing for businesses across India.";
 
-export function organizationSchema() {
+function organizationNode() {
   return {
-    "@context": "https://schema.org",
-    "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
+    "@type": "Organization",
+    "@id": `${siteConfig.url}/#organization`,
     name: siteConfig.legalName,
     legalName: siteConfig.legalName,
     alternateName: [siteConfig.name, siteConfig.legalNameShort],
@@ -15,8 +15,36 @@ export function organizationSchema() {
       name: siteConfig.name,
     },
     url: siteConfig.url,
-    logo: siteConfig.logoUrl,
+    logo: {
+      "@type": "ImageObject",
+      url: siteConfig.logoUrl,
+    },
     image: siteConfig.defaultOgImage,
+    description: HOME_DESCRIPTION,
+    email: siteConfig.email,
+    telephone: siteConfig.phoneE164,
+    sameAs: [siteConfig.instagram, siteConfig.linkedin],
+  };
+}
+
+export function organizationSchema() {
+  return {
+    "@context": "https://schema.org",
+    ...organizationNode(),
+  };
+}
+
+export function localBusinessSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": ["ProfessionalService", "LocalBusiness"],
+    "@id": `${siteConfig.url}/#localbusiness`,
+    name: siteConfig.legalName,
+    legalName: siteConfig.legalName,
+    alternateName: [siteConfig.name, siteConfig.legalNameShort],
+    url: siteConfig.url,
+    image: siteConfig.defaultOgImage,
+    logo: siteConfig.logoUrl,
     description: HOME_DESCRIPTION,
     slogan: siteConfig.tagline,
     priceRange: "$$",
@@ -55,20 +83,20 @@ export function organizationSchema() {
       name: `${siteConfig.city}, ${siteConfig.region}, ${siteConfig.countryName}`,
     },
     areaServed: [
-      { "@type": "City", name: siteConfig.city },
+      { "@type": "City", name: "Jaipur" },
+      { "@type": "City", name: "Bhilwara" },
       { "@type": "AdministrativeArea", name: siteConfig.region },
       { "@type": "Country", name: siteConfig.countryName },
-      { "@type": "Place", name: "Worldwide" },
     ],
     knowsAbout: [
       "Software Development",
+      "Website Development",
       "Ecommerce Website Development",
-      "Online Store Development",
-      "Digital Marketing",
       "Mobile App Development",
       "UI/UX Design",
-      "CRM and ERP Software",
-      "Managed IT Services",
+      "Digital Marketing",
+      "RPA",
+      "Branding",
     ],
     contactPoint: {
       "@type": "ContactPoint",
@@ -77,7 +105,9 @@ export function organizationSchema() {
       telephone: siteConfig.phoneE164,
       url: absoluteSiteUrl("/contact"),
       availableLanguage: ["English", "Hindi"],
+      areaServed: "IN",
     },
+    parentOrganization: { "@id": `${siteConfig.url}/#organization` },
     sameAs: [siteConfig.instagram, siteConfig.linkedin],
   };
 }
@@ -86,15 +116,12 @@ export function websiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${siteConfig.url}/#website`,
     name: siteConfig.name,
     url: siteConfig.url,
     inLanguage: "en-IN",
     description: HOME_DESCRIPTION,
-    publisher: {
-      "@type": "Organization",
-      name: siteConfig.legalName,
-      brand: siteConfig.name,
-    },
+    publisher: { "@id": `${siteConfig.url}/#organization` },
   };
 }
 
@@ -122,13 +149,20 @@ export function serviceSchema({ name, description, path }) {
     url: absoluteSiteUrl(path),
     provider: {
       "@type": "ProfessionalService",
-      name: siteConfig.name,
+      name: siteConfig.legalName,
       url: siteConfig.url,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: siteConfig.city,
+        addressRegion: siteConfig.region,
+        addressCountry: siteConfig.country,
+      },
     },
-    areaServed: {
-      "@type": "Country",
-      name: siteConfig.countryName,
-    },
+    areaServed: [
+      { "@type": "City", name: "Jaipur" },
+      { "@type": "AdministrativeArea", name: siteConfig.region },
+      { "@type": "Country", name: siteConfig.countryName },
+    ],
   };
 }
 

@@ -53,7 +53,7 @@ export default function OpenGraphImage() {
               maxWidth: 900,
             }}
           >
-            Software, ecommerce, apps & digital marketing from Bhilwara,
+            Software, ecommerce, apps & digital marketing from Jaipur,
             Rajasthan.
           </div>
         </div>

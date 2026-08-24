@@ -117,6 +117,18 @@ export const pages = {
     keywords:
       "timeline calculator, project timeline, development duration, delivery estimate",
   },
+  "/privacy": {
+    title: "Privacy Policy | TheTriFusion",
+    description:
+      "How Trifusion Infotech Private Limited in Jaipur handles enquiry and website data.",
+    keywords: "privacy policy, TheTriFusion, data protection",
+  },
+  "/terms": {
+    title: "Terms of Service | TheTriFusion",
+    description:
+      "Terms for using the TheTriFusion website and requesting software project work.",
+    keywords: "terms of service, TheTriFusion",
+  },
 };
 
 export function absoluteUrl(path = "/") {

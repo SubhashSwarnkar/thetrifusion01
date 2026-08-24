@@ -105,7 +105,7 @@ export default function AboutPage() {
                   <div className="bg-white p-2 rounded-[3.2rem] shadow-2xl">
                     <img 
                       src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1000" 
-                      alt="Team collaborating" 
+                      alt="TheTriFusion team collaborating in Jaipur" 
                       className="rounded-[3rem] w-full h-[500px] object-cover"
                     />
                   </div>

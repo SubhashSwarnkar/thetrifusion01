@@ -23,11 +23,12 @@ export default function Testimonial({ data }) {
       <Fade direction="up" triggerOnce>
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl text-theme-blue font-bold mb-4">
-            Testimonials
+            Project notes
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-theme-purple to-dark-theme-purple mx-auto rounded-full mb-6"></div>
           <p className="font-light text-lg text-gray-400 max-w-2xl mx-auto">
-            See what our clients have to say about their experience working with us.
+            See selected project work — with links to the live site or case page.
+            We do not publish unverified star ratings.
           </p>
         </div>
       </Fade>
@@ -64,7 +65,7 @@ export default function Testimonial({ data }) {
                     <div className="w-16 h-16 rounded-full p-1 bg-gradient-to-br from-theme-purple to-theme-blue">
                       <img
                         src={item.imageUrl}
-                        alt={item.name}
+                        alt={`${item.name} project screenshot`}
                         className="w-full h-full rounded-full object-cover border-2 border-white"
                         loading="lazy"
                       />
@@ -72,33 +73,30 @@ export default function Testimonial({ data }) {
                     <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-white shadow-sm"></div>
                   </div>
                   <div className="ml-4">
-                    <h2 className="text-theme-blue text-lg font-bold group-hover:text-theme-purple transition-colors duration-300">
+                    <h3 className="text-theme-blue text-lg font-bold group-hover:text-theme-purple transition-colors duration-300">
                       {item.name}
-                    </h2>
+                    </h3>
                     <p className="text-gray-500 text-sm font-medium line-clamp-1">
                       {item.company}
                     </p>
                   </div>
                 </div>
 
-                {/* Rating */}
-                <div className="flex items-center mb-6">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <svg
-                      key={star}
-                      className="w-5 h-5 text-yellow-400 mr-1"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-
-                {/* Testimonial Text */}
-                <p className="text-gray-600 text-base leading-relaxed italic relative z-10">
-                  "{item.testimoni}"
+                {/* Project note */}
+                <p className="text-gray-600 text-base leading-relaxed relative z-10">
+                  {item.testimoni}
                 </p>
+                {item.url ? (
+                  <a
+                    href={item.url}
+                    className="inline-block mt-4 text-theme-purple font-semibold text-sm hover:underline relative z-10"
+                    {...(item.url.startsWith("http")
+                      ? { target: "_blank", rel: "noreferrer" }
+                      : {})}
+                  >
+                    View project →
+                  </a>
+                ) : null}
               </div>
             </SwiperSlide>
           ))}

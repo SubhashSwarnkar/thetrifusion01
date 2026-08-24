@@ -397,51 +397,39 @@ export const Advantages = [
 export const Testimonials = [
   {
     id: 1,
-    name: "Priya Sharma",
-    company: "Founder, TechStart India, Mumbai",
+    name: "PlugOne",
+    company: "EV charging platform — portfolio",
     testimoni:
-      "TheTriFusion transformed our business with their exceptional web development services. Our website traffic increased by 300% within 3 months. Highly professional team and outstanding results!",
-    imageUrl: UIUX1,
+      "We designed and built PlugOne as a charging-station aggregator with maps, session tracking, and a mobility dashboard. See the case in our portfolio.",
+    imageUrl: PlugOneImg,
+    url: "/portfolio/plugone-ev-charging-platform",
   },
   {
     id: 2,
-    name: "Rajesh Kumar",
-    company: "CEO, Digital Solutions Pvt Ltd, Delhi",
+    name: "Connect Dairy",
+    company: "Dairy supply chain — portfolio",
     testimoni:
-      "Working with TheTriFusion has been a game-changer for our company. They delivered our mobile app on time and within budget. Their attention to detail and technical expertise is remarkable.",
-    imageUrl: CEO,
+      "Connect Dairy digitizes milk procurement, farmer onboarding, and collection tracking. Built as a web and mobile operations platform.",
+    imageUrl: ConnectDairyImg,
+    url: "/portfolio/connect-dairy-supply-chain",
   },
   {
     id: 3,
-    name: "Anjali Patel",
-    company: "Director, E-commerce Hub, Bangalore",
-    testimoni: 
-      "TheTriFusion created a stunning e-commerce platform for us. The user experience is flawless, and sales have doubled since launch. Best investment we've made for our business!",
-    imageUrl: HRD,
+    name: "DailyConcepts",
+    company: "Ecommerce + POS — dailyconceptsindia.com",
+    testimoni:
+      "DailyConcepts India is a live store with admin POS-style order handling. We focused on catalog, checkout, and operations — not vanity metrics.",
+    imageUrl: Recruiting,
+    url: "https://dailyconceptsindia.com",
   },
   {
     id: 4,
-    name: "Vikram Singh",
-    company: "Owner, Fitness Zone, Pune",
+    name: "Atharv Narayan",
+    company: "Wellness website — portfolio",
     testimoni:
-      "Our gym website designed by TheTriFusion is absolutely amazing! It's modern, responsive, and has helped us attract 200+ new members. Excellent service and support throughout the project.",
-    imageUrl: Frontend1,
-  },
-  {
-    id: 5,
-    name: "Meera Reddy",
-    company: "Principal, EduTech Academy, Hyderabad",
-    testimoni:
-      "TheTriFusion developed our educational platform with such precision and care. The learning management system they built has revolutionized how we deliver courses. Truly exceptional work!",
-    imageUrl: Backend1,
-  },
-  {
-    id: 6,
-    name: "Amit Verma",
-    company: "Managing Director, Restaurant Chain, Jaipur",
-    testimoni:
-      "TheTriFusion's digital marketing services have transformed our restaurant business. Online orders increased by 400%, and our brand visibility has never been better. Highly recommended!",
-    imageUrl: ProjectManager,
+      "A wellness and Ayurveda site with shop and content journeys. Design and development are documented on the project page.",
+    imageUrl: AtharvNarayanImg,
+    url: "/portfolio/atharv-narayan-wellness-website",
   },
 ];
 

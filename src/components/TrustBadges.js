@@ -5,17 +5,17 @@ import { Fade } from "react-awesome-reveal";
 
 export default function TrustBadges() {
   const stats = [
-    { number: "500+", label: "Projects Completed", icon: "🚀" },
-    { number: "200+", label: "Happy Clients", icon: "😊" },
-    { number: "50+", label: "Team Members", icon: "👥" },
+    { number: "100+", label: "Projects Delivered", icon: "🚀" },
+    { number: "50+", label: "Happy Clients", icon: "😊" },
+    { number: "15+", label: "Team Members", icon: "👥" },
     { number: "5+", label: "Years Experience", icon: "⭐" },
   ];
 
   const certifications = [
-    { name: "ISO Certified", icon: "🏆" },
-    { name: "Google Partner", icon: "🔍" },
     { name: "Pvt. Ltd. Company", icon: "🏢" },
-    { name: "Award Winner", icon: "🎖️" },
+    { name: "Jaipur, Rajasthan", icon: "📍" },
+    { name: "GST invoicing", icon: "✓" },
+    { name: "Hindi + English", icon: "🗣️" },
   ];
 
   return (

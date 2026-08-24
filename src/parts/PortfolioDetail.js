@@ -26,7 +26,7 @@ export default function PortfolioDetail({ data }) {
             </h1>
             <div className="flex justify-center">
               <Button
-                href="/project"
+                href="/portfolio"
                 type="link"
                 className="flex w-30 h-10 px-5 mt-5 bg-theme-blue text-white items-center rounded transform transition duration-500 hover:bg-gray-900"
               >
@@ -81,7 +81,7 @@ export default function PortfolioDetail({ data }) {
             <div className="flex justify-center xl:mb-6">
               <img
                 src={item.imageUrl}
-                alt="Project"
+                alt={`${item.title} — ${item.type} project by TheTriFusion`}
                 className="flex w-4/5 sm:w-4/6"
               />
             </div>
