@@ -32,9 +32,10 @@ export default function PrivacyPage() {
             enquiry data at {siteConfig.email}.
           </p>
           <p>
-            This site uses Google Analytics cookies only after you accept the
-            cookie banner. You can reject analytics cookies, or later clear
-            site data in your browser to see the banner again.
+            This site uses Google Analytics with consent mode v2. Defaults are
+            denied for EEA visitors until you choose. You can Accept all or
+            Reject on the cookie banner, or change later via Cookie settings in
+            the footer.
           </p>
         </div>
       </main>

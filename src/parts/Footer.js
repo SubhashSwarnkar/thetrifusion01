@@ -236,6 +236,15 @@ export default function Footer() {
               <Link href="/privacy" className="hover:text-white transition-colors">
                 Privacy Policy
               </Link>
+              <button
+                type="button"
+                onClick={() =>
+                  window.dispatchEvent(new Event("tf-open-cookie-settings"))
+                }
+                className="hover:text-white transition-colors"
+              >
+                Cookie settings
+              </button>
               <Link href="/terms" className="hover:text-white transition-colors">
                 Terms of Service
               </Link>
