@@ -13,7 +13,7 @@ export function getEmailJsConfig() {
     templateId:
       process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ||
       process.env.EMAILJS_TEMPLATE_ID ||
-      "template_9e3g7aa",
+      "template_7nvbirx",
     publicKey:
       process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ||
       process.env.EMAILJS_PUBLIC_KEY ||
