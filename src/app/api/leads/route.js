@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server";
+import { getEmailJsConfig, withEmailJsDefaults } from "lib/emailjsConfig";
+import { buildLeadTemplateParams } from "lib/leadMessage";
 
 const RATE_WINDOW_MS = 60_000;
 const RATE_MAX = 8;
@@ -24,45 +26,15 @@ function normalizePhone(phone) {
   return String(phone || "").replace(/[^\d+]/g, "");
 }
 
-function buildMessage(body) {
-  const lines = [
-    body.projectIdea || "",
-    "",
-    "--- Qualification ---",
-    `Service: ${body.serviceInterest || "n/a"}`,
-    `Budget: ${body.budgetRange || "n/a"}`,
-    `Timeline: ${body.timeline || "n/a"}`,
-    "",
-    "--- Attribution ---",
-    `Landing: ${body.landing_page || ""}`,
-    `Referrer: ${body.referrer || ""}`,
-    `utm_source: ${body.utm_source || ""}`,
-    `utm_medium: ${body.utm_medium || ""}`,
-    `utm_campaign: ${body.utm_campaign || ""}`,
-    `utm_term: ${body.utm_term || ""}`,
-    `utm_content: ${body.utm_content || ""}`,
-    `gclid: ${body.gclid || ""}`,
-    `lead_source: ${body.leadSource || "discuss_form"}`,
-  ];
-  return lines.join("\n");
-}
-
 async function sendEmailJs(templateParams) {
-  const serviceId =
-    process.env.EMAILJS_SERVICE_ID || "service_vbs5oio";
-  const templateId =
-    process.env.EMAILJS_TEMPLATE_ID || "template_7nvbirx";
-  const publicKey =
-    process.env.EMAILJS_PUBLIC_KEY ||
-    process.env.EMAILJS_USER_ID ||
-    "n0euqkm11TGyLICcv";
+  const { serviceId, templateId, publicKey } = getEmailJsConfig();
   const privateKey = process.env.EMAILJS_PRIVATE_KEY;
 
   const payload = {
     service_id: serviceId,
     template_id: templateId,
     user_id: publicKey,
-    template_params: templateParams,
+    template_params: withEmailJsDefaults(templateParams),
   };
 
   if (privateKey) {
@@ -133,19 +105,22 @@ export async function POST(request) {
       leadSource === "aws_promo_offer" ||
       projectIdea.includes("[AWS Marketplace Offer");
 
-    const message = buildMessage({ ...body, projectIdea, leadSource });
+    const templateParams = buildLeadTemplateParams({
+      ...body,
+      name,
+      company,
+      email,
+      phone,
+      projectIdea,
+      leadSource,
+    });
 
-    const templateParams = {
-      from_name: isAwsOffer
-        ? `[AWS OFFER ₹9999] ${name} - ${company} (${phone} - ${email})`
-        : `${name} - ${company} ( ${phone} - ${email} )---(${projectIdea})`,
-      to_name: "thetrifusion",
-      message: isAwsOffer
-        ? `AWS MARKETPLACE PROMO LEAD\n\nName: ${name}\nCompany: ${company}\nEmail: ${email}\nPhone: ${phone}\n\n${message}`
-        : message,
-    };
-
-    await sendEmailJs(templateParams);
+    // Browser already delivered the mail when clientSent is true.
+    // Server send is blocked unless EmailJS Account → Security
+    // "Allow API for non-browser applications" is enabled.
+    if (!body.clientSent) {
+      await sendEmailJs(templateParams);
+    }
 
     const webhookUrl = process.env.LEAD_WEBHOOK_URL;
     if (webhookUrl) {

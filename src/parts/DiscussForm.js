@@ -7,6 +7,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { Form } from "elements/Form";
 import { trackEvent, AnalyticsEvents } from "utils/analytics";
 import { getAttribution } from "utils/attribution";
+import { sendSiteEmail } from "lib/sendSiteEmail";
+import { buildLeadTemplateParams } from "lib/leadMessage";
 
 const SERVICE_OPTIONS = [
   "",
@@ -71,6 +73,12 @@ export const DiscussForm = (actions) => {
       website = "",
     } = data;
 
+    if (website) {
+      toast.success("Success! we'll get back to you soon. Thank you!");
+      resetForm();
+      return;
+    }
+
     if (!name || !company || !email || !phone || !projectIdea) {
       toast.error(
         "Please fill out all fields (name, company, email, phone, and description)."
@@ -84,29 +92,30 @@ export const DiscussForm = (actions) => {
 
     setSubmitting(true);
     try {
-      const response = await fetch("/api/leads", {
+      const leadPayload = {
+        name,
+        company,
+        email,
+        phone,
+        projectIdea,
+        serviceInterest,
+        budgetRange,
+        timeline,
+        website,
+        leadSource,
+        ...attribution,
+      };
+
+      await sendSiteEmail(buildLeadTemplateParams(leadPayload));
+
+      await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name,
-          company,
-          email,
-          phone,
-          projectIdea,
-          serviceInterest,
-          budgetRange,
-          timeline,
-          website,
-          leadSource,
-          ...attribution,
+          ...leadPayload,
+          clientSent: true,
         }),
-      });
-
-      const result = await response.json().catch(() => ({}));
-
-      if (!response.ok || !result.ok) {
-        throw new Error(result.error || "Failed to send message.");
-      }
+      }).catch(() => {});
 
       trackEvent(AnalyticsEvents.GENERATE_LEAD, {
         method: leadSource,

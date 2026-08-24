@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import { toast } from "react-toastify";
-import emailjs from "@emailjs/browser";
 import { Fade } from "react-awesome-reveal";
+import { sendSiteEmail } from "lib/sendSiteEmail";
 
 export default function Newsletter({ compact = false }) {
   const [email, setEmail] = useState("");
@@ -20,18 +20,13 @@ export default function Newsletter({ compact = false }) {
     setLoading(true);
 
     try {
-      // Option 1: Use EmailJS (already configured)
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "your_service_id";
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_NEWSLETTER_TEMPLATE_ID || "newsletter_template";
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "your_public_key";
-
-      await emailjs.send(serviceId, templateId, {
-        email: email,
-        to_email: "TheTrifusion@gmail.com",
-      }, publicKey);
-
-      // Option 2: Integrate with Mailchimp/SendGrid API here
-      // For now, we'll use EmailJS
+      await sendSiteEmail({
+        from_name: `Newsletter: ${email}`,
+        from_email: email,
+        reply_to: email,
+        user_email: email,
+        message: `Newsletter signup\n\nEmail: ${email}`,
+      });
 
       toast.success("Successfully subscribed to newsletter!");
       setEmail("");
