@@ -23,9 +23,15 @@ export default function Hero() {
             </Fade>
 
             <Fade direction="up" delay={200} triggerOnce>
+              <p className="font-semibold text-theme-blue text-base sm:text-lg mb-3">
+                Jaipur office · Websites, mobile apps, UI/UX &amp; digital
+                marketing
+              </p>
               <p className="font-light text-lg sm:text-xl text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
-                Growing your business is our calling. Websites, mobile apps, UI/UX,
-                and digital marketing from Trifusion Infotech Private Limited.
+                Trifusion Infotech Private Limited builds software for
+                businesses across India. Bhilwara and other Rajasthan cities
+                are served remotely from Jaipur — we do not claim a Bhilwara
+                office.
               </p>
             </Fade>
 

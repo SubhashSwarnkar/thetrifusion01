@@ -398,38 +398,52 @@ export const Testimonials = [
   {
     id: 1,
     name: "PlugOne",
-    company: "EV charging platform — portfolio",
+    company: "EV charging platform",
     testimoni:
-      "We designed and built PlugOne as a charging-station aggregator with maps, session tracking, and a mobility dashboard. See the case in our portfolio.",
+      "Charging-station aggregator with maps, session tracking, and a mobility dashboard. Built by TheTriFusion — open the case study to verify scope and screens.",
     imageUrl: PlugOneImg,
     url: "/portfolio/plugone-ev-charging-platform",
+    linkLabel: "Verify on portfolio → PlugOne case study",
   },
   {
     id: 2,
     name: "Connect Dairy",
-    company: "Dairy supply chain — portfolio",
+    company: "Dairy supply chain",
     testimoni:
-      "Connect Dairy digitizes milk procurement, farmer onboarding, and collection tracking. Built as a web and mobile operations platform.",
+      "Milk procurement, farmer onboarding, and collection tracking as a web and mobile operations platform. Case study is on this site.",
     imageUrl: ConnectDairyImg,
     url: "/portfolio/connect-dairy-supply-chain",
+    linkLabel: "Verify on portfolio → Connect Dairy case study",
   },
   {
     id: 3,
     name: "DailyConcepts",
-    company: "Ecommerce + POS — dailyconceptsindia.com",
+    company: "Live ecommerce store",
     testimoni:
-      "DailyConcepts India is a live store with admin POS-style order handling. We focused on catalog, checkout, and operations — not vanity metrics.",
+      "Live store with catalog, checkout, and admin POS-style order handling. This is a public URL — open it to verify the work.",
     imageUrl: Recruiting,
     url: "https://dailyconceptsindia.com",
+    linkLabel: "Verify live site → dailyconceptsindia.com",
   },
   {
     id: 4,
     name: "Atharv Narayan",
-    company: "Wellness website — portfolio",
+    company: "Wellness website",
     testimoni:
-      "A wellness and Ayurveda site with shop and content journeys. Design and development are documented on the project page.",
+      "Wellness and Ayurveda site with shop and content journeys. Design and development notes are on the project page.",
     imageUrl: AtharvNarayanImg,
     url: "/portfolio/atharv-narayan-wellness-website",
+    linkLabel: "Verify on portfolio → Atharv Narayan case study",
+  },
+  {
+    id: 5,
+    name: "Meditative",
+    company: "Live yoga website demo",
+    testimoni:
+      "Public yoga-platform demo we designed and developed. Open the live URL to verify the build — this is not a star rating.",
+    imageUrl: Stream,
+    url: "https://yoga-80f.pages.dev/",
+    linkLabel: "Verify live site → yoga-80f.pages.dev",
   },
 ];
 

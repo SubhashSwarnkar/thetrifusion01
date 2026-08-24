@@ -83,7 +83,7 @@ export default function Footer() {
                       href={`/solutions/${page.slug}`}
                       className="text-white/60 hover:text-white hover:translate-x-1 transition-all inline-block font-light leading-snug"
                     >
-                      {page.h1}
+                      {page.navLabel || page.h1}
                     </Link>
                   </li>
                 ))}

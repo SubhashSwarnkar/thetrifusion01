@@ -5,6 +5,7 @@ export const seoLandingPages = [
     slug: "best-software-company-india",
     title: "Best Software Company in India | TheTriFusion Software Agency",
     h1: "Best Software Company in India",
+    navLabel: "Software company in India",
     metaDescription:
       "TheTriFusion is a trusted software development company and digital agency in India. Custom software, websites, mobile apps, ecommerce, and digital marketing for startups and enterprises.",
     primaryKeyword: "best software company in India",
@@ -60,6 +61,7 @@ export const seoLandingPages = [
     slug: "ecommerce-website-development",
     title: "Ecommerce Website Development Company India | Online Store Experts",
     h1: "Ecommerce Website Development",
+    navLabel: "Ecommerce website development",
     metaDescription:
       "Build a high-converting ecommerce website with TheTriFusion. Custom online stores, product catalogs, payments, inventory, and SEO-ready storefronts for Indian and global brands.",
     primaryKeyword: "ecommerce website development",
@@ -170,6 +172,7 @@ export const seoLandingPages = [
     slug: "digital-marketing-agency",
     title: "Digital Marketing Agency India | SEO, Ads & Growth | TheTriFusion",
     h1: "Digital Marketing Agency",
+    navLabel: "Digital marketing",
     metaDescription:
       "TheTriFusion is a digital marketing agency in India offering SEO, Google Ads, social media marketing, content, and conversion optimization for software, ecommerce, and service brands.",
     primaryKeyword: "digital marketing agency",
@@ -555,7 +558,8 @@ export const seoLandingPages = [
     slug: "website-development-company-bhilwara",
     title:
       "Website Development for Bhilwara Businesses | TheTriFusion Jaipur",
-    h1: "Website Development for Bhilwara Businesses",
+    h1: "Website Development for Bhilwara — From Our Jaipur Office",
+    navLabel: "Bhilwara websites (from Jaipur office)",
     metaDescription:
       "Need a website in Bhilwara? TheTriFusion is a Jaipur-based software company serving Bhilwara clients remotely for websites, ecommerce, apps, and digital marketing.",
     primaryKeyword: "website development company in Bhilwara",
@@ -611,6 +615,7 @@ export const seoLandingPages = [
     slug: "software-company-rajasthan",
     title: "Software Company in Rajasthan | Web & App Development | TheTriFusion",
     h1: "Software Company in Rajasthan",
+    navLabel: "Software company in Rajasthan",
     metaDescription:
       "Hire TheTriFusion — a software company in Rajasthan for websites, custom software, mobile apps, ecommerce, and digital marketing. Based in Jaipur, serving Udaipur, Jodhpur, and all of India.",
     primaryKeyword: "software company in Rajasthan",
@@ -666,6 +671,7 @@ export const seoLandingPages = [
     slug: "web-development-company-jaipur",
     title: "Web Development Company for Jaipur Businesses | TheTriFusion",
     h1: "Web Development for Jaipur Businesses",
+    navLabel: "Web development — Jaipur office",
     metaDescription:
       "TheTriFusion builds websites, ecommerce stores, and apps for Jaipur businesses. A leading Rajasthan software team based in Jaipur with remote delivery and on-site support.",
     primaryKeyword: "web development company Jaipur",

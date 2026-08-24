@@ -23,12 +23,12 @@ export default function Testimonial({ data }) {
       <Fade direction="up" triggerOnce>
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl text-theme-blue font-bold mb-4">
-            Project notes
+            Work you can verify
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-theme-purple to-dark-theme-purple mx-auto rounded-full mb-6"></div>
           <p className="font-light text-lg text-gray-400 max-w-2xl mx-auto">
-            See selected project work — with links to the live site or case page.
-            We do not publish unverified star ratings.
+            Five real projects with a case study or live URL. No star ratings,
+            no invented reviews.
           </p>
         </div>
       </Fade>
@@ -70,7 +70,6 @@ export default function Testimonial({ data }) {
                         loading="lazy"
                       />
                     </div>
-                    <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-white shadow-sm"></div>
                   </div>
                   <div className="ml-4">
                     <h3 className="text-theme-blue text-lg font-bold group-hover:text-theme-purple transition-colors duration-300">
@@ -89,12 +88,12 @@ export default function Testimonial({ data }) {
                 {item.url ? (
                   <a
                     href={item.url}
-                    className="inline-block mt-4 text-theme-purple font-semibold text-sm hover:underline relative z-10"
+                    className="inline-flex items-center mt-5 px-4 py-2 rounded-xl bg-theme-purple/10 text-theme-purple font-bold text-sm hover:bg-theme-purple hover:text-white transition-colors relative z-10"
                     {...(item.url.startsWith("http")
                       ? { target: "_blank", rel: "noreferrer" }
                       : {})}
                   >
-                    View project →
+                    {item.linkLabel || "Verify this project →"}
                   </a>
                 ) : null}
               </div>
