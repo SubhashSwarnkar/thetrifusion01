@@ -21,10 +21,14 @@ export default function Newsletter({ compact = false }) {
 
     try {
       await sendSiteEmail({
-        from_name: `Newsletter: ${email}`,
-        from_email: email,
+        from_name: email,
+        name: "Newsletter signup",
+        company: "—",
+        email,
+        phone: "—",
+        projectIdea: `Newsletter signup\n\nEmail: ${email}`,
         reply_to: email,
-        user_email: email,
+        from_email: email,
         message: `Newsletter signup\n\nEmail: ${email}`,
       });
 

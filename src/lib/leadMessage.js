@@ -1,7 +1,5 @@
-export function buildLeadMessage(body) {
-  const lines = [
-    body.projectIdea || "",
-    "",
+export function buildLeadExtras(body) {
+  return [
     "--- Qualification ---",
     `Service: ${body.serviceInterest || "n/a"}`,
     `Budget: ${body.budgetRange || "n/a"}`,
@@ -17,8 +15,7 @@ export function buildLeadMessage(body) {
     `utm_content: ${body.utm_content || ""}`,
     `gclid: ${body.gclid || ""}`,
     `lead_source: ${body.leadSource || "discuss_form"}`,
-  ];
-  return lines.join("\n");
+  ].join("\n");
 }
 
 export function buildLeadTemplateParams(body) {
@@ -32,20 +29,25 @@ export function buildLeadTemplateParams(body) {
     leadSource === "aws_promo_offer" ||
     projectIdea.includes("[AWS Marketplace Offer");
 
-  const message = buildLeadMessage({ ...body, projectIdea, leadSource });
+  const extras = buildLeadExtras({ ...body, leadSource });
+  const projectBlock = [
+    isAwsOffer ? "AWS MARKETPLACE PROMO LEAD" : "",
+    projectIdea,
+    extras,
+  ]
+    .filter(Boolean)
+    .join("\n\n");
 
   return {
-    from_name: isAwsOffer
-      ? `[AWS OFFER ₹9999] ${name} - ${company} (${phone} - ${email})`
-      : `${name} - ${company} (${phone} - ${email})`,
-    from_email: email,
+    from_name: name,
+    to_name: "thetrifusion",
+    name,
+    company,
+    email,
+    phone,
+    projectIdea: projectBlock,
     reply_to: email,
-    user_name: name,
-    user_company: company,
-    user_email: email,
-    user_phone: phone,
-    message: isAwsOffer
-      ? `AWS MARKETPLACE PROMO LEAD\n\nName: ${name}\nCompany: ${company}\nEmail: ${email}\nPhone: ${phone}\n\n${message}`
-      : `Name: ${name}\nCompany: ${company}\nEmail: ${email}\nPhone: ${phone}\n\n${message}`,
+    from_email: email,
+    message: projectBlock,
   };
 }

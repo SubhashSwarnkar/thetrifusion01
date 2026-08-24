@@ -13,7 +13,7 @@ export function getEmailJsConfig() {
     templateId:
       process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ||
       process.env.EMAILJS_TEMPLATE_ID ||
-      "template_7nvbirx",
+      "template_9e3g7aa",
     publicKey:
       process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ||
       process.env.EMAILJS_PUBLIC_KEY ||
@@ -30,7 +30,7 @@ export function withEmailJsDefaults(templateParams = {}) {
   const { toEmail } = getEmailJsConfig();
   return {
     to_email: toEmail,
-    to_name: "TheTriFusion",
+    to_name: "thetrifusion",
     ...templateParams,
   };
 }
