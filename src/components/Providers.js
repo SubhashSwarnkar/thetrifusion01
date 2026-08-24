@@ -5,7 +5,6 @@ import "react-toastify/dist/ReactToastify.css";
 import ScrollToTop from "components/ScrollToTop";
 import ContextualWhatsApp from "components/ContextualWhatsApp";
 import LiveChat from "components/LiveChat";
-import DevToolsBlocker from "components/DevToolsBlocker";
 import AttributionCapture from "components/AttributionCapture";
 
 export default function Providers({ children }) {
@@ -13,7 +12,6 @@ export default function Providers({ children }) {
     <>
       {children}
       <AttributionCapture />
-      <DevToolsBlocker />
       <ScrollToTop />
       <ContextualWhatsApp />
       <LiveChat />
