@@ -6,6 +6,7 @@ import ScrollToTop from "components/ScrollToTop";
 import ContextualWhatsApp from "components/ContextualWhatsApp";
 import LiveChat from "components/LiveChat";
 import AttributionCapture from "components/AttributionCapture";
+import CookieConsent from "components/CookieConsent";
 
 export default function Providers({ children }) {
   return (
@@ -15,6 +16,7 @@ export default function Providers({ children }) {
       <ScrollToTop />
       <ContextualWhatsApp />
       <LiveChat />
+      <CookieConsent />
       <ToastContainer
         position="top-right"
         autoClose={5000}

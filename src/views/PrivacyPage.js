@@ -32,8 +32,9 @@ export default function PrivacyPage() {
             enquiry data at {siteConfig.email}.
           </p>
           <p>
-            This site may use cookies for analytics. You can block cookies in
-            your browser.
+            This site uses Google Analytics cookies only after you accept the
+            cookie banner. You can reject analytics cookies, or later clear
+            site data in your browser to see the banner again.
           </p>
         </div>
       </main>
