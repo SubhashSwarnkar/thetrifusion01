@@ -14,21 +14,15 @@ export default function Hero() {
           <div className="text-center lg:text-left">
             <Fade direction="up" triggerOnce>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-theme-purple mb-4">
-                Trifusion Infotech Pvt. Ltd.
+                Jaipur, Rajasthan
               </p>
-              <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-bold leading-tight mb-4 text-gray-900">
+              <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-bold leading-tight mb-5 text-gray-900">
                 Software Development Company in{" "}
                 <span className="text-gradient">Jaipur, Rajasthan</span>
               </h1>
-              <p className="font-semibold text-theme-blue text-base sm:text-lg mb-3">
-                Jaipur office · Websites, mobile apps, UI/UX &amp; digital
-                marketing
-              </p>
-              <p className="font-light text-lg text-gray-600 leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
-                Trifusion Infotech Private Limited builds software for
-                businesses across India. Bhilwara and other Rajasthan cities
-                are served remotely from Jaipur — we do not claim a Bhilwara
-                office.
+              <p className="font-light text-lg sm:text-xl text-gray-600 leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
+                Websites, mobile apps, UI/UX and digital marketing — built to
+                grow your business.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button
