@@ -29,15 +29,6 @@ export default function Breadcrumbs() {
       solutions: "Solutions",
     };
 
-    // Handle dynamic routes
-    if (pathnames.includes(path)) {
-      const index = pathnames.indexOf(path);
-      if (index < pathnames.length - 1) {
-        // It's a detail page, return the slug or ID
-        return pathnames[index + 1].replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
-      }
-    }
-
     return names[path] || path.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
   };
 

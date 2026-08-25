@@ -1,14 +1,44 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { Fade } from "react-awesome-reveal";
 import { Transition } from "@headlessui/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import Button from "../elements/Button";
 import BrandIcon from "./BrandIcon";
+import ServiceIcon from "components/ServiceIcon";
 import { services } from "../data/servicesData";
+
+const SERVICE_MENU_GROUPS = [
+  {
+    heading: "Build",
+    slugs: [
+      "software-development",
+      "website-development",
+      "mobile-app-development",
+      "ai-development",
+      "devops",
+    ],
+  },
+  {
+    heading: "Design",
+    slugs: ["ui-ux-design", "graphic-design", "branding"],
+  },
+  {
+    heading: "Grow",
+    slugs: [
+      "digital-marketing",
+      "rpa",
+      "salesforce",
+      "business-modernization",
+      "on-demand",
+    ],
+  },
+];
+
+function getService(slug) {
+  return services.find((item) => item.slug === slug);
+}
 
 export default function Header() {
   const [isCollapse, setIsCollapse] = useState(false);
@@ -55,6 +85,18 @@ export default function Header() {
       document.body.style.overflow = 'unset';
     };
   }, [isCollapse]);
+
+  useEffect(() => {
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setIsServicesOpen(false);
+        setIsCollapse(false);
+        setIsMobileServicesOpen(false);
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -119,6 +161,8 @@ export default function Header() {
                 >
                   <button
                     type="button"
+                    aria-expanded={isServicesOpen}
+                    aria-haspopup="true"
                     className={`${linkClass} inline-flex items-center gap-1`}
                   >
                     {item.name}
@@ -131,43 +175,6 @@ export default function Header() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
-
-                  <Transition
-                    show={isServicesOpen}
-                    enter="transition ease-out duration-200"
-                    enterFrom="opacity-0 translate-y-4 scale-95"
-                    enterTo="opacity-100 translate-y-0 scale-100"
-                    leave="transition ease-in duration-150"
-                    leaveFrom="opacity-100 translate-y-0 scale-100"
-                    leaveTo="opacity-0 translate-y-4 scale-95"
-                  >
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[700px] bg-white rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100 p-8 grid grid-cols-2 gap-4">
-                      {services.map((service) => (
-                        <Link
-                          key={service.id}
-                          href={`/services/${service.slug}`}
-                          onClick={handleLinkClick}
-                          className="group/item p-4 rounded-2xl hover:bg-light-theme-purple/10 border border-transparent hover:border-light-theme-purple/20 transition-all duration-300"
-                        >
-                          <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 rounded-xl bg-light-theme-purple/20 flex items-center justify-center text-2xl group-hover/item:bg-theme-purple group-hover/item:text-white transition-all duration-300">
-                              {service.icon}
-                            </div>
-                            <div>
-                              <p className="font-bold text-theme-blue group-hover/item:text-theme-purple transition-colors">{service.title}</p>
-                              <p className="text-xs text-gray-400 font-light line-clamp-1">{service.shortDescription}</p>
-                            </div>
-                          </div>
-                        </Link>
-                      ))}
-                      <div className="col-span-2 pt-6 mt-4 border-t border-gray-50 flex justify-center">
-                         <Link href="/services" onClick={handleLinkClick} className="group/btn relative px-8 py-3 overflow-hidden rounded-full bg-gray-50 text-theme-purple text-xs font-bold uppercase tracking-[0.2em] transition-all hover:text-white">
-                           <span className="relative z-10">View All Specializations</span>
-                           <div className="absolute inset-0 bg-theme-purple translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
-                         </Link>
-                      </div>
-                    </div>
-                  </Transition>
                 </div>
               ) : (
                 <Link
@@ -200,6 +207,78 @@ export default function Header() {
           <span className={`w-8 h-0.5 transition-all ${isCollapse ? "bg-theme-purple -rotate-45 -translate-y-2" : "bg-theme-blue"}`}></span>
         </button>
       </div>
+
+      <Transition
+        show={isServicesOpen}
+        enter="transition ease-out duration-150"
+        enterFrom="opacity-0 -translate-y-1"
+        enterTo="opacity-100 translate-y-0"
+        leave="transition ease-in duration-100"
+        leaveFrom="opacity-100 translate-y-0"
+        leaveTo="opacity-0 -translate-y-1"
+      >
+        <div
+          className="hidden lg:block absolute left-0 right-0 top-full pt-2"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="container mx-auto px-5">
+            <div className="bg-white rounded-2xl border border-gray-100 shadow-[0_16px_40px_rgba(21,44,91,0.12)] p-5 md:p-6">
+              <div className="grid grid-cols-3 gap-6">
+                {SERVICE_MENU_GROUPS.map((group) => (
+                  <div key={group.heading}>
+                    <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-gray-400 mb-3 px-2">
+                      {group.heading}
+                    </p>
+                    <ul className="space-y-0.5">
+                      {group.slugs.map((slug) => {
+                        const service = getService(slug);
+                        if (!service) return null;
+                        return (
+                          <li key={slug}>
+                            <Link
+                              href={`/services/${service.slug}`}
+                              onClick={handleLinkClick}
+                              className="group/item flex items-start gap-3 rounded-xl px-2 py-2 hover:bg-gray-50 transition-colors"
+                            >
+                              <span className="mt-0.5 w-8 h-8 rounded-lg bg-light-theme-purple/40 text-theme-purple flex items-center justify-center shrink-0 group-hover/item:bg-theme-purple group-hover/item:text-white transition-colors">
+                                <ServiceIcon slug={service.slug} className="w-4 h-4" />
+                              </span>
+                              <span className="min-w-0">
+                                <span className="block text-sm font-semibold text-theme-blue group-hover/item:text-theme-purple transition-colors">
+                                  {service.title}
+                                </span>
+                                <span className="block text-xs text-gray-400 font-light leading-snug line-clamp-1">
+                                  {service.shortDescription}
+                                </span>
+                              </span>
+                            </Link>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between gap-4">
+                <p className="text-xs text-gray-400 hidden sm:block">
+                  Web, apps, design and growth — from Jaipur.
+                </p>
+                <Link
+                  href="/services"
+                  onClick={handleLinkClick}
+                  className="ml-auto inline-flex items-center gap-2 text-sm font-bold text-theme-purple hover:text-dark-theme-purple"
+                >
+                  View all services
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Transition>
 
       {/* Mobile Menu - Enhanced */}
       <AnimatePresence>
@@ -250,17 +329,17 @@ export default function Header() {
                               exit={{ opacity: 0, height: 0 }}
                               className="grid grid-cols-1 gap-4 overflow-hidden pl-4"
                             >
-                              {services.map(s => (
-                                <Link 
-                                  key={s.id} 
-                                  href={`/services/${s.slug}`} 
-                                  onClick={handleLinkClick} 
-                                  className="flex items-center gap-4 p-4 bg-gray-50/50 rounded-2xl group active:scale-95 transition-all"
+                              {services.map((s) => (
+                                <Link
+                                  key={s.id}
+                                  href={`/services/${s.slug}`}
+                                  onClick={handleLinkClick}
+                                  className="flex items-center gap-3 py-2.5 px-2 rounded-xl hover:bg-gray-50"
                                 >
-                                  <div className="w-10 h-10 flex-shrink-0 bg-white rounded-xl shadow-sm flex items-center justify-center text-xl group-hover:bg-theme-purple group-hover:text-white transition-all">
-                                    {s.icon}
-                                  </div>
-                                  <span className="font-bold text-theme-blue">{s.title}</span>
+                                  <span className="w-9 h-9 flex-shrink-0 bg-light-theme-purple/40 text-theme-purple rounded-lg flex items-center justify-center">
+                                    <ServiceIcon slug={s.slug} className="w-4 h-4" />
+                                  </span>
+                                  <span className="font-semibold text-theme-blue text-base">{s.title}</span>
                                 </Link>
                               ))}
                             </motion.div>
