@@ -31,11 +31,17 @@ export default function HeroVideo() {
     return () => observer.disconnect();
   }, []);
 
+  const mediaClass =
+    "w-full h-full rounded-2xl object-cover object-center shadow-xl";
+
   return (
-    <div ref={wrapRef} className="relative">
+    <div
+      ref={wrapRef}
+      className="w-full aspect-[16/10] overflow-hidden rounded-2xl bg-gray-900"
+    >
       {shouldLoad ? (
         <video
-          className="relative z-10 w-full max-w-2xl rounded-2xl object-cover"
+          className={mediaClass}
           autoPlay
           loop
           muted
@@ -43,7 +49,7 @@ export default function HeroVideo() {
           preload="none"
           poster={HERO_POSTER}
           width={1280}
-          height={720}
+          height={800}
           aria-label="TheTriFusion software development work showcase, filmed for our Jaipur studio"
         >
           <source src={HERO_VIDEO_SRC} type="video/mp4" />
@@ -52,9 +58,9 @@ export default function HeroVideo() {
         <img
           src={HERO_POSTER}
           alt="TheTriFusion software development work in Jaipur, Rajasthan"
-          className="relative z-10 w-full max-w-2xl rounded-2xl object-cover"
+          className={mediaClass}
           width={1280}
-          height={720}
+          height={800}
         />
       )}
     </div>

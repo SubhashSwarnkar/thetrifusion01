@@ -8,34 +8,28 @@ import HeroVideo from "components/HeroVideo";
 
 export default function Hero() {
   return (
-    <section className="hero relative overflow-hidden py-20 z-10">
+    <section className="relative overflow-hidden pt-28 lg:pt-32 pb-16 z-10">
       <div className="container mx-auto px-5">
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-          <div className="w-full lg:w-1/2 text-center lg:text-left">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="text-center lg:text-left">
             <Fade direction="up" triggerOnce>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-theme-purple mb-4">
                 Trifusion Infotech Pvt. Ltd.
               </p>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold leading-tight mb-4 text-gray-900">
+              <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-bold leading-tight mb-4 text-gray-900">
                 Software Development Company in{" "}
                 <span className="text-gradient">Jaipur, Rajasthan</span>
               </h1>
-            </Fade>
-
-            <Fade direction="up" delay={200} triggerOnce>
               <p className="font-semibold text-theme-blue text-base sm:text-lg mb-3">
                 Jaipur office · Websites, mobile apps, UI/UX &amp; digital
                 marketing
               </p>
-              <p className="font-light text-lg sm:text-xl text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
+              <p className="font-light text-lg text-gray-600 leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
                 Trifusion Infotech Private Limited builds software for
                 businesses across India. Bhilwara and other Rajasthan cities
                 are served remotely from Jaipur — we do not claim a Bhilwara
                 office.
               </p>
-            </Fade>
-
-            <Fade direction="up" delay={400} triggerOnce>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button
                   href="/solutions"
@@ -79,76 +73,72 @@ export default function Hero() {
                 </Link>
               </div>
             </Fade>
-
-            <Fade direction="up" delay={500} triggerOnce>
-              <div className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3 text-sm">
-                <Link
-                  href="/solutions/software-company-rajasthan"
-                  className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
-                >
-                  Software company Rajasthan
-                </Link>
-                <Link
-                  href="/solutions/ecommerce-website-development"
-                  className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
-                >
-                  Ecommerce websites
-                </Link>
-                <Link
-                  href="/solutions/digital-marketing-agency"
-                  className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
-                >
-                  Digital marketing
-                </Link>
-                <Link
-                  href="/solutions/web-development-company-jaipur"
-                  className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
-                >
-                  Web development Jaipur
-                </Link>
-                <Link
-                  href="/solutions/mobile-app-development-company"
-                  className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
-                >
-                  Mobile apps
-                </Link>
-                <Link
-                  href="/solutions/website-development-company-bhilwara"
-                  className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
-                >
-                  Bhilwara (from Jaipur)
-                </Link>
-              </div>
-            </Fade>
-
-            <Fade direction="right" delay={600} triggerOnce>
-              <div className="mt-12 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-gray-600">
-                <div className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span>100+ Projects Delivered</span>
-                </div>
-                <div className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span>Expert Team</span>
-                </div>
-                <div className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span>24/7 Support</span>
-                </div>
-              </div>
-            </Fade>
           </div>
-          
-          <div className="w-full lg:w-1/2 flex justify-center items-center">
-            <Fade direction="left" triggerOnce>
+
+          <div className="w-full">
+            <Fade direction="up" triggerOnce className="w-full block">
               <HeroVideo />
             </Fade>
+          </div>
+        </div>
+
+        <div className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-3 text-sm">
+          <Link
+            href="/solutions/software-company-rajasthan"
+            className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
+          >
+            Software company Rajasthan
+          </Link>
+          <Link
+            href="/solutions/ecommerce-website-development"
+            className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
+          >
+            Ecommerce websites
+          </Link>
+          <Link
+            href="/solutions/digital-marketing-agency"
+            className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
+          >
+            Digital marketing
+          </Link>
+          <Link
+            href="/solutions/web-development-company-jaipur"
+            className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
+          >
+            Web development Jaipur
+          </Link>
+          <Link
+            href="/solutions/mobile-app-development-company"
+            className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
+          >
+            Mobile apps
+          </Link>
+          <Link
+            href="/solutions/website-development-company-bhilwara"
+            className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
+          >
+            Bhilwara (from Jaipur)
+          </Link>
+        </div>
+
+        <div className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-gray-600">
+          <div className="flex items-center">
+            <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+            </svg>
+            <span>100+ Projects Delivered</span>
+          </div>
+          <div className="flex items-center">
+            <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+            </svg>
+            <span>Expert Team</span>
+          </div>
+          <div className="flex items-center">
+            <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+            </svg>
+            <span>24/7 Support</span>
           </div>
         </div>
       </div>
