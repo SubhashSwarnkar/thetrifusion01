@@ -8,29 +8,65 @@ import HeroVideo from "components/HeroVideo";
 
 const HERO_CHIPS = [
   { label: "E-commerce", href: "/solutions/ecommerce-website-development" },
-  { label: "CMS & CRM", href: "/solutions/crm-erp-software-development" },
+  { label: "CMS", href: "/services/website-development" },
+  { label: "CRM & ERP", href: "/solutions/crm-erp-software-development" },
   { label: "MLM software", href: "/solutions/custom-software-development-company" },
   { label: "eMSP apps", href: "/solutions/mobile-app-development-company" },
   { label: "OCPI / OCPP", href: "/portfolio/plugone-ev-charging-platform" },
   { label: "Fintech web apps", href: "/services/software-development" },
-  {
-    label: "Software company Rajasthan",
-    href: "/solutions/software-company-rajasthan",
-  },
-  { label: "Digital marketing", href: "/solutions/digital-marketing-agency" },
-  {
-    label: "Web development Jaipur",
-    href: "/solutions/web-development-company-jaipur",
-  },
+  { label: "DSA platforms", href: "/services/website-development" },
+  { label: "Motion graphic websites", href: "/services/ui-ux-design" },
+  { label: "Storytelling websites", href: "/services/website-development" },
   { label: "Mobile apps", href: "/solutions/mobile-app-development-company" },
-  {
-    label: "Bhilwara (from Jaipur)",
-    href: "/solutions/website-development-company-bhilwara",
-  },
+  { label: "POS systems", href: "/solutions/ecommerce-website-development" },
+  { label: "Logistics software", href: "/services/software-development" },
+  { label: "EdTech / LMS", href: "/services/software-development" },
+  { label: "SaaS platforms", href: "/solutions/custom-software-development-company" },
+  { label: "Healthcare apps", href: "/solutions/mobile-app-development-company" },
+  { label: "Real estate software", href: "/services/software-development" },
+  { label: "AI software", href: "/services/ai-development" },
+  { label: "RPA", href: "/services/rpa" },
+  { label: "Salesforce", href: "/services/salesforce" },
 ];
 
 const chipClassName =
-  "px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors";
+  "whitespace-nowrap shrink-0 px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple hover:bg-white transition-colors";
+
+function ChipTrack({ chips, hidden }) {
+  return (
+    <div
+      className="flex shrink-0 items-center gap-3 pr-3"
+      {...(hidden ? { "aria-hidden": true } : {})}
+    >
+      {chips.map((chip) => (
+        <Link
+          key={chip.label}
+          href={chip.href}
+          className={chipClassName}
+          tabIndex={hidden ? -1 : undefined}
+        >
+          {chip.label}
+        </Link>
+      ))}
+    </div>
+  );
+}
+
+function ChipMarquee({ chips, direction = "left" }) {
+  const animationClass =
+    direction === "left" ? "animate-marquee-left" : "animate-marquee-right";
+
+  return (
+    <div className="overflow-hidden py-0.5">
+      <div
+        className={`flex w-max hover:[animation-play-state:paused] motion-reduce:animate-none ${animationClass}`}
+      >
+        <ChipTrack chips={chips} />
+        <ChipTrack chips={chips} hidden />
+      </div>
+    </div>
+  );
+}
 
 export default function Hero() {
   return (
@@ -105,12 +141,19 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-3 text-sm">
-          {HERO_CHIPS.map((chip) => (
-            <Link key={chip.label} href={chip.href} className={chipClassName}>
-              {chip.label}
-            </Link>
-          ))}
+        <div className="mt-10 -mx-5 sm:mx-0 text-sm">
+          <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
+            <div className="space-y-3">
+              <ChipMarquee
+                chips={HERO_CHIPS.slice(0, 10)}
+                direction="left"
+              />
+              <ChipMarquee
+                chips={HERO_CHIPS.slice(10)}
+                direction="right"
+              />
+            </div>
+          </div>
         </div>
 
         <div className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-gray-600">

@@ -50,6 +50,8 @@ module.exports = {
         "bounce-x": "bouncex 1s infinite",
         float: "float 6s ease-in-out infinite",
         wave: "wave 10s linear infinite",
+        "marquee-left": "marqueeLeft 40s linear infinite",
+        "marquee-right": "marqueeRight 42s linear infinite",
       },
       keyframes: {
         bouncex: {
@@ -70,6 +72,14 @@ module.exports = {
           "0%": { backgroundPosition: "0% 50%" },
           "50%": { backgroundPosition: "100% 50%" },
           "100%": { backgroundPosition: "0% 50%" },
+        },
+        marqueeLeft: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        marqueeRight: {
+          "0%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(0)" },
         },
       },
       spacing: {
