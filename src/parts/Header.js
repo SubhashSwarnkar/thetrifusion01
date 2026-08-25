@@ -227,7 +227,7 @@ export default function Header() {
           onMouseLeave={handleMouseLeave}
         >
           <div className="container mx-auto px-5">
-            <div className="bg-gradient-to-br from-white via-light-theme-purple/20 to-theme-cyan/10 rounded-2xl border border-theme-purple/15 shadow-[0_16px_40px_rgba(21,44,91,0.12)] p-5 md:p-6">
+            <div className="bg-white rounded-2xl border border-gray-100 shadow-[0_16px_40px_rgba(21,44,91,0.12)] p-5 md:p-6">
               <div className="grid grid-cols-3 gap-6">
                 {SERVICE_MENU_GROUPS.map((group) => {
                   const groupAccent = accentAt(group.accentIndex);
@@ -246,7 +246,7 @@ export default function Header() {
                             <Link
                               href={`/services/${service.slug}`}
                               onClick={handleLinkClick}
-                              className="group/item flex items-start gap-3 rounded-xl px-2 py-2 hover:bg-white/80 transition-colors"
+                              className="group/item flex items-start gap-3 rounded-xl px-2 py-2 hover:bg-gray-50 transition-colors"
                             >
                               <span className={`mt-0.5 w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${accent.iconWrap} group-hover/item:bg-theme-purple group-hover/item:text-white transition-colors`}>
                                 <ServiceIcon slug={service.slug} className="w-4 h-4" />
