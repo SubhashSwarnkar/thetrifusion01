@@ -13,16 +13,19 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div className="text-center lg:text-left">
             <Fade direction="up" triggerOnce>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-theme-purple mb-4">
+              <span className="inline-block mb-6 px-4 py-1.5 rounded-full bg-light-theme-purple/40 text-theme-purple text-xs font-bold uppercase tracking-[0.18em]">
                 Jaipur, Rajasthan
-              </p>
-              <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-bold leading-tight mb-5 text-gray-900">
-                Software Development Company in{" "}
-                <span className="text-gradient">Jaipur, Rajasthan</span>
+              </span>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-theme-blue mb-6">
+                Growing your
+                <br />
+                business is our
+                <br />
+                <span className="text-gradient">calling.</span>
               </h1>
-              <p className="font-light text-lg sm:text-xl text-gray-600 leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
-                Websites, mobile apps, UI/UX and digital marketing — built to
-                grow your business.
+              <p className="text-base sm:text-lg text-gray-500 font-light leading-relaxed mb-8 max-w-md mx-auto lg:mx-0">
+                Websites, mobile apps, UI/UX and digital marketing from a
+                software company in Jaipur.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button
