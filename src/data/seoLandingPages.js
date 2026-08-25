@@ -3,8 +3,9 @@ import { enrichLandingPage } from "./seoLandingEnrichment";
 export const seoLandingPages = [
   {
     slug: "best-software-company-india",
-    title: "Best Software Company in India | TheTriFusion Software Agency",
-    h1: "Best Software Company in India",
+    title:
+      "How to Choose a Software Company in India | Buyer Guide | TheTriFusion",
+    h1: "How to Choose a Software Company in India",
     navLabel: "Software company in India",
     metaDescription:
       "TheTriFusion is a trusted software development company and digital agency in India. Custom software, websites, mobile apps, ecommerce, and digital marketing for startups and enterprises.",
@@ -338,6 +339,7 @@ export const seoLandingPages = [
     slug: "mobile-app-development-company",
     title: "Mobile App Development Company India | iOS & Android Apps",
     h1: "Mobile App Development Company",
+    navLabel: "Mobile app development",
     metaDescription:
       "TheTriFusion is a mobile app development company in India building iOS, Android, and cross-platform apps for startups, ecommerce, and enterprise workflows.",
     primaryKeyword: "mobile app development company",
@@ -404,7 +406,7 @@ export const seoLandingPages = [
       "Next.js web development India",
     ],
     intro:
-      "Your website is often the first sales rep prospects meet. TheTriFusion is a web development company in India that builds fast, accessible, SEO-ready websites and web applications.",
+      "Your website is often the first sales rep prospects meet. TheTriFusion is a Jaipur-based web development company serving clients across India — fast, accessible, SEO-ready websites and web applications, delivered remotely from Rajasthan.",
     sections: [
       {
         title: "Marketing websites that convert",
@@ -741,8 +743,8 @@ export const getSolutionsForService = (serviceSlug) =>
 export const featuredSolutionSlugs = [
   "web-development-company-jaipur",
   "software-company-rajasthan",
-  "best-software-company-india",
   "ecommerce-website-development",
+  "mobile-app-development-company",
   "digital-marketing-agency",
   "website-development-company-bhilwara",
 ];

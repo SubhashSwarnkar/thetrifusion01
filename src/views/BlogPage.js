@@ -57,12 +57,14 @@ export default function BlogPage() {
       <section className="container mx-auto px-5 py-20">
         <Fade direction="up" triggerOnce>
           <h1 className="text-4xl sm:text-5xl text-theme-blue text-center font-bold mb-3">
-            Our Blog
+            Insights from a Jaipur software company
           </h1>
         </Fade>
         <Fade direction="up" delay={200} triggerOnce>
           <p className="font-light text-lg text-gray-400 text-center mb-12">
-            Stay updated with the latest trends, tips, and insights in web development, mobile apps, and digital marketing.
+            Stay updated with practical notes on websites, apps, and delivery
+            from Jaipur. New local posts are the priority; older general tech
+            pieces stay for archive.
           </p>
         </Fade>
 

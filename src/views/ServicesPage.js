@@ -63,11 +63,13 @@ export default function ServicesPage() {
               Our Solutions
             </motion.span>
             <h1 className="text-6xl md:text-8xl text-theme-blue font-black mb-8 tracking-tighter leading-none">
-              Modern Services for <br />
-              <span className="text-gradient">Digital Success</span>
+              IT Services in Jaipur — <br />
+              <span className="text-gradient">Web, Apps &amp; Marketing</span>
             </h1>
             <p className="font-light text-xl md:text-2xl text-gray-500 max-w-3xl mx-auto leading-relaxed mb-10">
-              Transforming complex challenges into elegant digital solutions with our full-cycle development services.
+              Full-cycle software, websites, mobile apps, UI/UX, and digital
+              marketing from our Jaipur office. Rajasthan and India clients work
+              with us remotely.
             </p>
             <div className="flex flex-wrap justify-center gap-6">
               <div className="w-48 h-1.5 bg-gradient-to-r from-theme-purple via-theme-cyan to-theme-purple rounded-full animate-float"></div>

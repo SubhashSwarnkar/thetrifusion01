@@ -27,16 +27,20 @@ function organizationNode() {
   };
 }
 
-export function organizationSchema() {
+function websiteNode() {
   return {
-    "@context": "https://schema.org",
-    ...organizationNode(),
+    "@type": "WebSite",
+    "@id": `${siteConfig.url}/#website`,
+    name: siteConfig.name,
+    url: siteConfig.url,
+    inLanguage: "en-IN",
+    description: HOME_DESCRIPTION,
+    publisher: { "@id": `${siteConfig.url}/#organization` },
   };
 }
 
-export function localBusinessSchema() {
+function localBusinessNode() {
   return {
-    "@context": "https://schema.org",
     "@type": ["ProfessionalService", "LocalBusiness"],
     "@id": `${siteConfig.url}/#localbusiness`,
     name: siteConfig.legalName,
@@ -83,11 +87,20 @@ export function localBusinessSchema() {
       name: `${siteConfig.city}, ${siteConfig.region}, ${siteConfig.countryName}`,
     },
     areaServed: [
-      { "@type": "City", name: "Jaipur" },
-      { "@type": "City", name: "Bhilwara" },
+      {
+        "@type": "City",
+        name: "Jaipur",
+        description: "Primary office and service location",
+      },
+      {
+        "@type": "City",
+        name: "Bhilwara",
+        description: "Service area served remotely from Jaipur",
+      },
       { "@type": "AdministrativeArea", name: siteConfig.region },
       { "@type": "Country", name: siteConfig.countryName },
     ],
+    knowsLanguage: ["en-IN", "hi"],
     knowsAbout: [
       "Software Development",
       "Website Development",
@@ -112,15 +125,43 @@ export function localBusinessSchema() {
   };
 }
 
+export function organizationSchema() {
+  return {
+    "@context": "https://schema.org",
+    ...organizationNode(),
+  };
+}
+
+export function localBusinessSchema() {
+  return {
+    "@context": "https://schema.org",
+    ...localBusinessNode(),
+  };
+}
+
 export function websiteSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": `${siteConfig.url}/#website`,
-    name: siteConfig.name,
-    url: siteConfig.url,
-    inLanguage: "en-IN",
+    ...websiteNode(),
+  };
+}
+
+export function siteGraphSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [organizationNode(), localBusinessNode(), websiteNode()],
+  };
+}
+
+export function videoObjectSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: "Software development work from TheTriFusion in Jaipur",
     description: HOME_DESCRIPTION,
+    thumbnailUrl: siteConfig.defaultOgImage,
+    contentUrl: `${siteConfig.url}/videos/hero-showcase.mp4`,
+    uploadDate: "2026-08-20",
     publisher: { "@id": `${siteConfig.url}/#organization` },
   };
 }

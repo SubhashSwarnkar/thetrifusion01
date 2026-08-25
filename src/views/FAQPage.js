@@ -54,7 +54,7 @@ export default function FAQPage() {
       <section className="container mx-auto px-5 py-20">
         <Fade direction="up" triggerOnce>
           <h1 className="text-4xl sm:text-5xl text-theme-blue text-center font-bold mb-3">
-            Frequently Asked Questions
+            FAQs — Software Company in Jaipur
           </h1>
         </Fade>
         <Fade direction="up" delay={200} triggerOnce>

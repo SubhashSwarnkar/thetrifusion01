@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
 import Button from "../elements/Button";
-import HeroVideo from "../assets/images/hero/grok-video-a50935b7-1f97-482b-a269-949d5dedccc5 (1).mp4";
+import HeroVideo from "components/HeroVideo";
 
 export default function Hero() {
   return (
@@ -83,10 +83,10 @@ export default function Hero() {
             <Fade direction="up" delay={500} triggerOnce>
               <div className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3 text-sm">
                 <Link
-                  href="/solutions/best-software-company-india"
+                  href="/solutions/software-company-rajasthan"
                   className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
                 >
-                  Software company India
+                  Software company Rajasthan
                 </Link>
                 <Link
                   href="/solutions/ecommerce-website-development"
@@ -101,10 +101,10 @@ export default function Hero() {
                   Digital marketing
                 </Link>
                 <Link
-                  href="/solutions/online-store-development"
+                  href="/solutions/web-development-company-jaipur"
                   className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
                 >
-                  Online stores
+                  Web development Jaipur
                 </Link>
                 <Link
                   href="/solutions/mobile-app-development-company"
@@ -113,10 +113,10 @@ export default function Hero() {
                   Mobile apps
                 </Link>
                 <Link
-                  href="/solutions/web-development-company-jaipur"
+                  href="/solutions/website-development-company-bhilwara"
                   className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
                 >
-                  Web development Jaipur
+                  Bhilwara (from Jaipur)
                 </Link>
               </div>
             </Fade>
@@ -145,24 +145,9 @@ export default function Hero() {
             </Fade>
           </div>
           
-          <div className="w-full lg:w-1/2 flex justify-center items-center order-first lg:order-last">
+          <div className="w-full lg:w-1/2 flex justify-center items-center">
             <Fade direction="left" triggerOnce>
-              <div className="relative">
-                <div className="absolute inset-0 "></div>
-                <video
-                  className="relative z-10 w-full max-w-2xl rounded-2xl object-cover"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
-                  poster="/images/Web.png"
-                  aria-label="TheTriFusion software development work showcase video"
-                >
-                  <source src={HeroVideo} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
+              <HeroVideo />
             </Fade>
           </div>
         </div>

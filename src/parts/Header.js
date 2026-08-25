@@ -80,7 +80,17 @@ export default function Header() {
         : "bg-transparent py-5"
     }`}>
       <div className="container mx-auto flex justify-between items-center px-5 transition-all duration-500">
-        <BrandIcon />
+        <div className="flex items-center gap-3 min-w-0">
+          <BrandIcon />
+          <span className="hidden sm:flex flex-col leading-tight">
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-gray-400">
+              Office
+            </span>
+            <span className="text-xs font-bold text-theme-blue">
+              Jaipur, Rajasthan
+            </span>
+          </span>
+        </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center space-x-1">

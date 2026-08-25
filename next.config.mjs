@@ -20,8 +20,8 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/project/:slug",
-        destination: "/portfolio/:slug",
+        source: "/solutions/online-store-development",
+        destination: "/solutions/ecommerce-website-development",
         permanent: true,
       },
     ];

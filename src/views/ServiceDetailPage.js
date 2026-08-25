@@ -180,6 +180,9 @@ export default function ServiceDetailPage() {
             <p className="text-xl md:text-2xl text-gray-500 font-light leading-relaxed mb-12 max-w-3xl">
               {service.shortDescription}
             </p>
+            <p className="text-sm font-semibold text-theme-blue mb-10">
+              Delivered from our Jaipur, Rajasthan office — remote work across India.
+            </p>
 
             <div className="flex flex-col sm:flex-row gap-6">
               <Link

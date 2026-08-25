@@ -21,15 +21,15 @@ export function generateMetadata({ params }) {
     });
   }
 
-  const title = `${service.title} Company in India | TheTriFusion`;
+  const title = `${service.title} Services | Jaipur | TheTriFusion`;
   const description =
     service.shortDescription ||
-    `${service.title} services by TheTriFusion — a software and digital agency in India helping startups and businesses grow online.`;
+    `${service.title} from TheTriFusion in Jaipur, Rajasthan — for businesses across India.`;
 
   return buildMetadata({
     title,
     description,
-    keywords: `${service.title}, ${service.slug}, ${service.title} India, software company India, TheTriFusion`,
+    keywords: `${service.title} Jaipur, ${service.slug}, IT services Rajasthan, TheTriFusion`,
     path: `/services/${service.slug}`,
   });
 }

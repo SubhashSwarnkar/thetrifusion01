@@ -67,11 +67,13 @@ export default function AboutPage() {
                   Our Story
                 </span>
                 <h1 className="text-6xl md:text-8xl font-black text-theme-blue mb-8 tracking-tighter leading-none">
-                  Building the <br />
-                  <span className="text-gradient">Future Together</span>
+                  About our team in <br />
+                  <span className="text-gradient">Jaipur, Rajasthan</span>
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-500 font-light leading-relaxed">
-                  Founded with a vision to catalyze digital transformation, we merge peak engineering with disruptive creativity.
+                  Trifusion Infotech Private Limited builds websites, apps, and
+                  custom software from Jaipur — for clients across Rajasthan and
+                  India.
                 </p>
                 <p className="mt-6 text-base md:text-lg font-semibold text-theme-blue">
                   Trifusion Infotech Private Limited

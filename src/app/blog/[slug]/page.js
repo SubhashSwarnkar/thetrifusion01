@@ -1,6 +1,6 @@
 import Page from "views/BlogDetailPage";
 import JsonLd from "components/JsonLd";
-import { blogPosts, getBlogBySlug } from "data/blogData";
+import { blogPosts, getBlogBySlug, ARCHIVE_NOINDEX_SLUGS } from "data/blogData";
 import { buildMetadata } from "lib/seoConfig";
 import { articleSchema, breadcrumbSchema } from "lib/schema";
 
@@ -30,6 +30,7 @@ export function generateMetadata({ params }) {
     image: post.imageUrl,
     publishedTime: post.date,
     authors: post.author ? [post.author] : undefined,
+    noIndex: ARCHIVE_NOINDEX_SLUGS.has(post.slug),
   });
 }
 

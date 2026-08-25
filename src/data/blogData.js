@@ -1,5 +1,20 @@
 import React from 'react';
 
+/**
+ * Blog editorial: ship 1–2 Jaipur / Rajasthan / delivery posts each month.
+ * Featured = local or product work. Off-topic 2024 posts are archived (noindex).
+ */
+
+export const ARCHIVE_NOINDEX_SLUGS = new Set([
+  "quantum-computing-leap",
+  "biotech-crispr-software",
+  "autonomous-vehicles-status",
+  "space-tech-commercial",
+  "metaverse-business-impact",
+  "5g-6g-connectivity",
+  "web3-decentralized-future",
+]);
+
 export const blogCategories = [
   { id: "all", name: "All Topics", icon: "🌐" },
   { id: "ai", name: "Artificial Intelligence", icon: "🤖" },
@@ -37,7 +52,7 @@ export const blogPosts = [
     date: "2024-05-15",
     readTime: "8 min read",
     author: "Alex Rivera",
-    featured: true,
+    featured: false,
   },
   {
     id: 2,
@@ -77,7 +92,7 @@ export const blogPosts = [
     date: "2024-05-10",
     readTime: "7 min read",
     author: "Dr. Arinze Okafor",
-    featured: true,
+    featured: false,
   },
   {
     id: 4,
@@ -147,7 +162,7 @@ export const blogPosts = [
     date: "2024-05-01",
     readTime: "5 min read",
     author: "Raj Patel",
-    featured: true,
+    featured: false,
   },
   {
     id: 8,
@@ -368,7 +383,7 @@ export const blogPosts = [
     date: "2024-03-28",
     readTime: "9 min read",
     author: "Astro Future",
-    featured: true,
+    featured: false,
   },
   {
     id: 21,

@@ -73,14 +73,14 @@ export const pages = {
       "TheTriFusion team, developers, designers, project managers, software team",
   },
   "/blog": {
-    title: "Blog | TheTriFusion — Insights & Articles",
+    title: "Blog | Jaipur Software Company Insights | TheTriFusion",
     description:
       "Articles on web development, mobile apps, AI, cybersecurity, and technology trends from TheTriFusion.",
     keywords:
       "blog, web development blog, mobile app blog, technology insights, TheTriFusion blog",
   },
   "/faq": {
-    title: "FAQ | TheTriFusion",
+    title: "FAQ | Software Company in Jaipur | TheTriFusion",
     description:
       "Answers about TheTriFusion services, pricing, timelines, payments, and support.",
     keywords: "FAQ, frequently asked questions, TheTriFusion help, support",

@@ -27,19 +27,21 @@ export default function SolutionsHubPage() {
                   SEO Solutions Hub
                 </span>
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-theme-blue mb-6 tracking-tight">
-                  Software, Ecommerce &{" "}
-                  <span className="text-gradient">Digital Growth</span> Solutions
+                  Solutions from our{" "}
+                  <span className="text-gradient">Jaipur</span> software company
                 </h1>
                 <p className="text-lg text-gray-600 font-light leading-relaxed">
-                  Explore TheTriFusion solutions for software development, online
-                  stores, digital marketing, MSP support, and more — built for
-                  businesses searching for the best digital partners in India.
+                  Each page has one job: Jaipur web work, Rajasthan software,
+                  ecommerce, apps, marketing, or Bhilwara as a service area from
+                  Jaipur — not a second office.
                 </p>
               </div>
             </Fade>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-              {seoLandingPages.map((raw, index) => {
+              {seoLandingPages
+                .filter((raw) => raw.slug !== "online-store-development")
+                .map((raw, index) => {
                 const page = getSeoLandingBySlug(raw.slug);
                 return (
                 <Fade

@@ -12,6 +12,7 @@ import SEO from "components/common/SEO";
 import { trackEvent, AnalyticsEvents } from "utils/analytics";
 import {
   COMPANY_EMAIL,
+  COMPANY_PHONE_DISPLAY,
   LINKEDIN_URL,
   INSTAGRAM_URL,
 } from "data/companyInfo";
@@ -109,14 +110,15 @@ export default function ContactPage() {
               <span className="inline-block px-4 py-1.5 rounded-full bg-light-theme-purple/30 text-theme-purple font-bold text-xs uppercase tracking-[0.2em] mb-6">
                 Get In Touch
               </span>
-              <h1 className="text-6xl md:text-8xl font-black text-theme-blue mb-8 tracking-tighter leading-none">
-                Let’s Build Something <br />
-                <span className="text-gradient">Extraordinary</span>
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-500 font-light max-w-3xl mx-auto leading-relaxed">
-                Have a vision? We have the expertise. Let&apos;s start a conversation
-                that transforms your business.
-              </p>
+                <h1 className="text-6xl md:text-8xl font-black text-theme-blue mb-8 tracking-tighter leading-none">
+                  Contact a Software Company <br />
+                  <span className="text-gradient">in Jaipur</span>
+                </h1>
+                <p className="text-xl md:text-2xl text-gray-500 font-light max-w-3xl mx-auto leading-relaxed">
+                  Trifusion Infotech Private Limited — Jaipur, Rajasthan. Call,
+                  WhatsApp, or send a brief. We serve Bhilwara and the rest of
+                  India remotely from this office.
+                </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-32 items-start">
@@ -145,7 +147,14 @@ export default function ContactPage() {
                         title: "Visit Us",
                         value: "Jaipur, Rajasthan, India",
                         icon: "📍",
-                        link: null,
+                        link: "https://www.google.com/maps/search/?api=1&query=Trifusion%20Infotech%20Jaipur%20Rajasthan",
+                      },
+                      {
+                        title: "Call",
+                        value: COMPANY_PHONE_DISPLAY,
+                        icon: "📞",
+                        link: `tel:${COMPANY_PHONE_DISPLAY.replace(/\s/g, "")}`,
+                        event: AnalyticsEvents.CLICK_PHONE,
                       },
                       {
                         title: "LinkedIn",

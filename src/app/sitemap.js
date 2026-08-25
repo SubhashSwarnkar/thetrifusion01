@@ -1,4 +1,4 @@
-import { blogPosts } from "data/blogData";
+import { blogPosts, ARCHIVE_NOINDEX_SLUGS } from "data/blogData";
 import { services } from "data/servicesData";
 import { seoLandingPages, getSeoLandingBySlug } from "data/seoLandingPages";
 import { Portfolios } from "json/landingPageData";
@@ -31,7 +31,9 @@ export default function sitemap() {
     priority: 0.8,
   }));
 
-  const solutionRoutes = seoLandingPages.map((raw) => {
+  const solutionRoutes = seoLandingPages
+    .filter((raw) => raw.slug !== "online-store-development")
+    .map((raw) => {
     const page = getSeoLandingBySlug(raw.slug);
     return {
       url: `${siteConfig.url}/solutions/${raw.slug}`,
@@ -43,7 +45,9 @@ export default function sitemap() {
     };
   });
 
-  const blogRoutes = blogPosts.map((post) => ({
+  const blogRoutes = blogPosts
+    .filter((post) => !ARCHIVE_NOINDEX_SLUGS.has(post.slug))
+    .map((post) => ({
     url: `${siteConfig.url}/blog/${post.slug}`,
     lastModified: new Date(post.updatedAt || post.date || "2026-08-20"),
     changeFrequency: "monthly",
