@@ -6,6 +6,32 @@ import { Fade } from "react-awesome-reveal";
 import Button from "../elements/Button";
 import HeroVideo from "components/HeroVideo";
 
+const HERO_CHIPS = [
+  { label: "E-commerce", href: "/solutions/ecommerce-website-development" },
+  { label: "CMS & CRM", href: "/solutions/crm-erp-software-development" },
+  { label: "MLM software", href: "/solutions/custom-software-development-company" },
+  { label: "eMSP apps", href: "/solutions/mobile-app-development-company" },
+  { label: "OCPI / OCPP", href: "/portfolio/plugone-ev-charging-platform" },
+  { label: "Fintech web apps", href: "/services/software-development" },
+  {
+    label: "Software company Rajasthan",
+    href: "/solutions/software-company-rajasthan",
+  },
+  { label: "Digital marketing", href: "/solutions/digital-marketing-agency" },
+  {
+    label: "Web development Jaipur",
+    href: "/solutions/web-development-company-jaipur",
+  },
+  { label: "Mobile apps", href: "/solutions/mobile-app-development-company" },
+  {
+    label: "Bhilwara (from Jaipur)",
+    href: "/solutions/website-development-company-bhilwara",
+  },
+];
+
+const chipClassName =
+  "px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors";
+
 export default function Hero() {
   return (
     <section className="relative overflow-hidden pt-28 lg:pt-32 pb-16 z-10">
@@ -80,42 +106,11 @@ export default function Hero() {
         </div>
 
         <div className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-3 text-sm">
-          <Link
-            href="/solutions/software-company-rajasthan"
-            className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
-          >
-            Software company Rajasthan
-          </Link>
-          <Link
-            href="/solutions/ecommerce-website-development"
-            className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
-          >
-            Ecommerce websites
-          </Link>
-          <Link
-            href="/solutions/digital-marketing-agency"
-            className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
-          >
-            Digital marketing
-          </Link>
-          <Link
-            href="/solutions/web-development-company-jaipur"
-            className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
-          >
-            Web development Jaipur
-          </Link>
-          <Link
-            href="/solutions/mobile-app-development-company"
-            className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
-          >
-            Mobile apps
-          </Link>
-          <Link
-            href="/solutions/website-development-company-bhilwara"
-            className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple transition-colors"
-          >
-            Bhilwara (from Jaipur)
-          </Link>
+          {HERO_CHIPS.map((chip) => (
+            <Link key={chip.label} href={chip.href} className={chipClassName}>
+              {chip.label}
+            </Link>
+          ))}
         </div>
 
         <div className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-gray-600">
