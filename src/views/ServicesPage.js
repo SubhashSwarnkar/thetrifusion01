@@ -9,6 +9,7 @@ import { services } from "data/servicesData";
 import { motion } from "framer-motion";
 import SEO from "components/common/SEO";
 import ServiceIcon from "components/ServiceIcon";
+import { accentAt } from "lib/themeAccents";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -42,7 +43,9 @@ export default function ServicesPage() {
       <Header />
       
       <section className="relative pt-10 pb-16 overflow-hidden bg-white">
-        <div className="absolute top-0 right-0 w-[32rem] h-[32rem] bg-light-theme-purple/30 rounded-full blur-[120px] -z-10" />
+        <div className="absolute top-0 right-0 w-[32rem] h-[32rem] bg-light-theme-purple/40 rounded-full blur-[120px] -z-10" />
+        <div className="absolute bottom-10 left-0 w-[22rem] h-[22rem] bg-theme-cyan/15 rounded-full blur-[100px] -z-10" />
+        <div className="absolute top-40 left-1/3 w-[16rem] h-[16rem] bg-theme-pink/10 rounded-full blur-[90px] -z-10" />
         
         <div className="container mx-auto px-5 relative z-10">
           <motion.div 
@@ -54,10 +57,11 @@ export default function ServicesPage() {
             <span className="inline-block px-4 py-1.5 rounded-full bg-light-theme-purple/30 text-theme-purple font-bold text-xs uppercase tracking-[0.2em] mb-5">
               Services
             </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl text-theme-blue font-black mb-5 tracking-tight leading-[1.1]">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl text-theme-blue font-black mb-3 tracking-tight leading-[1.1]">
               IT services from{" "}
               <span className="text-gradient">Jaipur</span>
             </h1>
+            <div className="mb-6 h-1.5 w-20 rounded-full bg-gradient-to-r from-theme-purple via-theme-cyan to-theme-pink" />
             <p className="font-light text-lg text-gray-500 leading-relaxed max-w-2xl">
               Software, websites, mobile apps, UI/UX, and digital marketing —
               scoped and delivered remotely across India.
@@ -70,11 +74,14 @@ export default function ServicesPage() {
             animate="visible"
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
           >
-            {services.map((service) => (
+            {services.map((service, idx) => {
+              const accent = accentAt(idx);
+              return (
               <motion.div key={service.id} variants={itemVariants}>
                 <Link href={`/services/${service.slug}`} className="group block h-full">
-                  <div className="h-full bg-white rounded-2xl border border-gray-100 p-6 hover:border-theme-purple/30 hover:shadow-lg transition-all duration-300">
-                    <div className="w-11 h-11 mb-5 rounded-xl bg-light-theme-purple/40 text-theme-purple flex items-center justify-center group-hover:bg-theme-purple group-hover:text-white transition-colors">
+                  <div className={`relative h-full rounded-2xl border p-6 overflow-hidden hover:shadow-lg transition-all duration-300 ${accent.card}`}>
+                    <span className={`absolute left-0 top-0 h-full w-1.5 ${accent.bar}`} />
+                    <div className={`w-11 h-11 mb-5 rounded-xl flex items-center justify-center ${accent.iconWrap} group-hover:bg-theme-purple group-hover:text-white transition-colors`}>
                       <ServiceIcon slug={service.slug} className="w-5 h-5" />
                     </div>
                       
@@ -86,7 +93,7 @@ export default function ServicesPage() {
                       {service.shortDescription}
                     </p>
                       
-                    <span className="inline-flex items-center text-theme-purple font-semibold text-sm">
+                    <span className={`inline-flex items-center font-semibold text-sm ${accent.text}`}>
                       Explore
                       <svg className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -95,7 +102,8 @@ export default function ServicesPage() {
                   </div>
                 </Link>
               </motion.div>
-            ))}
+              );
+            })}
           </motion.div>
         </div>
       </section>
@@ -107,7 +115,7 @@ export default function ServicesPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="bg-theme-blue rounded-[2rem] p-10 md:p-14 text-center relative overflow-hidden"
+          className="bg-gradient-to-r from-theme-blue via-theme-purple to-theme-cyan rounded-[2rem] p-10 md:p-14 text-center relative overflow-hidden"
         >
           <h2 className="text-3xl md:text-4xl font-black text-white mb-4 relative z-10">
             Have a project in mind?
@@ -117,7 +125,7 @@ export default function ServicesPage() {
           </p>
           <Link 
             href="/contact" 
-            className="inline-flex items-center px-8 py-3.5 bg-white text-theme-blue rounded-full font-bold hover:bg-gray-100 transition-colors relative z-10"
+            className="inline-flex items-center px-8 py-3.5 bg-white text-theme-purple rounded-full font-bold hover:bg-light-theme-purple transition-colors relative z-10"
           >
             Talk to us
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

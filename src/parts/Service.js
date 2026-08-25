@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { services } from "data/servicesData";
 import ServiceIcon from "components/ServiceIcon";
+import { accentAt } from "lib/themeAccents";
 
 export default function Service({ data }) {
   const cards = data.map((item) => {
@@ -20,7 +21,8 @@ export default function Service({ data }) {
 
   return (
     <section className="py-20 bg-white relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[28rem] h-[28rem] bg-light-theme-purple/25 rounded-full blur-[120px] -z-10" />
+      <div className="absolute top-0 right-0 w-[28rem] h-[28rem] bg-light-theme-purple/30 rounded-full blur-[120px] -z-10" />
+      <div className="absolute bottom-0 left-0 w-[20rem] h-[20rem] bg-theme-cyan/12 rounded-full blur-[100px] -z-10" />
 
       <div className="container mx-auto px-5">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
@@ -60,14 +62,17 @@ export default function Service({ data }) {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {cards.map((item) => (
+          {cards.map((item, idx) => {
+            const accent = accentAt(idx);
+            return (
             <Link
               key={item.title}
               href={item.slug ? `/services/${item.slug}` : "/services"}
               className="group block h-full"
             >
-              <article className="h-full bg-white rounded-2xl border border-gray-100 p-6 hover:border-theme-purple/30 hover:shadow-lg transition-all duration-300">
-                <div className="w-11 h-11 mb-5 rounded-xl bg-light-theme-purple/40 text-theme-purple flex items-center justify-center group-hover:bg-theme-purple group-hover:text-white transition-colors">
+              <article className={`relative h-full rounded-2xl border p-6 overflow-hidden hover:shadow-lg transition-all duration-300 ${accent.card}`}>
+                <span className={`absolute left-0 top-0 h-full w-1.5 ${accent.bar}`} />
+                <div className={`w-11 h-11 mb-5 rounded-xl flex items-center justify-center ${accent.iconWrap} group-hover:bg-theme-purple group-hover:text-white transition-colors`}>
                   <ServiceIcon slug={item.slug} className="w-5 h-5" />
                 </div>
                 <h3 className="text-xl font-bold text-theme-blue mb-2 group-hover:text-theme-purple transition-colors">
@@ -77,7 +82,7 @@ export default function Service({ data }) {
                   {item.description ||
                     "Practical delivery for websites, apps, and custom software."}
                 </p>
-                <span className="inline-flex items-center text-theme-purple font-semibold text-sm">
+                <span className={`inline-flex items-center font-semibold text-sm ${accent.text}`}>
                   Explore
                   <svg
                     className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform"
@@ -95,7 +100,8 @@ export default function Service({ data }) {
                 </span>
               </article>
             </Link>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

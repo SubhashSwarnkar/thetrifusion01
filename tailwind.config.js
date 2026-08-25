@@ -9,6 +9,7 @@ module.exports = {
     "./src/parts/**/*.{js,jsx}",
     "./src/views/**/*.{js,jsx}",
     "./src/elements/**/*.{js,jsx}",
+    "./src/lib/**/*.{js,jsx}",
   ],
   darkMode: "media",
   theme: {

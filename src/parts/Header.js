@@ -7,11 +7,13 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import BrandIcon from "./BrandIcon";
 import ServiceIcon from "components/ServiceIcon";
+import { accentAt } from "lib/themeAccents";
 import { services } from "../data/servicesData";
 
 const SERVICE_MENU_GROUPS = [
   {
     heading: "Build",
+    accentIndex: 0,
     slugs: [
       "software-development",
       "website-development",
@@ -22,10 +24,12 @@ const SERVICE_MENU_GROUPS = [
   },
   {
     heading: "Design",
+    accentIndex: 2,
     slugs: ["ui-ux-design", "graphic-design", "branding"],
   },
   {
     heading: "Grow",
+    accentIndex: 1,
     slugs: [
       "digital-marketing",
       "rpa",
@@ -223,25 +227,28 @@ export default function Header() {
           onMouseLeave={handleMouseLeave}
         >
           <div className="container mx-auto px-5">
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-[0_16px_40px_rgba(21,44,91,0.12)] p-5 md:p-6">
+            <div className="bg-gradient-to-br from-white via-light-theme-purple/20 to-theme-cyan/10 rounded-2xl border border-theme-purple/15 shadow-[0_16px_40px_rgba(21,44,91,0.12)] p-5 md:p-6">
               <div className="grid grid-cols-3 gap-6">
-                {SERVICE_MENU_GROUPS.map((group) => (
+                {SERVICE_MENU_GROUPS.map((group) => {
+                  const groupAccent = accentAt(group.accentIndex);
+                  return (
                   <div key={group.heading}>
-                    <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-gray-400 mb-3 px-2">
+                    <p className={`text-[11px] font-bold uppercase tracking-[0.18em] mb-3 px-2 ${groupAccent.text}`}>
                       {group.heading}
                     </p>
                     <ul className="space-y-0.5">
-                      {group.slugs.map((slug) => {
+                      {group.slugs.map((slug, idx) => {
                         const service = getService(slug);
                         if (!service) return null;
+                        const accent = accentAt(group.accentIndex + idx);
                         return (
                           <li key={slug}>
                             <Link
                               href={`/services/${service.slug}`}
                               onClick={handleLinkClick}
-                              className="group/item flex items-start gap-3 rounded-xl px-2 py-2 hover:bg-gray-50 transition-colors"
+                              className="group/item flex items-start gap-3 rounded-xl px-2 py-2 hover:bg-white/80 transition-colors"
                             >
-                              <span className="mt-0.5 w-8 h-8 rounded-lg bg-light-theme-purple/40 text-theme-purple flex items-center justify-center shrink-0 group-hover/item:bg-theme-purple group-hover/item:text-white transition-colors">
+                              <span className={`mt-0.5 w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${accent.iconWrap} group-hover/item:bg-theme-purple group-hover/item:text-white transition-colors`}>
                                 <ServiceIcon slug={service.slug} className="w-4 h-4" />
                               </span>
                               <span className="min-w-0">
@@ -258,10 +265,11 @@ export default function Header() {
                       })}
                     </ul>
                   </div>
-                ))}
+                  );
+                })}
               </div>
-              <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between gap-4">
-                <p className="text-xs text-gray-400 hidden sm:block">
+              <div className="mt-4 pt-4 border-t border-theme-purple/10 flex items-center justify-between gap-4">
+                <p className="text-xs text-theme-blue/50 hidden sm:block">
                   Web, apps, design and growth — from Jaipur.
                 </p>
                 <Link
@@ -329,19 +337,22 @@ export default function Header() {
                               exit={{ opacity: 0, height: 0 }}
                               className="grid grid-cols-1 gap-4 overflow-hidden pl-4"
                             >
-                              {services.map((s) => (
+                              {services.map((s, sIdx) => {
+                                const accent = accentAt(sIdx);
+                                return (
                                 <Link
                                   key={s.id}
                                   href={`/services/${s.slug}`}
                                   onClick={handleLinkClick}
-                                  className="flex items-center gap-3 py-2.5 px-2 rounded-xl hover:bg-gray-50"
+                                  className={`flex items-center gap-3 py-2.5 px-3 rounded-xl border ${accent.card}`}
                                 >
-                                  <span className="w-9 h-9 flex-shrink-0 bg-light-theme-purple/40 text-theme-purple rounded-lg flex items-center justify-center">
+                                  <span className={`w-9 h-9 flex-shrink-0 rounded-lg flex items-center justify-center ${accent.iconWrap}`}>
                                     <ServiceIcon slug={s.slug} className="w-4 h-4" />
                                   </span>
                                   <span className="font-semibold text-theme-blue text-base">{s.title}</span>
                                 </Link>
-                              ))}
+                                );
+                              })}
                             </motion.div>
                           )}
                         </AnimatePresence>
