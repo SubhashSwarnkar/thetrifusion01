@@ -1,3 +1,5 @@
+import { EMAILJS_TO_EMAIL } from "lib/emailjsConfig";
+
 export function buildLeadExtras(body) {
   return [
     "--- Qualification ---",
@@ -20,10 +22,11 @@ export function buildLeadExtras(body) {
 
 export function buildLeadTemplateParams(body) {
   const name = String(body.name || "").trim();
-  const company = String(body.company || "").trim();
-  const email = String(body.email || "").trim();
+  const company = String(body.company || "").trim() || "Not provided";
+  const email = String(body.email || "").trim() || EMAILJS_TO_EMAIL;
   const phone = String(body.phone || "").trim();
-  const projectIdea = String(body.projectIdea || "").trim();
+  const projectIdea =
+    String(body.projectIdea || "").trim() || "Short ads form enquiry";
   const leadSource = body.leadSource || "discuss_form";
   const isAwsOffer =
     leadSource === "aws_promo_offer" ||

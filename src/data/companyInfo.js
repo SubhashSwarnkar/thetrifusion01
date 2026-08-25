@@ -17,7 +17,7 @@ export const HOME_FAQS = [
   {
     question: "What does TheTriFusion build?",
     answer:
-      "Websites, ecommerce stores, mobile apps, UI/UX, custom software, and digital marketing for startups and SMEs.",
+      "Websites, ecommerce stores, mobile apps, UI/UX, custom software, and digital marketing. We ship the product and can stay on after launch for hosting, fixes, and growth work — not a one-off handoff.",
   },
   {
     question: "How do I get a quote?",

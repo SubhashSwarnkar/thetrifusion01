@@ -27,6 +27,11 @@ export default function Breadcrumbs() {
       faq: "FAQ",
       "discuss-project": "Discuss Project",
       solutions: "Solutions",
+      "web-development": "Web Development",
+      "android-app-development": "Android Apps",
+      "ios-app-development": "iOS Apps",
+      "white-label-development": "White-label",
+      "thank-you": "Thanks",
     };
 
     return names[path] || path.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());

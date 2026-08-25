@@ -19,7 +19,11 @@ export default function sitemap() {
           ? 1
           : path === "/services" ||
               path === "/contact" ||
-              path === "/solutions"
+              path === "/solutions" ||
+              path === "/web-development" ||
+              path === "/android-app-development" ||
+              path === "/ios-app-development" ||
+              path === "/white-label-development"
             ? 0.9
             : 0.7,
     }));

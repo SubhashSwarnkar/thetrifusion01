@@ -78,15 +78,24 @@ export async function POST(request) {
     const email = String(body.email || "").trim();
     const phone = normalizePhone(body.phone);
     const projectIdea = String(body.projectIdea || "").trim();
+    const leadSource = String(body.leadSource || "discuss_form");
+    const isAdsShortLead = leadSource.startsWith("ads_");
 
-    if (!name || !company || !email || !phone || !projectIdea) {
+    if (!name || !phone) {
       return NextResponse.json(
         { ok: false, error: "Please fill out all required fields." },
         { status: 400 }
       );
     }
 
-    if (!EMAIL_RE.test(email)) {
+    if (!isAdsShortLead && (!company || !email || !projectIdea)) {
+      return NextResponse.json(
+        { ok: false, error: "Please fill out all required fields." },
+        { status: 400 }
+      );
+    }
+
+    if (email && !EMAIL_RE.test(email)) {
       return NextResponse.json(
         { ok: false, error: "Please provide a valid email address." },
         { status: 400 }
@@ -100,7 +109,6 @@ export async function POST(request) {
       );
     }
 
-    const leadSource = body.leadSource || "discuss_form";
     const isAwsOffer =
       leadSource === "aws_promo_offer" ||
       projectIdea.includes("[AWS Marketplace Offer");

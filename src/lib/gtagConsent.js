@@ -69,9 +69,9 @@ gtag('consent', 'default', {
   wait_for_update: 500
 });
 gtag('consent', 'default', {
-  ad_storage: 'denied',
-  ad_user_data: 'denied',
-  ad_personalization: 'denied',
+  ad_storage: 'granted',
+  ad_user_data: 'granted',
+  ad_personalization: 'granted',
   analytics_storage: 'granted'
 });
 gtag('set', 'ads_data_redaction', true);

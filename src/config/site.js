@@ -42,6 +42,7 @@ export const siteConfig = {
   latitude: Number(env("NEXT_PUBLIC_COMPANY_LAT", "26.9196")),
   longitude: Number(env("NEXT_PUBLIC_COMPANY_LNG", "75.7878")),
   openingHours: env("NEXT_PUBLIC_OPENING_HOURS", "Mo-Sa 10:00-19:00"),
+  calendlyUrl: env("NEXT_PUBLIC_CALENDLY_URL", ""),
   get mapsUrl() {
     return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
       `${this.legalName} ${this.city} ${this.region}`

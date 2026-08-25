@@ -58,6 +58,37 @@ export const pages = {
     keywords:
       "price calculator, project cost estimator, website cost calculator, app pricing",
   },
+  "/web-development": {
+    title:
+      "Website Development in Jaipur | React & Next.js | TheTriFusion",
+    description:
+      "Business websites from TheTriFusion in Jaipur. React/Next.js, 6–8 week typical delivery, live work you can open, and support after launch.",
+    keywords:
+      "web development company Jaipur, hire React developer India, website development Jaipur, Next.js agency Rajasthan",
+  },
+  "/android-app-development": {
+    title:
+      "Android App Development in Jaipur | Play Store Ready | TheTriFusion",
+    description:
+      "Android apps from TheTriFusion in Jaipur. Kotlin or React Native, typical MVP in 8–12 weeks, Play Store listing, and post-launch support.",
+    keywords:
+      "android app development company Jaipur, hire app developers India, Play Store app development Jaipur",
+  },
+  "/ios-app-development": {
+    title: "iOS App Development in Jaipur | App Store Ready | TheTriFusion",
+    description:
+      "iOS apps from TheTriFusion in Jaipur. Swift or React Native, App Store submission, typical MVP in 8–12 weeks, and support after launch.",
+    keywords:
+      "iOS app development Jaipur, hire iOS developers India, App Store app development Rajasthan",
+  },
+  "/white-label-development": {
+    title:
+      "White-label Development Partner in Jaipur | Agencies & AWS | TheTriFusion",
+    description:
+      "White-label web and app delivery from TheTriFusion in Jaipur for agencies and AWS partners. You keep the client. We keep the build.",
+    keywords:
+      "white label development India, software development partner Jaipur, AWS partner development, agency white label apps",
+  },
   "/contact": {
     title: "Contact TheTriFusion in Jaipur | Software Company Rajasthan",
     description:
@@ -155,6 +186,7 @@ export const NOINDEX_PATHS = new Set([
   "/planner",
   "/timeline",
   "/pricing/calculator",
+  "/thank-you",
 ]);
 
 export function pageMetadata(path, options = {}) {

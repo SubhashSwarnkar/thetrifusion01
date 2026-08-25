@@ -29,8 +29,7 @@ export default function Footer() {
               </p>
               <p className="text-white/60 text-base font-light leading-relaxed">
                 Software company in Jaipur, Rajasthan — websites, apps, and
-                digital marketing. We also serve clients in Bhilwara and across
-                India remotely.
+                digital marketing. We build the product and stay on after launch.
               </p>
               <div className="flex items-center gap-4">
                 <a
@@ -59,7 +58,39 @@ export default function Footer() {
             <div className="min-w-0">
               <h4 className="text-xl font-black mb-6 text-theme-cyan">Services</h4>
               <ul className="space-y-3">
-                {services.slice(0, 5).map((s) => (
+                  <li>
+                    <Link
+                      href="/web-development"
+                      className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block font-light"
+                    >
+                      Web Development
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/android-app-development"
+                      className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block font-light"
+                    >
+                      Android Apps
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/ios-app-development"
+                      className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block font-light"
+                    >
+                      iOS Apps
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/white-label-development"
+                      className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block font-light"
+                    >
+                      White-label
+                    </Link>
+                  </li>
+                {services.slice(0, 3).map((s) => (
                   <li key={s.id}>
                     <Link
                       href={`/services/${s.slug}`}
@@ -185,6 +216,7 @@ export default function Footer() {
                   </svg>
                   <a
                     href={`tel:${COMPANY_PHONE_DISPLAY.replace(/\s/g, "")}`}
+                    onClick={() => trackEvent(AnalyticsEvents.CLICK_PHONE, { source: "footer" })}
                     className="hover:text-white transition-colors"
                   >
                     {COMPANY_PHONE_DISPLAY}

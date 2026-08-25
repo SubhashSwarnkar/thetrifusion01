@@ -115,9 +115,9 @@ export default function ContactPage() {
                   <span className="text-gradient">in Jaipur</span>
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-500 font-light max-w-3xl mx-auto leading-relaxed">
-                  Trifusion Infotech Private Limited — Jaipur, Rajasthan. Call,
-                  WhatsApp, or send a brief. We serve Bhilwara and the rest of
-                  India remotely from this office.
+                  Trifusion Infotech Private Limited — office in Jaipur,
+                  Rajasthan. Call, WhatsApp, or send a brief. Delivery is remote
+                  across India.
                 </p>
             </div>
 

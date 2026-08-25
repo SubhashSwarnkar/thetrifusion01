@@ -20,6 +20,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/case-studies",
+        destination: "/portfolio",
+        permanent: true,
+      },
+      {
         source: "/solutions/online-store-development",
         destination: "/solutions/ecommerce-website-development",
         permanent: true,
