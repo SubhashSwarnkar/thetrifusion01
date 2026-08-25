@@ -263,6 +263,11 @@ export function articleSchema(post) {
 }
 
 export function creativeWorkSchema(project) {
+  const liveUrl =
+    typeof project.credit === "string" && /^https?:\/\//i.test(project.credit)
+      ? project.credit
+      : null;
+
   return {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
@@ -276,5 +281,6 @@ export function creativeWorkSchema(project) {
       url: siteConfig.url,
     },
     url: absoluteSiteUrl(`/portfolio/${project.id}`),
+    ...(liveUrl ? { sameAs: liveUrl } : {}),
   };
 }

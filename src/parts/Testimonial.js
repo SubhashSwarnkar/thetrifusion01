@@ -27,7 +27,7 @@ export default function Testimonial({ data }) {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-theme-purple to-dark-theme-purple mx-auto rounded-full mb-6"></div>
           <p className="font-light text-lg text-gray-400 max-w-2xl mx-auto">
-            Five real projects with a case study or live URL. No star ratings,
+            Live production sites and public URLs you can open. No star ratings,
             no invented reviews.
           </p>
         </div>

@@ -75,14 +75,14 @@ export const Portfolios = [
     type: "Mobile Apps",
     featured: true,
     description:
-      "PlugOne is a smart EV charging aggregator platform that connects EV owners to nearby charging stations in real-time. It features an interactive map, charging status tracking, smart mobility dashboard, and seamless session management across multiple charging networks.",
+      "PlugOne is India's unified EV charging platform. It connects EV owners to nearby charging stations in real time, with an interactive map, charging-status tracking, a smart mobility dashboard, and session management across charging networks.",
     responsibility: [
       "Mobile App Development",
       "UI/UX Design",
       "Backend Integration",
       "Maps & Real-time Tracking",
     ],
-    credit: "#",
+    credit: "https://plugone.in/",
   },
   {
     id: "connect-dairy-supply-chain",
@@ -91,14 +91,14 @@ export const Portfolios = [
     type: "Mobile Apps",
     featured: true,
     description:
-      "Connect Dairy is a modern dairy supply chain management platform that digitizes milk procurement, farmer onboarding, and route optimization. It offers real-time collection tracking, farmer activity dashboards, and live procurement analytics for dairy businesses.",
+      "Connect Dairy (AtharvNarayan) is a live agri-logistics platform for dairy and feed operations: milk-truck management, feed-truck distribution, feed business workflows, live fleet tracking, role-based dashboards, and P&L variance analytics.",
     responsibility: [
       "Web & Mobile Development",
       "UI/UX Design",
       "Dashboard & Analytics",
       "Supply Chain Integration",
     ],
-    credit: "#",
+    credit: "https://www.connectdairy.in/",
   },
   {
     id: "atharv-narayan-wellness-website",
@@ -107,14 +107,14 @@ export const Portfolios = [
     type: "Website",
     featured: true,
     description:
-      "Atharv Narayan is a premium spiritual and ayurvedic wellness website featuring traditional Ayurvedic rituals, guided meditation paths, herbal shop, and curated spiritual journeys. Designed with Sanskrit-inspired aesthetics, golden accents, and a deeply immersive UI.",
+      "Atharv Narayan is a live dairy solutions website for Bhilwara and Jaipur: milk transportation, trained dairy manpower, cattle-feed supply, and tender support — with service pages, inquiry flows, and WhatsApp-ready contact.",
     responsibility: [
       "Web Development",
       "UI/UX Design",
-      "E-commerce Integration",
+      "Lead & Inquiry Flows",
       "Content Management",
     ],
-    credit: "#",
+    credit: "https://www.atharvnarayan.in/",
   },
   {
     id: "dailyconcepts-ecommerce-pos",
@@ -398,22 +398,22 @@ export const Testimonials = [
   {
     id: 1,
     name: "PlugOne",
-    company: "EV charging platform",
+    company: "Live EV charging platform",
     testimoni:
-      "Charging-station aggregator with maps, session tracking, and a mobility dashboard. Built by TheTriFusion — open the case study to verify scope and screens.",
+      "India's unified EV charging platform — maps, session tracking, and a mobility dashboard. This is a public live URL.",
     imageUrl: PlugOneImg,
-    url: "/portfolio/plugone-ev-charging-platform",
-    linkLabel: "Verify on portfolio → PlugOne case study",
+    url: "https://plugone.in/",
+    linkLabel: "Verify live site → plugone.in",
   },
   {
     id: 2,
     name: "Connect Dairy",
-    company: "Dairy supply chain",
+    company: "Live dairy & feed logistics",
     testimoni:
-      "Milk procurement, farmer onboarding, and collection tracking as a web and mobile operations platform. Case study is on this site.",
+      "Live agri-logistics product for milk trucks, feed distribution, and operations dashboards. This is a public live URL.",
     imageUrl: ConnectDairyImg,
-    url: "/portfolio/connect-dairy-supply-chain",
-    linkLabel: "Verify on portfolio → Connect Dairy case study",
+    url: "https://www.connectdairy.in/",
+    linkLabel: "Verify live site → connectdairy.in",
   },
   {
     id: 3,
@@ -428,12 +428,12 @@ export const Testimonials = [
   {
     id: 4,
     name: "Atharv Narayan",
-    company: "Wellness website",
+    company: "Live dairy solutions website",
     testimoni:
-      "Wellness and Ayurveda site with shop and content journeys. Design and development notes are on the project page.",
+      "Live dairy logistics and manpower site for Bhilwara and Jaipur — transportation, feed, tenders, and inquiry flows. This is a public live URL.",
     imageUrl: AtharvNarayanImg,
-    url: "/portfolio/atharv-narayan-wellness-website",
-    linkLabel: "Verify on portfolio → Atharv Narayan case study",
+    url: "https://www.atharvnarayan.in/",
+    linkLabel: "Verify live site → atharvnarayan.in",
   },
   {
     id: 5,

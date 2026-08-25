@@ -8,6 +8,10 @@ import NotFound from "assets/images/NotFound.png";
 
 import Button from "elements/Button";
 
+function isLiveProjectUrl(credit) {
+  return typeof credit === "string" && /^https?:\/\//i.test(credit);
+}
+
 export default function PortfolioDetail({ data }) {
   if (data === null) {
     return (
@@ -201,7 +205,7 @@ export default function PortfolioDetail({ data }) {
             )}
 
             <div className="flex flex-col sm:flex-row gap-4 mx-8 sm:mx-16 xl:mx-28 mt-12 mb-8">
-              {item.credit && (
+              {isLiveProjectUrl(item.credit) && (
                 <Button
                   type="link"
                   href={item.credit}
@@ -221,9 +225,9 @@ export default function PortfolioDetail({ data }) {
               </Button>
             </div>
 
-            <p className="font-light italic text-gray-400 mt-8 mx-8 sm:mx-16 xl:mx-28">
-              * This project is just example. <br />{" "}
-              {item.credit && (
+            {isLiveProjectUrl(item.credit) && (
+              <p className="font-light text-gray-500 mt-8 mx-8 sm:mx-16 xl:mx-28">
+                Live project:{" "}
                 <Button
                   type="link"
                   href={item.credit}
@@ -233,8 +237,8 @@ export default function PortfolioDetail({ data }) {
                 >
                   {item.credit}
                 </Button>
-              )}
-            </p>
+              </p>
+            )}
           </Fade>
         </div>
       ))}
