@@ -79,21 +79,16 @@ export default function Header() {
         ? "bg-white/80 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(31,38,135,0.08)] py-3" 
         : "bg-transparent py-5"
     }`}>
-      <div className="container mx-auto flex justify-between items-center px-5 transition-all duration-500">
-        <div className="flex items-center gap-3 min-w-0">
-          <BrandIcon />
-          <span className="hidden sm:flex flex-col leading-tight">
-            <span className="text-[11px] font-semibold uppercase tracking-wider text-gray-400">
-              Office
-            </span>
-            <span className="text-xs font-bold text-theme-blue">
-              Jaipur, Rajasthan
-            </span>
+      <div className="container mx-auto flex items-center gap-6 px-5">
+        <div className="flex flex-col justify-center flex-shrink-0">
+          <BrandIcon compact />
+          <span className="hidden lg:block text-[10px] font-medium text-gray-500 tracking-wide mt-0.5">
+            Jaipur, Rajasthan
           </span>
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-1">
+        <nav className="hidden lg:flex items-center justify-end gap-0.5 xl:gap-1 flex-1 min-w-0">
           {[
             { name: "Home", to: "/" },
             { name: "Services", isDropdown: true },
@@ -102,22 +97,33 @@ export default function Header() {
             { name: "Pricing", to: "/pricing" },
             { name: "Insights", to: "/blog" },
             { name: "Company", to: "/about" },
-          ].map((item) => (
-            <div key={item.name} className="relative group">
+          ].map((item) => {
+            const isActive = item.isDropdown
+              ? path.startsWith("/services")
+              : item.to === "/"
+                ? path === "/"
+                : path.startsWith(item.to);
+            const linkClass = `px-3 py-2 text-sm font-semibold whitespace-nowrap rounded-lg border-b-2 transition-colors ${
+              isActive
+                ? "text-theme-purple border-theme-purple"
+                : "text-theme-blue border-transparent hover:text-theme-purple"
+            }`;
+
+            return (
+            <div key={item.name} className="relative">
               {item.isDropdown ? (
-                <div 
+                <div
                   className="relative"
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
                   <button
-                    className={`px-5 py-2 text-sm font-bold flex items-center gap-1.5 transition-all rounded-full ${
-                      path.startsWith("/services") ? "text-theme-purple bg-light-theme-purple/20" : "text-theme-blue hover:text-theme-purple hover:bg-gray-50"
-                    }`}
+                    type="button"
+                    className={`${linkClass} inline-flex items-center gap-1`}
                   >
                     {item.name}
                     <svg
-                      className={`w-4 h-4 transition-transform duration-300 ${isServicesOpen ? "rotate-180" : ""}`}
+                      className={`w-3.5 h-3.5 transition-transform duration-300 ${isServicesOpen ? "rotate-180" : ""}`}
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -166,27 +172,19 @@ export default function Header() {
               ) : (
                 <Link
                   href={item.to}
-                  className={`px-5 py-2 text-sm font-bold transition-all rounded-full relative ${
-                    path === item.to || (item.to !== "/" && path.startsWith(item.to)) 
-                      ? "text-theme-purple bg-light-theme-purple/20" 
-                      : "text-theme-blue hover:text-theme-purple hover:bg-gray-50"
-                  }`}
+                  aria-current={isActive ? "page" : undefined}
+                  className={linkClass}
                 >
                   {item.name}
-                  {path === item.to && (
-                    <motion.div 
-                      layoutId="activeNav"
-                      className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-theme-purple rounded-full"
-                    />
-                  )}
                 </Link>
               )}
             </div>
-          ))}
+            );
+          })}
 
           <Link
             href="/contact"
-            className="ml-6 px-8 py-3 bg-theme-purple text-white rounded-full text-sm font-black shadow-[0_10px_20px_-5px_rgba(102,16,242,0.4)] hover:shadow-[0_15px_30px_-5px_rgba(102,16,242,0.6)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+            className="ml-3 xl:ml-5 px-6 py-2.5 bg-theme-purple text-white rounded-full text-sm font-bold shadow-md hover:shadow-lg whitespace-nowrap transition-shadow"
           >
             Get Started
           </Link>
@@ -214,6 +212,9 @@ export default function Header() {
             className="fixed inset-0 bg-white z-[100] lg:hidden overflow-y-auto"
           >
             <div className="container mx-auto px-6 py-24 h-full flex flex-col">
+              <p className="text-sm font-semibold text-gray-500 mb-8">
+                Office · Jaipur, Rajasthan
+              </p>
               <nav className="flex flex-col space-y-6">
                 {[
                   { name: "Home", to: "/" },
