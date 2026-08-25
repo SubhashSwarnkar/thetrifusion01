@@ -2,7 +2,6 @@
 
 import React, { useEffect } from "react";
 import Link from "next/link";
-import { Fade } from "react-awesome-reveal";
 import Header from "parts/Header";
 import Footer from "parts/Footer";
 import Breadcrumbs from "components/Breadcrumbs";
@@ -13,60 +12,82 @@ export default function SolutionsHubPage() {
     window.scrollTo(0, 0);
   }, []);
 
+  const pages = seoLandingPages
+    .filter((raw) => raw.slug !== "online-store-development")
+    .map((raw) => getSeoLandingBySlug(raw.slug))
+    .filter(Boolean);
+
   return (
     <>
       <Header />
       <Breadcrumbs />
-      <main className="overflow-hidden">
-        <section className="relative pt-10 pb-20 bg-white">
-          <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-light-theme-purple/30 rounded-full blur-[120px] -z-10" />
-          <div className="container mx-auto px-5">
-            <Fade direction="up" triggerOnce>
-              <div className="max-w-4xl mx-auto text-center mb-16">
-                <span className="inline-block px-4 py-1.5 rounded-full bg-light-theme-purple/30 text-theme-purple font-bold text-xs uppercase tracking-[0.2em] mb-6">
-                  SEO Solutions Hub
-                </span>
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-theme-blue mb-6 tracking-tight">
-                  Solutions from our{" "}
-                  <span className="text-gradient">Jaipur</span> software company
-                </h1>
-                <p className="text-lg text-gray-600 font-light leading-relaxed">
-                  Each page has one job: Jaipur web work, Rajasthan software,
-                  ecommerce, apps, marketing, or Bhilwara as a service area from
-                  Jaipur — not a second office.
-                </p>
-              </div>
-            </Fade>
+      <main className="bg-white overflow-hidden">
+        <section className="!mb-0 relative pt-12 pb-16 md:pt-16 md:pb-20">
+          <div className="absolute inset-0 bg-gradient-to-b from-light-theme-purple/40 via-white to-white -z-10" />
+          <div className="container mx-auto px-5 max-w-4xl">
+            <p className="text-theme-purple font-bold text-sm uppercase tracking-[0.2em] mb-4">
+              Solutions
+            </p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-theme-blue tracking-tight leading-[1.1] mb-5">
+              Clear solutions for software, web &amp; growth
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 font-light leading-relaxed max-w-2xl">
+              Pick the path that matches your goal — ecommerce, apps, custom
+              software, marketing, or regional delivery from Jaipur.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex items-center px-7 py-3.5 bg-theme-purple text-white rounded-full font-bold shadow-lg shadow-theme-purple/20 hover:scale-[1.02] transition-transform"
+              >
+                Talk to TriFusion
+              </Link>
+              <Link
+                href="/estimate"
+                className="inline-flex items-center px-7 py-3.5 border-2 border-theme-blue/15 text-theme-blue rounded-full font-bold hover:border-theme-purple hover:text-theme-purple transition-colors"
+              >
+                Get an estimate
+              </Link>
+            </div>
+          </div>
+        </section>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-              {seoLandingPages
-                .filter((raw) => raw.slug !== "online-store-development")
-                .map((raw, index) => {
-                const page = getSeoLandingBySlug(raw.slug);
-                return (
-                <Fade
-                  key={page.slug}
-                  direction="up"
-                  delay={Math.min(index * 60, 300)}
-                  triggerOnce
-                >
+        <section className="!mb-0 pb-20 md:pb-28">
+          <div className="container mx-auto px-5 max-w-4xl">
+            <div className="flex items-end justify-between gap-4 mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-theme-blue">
+                Browse all solutions
+              </h2>
+              <p className="text-sm text-gray-400 font-medium hidden sm:block">
+                {pages.length} guides
+              </p>
+            </div>
+
+            <ul className="divide-y divide-gray-100 border-y border-gray-100">
+              {pages.map((page, index) => (
+                <li key={page.slug}>
                   <Link
                     href={`/solutions/${page.slug}`}
-                    className="block h-full p-8 rounded-3xl border border-gray-100 bg-white hover:border-theme-purple/30 hover:shadow-xl transition-all group"
+                    className="group flex gap-5 sm:gap-8 py-6 sm:py-7 items-start hover:bg-gray-50/80 -mx-3 px-3 rounded-xl transition-colors"
                   >
-                    <p className="text-xs font-bold uppercase tracking-widest text-theme-purple mb-3">
-                      {page.primaryKeyword}
-                    </p>
-                    <h2 className="text-2xl font-bold text-theme-blue mb-3 group-hover:text-theme-purple transition-colors">
-                      {page.h1}
-                    </h2>
-                    <p className="text-gray-500 font-light leading-relaxed mb-6 line-clamp-3">
-                      {page.outcomeLine || page.intro}
-                    </p>
-                    <span className="inline-flex items-center gap-2 text-theme-purple font-bold">
-                      View solution
+                    <span className="text-sm font-bold text-theme-purple/70 tabular-nums pt-1 w-8 flex-shrink-0">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <div className="min-w-0 flex-1">
+                      <h3 className="text-lg sm:text-xl font-bold text-theme-blue group-hover:text-theme-purple transition-colors mb-1.5">
+                        {page.h1}
+                      </h3>
+                      <p className="text-gray-500 font-light leading-relaxed line-clamp-2">
+                        {page.outcomeLine || page.intro}
+                      </p>
+                      <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-gray-400">
+                        {page.primaryKeyword}
+                      </p>
+                    </div>
+                    <span className="hidden sm:inline-flex items-center gap-1 text-theme-purple font-bold text-sm pt-1 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0">
+                      View
                       <svg
-                        className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                        className="w-4 h-4 group-hover:translate-x-0.5 transition-transform"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -80,17 +101,27 @@ export default function SolutionsHubPage() {
                       </svg>
                     </span>
                   </Link>
-                </Fade>
-              );
-              })}
-            </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
 
-            <div className="mt-16 text-center">
+        <section className="!mb-0 pb-24">
+          <div className="container mx-auto px-5 max-w-4xl">
+            <div className="rounded-[2rem] bg-theme-blue text-white px-8 py-12 md:px-12 md:py-14 text-center">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3">
+                Not sure which solution fits?
+              </h2>
+              <p className="text-white/70 font-light mb-8 max-w-xl mx-auto">
+                Share your goal and constraints — we&apos;ll recommend the right
+                path and a realistic next step.
+              </p>
               <Link
-                href="/contact"
-                className="inline-flex items-center px-10 py-4 bg-theme-purple text-white rounded-full font-bold shadow-xl hover:scale-105 transition-transform"
+                href="/appointment"
+                className="inline-flex items-center px-8 py-4 bg-theme-purple rounded-full font-bold hover:scale-[1.02] transition-transform"
               >
-                Discuss your project
+                Book a discovery call
               </Link>
             </div>
           </div>

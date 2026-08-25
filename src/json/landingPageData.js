@@ -1,8 +1,3 @@
-// Services Img Imports
-import Web from "../assets/images/Services/Web.png";
-import Mobile from "../assets/images/Services/Mobile.png";
-import UIUX from "../assets/images/Services/Design.png";
-
 // Portfolio Img Imports
 import Recruiting from "../assets/images/Portfolio/Recruiting.png";
 import Stream from "../assets/images/Portfolio/Stream.png";
@@ -35,36 +30,12 @@ import Mobile2 from "../assets/images/TeamMembers/Mobile2.png";
 import UIUX1 from "../assets/images/TeamMembers/UIUX1.png";
 
 export const Services = [
-  {
-    title: "Website Development",
-    imageUrl: Web,
-    animation: "left",
-  },
-  {
-    title: "Mobile App Development",
-    imageUrl: Mobile,
-    animation: "up",
-  },
-  {
-    title: "UI/UX Design",
-    imageUrl: UIUX,
-    animation: "right",
-  },
-  {
-    title: "RPA",
-    imageUrl: UIUX,
-    animation: "left",
-  },
-  {
-    title: "Digital Marketing",
-    imageUrl: Web,
-    animation: "up",
-  },
-  {
-    title: "Branding",
-    imageUrl: Mobile,
-    animation: "right",
-  },
+  { title: "Software Development", slug: "software-development" },
+  { title: "Website Development", slug: "website-development" },
+  { title: "Mobile App Development", slug: "mobile-app-development" },
+  { title: "UI/UX Design", slug: "ui-ux-design" },
+  { title: "Cloud & AWS", slug: "devops" },
+  { title: "Digital Marketing", slug: "digital-marketing" },
 ];
 
 export const Portfolios = [

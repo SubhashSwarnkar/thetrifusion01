@@ -3,137 +3,99 @@
 import React from "react";
 import Link from "next/link";
 import { services } from "data/servicesData";
+import ServiceIcon from "components/ServiceIcon";
 
 export default function Service({ data }) {
-  const getFullServiceData = (title) => {
-    return (
-      services.find((s) => s.title.toLowerCase() === title.toLowerCase()) ||
-      services.find((s) => s.title.toLowerCase().includes(title.toLowerCase()))
-    );
-  };
+  const cards = data.map((item) => {
+    const serviceData =
+      services.find((s) => s.slug === item.slug) ||
+      services.find((s) => s.title.toLowerCase() === item.title.toLowerCase());
+
+    return {
+      title: item.title,
+      slug: item.slug || serviceData?.slug,
+      description: serviceData?.shortDescription,
+    };
+  });
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-50">
-        <div className="absolute top-[-10%] right-[-10%] w-96 h-96 bg-light-theme-purple/20 rounded-full blur-[100px]"></div>
-        <div className="absolute bottom-[-10%] left-[-10%] w-96 h-96 bg-theme-cyan/10 rounded-full blur-[100px]"></div>
-      </div>
+    <section className="py-20 bg-white relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[28rem] h-[28rem] bg-light-theme-purple/25 rounded-full blur-[120px] -z-10" />
 
-      <div className="container mx-auto px-5 relative z-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div className="max-w-2xl text-left">
-            <h2 className="text-4xl md:text-6xl text-theme-blue font-bold mb-6 leading-tight">
-              Innovation Driven <br />
-              <span className="text-theme-purple">Digital Services</span>
+      <div className="container mx-auto px-5">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
+          <div className="max-w-2xl">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-light-theme-purple/40 text-theme-purple text-xs font-bold uppercase tracking-[0.18em] mb-5">
+              Services
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl text-theme-blue font-black tracking-tight leading-[1.12] mb-4">
+              Innovation-driven{" "}
+              <span className="text-gradient">digital services</span>
             </h2>
-            <p className="text-gray-500 text-lg md:text-xl font-light leading-relaxed">
-              We provide scalable, future-ready solutions that help businesses
-              thrive in the digital age.
+            <p className="text-gray-500 text-base sm:text-lg font-light leading-relaxed max-w-xl">
+              Software, websites, apps, cloud, and growth work from Jaipur —
+              scoped for how your team actually operates.
             </p>
           </div>
-          <div className="pb-2">
-            <Link
-              href="/services"
-              className="group text-theme-purple font-bold text-lg flex items-center gap-2"
+
+          <Link
+            href="/services"
+            className="inline-flex items-center self-start lg:self-auto px-5 py-2.5 rounded-full border border-gray-200 text-theme-blue font-semibold text-sm hover:border-theme-purple hover:text-theme-purple transition-colors"
+          >
+            View all services
+            <svg
+              className="w-4 h-4 ml-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
             >
-              All Services
-              <span className="w-10 h-10 rounded-full bg-light-theme-purple/30 flex items-center justify-center group-hover:bg-theme-purple group-hover:text-white transition-all duration-300">
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </span>
-            </Link>
-            <Link
-              href="/solutions"
-              className="group text-theme-blue font-bold text-lg flex items-center gap-2 mt-3 md:mt-0 md:ml-6"
-            >
-              SEO Solutions
-              <span className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-theme-purple group-hover:text-white transition-all duration-300">
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </span>
-            </Link>
-          </div>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {data.map((item, index) => {
-            const serviceData = getFullServiceData(item.title);
-            const slug = serviceData?.slug;
-
-            return (
-              <div key={index} className="group">
-                <Link
-                  href={slug ? `/services/${slug}` : "#"}
-                  className="block h-full"
-                >
-                  <div className="h-full bg-white rounded-[2.5rem] p-8 border border-gray-100 shadow-sm hover:shadow-2xl hover:border-theme-purple/20 transition-all duration-500 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-theme-purple/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-
-                    <div className="relative z-10 flex flex-col h-full">
-                      <div className="flex items-start justify-between mb-10">
-                        <div className="w-20 h-20 bg-light-theme-purple/20 rounded-2xl flex items-center justify-center text-5xl group-hover:scale-110 group-hover:bg-theme-purple group-hover:text-white transition-all duration-500">
-                          {serviceData?.icon || "🚀"}
-                        </div>
-                        <div className="pt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-theme-purple">
-                          <svg
-                            className="w-6 h-6"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M14 5l7 7m0 0l-7 7m7-7H3"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-
-                      <h3 className="text-2xl font-bold text-theme-blue mb-4 group-hover:text-theme-purple transition-colors">
-                        {item.title}
-                      </h3>
-
-                      <p className="text-gray-500 font-light leading-relaxed mb-8 flex-grow line-clamp-3">
-                        {serviceData?.shortDescription ||
-                          "Tailored solutions designed to elevate your business through cutting-edge technology and strategic innovation."}
-                      </p>
-
-                      <div className="flex items-center gap-4">
-                        <div className="h-1 w-12 bg-gray-100 rounded-full group-hover:w-20 group-hover:bg-theme-purple transition-all duration-500"></div>
-                        <span className="text-xs font-bold uppercase tracking-widest text-gray-400 group-hover:text-theme-purple">
-                          Explore
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            );
-          })}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {cards.map((item) => (
+            <Link
+              key={item.title}
+              href={item.slug ? `/services/${item.slug}` : "/services"}
+              className="group block h-full"
+            >
+              <article className="h-full bg-white rounded-2xl border border-gray-100 p-6 hover:border-theme-purple/30 hover:shadow-lg transition-all duration-300">
+                <div className="w-11 h-11 mb-5 rounded-xl bg-light-theme-purple/40 text-theme-purple flex items-center justify-center group-hover:bg-theme-purple group-hover:text-white transition-colors">
+                  <ServiceIcon slug={item.slug} className="w-5 h-5" />
+                </div>
+                <h3 className="text-xl font-bold text-theme-blue mb-2 group-hover:text-theme-purple transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-gray-500 font-light leading-relaxed mb-6 line-clamp-3">
+                  {item.description ||
+                    "Practical delivery for websites, apps, and custom software."}
+                </p>
+                <span className="inline-flex items-center text-theme-purple font-semibold text-sm">
+                  Explore
+                  <svg
+                    className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </span>
+              </article>
+            </Link>
+          ))}
         </div>
       </div>
     </section>

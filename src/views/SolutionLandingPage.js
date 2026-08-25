@@ -61,33 +61,33 @@ export default function SolutionLandingPage() {
       <Header />
       <Breadcrumbs />
       <main className="overflow-hidden bg-white">
-        {/* Hero — one outcome + primary CTA */}
-        <section className="relative pt-10 pb-14">
-          <div className="absolute top-0 left-0 w-[40rem] h-[40rem] bg-light-theme-purple/30 rounded-full blur-[120px] -z-10" />
-          <div className="container mx-auto px-5 max-w-5xl">
-            <p className="text-theme-purple font-bold text-sm uppercase tracking-widest mb-4">
+        {/* Hero */}
+        <section className="!mb-0 relative pt-10 pb-12 md:pt-14 md:pb-16">
+          <div className="absolute inset-0 bg-gradient-to-b from-light-theme-purple/35 via-white to-white -z-10" />
+          <div className="container mx-auto px-5 max-w-3xl">
+            <p className="text-theme-purple font-bold text-xs sm:text-sm uppercase tracking-[0.18em] mb-4">
               {page.primaryKeyword}
             </p>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-theme-blue mb-5 tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-black text-theme-blue mb-4 tracking-tight leading-[1.15]">
               {page.h1}
             </h1>
-            <p className="text-xl md:text-2xl text-theme-blue/80 font-medium mb-4">
+            <p className="text-lg sm:text-xl text-theme-blue/80 font-medium mb-4 leading-snug">
               {page.outcomeLine}
             </p>
-            <p className="text-lg text-gray-600 font-light leading-relaxed mb-8 max-w-3xl">
+            <p className="text-base sm:text-lg text-gray-600 font-light leading-relaxed mb-8">
               {page.intro}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 mb-4">
+            <div className="flex flex-col sm:flex-row gap-3 mb-3">
               <Link
                 href={primaryHref}
                 onClick={trackPrimary}
-                className="inline-flex justify-center px-8 py-4 bg-theme-purple text-white rounded-full font-bold shadow-xl hover:scale-105 transition-transform"
+                className="inline-flex justify-center px-7 py-3.5 bg-theme-purple text-white rounded-full font-bold shadow-lg shadow-theme-purple/25 hover:scale-[1.02] transition-transform"
               >
                 {page.primaryCtaLabel}
               </Link>
               <WhatsAppButton
                 message={page.whatsappMessage}
-                className="inline-flex justify-center items-center gap-2 px-8 py-4 bg-green-500 text-white rounded-full font-bold hover:bg-green-600 transition-colors"
+                className="inline-flex justify-center items-center gap-2 px-7 py-3.5 bg-emerald-500 text-white rounded-full font-bold hover:bg-emerald-600 transition-colors"
                 label="WhatsApp us"
               >
                 WhatsApp us
@@ -95,16 +95,18 @@ export default function SolutionLandingPage() {
             </div>
             <p className="text-sm text-gray-500">
               Prefer email?{" "}
-              <Link href="/contact" className="text-theme-purple font-semibold">
-                Send a brief on the contact form
+              <Link
+                href="/contact"
+                className="text-theme-purple font-semibold underline-offset-2 hover:underline"
+              >
+                Send a brief
               </Link>
-              .
             </p>
           </div>
         </section>
 
         {/* Sticky mobile CTA */}
-        <div className="fixed bottom-0 inset-x-0 z-40 md:hidden bg-white/95 backdrop-blur border-t border-gray-100 p-3 flex gap-2">
+        <div className="fixed bottom-0 inset-x-0 z-40 md:hidden bg-white/95 backdrop-blur border-t border-gray-100 p-3 flex gap-2 safe-area-pb">
           <Link
             href={primaryHref}
             onClick={trackPrimary}
@@ -114,7 +116,7 @@ export default function SolutionLandingPage() {
           </Link>
           <WhatsAppButton
             message={page.whatsappMessage}
-            className="flex-1 text-center py-3 rounded-full bg-green-500 text-white font-bold text-sm"
+            className="flex-1 text-center py-3 rounded-full bg-emerald-500 text-white font-bold text-sm"
             label="WhatsApp"
           >
             WhatsApp
@@ -122,38 +124,40 @@ export default function SolutionLandingPage() {
         </div>
 
         {page.buyerGuide && page.criteria?.length > 0 && (
-          <section className="pb-16">
-            <div className="container mx-auto px-5 max-w-5xl">
-              <h2 className="text-3xl font-bold text-theme-blue mb-8">
-                Criteria to evaluate a software company in India
+          <section className="!mb-0 py-14 md:py-16 border-t border-gray-100">
+            <div className="container mx-auto px-5 max-w-3xl">
+              <h2 className="text-2xl md:text-3xl font-bold text-theme-blue mb-2">
+                How to evaluate partners
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {page.criteria.map((item) => (
-                  <article
-                    key={item.title}
-                    className="p-6 rounded-2xl border border-gray-100 bg-gray-50/50"
-                  >
-                    <h3 className="text-xl font-bold text-theme-blue mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-600 font-light leading-relaxed">
-                      {item.body}
-                    </p>
-                  </article>
+              <p className="text-gray-500 font-light mb-8">
+                Use these criteria before you commit budget.
+              </p>
+              <ol className="space-y-6">
+                {page.criteria.map((item, i) => (
+                  <li key={item.title} className="flex gap-4">
+                    <span className="flex-shrink-0 w-8 h-8 rounded-lg bg-theme-purple/10 text-theme-purple text-sm font-bold flex items-center justify-center">
+                      {i + 1}
+                    </span>
+                    <div>
+                      <h3 className="text-lg font-bold text-theme-blue mb-1">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-600 font-light leading-relaxed">
+                        {item.body}
+                      </p>
+                    </div>
+                  </li>
                 ))}
-              </div>
+              </ol>
             </div>
           </section>
         )}
 
-        <section className="pb-16">
-          <div className="container mx-auto px-5 max-w-5xl space-y-8">
+        <section className="!mb-0 py-14 md:py-16 bg-gray-50/60">
+          <div className="container mx-auto px-5 max-w-3xl space-y-10">
             {page.sections.map((section) => (
-              <article
-                key={section.title}
-                className="p-8 rounded-3xl border border-gray-100 bg-gradient-to-br from-white to-gray-50"
-              >
-                <h2 className="text-2xl md:text-3xl font-bold text-theme-blue mb-4">
+              <article key={section.title}>
+                <h2 className="text-2xl md:text-3xl font-bold text-theme-blue mb-3">
                   {section.title}
                 </h2>
                 <p className="text-gray-600 text-lg font-light leading-relaxed">
@@ -164,239 +168,224 @@ export default function SolutionLandingPage() {
           </div>
         </section>
 
-        <section className="pb-16 bg-gray-50/80">
-          <div className="container mx-auto px-5 max-w-5xl py-14">
-            <h2 className="text-3xl font-bold text-theme-blue mb-8 text-center">
+        <section className="!mb-0 py-14 md:py-16">
+          <div className="container mx-auto px-5 max-w-3xl">
+            <h2 className="text-2xl md:text-3xl font-bold text-theme-blue mb-6">
               What you get
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
               {page.deliverables.map((item) => (
-                <div
+                <li
                   key={item}
-                  className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-100"
+                  className="flex items-start gap-3 text-theme-blue font-medium"
                 >
-                  <span className="text-theme-purple font-bold">✓</span>
-                  <span className="text-theme-blue font-medium">{item}</span>
-                </div>
+                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-theme-purple flex-shrink-0" />
+                  {item}
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </section>
 
         {page.audiences?.length > 0 && (
-          <section className="pb-16">
-            <div className="container mx-auto px-5 max-w-5xl">
-              <h2 className="text-3xl font-bold text-theme-blue mb-4 text-center">
-                Who is this for?
+          <section className="!mb-0 py-14 md:py-16 border-t border-gray-100">
+            <div className="container mx-auto px-5 max-w-3xl">
+              <h2 className="text-2xl md:text-3xl font-bold text-theme-blue mb-2">
+                Who this is for
               </h2>
-              <p className="text-center text-gray-500 mb-8 font-light">
-                Built for the kinds of clients we actually work with.
+              <p className="text-gray-500 font-light mb-6">
+                Built for the clients we actually work with.
               </p>
-              <div className="flex flex-wrap justify-center gap-3">
+              <ul className="flex flex-wrap gap-2">
                 {page.audiences.map((audience) => (
-                  <span
+                  <li
                     key={audience}
-                    className="px-4 py-2 rounded-full bg-light-theme-purple/20 text-theme-purple font-semibold text-sm"
+                    className="px-4 py-2 rounded-full bg-light-theme-purple/40 text-theme-purple text-sm font-semibold"
                   >
                     {audience}
-                  </span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           </section>
         )}
 
-        <section className="pb-16 bg-white">
-          <div className="container mx-auto px-5 max-w-5xl">
-            <h2 className="text-3xl font-bold text-theme-blue mb-8 text-center">
-              Transparent process
+        <section className="!mb-0 py-14 md:py-16 bg-gray-50/60">
+          <div className="container mx-auto px-5 max-w-3xl">
+            <h2 className="text-2xl md:text-3xl font-bold text-theme-blue mb-8">
+              How we work
             </h2>
-            <ol className="space-y-6">
+            <ol className="relative space-y-0 border-l-2 border-theme-purple/20 ml-3 pl-8">
               {page.processSteps.map((step, index) => (
-                <li key={step.title} className="flex gap-5 items-start">
-                  <span className="flex-shrink-0 w-10 h-10 rounded-xl bg-theme-purple text-white font-bold flex items-center justify-center">
+                <li key={step.title} className="relative pb-8 last:pb-0">
+                  <span className="absolute -left-[2.4rem] top-0 w-7 h-7 rounded-full bg-theme-purple text-white text-xs font-bold flex items-center justify-center ring-4 ring-gray-50">
                     {index + 1}
                   </span>
-                  <div>
-                    <h3 className="text-xl font-bold text-theme-blue">
-                      {step.title}
-                    </h3>
-                    <p className="text-gray-600 font-light">{step.description}</p>
-                  </div>
+                  <h3 className="text-lg font-bold text-theme-blue mb-1">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-600 font-light leading-relaxed">
+                    {step.description}
+                  </p>
                 </li>
               ))}
             </ol>
           </div>
         </section>
 
-        <section className="pb-16 bg-gray-50/80">
-          <div className="container mx-auto px-5 max-w-5xl py-14 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="p-8 rounded-3xl bg-white border border-gray-100">
-              <h2 className="text-2xl font-bold text-theme-blue mb-4">
-                Timeline range
+        <section className="!mb-0 py-14 md:py-16">
+          <div className="container mx-auto px-5 max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
+            <div>
+              <h2 className="text-xl font-bold text-theme-blue mb-3">
+                Timeline
               </h2>
               <p className="text-gray-600 font-light leading-relaxed">
                 {page.timelineRange ||
                   "Timeline depends on scope. We share a range after discovery."}
               </p>
             </div>
-            <div className="p-8 rounded-3xl bg-white border border-gray-100">
-              <h2 className="text-2xl font-bold text-theme-blue mb-4">
+            <div>
+              <h2 className="text-xl font-bold text-theme-blue mb-3">
                 What affects cost
               </h2>
               <ul className="space-y-2 text-gray-600 font-light">
                 {page.costFactors.map((factor) => (
                   <li key={factor} className="flex gap-2">
-                    <span className="text-theme-purple">•</span>
+                    <span className="text-theme-purple">·</span>
                     {factor}
                   </li>
                 ))}
               </ul>
-              <p className="mt-4 text-sm text-gray-500">
-                We do not publish fake fixed prices. Cost depends on the factors
-                above — use our estimate tools or book a call for a scoped quote.
+              <p className="mt-3 text-sm text-gray-500">
+                No fake fixed prices — get a scoped quote after discovery.
               </p>
             </div>
           </div>
         </section>
 
-        {relatedSolutions.length > 0 && (
-          <section className="pb-16">
-            <div className="container mx-auto px-5 max-w-5xl">
-              <h2 className="text-3xl font-bold text-theme-blue mb-8 text-center">
-                Related solutions
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {relatedSolutions.map((solution) => (
-                  <Link
-                    key={solution.slug}
-                    href={`/solutions/${solution.slug}`}
-                    className="p-6 rounded-2xl border border-gray-100 hover:border-theme-purple/40 hover:shadow-lg transition-all bg-white"
-                  >
-                    <h3 className="text-lg font-bold text-theme-blue mb-2">
-                      {solution.h1}
-                    </h3>
-                    <p className="text-gray-500 text-sm line-clamp-3">
-                      {solution.outcomeLine}
-                    </p>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-
-        {relatedBlog && (
-          <section className="pb-16 bg-gray-50/70">
-            <div className="container mx-auto px-5 max-w-5xl py-10">
-              <h2 className="text-2xl font-bold text-theme-blue mb-4">
-                Related insight
-              </h2>
-              <Link
-                href={`/blog/${relatedBlog.slug}`}
-                className="block p-6 rounded-2xl bg-white border border-gray-100 hover:border-theme-purple/40 transition-all"
-              >
-                <p className="text-xs font-bold uppercase tracking-widest text-theme-purple mb-2">
-                  Blog
-                </p>
-                <h3 className="text-xl font-bold text-theme-blue mb-2">
-                  {relatedBlog.title}
-                </h3>
-                <p className="text-gray-500 text-sm line-clamp-2">
-                  {relatedBlog.excerpt}
-                </p>
-              </Link>
-            </div>
-          </section>
-        )}
-
         {caseStudies.length > 0 && (
-          <section className="pb-16">
-            <div className="container mx-auto px-5 max-w-5xl">
-              <h2 className="text-3xl font-bold text-theme-blue mb-8 text-center">
-                Related project work
+          <section className="!mb-0 py-14 md:py-16 border-t border-gray-100">
+            <div className="container mx-auto px-5 max-w-3xl">
+              <h2 className="text-2xl md:text-3xl font-bold text-theme-blue mb-6">
+                Related work
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <ul className="divide-y divide-gray-100">
                 {caseStudies.map((project) => (
-                  <Link
-                    key={project.id}
-                    href={`/portfolio/${project.id}`}
-                    onClick={() =>
-                      trackEvent(AnalyticsEvents.VIEW_CASE_STUDY, {
-                        project_id: project.id,
-                        source: page.slug,
-                      })
-                    }
-                    className="p-6 rounded-2xl border border-gray-100 hover:border-theme-purple/40 hover:shadow-lg transition-all bg-white"
-                  >
-                    <p className="text-xs font-bold uppercase tracking-widest text-theme-purple mb-2">
-                      {project.type}
-                    </p>
-                    <h3 className="text-xl font-bold text-theme-blue mb-2">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-500 text-sm line-clamp-3">
-                      {project.description ||
-                        `${project.title} — ${project.type} project by TheTriFusion.`}
-                    </p>
-                  </Link>
+                  <li key={project.id}>
+                    <Link
+                      href={`/portfolio/${project.id}`}
+                      onClick={() =>
+                        trackEvent(AnalyticsEvents.VIEW_CASE_STUDY, {
+                          project_id: project.id,
+                          source: page.slug,
+                        })
+                      }
+                      className="group flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 py-5"
+                    >
+                      <span className="text-xs font-bold uppercase tracking-wider text-theme-purple flex-shrink-0">
+                        {project.type}
+                      </span>
+                      <span className="text-lg font-bold text-theme-blue group-hover:text-theme-purple transition-colors">
+                        {project.title}
+                      </span>
+                    </Link>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           </section>
         )}
 
-        {relatedServices.length > 0 && (
-          <section className="pb-16 bg-gray-50/70">
-            <div className="container mx-auto px-5 max-w-5xl py-14">
-              <h2 className="text-3xl font-bold text-theme-blue mb-8 text-center">
-                Related services
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {relatedServices.map((service) => (
+        {(relatedSolutions.length > 0 ||
+          relatedServices.length > 0 ||
+          relatedBlog) && (
+          <section className="!mb-0 py-14 md:py-16 bg-gray-50/60">
+            <div className="container mx-auto px-5 max-w-3xl space-y-10">
+              {relatedSolutions.length > 0 && (
+                <div>
+                  <h2 className="text-xl font-bold text-theme-blue mb-4">
+                    Related solutions
+                  </h2>
+                  <ul className="space-y-3">
+                    {relatedSolutions.map((solution) => (
+                      <li key={solution.slug}>
+                        <Link
+                          href={`/solutions/${solution.slug}`}
+                          className="text-theme-purple font-semibold hover:underline underline-offset-2"
+                        >
+                          {solution.h1}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {relatedServices.length > 0 && (
+                <div>
+                  <h2 className="text-xl font-bold text-theme-blue mb-4">
+                    Related services
+                  </h2>
+                  <ul className="space-y-3">
+                    {relatedServices.map((service) => (
+                      <li key={service.slug}>
+                        <Link
+                          href={`/services/${service.slug}`}
+                          className="text-theme-purple font-semibold hover:underline underline-offset-2"
+                        >
+                          {service.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {relatedBlog && (
+                <div>
+                  <h2 className="text-xl font-bold text-theme-blue mb-4">
+                    Related insight
+                  </h2>
                   <Link
-                    key={service.slug}
-                    href={`/services/${service.slug}`}
-                    className="p-6 rounded-2xl bg-white border border-gray-100 hover:border-theme-purple/40 hover:shadow-lg transition-all"
+                    href={`/blog/${relatedBlog.slug}`}
+                    className="block group"
                   >
-                    <h3 className="text-xl font-bold text-theme-blue mb-2">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-500 text-sm line-clamp-2">
-                      {service.shortDescription}
+                    <p className="text-lg font-bold text-theme-blue group-hover:text-theme-purple transition-colors mb-1">
+                      {relatedBlog.title}
+                    </p>
+                    <p className="text-gray-500 text-sm font-light line-clamp-2">
+                      {relatedBlog.excerpt}
                     </p>
                   </Link>
-                ))}
-              </div>
+                </div>
+              )}
             </div>
           </section>
         )}
 
-        <section className="pb-16">
-          <div className="container mx-auto px-5 max-w-5xl">
-            <h2 className="text-3xl font-bold text-theme-blue mb-8 text-center">
-              Frequently asked questions
+        <section className="!mb-0 py-14 md:py-16">
+          <div className="container mx-auto px-5 max-w-3xl">
+            <h2 className="text-2xl md:text-3xl font-bold text-theme-blue mb-6">
+              FAQs
             </h2>
-            <div className="space-y-4">
+            <div className="divide-y divide-gray-100 border-y border-gray-100">
               {page.faqs.map((faq, index) => {
                 const open = openFaqs.includes(index);
                 return (
-                  <div
-                    key={faq.question}
-                    className="border border-gray-100 rounded-2xl overflow-hidden bg-white"
-                  >
+                  <div key={faq.question}>
                     <button
                       type="button"
                       onClick={() => toggleFaq(index)}
-                      className="w-full text-left px-6 py-5 flex justify-between items-center gap-4 font-semibold text-theme-blue"
+                      className="w-full text-left py-5 flex justify-between items-start gap-4 font-semibold text-theme-blue"
+                      aria-expanded={open}
                     >
-                      {faq.question}
-                      <span className="text-theme-purple text-xl">
+                      <span>{faq.question}</span>
+                      <span className="text-theme-purple text-xl leading-none flex-shrink-0">
                         {open ? "−" : "+"}
                       </span>
                     </button>
                     {open && (
-                      <div className="px-6 pb-5 text-gray-600 font-light leading-relaxed">
+                      <div className="pb-5 -mt-1 text-gray-600 font-light leading-relaxed pr-8">
                         {faq.answer}
                       </div>
                     )}
@@ -407,25 +396,24 @@ export default function SolutionLandingPage() {
           </div>
         </section>
 
-        <section className="pb-28 md:pb-24">
-          <div className="container mx-auto px-5 max-w-4xl text-center">
-            <div className="p-10 rounded-3xl bg-theme-blue text-white">
-              <h2 className="text-3xl font-bold mb-4">{page.cta}</h2>
-              <p className="text-white/70 mb-8 font-light">
-                One clear next step: get a scoped estimate or book a short
-                discovery call with TheTriFusion.
+        <section className="!mb-0 pb-28 md:pb-24">
+          <div className="container mx-auto px-5 max-w-3xl">
+            <div className="rounded-[2rem] bg-theme-blue text-white px-8 py-12 md:px-10 md:py-14 text-center">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3">{page.cta}</h2>
+              <p className="text-white/70 mb-8 font-light max-w-lg mx-auto">
+                One clear next step: scoped estimate or a short discovery call.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Link
                   href={primaryHref}
                   onClick={trackPrimary}
-                  className="px-8 py-4 bg-theme-purple rounded-full font-bold hover:scale-105 transition-transform"
+                  className="px-7 py-3.5 bg-theme-purple rounded-full font-bold hover:scale-[1.02] transition-transform"
                 >
                   {page.primaryCtaLabel}
                 </Link>
                 <WhatsAppButton
                   message={page.whatsappMessage}
-                  className="px-8 py-4 bg-green-500 rounded-full font-bold hover:bg-green-600 transition-colors"
+                  className="px-7 py-3.5 bg-emerald-500 rounded-full font-bold hover:bg-emerald-600 transition-colors"
                   label="WhatsApp"
                 >
                   WhatsApp TriFusion

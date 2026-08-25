@@ -12,7 +12,6 @@ export default function AllPortfolioEnhanced({ data }) {
   // Filter by type
   const mobile = data.filter((item) => item.type === "Mobile Apps");
   const website = data.filter((item) => item.type === "Website");
-  const uiux = data.filter((item) => item.type === "UI/UX");
 
   // Search and filter function
   const filterItems = (items) => {
@@ -171,17 +170,11 @@ export default function AllPortfolioEnhanced({ data }) {
                   Website ({website.length})
                 </button>
               </Tab>
-              <Tab>
-                <button className="font-normal px-5 py-2 text-theme-purple text-base sm:text-lg border border-theme-purple rounded-full transition duration-300 hover:bg-theme-purple hover:text-white focus:outline-none focus:bg-theme-purple focus:text-white">
-                  UI/UX ({uiux.length})
-                </button>
-              </Tab>
             </div>
           </TabList>
 
           <TabPanel>{renderPortfolioGrid(mobile)}</TabPanel>
           <TabPanel>{renderPortfolioGrid(website)}</TabPanel>
-          <TabPanel>{renderPortfolioGrid(uiux)}</TabPanel>
         </Tabs>
       </section>
     </Fade>

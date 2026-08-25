@@ -7,6 +7,16 @@ import Button from "../elements/Button";
 import HeroVideo from "components/HeroVideo";
 
 const HERO_CHIPS = [
+  {
+    label: "Cloud",
+    href: "/services/devops",
+    highlight: true,
+  },
+  {
+    label: "AWS Certified Partner",
+    href: "/discuss-project?offer=aws-marketplace",
+    highlight: true,
+  },
   { label: "E-commerce", href: "/solutions/ecommerce-website-development" },
   { label: "CMS", href: "/services/website-development" },
   { label: "CRM & ERP", href: "/solutions/crm-erp-software-development" },
@@ -32,6 +42,9 @@ const HERO_CHIPS = [
 const chipClassName =
   "whitespace-nowrap shrink-0 px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple hover:bg-white transition-colors";
 
+const highlightChipClassName =
+  "whitespace-nowrap shrink-0 px-3 py-1.5 rounded-full bg-theme-purple text-white border border-theme-purple shadow-sm hover:bg-dark-theme-purple transition-colors font-semibold";
+
 function ChipTrack({ chips, hidden }) {
   return (
     <div
@@ -42,7 +55,7 @@ function ChipTrack({ chips, hidden }) {
         <Link
           key={chip.label}
           href={chip.href}
-          className={chipClassName}
+          className={chip.highlight ? highlightChipClassName : chipClassName}
           tabIndex={hidden ? -1 : undefined}
         >
           {chip.label}
@@ -145,11 +158,11 @@ export default function Hero() {
           <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
             <div className="space-y-3">
               <ChipMarquee
-                chips={HERO_CHIPS.slice(0, 10)}
+                chips={HERO_CHIPS.slice(0, 11)}
                 direction="left"
               />
               <ChipMarquee
-                chips={HERO_CHIPS.slice(10)}
+                chips={HERO_CHIPS.slice(11)}
                 direction="right"
               />
             </div>
