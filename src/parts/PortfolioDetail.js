@@ -21,7 +21,7 @@ export default function PortfolioDetail({ data }) {
             <div className="flex w-full justify-center">
               <img
                 src={NotFound}
-                alt="Not Found"
+                alt="TheTriFusion 404 — portfolio project not found"
                 className="sm:w-3/4 xl:w-5/12 mt-5"
               />
             </div>
@@ -216,13 +216,15 @@ export default function PortfolioDetail({ data }) {
                   🌐 View Live Project
                 </Button>
               )}
-              <Button
-                type="link"
-                href="/appointment"
-                className="px-8 py-3 bg-theme-blue text-white rounded-full hover:bg-gray-900 transition-colors duration-200 shadow-lg text-center"
-              >
-                📅 Book Similar Project
-              </Button>
+              {item.relatedServiceSlug && (
+                <Button
+                  type="link"
+                  href={`/services/${item.relatedServiceSlug}`}
+                  className="px-8 py-3 bg-white text-theme-purple border-2 border-theme-purple/40 rounded-full hover:bg-light-theme-purple transition-colors duration-200 shadow-lg text-center"
+                >
+                  Related service
+                </Button>
+              )}
             </div>
 
             {isLiveProjectUrl(item.credit) && (

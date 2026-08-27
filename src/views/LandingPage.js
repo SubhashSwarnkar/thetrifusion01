@@ -16,7 +16,6 @@ import Testimonial from "parts/Testimonial";
 import Discuss from "parts/Discuss";
 import Footer from "parts/Footer";
 import TrustBadges from "components/TrustBadges";
-import Newsletter from "components/Newsletter";
 import { Fade } from "react-awesome-reveal";
 import SEO from "components/common/SEO";
 import Link from "next/link";
@@ -109,7 +108,6 @@ export default class LandingPage extends Component {
               </p>
             </div>
           </section>
-          <Newsletter />
           <Discuss />
         </main>
         

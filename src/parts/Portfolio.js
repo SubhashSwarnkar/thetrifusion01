@@ -24,7 +24,7 @@ export default function Portfolio({ data }) {
             direction="up"
             triggerOnce
             bottom
-            delay={500 * index}
+            delay={Math.min(index * 80, 240)}
             key={item.id}
           >
             <Button type="link" href={`/portfolio/${item.id}`}>
@@ -32,7 +32,7 @@ export default function Portfolio({ data }) {
                 <div className="relative">
                   <Image
                     src={item.imageUrl}
-                    alt={item.title || "Portfolio"}
+                    alt={`${item.title} — ${item.type} project by TheTriFusion`}
                     width={600}
                     height={400}
                     className="rounded-t-2xl z-0 w-full h-auto"
@@ -70,6 +70,11 @@ export default function Portfolio({ data }) {
                   <p className="font-light text-gray-400 dark:text-gray-300 text-center">
                     {item.type}
                   </p>
+                  {item.cardDescription ? (
+                    <p className="font-light text-gray-500 text-center text-xs px-2 mt-1 line-clamp-2">
+                      {item.cardDescription}
+                    </p>
+                  ) : null}
                 </div>
               </div>
             </Button>

@@ -375,6 +375,122 @@ export const getAllServicePricingPlans = () => {
             "Dedicated team",
             "Flexible scaling"
           ]
+        },
+        "mlm-crm-development": {
+          basic: [
+            "Unilevel commission MVP",
+            "Web admin",
+            "One mobile app",
+            "KYC checklist",
+            "1 month support"
+          ],
+          standard: [
+            "Full unilevel engine",
+            "iOS + Android + Web",
+            "Lead management",
+            "Payout exports",
+            "3 months support"
+          ],
+          premium: [
+            "Hybrid plans after discovery",
+            "Finance audit log",
+            "Wallet & holds",
+            "6 months support",
+            "Named delivery lead"
+          ]
+        },
+        "fintech-app-development": {
+          basic: [
+            "KYC-ready onboarding",
+            "One payment integration",
+            "Web admin",
+            "Audit log basics",
+            "1 month support"
+          ],
+          standard: [
+            "iOS + Android + Web",
+            "Ledger + webhooks",
+            "Role-based access",
+            "3 months support"
+          ],
+          premium: [
+            "Multi-gateway",
+            "Hardened ops console",
+            "6 months support",
+            "VAPT scoped separately"
+          ]
+        },
+        "ev-charging-app-development": {
+          basic: [
+            "Driver map MVP",
+            "Session start/stop",
+            "One protocol path",
+            "1 month support"
+          ],
+          standard: [
+            "OCPI or OCPP scoped",
+            "iOS + Android + Web",
+            "Operator console",
+            "3 months support"
+          ],
+          premium: [
+            "OCPI + OCPP",
+            "Roaming-ready locations",
+            "6 months support",
+            "Network ops handover"
+          ]
+        },
+        "ios-app-development": {
+          basic: [
+            "Focused iOS MVP",
+            "TestFlight",
+            "App Store listing support",
+            "1 month support"
+          ],
+          standard: [
+            "API + web admin",
+            "Review-ready assets",
+            "3 months support"
+          ],
+          premium: [
+            "iOS + Android shared",
+            "6 months support",
+            "Store iteration"
+          ]
+        },
+        "android-app-development": {
+          basic: [
+            "Focused Android MVP",
+            "Play Store listing",
+            "1 month support"
+          ],
+          standard: [
+            "API + web admin",
+            "3 months support",
+            "Crash monitoring setup"
+          ],
+          premium: [
+            "Android + iOS shared",
+            "6 months support",
+            "Staged rollouts"
+          ]
+        },
+        "crm-erp-development": {
+          basic: [
+            "Single CRM module",
+            "Web admin",
+            "1 month support"
+          ],
+          standard: [
+            "Sales + one ops module",
+            "Mobile companion",
+            "3 months support"
+          ],
+          premium: [
+            "Multi-module ERP-lite",
+            "iOS + Android + Web",
+            "6 months support"
+          ]
         }
       };
 

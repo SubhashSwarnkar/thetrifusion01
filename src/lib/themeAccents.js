@@ -47,6 +47,12 @@ const SLUG_ACCENT_INDEX = {
   "salesforce": 1,
   "business-modernization": 3,
   "on-demand": 0,
+  "mlm-crm-development": 0,
+  "fintech-app-development": 1,
+  "ev-charging-app-development": 2,
+  "ios-app-development": 2,
+  "android-app-development": 1,
+  "crm-erp-development": 3,
 };
 
 export function accentAt(index) {

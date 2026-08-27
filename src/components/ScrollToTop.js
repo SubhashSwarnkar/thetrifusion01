@@ -33,7 +33,7 @@ export default function ScrollToTop() {
         <Fade>
           <button
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 z-50 bg-theme-purple text-white p-3 rounded-full shadow-lg hover:bg-dark-theme-purple transition duration-200 focus:outline-none focus:ring-2 focus:ring-theme-purple focus:ring-offset-2"
+            className="fixed bottom-8 left-5 z-40 bg-theme-purple text-white p-3 rounded-full hover:bg-dark-theme-purple transition duration-200 focus:outline-none focus:ring-2 focus:ring-theme-purple focus:ring-offset-2"
             aria-label="Scroll to top"
           >
             <svg

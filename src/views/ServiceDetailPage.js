@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useParams } from "next/navigation";
@@ -10,6 +10,7 @@ import Breadcrumbs from "components/Breadcrumbs";
 import ServiceIcon from "components/ServiceIcon";
 import { getServiceBySlug, services } from "data/servicesData";
 import { getSolutionsForService } from "data/seoLandingPages";
+import { getBlogBySlug } from "data/blogData";
 import { accentAt, accentForSlug } from "lib/themeAccents";
 import NotFoundPage from "./NotFoundPage";
 import SEO from "components/common/SEO";
@@ -55,6 +56,10 @@ export default function ServiceDetailPage() {
   const relatedSolutions = getSolutionsForService(slug || "");
   const otherServices = services.filter((item) => item.slug !== slug).slice(0, 6);
   const primary = accentForSlug(service?.slug);
+  const relatedBlog = service?.relatedBlogSlug
+    ? getBlogBySlug(service.relatedBlogSlug)
+    : null;
+  const [openFaqs, setOpenFaqs] = useState([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -91,9 +96,21 @@ export default function ServiceDetailPage() {
               <p className="text-lg text-gray-600 font-light leading-relaxed mb-4 max-w-xl">
                 {service.bannerDescription || service.shortDescription}
               </p>
-              <p className="text-sm text-theme-blue font-medium mb-8">
+              <p className="text-sm text-theme-blue font-medium mb-4">
                 Built from Jaipur, Rajasthan — delivered remotely across India.
               </p>
+              {service.platforms?.length > 0 && (
+                <div className="flex flex-wrap gap-2 mb-8">
+                  {service.platforms.map((platform) => (
+                    <span
+                      key={platform}
+                      className="px-3 py-1.5 rounded-full bg-theme-blue text-white text-xs font-bold uppercase tracking-wide"
+                    >
+                      {platform}
+                    </span>
+                  ))}
+                </div>
+              )}
               <div className="flex flex-col sm:flex-row gap-3 mb-8">
                 <Link
                   href="/contact"
@@ -133,7 +150,10 @@ export default function ServiceDetailPage() {
               <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden border-4 border-white shadow-xl bg-gray-50">
                 <Image
                   src={service.imageUrl}
-                  alt={service.title}
+                  alt={
+                    service.imageAlt ||
+                    `${service.title} services in Jaipur by TheTriFusion`
+                  }
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
@@ -274,6 +294,95 @@ export default function ServiceDetailPage() {
         <section className="container mx-auto px-5 py-16">
           <SectionHeading kicker="Scoping">What shapes the estimate</SectionHeading>
           <AccentCards items={service.costFactors} />
+        </section>
+      )}
+
+      {service.caseStudy && (
+        <section className="container mx-auto px-5 py-16">
+          <SectionHeading kicker="Proof">Case study</SectionHeading>
+          <div className="rounded-2xl border border-theme-purple/20 bg-light-theme-purple/20 p-6 md:p-8 max-w-3xl">
+            <h3 className="text-xl font-bold text-theme-blue mb-3">
+              {service.caseStudy.title}
+            </h3>
+            <p className="text-gray-600 font-light leading-relaxed mb-5">
+              {service.caseStudy.summary}
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {service.caseStudy.href && (
+                <Link
+                  href={service.caseStudy.href}
+                  className="inline-flex items-center text-theme-purple font-bold hover:underline"
+                >
+                  {service.caseStudy.hrefLabel || "Read more"} →
+                </Link>
+              )}
+              {service.caseStudy.liveUrl && (
+                <a
+                  href={service.caseStudy.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-theme-blue font-bold hover:underline"
+                >
+                  {service.caseStudy.liveLabel || service.caseStudy.liveUrl} →
+                </a>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {relatedBlog && (
+        <section className="container mx-auto px-5 pb-8">
+          <SectionHeading kicker="Insights">From the blog</SectionHeading>
+          <Link
+            href={`/blog/${relatedBlog.slug}`}
+            className="block max-w-3xl p-6 rounded-2xl border border-gray-100 hover:border-theme-purple/40 transition-all"
+          >
+            <h3 className="text-xl font-bold text-theme-blue mb-2">
+              {relatedBlog.title}
+            </h3>
+            <p className="text-sm text-gray-500 line-clamp-2">{relatedBlog.excerpt}</p>
+          </Link>
+        </section>
+      )}
+
+      {service.faqs?.length > 0 && (
+        <section className="container mx-auto px-5 py-16">
+          <SectionHeading kicker="FAQ">Common questions</SectionHeading>
+          <div className="max-w-3xl space-y-3">
+            {service.faqs.map((faq, index) => {
+              const open = openFaqs.includes(index);
+              return (
+                <div
+                  key={faq.question}
+                  className="rounded-2xl border border-gray-100 overflow-hidden"
+                >
+                  <button
+                    type="button"
+                    className="w-full text-left px-5 py-4 font-bold text-theme-blue flex items-center justify-between gap-4"
+                    onClick={() =>
+                      setOpenFaqs((prev) =>
+                        prev.includes(index)
+                          ? prev.filter((i) => i !== index)
+                          : [...prev, index]
+                      )
+                    }
+                    aria-expanded={open}
+                  >
+                    {faq.question}
+                    <span className="text-theme-purple text-xl leading-none">
+                      {open ? "−" : "+"}
+                    </span>
+                  </button>
+                  {open ? (
+                    <p className="px-5 pb-4 text-sm text-gray-600 font-light leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  ) : null}
+                </div>
+              );
+            })}
+          </div>
         </section>
       )}
 

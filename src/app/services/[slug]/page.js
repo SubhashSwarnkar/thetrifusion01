@@ -1,7 +1,7 @@
 import Page from "views/ServiceDetailPage";
 import JsonLd from "components/JsonLd";
 import { getServiceBySlug, services } from "data/servicesData";
-import { breadcrumbSchema, serviceSchema } from "lib/schema";
+import { breadcrumbSchema, faqSchema, serviceSchema } from "lib/schema";
 import { buildMetadata } from "lib/seoConfig";
 
 export function generateStaticParams() {
@@ -15,13 +15,12 @@ export function generateMetadata({ params }) {
     return buildMetadata({
       title: "Service Not Found | TheTriFusion",
       description: "The requested service page could not be found.",
-      keywords: "services, TheTriFusion",
       path: `/services/${params.slug}`,
       noIndex: true,
     });
   }
 
-  const title = `${service.title} Services | Jaipur | TheTriFusion`;
+  const title = `${service.title} | Jaipur | TheTriFusion`;
   const description =
     service.shortDescription ||
     `${service.title} from TheTriFusion in Jaipur, Rajasthan — for businesses across India.`;
@@ -29,7 +28,6 @@ export function generateMetadata({ params }) {
   return buildMetadata({
     title,
     description,
-    keywords: `${service.title} Jaipur, ${service.slug}, IT services Rajasthan, TheTriFusion`,
     path: `/services/${service.slug}`,
   });
 }
@@ -55,6 +53,7 @@ export default function RoutePage({ params }) {
               { name: service.title, path: `/services/${service.slug}` },
             ])}
           />
+          {service.faqs?.length ? <JsonLd data={faqSchema(service.faqs)} /> : null}
         </>
       ) : null}
       <Page />

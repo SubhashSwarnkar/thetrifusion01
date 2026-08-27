@@ -9,7 +9,14 @@ const UTM_KEYS = [
   "utm_term",
   "utm_content",
   "gclid",
+  "gbraid",
+  "wbraid",
+  "fbclid",
 ];
+
+function hasPaidClick(params) {
+  return UTM_KEYS.some((key) => Boolean(params.get(key)));
+}
 
 function readCookie(name) {
   if (typeof document === "undefined") return null;
@@ -41,15 +48,14 @@ function parseStored(raw) {
 export function captureAttribution() {
   if (typeof window === "undefined") return null;
 
+  const params = new URLSearchParams(window.location.search);
   const existing =
     parseStored(sessionStorage.getItem(STORAGE_KEY)) ||
     parseStored(readCookie(COOKIE_KEY));
 
-  if (existing?.landing_page) {
+  if (existing?.landing_page && !hasPaidClick(params)) {
     return existing;
   }
-
-  const params = new URLSearchParams(window.location.search);
   const attribution = {
     landing_page: `${window.location.pathname}${window.location.search}`,
     referrer: document.referrer || "",
@@ -78,6 +84,9 @@ export function getAttribution() {
       utm_term: "",
       utm_content: "",
       gclid: "",
+      gbraid: "",
+      wbraid: "",
+      fbclid: "",
     };
   }
 
@@ -96,5 +105,8 @@ export function getAttribution() {
     utm_term: stored.utm_term || "",
     utm_content: stored.utm_content || "",
     gclid: stored.gclid || "",
+    gbraid: stored.gbraid || "",
+    wbraid: stored.wbraid || "",
+    fbclid: stored.fbclid || "",
   };
 }

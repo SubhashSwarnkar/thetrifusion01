@@ -18,6 +18,8 @@ const SERVICE_MENU_GROUPS = [
       "software-development",
       "website-development",
       "mobile-app-development",
+      "ios-app-development",
+      "android-app-development",
       "ai-development",
       "devops",
     ],
@@ -36,6 +38,16 @@ const SERVICE_MENU_GROUPS = [
       "salesforce",
       "business-modernization",
       "on-demand",
+    ],
+  },
+  {
+    heading: "Specialties",
+    accentIndex: 3,
+    slugs: [
+      "mlm-crm-development",
+      "fintech-app-development",
+      "ev-charging-app-development",
+      "crm-erp-development",
     ],
   },
 ];
@@ -205,6 +217,8 @@ export default function Header() {
         <button
           className="lg:hidden w-10 h-10 flex flex-col justify-center items-center gap-1.5 focus:outline-none z-[110]"
           onClick={() => setIsCollapse(!isCollapse)}
+          aria-label="Toggle navigation menu"
+          aria-expanded={isCollapse}
         >
           <span className={`w-8 h-0.5 transition-all ${isCollapse ? "bg-theme-purple rotate-45 translate-y-2" : "bg-theme-blue"}`}></span>
           <span className={`w-8 h-0.5 transition-all ${isCollapse ? "opacity-0" : "bg-theme-blue"}`}></span>
@@ -228,7 +242,7 @@ export default function Header() {
         >
           <div className="container mx-auto px-5">
             <div className="bg-white rounded-2xl border border-gray-100 shadow-[0_16px_40px_rgba(21,44,91,0.12)] p-5 md:p-6">
-              <div className="grid grid-cols-3 gap-6">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
                 {SERVICE_MENU_GROUPS.map((group) => {
                   const groupAccent = accentAt(group.accentIndex);
                   return (
@@ -296,7 +310,7 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 bg-white z-[100] lg:hidden overflow-y-auto"
+            className="mobile-menu fixed inset-0 bg-white z-[100] lg:hidden overflow-y-auto"
           >
             <div className="container mx-auto px-6 py-24 h-full flex flex-col">
               <p className="text-sm font-semibold text-gray-500 mb-8">

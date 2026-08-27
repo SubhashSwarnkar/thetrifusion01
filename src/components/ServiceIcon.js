@@ -86,6 +86,37 @@ export default function ServiceIcon({ slug, className = "w-5 h-5" }) {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       );
+    case "mlm-crm-development":
+      return (
+        <svg {...props}>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 3v6m0 0l4 4m-4-4L8 13M6 21h12M8 17h8" />
+        </svg>
+      );
+    case "fintech-app-development":
+      return (
+        <svg {...props}>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+        </svg>
+      );
+    case "ev-charging-app-development":
+      return (
+        <svg {...props}>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      );
+    case "ios-app-development":
+    case "android-app-development":
+      return (
+        <svg {...props}>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M10 3.75h4M8.25 3.75h7.5A1.5 1.5 0 0117.25 5.25v13.5a1.5 1.5 0 01-1.5 1.5H8.25a1.5 1.5 0 01-1.5-1.5V5.25a1.5 1.5 0 011.5-1.5zM12 17.25h.01" />
+        </svg>
+      );
+    case "crm-erp-development":
+      return (
+        <svg {...props}>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M4 7h16M4 12h10M4 17h7" />
+        </svg>
+      );
     default:
       return (
         <svg {...props}>

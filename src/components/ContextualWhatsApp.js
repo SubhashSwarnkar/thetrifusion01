@@ -10,6 +10,14 @@ export default function ContextualWhatsApp() {
   if (pathname.startsWith("/solutions/")) {
     return null;
   }
+  if (
+    pathname.startsWith("/web-development") ||
+    pathname.startsWith("/android-app-development") ||
+    pathname.startsWith("/ios-app-development") ||
+    pathname.startsWith("/white-label-development")
+  ) {
+    return null;
+  }
 
   let message = "Hi TriFusion, I want a project consultation.";
 

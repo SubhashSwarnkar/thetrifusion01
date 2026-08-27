@@ -8,7 +8,7 @@ import Breadcrumbs from "components/Breadcrumbs";
 import { Fade } from "react-awesome-reveal";
 import {
   blogCategories,
-  blogPosts,
+  getPublishedBlogPosts,
   getBlogsByCategory,
   searchBlogs,
 } from "data/blogData";
@@ -17,20 +17,18 @@ import SEO from "components/common/SEO";
 export default function BlogPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
-  const [displayedPosts, setDisplayedPosts] = useState(blogPosts);
+  const [displayedPosts, setDisplayedPosts] = useState(getPublishedBlogPosts());
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
-    let filtered = blogPosts;
+    let filtered = searchQuery.trim()
+      ? searchBlogs(searchQuery)
+      : getBlogsByCategory(selectedCategory);
 
-    if (searchQuery.trim()) {
-      filtered = searchBlogs(searchQuery);
-    }
-
-    if (selectedCategory !== "all") {
+    if (searchQuery.trim() && selectedCategory !== "all") {
       filtered = filtered.filter((post) => post.category === selectedCategory);
     }
 
@@ -62,9 +60,8 @@ export default function BlogPage() {
         </Fade>
         <Fade direction="up" delay={200} triggerOnce>
           <p className="font-light text-lg text-gray-400 text-center mb-12">
-            Stay updated with practical notes on websites, apps, and delivery
-            from Jaipur. New local posts are the priority; older general tech
-            pieces stay for archive.
+            Practical notes on websites, apps, MLM CRM, fintech, and delivery
+            from Jaipur. We publish at least two India-relevant posts each month.
           </p>
         </Fade>
 
@@ -136,7 +133,7 @@ export default function BlogPage() {
                     <div className="relative h-48 bg-gray-200 overflow-hidden">
                       <img
                         src={post.imageUrl}
-                        alt={post.title}
+                        alt={`${post.title} — TheTriFusion blog`}
                         className="w-full h-full object-cover"
                         loading="lazy"
                       />

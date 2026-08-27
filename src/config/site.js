@@ -38,6 +38,7 @@ export const siteConfig = {
   region: env("NEXT_PUBLIC_COMPANY_REGION", "Rajasthan"),
   country: env("NEXT_PUBLIC_COMPANY_COUNTRY", "IN"),
   countryName: "India",
+  streetAddress: env("NEXT_PUBLIC_COMPANY_STREET", ""),
   locale: "en_IN",
   latitude: Number(env("NEXT_PUBLIC_COMPANY_LAT", "26.9196")),
   longitude: Number(env("NEXT_PUBLIC_COMPANY_LNG", "75.7878")),

@@ -9,7 +9,9 @@ const itemListJsonLd = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: "TheTriFusion Digital Solutions",
-  itemListElement: seoLandingPages.map((page, index) => ({
+  itemListElement: seoLandingPages
+    .filter((page) => page.slug !== "online-store-development")
+    .map((page, index) => ({
     "@type": "ListItem",
     position: index + 1,
     name: page.h1,

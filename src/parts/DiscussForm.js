@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Fade } from "react-awesome-reveal";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useRouter } from "next/navigation";
 import { Form } from "elements/Form";
 import { trackEvent, AnalyticsEvents } from "utils/analytics";
 import { getAttribution } from "utils/attribution";
@@ -54,6 +55,7 @@ export const DiscussForm = (actions) => {
   } = actions;
   const [submitting, setSubmitting] = useState(false);
   const [attribution, setAttribution] = useState({});
+  const router = useRouter();
   const TitleTag = titleAs === "h1" ? "h1" : "h2";
 
   useEffect(() => {
@@ -125,12 +127,8 @@ export const DiscussForm = (actions) => {
           typeof window !== "undefined" ? window.location.pathname : "",
       });
 
-      toast.success(
-        isAwsOffer
-          ? "Offer enquiry sent! We will email you shortly about the AWS package."
-          : "Success! we'll get back to you soon. Thank you!"
-      );
       resetForm();
+      router.push(`/thank-you?from=${encodeURIComponent(leadSource)}`);
     } catch (error) {
       toast.error(error.message || "Failed to send message.");
     } finally {
@@ -155,7 +153,7 @@ export const DiscussForm = (actions) => {
         </Fade>
 
         <Fade direction="up" triggerOnce>
-          <div className="flex flex-col gap-6 max-w-3xl mx-auto">
+            <form className="flex flex-col gap-6 max-w-3xl mx-auto" onSubmit={(e) => { e.preventDefault(); submitEmail(); }}>
             {/* Honeypot — hidden from users */}
             <div
               aria-hidden="true"
@@ -207,7 +205,7 @@ export const DiscussForm = (actions) => {
               <Form
                 id="phone"
                 name="phone"
-                type="number"
+                type="tel"
                 value={data.phone}
                 placeholder="Contact Number"
                 className="w-full"
@@ -272,8 +270,7 @@ export const DiscussForm = (actions) => {
 
             <button
               className="group relative px-12 py-5 bg-theme-purple text-white rounded-2xl font-black text-xl shadow-xl shadow-theme-purple/20 overflow-hidden transition-all hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-3 mt-4 disabled:opacity-60"
-              type="button"
-              onClick={submitEmail}
+              type="submit"
               disabled={submitting}
             >
               <span className="relative z-10 flex items-center gap-2">
@@ -298,7 +295,7 @@ export const DiscussForm = (actions) => {
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-theme-purple to-theme-cyan opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
-          </div>
+            </form>
         </Fade>
       </div>
     </section>

@@ -32,6 +32,19 @@ export default function Breadcrumbs() {
       "ios-app-development": "iOS Apps",
       "white-label-development": "White-label",
       "thank-you": "Thanks",
+      "mlm-crm-development": "MLM CRM",
+      "fintech-app-development": "Fintech Apps",
+      "ev-charging-app-development": "EV Charging Apps",
+      "crm-erp-development": "CRM & ERP",
+      "software-development": "Software Development",
+      "website-development": "Website Development",
+      "mobile-app-development": "Mobile Apps",
+      "website-development-company-bhilwara": "Bhilwara Websites",
+      "web-development-company-jaipur": "Jaipur Web Development",
+      "crm-erp-software-development": "CRM & ERP",
+      "custom-software-development-company": "Custom Software",
+      "ecommerce-website-development": "Ecommerce Websites",
+      "mobile-app-development-company": "Mobile App Company",
     };
 
     return names[path] || path.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());

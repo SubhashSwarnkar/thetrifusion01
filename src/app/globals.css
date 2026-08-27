@@ -22,6 +22,30 @@ section {
   @apply opacity-25;
 }
 
+.blog-html h2 {
+  @apply text-2xl font-bold text-theme-blue mt-8 mb-4;
+}
+
+.blog-html h3 {
+  @apply text-xl font-bold text-theme-blue mt-6 mb-3;
+}
+
+.blog-html p {
+  @apply mb-4;
+}
+
+.blog-html a {
+  @apply text-theme-purple font-medium underline underline-offset-2 hover:text-dark-theme-purple;
+}
+
+.blog-html ul {
+  @apply list-disc list-inside mb-4 space-y-2;
+}
+
+.blog-html strong {
+  @apply font-semibold text-theme-blue;
+}
+
 @media (min-width: 1024px) {
   .header {
     @apply container w-full flex-row py-8 px-10 mt-2 mb-4 mx-auto items-center content-center border-b border-gray-100;

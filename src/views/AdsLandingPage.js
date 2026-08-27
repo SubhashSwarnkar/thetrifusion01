@@ -3,16 +3,56 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Header from "parts/Header";
 import Footer from "parts/Footer";
+import BrandIcon from "parts/BrandIcon";
 import ShortLeadForm from "components/ShortLeadForm";
 import WhatsAppButton from "components/WhatsAppButton";
 import { ADS_PROCESS } from "data/adsLandingPages";
 import { Portfolios } from "json/landingPageData";
-import { COMPANY_PHONE_DISPLAY } from "data/companyInfo";
+import { COMPANY_PHONE_DISPLAY, WHATSAPP_NUMBER } from "data/companyInfo";
 import { siteConfig } from "config/site";
 import { trackEvent, AnalyticsEvents } from "utils/analytics";
 import { accentAt } from "lib/themeAccents";
+
+function AdsHeader({ phoneHref, whatsappMessage }) {
+  const wa = `https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(
+    whatsappMessage
+  )}`;
+
+  return (
+    <header className="fixed top-0 left-0 w-full z-[100] bg-white border-b border-gray-100 py-3">
+      <div className="container mx-auto px-5 flex items-center justify-between gap-4">
+        <Link href="/" aria-label="TheTriFusion home">
+          <BrandIcon compact />
+        </Link>
+        <div className="flex items-center gap-2 sm:gap-3">
+          <a
+            href={phoneHref}
+            onClick={() => trackEvent(AnalyticsEvents.CLICK_PHONE, { source: "ads-header" })}
+            className="hidden sm:inline text-sm font-semibold text-theme-blue"
+          >
+            {COMPANY_PHONE_DISPLAY}
+          </a>
+          <a
+            href={wa}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackEvent(AnalyticsEvents.CLICK_WHATSAPP, { source: "ads-header" })}
+            className="px-4 py-2 rounded-full bg-green-500 text-white text-sm font-bold"
+          >
+            WhatsApp
+          </a>
+          <a
+            href="#lead-form"
+            className="px-4 py-2 rounded-full bg-theme-purple text-white text-sm font-bold"
+          >
+            Callback
+          </a>
+        </div>
+      </div>
+    </header>
+  );
+}
 
 export default function AdsLandingPage({ landing }) {
   const [openFaq, setOpenFaq] = useState(0);
@@ -20,21 +60,24 @@ export default function AdsLandingPage({ landing }) {
     .map((id) => Portfolios.find((item) => item.id === id))
     .filter(Boolean);
   const phoneHref = `tel:${COMPANY_PHONE_DISPLAY.replace(/\s/g, "")}`;
-  const calendlyHref = siteConfig.calendlyUrl || "/appointment";
+  const calendlyHref = siteConfig.calendlyUrl;
+  const waHref = `https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(
+    landing.whatsappMessage
+  )}`;
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [landing.slug]);
 
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
+    <div className="min-h-screen bg-white pb-24 lg:pb-0">
+      <AdsHeader phoneHref={phoneHref} whatsappMessage={landing.whatsappMessage} />
 
-      <section className="relative pt-28 pb-16 overflow-hidden">
+      <section className="relative pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-light-theme-purple via-white to-cyan-50 -z-10" />
         <div className="container mx-auto px-5">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start">
-            <div>
+            <div className="order-2 lg:order-1">
               <span className="inline-block px-3 py-1.5 rounded-full bg-light-theme-purple text-theme-purple text-xs font-bold uppercase tracking-[0.16em] mb-5">
                 {landing.kicker}
               </span>
@@ -47,7 +90,7 @@ export default function AdsLandingPage({ landing }) {
               <p className="text-base text-gray-600 font-light leading-relaxed mb-8 max-w-xl">
                 {landing.intro}
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 mb-8">
+              <div className="hidden lg:flex flex-row gap-3 mb-8">
                 <a
                   href="#lead-form"
                   className="inline-flex items-center justify-center px-7 py-3.5 bg-theme-purple text-white rounded-full font-bold shadow-lg shadow-theme-purple/25"
@@ -62,30 +105,34 @@ export default function AdsLandingPage({ landing }) {
                   WhatsApp us
                 </WhatsAppButton>
               </div>
-              <div className="flex flex-wrap gap-3 mb-6">
+              <div className="hidden lg:flex flex-wrap gap-3 mb-6">
                 <a
                   href={phoneHref}
                   onClick={() =>
-                    trackEvent(AnalyticsEvents.CLICK_PHONE, {
-                      source: landing.slug,
-                    })
+                    trackEvent(AnalyticsEvents.CLICK_PHONE, { source: landing.slug })
                   }
                   className="text-sm font-semibold text-theme-blue hover:text-theme-purple"
                 >
                   Call {COMPANY_PHONE_DISPLAY}
                 </a>
-                <span className="text-gray-300">·</span>
-                <Link
-                  href={calendlyHref}
-                  onClick={() =>
-                    trackEvent(AnalyticsEvents.BOOK_CONSULTATION, {
-                      source: landing.slug,
-                    })
-                  }
-                  className="text-sm font-semibold text-theme-purple"
-                >
-                  Free 15-min consultation
-                </Link>
+                {calendlyHref ? (
+                  <>
+                    <span className="text-gray-300">·</span>
+                    <a
+                      href={calendlyHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() =>
+                        trackEvent(AnalyticsEvents.BOOK_CONSULTATION, {
+                          source: landing.slug,
+                        })
+                      }
+                      className="text-sm font-semibold text-theme-purple"
+                    >
+                      Free 15-min consultation
+                    </a>
+                  </>
+                ) : null}
               </div>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {landing.trust.map((item, idx) => {
@@ -103,11 +150,13 @@ export default function AdsLandingPage({ landing }) {
               </ul>
             </div>
 
-            <ShortLeadForm
-              defaultProjectType={landing.projectType}
-              leadSource={`ads_${landing.slug}`}
-              heading={`Talk about ${landing.serviceName.toLowerCase()}`}
-            />
+            <div className="order-1 lg:order-2">
+              <ShortLeadForm
+                defaultProjectType={landing.projectType}
+                leadSource={`ads_${landing.slug}`}
+                heading={`Talk about ${landing.serviceName.toLowerCase()}`}
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -126,17 +175,10 @@ export default function AdsLandingPage({ landing }) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {proofs.map((project, idx) => {
               const accent = accentAt(idx);
-              const live =
-                typeof project.credit === "string" &&
-                /^https?:\/\//i.test(project.credit)
-                  ? project.credit
-                  : `/portfolio/${project.id}`;
               return (
-                <a
+                <Link
                   key={project.id}
-                  href={live}
-                  target={live.startsWith("http") ? "_blank" : undefined}
-                  rel={live.startsWith("http") ? "noopener noreferrer" : undefined}
+                  href={`/portfolio/${project.id}`}
                   onClick={() =>
                     trackEvent(AnalyticsEvents.VIEW_CASE_STUDY, {
                       project: project.id,
@@ -166,7 +208,7 @@ export default function AdsLandingPage({ landing }) {
                       {project.description || "Live production work from TheTriFusion."}
                     </p>
                   </div>
-                </a>
+                </Link>
               );
             })}
           </div>
@@ -209,10 +251,7 @@ export default function AdsLandingPage({ landing }) {
           {ADS_PROCESS.map((step, idx) => {
             const accent = accentAt(idx);
             return (
-              <li
-                key={step.title}
-                className={`p-5 rounded-2xl border ${accent.card}`}
-              >
+              <li key={step.title} className={`p-5 rounded-2xl border ${accent.card}`}>
                 <span
                   className={`inline-flex w-9 h-9 rounded-xl text-white text-sm font-black items-center justify-center mb-3 ${accent.bar}`}
                 >
@@ -265,6 +304,17 @@ export default function AdsLandingPage({ landing }) {
               );
             })}
           </div>
+          {landing.relatedService ? (
+            <p className="mt-8 text-sm text-gray-500">
+              More detail:{" "}
+              <Link
+                href={landing.relatedService.href}
+                className="font-semibold text-theme-purple"
+              >
+                {landing.relatedService.label}
+              </Link>
+            </p>
+          ) : null}
         </div>
       </section>
 
@@ -275,7 +325,7 @@ export default function AdsLandingPage({ landing }) {
           </h2>
           <p className="text-white/80 mb-8 max-w-xl mx-auto font-light">
             Share the problem and the deadline. The Jaipur team replies with a
-            next step — WhatsApp or a 15-minute call.
+            next step on WhatsApp.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
@@ -284,17 +334,44 @@ export default function AdsLandingPage({ landing }) {
             >
               Get a callback
             </a>
-            <Link
-              href={calendlyHref}
+            <a
+              href={calendlyHref || waHref}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-3.5 border-2 border-white text-white rounded-full font-bold"
             >
-              Book 15 minutes
-            </Link>
+              {calendlyHref ? "Book 15 minutes" : "WhatsApp us"}
+            </a>
           </div>
         </div>
       </section>
 
-      <Footer />
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-[90] bg-white border-t border-gray-100 p-3 flex gap-2">
+        <a
+          href={phoneHref}
+          onClick={() => trackEvent(AnalyticsEvents.CLICK_PHONE, { source: `${landing.slug}-sticky` })}
+          className="flex-1 text-center py-3 rounded-full border border-theme-purple text-theme-purple font-bold text-sm"
+        >
+          Call
+        </a>
+        <a
+          href={waHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => trackEvent(AnalyticsEvents.CLICK_WHATSAPP, { source: `${landing.slug}-sticky` })}
+          className="flex-1 text-center py-3 rounded-full bg-green-500 text-white font-bold text-sm"
+        >
+          WhatsApp
+        </a>
+        <a
+          href="#lead-form"
+          className="flex-1 text-center py-3 rounded-full bg-theme-purple text-white font-bold text-sm"
+        >
+          Form
+        </a>
+      </div>
+
+      <Footer hideNewsletter />
     </div>
   );
 }

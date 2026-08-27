@@ -275,8 +275,8 @@ export const seoLandingPages = [
     relatedServiceSlugs: [
       "software-development",
       "ai-development",
-      "devops",
-      "salesforce",
+      "mlm-crm-development",
+      "fintech-app-development",
     ],
     cta: "Start your custom software project",
   },
@@ -385,9 +385,9 @@ export const seoLandingPages = [
     ],
     relatedServiceSlugs: [
       "mobile-app-development",
-      "ui-ux-design",
-      "software-development",
-      "digital-marketing",
+      "ios-app-development",
+      "android-app-development",
+      "ev-charging-app-development",
     ],
     cta: "Build your mobile app",
   },
@@ -504,7 +504,7 @@ export const seoLandingPages = [
   {
     slug: "crm-erp-software-development",
     title: "CRM & ERP Software Development Company | Custom Business Systems",
-    h1: "CRM & ERP Software Development",
+    h1: "CRM & ERP Software Development for Indian Operations Teams",
     metaDescription:
       "Custom CRM and ERP software development by TheTriFusion. Automate sales, inventory, finance workflows, and operations with tailored enterprise software.",
     primaryKeyword: "CRM ERP software development",
@@ -516,22 +516,31 @@ export const seoLandingPages = [
       "salesforce customization",
     ],
     intro:
-      "Unify sales, inventory, finance, and operations with CRM and ERP software built for how your company actually works. TheTriFusion develops and customizes business systems that replace spreadsheet chaos.",
+      "Unify sales, inventory, finance, and operations with CRM and ERP software built for how your company actually works. TheTriFusion develops and customizes business systems that replace spreadsheet chaos — from Jaipur, for teams across India.",
     sections: [
       {
         title: "CRM that matches your sales process",
-        body: "Lead pipelines, follow-ups, quotations, customer history, and reporting — customized for your team’s stages and KPIs.",
+        body: "Lead pipelines, follow-ups, quotations, customer history, and reporting — customized for your team’s stages and KPIs. For network-marketing companies we also build unilevel compensation into the CRM rather than bolting it onto a generic sales tool.",
       },
       {
         title: "ERP modules for operations control",
-        body: "Inventory, procurement, billing, HR-lite workflows, and dashboards that give leadership real-time visibility.",
+        body: "Inventory, procurement, billing, HR-lite workflows, and dashboards that give leadership real-time visibility. Connect Dairy (connectdairy.in) is a live ops example: fleets, roles, and P&L — not a stock ERP screenshot.",
+      },
+      {
+        title: "Ecommerce + POS admin, when retail is the workflow",
+        body: "DailyConcepts India (dailyconceptsindia.com) needed storefront plus a POS-style admin. That is still CRM/ops software — just sitting next to checkout. We map admin workflows as carefully as customer flows.",
       },
       {
         title: "Integrations and Salesforce options",
-        body: "Connect payment gateways, ecommerce stores, accounting tools, or extend Salesforce when a platform-first approach fits better.",
+        body: "Connect payment gateways, ecommerce stores, accounting tools, or extend Salesforce when a platform-first approach fits better. If Salesforce cannot hold your commissions tree, we say so and point you to custom CRM.",
       },
     ],
     faqs: [
+      {
+        question: "Do you have live CRM/ops examples?",
+        answer:
+          "Yes. DailyConcepts India (ecommerce + POS admin) at dailyconceptsindia.com and Connect Dairy at connectdairy.in. MLM CRM delivery stays confidential unless the client agrees to a public credit.",
+      },
       {
         question: "Should I buy SaaS CRM/ERP or build custom?",
         answer:
@@ -549,10 +558,10 @@ export const seoLandingPages = [
       },
     ],
     relatedServiceSlugs: [
+      "crm-erp-development",
+      "mlm-crm-development",
       "software-development",
       "salesforce",
-      "business-modernization",
-      "rpa",
     ],
     cta: "Modernize your CRM or ERP",
   },

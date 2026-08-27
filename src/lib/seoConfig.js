@@ -38,18 +38,14 @@ export const pages = {
       "website development company Jaipur, software company Rajasthan, web development Jaipur, ecommerce development, digital marketing agency India",
   },
   "/portfolio": {
-    title: "Our Portfolio | TheTriFusion",
+    title: "Portfolio | Jaipur Software Projects | TheTriFusion",
     description:
-      "Explore successful websites and mobile apps built by TheTriFusion for startups and growing businesses.",
-    keywords:
-      "portfolio, case studies, web development projects, mobile app projects, TheTriFusion work",
+      "Live work from TheTriFusion in Jaipur: PlugOne EV charging, DailyConcepts ecommerce, Connect Dairy ops, and more Indian product builds you can open.",
   },
   "/pricing": {
-    title: "Pricing Plans | TheTriFusion",
+    title: "Pricing | Starting Ranges from Jaipur | TheTriFusion",
     description:
-      "Transparent pricing for websites, mobile apps, and digital services. Choose a plan that fits your business.",
-    keywords:
-      "pricing, website cost, mobile app cost, web development packages, TheTriFusion pricing",
+      "Starting ranges for websites, apps, MLM CRM, fintech, and EV charging from TheTriFusion in Jaipur. Ranges are not SKUs — we write a scope for every brief.",
   },
   "/pricing/calculator": {
     title: "Price Calculator | TheTriFusion",
@@ -106,9 +102,7 @@ export const pages = {
   "/blog": {
     title: "Blog | Jaipur Software Company Insights | TheTriFusion",
     description:
-      "Articles on web development, mobile apps, AI, cybersecurity, and technology trends from TheTriFusion.",
-    keywords:
-      "blog, web development blog, mobile app blog, technology insights, TheTriFusion blog",
+      "Jaipur delivery notes from TheTriFusion: ecommerce, MLM CRM, EV charging (OCPI/OCPP), and fintech — at least two India-relevant posts each month.",
   },
   "/faq": {
     title: "FAQ | Software Company in Jaipur | TheTriFusion",
@@ -187,6 +181,7 @@ export const NOINDEX_PATHS = new Set([
   "/timeline",
   "/pricing/calculator",
   "/thank-you",
+  "/appointment",
 ]);
 
 export function pageMetadata(path, options = {}) {
@@ -199,7 +194,6 @@ export function pageMetadata(path, options = {}) {
       absolute: page.title,
     },
     description: page.description,
-    keywords: page.keywords,
     alternates: {
       canonical: url,
       languages: {
@@ -236,7 +230,6 @@ export function pageMetadata(path, options = {}) {
 export function buildMetadata({
   title,
   description,
-  keywords,
   path,
   type = "website",
   image,
@@ -256,7 +249,6 @@ export function buildMetadata({
       absolute: title,
     },
     description,
-    keywords,
     alternates: {
       canonical: url,
       languages: {

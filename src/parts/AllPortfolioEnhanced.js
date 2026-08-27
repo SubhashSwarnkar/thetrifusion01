@@ -54,7 +54,7 @@ export default function AllPortfolioEnhanced({ data }) {
           <Fade
             triggerOnce
             direction="up"
-            delay={Math.min(index * 100, 500)}
+            delay={Math.min(index * 80, 240)}
             key={item.id || index}
           >
             <Button type="link" href={`/portfolio/${item.id}`}>
@@ -62,7 +62,7 @@ export default function AllPortfolioEnhanced({ data }) {
                 <div className="relative">
                   <img
                     src={item.imageUrl}
-                    alt={item.title}
+                    alt={`${item.title} — ${item.type} project by TheTriFusion`}
                     className="rounded-t-2xl z-0 w-full h-auto"
                   />
                   <div className="absolute flex w-full h-full top-0 opacity-0 bg-black justify-center rounded-t-2xl rounded-b img-hover transition-opacity duration-300">
@@ -96,6 +96,9 @@ export default function AllPortfolioEnhanced({ data }) {
                   </h2>
                   <p className="font-light text-gray-400 text-center text-sm">
                     {item.type}
+                  </p>
+                  <p className="font-light text-gray-500 text-center text-xs px-3 mt-1 line-clamp-2">
+                    {item.cardDescription || `${item.type} project by TheTriFusion`}
                   </p>
                 </div>
               </div>

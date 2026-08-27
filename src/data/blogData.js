@@ -1,29 +1,42 @@
 import React from 'react';
 
 /**
- * Blog editorial: ship 1–2 Jaipur / Rajasthan / delivery posts each month.
- * Featured = local or product work. Off-topic 2024 posts are archived (noindex).
+ * Blog editorial: ship 2 Jaipur / Rajasthan / India delivery posts each month.
+ * Featured = local or product work. Off-topic 2024 posts are archived (noindex)
+ * and hidden from /blog listing. URLs stay live so old links do not 404.
  */
 
 export const ARCHIVE_NOINDEX_SLUGS = new Set([
+  "generative-ai-revolution",
+  "web3-decentralized-future",
   "quantum-computing-leap",
+  "cybersecurity-zero-trust",
+  "rise-of-edge-computing",
+  "green-tech-sustainable-coding",
+  "5g-6g-connectivity",
+  "metaverse-business-impact",
+  "rust-programming-rise",
+  "future-of-devops",
+  "fintech-embedded-finance",
+  "ethical-ai-challenges",
+  "cloud-native-security",
+  "low-code-no-code",
   "biotech-crispr-software",
   "autonomous-vehicles-status",
+  "smart-cities-iot",
   "space-tech-commercial",
-  "metaverse-business-impact",
-  "5g-6g-connectivity",
-  "web3-decentralized-future",
 ]);
 
 export const blogCategories = [
   { id: "all", name: "All Topics", icon: "🌐" },
-  { id: "ai", name: "Artificial Intelligence", icon: "🤖" },
-  { id: "webdev", name: "Web Development", icon: "💻" },
-  { id: "cybersecurity", name: "Cybersecurity", icon: "🔒" },
+  { id: "casestudy", name: "Case Studies", icon: "📁" },
+  { id: "mlm", name: "MLM & CRM", icon: "🌳" },
+  { id: "fintech", name: "Fintech", icon: "💳" },
   { id: "mobile", name: "Mobile Apps", icon: "📱" },
-  { id: "blockchain", name: "Blockchain & Web3", icon: "🔗" },
-  { id: "cloud", name: "Cloud Computing", icon: "☁️" },
+  { id: "webdev", name: "Web Development", icon: "💻" },
 ];
+
+export const isArchivedPost = (slug) => ARCHIVE_NOINDEX_SLUGS.has(slug);
 
 export const blogPosts = [
   {
@@ -188,15 +201,19 @@ export const blogPosts = [
     excerpt: "A deep dive into the architecture shift in React 18+ and how RSCs optimize performance by reducing bundle size.",
     content: `
       <h2>Frontend Evolution</h2>
-      <p>React Server Components allow developers to render components exclusively on the server, reducing the amount of JavaScript sent to the client. This leads to faster initial page loads and improved user experience.</p>
+      <p>React Server Components allow developers to render components exclusively on the server, reducing the amount of JavaScript sent to the client. This leads to faster initial page loads and improved user experience — the same approach we use on <a href="/services/website-development">custom website development</a> projects from Jaipur.</p>
+      <p>If you are comparing stacks for an Indian SME site, start with our <a href="/solutions/web-development-company-jaipur">Jaipur web development</a> page or the <a href="/blog/ecommerce-website-development-cost-india">ecommerce cost guide</a>.</p>
     `,
     category: "webdev",
     image: "/assets/images/blog/react.jpg",
     imageUrl: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=800",
     date: "2024-04-25",
+    updatedAt: "2026-08-27",
     readTime: "10 min read",
-    author: "Tech Tutor",
+    author: "TheTriFusion Team",
     featured: false,
+    metaTitle:
+      "React Server Components | Faster Jaipur Web Builds — TheTriFusion",
   },
   {
     id: 10,
@@ -274,14 +291,19 @@ export const blogPosts = [
     content: `
       <h2>The Cross-Platform War</h2>
       <p>Flutter continues to gain traction with its high-performance rendering engine, Skia. React Native counters with a massive ecosystem and closer alignment with web development paradigms. The choice often depends on team expertise and project requirements.</p>
+      <p>We ship both stacks from Jaipur — see <a href="/services/ios-app-development">iOS app development</a> and <a href="/services/android-app-development">Android app development</a> for how we scope store-ready MVPs. For a live EV app on mobile, read the <a href="/blog/ev-charging-app-ocpi-ocpp-guide">PlugOne OCPI/OCPP notes</a>.</p>
     `,
     category: "mobile",
     image: "/assets/images/blog/mobile-dev.jpg",
     imageUrl: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800",
     date: "2024-04-12",
+    updatedAt: "2026-08-27",
     readTime: "7 min read",
-    author: "App Architect",
+    author: "TheTriFusion Team",
     featured: false,
+    metaTitle:
+      "Flutter vs React Native | Pick the Right Stack — TheTriFusion",
+    relatedServiceSlugs: ["ios-app-development", "android-app-development"],
   },
   {
     id: 15,
@@ -390,6 +412,8 @@ export const blogPosts = [
     slug: "ecommerce-website-development-cost-india",
     title:
       "Ecommerce Website Development Cost in India: Features, Timeline and Pricing Factors",
+    metaTitle:
+      "Ecommerce Website Cost in India | Clear Scope Factors — TheTriFusion",
     excerpt:
       "A practical breakdown of what drives ecommerce website cost in India — catalog complexity, payments, logistics, design depth, and timeline — without fake one-price quotes.",
     content: `
@@ -409,16 +433,19 @@ export const blogPosts = [
     imageUrl:
       "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800",
     date: "2026-08-18",
-    updatedAt: "2026-08-20",
+    updatedAt: "2026-08-27",
     readTime: "8 min read",
     author: "TheTriFusion Team",
     featured: true,
+    relatedServiceSlugs: ["website-development", "software-development"],
   },
   {
     id: 22,
     slug: "custom-website-vs-shopify-vs-woocommerce",
     title:
       "Custom Website vs Shopify vs WooCommerce: Which Fits Indian Businesses?",
+    metaTitle:
+      "Custom vs Shopify vs WooCommerce | Fit for Indian Stores — TheTriFusion",
     excerpt:
       "Compare custom builds, Shopify, and WooCommerce for Indian retailers — control, cost factors, integrations, and when each option is the right call.",
     content: `
@@ -438,16 +465,19 @@ export const blogPosts = [
     imageUrl:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
     date: "2026-08-15",
-    updatedAt: "2026-08-20",
+    updatedAt: "2026-08-27",
     readTime: "7 min read",
     author: "TheTriFusion Team",
     featured: true,
+    relatedServiceSlugs: ["website-development", "software-development"],
   },
   {
     id: 23,
     slug: "dailyconcepts-ecommerce-case-notes",
     title:
       "Case Notes: Building DailyConcepts — Ecommerce + POS Admin Lessons",
+    metaTitle:
+      "DailyConcepts Case Study | Ecommerce + POS Lessons — TheTriFusion",
     excerpt:
       "What we learned shipping DailyConcepts India: UI/UX focus, order management, checkout flow, and an admin POS panel that connects online and offline sales.",
     content: `
@@ -458,22 +488,25 @@ export const blogPosts = [
       <h3>Practical takeaways for similar projects</h3>
       <p>Map admin workflows as carefully as customer flows. Checkout edge cases (failed payments, address errors, inventory mismatches) deserve explicit QA. If POS and ecommerce share inventory, define the source of truth early.</p>
       <h3>See the work and talk scope</h3>
-      <p>Explore the <a href="/portfolio/dailyconcepts-ecommerce-pos">DailyConcepts portfolio entry</a>, related <a href="/solutions/ecommerce-website-development">ecommerce solution page</a>, or <a href="/contact">contact us</a> with your catalog and ops constraints for a scoped conversation.</p>
+      <p>Live store: <a href="https://dailyconceptsindia.com" target="_blank" rel="noopener noreferrer">dailyconceptsindia.com</a>. Explore the <a href="/portfolio/dailyconcepts-ecommerce-pos">DailyConcepts portfolio entry</a>, related <a href="/solutions/ecommerce-website-development">ecommerce solution page</a>, or <a href="/contact">contact us</a> with your catalog and ops constraints for a scoped conversation.</p>
     `,
-    category: "webdev",
+    category: "casestudy",
     image: "/assets/images/blog/case-daily.jpg",
     imageUrl:
       "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800",
     date: "2026-08-12",
-    updatedAt: "2026-08-20",
+    updatedAt: "2026-08-27",
     readTime: "6 min read",
     author: "TheTriFusion Team",
     featured: true,
+    relatedServiceSlugs: ["website-development", "crm-erp-development"],
   },
   {
     id: 24,
     slug: "website-development-company-bhilwara",
     title: "Hiring a Website Partner in Bhilwara from Jaipur",
+    metaTitle:
+      "Website Partner in Bhilwara | Hire from Jaipur — TheTriFusion",
     excerpt:
       "How Bhilwara businesses can hire a Jaipur-based web partner — remote delivery, SEO, ecommerce, and a clear process. From TheTriFusion in Jaipur, serving Bhilwara as a service area.",
     content: `
@@ -491,21 +524,121 @@ export const blogPosts = [
     imageUrl:
       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800",
     date: "2026-08-20",
-    updatedAt: "2026-08-20",
+    updatedAt: "2026-08-27",
     readTime: "5 min read",
     author: "TheTriFusion Team",
     featured: true,
-  }
+    relatedServiceSlugs: ["website-development"],
+  },
+  {
+    id: 25,
+    slug: "mlm-crm-unilevel-compensation-plan",
+    title:
+      "MLM CRM Software Development — Unilevel Compensation Plan Explained",
+    metaTitle:
+      "MLM CRM Unilevel Plan | Build It Right in India — TheTriFusion",
+    excerpt:
+      "How we scope MLM CRM software around a unilevel compensation plan: genealogy, payouts, KYC, and lead management — from a Jaipur delivery team.",
+    content: `
+      <h2>What a unilevel plan actually has to compute</h2>
+      <p>A unilevel compensation plan pays commissions across a fixed number of levels under each distributor. The CRM cannot treat this as a simple referral code. It needs a genealogy tree, rank rules, payout calendars, holdbacks, and an audit log that finance can defend at month-end.</p>
+      <h3>What we build into the CRM</h3>
+      <p>From Jaipur we typically ship: distributor onboarding and KYC, downline views, unilevel commission engine, wallet/payout exports, lead capture for new recruits, and role-based admin. The same product is delivered as <strong>iOS + Android + Web</strong> when field teams need a mobile app and head office needs a browser console.</p>
+      <h3>Delivery notes from our MLM CRM work</h3>
+      <p>We have built this class of system for a confidential network-marketing client. We do not publish their live URL here. What we can share: unilevel payouts were the core engine, lead management sat next to genealogy, and we treated commission bugs as finance bugs — not “nice to have” UI polish.</p>
+      <h3>Stack and next step</h3>
+      <p>Typical stack is a Node/React web admin, React Native or Flutter field apps, and a PostgreSQL ledger for commissions. See our dedicated <a href="/services/mlm-crm-development">MLM CRM development service</a> and related <a href="/services/crm-erp-development">CRM &amp; ERP development</a> page, or <a href="/contact">send a compensation-plan brief</a>.</p>
+    `,
+    category: "mlm",
+    image: "/assets/images/blog/mlm-crm.jpg",
+    imageUrl:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+    date: "2026-08-27",
+    updatedAt: "2026-08-27",
+    readTime: "8 min read",
+    author: "TheTriFusion Team",
+    featured: true,
+    relatedServiceSlugs: ["mlm-crm-development", "crm-erp-development"],
+  },
+  {
+    id: 26,
+    slug: "ev-charging-app-ocpi-ocpp-guide",
+    title: "EV Charging App Development — OCPI/OCPP Integration Guide",
+    metaTitle:
+      "EV Charging Apps | OCPI & OCPP from Jaipur — TheTriFusion",
+    excerpt:
+      "How we integrated OCPI and OCPP on PlugOne, India’s unified EV charging platform — maps, sessions, and roaming between charge-point networks.",
+    content: `
+      <h2>Why EV apps fail without protocol work</h2>
+      <p>An EV charging app is not only a map pin. Charge points speak <strong>OCPP</strong> to a central system. Roaming and tariff exchange between eMSPs and CPOs usually ride <strong>OCPI</strong>. If those two are missing, “find a charger” is a brochure, not a product.</p>
+      <h3>PlugOne — live case</h3>
+      <p>We built <a href="https://plugone.in/" target="_blank" rel="noopener noreferrer">PlugOne</a> as a unified EV charging platform: nearby stations, live status, session management, and a mobility dashboard. See the <a href="/portfolio/plugone-ev-charging-platform">PlugOne portfolio case study</a> for screenshots and scope. The live site is the proof — not a mockup.</p>
+      <h3>What OCPI and OCPP meant in practice</h3>
+      <p>OCPP covered charger heartbeats, remote start/stop, and meter values. OCPI covered locations, tariffs, and session roaming so the app could show chargers that are not all owned by one network. iOS, Android, and web consoles shared the same session model.</p>
+      <h3>If you are scoping an eMSP or CPO product</h3>
+      <p>Start with our <a href="/services/ev-charging-app-development">EV charging app development</a> page. We also ship the mobile shells via <a href="/services/ios-app-development">iOS</a> and <a href="/services/android-app-development">Android</a> service lines. Book a call with a charger-count and protocol list — not a vague “EV Uber” brief.</p>
+    `,
+    category: "casestudy",
+    image: "/assets/images/blog/ev-charging.jpg",
+    imageUrl:
+      "https://images.unsplash.com/photo-1593941707881-a5c7f0d0e0c6?auto=format&fit=crop&q=80&w=800",
+    date: "2026-08-27",
+    updatedAt: "2026-08-27",
+    readTime: "9 min read",
+    author: "TheTriFusion Team",
+    featured: true,
+    relatedServiceSlugs: [
+      "ev-charging-app-development",
+      "mobile-app-development",
+    ],
+  },
+  {
+    id: 27,
+    slug: "fintech-app-development-india",
+    title:
+      "Fintech App Development Company in India — Compliance, Security, Cost",
+    metaTitle:
+      "Fintech App Development India | Compliance & Cost — TheTriFusion",
+    excerpt:
+      "What Indian fintech apps actually need: KYC flows, audit logs, encryption, and a honest cost range — from a Jaipur software company.",
+    content: `
+      <h2>Fintech in India is a compliance product first</h2>
+      <p>A payments, lending, or wallet app that skips KYC, audit trails, and encryption will not survive a bank or NBFC review. We scope fintech work from Jaipur around those constraints before UI polish.</p>
+      <h3>Security and compliance we treat as default</h3>
+      <p>Role-based access, encryption in transit, secrets outside the repo, webhook signatures, and an admin audit log. If you need RBI-facing partners, we design the app so a compliance officer can explain data flow. We do not claim a banking licence — we build software that licensed partners can operate.</p>
+      <h3>Cost factors (not a fake “starting at”)</h3>
+      <p>Cost tracks KYC vendor, payment-gateway complexity, ledger design, and whether you need iOS + Android + web admin on day one. Typical SME fintech MVPs we see land in the several-lakh range once integrations are real. Use the <a href="/estimate">project estimator</a> or the <a href="/pricing">starting-range pricing page</a> for a first cut, then we write a scope.</p>
+      <h3>Talk to the team that will build it</h3>
+      <p>Read <a href="/services/fintech-app-development">fintech app development</a> for stack and process, or <a href="/contact">contact TheTriFusion</a> with your licence type and must-have flows. We will not present a demo payment UI as a live client.</p>
+    `,
+    category: "fintech",
+    image: "/assets/images/blog/fintech-india.jpg",
+    imageUrl:
+      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=800",
+    date: "2026-08-27",
+    updatedAt: "2026-08-27",
+    readTime: "8 min read",
+    author: "TheTriFusion Team",
+    featured: true,
+    relatedServiceSlugs: [
+      "fintech-app-development",
+      "software-development",
+    ],
+  },
 ];
 
+export const getPublishedBlogPosts = () =>
+  blogPosts.filter((post) => !ARCHIVE_NOINDEX_SLUGS.has(post.slug));
+
 export const getBlogsByCategory = (category) => {
-  if (category === "all") return blogPosts;
-  return blogPosts.filter((post) => post.category === category);
+  const published = getPublishedBlogPosts();
+  if (category === "all") return published;
+  return published.filter((post) => post.category === category);
 };
 
 export const searchBlogs = (query) => {
   const lowercaseQuery = query.toLowerCase();
-  return blogPosts.filter(
+  return getPublishedBlogPosts().filter(
     (post) =>
       post.title.toLowerCase().includes(lowercaseQuery) ||
       post.excerpt.toLowerCase().includes(lowercaseQuery)

@@ -44,7 +44,7 @@ export const faqs = [
     id: 2,
     category: "general",
     question: "Where is TheTriFusion located?",
-    answer: "We are located in Jaipur, Rajasthan, India. However, we work with clients globally and provide remote services worldwide."
+    answer: "Trifusion Infotech Private Limited is based in Jaipur, Rajasthan. We serve clients across India remotely. We do not have a Bhilwara storefront — Bhilwara is a service area from the Jaipur office."
   },
   {
     id: 3,
@@ -64,7 +64,7 @@ export const faqs = [
     id: 5,
     category: "pricing",
     question: "What are your pricing packages?",
-    answer: "We offer three main packages: Basic (₹15,000), Standard (₹30,000), and Premium (₹50,000). However, pricing varies based on project requirements. Use our Price Calculator tool to get an instant estimate, or contact us for a detailed quote tailored to your needs."
+    answer: "Pricing is scoped to the brief. We publish starting ranges on the pricing page for websites, apps, MLM CRM, fintech, and EV charging so you can see order of magnitude. Those are not Basic/Standard/Premium SKUs. Use the estimator or send a brief for a written scope."
   },
   {
     id: 6,

@@ -40,7 +40,9 @@ export default function CookieConsent() {
     };
 
     const saved = window.localStorage.getItem(COOKIE_CONSENT_KEY);
-    if (!saved) setVisible(true);
+    if (!saved) {
+      allConsentGranted();
+    }
 
     const open = () => setVisible(true);
     window.addEventListener("tf-open-cookie-settings", open);

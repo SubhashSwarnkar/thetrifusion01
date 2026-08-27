@@ -15,16 +15,14 @@ export function generateMetadata({ params }) {
     return buildMetadata({
       title: "Article Not Found | TheTriFusion Blog",
       description: "The requested blog article could not be found.",
-      keywords: "blog, TheTriFusion",
       path: `/blog/${params.slug}`,
       noIndex: true,
     });
   }
 
   return buildMetadata({
-    title: `${post.title} | TheTriFusion Blog`,
+    title: post.metaTitle || `${post.title} | TheTriFusion`,
     description: post.excerpt,
-    keywords: `${post.title}, ${post.category}, blog, technology, TheTriFusion`,
     path: `/blog/${post.slug}`,
     type: "article",
     image: post.imageUrl,

@@ -56,6 +56,9 @@ function localBusinessNode() {
     telephone: siteConfig.phoneE164,
     address: {
       "@type": "PostalAddress",
+      ...(siteConfig.streetAddress
+        ? { streetAddress: siteConfig.streetAddress }
+        : {}),
       addressLocality: siteConfig.city,
       addressRegion: siteConfig.region,
       addressCountry: siteConfig.country,
@@ -113,6 +116,10 @@ function localBusinessNode() {
       "Digital Marketing",
       "RPA",
       "Branding",
+      "MLM CRM Development",
+      "Fintech App Development",
+      "EV Charging App Development",
+      "CRM and ERP Development",
     ],
     contactPoint: {
       "@type": "ContactPoint",
@@ -191,17 +198,7 @@ export function serviceSchema({ name, description, path }) {
     name,
     description,
     url: absoluteSiteUrl(path),
-    provider: {
-      "@type": "ProfessionalService",
-      name: siteConfig.legalName,
-      url: siteConfig.url,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: siteConfig.city,
-        addressRegion: siteConfig.region,
-        addressCountry: siteConfig.country,
-      },
-    },
+    provider: { "@id": `${siteConfig.url}/#localbusiness` },
     areaServed: [
       { "@type": "City", name: "Jaipur" },
       { "@type": "AdministrativeArea", name: siteConfig.region },

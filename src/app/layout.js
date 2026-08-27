@@ -1,7 +1,7 @@
 import Providers from "components/Providers";
 import JsonLd from "components/JsonLd";
 import GoogleAnalytics from "components/GoogleAnalytics";
-import { siteGraphSchema, videoObjectSchema } from "lib/schema";
+import { siteGraphSchema } from "lib/schema";
 import { SITE_NAME, SITE_URL, pageMetadata, pages } from "lib/seoConfig";
 import { siteConfig } from "config/site";
 import { CONSENT_DEFAULT_INLINE } from "lib/gtagConsent";
@@ -15,6 +15,7 @@ const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
   variable: "--font-poppins",
   display: "swap",
+  preload: true,
 });
 
 const home = pageMetadata("/");
@@ -27,7 +28,6 @@ export const metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: home.description,
-  keywords: home.keywords,
   applicationName: SITE_NAME,
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,
@@ -110,7 +110,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         ) : null}
         <GoogleAnalytics />
         <JsonLd data={siteGraphSchema()} />
-        <JsonLd data={videoObjectSchema()} />
         <Providers>{children}</Providers>
       </body>
     </html>

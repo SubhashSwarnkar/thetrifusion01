@@ -2,7 +2,7 @@ import Page from "views/LandingPage";
 import JsonLd from "components/JsonLd";
 import { services } from "data/servicesData";
 import { HOME_FAQS } from "data/companyInfo";
-import { breadcrumbSchema, faqSchema, itemListSchema } from "lib/schema";
+import { breadcrumbSchema, faqSchema, itemListSchema, videoObjectSchema } from "lib/schema";
 import { pageMetadata } from "lib/seoConfig";
 
 export const metadata = pageMetadata("/");
@@ -25,6 +25,7 @@ export default function RoutePage() {
         })}
       />
       <JsonLd data={faqSchema(HOME_FAQS)} />
+      <JsonLd data={videoObjectSchema()} />
       <Page />
     </>
   );

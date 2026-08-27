@@ -4,8 +4,10 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Header from "parts/Header";
 import Footer from "parts/Footer";
+import Breadcrumbs from "components/Breadcrumbs";
 import { motion, AnimatePresence } from "framer-motion";
 import { getAllServicePricingPlans } from "data/servicePricingData";
+import { nicheServices } from "data/nicheServicesData";
 import SEO from "components/common/SEO";
 
 const containerVariants = {
@@ -47,6 +49,7 @@ export default function PricingPage() {
         description="Explore our transparent and competitive pricing for premium digital services. Tailored plans for startups to enterprises."
       />
       <Header />
+      <Breadcrumbs />
       
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
@@ -82,8 +85,48 @@ export default function PricingPage() {
               Invest in <span className="text-theme-purple">Excellence</span>
             </h1>
             <p className="text-xl text-gray-500 font-light leading-relaxed mb-12">
-              Transparent, competitive, and value-driven pricing structures designed to scale with your business goals. Choose the plan that fits your vision.
+              Starting ranges from Jaipur so you can see order of magnitude.
+              They are not Basic/Standard/Premium SKUs — every brief still gets
+              a written scope. Illustrative tiers below show how effort scales.
             </p>
+
+            <div className="max-w-4xl mx-auto mb-16 text-left bg-white border border-gray-100 rounded-3xl p-6 md:p-8 shadow-sm">
+              <h2 className="text-2xl font-bold text-theme-blue mb-2">
+                Niche starting ranges
+              </h2>
+              <p className="text-sm text-gray-500 mb-6">
+                INR, ex-GST, after discovery. iOS + Android + Web called out on
+                each niche service page.
+              </p>
+              <ul className="space-y-4">
+                {nicheServices.map((service) => (
+                  <li
+                    key={service.slug}
+                    className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-gray-50 pb-4 last:border-0 last:pb-0"
+                  >
+                    <div>
+                      <Link
+                        href={`/services/${service.slug}`}
+                        className="font-bold text-theme-blue hover:text-theme-purple"
+                      >
+                        {service.title}
+                      </Link>
+                      <p className="text-sm text-gray-500">
+                        {service.startingFromNote}
+                      </p>
+                    </div>
+                    <p className="text-theme-purple font-black whitespace-nowrap">
+                      From{" "}
+                      {new Intl.NumberFormat("en-IN", {
+                        style: "currency",
+                        currency: "INR",
+                        maximumFractionDigits: 0,
+                      }).format(service.startingFrom)}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
             {/* Service Filters - Premium Pill Style */}
             <div className="flex flex-wrap justify-center gap-3 mb-16">

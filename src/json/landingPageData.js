@@ -45,6 +45,9 @@ export const Portfolios = [
     imageUrl: PlugOneImg,
     type: "Mobile Apps",
     featured: true,
+    cardDescription:
+      "EV charging app — OCPI/OCPP roaming, live charger map, iOS + Android + web",
+    relatedServiceSlug: "ev-charging-app-development",
     description:
       "PlugOne is India's unified EV charging platform. It connects EV owners to nearby charging stations in real time, with an interactive map, charging-status tracking, a smart mobility dashboard, and session management across charging networks.",
     responsibility: [
@@ -61,6 +64,9 @@ export const Portfolios = [
     imageUrl: ConnectDairyImg,
     type: "Mobile Apps",
     featured: true,
+    cardDescription:
+      "Agri logistics web & mobile — milk/feed fleets, live tracking, role dashboards",
+    relatedServiceSlug: "crm-erp-development",
     description:
       "Connect Dairy (AtharvNarayan) is a live agri-logistics platform for dairy and feed operations: milk-truck management, feed-truck distribution, feed business workflows, live fleet tracking, role-based dashboards, and P&L variance analytics.",
     responsibility: [
@@ -77,6 +83,8 @@ export const Portfolios = [
     imageUrl: AtharvNarayanImg,
     type: "Website",
     featured: true,
+    cardDescription:
+      "Dairy services website — Jaipur/Bhilwara leads, inquiry and WhatsApp flows",
     description:
       "Atharv Narayan is a live dairy solutions website for Bhilwara and Jaipur: milk transportation, trained dairy manpower, cattle-feed supply, and tender support — with service pages, inquiry flows, and WhatsApp-ready contact.",
     responsibility: [
@@ -92,6 +100,9 @@ export const Portfolios = [
     title: "DailyConcepts",
     imageUrl: Recruiting,
     type: "Mobile Apps",
+    cardDescription:
+      "Ecommerce + POS admin — checkout, inventory, online and offline Indian retail",
+    relatedServiceSlug: "website-development",
     description:
       "Daily Concepts India is an e-commerce platform offering a seamless shopping experience with an integrated Point of Sales (POS) system in the Admin Panel. It features UI/UX-focused design, efficient order management, and a smooth checkout process, making it ideal for both online and offline sales.",
     responsibility: [
@@ -107,6 +118,7 @@ export const Portfolios = [
     title: "Meditative",
     imageUrl: Stream,
     type: "Website",
+    cardDescription: "Yoga/wellness marketing site — class pages, mobile-first layout",
     responsibility: ["Web Development", "UI/UX Design"],
     credit: "https://yoga-80f.pages.dev/",
   },
@@ -115,6 +127,7 @@ export const Portfolios = [
     title: "Pet Sitting",
     imageUrl: Freelance,
     type: "Website",
+    cardDescription: "Pet care services website — bookings, service pages, mobile layout",
     responsibility: ["Web Development", "UI/UX Design"],
     credit: "https://petcare-c3n.pages.dev/services",
   },
@@ -123,6 +136,7 @@ export const Portfolios = [
     title: "Podcast.",
     imageUrl: Aura,
     type: "Website",
+    cardDescription: "Podcast landing page — episode list, brand site, responsive web",
     responsibility: ["Web Development", "UI/UX Design"],
     credit: "https://podcast-ctw.pages.dev/",
   },
@@ -131,6 +145,7 @@ export const Portfolios = [
     title: "Resto",
     imageUrl: Surtido,
     type: "Website",
+    cardDescription: "Restaurant website — menu, reservation CTA, mobile-first design",
     responsibility: ["Web Development", "UI/UX Design"],
     credit: "https://resto-4tn.pages.dev/",
   },
@@ -139,6 +154,7 @@ export const Portfolios = [
     title: "Alime",
     imageUrl: Freelance,
     type: "Website",
+    cardDescription: "Photography portfolio site — gallery, booking inquiry, visual CMS",
     responsibility: ["Web Development", "UI/UX Design"],
     credit: "https://alimephotographer.pages.dev/",
   },
@@ -147,6 +163,7 @@ export const Portfolios = [
     title: "AppLab",
     imageUrl: ManagementApp,
     type: "Mobile Apps",
+    cardDescription: "App marketing site + product UI — iOS/Android showcase pages",
     responsibility: ["Web Development", "UI/UX Design"],
     credit: "https://app-lab.pages.dev/",
   },
@@ -155,6 +172,7 @@ export const Portfolios = [
     title: "Dentista",
     imageUrl: Surtido,
     type: "Website",
+    cardDescription: "Dental clinic website — services, appointment lead form, local SEO",
     responsibility: ["Web Development", "UI/UX Design"],
     credit: "https://dentista-dental-clinic.vercel.app/",
   },
@@ -163,6 +181,7 @@ export const Portfolios = [
     title: "Travelix",
     imageUrl: Recruiting,
     type: "Website",
+    cardDescription: "Travel booking website — packages, inquiry flow, destination pages",
     responsibility: ["Web Development", "UI/UX Design"],
     credit: "https://travelix-neon.vercel.app/",
   },
@@ -171,6 +190,7 @@ export const Portfolios = [
     title: "DentaCare",
     imageUrl: Freelance,
     type: "Website",
+    cardDescription: "Dental clinic web app — treatments, contact, mobile-friendly site",
     responsibility: ["Web Development", "UI/UX Design"],
     credit: "https://dente-ua67.vercel.app/",
   },
@@ -179,6 +199,7 @@ export const Portfolios = [
     title: "Macro",
     imageUrl: ManagementApp,
     type: "Website",
+    cardDescription: "Photography studio site — portfolio grid, visual storytelling pages",
     responsibility: ["Web Development", "UI/UX Design"],
     credit: "https://photography-dwap.vercel.app/",
   },
@@ -187,6 +208,8 @@ export const Portfolios = [
     title: "ShopNova",
     imageUrl: ShopNovaImg,
     type: "Website",
+    cardDescription:
+      "Ecommerce web app — filters, wishlist, multi-step checkout (demo storefront)",
     description:
       "ShopNova is a premium full-featured e-commerce website with a luxury fashion focus. It includes a product grid with smart filters, hero banners, wishlist, multi-step checkout, cart management, and a fully responsive mobile experience. Built for high-conversion retail businesses.",
     responsibility: [
@@ -202,6 +225,9 @@ export const Portfolios = [
     title: "PaySwift",
     imageUrl: PaySwiftImg,
     type: "Website",
+    cardDescription:
+      "Fintech payment UI — analytics, webhooks, checkout widget (demo, not a live bank)",
+    relatedServiceSlug: "fintech-app-development",
     description:
       "PaySwift is a robust fintech payment gateway platform offering real-time transaction analytics, multi-currency support, API integration panel, settlement reports, webhook management, and a secure embeddable checkout widget. Designed for high-volume payment processing businesses.",
     responsibility: [
@@ -218,6 +244,8 @@ export const Portfolios = [
     title: "FitTrack",
     imageUrl: Stream,
     type: "Mobile Apps",
+    cardDescription:
+      "iOS + Android fitness app — steps, heart rate, workout library (demo)",
     description:
       "FitTrack is a cross-platform iOS & Android fitness tracking app featuring calorie burn ring charts, step counter, heart rate monitoring, weekly progress analytics, workout category library, and streak tracker. It connects to wearables and syncs health data in real time.",
     responsibility: [
@@ -233,6 +261,8 @@ export const Portfolios = [
     title: "DataForge",
     imageUrl: Aura,
     type: "Website",
+    cardDescription:
+      "EdTech web app — DSA visualizer, code editor, complexity notes (demo)",
     description:
       "DataForge is an interactive DSA (Data Structures & Algorithms) learning and visualization platform. It provides animated algorithm visualizations for sorting, graph traversal, trees, and dynamic programming. Includes coding challenges, complexity analysis, and a built-in code editor.",
     responsibility: [
@@ -248,6 +278,8 @@ export const Portfolios = [
     title: "RealNest",
     imageUrl: Recruiting,
     type: "Mobile Apps",
+    cardDescription:
+      "Real estate iOS + Android app — map search, EMI, agent chat (demo)",
     description:
       "RealNest is a smart real estate property listing mobile app for iOS & Android. It features map-based property search, advanced filters (price, BHK, locality), virtual tour integration, EMI calculator, agent connect chat, and saved property wishlist — built to simplify home buying and renting.",
     responsibility: [
@@ -263,6 +295,8 @@ export const Portfolios = [
     title: "EduSpark",
     imageUrl: Surtido,
     type: "Website",
+    cardDescription:
+      "EdTech LMS website — live classes, quizzes, certificates (demo)",
     description:
       "EduSpark is a modern EdTech learning management platform offering live classes, recorded video courses, quizzes, progress tracking, certification, and mentor-student interaction. Designed with engaging UI for students across K-12, competitive exams, and professional upskilling.",
     responsibility: [
@@ -279,6 +313,8 @@ export const Portfolios = [
     title: "CryptoVault",
     imageUrl: ManagementApp,
     type: "Mobile Apps",
+    cardDescription:
+      "Crypto tracker iOS + Android — prices, P&L, alerts (demo, not a live exchange)",
     description:
       "CryptoVault is a sleek iOS & Android crypto portfolio tracker and wallet app. It displays live coin prices, portfolio P&L charts, market cap rankings, news feed, price alerts, and multi-wallet management — all in a dark-themed, data-rich UI optimized for crypto enthusiasts and traders.",
     responsibility: [
@@ -294,6 +330,8 @@ export const Portfolios = [
     title: "MedConnect",
     imageUrl: Freelance,
     type: "Mobile Apps",
+    cardDescription:
+      "Telemedicine iOS + Android — video consult, e-prescription (demo)",
     description:
       "MedConnect is a comprehensive telemedicine and healthcare mobile app for iOS & Android. It features online doctor consultations via video call, appointment booking, e-prescription, medical records management, lab report uploads, and a health vitals tracker — making quality healthcare accessible from anywhere.",
     responsibility: [
@@ -309,6 +347,8 @@ export const Portfolios = [
     title: "CloudDesk",
     imageUrl: Stream,
     type: "Website",
+    cardDescription:
+      "SaaS project web app — Kanban, sprints, time tracking (demo)",
     description:
       "CloudDesk is a powerful SaaS project management and team collaboration platform. It offers Kanban boards, sprint planning, time tracking, Gantt charts, file sharing, in-app chat, role-based permissions, and integrations with GitHub and Slack — built for modern agile development teams.",
     responsibility: [
@@ -324,6 +364,8 @@ export const Portfolios = [
     title: "FoodRush",
     imageUrl: Aura,
     type: "Mobile Apps",
+    cardDescription:
+      "Food delivery iOS + Android — live map tracking, payments (demo)",
     description:
       "FoodRush is a feature-rich food delivery app for iOS & Android connecting users with local restaurants. It includes real-time order tracking on map, restaurant discovery with filters, smart recommendations, live order status, multi-address management, and an integrated loyalty rewards program.",
     responsibility: [

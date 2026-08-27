@@ -9,13 +9,13 @@ import { trackEvent, AnalyticsEvents } from "utils/analytics";
 
 import Link from "next/link";
 
-export default function Footer() {
+export default function Footer({ hideNewsletter = false }) {
   const currentYear = new Date().getFullYear();
   const featuredSolutions = getFeaturedSolutions();
 
   return (
     <>
-      <Newsletter />
+      {hideNewsletter ? null : <Newsletter />}
       <footer className="bg-theme-blue text-white pt-24 pb-12 overflow-hidden relative">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-theme-purple via-theme-cyan to-theme-pink"></div>
         <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-theme-purple/10 rounded-full blur-[100px]"></div>
@@ -36,6 +36,7 @@ export default function Footer() {
                   href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noreferrer"
+                  aria-label="TheTriFusion on Instagram"
                   className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center hover:bg-theme-purple hover:scale-110 transition-all duration-300"
                 >
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -46,6 +47,7 @@ export default function Footer() {
                   href={LINKEDIN_URL}
                   target="_blank"
                   rel="noreferrer"
+                  aria-label="TheTriFusion on LinkedIn"
                   className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center hover:bg-theme-purple hover:scale-110 transition-all duration-300"
                 >
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -90,7 +92,14 @@ export default function Footer() {
                       White-label
                     </Link>
                   </li>
-                {services.slice(0, 3).map((s) => (
+                {[
+                  "mlm-crm-development",
+                  "fintech-app-development",
+                  "ev-charging-app-development",
+                ].map((slug) => {
+                  const s = services.find((item) => item.slug === slug);
+                  if (!s) return null;
+                  return (
                   <li key={s.id}>
                     <Link
                       href={`/services/${s.slug}`}
@@ -99,7 +108,8 @@ export default function Footer() {
                       {s.title}
                     </Link>
                   </li>
-                ))}
+                  );
+                })}
               </ul>
             </div>
 
@@ -268,8 +278,9 @@ export default function Footer() {
               <Link href="/privacy" className="hover:text-white transition-colors">
                 Privacy Policy
               </Link>
-              <button
-                type="button"
+          <button
+            type="button"
+            aria-label="Cookie settings"
                 onClick={() =>
                   window.dispatchEvent(new Event("tf-open-cookie-settings"))
                 }

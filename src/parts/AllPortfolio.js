@@ -38,7 +38,7 @@ export default function AllPortfolio({ data }) {
                 <Fade
                   triggerOnce
                   direction="up"
-                  delay={500 * index}
+                  delay={Math.min(index * 80, 240)}
                   key={index}
                 >
                   <Button type="link" href={`/portfolio/${item.id}`}>
@@ -91,7 +91,7 @@ export default function AllPortfolio({ data }) {
           <TabPanel>
             <div className="grid grid-cols-2 sm:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
               {website.map((item, index) => (
-                <Fade bottom delay={500 * index} key={index}>
+                <Fade bottom delay={Math.min(index * 80, 240)} key={index}>
                   <Button type="link" href={`/portfolio/${item.id}`}>
                     <div className="group rounded-2xl shadow-xl w-auto w-11/12 m-3 transform transition duration-500 hover:scale-110 portofolio-card">
                       <div className="relative">

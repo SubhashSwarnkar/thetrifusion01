@@ -1,31 +1,52 @@
 "use client";
 
-import React, { Component } from "react";
+import React from "react";
+import Link from "next/link";
+import Header from "parts/Header";
+import Footer from "parts/Footer";
+import NotFoundImg from "assets/images/NotFound.png";
 
-import Button from "elements/Button";
+const SUGGESTED = [
+  { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/blog", label: "Insights" },
+  { href: "/contact", label: "Contact" },
+];
 
-import NotFound from "assets/images/NotFound.png";
-
-export default class NotFoundPage extends Component {
-  render() {
-    return (
-      <div className="flex flex-col w-full h-screen justify-center bg-gray-800 dark:bg-gray-900">
-        <div className="flex w-full justify-center">
-          <img src={NotFound} alt="Not Found" className="sm:w-3/4 xl:w-5/12" />
-        </div>
-        <h1 className="text-white dark:text-gray-200 text-2xl text-center mt-5">
-          You weren't supposed to find this place...
+export default function NotFoundPage() {
+  return (
+    <div className="min-h-screen bg-white flex flex-col">
+      <Header />
+      <main className="flex-1 container mx-auto px-5 pt-32 pb-20 text-center">
+        <p className="text-theme-purple font-bold uppercase tracking-[0.2em] text-xs mb-4">
+          404
+        </p>
+        <h1 className="text-4xl md:text-5xl font-black text-theme-blue mb-4">
+          This page is not on the sitemap
         </h1>
-        <div className="flex justify-center">
-          <Button
-            href="/"
-            type="link"
-            className="flex w-30 h-10 px-5 mt-5 bg-gray-600 dark:bg-gray-700 text-white items-center rounded transform transition duration-500 hover:bg-gray-900 dark:hover:bg-gray-600"
-          >
-            Go Back
-          </Button>
+        <p className="text-gray-600 max-w-xl mx-auto mb-10">
+          The URL may be mistyped or the page moved. Try one of these, or go
+          home — TheTriFusion is a software company in Jaipur, Rajasthan.
+        </p>
+        <div className="flex flex-wrap justify-center gap-3 mb-8">
+          {SUGGESTED.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="px-5 py-2.5 rounded-full border border-theme-purple/30 text-theme-purple font-bold hover:bg-light-theme-purple"
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
-      </div>
-    );
-  }
+        <img
+          src={NotFoundImg}
+          alt="TheTriFusion 404 — page not found, return to Jaipur software company homepage"
+          className="mx-auto max-w-md w-full opacity-90"
+        />
+      </main>
+      <Footer hideNewsletter />
+    </div>
+  );
 }

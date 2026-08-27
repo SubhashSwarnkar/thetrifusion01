@@ -9,6 +9,7 @@ import Header from 'parts/Header';
 import HeroTeam from 'parts/HeroTeam';
 import AllTeam from 'parts/AllTeam';
 import Footer from 'parts/Footer';
+import Breadcrumbs from 'components/Breadcrumbs';
 
 import { TeamMembers } from 'json/landingPageData';
 
@@ -21,6 +22,7 @@ export default class TeamPage extends Component {
     return (
       <>
         <Header />
+        <Breadcrumbs />
         <HeroTeam />
         <AllTeam data={TeamMembers} />
         <Footer />

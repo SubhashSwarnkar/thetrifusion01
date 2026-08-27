@@ -7,8 +7,14 @@ import Header from "parts/Header";
 import Footer from "parts/Footer";
 import Breadcrumbs from "components/Breadcrumbs";
 import { Fade } from "react-awesome-reveal";
-import { getBlogBySlug, blogPosts, blogCategories } from "data/blogData";
+import {
+  getBlogBySlug,
+  getPublishedBlogPosts,
+  blogCategories,
+  isArchivedPost,
+} from "data/blogData";
 import { getSeoLandingBySlug } from "data/seoLandingPages";
+import { getServiceBySlug } from "data/servicesData";
 import SEO from "components/common/SEO";
 import { SITE_URL } from "lib/seoConfig";
 import NotFoundPage from "./NotFoundPage";
@@ -20,7 +26,18 @@ const BLOG_SOLUTION_MAP = {
     "ecommerce-website-development",
   ],
   mobile: ["mobile-app-development-company", "ui-ux-design-agency"],
-  ai: ["custom-software-development-company", "digital-marketing-agency"],
+  casestudy: [
+    "ecommerce-website-development",
+    "mobile-app-development-company",
+  ],
+  mlm: [
+    "crm-erp-software-development",
+    "custom-software-development-company",
+  ],
+  fintech: [
+    "custom-software-development-company",
+    "mobile-app-development-company",
+  ],
   default: [
     "best-software-company-india",
     "custom-software-development-company",
@@ -57,8 +74,18 @@ export default function BlogDetailPage() {
     .filter(Boolean)
     .slice(0, 2);
 
-  const relatedPosts = blogPosts
-    .filter((p) => p.slug !== post.slug && p.category === post.category)
+  const relatedServices = (post.relatedServiceSlugs || [])
+    .map((serviceSlug) => getServiceBySlug(serviceSlug))
+    .filter(Boolean)
+    .slice(0, 2);
+
+  const relatedPosts = getPublishedBlogPosts()
+    .filter(
+      (p) =>
+        p.slug !== post.slug &&
+        p.category === post.category &&
+        !isArchivedPost(p.slug)
+    )
     .slice(0, 2);
 
   return (
@@ -111,7 +138,7 @@ export default function BlogDetailPage() {
           <div className="relative mb-8 h-64 sm:h-96 w-full overflow-hidden rounded-2xl shadow-xl">
             <Image
               src={post.imageUrl}
-              alt={post.title}
+              alt={`${post.title} — article by TheTriFusion`}
               fill
               sizes="(max-width: 768px) 100vw, 896px"
               className="object-cover"
@@ -123,35 +150,14 @@ export default function BlogDetailPage() {
         {/* Content */}
         <Fade direction="up" delay={300} triggerOnce>
           <div className="prose prose-lg max-w-none">
-            <div className="text-gray-700 leading-relaxed text-lg">
-              {post.content || (
-                <div>
-                  <p className="mb-4">
-                    This is a placeholder for the full blog post content. In a real implementation,
-                    you would have the complete article content here with proper formatting,
-                    images, code blocks, and other rich content.
-                  </p>
-                  <p className="mb-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                  <h2 className="text-2xl font-bold text-theme-blue mt-8 mb-4">
-                    Key Takeaways
-                  </h2>
-                  <ul className="list-disc list-inside mb-4 space-y-2">
-                    <li>Important point number one</li>
-                    <li>Important point number two</li>
-                    <li>Important point number three</li>
-                  </ul>
-                  <p className="mb-4">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-                    in culpa qui officia deserunt mollit anim id est laborum.
-                  </p>
-                </div>
-              )}
-            </div>
+            {post.content ? (
+              <div
+                className="blog-html text-gray-700 leading-relaxed text-lg"
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              />
+            ) : (
+              <p className="text-gray-600">This article has no body content yet.</p>
+            )}
           </div>
         </Fade>
 
@@ -187,6 +193,32 @@ export default function BlogDetailPage() {
             </div>
           </div>
         </Fade>
+
+        {relatedServices.length > 0 && (
+          <Fade direction="up" delay={430} triggerOnce>
+            <div className="mt-12 pt-8 border-t border-gray-200">
+              <h3 className="text-2xl font-bold text-theme-blue mb-6">
+                Related services
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {relatedServices.map((service) => (
+                  <Link
+                    key={service.slug}
+                    href={`/services/${service.slug}`}
+                    className="p-5 rounded-2xl border border-gray-100 hover:border-theme-purple/40 transition-all"
+                  >
+                    <h4 className="text-lg font-bold text-theme-blue mb-2">
+                      {service.title}
+                    </h4>
+                    <p className="text-sm text-gray-500 line-clamp-2">
+                      {service.shortDescription}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </Fade>
+        )}
 
         {relatedSolutions.length > 0 && (
           <Fade direction="up" delay={450} triggerOnce>

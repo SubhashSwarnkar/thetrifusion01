@@ -142,21 +142,25 @@ export default function ShortLeadForm({
 
       <div className="space-y-3">
         <input
+          id="ads-name"
           name="name"
           type="text"
           autoComplete="name"
           placeholder="Your name"
+          aria-label="Your name"
           value={data.name}
           onChange={onChange}
           className={fieldClass}
           required
         />
         <input
+          id="ads-phone"
           name="phone"
           type="tel"
           autoComplete="tel"
           inputMode="tel"
           placeholder="WhatsApp / phone"
+          aria-label="WhatsApp or phone"
           value={data.phone}
           onChange={onChange}
           className={fieldClass}

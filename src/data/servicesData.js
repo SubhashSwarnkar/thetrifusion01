@@ -4,8 +4,10 @@ import Mobile from "../assets/images/Services/Mobile.png";
 import UIUX from "../assets/images/Services/Design.png";
 import BuildWebsite from "../assets/images/hero/BuildWebsite.png";
 import SoftwareFeatures from "../assets/images/Services/SoftwareFeatures.png";
+import { nicheServices } from "./nicheServicesData";
+import { servicePageSeo } from "./servicePageSeo";
 
-export const services = [
+const coreServices = [
   {
     id: "software-development",
     title: "Software Development",
@@ -2053,7 +2055,14 @@ export const services = [
   }
 ];
 
+function withPageSeo(service) {
+  const extra = servicePageSeo[service.slug];
+  return extra ? { ...service, ...extra } : service;
+}
+
+export const services = [...coreServices, ...nicheServices].map(withPageSeo);
+
 export const getServiceBySlug = (slug) => {
-  return services.find(service => service.slug === slug);
+  return services.find((service) => service.slug === slug);
 };
 

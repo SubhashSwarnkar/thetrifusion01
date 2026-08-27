@@ -312,7 +312,7 @@ const RELATED_BY_SLUG = {
       "mobile-app-development-company",
       "msp-managed-it-services",
     ],
-    relatedBlogSlug: "ecommerce-website-development-cost-india",
+    relatedBlogSlug: "mlm-crm-unilevel-compensation-plan",
   },
   "msp-managed-it-services": {
     relatedSolutionSlugs: [
@@ -328,7 +328,7 @@ const RELATED_BY_SLUG = {
       "custom-software-development-company",
       "ecommerce-website-development",
     ],
-    relatedBlogSlug: "custom-website-vs-shopify-vs-woocommerce",
+    relatedBlogSlug: "ev-charging-app-ocpi-ocpp-guide",
   },
   "web-development-company-india": {
     relatedSolutionSlugs: [
@@ -352,7 +352,7 @@ const RELATED_BY_SLUG = {
       "msp-managed-it-services",
       "best-software-company-india",
     ],
-    relatedBlogSlug: "dailyconcepts-ecommerce-case-notes",
+    relatedBlogSlug: "mlm-crm-unilevel-compensation-plan",
   },
   "website-development-company-bhilwara": {
     relatedSolutionSlugs: [

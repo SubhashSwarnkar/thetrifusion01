@@ -47,6 +47,10 @@ export const adsLandingPages = [
       "Live work you can open",
     ],
     stack: ["React", "Next.js", "Node.js", "MongoDB", "PostgreSQL", "AWS"],
+    relatedService: {
+      href: "/services/website-development",
+      label: "Full website development service",
+    },
     proofIds: [
       "plugone-ev-charging-platform",
       "atharv-narayan-wellness-website",
@@ -95,6 +99,10 @@ export const adsLandingPages = [
       "Live apps in production",
     ],
     stack: ["Kotlin", "React Native", "Firebase", "Node.js", "AWS"],
+    relatedService: {
+      href: "/services/android-app-development",
+      label: "Android app development service page",
+    },
     proofIds: [
       "plugone-ev-charging-platform",
       "connect-dairy-supply-chain",
@@ -143,6 +151,10 @@ export const adsLandingPages = [
       "App Store launch support",
     ],
     stack: ["Swift", "React Native", "Firebase", "Node.js", "AWS"],
+    relatedService: {
+      href: "/services/ios-app-development",
+      label: "iOS app development service page",
+    },
     proofIds: [
       "plugone-ev-charging-platform",
       "connect-dairy-supply-chain",
@@ -191,6 +203,10 @@ export const adsLandingPages = [
       "You keep the client relationship",
     ],
     stack: ["React", "Next.js", "Node.js", "React Native", "AWS", "DevOps"],
+    relatedService: {
+      href: "/services/software-development",
+      label: "Custom software development",
+    },
     proofIds: [
       "plugone-ev-charging-platform",
       "connect-dairy-supply-chain",
