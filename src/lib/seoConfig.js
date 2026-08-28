@@ -235,6 +235,7 @@ export function buildMetadata({
   image,
   publishedTime,
   authors,
+  keywords,
   noIndex = false,
 }) {
   const url = absoluteUrl(path);
@@ -249,6 +250,7 @@ export function buildMetadata({
       absolute: title,
     },
     description,
+    ...(keywords ? { keywords } : {}),
     alternates: {
       canonical: url,
       languages: {

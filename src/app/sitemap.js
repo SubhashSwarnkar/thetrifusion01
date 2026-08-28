@@ -7,6 +7,7 @@ import { siteConfig } from "config/site";
 
 export default function sitemap() {
   const fallbackDate = new Date("2026-08-20");
+  const serviceUpdated = new Date("2026-08-28");
 
   const staticRoutes = Object.keys(pages)
     .filter((path) => !NOINDEX_PATHS.has(path))
@@ -30,8 +31,8 @@ export default function sitemap() {
 
   const serviceRoutes = services.map((service) => ({
     url: `${siteConfig.url}/services/${service.slug}`,
-    lastModified: fallbackDate,
-    changeFrequency: "monthly",
+    lastModified: serviceUpdated,
+    changeFrequency: "weekly",
     priority: 0.8,
   }));
 

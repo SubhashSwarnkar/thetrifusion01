@@ -2062,6 +2062,16 @@ function withPageSeo(service) {
 
 export const services = [...coreServices, ...nicheServices].map(withPageSeo);
 
+if (process.env.NODE_ENV !== "production") {
+  const missing = services.filter((service) => !service.metaTitle);
+  if (missing.length) {
+    console.warn(
+      "[seo] Service pages missing unique metaTitle:",
+      missing.map((service) => service.slug).join(", ")
+    );
+  }
+}
+
 export const getServiceBySlug = (slug) => {
   return services.find((service) => service.slug === slug);
 };

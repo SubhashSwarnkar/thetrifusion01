@@ -1,23 +1,11 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import WhatsAppButton from "components/WhatsAppButton";
+import WhatsAppWidget from "components/WhatsAppWidget";
+import { getServiceBySlug } from "data/servicesData";
 
 export default function ContextualWhatsApp() {
   const pathname = usePathname() || "/";
-
-  // Solution landings have in-page + sticky WhatsApp CTAs
-  if (pathname.startsWith("/solutions/")) {
-    return null;
-  }
-  if (
-    pathname.startsWith("/web-development") ||
-    pathname.startsWith("/android-app-development") ||
-    pathname.startsWith("/ios-app-development") ||
-    pathname.startsWith("/white-label-development")
-  ) {
-    return null;
-  }
 
   let message = "Hi TriFusion, I want a project consultation.";
 
@@ -31,12 +19,19 @@ export default function ContextualWhatsApp() {
     message = "Hi TriFusion, I want to discuss white-label / partner development from Jaipur.";
   } else if (pathname.startsWith("/services/")) {
     const slug = pathname.replace("/services/", "").split("/")[0];
-    message = `Hi TriFusion, I need a consultation about ${slug.replace(/-/g, " ")}.`;
+    const service = getServiceBySlug(slug);
+    message =
+      service?.whatsappMessage ||
+      `Hi TriFusion, I need a consultation about ${slug.replace(/-/g, " ")}.`;
   } else if (pathname === "/appointment") {
     message = "Hi TriFusion, I want to book a discovery call.";
   } else if (pathname === "/contact" || pathname === "/discuss-project") {
     message = "Hi TriFusion, I want to discuss a project and get an estimate.";
+  } else if (pathname.startsWith("/pricing")) {
+    message = "Hi TriFusion, I want to discuss project pricing and starting ranges.";
+  } else if (pathname.startsWith("/portfolio")) {
+    message = "Hi TriFusion, I saw your portfolio work and want to discuss a new project.";
   }
 
-  return <WhatsAppButton message={message} />;
+  return <WhatsAppWidget defaultMessage={message} />;
 }

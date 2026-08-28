@@ -4,16 +4,32 @@ import React from "react";
 import { trackEvent, AnalyticsEvents } from "utils/analytics";
 import { WHATSAPP_NUMBER } from "data/companyInfo";
 
+export function openWhatsAppModal(message) {
+  if (typeof window !== "undefined") {
+    window.dispatchEvent(
+      new CustomEvent("open-whatsapp-modal", {
+        detail: { message },
+      })
+    );
+  }
+}
+
 export default function WhatsAppButton({
   phoneNumber = WHATSAPP_NUMBER,
   message = "Hello! I'm interested in your services.",
   className = "fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition-all duration-300 transform hover:scale-110 group",
   label = "Chat with us on WhatsApp",
   children,
+  directLink = false,
 }) {
   const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(message)}`;
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    if (!directLink) {
+      e.preventDefault();
+      openWhatsAppModal(message);
+      return;
+    }
     trackEvent(AnalyticsEvents.CLICK_WHATSAPP, {
       message_preview: message.slice(0, 80),
       page_path: typeof window !== "undefined" ? window.location.pathname : "",

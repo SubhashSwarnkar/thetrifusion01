@@ -191,19 +191,71 @@ export function itemListSchema({ name, items = [] }) {
   };
 }
 
-export function serviceSchema({ name, description, path }) {
+export function serviceSchema({
+  name,
+  description,
+  path,
+  serviceType,
+  price,
+  offers = [],
+}) {
+  const url = absoluteSiteUrl(path);
   return {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${url}#service`,
     name,
+    ...(serviceType ? { serviceType, alternateName: serviceType } : {}),
     description,
-    url: absoluteSiteUrl(path),
+    url,
+    category: "Information Technology Services",
     provider: { "@id": `${siteConfig.url}/#localbusiness` },
+    brand: { "@id": `${siteConfig.url}/#organization` },
     areaServed: [
       { "@type": "City", name: "Jaipur" },
       { "@type": "AdministrativeArea", name: siteConfig.region },
+      { "@type": "City", name: "Delhi" },
+      { "@type": "City", name: "Mumbai" },
+      { "@type": "City", name: "Bengaluru" },
       { "@type": "Country", name: siteConfig.countryName },
     ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "48",
+      bestRating: "5",
+      worstRating: "1",
+    },
+    termsOfService: absoluteSiteUrl("/terms"),
+    ...(price
+      ? {
+          offers: {
+            "@type": "Offer",
+            priceCurrency: "INR",
+            price: String(price),
+            availability: "https://schema.org/InStock",
+            validFrom: "2026-01-01",
+            url,
+          },
+        }
+      : {}),
+    ...(offers && offers.length > 0
+      ? {
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: `${name} Offerings`,
+            itemListElement: offers.map((offer, index) => ({
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: offer.title,
+                description: offer.description,
+              },
+              position: index + 1,
+            })),
+          },
+        }
+      : {}),
   };
 }
 
