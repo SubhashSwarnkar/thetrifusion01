@@ -221,13 +221,13 @@ export default function WhatsAppWidget({ defaultMessage }) {
         )}
       </button>
 
-      {/* Interactive WhatsApp Popover Card */}
+      {/* Interactive WhatsApp Popover Card (Opens Upwards above button) */}
       {isOpen && (
         <div
           ref={modalRef}
           role="dialog"
           aria-label="WhatsApp Quick Chat"
-          className="absolute bottom-18 right-0 w-[92vw] sm:w-[390px] max-w-[420px] bg-white rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.25)] border border-emerald-500/20 overflow-hidden flex flex-col z-50 animate-in fade-in zoom-in-95 duration-200"
+          className="absolute bottom-[68px] right-0 w-[92vw] sm:w-[390px] max-w-[420px] max-h-[calc(100vh-100px)] bg-white rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-emerald-500/25 overflow-hidden flex flex-col z-50 transition-all duration-200 origin-bottom-right"
         >
           {/* Header */}
           <div className="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 text-white p-4 sm:p-5 flex items-center justify-between shadow-md">
