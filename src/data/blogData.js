@@ -563,27 +563,35 @@ export const blogPosts = [
   {
     id: 26,
     slug: "ev-charging-app-ocpi-ocpp-guide",
-    title: "EV Charging App Development — OCPI/OCPP Integration Guide",
+    title: "EV Charging App Development Guide — OCPI, OCPP & eMSP Roaming Architecture",
     metaTitle:
-      "EV Charging Apps | OCPI & OCPP from Jaipur — TheTriFusion",
+      "EV Charging App Development India | OCPI & OCPP Guide — TheTriFusion",
     excerpt:
-      "How we integrated OCPI and OCPP on PlugOne, India’s unified EV charging platform — maps, sessions, and roaming between charge-point networks.",
+      "A complete technical guide on EV charging app development, OCPP 1.6J/2.0.1 charger connectivity, OCPI 2.2.1 roaming, and eMSP architecture based on live lessons from PlugOne (plugone.in).",
     content: `
-      <h2>Why EV apps fail without protocol work</h2>
-      <p>An EV charging app is not only a map pin. Charge points speak <strong>OCPP</strong> to a central system. Roaming and tariff exchange between eMSPs and CPOs usually ride <strong>OCPI</strong>. If those two are missing, “find a charger” is a brochure, not a product.</p>
-      <h3>PlugOne — live case</h3>
-      <p>We built <a href="https://plugone.in/" target="_blank" rel="noopener noreferrer">PlugOne</a> as a unified EV charging platform: nearby stations, live status, session management, and a mobility dashboard. See the <a href="/portfolio/plugone-ev-charging-platform">PlugOne portfolio case study</a> for screenshots and scope. The live site is the proof — not a mockup.</p>
-      <h3>What OCPI and OCPP meant in practice</h3>
-      <p>OCPP covered charger heartbeats, remote start/stop, and meter values. OCPI covered locations, tariffs, and session roaming so the app could show chargers that are not all owned by one network. iOS, Android, and web consoles shared the same session model.</p>
-      <h3>If you are scoping an eMSP or CPO product</h3>
-      <p>Start with our <a href="/services/ev-charging-app-development">EV charging app development</a> page. We also ship the mobile shells via <a href="/services/ios-app-development">iOS</a> and <a href="/services/android-app-development">Android</a> service lines. Book a call with a charger-count and protocol list — not a vague “EV Uber” brief.</p>
+      <h2>Why EV Charging Apps Fail Without OCPP & OCPI Protocol Architecture</h2>
+      <p>An EV charging app is far more than a simple Google Maps pin aggregator. Charge points require direct protocol communication using <strong>OCPP (Open Charge Point Protocol 1.6J / 2.0.1)</strong> to manage hardware telemetry, remote start/stop commands, power allocation, and meter values. Meanwhile, roaming and tariff synchronization across third-party eMSPs and CPO networks strictly relies on <strong>OCPI (Open Charge Point Interface 2.2.1)</strong>. Without these two protocols, an EV charging application cannot provide real-time charger availability, live booking, or automated billing.</p>
+      
+      <h3>PlugOne — Real-World Live Proof & Architecture</h3>
+      <p>TheTriFusion engineered <a href="https://plugone.in/" target="_blank" rel="noopener noreferrer">PlugOne</a>, India’s unified EV charging platform providing real-time station discovery, connector-level live status (available, preparing, charging, faulted), slot reservations, in-app EV wallet billing, and unified CPO/eMSP telemetry. Explore our complete <a href="/portfolio/plugone-ev-charging-platform">PlugOne case study</a> for architecture breakdowns and screenshots.</p>
+
+      <h3>Key Pillars of Turnkey EV Charging Software</h3>
+      <ul>
+        <li><strong>OCPP 1.6-J &amp; 2.0.1 CSMS:</strong> Central System Management Software handling WebSockets, remote start/stop, firmware management, and high-frequency meter telemetry.</li>
+        <li><strong>OCPI 2.1.1 / 2.2.1 Roaming:</strong> Exchanging station credentials, tariffs, CDRs (Charge Detail Records), and token authorizations across disparate CPO networks.</li>
+        <li><strong>eMSP Driver Mobile Apps:</strong> Native iOS and Android apps with turn-by-turn map navigation, multi-standard filter (CCS2, Type 2, GB/T, Bharat DC-001), session power tracking (kW/h &amp; SOC%), and instant payment gateways.</li>
+        <li><strong>CPO Station Management Web Console:</strong> Comprehensive analytics, automated revenue splitting, tariff scheduling (peak/off-peak), and charger uptime monitoring.</li>
+      </ul>
+
+      <h3>Scoping Your EV Charging or eMSP Project</h3>
+      <p>Visit our dedicated <a href="/services/ev-charging-app-development">EV charging app development company</a> page for technical capabilities, or contact our Jaipur engineering team to discuss your charger count, protocol specs, and launch roadmap.</p>
     `,
     category: "casestudy",
     image: "/assets/images/blog/ev-charging.jpg",
     imageUrl:
       "https://images.unsplash.com/photo-1593941707881-a5c7f0d0e0c6?auto=format&fit=crop&q=80&w=800",
     date: "2026-08-27",
-    updatedAt: "2026-08-27",
+    updatedAt: "2026-08-28",
     readTime: "9 min read",
     author: "TheTriFusion Team",
     featured: true,
@@ -596,27 +604,35 @@ export const blogPosts = [
     id: 27,
     slug: "fintech-app-development-india",
     title:
-      "Fintech App Development Company in India — Compliance, Security, Cost",
+      "Fintech App Development Company in India — Compliance, UPI, KYC & Security Guide",
     metaTitle:
-      "Fintech App Development India | Compliance & Cost — TheTriFusion",
+      "Fintech App Development India | Compliance, UPI & Cost — TheTriFusion",
     excerpt:
-      "What Indian fintech apps actually need: KYC flows, audit logs, encryption, and a honest cost range — from a Jaipur software company.",
+      "Complete guide to fintech app development in India: RBI guidelines, automated Video-KYC, UPI payment integration, double-entry ledger architecture, and realistic MVP costs.",
     content: `
-      <h2>Fintech in India is a compliance product first</h2>
-      <p>A payments, lending, or wallet app that skips KYC, audit trails, and encryption will not survive a bank or NBFC review. We scope fintech work from Jaipur around those constraints before UI polish.</p>
-      <h3>Security and compliance we treat as default</h3>
-      <p>Role-based access, encryption in transit, secrets outside the repo, webhook signatures, and an admin audit log. If you need RBI-facing partners, we design the app so a compliance officer can explain data flow. We do not claim a banking licence — we build software that licensed partners can operate.</p>
-      <h3>Cost factors (not a fake “starting at”)</h3>
-      <p>Cost tracks KYC vendor, payment-gateway complexity, ledger design, and whether you need iOS + Android + web admin on day one. Typical SME fintech MVPs we see land in the several-lakh range once integrations are real. Use the <a href="/estimate">project estimator</a> or the <a href="/pricing">starting-range pricing page</a> for a first cut, then we write a scope.</p>
-      <h3>Talk to the team that will build it</h3>
-      <p>Read <a href="/services/fintech-app-development">fintech app development</a> for stack and process, or <a href="/contact">contact TheTriFusion</a> with your licence type and must-have flows. We will not present a demo payment UI as a live client.</p>
+      <h2>Fintech in India: Engineering a High-Security, Compliance-First Product</h2>
+      <p>Building a fintech application in India requires strict adherence to regulatory standards, data privacy laws, and bank-grade security protocols. Whether you are launching a digital lending platform, neo-banking app, multi-currency wallet, or UPI payment gateway, your application architecture must satisfy RBI compliance, VAPT security audits, and automated fraud prevention from day one.</p>
+
+      <h3>Core Security &amp; Compliance Architectural Components</h3>
+      <ul>
+        <li><strong>Automated e-KYC &amp; AML Verification:</strong> Integrating Aadhaar OTP, Digilocker, PAN verification, OCR face-matching, and Video-KYC (V-CIP) flows for compliant customer onboarding.</li>
+        <li><strong>UPI &amp; Multi-Gateway Payment Stack:</strong> Instant UPI collect/intent, recurring UPI AutoPay mandates, webhook signature verification, and automated settlement reconciliations.</li>
+        <li><strong>Double-Entry Ledger Architecture:</strong> Immutable ledger tracking for every credit, debit, and fee with zero tolerance for floating-point inaccuracies or race conditions.</li>
+        <li><strong>Bank-Grade Data Security:</strong> AES-256 database encryption at rest, TLS 1.3 in transit, secrets stored in secure vaults (AWS KMS / HashiCorp Vault), and comprehensive administrative audit logs.</li>
+      </ul>
+
+      <h3>Fintech App MVP Cost &amp; Development Timeline in India</h3>
+      <p>A production-ready fintech MVP with automated KYC, payment gateway integration, secure double-entry ledgers, and responsive iOS, Android, and Web admin consoles typically ranges from ₹4L to ₹15L depending on licensing partner complexity and custom compliance features.</p>
+
+      <h3>Partner with an Experienced Fintech Development Team</h3>
+      <p>Explore our specialized <a href="/services/fintech-app-development">Fintech app development service</a> to review our technical stack, security practices, and custom banking solutions, or <a href="/contact">contact TheTriFusion</a> for a confidential technical consultation.</p>
     `,
     category: "fintech",
     image: "/assets/images/blog/fintech-india.jpg",
     imageUrl:
       "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=800",
     date: "2026-08-27",
-    updatedAt: "2026-08-27",
+    updatedAt: "2026-08-28",
     readTime: "8 min read",
     author: "TheTriFusion Team",
     featured: true,

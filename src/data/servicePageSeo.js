@@ -255,52 +255,54 @@ export const servicePageSeo = {
     ],
   },
   "digital-marketing": {
-    metaTitle: "Digital Marketing Agency in Jaipur | SEO & Paid Ads",
+    metaTitle:
+      "Digital Marketing & Performance Marketing Agency in Jaipur India | High ROAS Ads & SEO",
     metaDescription:
-      "TheTriFusion in Jaipur runs digital marketing for Indian SMEs — SEO, ads, and landing pages tied to the product we build. Ask for a 90-day scoped plan.",
+      "Top digital marketing & performance marketing agency in Jaipur India. We scale ROI with high-converting Google Ads, Meta Ads, Technical SEO, CRO & B2B lead funnels.",
     keywords:
-      "digital marketing agency Jaipur, SEO company Jaipur, Google Ads Rajasthan, SME digital marketing India, landing page ads Jaipur",
-    bannerTitle: "Digital Marketing Agency in Jaipur, India",
+      "digital marketing agency Jaipur, performance marketing company India, Google Ads agency Jaipur, Meta ads agency India, SEO company Jaipur, PPC management India, B2B lead generation agency, ecommerce performance marketing, conversion rate optimization Jaipur, social media marketing Rajasthan",
+    bannerTitle:
+      "Digital Marketing & Performance Marketing Agency in Jaipur, India",
     bannerDescription:
-      "SEO and paid ads tied to landing pages we also built — so the message matches the product, not a rented media team on a site they never shipped.",
+      "Data-backed performance marketing, high-ROAS Google & Meta ads, and revenue-focused SEO directly integrated with high-converting custom landing pages.",
     shortDescription:
-      "TheTriFusion in Jaipur runs digital marketing for Indian SMEs — SEO, ads, and landing pages tied to the product we build. Ask for a 90-day scoped plan.",
+      "TheTriFusion in Jaipur runs data-driven digital marketing & performance ad campaigns — SEO, Google Ads, Meta Ads, and custom landing page CRO for high ROAS.",
     description:
-      "TheTriFusion is a digital marketing agency in Jaipur for SMEs who want SEO and ads on pages we understand. We write titles, ship landing pages, and run campaigns that point at real products — websites and apps from the same team. Branding and graphic kits are separate when you only need identity or creatives.",
+      "TheTriFusion is a leading digital marketing and performance marketing agency in Jaipur. We bridge the gap between creative marketing and engineering: our team crafts laser-targeted Google Search/PMax campaigns, Meta (Facebook & Instagram) ads, technical SEO, and conversion-optimized landing pages that turn expensive traffic into paying customers. Every campaign is tracked against concrete business metrics: CAC, ROAS, and qualified lead volume.",
     locationLine:
-      "SEO and ads from Jaipur — campaigns for clients across India.",
-    scopeKicker: "Growth",
-    scopeHeading: "Marketing we run with the product",
-    processHeading: "How a 90-day Jaipur marketing plan starts",
-    ctaHeading: "Want SEO and ads on pages you actually own?",
+      "Performance marketing & SEO engineered from Jaipur — scaling brands across India.",
+    scopeKicker: "Performance Growth",
+    scopeHeading: "Outcome-Driven Digital Marketing & Ad Channels We Run",
+    processHeading: "Our 90-Day Performance Scaling & Optimization Framework",
+    ctaHeading: "Ready to Scale Your Revenue with High ROAS Marketing?",
     ctaText:
-      "Share the product URL and channel mix. We return a 90-day scoped plan from Jaipur.",
-    serviceType: "Digital Marketing",
+      "Share your target CAC, monthly ad budget, and core growth objectives. Our Jaipur performance marketing team will deliver a comprehensive 90-day growth roadmap.",
+    serviceType: "Digital Marketing & Performance Advertising Services",
     whatsappMessage:
-      "Hi TriFusion, I want a digital marketing (SEO/ads) plan from the Jaipur team.",
+      "Hi TriFusion, I want a digital marketing & performance marketing (SEO/Ads) growth plan from the Jaipur team.",
     imageAlt:
-      "Digital marketing and SEO work for Jaipur businesses by TheTriFusion",
+      "Digital marketing and performance advertising campaigns by TheTriFusion Jaipur",
     relatedBlogSlug: "website-development-company-bhilwara",
     faqs: [
       {
-        question: "SEO only, or ads too?",
+        question: "What separates performance marketing from standard digital marketing?",
         answer:
-          "Both, when the brief needs it. We prefer landing pages we also built so the message matches the product.",
+          "Performance marketing is 100% accountable and metrics-driven. Instead of vague impressions, we optimize specifically for Cost Per Lead (CPL), Customer Acquisition Cost (CAC), and Return on Ad Spend (ROAS) across Google Ads and Meta Ads.",
       },
       {
-        question: "How soon are marketing results?",
+        question: "Do you design and code custom high-converting landing pages?",
         answer:
-          "Paid ads can produce leads quickly. SEO compounds over weeks to months.",
+          "Yes! Unlike traditional agencies that send paid ad traffic to generic homepages, our full-stack engineering team builds ultra-fast, customized React/Next.js landing pages with integrated analytics and heatmaps to maximize conversion rates.",
       },
       {
-        question: "Do you market sites you did not build?",
+        question: "How quickly do Google Ads / Meta Ads yield returns compared to SEO?",
         answer:
-          "Sometimes. We still audit the pages first. Rankings fail if the site is slow or the offer is unclear.",
+          "Paid search and social ads generate targeted leads within 24–48 hours of campaign launch. SEO is a compounding engine that delivers sustainable organic domain authority and search dominance over 3 to 6 months.",
       },
       {
-        question: "Do you work outside Jaipur?",
+        question: "Do you manage both B2B lead generation and B2C / D2C ecommerce marketing?",
         answer:
-          "Yes. Office in Jaipur; campaigns for clients across India.",
+          "Yes. We specialize in B2B account-targeted lead generation funnels (LinkedIn + Google Search) as well as high-volume D2C ecommerce catalog campaigns (Google Shopping + Meta Dynamic Product Ads).",
       },
     ],
   },
@@ -555,52 +557,54 @@ export const servicePageSeo = {
     ],
   },
   devops: {
-    metaTitle: "DevOps & AWS Cloud Services in Jaipur | TheTriFusion",
+    metaTitle:
+      "DevOps & AWS Cloud Services Company in Jaipur India | CI/CD, Kubernetes & IaC",
     metaDescription:
-      "TheTriFusion in Jaipur runs DevOps for Indian products — CI/CD, AWS, monitoring, and deploys you can repeat. Ask for a pipeline and hosting scoped plan.",
+      "Top DevOps & AWS cloud consulting company in Jaipur & India. We engineer automated CI/CD pipelines, Docker/Kubernetes orchestration, Terraform IaC, serverless architecture & 24/7 cloud observability.",
     keywords:
-      "DevOps services Jaipur, AWS cloud Jaipur, CI CD pipeline India, cloud hosting Rajasthan, Kubernetes Docker Jaipur",
-    bannerTitle: "DevOps & Cloud Services in Jaipur, India",
+      "DevOps services company Jaipur, AWS cloud consulting India, CI CD pipeline automation, Kubernetes Docker orchestration Jaipur, Terraform Infrastructure as Code, cloud migration services India, DevOps consulting company Rajasthan, serverless AWS architectures, Prometheus Grafana monitoring, DevSecOps cloud security",
+    bannerTitle:
+      "DevOps & AWS Cloud Infrastructure Engineering in Jaipur, India",
     bannerDescription:
-      "CI/CD, AWS, and monitoring you can repeat — not a one-time deploy that only one laptop can run. We match the account you already have.",
+      "Automated CI/CD pipelines, Infrastructure as Code (Terraform), Kubernetes cluster orchestration, and resilient AWS/GCP cloud environments engineered for zero-downtime scalability.",
     shortDescription:
-      "TheTriFusion in Jaipur runs DevOps for Indian products — CI/CD, AWS, monitoring, and deploys you can repeat. Ask for a pipeline and hosting scoped plan.",
+      "TheTriFusion in Jaipur delivers production DevOps & AWS cloud services — automated CI/CD, Terraform IaC, Docker/Kubernetes, and comprehensive monitoring for modern applications.",
     description:
-      "TheTriFusion runs DevOps and AWS cloud work from Jaipur for products we also ship: pipelines, environments, and monitoring with a written response window. We prefer the AWS account you already have. Isolated ops retainers are scoped case by case — we do not sell a fake 24/7 global NOC.",
+      "TheTriFusion is a dedicated DevOps and cloud engineering team in Jaipur. We help startups and enterprises eliminate deployment friction, modernize legacy infrastructure, and automate cloud operations. From zero-downtime CI/CD workflows and Docker/Kubernetes cluster setup to Terraform Infrastructure as Code (IaC) and Prometheus/Grafana monitoring, we ensure your production infrastructure is secure, scalable, and resilient.",
     locationLine:
-      "DevOps from Jaipur — AWS pipelines and deploys you can repeat.",
-    scopeKicker: "Cloud",
-    scopeHeading: "DevOps and AWS work we run",
-    processHeading: "How we take over deploys without drama",
-    ctaHeading: "Need deploys that are not stuck on one laptop?",
+      "DevOps & AWS cloud architecture from Jaipur — powering high-availability systems across India.",
+    scopeKicker: "Cloud & Reliability",
+    scopeHeading: "DevOps & Cloud Engineering Services We Deliver",
+    processHeading: "Our Battle-Tested DevOps Transformation & Migration Framework",
+    ctaHeading: "Ready to Automate Deployments & Scale Your Cloud Infrastructure?",
     ctaText:
-      "Share the stack and where you host today. We return a pipeline and monitoring plan from Jaipur.",
-    serviceType: "DevOps and Cloud Services",
+      "Share your current tech stack, cloud hosting setup, and operational pain points. Our Jaipur DevOps engineers will prepare a clear architectural and automation roadmap.",
+    serviceType: "DevOps & Cloud Infrastructure Engineering",
     whatsappMessage:
-      "Hi TriFusion, I want a DevOps / AWS pipeline quote from the Jaipur team.",
+      "Hi TriFusion, I want a DevOps / AWS cloud infrastructure quote from the Jaipur team.",
     imageAlt:
-      "DevOps and AWS cloud pipeline work by TheTriFusion in Jaipur",
-    relatedBlogSlug: "react-server-components",
+      "DevOps CI/CD pipelines and AWS cloud architecture by TheTriFusion in Jaipur",
+    relatedBlogSlug: "future-of-devops",
     faqs: [
       {
-        question: "What cloud do you use?",
+        question: "Which cloud platforms and tools do your DevOps engineers specialize in?",
         answer:
-          "AWS most often. We match the account you already have rather than forcing a new vendor.",
+          "We primarily specialize in Amazon Web Services (AWS) and Google Cloud Platform (GCP). Our toolchain includes Terraform, Docker, Kubernetes, GitHub Actions, GitLab CI, Jenkins, Helm, Prometheus, Grafana, and NGINX.",
       },
       {
-        question: "Is DevOps only for apps you built?",
+        question: "Can you migrate our legacy on-premise servers to AWS or GCP cloud?",
         answer:
-          "We prefer products we also ship, so deploys and code stay in one conversation. Isolated ops retainers are scoped case by case.",
+          "Yes! We design seamless, zero-downtime cloud migration strategies including containerization of legacy monolithic apps, database migrations, VPC network isolation, and autoscaling group configurations.",
       },
       {
-        question: "Do you offer 24/7 NOC?",
+        question: "What is Infrastructure as Code (IaC) and why do we need it?",
         answer:
-          "We offer monitoring and response windows written in the scope — not a fake global follow-the-sun claim.",
+          "IaC (using Terraform / CloudFormation) allows your entire cloud infrastructure to be defined as code in version control. This ensures predictable, reproducible staging and production environments, automated disaster recovery, and eliminates human configuration errors.",
       },
       {
-        question: "Do you do Kubernetes?",
+        question: "Do you provide ongoing cloud monitoring, security hardening, and cost optimization?",
         answer:
-          "When the product needs it. Many SME apps run cleaner on simpler AWS services first.",
+          "Yes. We implement proactive alerting (Slack/PagerDuty integration), centralized log management (ELK / CloudWatch), DevSecOps vulnerability scans, and AWS cost-saving strategies (Reserved Instances, Spot fleets, S3 lifecycle policies).",
       },
     ],
   },
@@ -674,40 +678,42 @@ export const servicePageSeo = {
       "Hi TriFusion, I want an MLM CRM / unilevel software quote from the Jaipur team.",
   },
   "fintech-app-development": {
-    metaTitle: "Fintech App Development Company in Jaipur | TheTriFusion",
+    metaTitle:
+      "Fintech App Development Company in Jaipur India | KYC, UPI & Neo-Banking",
     metaDescription:
-      "TheTriFusion in Jaipur builds fintech apps — KYC, audit logs, encryption, plus iOS, Android, and web. Request a compliance-aware scoped quote.",
+      "Top fintech app development company in Jaipur & India. We build secure UPI payment apps, lending platforms, KYC workflows, audit ledgers & custom banking software.",
     keywords:
-      "fintech app development company Jaipur, KYC app development India, payment app Jaipur, fintech software Rajasthan, secure fintech MVP",
+      "fintech app development company Jaipur, fintech software development India, custom fintech app developers, digital lending platform India, UPI payment app development, KYC verification software, fintech web app development, neo banking app developers, secure fintech software Rajasthan, fintech MVP development, payment gateway integration India",
     locationLine:
-      "Fintech apps from Jaipur — KYC, ledgers, and audit trails first.",
-    scopeKicker: "Fintech",
-    scopeHeading: "Fintech modules we actually ship",
-    processHeading: "How a compliance-aware fintech MVP is scoped",
-    ctaHeading: "Need a fintech MVP that a compliance officer can explain?",
+      "Fintech apps & secure banking portals from Jaipur — engineered for Indian compliance, RBI guidelines, and bank-grade security.",
+    scopeKicker: "Fintech Engineering",
+    scopeHeading: "Custom Fintech Software & Mobile App Solutions",
+    processHeading: "How We Build Compliant & Secure Fintech MVPs",
+    ctaHeading: "Ready to Build a High-Security Fintech Application?",
     ctaText:
-      "Share licence partners, KYC vendor, and which platform ships first. We return a scoped quote from Jaipur.",
-    serviceType: "Fintech Application Development",
+      "Share your licensing partner, payment gateway, and target platforms. Our Jaipur engineering team will deliver a comprehensive, compliance-ready architectural roadmap and cost estimate.",
+    serviceType: "Fintech Application & Custom Financial Software Development",
     whatsappMessage:
-      "Hi TriFusion, I want a fintech app development quote from the Jaipur team.",
+      "Hi TriFusion, I want a fintech app / custom payment software quote from the Jaipur engineering team.",
   },
   "ev-charging-app-development": {
-    metaTitle: "EV Charging App Development in Jaipur | OCPI & OCPP",
+    metaTitle:
+      "EV Charging App Development Company in Jaipur India | OCPI, OCPP & eMSP",
     metaDescription:
-      "TheTriFusion in Jaipur builds EV charging apps — OCPI/OCPP, maps, wallets, and CPO/eMSP flows. See live PlugOne. Request a scoped charging-app quote.",
+      "Leading EV charging app development company in Jaipur India. We build eMSP driver apps, CPO management software, OCPP 1.6/2.0.1 integrations & OCPI roaming platforms.",
     keywords:
-      "EV charging app development Jaipur, OCPI OCPP software India, eMSP app development, CPO platform Jaipur, EV charging software Rajasthan",
+      "EV charging app development Jaipur, EV charging app development company India, eMSP app development, CPO software development India, OCPP 1.6 2.0.1 charger integration, OCPI roaming software, EV billing and wallet app, smart EV navigation map, electric vehicle charging software India, EV fleet charging station platform",
     locationLine:
-      "EV charging software from Jaipur — OCPI/OCPP, not a generic maps clone.",
-    scopeKicker: "EV",
-    scopeHeading: "Charging-app work we deliver",
-    processHeading: "How we scope CPO vs eMSP",
-    ctaHeading: "Building a CPO or eMSP product?",
+      "Production-proven EV charging software from Jaipur — creators of PlugOne (live at plugone.in) with multi-protocol OCPP & OCPI integration.",
+    scopeKicker: "EV Mobility Tech",
+    scopeHeading: "End-to-End EV Charging, eMSP & CPO Software Solutions",
+    processHeading: "How We Scope & Deliver Production EV Charging Platforms",
+    ctaHeading: "Building an EV Charging Network, eMSP, or CPO Platform?",
     ctaText:
-      "Tell us OCPI vs OCPP, maps, and wallets. PlugOne is live proof. We return a scoped charging-app plan from Jaipur.",
-    serviceType: "EV Charging Application Development",
+      "Talk to the team that built PlugOne (live at plugone.in). Whether you need driver mobile apps, OCPI roaming, or OCPP 1.6/2.0.1 station management, we provide a scoped technical estimate from Jaipur.",
+    serviceType: "EV Charging Application, eMSP & CPO Software Development",
     whatsappMessage:
-      "Hi TriFusion, I want an EV charging app (OCPI/OCPP) quote from the Jaipur team.",
+      "Hi TriFusion, I want an EV charging app (OCPI/OCPP / eMSP) quote from the Jaipur team.",
   },
   "ios-app-development": {
     metaTitle: "iOS App Development Company in Jaipur | App Store Ready",

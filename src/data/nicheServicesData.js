@@ -148,21 +148,22 @@ export const nicheServices = [
     title: "Fintech App Development",
     slug: "fintech-app-development",
     description:
-      "TheTriFusion builds fintech web and mobile apps in Jaipur with KYC-ready flows, audit logs, encryption, and payment-gateway integrations for Indian SMEs and product teams.",
+      "TheTriFusion is a leading fintech app development company in Jaipur & India. We engineer enterprise-grade fintech mobile apps, neo-banking platforms, UPI payment gateways, digital lending engines, automated KYC verification workflows, and auditable double-entry ledgers for Indian startups, NBFCs, and financial enterprises.",
     shortDescription:
-      "TheTriFusion in Jaipur, Rajasthan builds fintech apps — KYC, audit logs, encryption, plus iOS, Android, and web. Request a compliance-aware scoped quote.",
+      "TheTriFusion in Jaipur, Rajasthan develops secure fintech apps & banking software — UPI, digital lending, automated KYC, immutable audit logs, and PCI-DSS compliance across iOS, Android & Web.",
     imageUrl: Mobile,
     featuresImage: SoftwareFeatures,
     icon: "💳",
-    bannerTitle: "Fintech App Development Company in Jaipur, India",
+    bannerTitle:
+      "Fintech App Development Company in Jaipur India | UPI, KYC & Banking Software",
     bannerDescription:
-      "Compliance and security first: KYC, ledgers, and admin audit trails — then the customer UI.",
+      "Bank-grade security, RBI compliance, automated KYC verification, real-time UPI payment gateways, and double-entry ledgers — engineered for scale on iOS, Android, and Web.",
     imageAlt:
-      "Fintech app development — secure dashboard and mobile checkout UI by TheTriFusion Jaipur",
+      "Fintech app development company in Jaipur India — secure digital banking, UPI payments, and mobile dashboard by TheTriFusion",
     platforms,
     relatedBlogSlug: "fintech-app-development-india",
     startingFrom: 400000,
-    startingFromNote: "Fintech MVP with KYC + one payment integration",
+    startingFromNote: "Fintech MVP with KYC + payment gateway + ledger engine",
     caseStudy: {
       title: "How we scope fintech (no fake live client)",
       summary:
@@ -172,71 +173,81 @@ export const nicheServices = [
     },
     services: [
       {
-        title: "KYC and onboarding",
+        title: "KYC Onboarding & Biometric Verification",
         description:
-          "Flows that a compliance officer can explain — not a screenshot of a selfie camera.",
+          "Automated Video-KYC, Aadhaar OTP, PAN verification, and AML screening flows built to meet RBI and compliance standards.",
       },
       {
-        title: "Ledgers and webhooks",
+        title: "UPI & Payment Gateway Integrations",
         description:
-          "Idempotent payments, settlement reports, and signed webhooks.",
+          "Idempotent payment processing, instant UPI collect/pay, multi-gateway failover (Razorpay, Cashfree, PayU), settlement reporting, and signed webhooks.",
       },
       {
-        title: "Admin audit logs",
+        title: "Digital Lending & Loan Management",
         description:
-          "Who changed a limit, who exported PII, and when.",
+          "Loan origination systems (LOS), automated credit scoring integrations, EMI calculator schedules, NACH/e-Mandate auto-debit, and disbursement pipelines.",
       },
       {
-        title: "iOS + Android + Web",
+        title: "Double-Entry Ledger & Audit Trails",
         description:
-          "Customer apps plus an operations console from one backend.",
+          "Immutable double-entry financial ledgers, strict audit logging (who changed limits, who exported PII), and real-time reconciliation engines.",
+      },
+      {
+        title: "Neo-Banking & Multi-Currency Wallets",
+        description:
+          "Virtual accounts, prepaid wallet management, rewards/cashback engines, and closed-loop/semi-closed digital wallet ecosystems.",
+      },
+      {
+        title: "iOS, Android & Web Admin Consoles",
+        description:
+          "Ultra-responsive React Native / Flutter customer mobile apps with biometric authentication alongside enterprise web admin control panels.",
       },
     ],
     process: defaultProcess,
     technologies: [
       {
-        title: "App & web",
-        description: "React Native / Flutter plus a React admin.",
+        title: "Mobile & Web Frontend",
+        description: "React Native, Flutter, Swift, Kotlin, and React.js enterprise admin dashboards.",
       },
       {
-        title: "APIs",
-        description: "Node.js services with explicit auth and rate limits.",
+        title: "High-Throughput APIs & Microservices",
+        description: "Node.js, Go, and Python microservices with distributed caching (Redis) and zero-trust authentication.",
       },
       {
-        title: "Security defaults",
-        description: "TLS, secrets outside git, least-privilege roles.",
+        title: "Bank-Grade Security Architecture",
+        description: "End-to-end TLS encryption, data-at-rest encryption (AES-256), HSM integration, PCI-DSS compliance, and OWASP Top 10 hardening.",
       },
     ],
     features: [
-      "KYC-ready flows",
-      "Audit logs",
-      "Encryption in transit",
-      "Payment gateways",
+      "UPI & Payment Gateways",
+      "Automated e-KYC & Digilocker",
+      "Double-entry ledgers",
+      "Digital lending & EMI engine",
+      "End-to-end AES-256 encryption",
+      "RBI & PCI-DSS compliance ready",
+      "Role-based access & audit logs",
       "iOS + Android + Web",
-      "Role-based access",
-      "Webhook signatures",
-      "Jaipur team",
     ],
     faqs: [
       {
-        question: "Are you a bank or NBFC?",
+        question: "Are you an NBFC or regulated bank?",
         answer:
-          "No. We build software that licensed partners can operate. We do not claim an RBI licence.",
+          "No. TheTriFusion is a technology software development company. We build high-security software and apps that licensed NBFCs, banks, and fintech startups operate under their regulatory frameworks.",
       },
       {
-        question: "What security is in scope?",
+        question: "What security & compliance standards are implemented in fintech apps?",
         answer:
-          "Encryption in transit, role-based access, audit logs, and secrets management. Deeper audits (VAPT, ISO) are scoped separately when you need them.",
+          "We implement AES-256 data encryption at rest, TLS 1.3 in transit, automated audit logs, webhook signature validation, rate limiting, and zero-trust role-based access control. We also assist during third-party VAPT and ISO security audits.",
       },
       {
-        question: "Typical cost range?",
+        question: "Which payment gateways and KYC providers do you integrate?",
         answer:
-          "SME fintech MVPs with real KYC and one gateway often start around ₹4L. Complexity of ledger and dual-platform apps moves the number. See Pricing for starting ranges — not SKUs.",
+          "We regularly integrate Razorpay, Cashfree, PayU, Stripe, CCAvenue, UPI AutoPay, as well as KYC APIs including Karza, HyperVerge, Signzy, Digilocker, and Aadhaar/PAN validation services.",
       },
       {
-        question: "Do you ship iOS, Android, and web?",
+        question: "What is the typical timeline and cost range for a fintech app MVP?",
         answer:
-          "Yes. Most fintech products need a customer app and an ops console.",
+          "Fintech MVPs featuring automated KYC, one payment gateway, and a secure ledger engine typically start at ₹4L–₹8L and take 8 to 12 weeks for production release across iOS, Android, and Web.",
       },
     ],
     pricing: { basic: 400000, standard: 800000, premium: 1500000 },
@@ -245,8 +256,10 @@ export const nicheServices = [
       "Flutter",
       "Node.js",
       "PostgreSQL",
+      "Redis",
       "AWS",
       "React",
+      "Docker",
     ],
   },
   {
@@ -254,20 +267,22 @@ export const nicheServices = [
     title: "EV Charging App Development",
     slug: "ev-charging-app-development",
     description:
-      "TheTriFusion builds EV charging apps with OCPI roaming and OCPP charger control — maps, sessions, and operator consoles. Proof: PlugOne, live at plugone.in.",
+      "TheTriFusion is a premier EV charging app development company in Jaipur & India. We build complete eMSP (e-Mobility Service Provider) driver apps, CPO (Charge Point Operator) station management software, OCPP 1.6J/2.0.1 charger connectivity, and OCPI 2.2.1 roaming networks. We engineered PlugOne (live at plugone.in) — India's unified EV charging platform.",
     shortDescription:
-      "TheTriFusion in Jaipur, Rajasthan builds EV charging apps with OCPI/OCPP — maps, sessions, iOS, Android, and web. See PlugOne live, then request a quote.",
+      "TheTriFusion in Jaipur, Rajasthan builds turnkey EV charging software — OCPI roaming, OCPP 1.6J/2.0.1 charger control, live map navigation, wallet billing, iOS & Android driver apps. See PlugOne live.",
     imageUrl: Mobile,
     featuresImage: SoftwareFeatures,
     icon: "⚡",
-    bannerTitle: "EV Charging App Development Company in Jaipur, India",
+    bannerTitle:
+      "EV Charging App Development Company in Jaipur India | OCPI, OCPP & eMSP Software",
     bannerDescription:
-      "OCPI for roaming, OCPP for chargers, and a driver app that shows live status — the PlugOne stack.",
-    imageAlt: "PlugOne EV charging platform screenshot — live map and session UI by TheTriFusion",
+      "OCPI 2.2.1 for seamless network roaming, OCPP 1.6J/2.0.1 for live charger telemetry, interactive map routing, and turnkey eMSP / CPO mobile and web applications — backed by real live proof on PlugOne.",
+    imageAlt:
+      "EV charging app development company in Jaipur India — PlugOne live map, OCPP station management, and mobile app by TheTriFusion",
     platforms,
     relatedBlogSlug: "ev-charging-app-ocpi-ocpp-guide",
     startingFrom: 450000,
-    startingFromNote: "eMSP-style MVP with map + sessions + one protocol path",
+    startingFromNote: "eMSP / CPO MVP with live maps + charging sessions + OCPP/OCPI",
     caseStudy: {
       title: "PlugOne — live EV charging platform",
       summary:
@@ -279,81 +294,93 @@ export const nicheServices = [
     },
     services: [
       {
-        title: "OCPI roaming",
+        title: "OCPI Roaming & Interoperability",
         description:
-          "Locations, tariffs, and sessions between eMSPs and CPOs so the map is not a single-network toy.",
+          "OCPI 2.1.1 / 2.2.1 integration allowing eMSPs and CPOs to exchange station locations, live connector availability, tariff structures, and charging session roaming across multiple networks.",
       },
       {
-        title: "OCPP charger control",
+        title: "OCPP 1.6J / 2.0.1 Charger Management (CSMS)",
         description:
-          "Heartbeats, remote start/stop, and meter values from the charge point.",
+          "Central System Management Software (CSMS) supporting WebSockets, charger heartbeats, remote start/stop, smart charging profiles, firmware updates, and real-time meter telemetry.",
       },
       {
-        title: "Driver apps",
+        title: "EV Driver Mobile Apps (iOS & Android)",
         description:
-          "iOS and Android with maps, status, and session history.",
+          "Turn-by-turn navigation to nearby chargers, filter by connector type (CCS2, Type 2, GB/T, Bharat AC/DC), real-time slot booking, live charging session tracking (kW/h, SOC%, cost), and in-app wallet payments.",
       },
       {
-        title: "Operator web console",
+        title: "CPO Admin & Fleet Management Web Console",
         description:
-          "Stations, faults, and settlements for the team that actually runs the network.",
+          "Web dashboard for station owners to monitor charger health, revenue analytics, dynamic peak/off-peak pricing tariffs, fault alarms, automated billing, and EV fleet charging schedules.",
+      },
+      {
+        title: "EV Wallet, RFID & Payment Integration",
+        description:
+          "Integrated digital wallets, UPI auto-pay, RFID card provisioning, GST-compliant invoicing, and automated merchant revenue settlements.",
+      },
+      {
+        title: "Smart Charging & Grid Load Management",
+        description:
+          "Dynamic load balancing algorithms to distribute power capacity across multiple charging guns and prevent grid overloads.",
       },
     ],
     process: defaultProcess,
     technologies: [
       {
-        title: "Protocols",
-        description: "OCPI for roaming payloads; OCPP for charger telemetry.",
+        title: "EV Protocols & Telemetry",
+        description: "OCPI 2.2.1, OCPP 1.6-J / 2.0.1, WebSockets, MQTT, and IoT gateway connectivity.",
       },
       {
-        title: "Maps & realtime",
-        description: "Live status on a map, not a static pin dump.",
+        title: "Real-Time Maps & Geolocation",
+        description: "Google Maps API, Mapbox, Geofencing, clustering, and live station status polling.",
       },
       {
-        title: "Mobile + web",
-        description: "Driver apps and a browser ops console sharing one session model.",
+        title: "Cloud & Scalable Backend",
+        description: "Node.js, PostgreSQL/TimescaleDB for high-frequency meter values, Redis pub/sub, AWS IoT Core, and React / React Native.",
       },
     ],
     features: [
-      "OCPI integration",
-      "OCPP integration",
-      "Live charger map",
-      "Session management",
+      "OCPI 2.2.1 roaming network",
+      "OCPP 1.6J / 2.0.1 charger control",
+      "Live interactive charger map",
+      "Real-time session & kWh tracking",
+      "EV wallet & UPI payments",
+      "CPO & eMSP admin console",
+      "PlugOne live proof (plugone.in)",
       "iOS + Android + Web",
-      "Operator console",
-      "PlugOne live proof",
-      "Jaipur delivery",
     ],
     faqs: [
       {
-        question: "Do you really work with OCPI and OCPP?",
+        question: "Do you build both eMSP (driver app) and CPO (charger management) software?",
         answer:
-          "Yes. PlugOne required both: OCPP to talk to chargers and OCPI to roam locations and sessions. See the live site and the technical blog post.",
+          "Yes. We build complete e-Mobility ecosystems: eMSP mobile applications for EV drivers (discovery, reservation, charging, payment) and CPO Central Systems (CSMS) with OCPP to control hardware and monitor live chargers.",
       },
       {
-        question: "Can I see proof?",
+        question: "What is the difference between OCPI and OCPP in EV charging software?",
         answer:
-          "Open plugone.in and the PlugOne portfolio page. That is a live product, not a concept video.",
+          "OCPP (Open Charge Point Protocol) connects EV chargers (hardware) to the central management backend for start/stop commands and power readings. OCPI (Open Charge Point Interface) connects different charging networks together for seamless roaming and cross-operator billing.",
       },
       {
-        question: "iOS, Android, and web?",
+        question: "Can we see live proof of an EV charging app built by TheTriFusion?",
         answer:
-          "Yes. Drivers need apps; operators need a console. We plan one backend.",
+          "Yes! We built PlugOne, which is live at plugone.in. You can explore the live station map, session flows, and mobility features to verify our direct domain expertise.",
       },
       {
-        question: "Starting range?",
+        question: "Which charger connector types and brands are supported?",
         answer:
-          "An eMSP-style MVP with map and sessions often starts around ₹4.5L depending on how many networks and charger vendors you must speak on day one.",
+          "Our CSMS supports any OCPP 1.6J or 2.0.1 compliant charger across all connector standards including CCS2, CHAdeMO, Type 2 AC, GB/T, and Bharat DC-001/AC-001 from manufacturers like Delta, ABB, Schneider, Exicom, and Statiq.",
       },
     ],
     pricing: { basic: 450000, standard: 900000, premium: 1800000 },
     technologiesList: [
       "React Native",
       "Node.js",
-      "OCPI",
-      "OCPP",
-      "Maps APIs",
-      "AWS",
+      "OCPI 2.2",
+      "OCPP 1.6J/2.0.1",
+      "PostgreSQL",
+      "TimescaleDB",
+      "WebSockets",
+      "AWS IoT",
     ],
   },
   {

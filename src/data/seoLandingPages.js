@@ -60,50 +60,61 @@ export const seoLandingPages = [
   },
   {
     slug: "ecommerce-website-development",
-    title: "Ecommerce Website Development Company India | Online Store Experts",
-    h1: "Ecommerce Website Development",
+    title:
+      "Ecommerce Website Development Company in India | Custom Online Stores & D2C Marketplaces",
+    h1: "Custom Ecommerce Website & Online Store Development Company in India",
     navLabel: "Ecommerce website development",
     metaDescription:
-      "Build a high-converting ecommerce website with TheTriFusion. Custom online stores, product catalogs, payments, inventory, and SEO-ready storefronts for Indian and global brands.",
+      "Leading ecommerce website development company in India & Jaipur. We engineer custom high-converting D2C stores, multi-vendor marketplaces, POS integration, Shopify/WooCommerce solutions, and secure payment checkout systems.",
     primaryKeyword: "ecommerce website development",
     secondaryKeywords: [
-      "ecommerce website company India",
-      "ecommerce web development",
-      "shopify like custom store",
-      "online shopping website development",
-      "ecommerce solutions India",
+      "ecommerce website development company India",
+      "custom ecommerce development Jaipur",
+      "D2C online store developers India",
+      "multi vendor marketplace development",
+      "ecommerce web development agency",
+      "Shopify store setup and customization",
+      "WooCommerce website developers",
+      "headless ecommerce Next.js React",
+      "ecommerce POS integration India",
+      "online shopping website development Jaipur",
     ],
     intro:
-      "Launch a conversion-ready ecommerce website with catalog management, secure checkout, offers, and admin tools. TheTriFusion builds ecommerce platforms that sell — not just look good.",
+      "Build a scalable, high-conversion ecommerce platform engineered for rapid load speed, friction-free checkout, omni-channel inventory sync, and maximum ROAS. TheTriFusion delivers end-to-end ecommerce solutions for D2C brands, B2B wholesale portals, and multi-vendor marketplaces across India.",
     sections: [
       {
-        title: "Custom ecommerce built around your catalog",
-        body: "Product variants, filters, wishlists, coupons, multi-currency options, and admin dashboards — tailored for fashion, electronics, grocery, B2B wholesale, and niche stores.",
+        title: "Custom Headless & Modular Ecommerce Architecture",
+        body: "We build ultra-fast, modern ecommerce storefronts using Next.js, React, Node.js, or customized Shopify/WooCommerce platforms. Features include advanced product filters, SKU matrix variations, smart search autocomplete, abandoned cart recovery, dynamic coupon engines, and one-click UPI checkout.",
       },
       {
-        title: "Payments, logistics, and operations",
-        body: "Integrate popular Indian and international payment gateways, shipping partners, invoices, inventory sync, and order tracking so your online store runs day one.",
+        title: "Payment Gateways, Logistics & POS Synchronization",
+        body: "Flawless integration with Indian & global payment processors (Razorpay, Cashfree, PayU, Stripe, UPI AutoPay) paired with automated courier logistics APIs (Shiprocket, Delhivery, Bluedart). Seamless synchronization with offline retail POS systems (like our live case DailyConcepts India).",
       },
       {
-        title: "SEO and performance for ecommerce growth",
-        body: "Fast pages, structured product data, clean URLs, and on-page SEO foundations help your ecommerce website rank for product and category searches.",
+        title: "Conversion Rate Optimization (CRO) & Technical SEO",
+        body: "Structured Schema.org Product & AggregateOffer rich snippets, Core Web Vitals optimization (<1.5s LCP), clean URL hierarchies, faceted navigation indexing, and programmatic category landing pages to dominate Google search results for buying keywords.",
       },
     ],
     faqs: [
       {
-        question: "Do you build custom ecommerce websites or only use platforms?",
+        question: "Do you build custom ecommerce platforms or use Shopify / WooCommerce?",
         answer:
-          "Both. We can build a custom ecommerce website or extend platforms based on your scale, catalog complexity, and budget.",
+          "We offer both tailored to your business model. For high-growth D2C brands requiring bespoke checkout, custom ledgers, or POS sync, we build headless Next.js/React stores. For quick catalog launches, we provide custom Shopify theme development and WooCommerce engineering.",
       },
       {
-        question: "Can you migrate my existing online store?",
+        question: "Can you integrate our online store with offline POS systems and ERPs?",
         answer:
-          "Yes. We migrate products, customers, and orders carefully with redirects so your SEO equity is preserved where possible.",
+          "Yes! We have extensive experience engineering synchronized POS and inventory solutions (as demonstrated in our live client project DailyConcepts India at dailyconceptsindia.com). We sync real-time stock, barcodes, orders, and customer profiles between offline stores and online storefronts.",
       },
       {
-        question: "Do ecommerce projects include admin panels?",
+        question: "Which payment gateways and automated shipping aggregators are supported?",
         answer:
-          "Yes. You get product, order, customer, and offer management with role-based access as needed.",
+          "We integrate all leading payment systems including Razorpay, Cashfree, PayU, CCAvenue, Stripe, and UPI QR/Collect, alongside automated shipping aggregators like Shiprocket, Delhivery, Shadowfax, and NimbusPost with live tracking webhooks.",
+      },
+      {
+        question: "How do you ensure our ecommerce store ranks on Google?",
+        answer:
+          "We implement comprehensive technical SEO: canonical tags, structured Product/Review JSON-LD markup, OpenGraph social cards, XML sitemaps, lightning-fast SSR rendering with Next.js, mobile responsiveness, and keyword-targeted category descriptions.",
       },
     ],
     relatedServiceSlugs: [
@@ -112,53 +123,56 @@ export const seoLandingPages = [
       "digital-marketing",
       "ui-ux-design",
     ],
-    cta: "Build your ecommerce website with TheTriFusion",
+    cta: "Build your high-converting ecommerce website with TheTriFusion",
   },
   {
     slug: "online-store-development",
-    title: "Online Store Development | Custom Online Shop & Marketplace",
-    h1: "Online Store Development",
+    title:
+      "Online Store Development Company India | Custom Web Shop & Multi-Vendor Marketplace",
+    h1: "Online Store & Digital Storefront Development Company",
     metaDescription:
-      "Custom online store development for startups and brands. Sell products online with secure checkout, inventory, mobile-friendly design, and marketing-ready storefronts.",
+      "Expert online store development company in India. We build high-performing digital retail stores, multi-brand shopping websites, mobile shopping apps, and automated inventory systems.",
     primaryKeyword: "online store development",
     secondaryKeywords: [
-      "create online store",
-      "online shop development",
-      "build an online store India",
-      "custom online store",
-      "online retail website",
+      "create online store India",
+      "online shop development company",
+      "build an online store Jaipur",
+      "custom digital storefront development",
+      "online retail website developers",
+      "D2C web store creation",
+      "ecommerce catalog development",
     ],
     intro:
-      "Need to sell online fast without compromising quality? TheTriFusion develops online stores with beautiful storefronts, reliable checkout, and the backend tools your team needs to manage inventory and orders.",
+      "Turn product catalogs into revenue engines. TheTriFusion builds feature-rich online stores designed for high conversion, lightning-fast mobile shopping, and effortless daily order management.",
     sections: [
       {
-        title: "From idea to live online shop",
-        body: "We map your catalog, customer journey, and fulfillment flow, then ship a polished online store with responsive design and analytics.",
+        title: "From Product Concept to High-Converting Storefront",
+        body: "We map catalog architecture, customer checkout funnels, and automated logistics. We deliver responsive, beautifully branded online shops equipped with live inventory controls, customer wishlists, and multi-currency support.",
       },
       {
-        title: "Features that drive online sales",
-        body: "Abandoned cart reminders, upsells, reviews, search, filters, and campaign landing pages help turn visitors into buyers.",
+        title: "Growth & Retention Features Built-In",
+        body: "Boost Average Order Value (AOV) and customer lifetime value with automated WhatsApp order updates, abandoned cart retargeting, smart upsell recommendations, customer review loops, and loyalty reward points.",
       },
       {
-        title: "Grow with digital marketing",
-        body: "Pair your online store with SEO, Google Ads, Meta Ads, and content campaigns so traffic and revenue grow together.",
+        title: "Omnichannel Scale with Digital Marketing",
+        body: "Pair your online store with high-ROAS Performance Marketing (Google Shopping Ads, Meta Catalog Ads, TikTok/Instagram Shop) and targeted e-commerce SEO to scale traffic and orders profitably.",
       },
     ],
     faqs: [
       {
-        question: "How long does online store development take?",
+        question: "How long does it take to launch an online store?",
         answer:
-          "Typical MVP online stores launch in a few weeks depending on catalog size and integrations. Complex marketplaces take longer with phased releases.",
+          "Standard online store MVPs launch within 3 to 6 weeks. Custom multi-vendor marketplaces or stores requiring complex ERP/POS integration typically take 8 to 12 weeks with phased milestones.",
       },
       {
-        question: "Will my online store work on mobile?",
+        question: "Will the store be optimized for mobile phone shoppers?",
         answer:
-          "Yes. Every store we build is mobile-first because most Indian shoppers browse and buy on phones.",
+          "Yes! Over 80% of Indian online shoppers purchase via smartphone. We design mobile-first interfaces with thumb-friendly navigation, sticky 'Buy Now' buttons, and instant UPI checkout.",
       },
       {
-        question: "Can you add multi-vendor marketplace features?",
+        question: "Can you build a multi-vendor marketplace like Amazon or Flipkart?",
         answer:
-          "Yes. We can start with a single-brand store and expand to multi-vendor capabilities when you are ready.",
+          "Yes. We build complete multi-vendor architectures with independent vendor portals, automated commission splits, vendor payout ledgers, rating systems, and admin moderation consoles.",
       },
     ],
     relatedServiceSlugs: [
@@ -167,54 +181,65 @@ export const seoLandingPages = [
       "digital-marketing",
       "branding",
     ],
-    cta: "Launch your online store",
+    cta: "Launch your custom online store today",
   },
   {
     slug: "digital-marketing-agency",
-    title: "Digital Marketing Agency India | SEO, Ads & Growth | TheTriFusion",
-    h1: "Digital Marketing Agency",
-    navLabel: "Digital marketing",
+    title:
+      "Digital Marketing & Performance Marketing Agency in India | High ROAS Ads & SEO",
+    h1: "Digital Marketing & Performance Marketing Agency in India",
+    navLabel: "Digital marketing & performance ads",
     metaDescription:
-      "TheTriFusion is a digital marketing agency in India offering SEO, Google Ads, social media marketing, content, and conversion optimization for software, ecommerce, and service brands.",
+      "Leading digital marketing & performance marketing agency in Jaipur & India. We scale businesses with high-ROAS Google Ads, Meta Ads (FB & Instagram), technical SEO, CRO & B2B/D2C lead generation funnels.",
     primaryKeyword: "digital marketing agency",
     secondaryKeywords: [
       "digital marketing company India",
-      "SEO agency India",
-      "Google Ads agency",
-      "social media marketing agency",
-      "performance marketing India",
+      "performance marketing agency Jaipur",
+      "performance marketing agency India",
+      "Google Ads management company Jaipur",
+      "Facebook Instagram ads agency India",
+      "SEO services company Jaipur",
+      "PPC management services India",
+      "lead generation agency for SMEs",
+      "ecommerce performance marketing India",
+      "conversion rate optimization agency",
     ],
     intro:
-      "Grow traffic, leads, and sales with a digital marketing agency that understands software products and ecommerce funnels. TheTriFusion combines SEO, paid ads, content, and conversion design.",
+      "Stop burning marketing budgets on vanity metrics. TheTriFusion is a data-driven digital marketing and performance marketing agency in Jaipur delivering measurable revenue growth, high-converting lead funnels, and optimized Customer Acquisition Cost (CAC) for startups, D2C brands, and B2B enterprises.",
     sections: [
       {
-        title: "SEO that targets buyer intent",
-        body: "We optimize technical SEO, on-page content, and service landing pages so you can rank for searches like software company, ecommerce website, and local service keywords.",
+        title: "Performance Marketing: High ROAS Paid Ads (Google & Meta)",
+        body: "Laser-targeted Google Search, Performance Max, Display, and Shopping campaigns combined with high-converting Meta (Facebook & Instagram) ads. We build bespoke landing pages with tracking pixels, server-side CAPI events, and automated A/B tests to maximize return on ad spend (ROAS).",
       },
       {
-        title: "Paid campaigns that respect ROI",
-        body: "Google Ads and Meta campaigns with clear tracking, landing page alignment, and weekly iteration — not vanity metrics.",
+        title: "Technical & Commercial Search Engine Optimization (SEO)",
+        body: "Dominate search rankings for high-intent commercial keywords. Our technical SEO covers Core Web Vitals, Schema.org rich snippets, structured content siloing, local Google Business Profile (GBP) ranking, and authoritative link architecture.",
       },
       {
-        title: "Content and social that build trust",
-        body: "Blogs, creatives, and social content positioned around your offers so prospects understand why to choose you before they call.",
+        title: "Conversion Rate Optimization (CRO) & Retention Funnels",
+        body: "Traffic is only half the battle. We optimize checkout flows, lead capture funnels, WhatsApp automated re-engagement, and email marketing workflows to turn ad clicks into high-paying long-term customers.",
       },
     ],
     faqs: [
       {
-        question: "Do you offer SEO and paid ads together?",
+        question: "What is the difference between general digital marketing and performance marketing?",
         answer:
-          "Yes. Many clients run SEO for long-term growth and paid ads for immediate pipeline. We coordinate both under one strategy.",
+          "General digital marketing often focuses on broad awareness, social presence, and organic brand building. Performance marketing is strictly outcome-driven: every rupee spent is tracked against specific measurable KPIs like Cost Per Lead (CPL), Customer Acquisition Cost (CAC), Return on Ad Spend (ROAS), and sales conversions.",
       },
       {
-        question: "Can you market an ecommerce or SaaS product?",
+        question: "How quickly can we see results from PPC ads vs SEO campaigns?",
         answer:
-          "Absolutely. We tailor funnels for ecommerce product sales and software/SaaS lead generation.",
+          "Paid search and social campaigns (Google Ads, Meta Ads) start driving qualified traffic and leads within 24 to 48 hours of launch. Organic SEO is a compounding growth channel that typically builds significant keyword dominance within 3 to 6 months.",
       },
       {
-        question: "How soon can we see digital marketing results?",
+        question: "Do you build custom landing pages for ad campaigns?",
         answer:
-          "Paid ads can produce leads quickly. SEO typically compounds over weeks to months depending on competition and content velocity.",
+          "Yes! Because we are a full-stack software development company, our digital marketing team builds ultra-fast, customized landing pages optimized for maximum conversion rather than sending expensive paid traffic to slow, generic templates.",
+      },
+      {
+        question: "What monthly ad spend budgets do you manage?",
+        answer:
+          "We manage performance campaigns ranging from testing budgets of ₹25,000/month for local SMEs up to multi-lakh monthly ad spends for high-growth D2C and SaaS brands across India.",
       },
     ],
     relatedServiceSlugs: [
@@ -223,7 +248,7 @@ export const seoLandingPages = [
       "website-development",
       "graphic-design",
     ],
-    cta: "Grow with our digital marketing team",
+    cta: "Scale your revenue with TheTriFusion performance marketing",
   },
   {
     slug: "custom-software-development-company",
