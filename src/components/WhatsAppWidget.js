@@ -30,10 +30,10 @@ function getContextualChips(pathname) {
     }
     if (slug === "fintech-app-development") {
       return [
-        { label: "💳 Fintech App Quote", text: "Hi TriFusion, I need a fintech app quote with KYC onboarding and payment gateway." },
-        { label: "🔐 Security & Ledgers", text: "Hi TriFusion, we need an auditable ledger, admin audit logs, and encrypted customer apps." },
-        { label: "📱 Mobile + Web Admin", text: "Hi TriFusion, we need cross-platform apps plus a web admin for ops & compliance." },
-        { label: "📅 Book Discovery Call", text: "Hi TriFusion, can we schedule a consultation on our fintech product MVP?" },
+        { label: "💳 BBPS / AEPS / DMT", text: "Hi TriFusion, I want to buy BBPS, AEPS, DMT or XDMT software (retailer + distributor + admin)." },
+        { label: "🏦 Retailer Banking App", text: "Hi TriFusion, we need a white-label retailer Android app with BBPS, AEPS and DMT." },
+        { label: "🔐 KYC & UPI Add-ons", text: "Hi TriFusion, we need KYC, UPI and settlement ledgers on our fintech software." },
+        { label: "📅 Book Discovery Call", text: "Hi TriFusion, can we schedule a consultation on BBPS / AEPS / DMT software?" },
       ];
     }
     if (slug === "crm-erp-development") {

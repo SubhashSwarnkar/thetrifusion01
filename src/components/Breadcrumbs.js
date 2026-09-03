@@ -34,7 +34,7 @@ export default function Breadcrumbs() {
       "ecommerce-development": "Ecommerce Development",
       "thank-you": "Thanks",
       "mlm-crm-development": "MLM CRM",
-      "fintech-app-development": "Fintech Apps",
+      "fintech-app-development": "BBPS AEPS DMT",
       "ev-charging-app-development": "EV Charging Apps",
       "crm-erp-development": "CRM & ERP",
       "software-development": "Software Development",

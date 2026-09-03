@@ -401,21 +401,22 @@ export const getAllServicePricingPlans = () => {
         },
         "fintech-app-development": {
           basic: [
-            "KYC-ready onboarding",
-            "One payment integration",
-            "Web admin",
-            "Audit log basics",
+            "BBPS or AEPS or DMT module",
+            "Retailer app + web admin",
+            "Commission basics",
             "1 month support"
           ],
           standard: [
+            "BBPS + AEPS + DMT bundle",
+            "Retailer + distributor + admin",
             "iOS + Android + Web",
-            "Ledger + webhooks",
-            "Role-based access",
+            "Ledger & settlement",
             "3 months support"
           ],
           premium: [
-            "Multi-gateway",
-            "Hardened ops console",
+            "BBPS + AEPS + DMT + XDMT",
+            "White-label retailer network",
+            "UPI / KYC add-ons",
             "6 months support",
             "VAPT scoped separately"
           ]

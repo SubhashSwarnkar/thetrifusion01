@@ -23,7 +23,7 @@ const HERO_CHIPS = [
   { label: "MLM software", href: "/services/mlm-crm-development" },
   { label: "eMSP apps", href: "/services/ev-charging-app-development" },
   { label: "OCPI / OCPP", href: "/services/ev-charging-app-development" },
-  { label: "Fintech web apps", href: "/services/fintech-app-development" },
+  { label: "BBPS / AEPS / DMT", href: "/services/fintech-app-development" },
   { label: "DSA platforms", href: "/services/website-development" },
   { label: "Motion graphic websites", href: "/services/ui-ux-design" },
   { label: "Storytelling websites", href: "/services/website-development" },

@@ -148,59 +148,93 @@ export const nicheServices = [
     title: "Fintech App Development",
     slug: "fintech-app-development",
     description:
-      "TheTriFusion is a leading fintech app development company in Jaipur & India. We engineer enterprise-grade fintech mobile apps, neo-banking platforms, UPI payment gateways, digital lending engines, automated KYC verification workflows, and auditable double-entry ledgers for Indian startups, NBFCs, and financial enterprises.",
+      "TheTriFusion sells custom fintech software from Jaipur: BBPS bill-pay, AEPS Aadhaar banking, DMT, XDMT, UPI, KYC, and retailer–distributor panels. We build the product you operate — white-label or custom — on iOS, Android, and web.",
     shortDescription:
-      "TheTriFusion in Jaipur, Rajasthan develops secure fintech apps & banking software — UPI, digital lending, automated KYC, immutable audit logs, and PCI-DSS compliance across iOS, Android & Web.",
+      "TheTriFusion in Jaipur builds and sells BBPS, AEPS, DMT and XDMT software — plus UPI, KYC, and banking apps for retailers, distributors, and fintech operators across India.",
+    bannerTitle:
+      "Fintech App Development Company in Jaipur | BBPS, AEPS, DMT & XDMT Software",
+    bannerDescription:
+      "We sell retailer banking software you can run: BBPS, AEPS, DMT, XDMT, UPI, and KYC — with retailer, distributor, and admin panels on Android, iOS, and web. You bring NPCI/bank live credentials; we build the software.",
+    imageAlt:
+      "BBPS AEPS DMT XDMT fintech software and banking apps built in Jaipur by TheTriFusion",
     imageUrl: Mobile,
     featuresImage: SoftwareFeatures,
     icon: "💳",
-    bannerTitle:
-      "Fintech App Development Company in Jaipur India | UPI, KYC & Banking Software",
-    bannerDescription:
-      "Bank-grade security, RBI compliance, automated KYC verification, real-time UPI payment gateways, and double-entry ledgers — engineered for scale on iOS, Android, and Web.",
-    imageAlt:
-      "Fintech app development company in Jaipur India — secure digital banking, UPI payments, and mobile dashboard by TheTriFusion",
     platforms,
     relatedBlogSlug: "fintech-app-development-india",
     startingFrom: 400000,
-    startingFromNote: "Fintech MVP with KYC + payment gateway + ledger engine",
+    startingFromNote: "Retailer BBPS / AEPS / DMT stack with admin + Android app",
     caseStudy: {
-      title: "How we scope fintech (no fake live client)",
+      title: "How we scope fintech (no fake live bank)",
       summary:
-        "We do not present demo payment UIs as live banks. Delivery is scoped around licence partners, KYC vendors, and an auditable ledger. Read the India compliance and cost notes.",
+        "We sell software — not a banking licence. Delivery is scoped around your BBPOU/bank/AEPS partner, KYC vendor, and settlement rules. Read the India compliance and cost notes.",
       href: "/blog/fintech-app-development-india",
       hrefLabel: "Read the fintech India guide",
     },
     services: [
       {
-        title: "KYC Onboarding & Biometric Verification",
+        title: "BBPS bill payment software",
         description:
-          "Automated Video-KYC, Aadhaar OTP, PAN verification, and AML screening flows built to meet RBI and compliance standards.",
+          "Bharat Bill Payment System modules for electricity, water, gas, FASTag, insurance, and more. Retailer app + admin with biller fetch, payment, receipt, and commission — sold as white-label or custom software.",
       },
       {
-        title: "UPI & Payment Gateway Integrations",
+        title: "AEPS Aadhaar banking software",
         description:
-          "Idempotent payment processing, instant UPI collect/pay, multi-gateway failover (Razorpay, Cashfree, PayU), settlement reporting, and signed webhooks.",
+          "Aadhaar Enabled Payment System for cash deposit, cash withdrawal, balance enquiry, and mini statement. Biometric device flow, two-factor checks, and settlement reports for CSPs and retailers.",
       },
       {
-        title: "Digital Lending & Loan Management",
+        title: "DMT money transfer software",
         description:
-          "Loan origination systems (LOS), automated credit scoring integrations, EMI calculator schedules, NACH/e-Mandate auto-debit, and disbursement pipelines.",
+          "Domestic Money Transfer for agent-assisted remittance: sender/beneficiary KYC, IMPS/NEFT, charges, limits, and failed-txn handling. Built for high-volume retailer networks.",
       },
       {
-        title: "Double-Entry Ledger & Audit Trails",
+        title: "XDMT express transfer software",
         description:
-          "Immutable double-entry financial ledgers, strict audit logging (who changed limits, who exported PII), and real-time reconciliation engines.",
+          "Express DMT (XDMT) for faster payout rails with pipeline status, retry, and ledger posting. Same retailer–distributor tree as DMT so you sell one platform, not four disconnected apps.",
       },
       {
-        title: "Neo-Banking & Multi-Currency Wallets",
+        title: "Retailer, distributor & admin panels",
         description:
-          "Virtual accounts, prepaid wallet management, rewards/cashback engines, and closed-loop/semi-closed digital wallet ecosystems.",
+          "The product you actually sell: retailer Android/iOS app, distributor wallet and downline, super-admin commissions, KYC holds, and day-end settlement. White-label branding included.",
       },
       {
-        title: "iOS, Android & Web Admin Consoles",
+        title: "UPI, KYC & banking add-ons",
         description:
-          "Ultra-responsive React Native / Flutter customer mobile apps with biometric authentication alongside enterprise web admin control panels.",
+          "UPI collect/pay, Video-KYC / Aadhaar–PAN, wallets, recharge, and double-entry ledgers — layered on the same BBPS/AEPS/DMT stack when your licence partner allows it.",
+      },
+    ],
+    industriesKicker: "Software we sell",
+    industriesHeading: "BBPS, AEPS, DMT & XDMT products for Indian operators",
+    industries: [
+      {
+        title: "BBPS software",
+        description:
+          "White-label Bharat Bill Payment software for retailers and distributors. Billers, receipts, refunds, and commission slabs — you operate it with your BBPS/BBPOU partnership.",
+      },
+      {
+        title: "AEPS software",
+        description:
+          "Aadhaar banking software for CSPs and kirana agents: deposit, withdrawal, balance, mini statement, and biometric devices. Sold as an app + admin, not as a bank account.",
+      },
+      {
+        title: "DMT software",
+        description:
+          "Domestic Money Transfer software for agent remittance networks. Sender/beneficiary flows, IMPS, charges, and distributor hierarchy ready to white-label.",
+      },
+      {
+        title: "XDMT software",
+        description:
+          "Express DMT software for faster transfer products on the same retailer tree. Status webhooks, retries, and ledger so XDMT and DMT share one settlement view.",
+      },
+      {
+        title: "Retailer banking apps",
+        description:
+          "Android-first retailer apps (iOS/web admin as needed) that bundle BBPS + AEPS + DMT + XDMT under one login — the package most Indian distributors actually buy.",
+      },
+      {
+        title: "NBFCs & fintech operators",
+        description:
+          "Custom UPI, lending, KYC, and wallet software for licensed operators who already have bank/NPCI arrangements and need a product team in Jaipur.",
       },
     ],
     process: defaultProcess,
@@ -210,8 +244,9 @@ export const nicheServices = [
         description: "React Native, Flutter, Swift, Kotlin, and React.js enterprise admin dashboards.",
       },
       {
-        title: "High-Throughput APIs & Microservices",
-        description: "Node.js, Go, and Python microservices with distributed caching (Redis) and zero-trust authentication.",
+        title: "Retailer APIs & partner rails",
+        description:
+          "BBPS, AEPS, DMT, and XDMT integrations against your bank, BBPOU, or NPCI sandbox — plus UPI and KYC vendors when those modules are in scope.",
       },
       {
         title: "Bank-Grade Security Architecture",
@@ -219,47 +254,59 @@ export const nicheServices = [
       },
     ],
     features: [
-      "UPI & Payment Gateways",
-      "Automated e-KYC & Digilocker",
-      "Double-entry ledgers",
-      "Digital lending & EMI engine",
-      "End-to-end AES-256 encryption",
-      "RBI & PCI-DSS compliance ready",
-      "Role-based access & audit logs",
-      "iOS + Android + Web",
+      "BBPS bill payment software",
+      "AEPS Aadhaar banking",
+      "DMT & XDMT money transfer",
+      "Retailer + distributor panels",
+      "UPI, KYC & wallets",
+      "Commission & settlement ledger",
+      "White-label Android / iOS / web",
+      "Bank-grade encryption & audit logs",
     ],
     faqs: [
       {
-        question: "Are you an NBFC or regulated bank?",
+        question: "Do you sell BBPS, AEPS, DMT and XDMT software?",
         answer:
-          "No. TheTriFusion is a technology software development company. We build high-security software and apps that licensed NBFCs, banks, and fintech startups operate under their regulatory frameworks.",
+          "Yes. TheTriFusion builds and sells BBPS, AEPS, DMT, and XDMT software as a retailer–distributor–admin product (white-label or custom). You operate it with your own bank, BBPOU, or AEPS partner credentials — we are the software vendor, not the payment network.",
       },
       {
-        question: "What security & compliance standards are implemented in fintech apps?",
+        question: "Are you an NBFC, bank, or BBPS operator?",
         answer:
-          "We implement AES-256 data encryption at rest, TLS 1.3 in transit, automated audit logs, webhook signature validation, rate limiting, and zero-trust role-based access control. We also assist during third-party VAPT and ISO security audits.",
+          "No. We are a Jaipur software company. We do not issue banking licences, NPCI membership, or BBPS/AEPS live access. Those stay with you or your sponsor bank. We build the apps, APIs, ledgers, and panels.",
       },
       {
-        question: "Which payment gateways and KYC providers do you integrate?",
+        question: "What is included in the retailer banking software?",
         answer:
-          "We regularly integrate Razorpay, Cashfree, PayU, Stripe, CCAvenue, UPI AutoPay, as well as KYC APIs including Karza, HyperVerge, Signzy, Digilocker, and Aadhaar/PAN validation services.",
+          "Typically a retailer Android app (iOS/web on request), distributor panel, super-admin, commission slabs, KYC holds, receipts, and day-end settlement. Modules can be BBPS, AEPS, DMT, XDMT, UPI, recharge, or a bundle.",
       },
       {
-        question: "What is the typical timeline and cost range for a fintech app MVP?",
+        question: "What security & compliance standards do you implement?",
         answer:
-          "Fintech MVPs featuring automated KYC, one payment gateway, and a secure ledger engine typically start at ₹4L–₹8L and take 8 to 12 weeks for production release across iOS, Android, and Web.",
+          "AES-256 at rest, TLS 1.3 in transit, audit logs, webhook signatures, rate limits, and role-based access. We support third-party VAPT. Live BBPS/AEPS still requires your partner’s certification process.",
+      },
+      {
+        question: "Which gateways and KYC providers do you integrate?",
+        answer:
+          "Bank/NPCI/BBPS/AEPS APIs from your live partner, plus Razorpay, Cashfree, PayU, UPI, and KYC vendors such as Karza, HyperVerge, Signzy, Digilocker, and Aadhaar/PAN where the use-case needs them.",
+      },
+      {
+        question: "What is the typical timeline and cost for this software?",
+        answer:
+          "A retailer BBPS/AEPS/DMT MVP with admin and Android typically starts around ₹4L and takes 8–12 weeks after your API sandbox access is available. Multi-module white-label platforms are phased.",
       },
     ],
     pricing: { basic: 400000, standard: 800000, premium: 1500000 },
     technologiesList: [
+      "BBPS",
+      "AEPS",
+      "DMT",
+      "XDMT",
+      "UPI",
       "React Native",
-      "Flutter",
       "Node.js",
       "PostgreSQL",
       "Redis",
       "AWS",
-      "React",
-      "Docker",
     ],
   },
   {

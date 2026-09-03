@@ -679,22 +679,54 @@ export const servicePageSeo = {
   },
   "fintech-app-development": {
     metaTitle:
-      "Fintech App Development Company in Jaipur India | KYC, UPI & Neo-Banking",
+      "Fintech App Development Company in Jaipur | BBPS, AEPS, DMT & XDMT Software",
     metaDescription:
-      "Top fintech app development company in Jaipur & India. We build secure UPI payment apps, lending platforms, KYC workflows, audit ledgers & custom banking software.",
+      "TheTriFusion in Jaipur sells BBPS, AEPS, DMT and XDMT software — retailer apps, distributor panels, UPI, KYC and banking platforms. Get a scoped quote.",
     keywords:
-      "fintech app development company Jaipur, fintech software development India, custom fintech app developers, digital lending platform India, UPI payment app development, KYC verification software, fintech web app development, neo banking app developers, secure fintech software Rajasthan, fintech MVP development, payment gateway integration India",
+      "BBPS software company India, AEPS software development Jaipur, DMT software India, XDMT software, fintech app development company Jaipur, retailer banking software, Aadhaar enabled payment system software, Bharat bill payment system software, domestic money transfer software, white label BBPS AEPS DMT, UPI KYC banking software Jaipur, CSP retailer app development",
+    bannerTitle:
+      "Fintech App Development Company in Jaipur | BBPS, AEPS, DMT & XDMT Software",
+    bannerDescription:
+      "We sell BBPS, AEPS, DMT and XDMT software you can white-label: retailer app, distributor panel, and admin — plus UPI and KYC. You bring bank/NPCI live access; we build the product.",
+    shortDescription:
+      "TheTriFusion in Jaipur builds and sells BBPS, AEPS, DMT and XDMT software — plus UPI, KYC, and banking apps for retailers, distributors, and fintech operators across India.",
+    description:
+      "TheTriFusion sells custom fintech software from Jaipur: BBPS bill-pay, AEPS Aadhaar banking, DMT, XDMT, UPI, KYC, and retailer–distributor panels. We build the product you operate — white-label or custom — on iOS, Android, and web.",
     locationLine:
-      "Fintech apps & secure banking portals from Jaipur — engineered for Indian compliance, RBI guidelines, and bank-grade security.",
-    scopeKicker: "Fintech Engineering",
-    scopeHeading: "Custom Fintech Software & Mobile App Solutions",
-    processHeading: "How We Build Compliant & Secure Fintech MVPs",
-    ctaHeading: "Ready to Build a High-Security Fintech Application?",
+      "BBPS, AEPS, DMT & XDMT software from Jaipur — sold as retailer, distributor, and admin products for Indian operators.",
+    scopeKicker: "Software we sell",
+    scopeHeading: "BBPS, AEPS, DMT, XDMT & banking apps from Jaipur",
+    processHeading: "How we deliver retailer banking software",
+    ctaHeading: "Need BBPS, AEPS, DMT or XDMT software?",
     ctaText:
-      "Share your licensing partner, payment gateway, and target platforms. Our Jaipur engineering team will deliver a comprehensive, compliance-ready architectural roadmap and cost estimate.",
-    serviceType: "Fintech Application & Custom Financial Software Development",
+      "Share whether you need white-label retailer apps or a custom stack, and which live APIs you already have (BBPS, AEPS, DMT, bank). The Jaipur team returns a scoped estimate.",
+    serviceType: "Fintech, BBPS, AEPS, DMT and XDMT Software Development",
     whatsappMessage:
-      "Hi TriFusion, I want a fintech app / custom payment software quote from the Jaipur engineering team.",
+      "Hi TriFusion, I want to buy BBPS / AEPS / DMT / XDMT software (retailer + distributor + admin) from the Jaipur team.",
+    imageAlt:
+      "BBPS AEPS DMT XDMT fintech software and banking apps built in Jaipur by TheTriFusion",
+    faqs: [
+      {
+        question: "Do you sell BBPS, AEPS, DMT and XDMT software?",
+        answer:
+          "Yes. TheTriFusion builds and sells BBPS, AEPS, DMT, and XDMT software as a retailer–distributor–admin product (white-label or custom). You operate it with your own bank, BBPOU, or AEPS partner credentials — we are the software vendor, not the payment network.",
+      },
+      {
+        question: "Are you an NBFC, bank, or BBPS operator?",
+        answer:
+          "No. We are a Jaipur software company. We do not issue banking licences, NPCI membership, or BBPS/AEPS live access. Those stay with you or your sponsor bank. We build the apps, APIs, ledgers, and panels.",
+      },
+      {
+        question: "What is included in the retailer banking software?",
+        answer:
+          "Typically a retailer Android app (iOS/web on request), distributor panel, super-admin, commission slabs, KYC holds, receipts, and day-end settlement. Modules can be BBPS, AEPS, DMT, XDMT, UPI, recharge, or a bundle.",
+      },
+      {
+        question: "What is the typical timeline and cost for this software?",
+        answer:
+          "A retailer BBPS/AEPS/DMT MVP with admin and Android typically starts around ₹4L and takes 8–12 weeks after your API sandbox access is available. Multi-module white-label platforms are phased.",
+      },
+    ],
   },
   "ev-charging-app-development": {
     metaTitle:

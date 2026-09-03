@@ -220,6 +220,9 @@ export default function ServiceDetailPage() {
           {startingPrice ? (
             <a href="#pricing" className="hover:text-theme-purple whitespace-nowrap transition-colors">Pricing & Timeline</a>
           ) : null}
+          {service.industries?.length ? (
+            <a href="#products" className="hover:text-theme-purple whitespace-nowrap transition-colors">Products</a>
+          ) : null}
           <a href="#faq" className="hover:text-theme-purple whitespace-nowrap transition-colors">FAQs</a>
           <a href="#related" className="hover:text-theme-purple whitespace-nowrap transition-colors">Related</a>
           <Link href="/contact" className="ml-auto text-theme-purple font-black hover:underline whitespace-nowrap">
@@ -358,10 +361,12 @@ export default function ServiceDetailPage() {
 
       {/* Industries Section */}
       {service.industries?.length > 0 && (
-        <section className="relative py-16 overflow-hidden">
+        <section id="products" className="relative py-16 overflow-hidden scroll-mt-28">
           <div className="absolute inset-0 bg-gradient-to-br from-cyan-50 via-white to-light-theme-purple" />
           <div className="container mx-auto px-5 relative">
-            <SectionHeading kicker="Industries">Industries We Specialize In</SectionHeading>
+            <SectionHeading kicker={service.industriesKicker || "Industries"}>
+              {service.industriesHeading || "Industries We Specialize In"}
+            </SectionHeading>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {service.industries.map((industry, idx) => {
                 const accent = accentAt(idx);
