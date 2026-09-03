@@ -10,9 +10,9 @@ export const ecommercePage = {
   kicker: "Ecommerce development · Jaipur",
   h1: "Ecommerce website + Android + iOS app — grocery, fashion, and every store type",
   outcome:
-    "₹25,000 single vendor · ₹35,000 multi-vendor · Web, Android, and iOS included. Nothing extra from us for the three platforms.",
+    "₹25,000 single vendor · ₹35,000 multi-vendor · We build web, Android, and iOS. You create the Play Store and App Store developer accounts.",
   intro:
-    "TheTriFusion in Jaipur builds complete ecommerce products for Indian sellers: a customer website, an Android app, and an iOS app — plus admin, catalog, checkout, and Razorpay/UPI. Pick grocery, clothing, electronics, or any store type below. One seller or a marketplace. The package price is the development fee.",
+    "TheTriFusion in Jaipur builds complete ecommerce products for Indian sellers: a customer website, an Android app, and an iOS app — plus admin, catalog, checkout, and Razorpay/UPI. Play Store and Apple Developer accounts are yours to create (paid to Google and Apple). Pick grocery, clothing, electronics, or any store type below. One seller or a marketplace.",
   metaTitle:
     "Ecommerce Development Company India | Web + Android + iOS from ₹25,000 | TheTriFusion",
   metaDescription:
@@ -30,7 +30,7 @@ export const ecommercePage = {
     "Office in Jaipur, Rajasthan",
     "Web + Android + iOS in both packages",
     "Razorpay / UPI checkout",
-    "Play Store + App Store listing support",
+    "You create Play Store & App Store accounts",
   ],
   stack: [
     "React",
@@ -72,7 +72,7 @@ export const ecommercePackages = [
       "Customer accounts",
       "Banners and coupon codes",
       "Basic on-page SEO",
-      "Play Store + App Store listing assets",
+      "Listing assets (screenshots, description) — we submit using your store accounts",
       "Launch support",
     ],
     whatsappMessage:
@@ -235,6 +235,11 @@ export const vendorComparison = [
     multi: "City marketplace, multi-brand mall, artisan hub",
   },
   {
+    feature: "Play Store / App Store accounts",
+    single: "You create — not in the package",
+    multi: "You create — not in the package",
+  },
+  {
     feature: "Package",
     single: "₹25,000",
     multi: "₹35,000",
@@ -244,19 +249,30 @@ export const vendorComparison = [
 export const includedItems = [
   "UI/UX for storefront and admin",
   "Customer website",
-  "Android app",
-  "iOS app",
+  "Android app (we build it)",
+  "iOS app (we build it)",
   "Product catalog, cart, and checkout",
   "Razorpay / UPI payment integration",
   "Order management",
-  "Store listing assets and launch support",
+  "Listing assets and submission help — on your Play Store and App Store accounts",
+];
+
+export const clientMustProvide = [
+  {
+    title: "Google Play (Android) developer account",
+    body: "You must create this in your company name and pay Google’s one-time fee (~$25). We cannot publish the Android app from our account. We guide you and then upload using access you give us.",
+  },
+  {
+    title: "Apple Developer (iOS) account",
+    body: "You must enrol in the Apple Developer Program in your company name (~$99 / year, paid to Apple). We cannot publish the iOS app from our account. We guide you and then submit using access you give us.",
+  },
 ];
 
 export const notIncludedItems = [
+  "Google Play Developer account — you create and pay Google (~$25, one time)",
+  "Apple Developer account — you create and pay Apple (~$99 / year)",
   "Domain name (you register, or we buy in your name)",
   "Hosting if you use your own cloud account",
-  "Google Play one-time developer fee (~$25)",
-  "Apple Developer Program (~$99 / year)",
   "Razorpay KYC — account stays in your business name",
   "GST on our invoice, as required by Indian law",
 ];
@@ -265,12 +281,12 @@ export const ecommerceFaqs = [
   {
     question: "What is included in ₹25,000 and ₹35,000?",
     answer:
-      "Both packages include the customer website, Android app, and iOS app, plus admin, catalog, cart, checkout, Razorpay/UPI, and launch support. ₹25,000 is single vendor (one seller). ₹35,000 is multi-vendor (marketplace with vendor dashboards and commissions). There is no extra development fee from us for adding Android or iOS — all three platforms are in the package.",
+      "Both packages include the customer website, Android app, and iOS app (the software we build), plus admin, catalog, cart, checkout, Razorpay/UPI, and launch support. ₹25,000 is single vendor (one seller). ₹35,000 is multi-vendor (marketplace with vendor dashboards and commissions). Play Store and App Store developer accounts are not included — you must create those yourself.",
   },
   {
     question: "Do I pay extra for the Android or iOS app?",
     answer:
-      "No. Web, Android, and iOS are included in both packages. You do not pay TheTriFusion an add-on for a second or third platform. Google Play and Apple Developer account fees are paid to Google and Apple, not to us.",
+      "No extra development fee to TheTriFusion for the three platforms. You do pay Google and Apple separately for developer accounts: Google Play (~$25 one time) and Apple Developer (~$99 / year). Those accounts must be in your name.",
   },
   {
     question: "Can you build grocery, clothing, and other store types?",
@@ -288,14 +304,19 @@ export const ecommerceFaqs = [
       "A focused single-vendor store is typically 4–8 weeks after scope is locked. Multi-vendor marketplaces are often 6–10 weeks. We write the timeline before build starts.",
   },
   {
+    question: "Who creates the Play Store and App Store accounts?",
+    answer:
+      "You do. Google Play and Apple Developer accounts must be opened by the customer in their company name. We do not provide, rent, or include those accounts in the package. We help you set them up, then publish the apps using the access you grant.",
+  },
+  {
     question: "Do you list the apps on Play Store and App Store?",
     answer:
-      "Yes. Listing assets, screenshots, and the first submission checklist are part of launch. You provide the developer accounts (Google Play and Apple) in your company name.",
+      "Yes — after you have your own Google Play and Apple Developer accounts. We prepare listing assets, screenshots, and the first submission. Publishing is done on your accounts, not ours.",
   },
   {
     question: "Is anything extra after I pay the package?",
     answer:
-      "No extra development fee from TheTriFusion for what is listed in the package. Domain, hosting (if on your account), Play/App Store developer fees, payment-gateway KYC, and GST on our invoice are third-party or statutory — not upsells for Android, iOS, or web.",
+      "No extra development fee from TheTriFusion for what is listed in the package. You still pay Google (Play Developer), Apple (Developer Program), domain, hosting if on your cloud, Razorpay KYC, and GST on our invoice. Those are not our upsells.",
   },
 ];
 

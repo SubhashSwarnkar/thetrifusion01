@@ -16,6 +16,7 @@ import {
   vendorComparison,
   includedItems,
   notIncludedItems,
+  clientMustProvide,
   ecommerceFaqs,
 } from "data/ecommerceDevelopmentData";
 import { Portfolios } from "json/landingPageData";
@@ -165,11 +166,32 @@ export default function EcommerceDevelopmentPage() {
         <SectionHeading kicker="Packages">
           Two complete packages — Web + Android + iOS included
         </SectionHeading>
-        <p className="text-gray-600 font-light leading-relaxed max-w-3xl mb-10 -mt-2">
-          Everything in the package is included. There is no upsell from
-          TheTriFusion for Android, iOS, or web. Pick single vendor for your
-          own store, or multi-vendor for a marketplace.
+        <p className="text-gray-600 font-light leading-relaxed max-w-3xl mb-6 -mt-2">
+          We build the website, Android app, and iOS app — no extra development
+          fee for the three platforms. Play Store and App Store developer
+          accounts are not in the package: you create those in your company
+          name (fees go to Google and Apple).
         </p>
+        <div className="mb-10 p-5 sm:p-6 rounded-2xl border border-amber-200 bg-amber-50">
+          <p className="text-xs font-bold uppercase tracking-widest text-amber-800 mb-2">
+            You must arrange
+          </p>
+          <h3 className="text-lg font-bold text-theme-blue mb-4">
+            Google Play and Apple Developer accounts are the customer’s
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {clientMustProvide.map((item) => (
+              <div key={item.title}>
+                <p className="text-sm font-bold text-theme-blue mb-1">
+                  {item.title}
+                </p>
+                <p className="text-sm text-gray-600 font-light leading-relaxed">
+                  {item.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
           {ecommercePackages.map((pkg, idx) => {
             const accent = accentAt(idx);
@@ -213,7 +235,7 @@ export default function EcommerceDevelopmentPage() {
                   <p className="text-sm text-gray-600 font-light leading-relaxed mb-5">
                     {pkg.summary}
                   </p>
-                  <ul className="space-y-2 mb-7 flex-1">
+                  <ul className="space-y-2 mb-4 flex-1">
                     {pkg.includes.map((item) => (
                       <li
                         key={item}
@@ -228,6 +250,10 @@ export default function EcommerceDevelopmentPage() {
                       </li>
                     ))}
                   </ul>
+                  <p className="text-xs text-amber-800 bg-amber-50 border border-amber-200 rounded-xl px-3 py-2 mb-6 font-medium leading-relaxed">
+                    Not included: Google Play and Apple Developer accounts. You
+                    create these in your name (fees to Google ~$25, Apple ~$99/year).
+                  </p>
                   <div className="flex flex-col sm:flex-row gap-2">
                     <a
                       href="#lead-form"
@@ -374,7 +400,7 @@ export default function EcommerceDevelopmentPage() {
             </div>
             <div className="p-7 rounded-2xl border border-gray-200 bg-white">
               <h3 className="text-xl font-bold text-theme-blue mb-4">
-                Client still handles (not our fee)
+                Not included — you create these
               </h3>
               <ul className="space-y-2">
                 {notIncludedItems.map((item) => (
@@ -543,8 +569,9 @@ export default function EcommerceDevelopmentPage() {
             Ready to launch grocery, fashion, or a marketplace?
           </h2>
           <p className="text-white/80 mb-8 max-w-xl mx-auto font-light">
-            ₹25,000 single vendor or ₹35,000 multi-vendor. Web, Android, and iOS
-            in both. Share the store type — the Jaipur team replies on WhatsApp.
+            ₹25,000 single vendor or ₹35,000 multi-vendor. We build web, Android,
+            and iOS — you create the Play Store and App Store accounts. Share the
+            store type; the Jaipur team replies on WhatsApp.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
