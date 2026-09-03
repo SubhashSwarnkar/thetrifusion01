@@ -162,8 +162,8 @@ export const nicheServices = [
     icon: "💳",
     platforms,
     relatedBlogSlug: "fintech-app-development-india",
-    startingFrom: 400000,
-    startingFromNote: "Retailer BBPS / AEPS / DMT stack with admin + Android app",
+    startingFrom: 99999,
+    startingFromNote: "BBPS / AEPS / DMT software — retailer app + admin from ₹99,999",
     caseStudy: {
       title: "How we scope fintech (no fake live bank)",
       summary:
@@ -292,10 +292,10 @@ export const nicheServices = [
       {
         question: "What is the typical timeline and cost for this software?",
         answer:
-          "A retailer BBPS/AEPS/DMT MVP with admin and Android typically starts around ₹4L and takes 8–12 weeks after your API sandbox access is available. Multi-module white-label platforms are phased.",
+          "A retailer BBPS/AEPS/DMT software package with admin and Android starts at ₹99,999. Timeline is typically 8–12 weeks after your API sandbox access is available. Multi-module white-label platforms can be phased.",
       },
     ],
-    pricing: { basic: 400000, standard: 800000, premium: 1500000 },
+    pricing: { basic: 99999, standard: 199999, premium: 399999 },
     technologiesList: [
       "BBPS",
       "AEPS",

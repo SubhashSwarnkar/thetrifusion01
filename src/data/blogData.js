@@ -631,7 +631,7 @@ export const blogPosts = [
       </ul>
 
       <h3>Cost and timeline in India</h3>
-      <p>A production-ready retailer MVP with one or two modules (for example BBPS + DMT), Android app, and admin typically starts around ₹4L and takes 8–12 weeks after sandbox API access is available. Full BBPS + AEPS + DMT + XDMT white-label platforms are phased. Live go-live still depends on your bank/NPCI/BBPS partner certification — that is outside the software build.</p>
+      <p>A production-ready retailer package with one or two modules (for example BBPS + DMT), Android app, and admin starts at ₹99,999 and typically takes 8–12 weeks after sandbox API access is available. Full BBPS + AEPS + DMT + XDMT white-label platforms are phased. Live go-live still depends on your bank/NPCI/BBPS partner certification — that is outside the software build.</p>
 
       <h3>Talk to the Jaipur product team</h3>
       <p>See our <a href="/services/fintech-app-development">BBPS, AEPS, DMT and XDMT software page</a> for modules and FAQs, or <a href="/contact">contact TheTriFusion</a> for a scoped estimate.</p>

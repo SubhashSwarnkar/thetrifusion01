@@ -724,7 +724,7 @@ export const servicePageSeo = {
       {
         question: "What is the typical timeline and cost for this software?",
         answer:
-          "A retailer BBPS/AEPS/DMT MVP with admin and Android typically starts around ₹4L and takes 8–12 weeks after your API sandbox access is available. Multi-module white-label platforms are phased.",
+          "A retailer BBPS/AEPS/DMT software package with admin and Android starts at ₹99,999. Timeline is typically 8–12 weeks after your API sandbox access is available. Multi-module white-label platforms can be phased.",
       },
     ],
   },
