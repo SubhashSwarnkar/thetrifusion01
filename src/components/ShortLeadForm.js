@@ -19,6 +19,9 @@ const BUDGET_OPTIONS = [
 
 const PROJECT_OPTIONS = [
   "Website",
+  "Ecommerce",
+  "Single vendor ecommerce",
+  "Multi-vendor ecommerce",
   "Android app",
   "iOS app",
   "Mobile app (both)",

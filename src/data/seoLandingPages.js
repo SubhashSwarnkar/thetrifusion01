@@ -123,6 +123,12 @@ export const seoLandingPages = [
       "digital-marketing",
       "ui-ux-design",
     ],
+    relatedLinks: [
+      {
+        href: "/ecommerce-development",
+        label: "Ecommerce packages: Web + Android + iOS from ₹25,000",
+      },
+    ],
     cta: "Build your high-converting ecommerce website with TheTriFusion",
   },
   {

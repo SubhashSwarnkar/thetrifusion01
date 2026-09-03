@@ -62,6 +62,14 @@ export default function Footer({ hideNewsletter = false }) {
               <ul className="space-y-3">
                   <li>
                     <Link
+                      href="/ecommerce-development"
+                      className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block font-light"
+                    >
+                      Ecommerce Development
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
                       href="/web-development"
                       className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block font-light"
                     >

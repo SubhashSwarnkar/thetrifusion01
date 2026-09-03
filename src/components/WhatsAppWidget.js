@@ -87,6 +87,15 @@ function getContextualChips(pathname) {
     ];
   }
 
+  if (pathname.startsWith("/ecommerce-development")) {
+    return [
+      { label: "🛒 Single Vendor ₹25k", text: "Hi TriFusion, I want the Single Vendor ecommerce package at ₹25,000 (web + Android + iOS)." },
+      { label: "🏪 Multi-Vendor ₹35k", text: "Hi TriFusion, I want the Multi-Vendor ecommerce package at ₹35,000 (web + Android + iOS marketplace)." },
+      { label: "🥬 Grocery / Fashion Store", text: "Hi TriFusion, I need an ecommerce store (grocery / clothing / other) with web + Android + iOS." },
+      { label: "📅 Book Discovery Call", text: "Hi TriFusion, can we schedule a 15-minute call for the ecommerce package?" },
+    ];
+  }
+
   if (pathname.startsWith("/web-development") || pathname.startsWith("/android-app-development") || pathname.startsWith("/ios-app-development")) {
     const type = pathname.includes("android") ? "Android App" : pathname.includes("ios") ? "iOS App" : "Website";
     return [

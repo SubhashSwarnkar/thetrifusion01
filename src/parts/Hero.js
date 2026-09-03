@@ -17,7 +17,7 @@ const HERO_CHIPS = [
     href: "/discuss-project?offer=aws-marketplace",
     highlight: true,
   },
-  { label: "E-commerce", href: "/solutions/ecommerce-website-development" },
+  { label: "E-commerce", href: "/ecommerce-development" },
   { label: "CMS", href: "/services/website-development" },
   { label: "CRM & ERP", href: "/services/crm-erp-development" },
   { label: "MLM software", href: "/services/mlm-crm-development" },

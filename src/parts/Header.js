@@ -49,6 +49,15 @@ const SERVICE_MENU_GROUPS = [
       "ev-charging-app-development",
       "crm-erp-development",
     ],
+    extras: [
+      {
+        href: "/ecommerce-development",
+        slug: "ecommerce-development",
+        title: "Ecommerce Development",
+        shortDescription:
+          "Web + Android + iOS from ₹25,000. Grocery, fashion, multi-vendor.",
+      },
+    ],
   },
 ];
 
@@ -251,10 +260,36 @@ export default function Header() {
                       {group.heading}
                     </p>
                     <ul className="space-y-0.5">
+                      {(group.extras || []).map((extra, idx) => {
+                        const accent = accentAt(group.accentIndex + idx);
+                        return (
+                          <li key={extra.slug}>
+                            <Link
+                              href={extra.href}
+                              onClick={handleLinkClick}
+                              className="group/item flex items-start gap-3 rounded-xl px-2 py-2 hover:bg-gray-50 transition-colors"
+                            >
+                              <span className={`mt-0.5 w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${accent.iconWrap} group-hover/item:bg-theme-purple group-hover/item:text-white transition-colors`}>
+                                <ServiceIcon slug={extra.slug} className="w-4 h-4" />
+                              </span>
+                              <span className="min-w-0">
+                                <span className="block text-sm font-semibold text-theme-blue group-hover/item:text-theme-purple transition-colors">
+                                  {extra.title}
+                                </span>
+                                <span className="block text-xs text-gray-400 font-light leading-snug line-clamp-1">
+                                  {extra.shortDescription}
+                                </span>
+                              </span>
+                            </Link>
+                          </li>
+                        );
+                      })}
                       {group.slugs.map((slug, idx) => {
                         const service = getService(slug);
                         if (!service) return null;
-                        const accent = accentAt(group.accentIndex + idx);
+                        const accent = accentAt(
+                          group.accentIndex + idx + (group.extras?.length || 0)
+                        );
                         return (
                           <li key={slug}>
                             <Link
@@ -351,8 +386,18 @@ export default function Header() {
                               exit={{ opacity: 0, height: 0 }}
                               className="grid grid-cols-1 gap-4 overflow-hidden pl-4"
                             >
+                              <Link
+                                href="/ecommerce-development"
+                                onClick={handleLinkClick}
+                                className={`flex items-center gap-3 py-2.5 px-3 rounded-xl border ${accentAt(0).card}`}
+                              >
+                                <span className={`w-9 h-9 flex-shrink-0 rounded-lg flex items-center justify-center ${accentAt(0).iconWrap}`}>
+                                  <ServiceIcon slug="ecommerce-development" className="w-4 h-4" />
+                                </span>
+                                <span className="font-semibold text-theme-blue text-base">Ecommerce Development</span>
+                              </Link>
                               {services.map((s, sIdx) => {
-                                const accent = accentAt(sIdx);
+                                const accent = accentAt(sIdx + 1);
                                 return (
                                 <Link
                                   key={s.id}

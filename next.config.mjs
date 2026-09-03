@@ -29,6 +29,11 @@ const nextConfig = {
         destination: "/solutions/ecommerce-website-development",
         permanent: true,
       },
+      {
+        source: "/services/ecommerce-development",
+        destination: "/ecommerce-development",
+        permanent: true,
+      },
     ];
   },
   async headers() {

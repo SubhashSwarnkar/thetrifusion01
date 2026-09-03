@@ -13,7 +13,10 @@ export default function sitemap() {
     .filter((path) => !NOINDEX_PATHS.has(path))
     .map((path) => ({
       url: path === "/" ? `${siteConfig.url}/` : `${siteConfig.url}${path}`,
-      lastModified: fallbackDate,
+      lastModified:
+        path === "/ecommerce-development"
+          ? new Date("2026-09-03")
+          : fallbackDate,
       changeFrequency: path === "/" ? "weekly" : "monthly",
       priority:
         path === "/"
@@ -24,7 +27,8 @@ export default function sitemap() {
               path === "/web-development" ||
               path === "/android-app-development" ||
               path === "/ios-app-development" ||
-              path === "/white-label-development"
+              path === "/white-label-development" ||
+              path === "/ecommerce-development"
             ? 0.9
             : 0.7,
     }));

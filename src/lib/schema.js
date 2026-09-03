@@ -108,6 +108,7 @@ function localBusinessNode() {
       "Software Development",
       "Website Development",
       "Ecommerce Website Development",
+      "Ecommerce Development",
       "Mobile App Development",
       "Android App Development",
       "iOS App Development",
@@ -198,8 +199,34 @@ export function serviceSchema({
   serviceType,
   price,
   offers = [],
+  pricedOffers = [],
 }) {
   const url = absoluteSiteUrl(path);
+  const priceOfferNodes =
+    pricedOffers.length > 0
+      ? pricedOffers.map((offer) => ({
+          "@type": "Offer",
+          name: offer.name,
+          description: offer.description,
+          priceCurrency: "INR",
+          price: String(offer.price),
+          availability: "https://schema.org/InStock",
+          validFrom: "2026-01-01",
+          url: offer.url ? absoluteSiteUrl(offer.url) : url,
+        }))
+      : price
+        ? [
+            {
+              "@type": "Offer",
+              priceCurrency: "INR",
+              price: String(price),
+              availability: "https://schema.org/InStock",
+              validFrom: "2026-01-01",
+              url,
+            },
+          ]
+        : [];
+
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -227,16 +254,12 @@ export function serviceSchema({
       worstRating: "1",
     },
     termsOfService: absoluteSiteUrl("/terms"),
-    ...(price
+    ...(priceOfferNodes.length > 0
       ? {
-          offers: {
-            "@type": "Offer",
-            priceCurrency: "INR",
-            price: String(price),
-            availability: "https://schema.org/InStock",
-            validFrom: "2026-01-01",
-            url,
-          },
+          offers:
+            priceOfferNodes.length === 1
+              ? priceOfferNodes[0]
+              : priceOfferNodes,
         }
       : {}),
     ...(offers && offers.length > 0

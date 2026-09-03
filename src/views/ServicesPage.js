@@ -75,6 +75,31 @@ export default function ServicesPage() {
             animate="visible"
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
           >
+            <motion.div variants={itemVariants}>
+              <Link href="/ecommerce-development" className="group block h-full">
+                <div className={`relative h-full rounded-2xl border p-6 overflow-hidden hover:shadow-lg transition-all duration-300 ${accentAt(0).card}`}>
+                  <span className={`absolute left-0 top-0 h-full w-1.5 ${accentAt(0).bar}`} />
+                  <div className={`w-11 h-11 mb-5 rounded-xl flex items-center justify-center ${accentAt(0).iconWrap} group-hover:bg-theme-purple group-hover:text-white transition-colors`}>
+                    <ServiceIcon slug="ecommerce-development" className="w-5 h-5" />
+                  </div>
+                  <p className="text-xs font-bold uppercase tracking-widest text-theme-purple mb-2">
+                    Featured · from ₹25,000
+                  </p>
+                  <h2 className="text-xl text-theme-blue font-bold mb-2 group-hover:text-theme-purple transition-colors">
+                    Ecommerce Development
+                  </h2>
+                  <p className="font-light text-gray-500 mb-6 line-clamp-3 leading-relaxed text-sm">
+                    Web + Android + iOS for grocery, fashion, and every store type. Single vendor ₹25,000 or multi-vendor ₹35,000 — no extra development fees.
+                  </p>
+                  <span className={`inline-flex items-center font-semibold text-sm ${accentAt(0).text}`}>
+                    See packages
+                    <svg className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </span>
+                </div>
+              </Link>
+            </motion.div>
             {services.map((service, idx) => {
               const accent = accentAt(idx);
               return (

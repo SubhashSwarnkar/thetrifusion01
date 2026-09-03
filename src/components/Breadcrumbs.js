@@ -31,6 +31,7 @@ export default function Breadcrumbs() {
       "android-app-development": "Android Apps",
       "ios-app-development": "iOS Apps",
       "white-label-development": "White-label",
+      "ecommerce-development": "Ecommerce Development",
       "thank-you": "Thanks",
       "mlm-crm-development": "MLM CRM",
       "fintech-app-development": "Fintech Apps",

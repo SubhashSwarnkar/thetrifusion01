@@ -298,9 +298,30 @@ export default function SolutionLandingPage() {
 
         {(relatedSolutions.length > 0 ||
           relatedServices.length > 0 ||
-          relatedBlog) && (
+          relatedBlog ||
+          (page.relatedLinks && page.relatedLinks.length > 0)) && (
           <section className="!mb-0 py-14 md:py-16 bg-gray-50/60">
             <div className="container mx-auto px-5 max-w-3xl space-y-10">
+              {page.relatedLinks?.length > 0 && (
+                <div>
+                  <h2 className="text-xl font-bold text-theme-blue mb-4">
+                    Ecommerce packages
+                  </h2>
+                  <ul className="space-y-3">
+                    {page.relatedLinks.map((link) => (
+                      <li key={link.href}>
+                        <Link
+                          href={link.href}
+                          className="text-theme-purple font-semibold hover:underline underline-offset-2"
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
               {relatedSolutions.length > 0 && (
                 <div>
                   <h2 className="text-xl font-bold text-theme-blue mb-4">

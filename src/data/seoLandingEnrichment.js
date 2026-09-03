@@ -107,8 +107,8 @@ export const landingEnrichment = {
     timelineRange:
       "Typical ecommerce MVP: 4–10 weeks. Complex catalogs/marketplaces: longer, delivered in phases.",
     relatedPortfolioIds: ["dailyconcepts-ecommerce-pos", "resto-restaurant-website"],
-    primaryCtaLabel: "Get a project estimate",
-    primaryCtaHref: "/estimate",
+    primaryCtaLabel: "See ecommerce packages",
+    primaryCtaHref: "/ecommerce-development",
   },
   "online-store-development": {
     outcomeLine:

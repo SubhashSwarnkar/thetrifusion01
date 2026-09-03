@@ -85,6 +85,14 @@ export const pages = {
     keywords:
       "white label development India, software development partner Jaipur, AWS partner development, agency white label apps",
   },
+  "/ecommerce-development": {
+    title:
+      "Ecommerce Development Company India | Web + Android + iOS from ₹25,000 | TheTriFusion",
+    description:
+      "Ecommerce development in Jaipur: grocery, fashion, and every store type. Single vendor ₹25,000 or multi-vendor ₹35,000. Web + Android + iOS included — no extra development fees.",
+    keywords:
+      "ecommerce development company India, ecommerce app development Jaipur, grocery ecommerce app, clothing ecommerce website, single vendor ecommerce, multi vendor marketplace app, ecommerce website android ios, online store development India, D2C ecommerce package, fashion ecommerce app India",
+  },
   "/contact": {
     title: "Contact TheTriFusion in Jaipur | Software Company Rajasthan",
     description:
@@ -194,6 +202,7 @@ export function pageMetadata(path, options = {}) {
       absolute: page.title,
     },
     description: page.description,
+    ...(page.keywords ? { keywords: page.keywords } : {}),
     alternates: {
       canonical: url,
       languages: {
