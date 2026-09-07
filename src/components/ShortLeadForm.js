@@ -9,6 +9,8 @@ import { sendSiteEmail } from "lib/sendSiteEmail";
 import { buildLeadTemplateParams } from "lib/leadMessage";
 
 const BUDGET_OPTIONS = [
+  "₹25,000",
+  "₹35,000",
   "Under ₹50,000",
   "₹50,000 – ₹1.5L",
   "₹1.5L – ₹5L",
@@ -29,8 +31,19 @@ const PROJECT_OPTIONS = [
   "Other",
 ];
 
+const BUDGET_BY_PROJECT = {
+  "Single vendor ecommerce": "₹25,000",
+  "Multi-vendor ecommerce": "₹35,000",
+  Ecommerce: "₹25,000",
+};
+
+function budgetForProject(projectType) {
+  return BUDGET_BY_PROJECT[projectType] || "";
+}
+
 export default function ShortLeadForm({
   defaultProjectType = "Website",
+  defaultBudgetRange = "",
   leadSource = "ads_short_form",
   heading = "Get a scoped next step",
 }) {
@@ -41,7 +54,8 @@ export default function ShortLeadForm({
     name: "",
     phone: "",
     serviceInterest: defaultProjectType,
-    budgetRange: "",
+    budgetRange:
+      defaultBudgetRange || budgetForProject(defaultProjectType) || "",
     website: "",
   });
 
@@ -51,7 +65,17 @@ export default function ShortLeadForm({
 
   const onChange = (event) => {
     const { name, value } = event.target;
-    setData((prev) => ({ ...prev, [name]: value }));
+    setData((prev) => {
+      if (name === "serviceInterest") {
+        const autoBudget = budgetForProject(value);
+        return {
+          ...prev,
+          serviceInterest: value,
+          budgetRange: autoBudget || prev.budgetRange,
+        };
+      }
+      return { ...prev, [name]: value };
+    });
   };
 
   const submit = async (event) => {

@@ -179,7 +179,8 @@ export default function EcommerceDevelopmentPage() {
 
             <div>
               <ShortLeadForm
-                defaultProjectType="Ecommerce"
+                defaultProjectType="Single vendor ecommerce"
+                defaultBudgetRange="₹25,000"
                 leadSource={page.leadSource}
                 heading="Claim 48-hour live offer"
               />
