@@ -5,7 +5,7 @@ import { Fade } from "react-awesome-reveal";
 
 export default function TrustBadges() {
   const stats = [
-    { number: "4+", label: "Live products to verify", icon: "🚀" },
+    { number: "50+", label: "Live products to verify", icon: "🚀" },
     { number: "24h", label: "Scoped estimate reply", icon: "⏱️" },
     { number: "Weekly", label: "Demo updates", icon: "📅" },
     { number: "Jaipur", label: "Pvt. Ltd. office", icon: "📍" },

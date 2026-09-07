@@ -14,7 +14,7 @@ export default function AboutPage() {
   }, []);
 
   const stats = [
-    { number: "4+", label: "Live products you can open", icon: "🚀" },
+    { number: "50+", label: "Live products you can open", icon: "🚀" },
     { number: "24h", label: "Scoped estimate reply", icon: "⏱️" },
     { number: "Weekly", label: "Demo updates", icon: "📅" },
     { number: "Jaipur", label: "Pvt. Ltd. office", icon: "📍" },

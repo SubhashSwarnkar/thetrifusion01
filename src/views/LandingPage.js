@@ -50,7 +50,7 @@ export default class LandingPage extends Component {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                 <Fade direction="up" delay={100} triggerOnce>
                   <div className="card-glass rounded-2xl p-8 text-center transform hover:scale-105 transition-transform duration-300 animate-float" style={{animationDelay: '0s'}}>
-                    <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">4+</div>
+                    <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">50+</div>
                     <div className="text-gray-600 font-medium">Live products you can open</div>
                   </div>
                 </Fade>
