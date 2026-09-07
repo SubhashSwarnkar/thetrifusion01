@@ -44,15 +44,16 @@ export default function Hero() {
               <span className="inline-block mb-6 px-4 py-1.5 rounded-full bg-light-theme-purple/40 text-theme-purple text-xs font-bold uppercase tracking-[0.18em]">
                 Jaipur, Rajasthan
               </span>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.15] text-theme-blue mb-6">
-                Jaipur agency for{" "}
-                <span className="text-gradient">React / Next.js</span> websites
-                &amp; mobile apps — with you after launch.
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-theme-blue mb-6">
+                Growing your
+                <br />
+                business is our
+                <br />
+                <span className="text-gradient">calling.</span>
               </h1>
-              <p className="text-base sm:text-lg text-gray-500 font-light leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
-                TheTriFusion builds production sites and apps for Indian
-                businesses: written scope, weekly demos, and support after go-live
-                — not a one-off handoff.
+              <p className="text-base sm:text-lg text-gray-500 font-light leading-relaxed mb-8 max-w-md mx-auto lg:mx-0">
+                Websites, mobile apps, UI/UX and digital marketing from a
+                software company in Jaipur.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button
