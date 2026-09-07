@@ -13,7 +13,7 @@ export default function ContextualWhatsApp() {
     message = "Hi TriFusion, I want a website development quote from the Jaipur team.";
   } else if (pathname.startsWith("/ecommerce-development")) {
     message =
-      "Hi TriFusion, I want the ecommerce package (web + Android + iOS). Please share next steps.";
+      "Hi TriFusion, I want the ecommerce package — website live in 48 hours or 50% refund (web + Android + iOS).";
   } else if (pathname.startsWith("/android-app-development")) {
     message = "Hi TriFusion, I want an Android app development quote from the Jaipur team.";
   } else if (pathname.startsWith("/ios-app-development")) {

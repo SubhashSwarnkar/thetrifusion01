@@ -89,10 +89,10 @@ function getContextualChips(pathname) {
 
   if (pathname.startsWith("/ecommerce-development")) {
     return [
-      { label: "🛒 Single Vendor ₹25k", text: "Hi TriFusion, I want the Single Vendor ecommerce package at ₹25,000 (web + Android + iOS)." },
-      { label: "🏪 Multi-Vendor ₹35k", text: "Hi TriFusion, I want the Multi-Vendor ecommerce package at ₹35,000 (web + Android + iOS marketplace)." },
-      { label: "🥬 Grocery / Fashion Store", text: "Hi TriFusion, I need an ecommerce store (grocery / clothing / other) with web + Android + iOS." },
-      { label: "📅 Book Discovery Call", text: "Hi TriFusion, can we schedule a 15-minute call for the ecommerce package?" },
+      { label: "⚡ Live in 48 hrs / 50% refund", text: "Hi TriFusion, I want the ecommerce package — website live in 48 hours or 50% refund." },
+      { label: "🛒 Single Vendor ₹25k", text: "Hi TriFusion, I want Single Vendor ecommerce at ₹25,000 — website live in 48 hours or 50% refund (web + Android + iOS)." },
+      { label: "🏪 Multi-Vendor ₹35k", text: "Hi TriFusion, I want Multi-Vendor ecommerce at ₹35,000 — website live in 48 hours or 50% refund." },
+      { label: "🥬 Grocery / Fashion Store", text: "Hi TriFusion, I need grocery / clothing ecommerce with the 48-hour live guarantee." },
     ];
   }
 

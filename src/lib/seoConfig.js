@@ -87,11 +87,11 @@ export const pages = {
   },
   "/ecommerce-development": {
     title:
-      "Ecommerce Development Company India | Web + Android + iOS from ₹25,000 | TheTriFusion",
+      "Ecommerce Live in 48 Hours or 50% Refund | Single & Multi-Vendor from ₹25,000 | TheTriFusion",
     description:
-      "Ecommerce development in Jaipur: grocery, fashion, and every store type. Single vendor ₹25,000 or multi-vendor ₹35,000. Web + Android + iOS included — no extra development fees.",
+      "Single vendor ₹25,000 & multi-vendor ₹35,000 ecommerce. Website live in 48 hours after locked brief — or 50% refund. Web + Android + iOS. Grocery, fashion & more. Jaipur.",
     keywords:
-      "ecommerce development company India, ecommerce app development Jaipur, grocery ecommerce app, clothing ecommerce website, single vendor ecommerce, multi vendor marketplace app, ecommerce website android ios, online store development India, D2C ecommerce package, fashion ecommerce app India",
+      "ecommerce website live in 48 hours, ecommerce 50% refund guarantee, single vendor ecommerce website India, multi vendor marketplace website 48 hours, ecommerce development company India, grocery ecommerce website, clothing ecommerce app, ecommerce web android ios package, online store live fast India, D2C ecommerce Jaipur",
   },
   "/contact": {
     title: "Contact TheTriFusion in Jaipur | Software Company Rajasthan",

@@ -426,7 +426,7 @@ export const blogPosts = [
       <h3>How to brief an agency usefully</h3>
       <p>Share must-have vs nice-to-have features, sample catalog size, payment/shipping preferences, reference sites, and a realistic go-live date. That lets partners like <a href="/solutions/ecommerce-website-development">TheTriFusion ecommerce team</a> propose scoped options instead of vague ballpark guesses. For a packaged web + Android + iOS store (grocery, fashion, or marketplace), see our <a href="/ecommerce-development">ecommerce development packages</a>.</p>
       <h3>What we recommend next</h3>
-      <p>Use our <a href="/ecommerce-development">ecommerce packages</a> for a standard single-vendor (₹25,000) or multi-vendor (₹35,000) product, or <a href="/appointment">book a discovery call</a> for a written custom scope. Complex catalogs still need a brief — packages cover the listed platforms and features, not unlimited custom work.</p>
+      <p>Use our <a href="/ecommerce-development">ecommerce packages</a> for single-vendor (₹25,000) or multi-vendor (₹35,000) with website live in 48 hours or 50% refund, or <a href="/appointment">book a discovery call</a> for a written custom scope. Complex catalogs still need a brief — packages cover the listed platforms and features, not unlimited custom work.</p>
     `,
     category: "webdev",
     image: "/assets/images/blog/ecommerce-cost.jpg",

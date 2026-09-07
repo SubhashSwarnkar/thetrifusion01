@@ -126,7 +126,8 @@ export const seoLandingPages = [
     relatedLinks: [
       {
         href: "/ecommerce-development",
-        label: "Ecommerce packages: Web + Android + iOS from ₹25,000",
+        label:
+          "Ecommerce live in 48 hours or 50% refund — from ₹25,000",
       },
     ],
     cta: "Build your high-converting ecommerce website with TheTriFusion",

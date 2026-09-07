@@ -7,11 +7,13 @@ import {
   serviceSchema,
 } from "lib/schema";
 import { buildMetadata } from "lib/seoConfig";
+import { absoluteSiteUrl } from "config/site";
 import {
   ecommerceFaqs,
   ecommercePackages,
   ecommercePage,
   ecommerceStoreTypes,
+  launchGuarantee,
 } from "data/ecommerceDevelopmentData";
 
 const PATH = ecommercePage.path;
@@ -41,7 +43,7 @@ export default function RoutePage() {
           description: ecommercePage.metaDescription,
           path: PATH,
           pricedOffers: ecommercePackages.map((pkg) => ({
-            name: `${pkg.name} ecommerce — web + Android + iOS`,
+            name: `${pkg.name} ecommerce — live in 48 hours or 50% refund`,
             description: pkg.summary,
             price: pkg.price,
             url: `${PATH}#${pkg.id}`,
@@ -61,6 +63,22 @@ export default function RoutePage() {
             path: `${PATH}#${store.id}`,
           })),
         })}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Offer",
+          name: launchGuarantee.headline,
+          description: launchGuarantee.subheadline,
+          url: absoluteSiteUrl(`${PATH}#guarantee`),
+          priceCurrency: "INR",
+          price: "25000",
+          availability: "https://schema.org/InStock",
+          seller: {
+            "@type": "Organization",
+            name: "TheTriFusion",
+          },
+        }}
       />
       <EcommerceDevelopmentPage />
     </>

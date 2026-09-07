@@ -55,7 +55,7 @@ const SERVICE_MENU_GROUPS = [
         slug: "ecommerce-development",
         title: "Ecommerce Development",
         shortDescription:
-          "Web + Android + iOS from ₹25,000. Grocery, fashion, multi-vendor.",
+          "Live in 48 hrs or 50% refund. From ₹25,000 — web + apps.",
       },
     ],
   },

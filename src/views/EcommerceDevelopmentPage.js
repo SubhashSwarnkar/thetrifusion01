@@ -18,6 +18,7 @@ import {
   notIncludedItems,
   clientMustProvide,
   ecommerceFaqs,
+  launchGuarantee,
 } from "data/ecommerceDevelopmentData";
 import { Portfolios } from "json/landingPageData";
 import { COMPANY_PHONE_DISPLAY, WHATSAPP_NUMBER } from "data/companyInfo";
@@ -71,6 +72,31 @@ export default function EcommerceDevelopmentPage() {
               <span className="inline-block px-3 py-1.5 rounded-full bg-light-theme-purple text-theme-purple text-xs font-bold uppercase tracking-[0.16em] mb-5">
                 {page.kicker}
               </span>
+              <div className="mb-5 p-4 sm:p-5 rounded-2xl border-2 border-theme-purple/30 bg-gradient-to-r from-light-theme-purple via-white to-cyan-50 shadow-sm">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-theme-purple mb-2">
+                  {launchGuarantee.badge}
+                </p>
+                <p className="text-xl sm:text-2xl font-black text-theme-blue leading-snug mb-2">
+                  {launchGuarantee.headline}
+                </p>
+                <p className="text-sm text-gray-600 font-light leading-relaxed">
+                  {launchGuarantee.subheadline}
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-theme-purple text-white text-xs font-bold">
+                    {launchGuarantee.clockLabel}
+                  </span>
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-theme-blue text-white text-xs font-bold">
+                    {launchGuarantee.refundLabel}
+                  </span>
+                  <a
+                    href="#guarantee"
+                    className="inline-flex items-center px-3 py-1.5 rounded-full border border-theme-purple/40 text-theme-purple text-xs font-bold hover:bg-light-theme-purple"
+                  >
+                    See guarantee terms →
+                  </a>
+                </div>
+              </div>
               <h1 className="text-4xl sm:text-5xl font-black text-theme-blue tracking-tight leading-[1.12] mb-4">
                 {page.h1}
               </h1>
@@ -155,22 +181,84 @@ export default function EcommerceDevelopmentPage() {
               <ShortLeadForm
                 defaultProjectType="Ecommerce"
                 leadSource={page.leadSource}
-                heading="Get the ecommerce package"
+                heading="Claim 48-hour live offer"
               />
             </div>
           </div>
         </div>
       </section>
 
+      <section
+        id="guarantee"
+        className="container mx-auto px-5 py-16 scroll-mt-28"
+      >
+        <SectionHeading kicker="USP · Ads guarantee">
+          Live in 48 hours — or 50% refund
+        </SectionHeading>
+        <p className="text-gray-600 font-light leading-relaxed max-w-3xl mb-8 -mt-2">
+          Built for Google and Meta ads: a clear promise on single vendor and
+          multi-vendor ecommerce websites. Same guarantee on both packages.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+          {launchGuarantee.points.map((point, idx) => {
+            const accent = accentAt(idx);
+            return (
+              <div
+                key={point.title}
+                className={`p-6 rounded-2xl border ${accent.card}`}
+              >
+                <h3 className="text-lg font-bold text-theme-blue mb-2">
+                  {point.title}
+                </h3>
+                <p className="text-sm text-gray-600 font-light leading-relaxed">
+                  {point.body}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+        <div className="p-6 rounded-2xl border border-gray-200 bg-gray-50">
+          <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">
+            Not covered by the 48-hour clock
+          </p>
+          <ul className="space-y-2">
+            {launchGuarantee.exclusions.map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-2 text-sm text-gray-600 font-light"
+              >
+                <span className="mt-1 w-4 h-4 rounded-full bg-gray-300 text-gray-600 flex items-center justify-center shrink-0 text-[10px]">
+                  ·
+                </span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="mt-8 flex flex-col sm:flex-row gap-3">
+          <a
+            href="#packages"
+            className="inline-flex items-center justify-center px-7 py-3.5 bg-theme-purple text-white rounded-full font-bold"
+          >
+            Pick single or multi-vendor
+          </a>
+          <a
+            href="#lead-form"
+            className="inline-flex items-center justify-center px-7 py-3.5 border-2 border-theme-purple text-theme-purple rounded-full font-bold"
+          >
+            Start the 48-hour clock
+          </a>
+        </div>
+      </section>
+
       <section id="packages" className="container mx-auto px-5 py-16 scroll-mt-28">
         <SectionHeading kicker="Packages">
-          Two complete packages — Web + Android + iOS included
+          Two packages — both with 48-hour live guarantee
         </SectionHeading>
         <p className="text-gray-600 font-light leading-relaxed max-w-3xl mb-6 -mt-2">
-          We build the website, Android app, and iOS app — no extra development
-          fee for the three platforms. Play Store and App Store developer
-          accounts are not in the package: you create those in your company
-          name (fees go to Google and Apple).
+          We build the website, Android app, and iOS app. The 48-hour / 50%
+          refund USP applies to website go-live for both single vendor and
+          multi-vendor. Play Store and App Store accounts are yours to create.
         </p>
         <div className="mb-10 p-5 sm:p-6 rounded-2xl border border-amber-200 bg-amber-50">
           <p className="text-xs font-bold uppercase tracking-widest text-amber-800 mb-2">
@@ -215,9 +303,13 @@ export default function EcommerceDevelopmentPage() {
                   />
                   {pkg.popular ? (
                     <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-theme-purple text-white text-xs font-bold uppercase tracking-widest">
-                      Most requested
+                      Most requested · 48 hrs
                     </span>
-                  ) : null}
+                  ) : (
+                    <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-theme-blue text-white text-xs font-bold uppercase tracking-widest">
+                      48 hrs or 50% refund
+                    </span>
+                  )}
                 </div>
                 <div className={`p-7 flex flex-col flex-1 ${accent.card}`}>
                   <p className={`text-xs font-bold uppercase tracking-widest mb-2 ${accent.text}`}>
@@ -566,12 +658,12 @@ export default function EcommerceDevelopmentPage() {
       <section className="container mx-auto px-5 pb-20">
         <div className="bg-gradient-to-r from-theme-blue via-theme-purple to-theme-cyan rounded-[2rem] p-10 md:p-14 text-center text-white">
           <h2 className="text-3xl md:text-4xl font-black mb-4">
-            Ready to launch grocery, fashion, or a marketplace?
+            Ready for grocery, fashion, or a marketplace — live in 48 hours?
           </h2>
           <p className="text-white/80 mb-8 max-w-xl mx-auto font-light">
-            ₹25,000 single vendor or ₹35,000 multi-vendor. We build web, Android,
-            and iOS — you create the Play Store and App Store accounts. Share the
-            store type; the Jaipur team replies on WhatsApp.
+            ₹25,000 single vendor or ₹35,000 multi-vendor. Website live in 48
+            hours after locked brief — or 50% refund. We also build Android and
+            iOS; you create the store accounts.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
@@ -621,10 +713,10 @@ export default function EcommerceDevelopmentPage() {
           WhatsApp
         </a>
         <a
-          href="#packages"
+          href="#guarantee"
           className="flex-1 text-center py-3 rounded-full bg-theme-purple text-white font-bold text-sm"
         >
-          Packages
+          48 hrs
         </a>
       </div>
 
