@@ -6,37 +6,33 @@ import { Fade } from "react-awesome-reveal";
 import Button from "../elements/Button";
 import HeroVideo from "components/HeroVideo";
 
-const HERO_CHIPS = [
+/** Core offers only on the homepage — niches live on dedicated service pages. */
+const HERO_CORE = [
   {
-    label: "Cloud",
+    label: "Websites & ecommerce",
+    href: "/ecommerce-development",
+    highlight: true,
+  },
+  {
+    label: "Mobile apps",
+    href: "/services/mobile-app-development",
+    highlight: true,
+  },
+  {
+    label: "Custom software",
+    href: "/services/software-development",
+  },
+  {
+    label: "Cloud & AWS",
     href: "/services/devops",
-    highlight: true,
   },
-  {
-    label: "AWS Certified Partner",
-    href: "/discuss-project?offer=aws-marketplace",
-    highlight: true,
-  },
-  { label: "E-commerce", href: "/ecommerce-development" },
-  { label: "CMS", href: "/services/website-development" },
-  { label: "CRM & ERP", href: "/services/crm-erp-development" },
-  { label: "MLM software", href: "/services/mlm-crm-development" },
-  { label: "eMSP apps", href: "/services/ev-charging-app-development" },
-  { label: "OCPI / OCPP", href: "/services/ev-charging-app-development" },
+];
+
+const HERO_SPECIALTIES = [
   { label: "BBPS / AEPS / DMT", href: "/services/fintech-app-development" },
-  { label: "DSA platforms", href: "/services/website-development" },
-  { label: "Motion graphic websites", href: "/services/ui-ux-design" },
-  { label: "Storytelling websites", href: "/services/website-development" },
-  { label: "Mobile apps", href: "/solutions/mobile-app-development-company" },
-  { label: "POS systems", href: "/solutions/ecommerce-website-development" },
-  { label: "Logistics software", href: "/services/software-development" },
-  { label: "EdTech / LMS", href: "/services/software-development" },
-  { label: "SaaS platforms", href: "/solutions/custom-software-development-company" },
-  { label: "Healthcare apps", href: "/solutions/mobile-app-development-company" },
-  { label: "Real estate software", href: "/services/software-development" },
-  { label: "AI software", href: "/services/ai-development" },
-  { label: "RPA", href: "/services/rpa" },
-  { label: "Salesforce", href: "/services/salesforce" },
+  { label: "EV charging (OCPI)", href: "/services/ev-charging-app-development" },
+  { label: "MLM CRM", href: "/services/mlm-crm-development" },
+  { label: "CRM & ERP", href: "/services/crm-erp-development" },
 ];
 
 const chipClassName =
@@ -44,42 +40,6 @@ const chipClassName =
 
 const highlightChipClassName =
   "whitespace-nowrap shrink-0 px-3 py-1.5 rounded-full bg-theme-purple text-white border border-theme-purple shadow-sm hover:bg-dark-theme-purple transition-colors font-semibold";
-
-function ChipTrack({ chips, hidden }) {
-  return (
-    <div
-      className="flex shrink-0 items-center gap-3 pr-3"
-      {...(hidden ? { "aria-hidden": true } : {})}
-    >
-      {chips.map((chip) => (
-        <Link
-          key={chip.label}
-          href={chip.href}
-          className={chip.highlight ? highlightChipClassName : chipClassName}
-          tabIndex={hidden ? -1 : undefined}
-        >
-          {chip.label}
-        </Link>
-      ))}
-    </div>
-  );
-}
-
-function ChipMarquee({ chips, direction = "left" }) {
-  const animationClass =
-    direction === "left" ? "animate-marquee-left" : "animate-marquee-right";
-
-  return (
-    <div className="overflow-hidden py-0.5">
-      <div
-        className={`flex w-max hover:[animation-play-state:paused] motion-reduce:animate-none ${animationClass}`}
-      >
-        <ChipTrack chips={chips} />
-        <ChipTrack chips={chips} hidden />
-      </div>
-    </div>
-  );
-}
 
 export default function Hero() {
   return (
@@ -92,23 +52,24 @@ export default function Hero() {
                 Jaipur, Rajasthan
               </span>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-theme-blue mb-6">
-                Growing your
+                Websites, apps &amp;
                 <br />
-                business is our
+                software from
                 <br />
-                <span className="text-gradient">calling.</span>
+                <span className="text-gradient">Jaipur.</span>
               </h1>
               <p className="text-base sm:text-lg text-gray-500 font-light leading-relaxed mb-8 max-w-md mx-auto lg:mx-0">
-                Websites, mobile apps, UI/UX and digital marketing from a
-                software company in Jaipur.
+                TheTriFusion builds ecommerce, mobile apps, and custom software
+                for Indian businesses — scoped in writing, delivered with weekly
+                demos.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button
-                  href="/solutions"
+                  href="/contact"
                   type="link"
                   className="btn-wave flex items-center justify-center px-8 py-4 text-white text-lg rounded-full shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105"
                 >
-                  Explore Solutions
+                  Free scoped estimate in 24 hours
                   <svg
                     className="ml-2 w-5 h-5 text-white"
                     xmlns="http://www.w3.org/2000/svg"
@@ -120,28 +81,15 @@ export default function Hero() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d="M9 5l7 7-7 7"
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"
                     />
                   </svg>
                 </Button>
                 <Link
-                  href="/contact"
+                  href="/portfolio"
                   className="flex items-center justify-center px-8 py-4 text-theme-purple text-lg bg-white border-2 border-theme-purple rounded-full shadow-lg hover:bg-light-theme-purple transition-all duration-300 hover:shadow-xl hover:scale-105"
                 >
-                  Get Started
-                  <svg
-                    className="ml-2 w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                  </svg>
+                  See live work
                 </Link>
               </div>
             </Fade>
@@ -154,18 +102,36 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="mt-10 -mx-5 sm:mx-0 text-sm">
-          <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
-            <div className="space-y-3">
-              <ChipMarquee
-                chips={HERO_CHIPS.slice(0, 11)}
-                direction="left"
-              />
-              <ChipMarquee
-                chips={HERO_CHIPS.slice(11)}
-                direction="right"
-              />
-            </div>
+        <div className="mt-10">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-gray-400 mb-3 text-center lg:text-left">
+            Core services
+          </p>
+          <div className="flex flex-wrap justify-center lg:justify-start gap-2.5 mb-6">
+            {HERO_CORE.map((chip) => (
+              <Link
+                key={chip.label}
+                href={chip.href}
+                className={chip.highlight ? highlightChipClassName : chipClassName}
+              >
+                {chip.label}
+              </Link>
+            ))}
+          </div>
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-gray-400 mb-3 text-center lg:text-left">
+            Specialties
+          </p>
+          <div className="flex flex-wrap justify-center lg:justify-start gap-2.5 mb-4">
+            {HERO_SPECIALTIES.map((chip) => (
+              <Link key={chip.label} href={chip.href} className={chipClassName}>
+                {chip.label}
+              </Link>
+            ))}
+            <Link
+              href="/services"
+              className="whitespace-nowrap shrink-0 px-3 py-1.5 rounded-full text-theme-purple font-semibold hover:underline"
+            >
+              All services →
+            </Link>
           </div>
         </div>
 
@@ -174,19 +140,19 @@ export default function Hero() {
             <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
-            <span>100+ Projects Delivered</span>
+            <span>Live projects you can open</span>
           </div>
           <div className="flex items-center">
             <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
-            <span>Expert Team</span>
+            <span>Written scope before build</span>
           </div>
           <div className="flex items-center">
             <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
-            <span>24/7 Support</span>
+            <span>Jaipur office · India remote</span>
           </div>
         </div>
       </div>

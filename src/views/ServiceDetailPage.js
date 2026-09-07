@@ -156,7 +156,7 @@ export default function ServiceDetailPage() {
                   href="/contact"
                   className="inline-flex items-center justify-center px-7 py-3.5 bg-theme-purple text-white rounded-full font-bold shadow-lg shadow-theme-purple/25 hover:bg-dark-theme-purple hover:scale-[1.02] transition-all"
                 >
-                  Get Scoped Estimate
+                  Free scoped estimate in 24h
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -226,7 +226,7 @@ export default function ServiceDetailPage() {
           <a href="#faq" className="hover:text-theme-purple whitespace-nowrap transition-colors">FAQs</a>
           <a href="#related" className="hover:text-theme-purple whitespace-nowrap transition-colors">Related</a>
           <Link href="/contact" className="ml-auto text-theme-purple font-black hover:underline whitespace-nowrap">
-            Start Project →
+            Free estimate →
           </Link>
         </div>
       </nav>
@@ -290,7 +290,7 @@ export default function ServiceDetailPage() {
               href="/contact"
               className="inline-flex items-center justify-center px-6 py-3 bg-theme-blue text-white rounded-full font-bold text-sm hover:bg-theme-purple transition-all shadow-md shrink-0"
             >
-              Discuss Your Project
+              Free estimate in 24h
             </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -457,7 +457,7 @@ export default function ServiceDetailPage() {
               href="/contact"
               className="w-full text-center py-3 rounded-xl bg-theme-blue text-white font-bold text-sm hover:bg-theme-purple transition-all shadow-md"
             >
-              Get Free Consultation →
+              Free estimate in 24h →
             </Link>
           </div>
         </div>
@@ -633,13 +633,13 @@ export default function ServiceDetailPage() {
               href="/contact"
               className="inline-flex items-center px-8 py-3.5 bg-white text-theme-purple rounded-full font-bold hover:bg-light-theme-purple transition-colors shadow-lg"
             >
-              Talk to Jaipur Engineering Team
+              Free scoped estimate in 24h
             </Link>
             <Link
               href="/pricing"
               className="inline-flex items-center px-8 py-3.5 bg-white/10 hover:bg-white/20 text-white rounded-full font-bold border border-white/30 transition-colors"
             >
-              Check Pricing Calculator
+              See pricing
             </Link>
           </div>
         </div>

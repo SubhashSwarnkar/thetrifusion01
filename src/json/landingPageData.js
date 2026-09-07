@@ -218,7 +218,7 @@ export const Portfolios = [
       "E-commerce Integration",
       "Payment Gateway",
     ],
-    credit: "#",
+    credit: "",
   },
   {
     id: "payswift-fintech-payment-gateway",
@@ -237,7 +237,7 @@ export const Portfolios = [
       "Payment Gateway",
       "Security & Compliance",
     ],
-    credit: "#",
+    credit: "",
   },
   {
     id: "fittrack-ios-android-fitness-app",
@@ -254,7 +254,7 @@ export const Portfolios = [
       "Wearable Integration",
       "Health Data Analytics",
     ],
-    credit: "#",
+    credit: "",
   },
   {
     id: "dataforge-dsa-visualizer",
@@ -271,7 +271,7 @@ export const Portfolios = [
       "Algorithm Visualization",
       "Interactive Code Editor",
     ],
-    credit: "#",
+    credit: "",
   },
   {
     id: "realnest-real-estate-app",
@@ -288,7 +288,7 @@ export const Portfolios = [
       "Maps & Location Services",
       "Virtual Tour Integration",
     ],
-    credit: "#",
+    credit: "",
   },
   {
     id: "eduspark-edtech-learning-platform",
@@ -306,7 +306,7 @@ export const Portfolios = [
       "Video Streaming",
       "Gamification",
     ],
-    credit: "#",
+    credit: "",
   },
   {
     id: "cryptovault-crypto-tracker-app",
@@ -323,7 +323,7 @@ export const Portfolios = [
       "Crypto API Integration",
       "Real-time Data Streaming",
     ],
-    credit: "#",
+    credit: "",
   },
   {
     id: "medconnect-telemedicine-app",
@@ -340,7 +340,7 @@ export const Portfolios = [
       "Video Call Integration",
       "Healthcare API & HIPAA Compliance",
     ],
-    credit: "#",
+    credit: "",
   },
   {
     id: "clouddesk-saas-project-management",
@@ -357,7 +357,7 @@ export const Portfolios = [
       "SaaS Architecture",
       "Third-party Integrations",
     ],
-    credit: "#",
+    credit: "",
   },
   {
     id: "foodrush-food-delivery-app",
@@ -374,7 +374,7 @@ export const Portfolios = [
       "Real-time GPS Tracking",
       "Payment Gateway Integration",
     ],
-    credit: "#",
+    credit: "",
   },
 ];
 
@@ -411,52 +411,52 @@ export const Testimonials = [
   {
     id: 1,
     name: "PlugOne",
-    company: "Live EV charging platform",
+    company: "Case: EV charging platform",
     testimoni:
-      "India's unified EV charging platform — maps, session tracking, and a mobility dashboard. This is a public live URL.",
+      "Built a production EV charging product with station maps, session tracking, and an operator dashboard — live at plugone.in so you can verify the stack yourself.",
     imageUrl: PlugOneImg,
     url: "https://plugone.in/",
-    linkLabel: "Verify live site → plugone.in",
+    linkLabel: "Open live case → plugone.in",
   },
   {
     id: 2,
     name: "Connect Dairy",
-    company: "Live dairy & feed logistics",
+    company: "Case: dairy & feed logistics",
     testimoni:
-      "Live agri-logistics product for milk trucks, feed distribution, and operations dashboards. This is a public live URL.",
+      "Shipped agri-logistics for milk trucks, feed distribution, and ops dashboards — public URL at connectdairy.in, not a mockup slide.",
     imageUrl: ConnectDairyImg,
     url: "https://www.connectdairy.in/",
-    linkLabel: "Verify live site → connectdairy.in",
+    linkLabel: "Open live case → connectdairy.in",
   },
   {
     id: 3,
     name: "DailyConcepts",
-    company: "Live ecommerce store",
+    company: "Case: ecommerce + admin",
     testimoni:
-      "Live store with catalog, checkout, and admin POS-style order handling. This is a public URL — open it to verify the work.",
+      "Catalog, checkout, and POS-style order handling in production — open dailyconceptsindia.com to check the storefront and flows.",
     imageUrl: Recruiting,
     url: "https://dailyconceptsindia.com",
-    linkLabel: "Verify live site → dailyconceptsindia.com",
+    linkLabel: "Open live case → dailyconceptsindia.com",
   },
   {
     id: 4,
     name: "Atharv Narayan",
-    company: "Live dairy solutions website",
+    company: "Case: dairy solutions site",
     testimoni:
-      "Live dairy logistics and manpower site for Bhilwara and Jaipur — transportation, feed, tenders, and inquiry flows. This is a public live URL.",
+      "Lead-gen site for dairy logistics and manpower across Bhilwara and Jaipur — transport, feed, tenders, and inquiry forms live at atharvnarayan.in.",
     imageUrl: AtharvNarayanImg,
     url: "https://www.atharvnarayan.in/",
-    linkLabel: "Verify live site → atharvnarayan.in",
+    linkLabel: "Open live case → atharvnarayan.in",
   },
   {
     id: 5,
     name: "Meditative",
-    company: "Live yoga website demo",
+    company: "Case: yoga platform demo",
     testimoni:
-      "Public yoga-platform demo we designed and developed. Open the live URL to verify the build — this is not a star rating.",
+      "Public yoga-platform build (design + front-end) hosted for review — open the URL to inspect layout and interactions; this is not a star rating.",
     imageUrl: Stream,
     url: "https://yoga-80f.pages.dev/",
-    linkLabel: "Verify live site → yoga-80f.pages.dev",
+    linkLabel: "Open demo → yoga-80f.pages.dev",
   },
 ];
 

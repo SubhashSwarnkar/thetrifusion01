@@ -16,6 +16,7 @@ import Testimonial from "parts/Testimonial";
 import Discuss from "parts/Discuss";
 import Footer from "parts/Footer";
 import TrustBadges from "components/TrustBadges";
+import FeaturedCaseStudy from "components/FeaturedCaseStudy";
 import { Fade } from "react-awesome-reveal";
 import SEO from "components/common/SEO";
 import Link from "next/link";
@@ -31,7 +32,7 @@ export default class LandingPage extends Component {
       <>
         <SEO 
           title="Home"
-          description="TheTriFusion is a leading software development company providing web development, mobile app development, UI/UX design, and IT consulting services."
+          description="TheTriFusion builds websites, apps, and custom software from Jaipur — written scope, weekly demos, and live products you can verify."
         />
         <Header />
         
@@ -47,26 +48,26 @@ export default class LandingPage extends Component {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                 <Fade direction="up" delay={100} triggerOnce>
                   <div className="card-glass rounded-2xl p-8 text-center transform hover:scale-105 transition-transform duration-300 animate-float" style={{animationDelay: '0s'}}>
-                    <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">100+</div>
-                    <div className="text-gray-600 font-medium">Projects Delivered</div>
+                    <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">4+</div>
+                    <div className="text-gray-600 font-medium">Live products you can open</div>
                   </div>
                 </Fade>
                 <Fade direction="up" delay={200} triggerOnce>
                   <div className="card-glass rounded-2xl p-8 text-center transform hover:scale-105 transition-transform duration-300 animate-float" style={{animationDelay: '1s'}}>
-                    <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">50+</div>
-                    <div className="text-gray-600 font-medium">Happy Clients</div>
+                    <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">24h</div>
+                    <div className="text-gray-600 font-medium">Scoped estimate reply</div>
                   </div>
                 </Fade>
                 <Fade direction="up" delay={300} triggerOnce>
                   <div className="card-glass rounded-2xl p-8 text-center transform hover:scale-105 transition-transform duration-300 animate-float" style={{animationDelay: '2s'}}>
-                    <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">15+</div>
-                    <div className="text-gray-600 font-medium">Team Members</div>
+                    <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">Weekly</div>
+                    <div className="text-gray-600 font-medium">Demo updates</div>
                   </div>
                 </Fade>
                 <Fade direction="up" delay={400} triggerOnce>
                   <div className="card-glass rounded-2xl p-8 text-center transform hover:scale-105 transition-transform duration-300 animate-float" style={{animationDelay: '3s'}}>
-                    <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">5+</div>
-                    <div className="text-gray-600 font-medium">Years Experience</div>
+                    <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">Jaipur</div>
+                    <div className="text-gray-600 font-medium">Pvt. Ltd. office</div>
                   </div>
                 </Fade>
               </div>
@@ -74,6 +75,7 @@ export default class LandingPage extends Component {
           </section>
           
           <Portfolio data={Portfolios} />
+          <FeaturedCaseStudy />
           <TrustBadges />
           <Advantage data={Advantages} />
           <Testimonial data={Testimonials} />

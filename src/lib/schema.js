@@ -250,13 +250,6 @@ export function serviceSchema({
       { "@type": "City", name: "Bengaluru" },
       { "@type": "Country", name: siteConfig.countryName },
     ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "48",
-      bestRating: "5",
-      worstRating: "1",
-    },
     termsOfService: absoluteSiteUrl("/terms"),
     ...(priceOfferNodes.length > 0
       ? {

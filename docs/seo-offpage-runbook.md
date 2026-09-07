@@ -2,11 +2,26 @@
 
 Use this after the on-site work in Phases 1–2. None of this is done by deploying the repo.
 
-**NAP to copy everywhere:** Trifusion Infotech Private Limited (TheTriFusion), Jaipur, Rajasthan, India. Phone and email from the live site footer. Set `NEXT_PUBLIC_COMPANY_STREET` so LocalBusiness JSON-LD matches Google Business Profile exactly.
+## Canonical NAP (copy exactly)
+
+| Field | Value |
+|-------|--------|
+| Legal name | Trifusion Infotech Private Limited |
+| Brand | TheTriFusion |
+| City | **Jaipur**, Rajasthan, India (not Bhilwara as HQ) |
+| Phone / email | Same as live site footer |
+| Website | `https://www.thetrifusion.in` |
+
+Set `NEXT_PUBLIC_COMPANY_STREET` so LocalBusiness JSON-LD matches Google Business Profile **exactly** (street only when GBP has the same line).
 
 **Live proof URLs:** [plugone.in](https://plugone.in/), [dailyconceptsindia.com](https://dailyconceptsindia.com), [connectdairy.in](https://www.connectdairy.in/), [atharvnarayan.in](https://www.atharvnarayan.in/).
 
-## Fastest two (do first)
+## Fix wrong listings first
+
+1. **RocketReach / other scrapers showing Bhilwara** — Claim or request correction: HQ is Jaipur. Do not create a second “Bhilwara office” listing unless you have a real address there. Site FAQ already clarifies Bhilwara vs Jaipur.
+2. Audit Justdial / IndiaMART / Sulekha for mismatched city, phone, or old brand spellings; align to the NAP table above.
+
+## Fastest two (do next)
 
 1. **Clutch.co** — Create the company profile, add the four live projects, request client reviews. Same legal name and Jaipur city as the website.
 2. **Google Business Profile** — Create/verify the Jaipur office. Categories: Software company / Website designer. Service area: Rajasthan (including Bhilwara) and India. Do not create a fake Bhilwara storefront.
@@ -19,8 +34,8 @@ Use this after the on-site work in Phases 1–2. None of this is done by deployi
 ## Authority and reviews
 
 5. Ask delivered clients for a “Developed by TheTriFusion” credit plus a dofollow link to `https://www.thetrifusion.in`.
-6. LinkedIn company page: one post per new live project (PlugOne, DailyConcepts, Connect Dairy pattern).
-7. Ask clients for Google reviews (GBP) and Clutch testimonials after a successful launch.
+6. LinkedIn company page: one post per new live project (PlugOne, DailyConcepts, Connect Dairy pattern). Keep the page active — searchers notice empty company pages.
+7. Ask clients for Google reviews (GBP) and Clutch testimonials after a successful launch. **Do not invent on-site star ratings** until Google/Clutch reviews exist (JSON-LD `aggregateRating` was removed for this reason).
 8. Guest posts: dev.to, Hashnode, or Indian startup blogs — link back to a niche service page (MLM CRM, EV charging, fintech), not only the homepage.
 
 ## Tracking (already in the product)

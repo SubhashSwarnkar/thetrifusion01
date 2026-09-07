@@ -5,10 +5,10 @@ import { Fade } from "react-awesome-reveal";
 
 export default function TrustBadges() {
   const stats = [
-    { number: "100+", label: "Projects Delivered", icon: "🚀" },
-    { number: "50+", label: "Happy Clients", icon: "😊" },
-    { number: "15+", label: "Team Members", icon: "👥" },
-    { number: "5+", label: "Years Experience", icon: "⭐" },
+    { number: "4+", label: "Live products to verify", icon: "🚀" },
+    { number: "24h", label: "Scoped estimate reply", icon: "⏱️" },
+    { number: "Weekly", label: "Demo updates", icon: "📅" },
+    { number: "Jaipur", label: "Pvt. Ltd. office", icon: "📍" },
   ];
 
   const certifications = [

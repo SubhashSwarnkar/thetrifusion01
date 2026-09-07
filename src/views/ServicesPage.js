@@ -144,16 +144,16 @@ export default function ServicesPage() {
           className="bg-gradient-to-r from-theme-blue via-theme-purple to-theme-cyan rounded-[2rem] p-10 md:p-14 text-center relative overflow-hidden"
         >
           <h2 className="text-3xl md:text-4xl font-black text-white mb-4 relative z-10">
-            Have a project in mind?
+            Need a scoped estimate?
           </h2>
           <p className="text-white/70 text-base md:text-lg mb-8 max-w-xl mx-auto relative z-10 font-light">
-            Share the problem and the deadline. We will come back with a scoped next step.
+            Share the problem and the deadline. The Jaipur team replies with a written next step — usually within 24 hours.
           </p>
           <Link 
             href="/contact" 
             className="inline-flex items-center px-8 py-3.5 bg-white text-theme-purple rounded-full font-bold hover:bg-light-theme-purple transition-colors relative z-10"
           >
-            Talk to us
+            Free estimate in 24h
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>

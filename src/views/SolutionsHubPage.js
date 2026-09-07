@@ -40,13 +40,13 @@ export default function SolutionsHubPage() {
                 href="/contact"
                 className="inline-flex items-center px-7 py-3.5 bg-theme-purple text-white rounded-full font-bold shadow-lg shadow-theme-purple/20 hover:scale-[1.02] transition-transform"
               >
-                Talk to TriFusion
+                Free estimate in 24h
               </Link>
               <Link
                 href="/estimate"
                 className="inline-flex items-center px-7 py-3.5 border-2 border-theme-blue/15 text-theme-blue rounded-full font-bold hover:border-theme-purple hover:text-theme-purple transition-colors"
               >
-                Get an estimate
+                Pricing calculator
               </Link>
             </div>
           </div>
