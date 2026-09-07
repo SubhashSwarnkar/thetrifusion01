@@ -22,7 +22,7 @@ export const siteConfig = {
     /\/$/,
     ""
   ),
-  email: env("NEXT_PUBLIC_COMPANY_EMAIL", "TheTrifusion@gmail.com"),
+  email: env("NEXT_PUBLIC_COMPANY_EMAIL", "contact@thetrifusion.in"),
   phone: env("NEXT_PUBLIC_COMPANY_PHONE", "+91 63781 33780"),
   phoneE164: env("NEXT_PUBLIC_COMPANY_PHONE_E164", "+916378133780"),
   whatsappNumber: env("NEXT_PUBLIC_WHATSAPP_NUMBER", "+916378133780"),

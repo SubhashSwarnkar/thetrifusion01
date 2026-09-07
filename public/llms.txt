@@ -3,14 +3,14 @@
 Brand: TheTriFusion
 Legal name: Trifusion Infotech Private Limited (Pvt. Ltd.)
 Office: Jaipur, Rajasthan, India
-Service area: Rajasthan (including Bhilwara) and India remotely
+Service area: Rajasthan (Bhilwara, Udaipur, Kota, Ajmer) and India remotely
 
 We build websites, ecommerce stores, mobile apps, custom software, UI/UX, and digital marketing.
 
 Site: https://www.thetrifusion.in
 Contact: https://www.thetrifusion.in/contact
 Phone: +91 63781 33780
-Email: TheTrifusion@gmail.com
+Email: contact@thetrifusion.in
 
 ## Key pages
 
@@ -18,6 +18,10 @@ Email: TheTrifusion@gmail.com
 - About: https://www.thetrifusion.in/about
 - Services: https://www.thetrifusion.in/services
 - Solutions: https://www.thetrifusion.in/solutions
+- Bhilwara websites: https://www.thetrifusion.in/solutions/website-development-company-bhilwara
+- Udaipur websites: https://www.thetrifusion.in/solutions/website-development-company-udaipur
+- Kota websites: https://www.thetrifusion.in/solutions/website-development-company-kota
+- Ajmer websites: https://www.thetrifusion.in/solutions/website-development-company-ajmer
 - Web development Jaipur: https://www.thetrifusion.in/solutions/web-development-company-jaipur
 - Software company in Rajasthan: https://www.thetrifusion.in/solutions/software-company-rajasthan
 - Website work for Bhilwara businesses: https://www.thetrifusion.in/solutions/website-development-company-bhilwara

@@ -269,7 +269,7 @@ export default function PricingPage() {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
               <Link href="/contact" className="px-10 py-5 bg-white text-theme-blue rounded-full font-bold hover:bg-gray-100 hover:scale-105 transition-all duration-300">
-                Free estimate in 24h
+                Get a free scoped estimate
               </Link>
               <Link href="/discuss-project" className="px-10 py-5 bg-transparent border-2 border-white/30 text-white rounded-full font-bold hover:bg-white/10 transition-all duration-300">
                 Discuss your project

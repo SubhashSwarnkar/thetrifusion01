@@ -9,7 +9,7 @@ Use this after the on-site work in Phases 1–2. None of this is done by deployi
 | Legal name | Trifusion Infotech Private Limited |
 | Brand | TheTriFusion |
 | City | **Jaipur**, Rajasthan, India (not Bhilwara as HQ) |
-| Phone / email | Same as live site footer |
+| Phone / email | Phone from footer; public email **contact@thetrifusion.in** (set up Workspace/Zoho + DNS; lead forms may still deliver to Gmail until then) |
 | Website | `https://www.thetrifusion.in` |
 
 Set `NEXT_PUBLIC_COMPANY_STREET` so LocalBusiness JSON-LD matches Google Business Profile **exactly** (street only when GBP has the same line).

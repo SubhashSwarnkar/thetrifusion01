@@ -1,6 +1,6 @@
 /**
- * EmailJS Gmail service → thetrifusion@gmail.com
- * Public key is expected in the browser; restrict allowed domains in EmailJS.
+ * EmailJS delivery inbox (can stay Gmail until Workspace mailbox is live).
+ * Public contact on the site is contact@thetrifusion.in — set up forwarding/Workspace separately.
  */
 export const EMAILJS_TO_EMAIL = "thetrifusion@gmail.com";
 

@@ -30,11 +30,9 @@ import Mobile2 from "../assets/images/TeamMembers/Mobile2.png";
 import UIUX1 from "../assets/images/TeamMembers/UIUX1.png";
 
 export const Services = [
-  { title: "Software Development", slug: "software-development" },
   { title: "Website Development", slug: "website-development" },
   { title: "Mobile App Development", slug: "mobile-app-development" },
   { title: "UI/UX Design", slug: "ui-ux-design" },
-  { title: "Cloud & AWS", slug: "devops" },
   { title: "Digital Marketing", slug: "digital-marketing" },
 ];
 

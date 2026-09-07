@@ -45,7 +45,7 @@ export default function AIEstimatorPage() {
     } catch (error) {
       const errorMessage = {
         role: "assistant",
-        content: "Sorry, I encountered an error. Please try again or contact us directly at TheTrifusion@gmail.com"
+        content: "Sorry, I encountered an error. Please try again or contact us directly at contact@thetrifusion.in"
       };
       setMessages((prev) => [...prev, errorMessage]);
     } finally {

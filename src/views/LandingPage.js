@@ -17,6 +17,7 @@ import Discuss from "parts/Discuss";
 import Footer from "parts/Footer";
 import TrustBadges from "components/TrustBadges";
 import FeaturedCaseStudy from "components/FeaturedCaseStudy";
+import SpecializedSolutions from "components/SpecializedSolutions";
 import { Fade } from "react-awesome-reveal";
 import SEO from "components/common/SEO";
 import Link from "next/link";
@@ -32,7 +33,7 @@ export default class LandingPage extends Component {
       <>
         <SEO 
           title="Home"
-          description="TheTriFusion builds websites, apps, and custom software from Jaipur — written scope, weekly demos, and live products you can verify."
+          description="Jaipur agency for React/Next.js websites and mobile apps. TheTriFusion scopes in writing, ships with weekly demos, and stays on after launch."
         />
         <Header />
         
@@ -40,6 +41,7 @@ export default class LandingPage extends Component {
           <Hero />
           
           <Service data={Services} />
+          <SpecializedSolutions />
           
           {/* Stats Section with Glassmorphism and Float Animation */}
           <section className="py-20 relative">

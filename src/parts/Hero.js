@@ -6,33 +6,26 @@ import { Fade } from "react-awesome-reveal";
 import Button from "../elements/Button";
 import HeroVideo from "components/HeroVideo";
 
-/** Core offers only on the homepage — niches live on dedicated service pages. */
+/** Homepage hero: only the four core services visitors should remember. */
 const HERO_CORE = [
   {
-    label: "Websites & ecommerce",
-    href: "/ecommerce-development",
+    label: "Website Development",
+    href: "/services/website-development",
     highlight: true,
   },
   {
-    label: "Mobile apps",
+    label: "Mobile Apps",
     href: "/services/mobile-app-development",
     highlight: true,
   },
   {
-    label: "Custom software",
-    href: "/services/software-development",
+    label: "UI/UX",
+    href: "/services/ui-ux-design",
   },
   {
-    label: "Cloud & AWS",
-    href: "/services/devops",
+    label: "Digital Marketing",
+    href: "/services/digital-marketing",
   },
-];
-
-const HERO_SPECIALTIES = [
-  { label: "BBPS / AEPS / DMT", href: "/services/fintech-app-development" },
-  { label: "EV charging (OCPI)", href: "/services/ev-charging-app-development" },
-  { label: "MLM CRM", href: "/services/mlm-crm-development" },
-  { label: "CRM & ERP", href: "/services/crm-erp-development" },
 ];
 
 const chipClassName =
@@ -51,17 +44,15 @@ export default function Hero() {
               <span className="inline-block mb-6 px-4 py-1.5 rounded-full bg-light-theme-purple/40 text-theme-purple text-xs font-bold uppercase tracking-[0.18em]">
                 Jaipur, Rajasthan
               </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-theme-blue mb-6">
-                Websites, apps &amp;
-                <br />
-                software from
-                <br />
-                <span className="text-gradient">Jaipur.</span>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.15] text-theme-blue mb-6">
+                Jaipur agency for{" "}
+                <span className="text-gradient">React / Next.js</span> websites
+                &amp; mobile apps — with you after launch.
               </h1>
-              <p className="text-base sm:text-lg text-gray-500 font-light leading-relaxed mb-8 max-w-md mx-auto lg:mx-0">
-                TheTriFusion builds ecommerce, mobile apps, and custom software
-                for Indian businesses — scoped in writing, delivered with weekly
-                demos.
+              <p className="text-base sm:text-lg text-gray-500 font-light leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
+                TheTriFusion builds production sites and apps for Indian
+                businesses: written scope, weekly demos, and support after go-live
+                — not a one-off handoff.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button
@@ -69,7 +60,7 @@ export default function Hero() {
                   type="link"
                   className="btn-wave flex items-center justify-center px-8 py-4 text-white text-lg rounded-full shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105"
                 >
-                  Free scoped estimate in 24 hours
+                  Get a free scoped estimate
                   <svg
                     className="ml-2 w-5 h-5 text-white"
                     xmlns="http://www.w3.org/2000/svg"
@@ -92,6 +83,9 @@ export default function Hero() {
                   See live work
                 </Link>
               </div>
+              <p className="mt-3 text-sm text-gray-400 font-medium">
+                Written quote reply within 24 hours
+              </p>
             </Fade>
           </div>
 
@@ -106,7 +100,7 @@ export default function Hero() {
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-gray-400 mb-3 text-center lg:text-left">
             Core services
           </p>
-          <div className="flex flex-wrap justify-center lg:justify-start gap-2.5 mb-6">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-2.5">
             {HERO_CORE.map((chip) => (
               <Link
                 key={chip.label}
@@ -116,22 +110,6 @@ export default function Hero() {
                 {chip.label}
               </Link>
             ))}
-          </div>
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-gray-400 mb-3 text-center lg:text-left">
-            Specialties
-          </p>
-          <div className="flex flex-wrap justify-center lg:justify-start gap-2.5 mb-4">
-            {HERO_SPECIALTIES.map((chip) => (
-              <Link key={chip.label} href={chip.href} className={chipClassName}>
-                {chip.label}
-              </Link>
-            ))}
-            <Link
-              href="/services"
-              className="whitespace-nowrap shrink-0 px-3 py-1.5 rounded-full text-theme-purple font-semibold hover:underline"
-            >
-              All services →
-            </Link>
           </div>
         </div>
 
@@ -152,7 +130,7 @@ export default function Hero() {
             <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
-            <span>Jaipur office · India remote</span>
+            <span>Support after launch</span>
           </div>
         </div>
       </div>

@@ -12,22 +12,22 @@ export const HOME_FAQS = [
   {
     question: "Where is TheTriFusion located?",
     answer:
-      "Trifusion Infotech Private Limited is based in Jaipur, Rajasthan. We serve clients across Rajasthan (including Bhilwara) and India through remote collaboration.",
+      "Trifusion Infotech Private Limited is based in Jaipur, Rajasthan. We serve clients across Rajasthan and India through remote collaboration.",
   },
   {
     question: "What does TheTriFusion build?",
     answer:
-      "Websites, ecommerce stores, mobile apps, UI/UX, custom software, and digital marketing. We ship the product and can stay on after launch for hosting, fixes, and growth work — not a one-off handoff.",
+      "Core work: websites (often React/Next.js), mobile apps, UI/UX, and digital marketing. We also take specialized builds (fintech, EV charging, MLM CRM) on dedicated pages. We stay available after launch for hosting, fixes, and growth — not a one-off handoff.",
   },
   {
     question: "How do I get a quote?",
     answer:
-      "Share your brief on the contact or discuss-project page. We reply with a scope outline and timeline range — no surprise fees.",
+      "Share your brief on the contact or discuss-project page. You get a free scoped estimate — usually within 24 hours — with timeline range and no surprise fees.",
   },
   {
-    question: "Do you work with Bhilwara clients?",
+    question: "Do you work with Bhilwara, Udaipur, Kota, or Ajmer clients?",
     answer:
-      "Yes, as a service area from our Jaipur office. Projects run on video, WhatsApp, and weekly demos. We do not claim a Bhilwara storefront.",
+      "Yes. Those cities are service areas from our Jaipur office — video, WhatsApp, and weekly demos. We do not claim storefronts there. See our pages for Bhilwara, Udaipur, Kota, and Ajmer under Solutions.",
   },
 ];
 

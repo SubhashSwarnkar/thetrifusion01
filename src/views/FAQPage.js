@@ -228,7 +228,7 @@ export default function FAQPage() {
               href="/contact"
               className="inline-block px-8 py-3 bg-theme-purple text-white rounded-full hover:bg-dark-theme-purple transition duration-200 font-medium"
             >
-              Free estimate in 24h
+              Get a free scoped estimate
             </a>
           </div>
         </Fade>

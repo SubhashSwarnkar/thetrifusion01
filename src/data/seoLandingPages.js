@@ -1,4 +1,5 @@
 import { enrichLandingPage } from "./seoLandingEnrichment";
+import { cityServiceAreaPages } from "./cityServiceAreaPages";
 
 export const seoLandingPages = [
   {
@@ -652,8 +653,9 @@ export const seoLandingPages = [
       "digital-marketing",
       "ui-ux-design",
     ],
-    cta: "Talk to our Jaipur team about a Bhilwara project",
+    cta: "Get a free scoped estimate for a Bhilwara project",
   },
+  ...cityServiceAreaPages,
   {
     slug: "software-company-rajasthan",
     title: "Software Company in Rajasthan | Web & App Development | TheTriFusion",
@@ -788,6 +790,9 @@ export const featuredSolutionSlugs = [
   "mobile-app-development-company",
   "digital-marketing-agency",
   "website-development-company-bhilwara",
+  "website-development-company-udaipur",
+  "website-development-company-kota",
+  "website-development-company-ajmer",
 ];
 
 export const getFeaturedSolutions = () =>

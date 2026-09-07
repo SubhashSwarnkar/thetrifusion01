@@ -218,7 +218,7 @@ export default function Header() {
             href="/contact"
             className="ml-3 xl:ml-5 px-6 py-2.5 bg-theme-purple text-white rounded-full text-sm font-bold shadow-md hover:shadow-lg whitespace-nowrap transition-shadow"
           >
-            Free estimate in 24h
+            Get a free scoped estimate
           </Link>
         </nav>
 
@@ -443,7 +443,7 @@ export default function Header() {
                   className="block w-full text-center py-6 bg-theme-purple text-white rounded-3xl text-2xl font-black shadow-2xl shadow-theme-purple/30 group relative overflow-hidden"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-3">
-                    Free estimate in 24h
+                    Get a free scoped estimate
                     <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>

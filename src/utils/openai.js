@@ -70,7 +70,7 @@ Would you like me to provide more details about any specific aspect?`,
     // Return fallback response on error
     return {
       content: `I apologize, but I'm having trouble processing your request right now. 
-      Please try again or contact us directly at TheTrifusion@gmail.com for a personalized estimate.`,
+      Please try again or contact us directly at contact@thetrifusion.in for a personalized estimate.`,
       usage: null,
       error: error.message
     };

@@ -100,6 +100,21 @@ function localBusinessNode() {
         name: "Bhilwara",
         description: "Service area served remotely from Jaipur",
       },
+      {
+        "@type": "City",
+        name: "Udaipur",
+        description: "Service area served remotely from Jaipur",
+      },
+      {
+        "@type": "City",
+        name: "Kota",
+        description: "Service area served remotely from Jaipur",
+      },
+      {
+        "@type": "City",
+        name: "Ajmer",
+        description: "Service area served remotely from Jaipur",
+      },
       { "@type": "AdministrativeArea", name: siteConfig.region },
       { "@type": "Country", name: siteConfig.countryName },
     ],

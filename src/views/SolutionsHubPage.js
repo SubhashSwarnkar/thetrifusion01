@@ -40,7 +40,7 @@ export default function SolutionsHubPage() {
                 href="/contact"
                 className="inline-flex items-center px-7 py-3.5 bg-theme-purple text-white rounded-full font-bold shadow-lg shadow-theme-purple/20 hover:scale-[1.02] transition-transform"
               >
-                Free estimate in 24h
+                Get a free scoped estimate
               </Link>
               <Link
                 href="/estimate"

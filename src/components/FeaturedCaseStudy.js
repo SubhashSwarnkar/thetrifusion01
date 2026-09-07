@@ -81,7 +81,7 @@ export default function FeaturedCaseStudy() {
                 href="/contact"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-gray-200 text-theme-blue font-bold hover:border-theme-purple hover:text-theme-purple transition-colors"
               >
-                Free estimate in 24h
+                Get a free scoped estimate
               </Link>
             </div>
           </div>
