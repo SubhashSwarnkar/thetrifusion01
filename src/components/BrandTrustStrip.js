@@ -198,18 +198,18 @@ export default function BrandTrustStrip() {
 
       <div className="container relative z-10 mx-auto px-5 text-center">
         <p className="mb-3 text-xs font-black uppercase tracking-[0.22em] text-theme-purple">
-          Industries we support
+          Our clients
         </p>
         <h2
           id="brand-trust-heading"
           className="mx-auto mb-4 max-w-4xl text-3xl font-black tracking-tight text-theme-blue sm:text-4xl lg:text-5xl"
         >
-          Trusted by growing brands
+          Trusted by clients across industries
         </h2>
         <p className="mx-auto max-w-3xl text-sm font-light leading-relaxed text-gray-600 sm:text-base lg:text-lg">
-          We help ambitious teams streamline workflows, improve productivity,
-          and launch dependable digital products. Whatever your industry,
-          TheTriFusion builds solutions around the way your business works.
+          Businesses trust TheTriFusion to streamline operations, improve
+          productivity, and launch dependable digital products. We build every
+          solution around our clients&apos; real workflows, goals, and growth.
         </p>
       </div>
 
