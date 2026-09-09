@@ -5,6 +5,7 @@ import Link from "next/link";
 import Header from "parts/Header";
 import Footer from "parts/Footer";
 import Breadcrumbs from "components/Breadcrumbs";
+import BrandTrustStrip from "components/BrandTrustStrip";
 import { services } from "data/servicesData";
 import { motion } from "framer-motion";
 import SEO from "components/common/SEO";
@@ -68,7 +69,13 @@ export default function ServicesPage() {
               scoped and delivered remotely across India.
             </p>
           </motion.div>
+        </div>
+      </section>
 
+      <BrandTrustStrip />
+
+      <section className="relative py-16 overflow-hidden bg-white">
+        <div className="container mx-auto px-5 relative z-10">
           <motion.div 
             variants={containerVariants}
             initial="hidden"

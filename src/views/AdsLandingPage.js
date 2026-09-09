@@ -6,6 +6,7 @@ import Image from "next/image";
 import Footer from "parts/Footer";
 import BrandIcon from "parts/BrandIcon";
 import ShortLeadForm from "components/ShortLeadForm";
+import BrandTrustStrip from "components/BrandTrustStrip";
 import WhatsAppButton from "components/WhatsAppButton";
 import { ADS_PROCESS } from "data/adsLandingPages";
 import { Portfolios } from "json/landingPageData";
@@ -160,6 +161,8 @@ export default function AdsLandingPage({ landing }) {
           </div>
         </div>
       </section>
+
+      <BrandTrustStrip />
 
       {proofs.length > 0 && (
         <section className="container mx-auto px-5 py-16">

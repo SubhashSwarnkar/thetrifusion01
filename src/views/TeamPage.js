@@ -10,6 +10,7 @@ import HeroTeam from 'parts/HeroTeam';
 import AllTeam from 'parts/AllTeam';
 import Footer from 'parts/Footer';
 import Breadcrumbs from 'components/Breadcrumbs';
+import BrandTrustStrip from 'components/BrandTrustStrip';
 
 import { TeamMembers } from 'json/landingPageData';
 
@@ -24,6 +25,7 @@ export default class TeamPage extends Component {
         <Header />
         <Breadcrumbs />
         <HeroTeam />
+        <BrandTrustStrip />
         <AllTeam data={TeamMembers} />
         <Footer />
       </>

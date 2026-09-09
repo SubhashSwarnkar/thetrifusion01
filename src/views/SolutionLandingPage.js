@@ -6,6 +6,7 @@ import { useParams } from "next/navigation";
 import Header from "parts/Header";
 import Footer from "parts/Footer";
 import Breadcrumbs from "components/Breadcrumbs";
+import BrandTrustStrip from "components/BrandTrustStrip";
 import WhatsAppButton from "components/WhatsAppButton";
 import { getSeoLandingBySlug } from "data/seoLandingPages";
 import { getServiceBySlug } from "data/servicesData";
@@ -104,6 +105,8 @@ export default function SolutionLandingPage() {
             </p>
           </div>
         </section>
+
+        <BrandTrustStrip />
 
         {/* Sticky mobile CTA */}
         <div className="fixed bottom-0 inset-x-0 z-40 md:hidden bg-white/95 backdrop-blur border-t border-gray-100 p-3 flex gap-2 safe-area-pb">

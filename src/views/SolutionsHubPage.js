@@ -5,6 +5,7 @@ import Link from "next/link";
 import Header from "parts/Header";
 import Footer from "parts/Footer";
 import Breadcrumbs from "components/Breadcrumbs";
+import BrandTrustStrip from "components/BrandTrustStrip";
 import { seoLandingPages, getSeoLandingBySlug } from "data/seoLandingPages";
 
 export default function SolutionsHubPage() {
@@ -51,6 +52,8 @@ export default function SolutionsHubPage() {
             </div>
           </div>
         </section>
+
+        <BrandTrustStrip />
 
         <section className="!mb-0 pb-20 md:pb-28">
           <div className="container mx-auto px-5 max-w-4xl">

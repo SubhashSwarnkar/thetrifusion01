@@ -5,6 +5,7 @@ import Link from "next/link";
 import Header from "parts/Header";
 import Footer from "parts/Footer";
 import Breadcrumbs from "components/Breadcrumbs";
+import BrandTrustStrip from "components/BrandTrustStrip";
 import { DiscussForm } from "parts/DiscussForm";
 import { Fade } from "react-awesome-reveal";
 import { faqs } from "data/faqData";
@@ -120,7 +121,13 @@ export default function ContactPage() {
                   across India.
                 </p>
             </div>
+          </div>
+        </section>
 
+        <BrandTrustStrip />
+
+        <section className="relative py-20 bg-white">
+          <div className="container mx-auto px-5">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-32 items-start">
               <div className="lg:col-span-5 space-y-12">
                 <div className="space-y-8">

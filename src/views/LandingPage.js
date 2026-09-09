@@ -18,6 +18,7 @@ import Footer from "parts/Footer";
 import TrustBadges from "components/TrustBadges";
 import FeaturedCaseStudy from "components/FeaturedCaseStudy";
 import SpecializedSolutions from "components/SpecializedSolutions";
+import BrandTrustStrip from "components/BrandTrustStrip";
 import { Fade } from "react-awesome-reveal";
 import SEO from "components/common/SEO";
 import Link from "next/link";
@@ -39,6 +40,7 @@ export default class LandingPage extends Component {
         
         <main className="overflow-hidden">
           <Hero />
+          <BrandTrustStrip />
           
           <Service data={Services} />
           <SpecializedSolutions />

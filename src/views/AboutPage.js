@@ -5,6 +5,7 @@ import Link from "next/link";
 import Header from "parts/Header";
 import Footer from "parts/Footer";
 import Breadcrumbs from "components/Breadcrumbs";
+import BrandTrustStrip from "components/BrandTrustStrip";
 import { Fade } from "react-awesome-reveal";
 import SEO from "components/common/SEO";
 
@@ -83,7 +84,13 @@ export default function AboutPage() {
                 </p>
               </Fade>
             </div>
+          </div>
+        </section>
 
+        <BrandTrustStrip />
+
+        <section className="relative py-20 bg-white">
+          <div className="container mx-auto px-5">
             {/* Stats Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 mb-32">
               {stats.map((stat, index) => (

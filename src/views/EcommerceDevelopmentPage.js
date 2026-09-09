@@ -6,6 +6,7 @@ import Image from "next/image";
 import Header from "parts/Header";
 import Footer from "parts/Footer";
 import Breadcrumbs from "components/Breadcrumbs";
+import BrandTrustStrip from "components/BrandTrustStrip";
 import ShortLeadForm from "components/ShortLeadForm";
 import WhatsAppButton from "components/WhatsAppButton";
 import { ADS_PROCESS } from "data/adsLandingPages";
@@ -188,6 +189,8 @@ export default function EcommerceDevelopmentPage() {
           </div>
         </div>
       </section>
+
+      <BrandTrustStrip />
 
       <section
         id="guarantee"

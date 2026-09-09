@@ -7,6 +7,7 @@ import { useParams } from "next/navigation";
 import Header from "parts/Header";
 import Footer from "parts/Footer";
 import Breadcrumbs from "components/Breadcrumbs";
+import BrandTrustStrip from "components/BrandTrustStrip";
 import ServiceIcon from "components/ServiceIcon";
 import { getServiceBySlug, services } from "data/servicesData";
 import { getSolutionsForService } from "data/seoLandingPages";
@@ -209,6 +210,8 @@ export default function ServiceDetailPage() {
           </div>
         </div>
       </section>
+
+      <BrandTrustStrip />
 
       {/* In-Page Quick Jump Navigation */}
       <nav aria-label="Page navigation" className="sticky top-16 z-30 bg-white/90 backdrop-blur-md border-y border-gray-100 hidden md:block">

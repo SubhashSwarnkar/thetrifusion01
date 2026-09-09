@@ -13,6 +13,7 @@ import Footer from 'parts/Footer';
 import AllPortfolioEnhanced from 'parts/AllPortfolioEnhanced';
 import Breadcrumbs from 'components/Breadcrumbs';
 import SEO from 'components/common/SEO';
+import BrandTrustStrip from 'components/BrandTrustStrip';
 
 import { Portfolios } from 'json/landingPageData';
 
@@ -31,6 +32,7 @@ export default class ProjectPage extends Component {
         <Header />
         <Breadcrumbs />
         <HeroPortfolio />
+        <BrandTrustStrip />
         <AllPortfolioEnhanced data={Portfolios} />
         <Discuss />
         <Footer />

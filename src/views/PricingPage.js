@@ -5,6 +5,7 @@ import Link from "next/link";
 import Header from "parts/Header";
 import Footer from "parts/Footer";
 import Breadcrumbs from "components/Breadcrumbs";
+import BrandTrustStrip from "components/BrandTrustStrip";
 import { motion, AnimatePresence } from "framer-motion";
 import { getAllServicePricingPlans } from "data/servicePricingData";
 import { nicheServices } from "data/nicheServicesData";
@@ -158,6 +159,8 @@ export default function PricingPage() {
           </motion.div>
         </div>
       </section>
+
+      <BrandTrustStrip />
 
       {/* Pricing Grids */}
       <section className="pb-32 container mx-auto px-5">
