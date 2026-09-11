@@ -650,6 +650,118 @@ export const blogPosts = [
       "software-development",
     ],
   },
+
+  {
+    id: 28,
+    slug: "multi-vendor-marketplace-website-cost-india-2026",
+    title:
+      "Multi-Vendor Marketplace Website Cost in India (2026): What You Actually Pay For",
+    metaTitle:
+      "Multi-Vendor Marketplace Cost India 2026 | Packages vs Custom — TheTriFusion",
+    excerpt:
+      "India search interest in multi-vendor marketplaces is hot in 2026. Here is a clear cost map — MVP vs custom vs packaged web+apps — so you do not confuse a ₹35k launch with a ₹15L enterprise mall.",
+    content: `
+      <h2>Why “multi-vendor cost” is trending in India</h2>
+      <p>Founders comparing marketplace builds in 2026 keep hitting the same Google problem: every article quotes a different band (₹3L–₹80L+). That spread is real — but it is usually comparing different products. A city grocery mall with vendor KYC and commission payouts is not the same job as a single-brand D2C store with a “multi-vendor” plugin switched on.</p>
+      <p>If you are researching <strong>multi vendor marketplace website development</strong> or <strong>multi vendor ecommerce website cost India</strong>, start by naming which of these you need.</p>
+
+      <h2>Three product types (and three price realities)</h2>
+      <h3>1) Packaged multi-vendor storefront (fast launch)</h3>
+      <p>You need one public shopper site, vendor signup/KYC, vendor dashboard, commission rules, admin settlements, catalog split by seller, plus customer Android/iOS apps. Scope is locked. This is what our <a href="/ecommerce-development">₹35,000 multi-vendor package</a> is built for — website live in 48 hours after a locked brief, or 50% refund on the package fee. Play Store / App Store accounts stay in your name; store review time is outside the 48-hour clock.</p>
+      <h3>2) Mid custom marketplace (growth)</h3>
+      <p>Industry guides for India in 2026 often place growth builds roughly in the <strong>₹3L–₹15L</strong> band when you add deeper payouts, logistics rules, dispute flows, and heavier catalog ops. Timeline stretches into months because payout edge cases dominate — not the homepage design.</p>
+      <h3>3) Enterprise / app-heavy marketplace</h3>
+      <p>Web + iOS + Android with real-time matching, chat, complex settlement, multi-city ops, or ONDC-style integrations is where public quotes climb into <strong>tens of lakhs</strong>. Those builds need phased MVPs, not a one-week brochure.</p>
+
+      <h2>Cost drivers that actually move the number</h2>
+      <ul>
+        <li><strong>Vendor onboarding &amp; KYC</strong> — forms are easy; verification workflows and admin review are not.</li>
+        <li><strong>Commission + split payouts</strong> — one order can touch vendor cut, your fee, gateway fees, GST/TCS, refunds.</li>
+        <li><strong>Catalog ownership</strong> — who edits price/stock, who approves listings, who handles duplicates.</li>
+        <li><strong>Apps</strong> — building Android/iOS is included in our package; publishing still needs your Google Play (~$25) and Apple Developer (~$99/year) accounts.</li>
+        <li><strong>Ops tools</strong> — settlements, reports, coupons, banners, and support queues.</li>
+      </ul>
+
+      <h2>Honest comparison: package vs “₹8L marketplace app” articles</h2>
+      <p>Many 2026 cost blogs describe Urban Company / Meesho-class platforms. That is useful for budgeting a long game. It is the wrong brief if you need a <strong>city marketplace or multi-brand mall live this month</strong>. Match the quote to the product:</p>
+      <ul>
+        <li>Need speed + clear price → <a href="/ecommerce-development#multi-vendor">multi-vendor package</a></li>
+        <li>Need custom settlement or ERP sync → ask for a written scope on <a href="/contact">contact</a> or <a href="/appointment">appointment</a></li>
+        <li>Still researching architecture → read our <a href="/solutions/ecommerce-website-development">ecommerce website development</a> guide and the <a href="/blog/ecommerce-website-development-cost-india">general ecommerce cost breakdown</a></li>
+      </ul>
+
+      <h2>What “live in 48 hours” means (and does not)</h2>
+      <p>For the packaged offer, the clock starts after logo, store name, sample SKUs, brand notes, and payment details are locked in writing. “Live” means your ecommerce website is on a public URL with catalog, cart, checkout, and admin working. Android/iOS builds are included; Google/Apple review times are not part of the refund clock.</p>
+
+      <h2>Next step</h2>
+      <p>If multi-vendor is the goal, start on <a href="/ecommerce-development">ecommerce development packages</a> (₹35,000 multi-vendor / ₹25,000 single vendor) or WhatsApp us from that page with your category (grocery, fashion, electronics, artisan mall). Bring sample vendors and a commission rule — that alone cuts quote chaos.</p>
+    `,
+    category: "webdev",
+    image: "/assets/images/blog/ecommerce-cost.jpg",
+    imageUrl:
+      "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&q=80&w=800",
+    date: "2026-09-11",
+    updatedAt: "2026-09-11",
+    readTime: "9 min read",
+    author: "TheTriFusion Team",
+    featured: true,
+    relatedServiceSlugs: ["website-development", "software-development", "mobile-app-development"],
+  },
+
+  {
+    id: 29,
+    slug: "grocery-ecommerce-website-app-development-india",
+    title:
+      "Grocery Ecommerce Website & App Development in India: Kirana to Supermarket Stack",
+    metaTitle:
+      "Grocery Ecommerce Website & App India | Kirana Online Store — TheTriFusion",
+    excerpt:
+      "Indian shoppers live on UPI and repeat grocery orders. Here is how to scope a grocery / kirana ecommerce website and apps — catalog, slots, COD+UPI — without overbuilding a Zepto clone on day one.",
+    content: `
+      <h2>Why grocery ecommerce content keeps winning search in India</h2>
+      <p>Grocery and kirana queries stay commercially hot because the job is local and frequent: daily essentials, UPI checkout, and reorder behaviour. Sellers searching <strong>grocery ecommerce website development</strong>, <strong>online kirana store app</strong>, or <strong>supermarket ecommerce app India</strong> usually want a working catalog + delivery flow — not a research paper on hyperlocal logistics.</p>
+
+      <h2>What a grocery storefront actually needs</h2>
+      <h3>Catalog that matches how Indians shop</h3>
+      <p>Categories (atta, dairy, snacks), weight/unit variants (1kg / 5kg), out-of-stock handling, and simple banners for daily deals. Heavy SKU counts need admin tools that non-technical staff can update on a phone.</p>
+      <h3>Checkout that trusts UPI + COD</h3>
+      <p>Razorpay / UPI is table stakes. Many kirana buyers still want cash on delivery for first orders. Your checkout should not assume every buyer has a saved card.</p>
+      <h3>Apps for repeat purchase</h3>
+      <p>Grocery is a reopen category. A customer website plus Android and iOS apps reduces friction for weekly carts. Our <a href="/ecommerce-development">ecommerce packages</a> include web + Android + iOS for both single-vendor and multi-vendor — useful if you run one store or a multi-seller grocery mall.</p>
+
+      <h2>Single shop vs multi-vendor grocery mall</h2>
+      <ul>
+        <li><strong>Single vendor (₹25,000 package)</strong> — one brand or one kirana/supermarket catalog, your admin, your payouts.</li>
+        <li><strong>Multi-vendor (₹35,000 package)</strong> — many sellers under one marketplace, vendor KYC, commission engine, settlement reports.</li>
+      </ul>
+      <p>Both packages target website live in 48 hours after a locked brief — or 50% refund on the package fee. See full terms on <a href="/ecommerce-development#guarantee">the guarantee section</a>.</p>
+
+      <h2>Scope traps that inflate grocery builds</h2>
+      <ul>
+        <li>Promising 15-minute delivery routing on day one (that is a logistics company, not a storefront MVP).</li>
+        <li>Building a custom ERP before you have 30 days of real orders.</li>
+        <li>Skipping GST-ready invoicing / seller KYC on multi-vendor malls.</li>
+        <li>Forgetting that Play Store and Apple Developer accounts must be created in the business’s own name.</li>
+      </ul>
+
+      <h2>Related reading</h2>
+      <p>Compare platform choices in <a href="/blog/custom-website-vs-shopify-vs-woocommerce">Custom vs Shopify vs WooCommerce</a>, scan overall cost drivers in <a href="/blog/ecommerce-website-development-cost-india">ecommerce website cost in India</a>, and see a live ecommerce+POS style build in our <a href="/portfolio/dailyconcepts-ecommerce-pos">DailyConcepts case</a>.</p>
+
+      <h2>Launch path</h2>
+      <p>Have logo, store name, a sample product list (even 20 SKUs), brand colours, and Razorpay details ready. Then open <a href="/ecommerce-development">ecommerce development</a>, pick grocery under store types, and claim the 48-hour live offer — or WhatsApp from that page for a same-day reply from Jaipur.</p>
+    `,
+    category: "webdev",
+    image: "/assets/images/blog/ecommerce-cost.jpg",
+    imageUrl:
+      "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=800",
+    date: "2026-09-11",
+    updatedAt: "2026-09-11",
+    readTime: "8 min read",
+    author: "TheTriFusion Team",
+    featured: true,
+    relatedServiceSlugs: ["website-development", "mobile-app-development", "digital-marketing"],
+  },
+
 ];
 
 export const getPublishedBlogPosts = () =>
