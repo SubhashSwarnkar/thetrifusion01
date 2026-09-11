@@ -913,6 +913,191 @@ export const blogPosts = [
     ],
   },
 
+  {
+    id: 32,
+    slug: "ai-agentic-ecommerce-upi-india-2026",
+    title:
+      "AI Agentic Ecommerce in India (2026): Chatbots, UPI Shopping & What Sellers Should Build",
+    metaTitle:
+      "AI Agentic Ecommerce India 2026 | UPI Shopping Apps — TheTriFusion",
+    excerpt:
+      "Google and news Trends in 2026 keep surfacing AI shopping in India. Here is what agentic ecommerce + UPI means for D2C and marketplace sellers — and when a normal web+app store is still the right first step.",
+    content: `
+      <h2>Why AI shopping is trending in India searches</h2>
+      <p>India search interest in AI tools and shopping assistants keeps climbing in 2026. Pilots around ChatGPT/Gemini-style shopping with <strong>UPI</strong> mean buyers may soon order without opening your app first. Sellers asking about <strong>AI ecommerce India</strong> or <strong>agentic commerce UPI</strong> need a clear stack — not hype.</p>
+      <h2>What “agentic ecommerce” actually requires</h2>
+      <ul>
+        <li>A clean product catalog APIs can read (SKU, price, stock, images)</li>
+        <li>Reliable checkout rails — Razorpay/UPI today; agent payments later</li>
+        <li>Order + refund logic your admin can run</li>
+        <li>Policies agents can trust (shipping, COD, returns)</li>
+      </ul>
+      <h2>Build now vs wait for the pilot</h2>
+      <p>Most SMEs still win by shipping a solid customer website + Android/iOS store. Our <a href="/ecommerce-development">₹25,000 / ₹35,000 packages</a> get catalog, cart, UPI checkout, and apps live fast (website in 48 hours after locked brief, or 50% refund). AI agent channels become easier when that foundation exists.</p>
+      <h2>Next step</h2>
+      <p>If you sell grocery, fashion, or multi-vendor, start on <a href="/ecommerce-development">ecommerce development</a>. For custom AI/product agents, <a href="/contact">contact us</a> with your catalog size and payment flow.</p>
+    `,
+    category: "webdev",
+    image: "/assets/images/blog/ecommerce-cost.jpg",
+    imageUrl:
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
+    date: "2026-09-11",
+    updatedAt: "2026-09-11",
+    readTime: "8 min read",
+    author: "TheTriFusion Team",
+    featured: true,
+    relatedServiceSlugs: [
+      "website-development",
+      "software-development",
+      "mobile-app-development",
+    ],
+  },
+  {
+    id: 33,
+    slug: "ondc-ecommerce-for-sme-sellers-india",
+    title:
+      "ONDC for SME Sellers in India: When to Join vs Build Your Own Store",
+    metaTitle:
+      "ONDC Ecommerce for SME Sellers India | Own Store vs Network — TheTriFusion",
+    excerpt:
+      "ONDC stays in India’s ecommerce conversation as the ‘UPI of commerce.’ Here’s a practical guide for kirana and D2C sellers: join ONDC, build your own store, or do both.",
+    content: `
+      <h2>Why ONDC keeps showing up in India search</h2>
+      <p>Founders searching <strong>ONDC seller</strong>, <strong>ONDC ecommerce</strong>, or “open network for digital commerce” want discovery without only paying big marketplace ads. ONDC can help reach — it does not replace your brand storefront.</p>
+      <h2>ONDC vs your own ecommerce website</h2>
+      <ul>
+        <li><strong>ONDC</strong> — network discovery across buyer apps; you still need ops, pricing, fulfilment</li>
+        <li><strong>Own store</strong> — brand, WhatsApp remarketing, margins, customer data you control</li>
+        <li><strong>Both</strong> — common for serious SMEs: own site/app + network channels</li>
+      </ul>
+      <h2>What to build first</h2>
+      <p>If you need a shopper site + Android/iOS with Razorpay/UPI, use <a href="/ecommerce-development">TheTriFusion ecommerce packages</a> (single ₹25k / multi-vendor ₹35k). Add ONDC when your catalog and ops are stable — not before your first 50 orders.</p>
+      <h2>Related</h2>
+      <p><a href="/blog/grocery-ecommerce-website-app-development-india">Grocery ecommerce guide</a> · <a href="/blog/multi-vendor-marketplace-website-cost-india-2026">Multi-vendor cost</a></p>
+    `,
+    category: "webdev",
+    image: "/assets/images/blog/ecommerce-cost.jpg",
+    imageUrl:
+      "https://images.unsplash.com/photo-1556742111-a301076d9d18?auto=format&fit=crop&q=80&w=800",
+    date: "2026-09-11",
+    updatedAt: "2026-09-11",
+    readTime: "8 min read",
+    author: "TheTriFusion Team",
+    featured: true,
+    relatedServiceSlugs: [
+      "website-development",
+      "software-development",
+    ],
+  },
+  {
+    id: 34,
+    slug: "gemini-ai-app-development-india-businesses",
+    title:
+      "Gemini & Custom AI Apps for Indian Businesses: What to Build in 2026",
+    metaTitle:
+      "Gemini AI App Development India 2026 | Custom AI for Business — TheTriFusion",
+    excerpt:
+      "Gemini and AI assistants dominate India search charts. Here’s how Jaipur/SME teams should scope custom AI apps — chat support, catalogs, ops — without boiling the ocean.",
+    content: `
+      <h2>AI search interest is structural in India</h2>
+      <p>Searches for Gemini, ChatGPT, and AI tools remain huge in India. Businesses now ask for <strong>custom AI apps</strong>: WhatsApp bots, internal copilots, catalog assistants — not another generic chatbot demo.</p>
+      <h2>Useful AI builds for SMEs</h2>
+      <ul>
+        <li>Catalog Q&amp;A on top of your ecommerce products</li>
+        <li>Lead qualification on WhatsApp / web forms</li>
+        <li>Ops assistants (orders, FAQs, Hindi+English)</li>
+        <li>Document/process automation for teams</li>
+      </ul>
+      <h2>Stack reality</h2>
+      <p>Models change fast; your data and workflows should not. We build product UI + APIs in React/Next and mobile where needed, then plug model providers carefully. See <a href="/services/ai-development">AI development</a> and <a href="/android-app-development">Android</a> / <a href="/ios-app-development">iOS</a>.</p>
+      <h2>CTA</h2>
+      <p>Share your use case on <a href="/contact">contact</a> or pair AI with a store via <a href="/ecommerce-development">ecommerce packages</a>.</p>
+    `,
+    category: "webdev",
+    image: "/assets/images/blog/ecommerce-cost.jpg",
+    imageUrl:
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800",
+    date: "2026-09-11",
+    updatedAt: "2026-09-11",
+    readTime: "8 min read",
+    author: "TheTriFusion Team",
+    featured: true,
+    relatedServiceSlugs: [
+      "software-development",
+      "mobile-app-development",
+      "ai-development",
+    ],
+  },
+  {
+    id: 35,
+    slug: "quick-commerce-vs-own-grocery-app-india",
+    title:
+      "Quick Commerce vs Your Own Grocery App in India: What Sellers Should Build",
+    metaTitle:
+      "Quick Commerce vs Grocery App India | Kirana Ecommerce — TheTriFusion",
+    excerpt:
+      "Quick commerce keeps rising in India search culture. If you run a kirana or supermarket, here’s when to sell on Zepto-class apps vs building your own grocery website and apps.",
+    content: `
+      <h2>Quick commerce is trending — your margin still matters</h2>
+      <p>India search behaviour shows convenience and fast delivery interest. For sellers, the question is <strong>quick commerce marketplace</strong> fees vs owning the customer on your <strong>grocery ecommerce app</strong>.</p>
+      <h2>Marketplace quick commerce</h2>
+      <p>Pros: demand. Cons: commissions, ad spend, weak brand control.</p>
+      <h2>Own grocery website + apps</h2>
+      <p>Pros: WhatsApp repeat orders, your pricing, your data. Cons: you must acquire traffic (ads + SEO + local).</p>
+      <p>Our grocery-ready packages: <a href="/ecommerce-development">ecommerce development</a> — web + Android + iOS, UPI checkout, 48h website live after locked brief or 50% refund. Deep dive: <a href="/blog/grocery-ecommerce-website-app-development-india">grocery ecommerce guide</a>.</p>
+      <h2>Practical path</h2>
+      <p>Many stores do both: marketplace for discovery, own app for loyal buyers. Start with a scoped storefront, then layer delivery partners.</p>
+    `,
+    category: "webdev",
+    image: "/assets/images/blog/ecommerce-cost.jpg",
+    imageUrl:
+      "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&q=80&w=800",
+    date: "2026-09-11",
+    updatedAt: "2026-09-11",
+    readTime: "8 min read",
+    author: "TheTriFusion Team",
+    featured: true,
+    relatedServiceSlugs: [
+      "website-development",
+      "mobile-app-development",
+    ],
+  },
+  {
+    id: 36,
+    slug: "ipo-ready-website-digital-presence-india",
+    title:
+      "IPO-Ready Digital Presence for Indian Companies: Website, Apps & Trust Stack",
+    metaTitle:
+      "IPO-Ready Website India | Digital Presence Before Listing — TheTriFusion",
+    excerpt:
+      "IPO GMP and listing searches spike on Google Trends days. Beyond grey-market chatter, companies need a credible website, investor-ready pages, and secure digital products — here’s a practical checklist.",
+    content: `
+      <h2>Why IPO days spike website and brand searches</h2>
+      <p>When <strong>IPO GMP today</strong> and listing names trend, investors and customers Google the company. A weak site or broken app undercuts trust faster than any pitch deck.</p>
+      <h2>Digital checklist before / around listing noise</h2>
+      <ul>
+        <li>Fast, secure corporate + product website (HTTPS, clear legal pages)</li>
+        <li>Accurate company facts (NAP, GST, about) — no conflicting locations</li>
+        <li>Customer product if you sell software/ecommerce — live demo URLs</li>
+        <li>Press / blog that matches real offerings (no fake claims)</li>
+      </ul>
+      <h2>How we help</h2>
+      <p>TheTriFusion builds production websites and apps from Jaipur — see <a href="/web-development">web development</a>, <a href="/portfolio">portfolio</a>, and packaged commerce on <a href="/ecommerce-development">ecommerce development</a>. For a scoped rebuild before a fundraising or launch window, use <a href="/appointment">appointment</a>.</p>
+    `,
+    category: "webdev",
+    image: "/assets/images/blog/ecommerce-cost.jpg",
+    imageUrl:
+      "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=800",
+    date: "2026-09-11",
+    updatedAt: "2026-09-11",
+    readTime: "8 min read",
+    author: "TheTriFusion Team",
+    featured: true,
+    relatedServiceSlugs: [
+      "website-development",
+      "software-development",
+    ],
+  },
 ];
 
 export const getPublishedBlogPosts = () =>
