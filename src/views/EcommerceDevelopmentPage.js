@@ -725,34 +725,66 @@ export default function EcommerceDevelopmentPage() {
         </div>
       </section>
 
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-[90] bg-white border-t border-gray-100 p-3 flex gap-2">
-        <a
-          href={phoneHref}
-          onClick={() =>
-            trackEvent(AnalyticsEvents.CLICK_PHONE, { source: `${page.slug}-sticky` })
-          }
-          className="flex-1 text-center py-3 rounded-full border border-theme-purple text-theme-purple font-bold text-sm"
-        >
-          Call
-        </a>
+      {/* Mobile sticky — primary WA for ads traffic; floats above home-indicator */}
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-[90] bg-white/95 backdrop-blur border-t border-gray-100 p-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))] shadow-[0_-8px_24px_rgba(15,23,42,0.08)]">
+        <p className="text-[11px] text-center text-theme-blue/70 font-medium mb-1.5">
+          Single ₹25k · Multi ₹35k · live in 48h or 50% refund
+        </p>
+        <div className="flex gap-2">
+          <a
+            href={phoneHref}
+            onClick={() =>
+              trackEvent(AnalyticsEvents.CLICK_PHONE, { source: `${page.slug}-sticky` })
+            }
+            className="flex-[0.9] text-center py-3 rounded-full border border-theme-purple text-theme-purple font-bold text-sm"
+          >
+            Call
+          </a>
+          <a
+            href={defaultWa}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() =>
+              trackEvent(AnalyticsEvents.CLICK_WHATSAPP, {
+                source: `${page.slug}-sticky`,
+              })
+            }
+            className="flex-[1.4] text-center py-3 rounded-full bg-green-500 text-white font-bold text-sm shadow-md shadow-green-500/30"
+          >
+            WhatsApp offer
+          </a>
+          <a
+            href="#lead-form"
+            className="flex-[0.9] text-center py-3 rounded-full bg-theme-purple text-white font-bold text-sm"
+          >
+            Form
+          </a>
+        </div>
+      </div>
+
+      {/* Desktop sticky — keep WA visible after scroll on paid traffic */}
+      <div className="hidden lg:flex fixed bottom-4 left-1/2 -translate-x-1/2 z-[90] items-center gap-3 rounded-full border border-theme-purple/15 bg-white/95 backdrop-blur px-3 py-2 shadow-xl shadow-theme-blue/10">
+        <span className="text-xs font-semibold text-theme-blue pl-2 whitespace-nowrap">
+          ₹25k / ₹35k · 48h live or 50% refund
+        </span>
         <a
           href={defaultWa}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() =>
             trackEvent(AnalyticsEvents.CLICK_WHATSAPP, {
-              source: `${page.slug}-sticky`,
+              source: `${page.slug}-sticky-desktop`,
             })
           }
-          className="flex-1 text-center py-3 rounded-full bg-green-500 text-white font-bold text-sm"
+          className="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-green-500 text-white text-sm font-bold hover:bg-green-600"
         >
           WhatsApp
         </a>
         <a
-          href="#guarantee"
-          className="flex-1 text-center py-3 rounded-full bg-theme-purple text-white font-bold text-sm"
+          href="#lead-form"
+          className="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-theme-purple text-white text-sm font-bold"
         >
-          48 hrs
+          Claim offer
         </a>
       </div>
 

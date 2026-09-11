@@ -197,7 +197,13 @@ export default function WhatsAppWidget({ defaultMessage }) {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 font-sans">
+    <div
+      className={
+        pathname.startsWith("/ecommerce-development")
+          ? "fixed bottom-24 right-4 z-50 font-sans sm:bottom-6 sm:right-6"
+          : "fixed bottom-6 right-6 z-50 font-sans"
+      }
+    >
       {/* Floating Toggle Button */}
       <button
         id="floating-whatsapp-trigger"
