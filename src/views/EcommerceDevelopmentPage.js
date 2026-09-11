@@ -178,13 +178,45 @@ export default function EcommerceDevelopmentPage() {
               </ul>
             </div>
 
-            <div>
+            <div className="space-y-4">
               <ShortLeadForm
                 defaultProjectType="Single vendor ecommerce"
                 defaultBudgetRange="₹25,000"
                 leadSource={page.leadSource}
                 heading="Claim 48-hour live offer"
+                note="48h / 50% refund covers website go-live after a locked brief — not App Store / Play Store review time."
               />
+              {proofs.length > 0 ? (
+                <div className="rounded-2xl border border-theme-purple/15 bg-white/80 p-4 shadow-sm">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-theme-purple mb-3">
+                    Live stores you can open
+                  </p>
+                  <ul className="space-y-2">
+                    {proofs.map((project) => (
+                      <li key={project.id}>
+                        <Link
+                          href={`/portfolio/${project.id}`}
+                          onClick={() =>
+                            trackEvent(AnalyticsEvents.VIEW_CASE_STUDY, {
+                              project: project.id,
+                              source: `${page.slug}-form-proof`,
+                            })
+                          }
+                          className="flex items-center justify-between gap-3 text-sm font-semibold text-theme-blue hover:text-theme-purple"
+                        >
+                          <span>{project.title}</span>
+                          <span className="text-xs font-bold text-theme-purple shrink-0">
+                            Open →
+                          </span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-3 text-xs text-gray-500 font-light">
+                    Pvt. Ltd. · GST invoicing · Hindi + English support
+                  </p>
+                </div>
+              ) : null}
             </div>
           </div>
         </div>

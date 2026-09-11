@@ -46,6 +46,7 @@ export default function ShortLeadForm({
   defaultBudgetRange = "",
   leadSource = "ads_short_form",
   heading = "Get a scoped next step",
+  note = "",
 }) {
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
@@ -233,6 +234,11 @@ export default function ShortLeadForm({
         <p className="text-xs text-gray-400 text-center font-light">
           Jaipur office · we reply on WhatsApp, usually the same day.
         </p>
+        {note ? (
+          <p className="text-xs text-theme-blue/70 text-center font-medium leading-relaxed pt-1">
+            {note}
+          </p>
+        ) : null}
       </div>
     </form>
   );

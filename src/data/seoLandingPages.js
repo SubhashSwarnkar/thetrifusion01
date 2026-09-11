@@ -81,7 +81,7 @@ export const seoLandingPages = [
       "online shopping website development Jaipur",
     ],
     intro:
-      "Build a scalable, high-conversion ecommerce platform engineered for rapid load speed, friction-free checkout, omni-channel inventory sync, and maximum ROAS. TheTriFusion delivers end-to-end ecommerce solutions for D2C brands, B2B wholesale portals, and multi-vendor marketplaces across India.",
+      "Research-focused guide to custom ecommerce website development in India — architecture, payments, POS, and SEO. For a fixed-price single/multi-vendor package with website live in 48 hours (or 50% refund), use our /ecommerce-development offer page. TheTriFusion also builds bespoke D2C stores, B2B portals, and marketplaces when you need a scoped custom build.",
     sections: [
       {
         title: "Custom Headless & Modular Ecommerce Architecture",
@@ -128,10 +128,10 @@ export const seoLandingPages = [
       {
         href: "/ecommerce-development",
         label:
-          "Ecommerce live in 48 hours or 50% refund — from ₹25,000",
+          "Priced packages: ecommerce live in 48 hours or 50% refund — from ₹25,000",
       },
     ],
-    cta: "Build your high-converting ecommerce website with TheTriFusion",
+    cta: "Compare custom ecommerce builds — or jump to the 48-hour package offer",
   },
   {
     slug: "online-store-development",
