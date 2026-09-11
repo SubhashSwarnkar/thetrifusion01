@@ -1226,6 +1226,362 @@ export const blogPosts = [
       "software-development",
     ],
   },
+
+  {
+    id: 40,
+    slug: "chatgpt-1980s-ai-photo-prompt-guide",
+    title:
+      'ChatGPT 1980s AI Photo Prompt: How the Viral Trend Works (and How Businesses Use It)',
+    metaTitle:
+      'ChatGPT 1980s AI Photo Prompt Guide | Viral AI Trend — TheTriFusion',
+    excerpt:
+      'The “1980s AI photo prompt ChatGPT” search is exploding on Google Trends India. Here is how the trend works, prompt patterns, and how brands turn viral AI image tools into real apps.',
+    content: `
+      <h2>Why “1980s AI photo prompt ChatGPT” is trending in India</h2>
+      <p>Google Trends India is lighting up for <strong>1980s ai photo prompt chatgpt</strong> — people want retro photo makes. That spike is a product signal: consumers will try AI image tools if the UX is one tap.</p>
+      <h2>What the viral prompt usually does</h2>
+      <p>Users upload a selfie and ask ChatGPT/Gemini-class tools for an 1980s film look — grain, soft flash, vintage color. The exact words change daily; the behaviour does not.</p>
+      <h2>Business angle (not just fun)</h2>
+      <ul>
+        <li>Campaign microsites with branded AI photo booths</li>
+        <li>In-app “try the look” for fashion/D2C</li>
+        <li>WhatsApp bot that returns stylized images</li>
+      </ul>
+      <h2>Build with TheTriFusion</h2>
+      <p>We ship custom AI image/chat experiences as web and mobile apps from Jaipur — see <a href="/services/ai-development">AI development</a>, <a href="/android-app-development">Android</a>, <a href="/ios-app-development">iOS</a>. For a scoped build, <a href="/contact">contact us</a>.</p>
+    `,
+    category: "webdev",
+    image: "/assets/images/blog/ecommerce-cost.jpg",
+    imageUrl:
+      "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=800",
+    date: "2026-09-11",
+    updatedAt: "2026-09-11",
+    readTime: "7 min read",
+    author: "TheTriFusion Team",
+    featured: true,
+    relatedServiceSlugs: [
+      "ai-development",
+      "mobile-app-development",
+      "website-development",
+    ],
+  },
+  {
+    id: 41,
+    slug: "chatgpt-for-indian-businesses-2026",
+    title:
+      'ChatGPT for Indian Businesses in 2026: Real Use Cases Beyond Chat',
+    metaTitle:
+      'ChatGPT for Indian Businesses 2026 | Practical Use Cases — TheTriFusion',
+    excerpt:
+      'ChatGPT stays among India’s top AI searches. Here are practical SME use cases — support, sales, docs — and when you need a custom GPT-powered app instead of a consumer chat tab.',
+    content: `
+      <h2>ChatGPT is mainstream search behaviour in India</h2>
+      <p>Teams already use ChatGPT for drafts. The gap is connecting it to <strong>your data, WhatsApp, and workflows</strong> with Hindi+English support.</p>
+      <h2>High-ROI use cases</h2>
+      <ul>
+        <li>Website/WhatsApp lead FAQs</li>
+        <li>Catalog Q&amp;A for sellers</li>
+        <li>Internal SOP copilots</li>
+        <li>Content drafts for ads and blogs</li>
+      </ul>
+      <h2>Consumer ChatGPT vs custom app</h2>
+      <p>Consumer chat is fine for experiments. Production needs auth, logging, rate limits, and brand UX — that is custom <a href="/services/ai-development">AI app development</a>.</p>
+      <h2>CTA</h2>
+      <p>Tell us your workflow on <a href="/discuss-project">discuss project</a> or <a href="/appointment">book 15 min</a>.</p>
+    `,
+    category: "webdev",
+    image: "/assets/images/blog/ecommerce-cost.jpg",
+    imageUrl:
+      "https://images.unsplash.com/photo-1676299080920-5f67d629432e?auto=format&fit=crop&q=80&w=800",
+    date: "2026-09-11",
+    updatedAt: "2026-09-11",
+    readTime: "7 min read",
+    author: "TheTriFusion Team",
+    featured: true,
+    relatedServiceSlugs: [
+      "ai-development",
+      "software-development",
+    ],
+  },
+  {
+    id: 42,
+    slug: "google-gemini-vs-chatgpt-india-business",
+    title:
+      'Google Gemini vs ChatGPT for Indian Businesses: Which to Build On?',
+    metaTitle:
+      'Gemini vs ChatGPT India Business 2026 | Build Guide — TheTriFusion',
+    excerpt:
+      'Gemini and ChatGPT dominate India AI search. A practical comparison for founders choosing APIs for support bots, apps, and internal tools — without fan wars.',
+    content: `
+      <h2>Both are trending — pick by product needs</h2>
+      <p>India searches for <strong>Gemini</strong> and <strong>ChatGPT</strong> remain huge. For products, compare latency, Hindi quality, multimodal (image/video), pricing, and data policies.</p>
+      <h2>When Gemini fits</h2>
+      <p>Strong Google Workspace / Android ecosystems, multimodal demos, Search-adjacent workflows.</p>
+      <h2>When ChatGPT fits</h2>
+      <p>Mature tooling for agents, plugins/actions patterns, broad developer examples.</p>
+      <h2>Our approach</h2>
+      <p>We design model-agnostic app layers so you can switch providers. See <a href="/services/ai-development">AI development</a> and <a href="/blog/gemini-ai-app-development-india-businesses">Gemini AI apps guide</a>.</p>
+      <h2>CTA</h2>
+      <p><a href="/contact">Contact</a> with your use case and preferred platform.</p>
+    `,
+    category: "webdev",
+    image: "/assets/images/blog/ecommerce-cost.jpg",
+    imageUrl:
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800",
+    date: "2026-09-11",
+    updatedAt: "2026-09-11",
+    readTime: "7 min read",
+    author: "TheTriFusion Team",
+    featured: true,
+    relatedServiceSlugs: [
+      "ai-development",
+      "software-development",
+    ],
+  },
+  {
+    id: 43,
+    slug: "whatsapp-ai-chatbot-india-business",
+    title:
+      'WhatsApp AI Chatbot for Indian Businesses: Leads, Support & Orders',
+    metaTitle:
+      'WhatsApp AI Chatbot India | Business Automation — TheTriFusion',
+    excerpt:
+      'Indian customers live on WhatsApp. Here’s how AI chatbots qualify leads, answer FAQs, and take orders — plus what you must build beyond a prompt.',
+    content: `
+      <h2>Why WhatsApp AI is a business priority</h2>
+      <p>Phone numbers and WhatsApp already drive your leads. An <strong>AI chatbot on WhatsApp</strong> extends that — 24/7 FAQ, lead capture, order status — in Hindi and English.</p>
+      <h2>Must-haves</h2>
+      <ul>
+        <li>Official WhatsApp Business API path</li>
+        <li>Human handoff rules</li>
+        <li>CRM/lead webhook</li>
+        <li>Guardrails so the bot does not invent prices</li>
+      </ul>
+      <h2>Build with us</h2>
+      <p>We connect bots to your website forms and CRM. Pair with <a href="/services/digital-marketing">digital marketing</a> or product builds via <a href="/services/ai-development">AI development</a>.</p>
+      <h2>CTA</h2>
+      <p>Message from <a href="/contact">contact</a> — share your FAQs and lead fields.</p>
+    `,
+    category: "webdev",
+    image: "/assets/images/blog/ecommerce-cost.jpg",
+    imageUrl:
+      "https://images.unsplash.com/photo-1611746872915-64382b5c76da?auto=format&fit=crop&q=80&w=800",
+    date: "2026-09-11",
+    updatedAt: "2026-09-11",
+    readTime: "7 min read",
+    author: "TheTriFusion Team",
+    featured: true,
+    relatedServiceSlugs: [
+      "ai-development",
+      "digital-marketing",
+      "mobile-app-development",
+    ],
+  },
+  {
+    id: 44,
+    slug: "custom-gpt-agents-for-sme-india",
+    title:
+      'Custom GPT Agents for SMEs in India: Sales, Support & Ops',
+    metaTitle:
+      'Custom GPT Agents India SME | Sales & Support Bots — TheTriFusion',
+    excerpt:
+      'Beyond chatting in a browser — custom GPT agents that use your price lists, SOPs, and tools. A 2026 build guide for Indian SMEs.',
+    content: `
+      <h2>Agents vs plain ChatGPT tabs</h2>
+      <p>An agent can call tools: create a lead, fetch order status, update a sheet. That is where SMEs get ROI.</p>
+      <h2>Good first agents</h2>
+      <ul>
+        <li>Sales qualifier on web/WhatsApp</li>
+        <li>Support deflector with ticket escalate</li>
+        <li>Ops checklist assistant</li>
+      </ul>
+      <h2>Delivery</h2>
+      <p>TheTriFusion designs agent UX + backend from Jaipur. Start at <a href="/services/ai-development">AI development</a> or <a href="/services/software-development">custom software</a>.</p>
+    `,
+    category: "webdev",
+    image: "/assets/images/blog/ecommerce-cost.jpg",
+    imageUrl:
+      "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800",
+    date: "2026-09-11",
+    updatedAt: "2026-09-11",
+    readTime: "7 min read",
+    author: "TheTriFusion Team",
+    featured: true,
+    relatedServiceSlugs: [
+      "ai-development",
+      "software-development",
+    ],
+  },
+  {
+    id: 45,
+    slug: "ai-app-development-cost-india-2026",
+    title:
+      'AI App Development Cost in India (2026): Chatbots to Full Products',
+    metaTitle:
+      'AI App Development Cost India 2026 | Chatbot to Full App — TheTriFusion',
+    excerpt:
+      'Planning an AI app budget in India? Cost drivers for chatbots, multimodal apps, and production MLOps — with a path to a scoped Jaipur build.',
+    content: `
+      <h2>Why AI app cost quotes vary wildly</h2>
+      <p>A FAQ bot is not a vision+agent product. Scope drives cost: integrations, languages, compliance, mobile apps, and human review loops.</p>
+      <h2>Rough planning bands</h2>
+      <ul>
+        <li>Simple web chatbot — weeks, modest budget</li>
+        <li>WhatsApp + CRM agent — more integrations</li>
+        <li>Full iOS/Android AI product — months, higher budget</li>
+      </ul>
+      <h2>Get a scoped estimate</h2>
+      <p>Share goals on <a href="/discuss-project">discuss project</a>. Related mobile: <a href="/blog/ecommerce-app-development-cost-india">ecommerce app cost</a> if commerce is the surface.</p>
+    `,
+    category: "webdev",
+    image: "/assets/images/blog/ecommerce-cost.jpg",
+    imageUrl:
+      "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80&w=800",
+    date: "2026-09-11",
+    updatedAt: "2026-09-11",
+    readTime: "7 min read",
+    author: "TheTriFusion Team",
+    featured: true,
+    relatedServiceSlugs: [
+      "ai-development",
+      "mobile-app-development",
+      "software-development",
+    ],
+  },
+  {
+    id: 46,
+    slug: "perplexity-ai-search-for-business-india",
+    title:
+      'Perplexity & AI Search for Indian Businesses: Research Without the Rabbit Hole',
+    metaTitle:
+      'Perplexity AI Search for Business India | Research Workflows — TheTriFusion',
+    excerpt:
+      'AI search tools like Perplexity are rising beside ChatGPT in India. How teams use them for research — and how to productize AI search inside your own app.',
+    content: `
+      <h2>AI search is part of the same Trends wave</h2>
+      <p>People want answers with sources. Businesses can embed similar research UX for policies, catalogs, or knowledge bases.</p>
+      <h2>Internal knowledge search</h2>
+      <p>Connect PDFs, Notion, and tickets to an AI search UI your team trusts — with access control.</p>
+      <h2>CTA</h2>
+      <p>Ask about knowledge apps via <a href="/services/ai-development">AI development</a> or <a href="/contact">contact</a>.</p>
+    `,
+    category: "webdev",
+    image: "/assets/images/blog/ecommerce-cost.jpg",
+    imageUrl:
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
+    date: "2026-09-11",
+    updatedAt: "2026-09-11",
+    readTime: "7 min read",
+    author: "TheTriFusion Team",
+    featured: true,
+    relatedServiceSlugs: [
+      "ai-development",
+      "software-development",
+    ],
+  },
+  {
+    id: 47,
+    slug: "multimodal-ai-google-astra-apps-india",
+    title:
+      'Multimodal AI Assistants (Astra-class) for Indian Apps: Voice, Vision & Action',
+    metaTitle:
+      'Multimodal AI Astra-class Apps India | Voice Vision Action — TheTriFusion',
+    excerpt:
+      'Google’s Astra-style multimodal demos and GPT vision are reshaping what users expect. What Indian product teams should prototype first — camera, voice, and on-device flows.',
+    content: `
+      <h2>From chat boxes to camera + voice agents</h2>
+      <p>Trends around GPT image prompts and multimodal assistants show users want AI that <strong>sees and hears</strong>, not only types. Astra-class demos set that expectation.</p>
+      <h2>Prototype ideas for SMEs</h2>
+      <ul>
+        <li>Camera-based cataloging for inventory</li>
+        <li>Voice helpdesk in Hindi/English</li>
+        <li>Field apps that read meters/labels</li>
+      </ul>
+      <h2>Build path</h2>
+      <p>Start with a narrow workflow, measure accuracy, then expand. We build mobile+web AI products — <a href="/services/ai-development">AI development</a>, <a href="/android-app-development">Android</a>, <a href="/ios-app-development">iOS</a>.</p>
+    `,
+    category: "webdev",
+    image: "/assets/images/blog/ecommerce-cost.jpg",
+    imageUrl:
+      "https://images.unsplash.com/photo-1531746790731-6d5d2055eb21?auto=format&fit=crop&q=80&w=800",
+    date: "2026-09-11",
+    updatedAt: "2026-09-11",
+    readTime: "7 min read",
+    author: "TheTriFusion Team",
+    featured: true,
+    relatedServiceSlugs: [
+      "ai-development",
+      "mobile-app-development",
+    ],
+  },
+  {
+    id: 48,
+    slug: "ai-upskilling-and-custom-tools-for-teams-india",
+    title:
+      'AI Upskilling in India: Courses vs Custom Internal AI Tools',
+    metaTitle:
+      'AI Upskilling India 2026 | Courses vs Internal AI Tools — TheTriFusion',
+    excerpt:
+      'Kantar-style India search data shows AI upskilling surging. When training is enough — and when your team needs a custom internal AI tool built around real work.',
+    content: `
+      <h2>Upskilling searches are rising</h2>
+      <p>Indian professionals search for AI/ML courses heavily. Companies still lose time if every employee pastes sensitive data into public chat tools.</p>
+      <h2>Training + tooling</h2>
+      <p>Train people on prompts — then give them a <strong>private company AI workspace</strong> with approved data sources.</p>
+      <h2>CTA</h2>
+      <p>We build internal AI workspaces for SMEs — <a href="/services/ai-development">AI development</a> / <a href="/services/software-development">software development</a>.</p>
+    `,
+    category: "webdev",
+    image: "/assets/images/blog/ecommerce-cost.jpg",
+    imageUrl:
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800",
+    date: "2026-09-11",
+    updatedAt: "2026-09-11",
+    readTime: "7 min read",
+    author: "TheTriFusion Team",
+    featured: true,
+    relatedServiceSlugs: [
+      "ai-development",
+      "software-development",
+    ],
+  },
+  {
+    id: 49,
+    slug: "ui-ux-for-ai-products-india",
+    title:
+      'UI/UX for AI Products in India: Trust, Hindi UX & Human Handoff',
+    metaTitle:
+      'UI/UX for AI Products India | Trust & Hindi UX — TheTriFusion',
+    excerpt:
+      'AI features fail when UX is confusing. Design patterns for Indian AI apps — clear disclaimers, Hindi/English toggles, and human handoff that users actually trust.',
+    content: `
+      <h2>Model quality is not enough</h2>
+      <p>If users do not trust the UI, they will not use the AI. Trends bring curiosity; UX keeps retention.</p>
+      <h2>Patterns that work</h2>
+      <ul>
+        <li>Show sources / “AI can be wrong” where needed</li>
+        <li>One-tap talk to human</li>
+        <li>Hindi + English copy</li>
+        <li>Loading and retry states that feel honest</li>
+      </ul>
+      <h2>Design + build</h2>
+      <p>See <a href="/services/ui-ux-design">UI/UX design</a> and <a href="/services/ai-development">AI development</a>. Portfolio: <a href="/portfolio">live work</a>.</p>
+    `,
+    category: "webdev",
+    image: "/assets/images/blog/ecommerce-cost.jpg",
+    imageUrl:
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=800",
+    date: "2026-09-11",
+    updatedAt: "2026-09-11",
+    readTime: "7 min read",
+    author: "TheTriFusion Team",
+    featured: true,
+    relatedServiceSlugs: [
+      "ui-ux-design",
+      "ai-development",
+      "website-development",
+    ],
+  },
 ];
 
 export const getPublishedBlogPosts = () =>
