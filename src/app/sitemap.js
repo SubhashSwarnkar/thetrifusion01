@@ -14,7 +14,10 @@ export default function sitemap() {
     .map((path) => ({
       url: path === "/" ? `${siteConfig.url}/` : `${siteConfig.url}${path}`,
       lastModified:
-        path === "/ecommerce-development"
+        path === "/ecommerce-development" ||
+        path === "/blog" ||
+        path === "/about" ||
+        path === "/portfolio"
           ? new Date("2026-09-12")
           : fallbackDate,
       changeFrequency: path === "/" ? "weekly" : "monthly",

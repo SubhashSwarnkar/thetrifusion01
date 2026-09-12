@@ -63,6 +63,35 @@ export default class LandingPage extends Component {
               </Link>
             </div>
           </section>
+
+          <section id="home-explore-hubs" className="container mx-auto px-5 pb-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <Link
+                href="/blog"
+                className="rounded-2xl border border-gray-100 bg-white p-5 hover:border-theme-purple/40 transition-colors shadow-sm"
+              >
+                <p className="text-xs font-bold uppercase tracking-[0.14em] text-theme-purple mb-1">Insights</p>
+                <p className="font-bold text-theme-blue">Blog &amp; guides</p>
+                <p className="text-sm text-gray-500 font-light mt-1">Trends, AI, apps, ecommerce how-tos</p>
+              </Link>
+              <Link
+                href="/portfolio"
+                className="rounded-2xl border border-gray-100 bg-white p-5 hover:border-theme-purple/40 transition-colors shadow-sm"
+              >
+                <p className="text-xs font-bold uppercase tracking-[0.14em] text-theme-purple mb-1">Proof</p>
+                <p className="font-bold text-theme-blue">Live portfolio</p>
+                <p className="text-sm text-gray-500 font-light mt-1">Stores and apps you can open</p>
+              </Link>
+              <Link
+                href="/about"
+                className="rounded-2xl border border-gray-100 bg-white p-5 hover:border-theme-purple/40 transition-colors shadow-sm"
+              >
+                <p className="text-xs font-bold uppercase tracking-[0.14em] text-theme-purple mb-1">Company</p>
+                <p className="font-bold text-theme-blue">About TheTriFusion</p>
+                <p className="text-sm text-gray-500 font-light mt-1">Jaipur Pvt. Ltd. team</p>
+              </Link>
+            </div>
+          </section>
           
           <Service data={Services} />
           <SpecializedSolutions />
