@@ -19,6 +19,8 @@ import SEO from "components/common/SEO";
 import { SITE_URL } from "lib/seoConfig";
 import NotFoundPage from "./NotFoundPage";
 import Image from "next/image";
+import { WHATSAPP_NUMBER } from "data/companyInfo";
+import { trackEvent, AnalyticsEvents } from "utils/analytics";
 
 const BLOG_SOLUTION_MAP = {
   webdev: [
@@ -158,6 +160,54 @@ export default function BlogDetailPage() {
             ) : (
               <p className="text-gray-600">This article has no body content yet.</p>
             )}
+          </div>
+        </Fade>
+
+        {/* Lead CTA — convert organic readers */}
+        <Fade direction="up" delay={350} triggerOnce>
+          <div
+            id="blog-lead-cta"
+            className="mt-12 rounded-2xl border border-theme-purple/20 bg-gradient-to-br from-light-theme-purple/40 to-white p-6 sm:p-8 shadow-sm"
+          >
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-theme-purple mb-2">
+              Next step
+            </p>
+            <h2 className="text-2xl font-bold text-theme-blue mb-2">
+              Want this built for your business?
+            </h2>
+            <p className="text-gray-600 mb-5 max-w-2xl">
+              Jaipur team · Hindi + English · GST invoicing. Ecommerce live in 48h
+              packages from ₹25,000, or a scoped custom website / app / AI build.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(
+                  `Hi TriFusion, I read /blog/${post.slug} and want a quote.`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  trackEvent(AnalyticsEvents.CLICK_WHATSAPP, {
+                    source: `blog-${post.slug}`,
+                  })
+                }
+                className="inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-green-500 text-white font-bold hover:bg-green-600"
+              >
+                WhatsApp for quote
+              </a>
+              <Link
+                href="/discuss-project"
+                className="inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-theme-purple text-white font-bold"
+              >
+                Discuss project
+              </Link>
+              <Link
+                href="/ecommerce-development"
+                className="inline-flex items-center justify-center px-6 py-3.5 rounded-full border border-theme-purple text-theme-purple font-bold"
+              >
+                Ecommerce ₹25k offer
+              </Link>
+            </div>
           </div>
         </Fade>
 

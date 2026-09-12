@@ -768,6 +768,70 @@ export const seoLandingPages = [
     ],
     cta: "Plan a Jaipur web project",
   },
+  {
+    slug: "software-development-company-jaipur",
+    title:
+      "Software Development Company in Jaipur | Custom Software, Apps & Web — TheTriFusion",
+    h1: "Software Development Company in Jaipur",
+    navLabel: "Software company Jaipur",
+    metaDescription:
+      "Software development company in Jaipur for SMEs: custom software, websites, Android/iOS apps, ecommerce, and AI tools. Clear scope, GST invoicing, Hindi + English support — TheTriFusion.",
+    primaryKeyword: "software development company in Jaipur",
+    secondaryKeywords: [
+      "software company Jaipur",
+      "IT company Jaipur",
+      "custom software development Jaipur",
+      "software development company Rajasthan",
+      "hire software developers Jaipur",
+      "Jaipur software agency",
+    ],
+    intro:
+      "TheTriFusion (Trifusion Infotech Private Limited) is a Jaipur-based software development company helping SMEs across Rajasthan and India. We build custom websites, mobile apps, ecommerce (including fixed 48-hour live packages), UI/UX, and AI features — with WhatsApp-first updates and written estimates.",
+    sections: [
+      {
+        title: "What we build from Jaipur",
+        body: "Custom software and business websites, Android and iOS apps, ecommerce storefronts, WhatsApp/AI assistants, and specialized products when scoped (fintech, EV charging, CRM). You get milestones, demos, and a support path after launch — not a one-off zip file.",
+      },
+      {
+        title: "Ecommerce and lead engines",
+        body: "Need a store fast? Our ecommerce packages start at ₹25,000 (single vendor) / ₹35,000 (multi-vendor) with website live in 48 hours after a locked brief — or 50% refund. For custom software roadmaps, we scope features around leads, ops, and measurable outcomes.",
+      },
+      {
+        title: "Why Jaipur SMEs hire us",
+        body: "Local timezone, Hindi + English communication, GST invoicing, and remote delivery for Bhilwara, Udaipur, Kota, and Ajmer. Open our portfolio URLs before you pay an advance.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Is TheTriFusion a software development company in Jaipur?",
+        answer:
+          "Yes. Our primary office is in Jaipur, Rajasthan. We serve clients across India through video calls and WhatsApp.",
+      },
+      {
+        question: "What should I prepare for a quote?",
+        answer:
+          "Goal, users, must-have integrations (UPI, WhatsApp, CRM), budget band, and deadline. Send that via Discuss Project or WhatsApp for a free scoped estimate — usually within 24 hours.",
+      },
+      {
+        question: "Do you only build ecommerce?",
+        answer:
+          "No. Ecommerce is one offer line. We also build custom software, AI features, and mobile apps.",
+      },
+      {
+        question: "Can I see live work?",
+        answer:
+          "Yes — browse the Portfolio section for live stores and products you can open in the browser.",
+      },
+    ],
+    relatedServiceSlugs: [
+      "software-development",
+      "website-development",
+      "mobile-app-development",
+      "ai-development",
+      "digital-marketing",
+    ],
+    cta: "Get a scoped estimate from our Jaipur software team",
+  },
 ];
 
 export const getSeoLandingBySlug = (slug) => {
