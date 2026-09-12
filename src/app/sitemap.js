@@ -59,8 +59,8 @@ export default function sitemap() {
     .map((post) => ({
     url: `${siteConfig.url}/blog/${post.slug}`,
     lastModified: new Date(post.updatedAt || post.date || "2026-08-20"),
-    changeFrequency: "monthly",
-    priority: 0.6,
+    changeFrequency: "weekly",
+    priority: 0.75,
   }));
 
   const portfolioRoutes = Portfolios.map((project) => ({
