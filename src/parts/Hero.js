@@ -14,6 +14,11 @@ const HERO_CORE = [
     highlight: true,
   },
   {
+    label: "Ecommerce from ₹25k",
+    href: "/ecommerce-development",
+    highlight: true,
+  },
+  {
     label: "Mobile Apps",
     href: "/services/mobile-app-development",
     highlight: true,

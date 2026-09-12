@@ -752,7 +752,7 @@ export const servicePageSeo = {
     metaDescription:
       "TheTriFusion in Jaipur ships iOS apps — Swift or React Native, App Store review, and TestFlight. Typical MVP 8–12 weeks. Get a scoped quote.",
     keywords:
-      "iOS app development company Jaipur, Swift app development India, App Store app Jaipur, hire iOS developers Rajasthan, TestFlight app development",
+      "iOS app development company Jaipur, ios app development company rajasthan, Swift app development India, App Store app Jaipur, hire iOS developers Rajasthan, TestFlight app development",
     locationLine:
       "App Store apps from Jaipur — certificates, TestFlight, and review notes.",
     scopeKicker: "iOS",
@@ -766,11 +766,11 @@ export const servicePageSeo = {
       "Hi TriFusion, I want an iOS / App Store app quote from the Jaipur team.",
   },
   "android-app-development": {
-    metaTitle: "Android App Development Company in Jaipur | Play Store",
+    metaTitle: "Android App Development Company in Jaipur | Kotlin & Play Store",
     metaDescription:
-      "TheTriFusion in Jaipur ships Android apps — Kotlin or React Native and Play Store listing. Typical MVP 8–12 weeks. Request a scoped quote now.",
+      "Android app development company in Jaipur — TheTriFusion builds Kotlin/React Native apps with Play Store listing. Typical MVP 8–12 weeks. Scoped quote from our Jaipur team.",
     keywords:
-      "Android app development company Jaipur, Kotlin app development India, Play Store app Jaipur, hire Android developers Rajasthan",
+      "Android app development company Jaipur, android app development company in jaipur, android app development services jaipur, android application development in jaipur, Kotlin app development India, Play Store app Jaipur, hire Android developers Rajasthan",
     locationLine:
       "Play Store apps from Jaipur — signing, listing, and crash monitoring.",
     scopeKicker: "Android",

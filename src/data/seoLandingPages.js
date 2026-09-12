@@ -832,6 +832,63 @@ export const seoLandingPages = [
     ],
     cta: "Get a scoped estimate from our Jaipur software team",
   },
+  {
+    slug: "android-app-development-company-jaipur",
+    title:
+      "Android App Development Company in Jaipur | Play Store Apps — TheTriFusion",
+    h1: "Android App Development Company in Jaipur",
+    navLabel: "Android app company Jaipur",
+    metaDescription:
+      "Looking for an Android app development company in Jaipur? TheTriFusion builds Kotlin and React Native apps with Play Store listing, crash monitoring, and Hindi + English support.",
+    primaryKeyword: "android app development company in jaipur",
+    secondaryKeywords: [
+      "android app development company jaipur",
+      "android app development services jaipur",
+      "android application development in jaipur",
+      "hire Android developers Jaipur",
+      "Play Store app development Rajasthan",
+    ],
+    intro:
+      "TheTriFusion is an Android app development company in Jaipur helping SMEs ship Play Store–ready products. We scope Kotlin or React Native, build MVPs in typical 8–12 week ranges, and stay on for listing support — not a throwaway APK.",
+    sections: [
+      {
+        title: "What you get from our Jaipur Android team",
+        body: "Discovery, UI for mobile, native or cross-platform build, API integration, Play Console signing, and a crash-free release checklist. Ecommerce and fintech apps are common; we also ship EV and field-ops apps.",
+      },
+      {
+        title: "Android + iOS without two agencies",
+        body: "Need both stores? Start on Android, then share logic via React Native/Flutter, or pair with our iOS page. See Mobile App Development for the combined path.",
+      },
+      {
+        title: "How to brief us in 10 minutes",
+        body: "Users, must-have screens, offline needs, payments (UPI), and whether iOS follows. WhatsApp or Discuss Project — free scoped estimate, usually within 24 hours.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you build native Kotlin Android apps?",
+        answer:
+          "Yes — Kotlin native or React Native/Flutter when iOS parity matters. We recommend per product.",
+      },
+      {
+        question: "Is TheTriFusion based in Jaipur?",
+        answer:
+          "Yes. Trifusion Infotech Private Limited, Jaipur. We serve clients across Rajasthan and India remotely.",
+      },
+      {
+        question: "Can you publish to Play Store?",
+        answer:
+          "Yes — we support listing, signing, and store assets. You own the Play Console account.",
+      },
+    ],
+    relatedServiceSlugs: [
+      "android-app-development",
+      "mobile-app-development",
+      "ios-app-development",
+      "ui-ux-design",
+    ],
+    cta: "Get a scoped Android app estimate from Jaipur",
+  },
 ];
 
 export const getSeoLandingBySlug = (slug) => {
