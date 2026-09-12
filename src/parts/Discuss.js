@@ -28,7 +28,15 @@ export default function Discuss() {
           <Fade delay={300} triggerOnce>
             <p className="font-light p-5 sm:p-0 text-lg sm:text-xl lg:text-2xl xl:text-xl mb-1">
               Share the problem and the deadline. The Jaipur team replies with a
-              written next step — usually the same day on WhatsApp.
+              written next step — usually the same day on WhatsApp. Need a store
+              fast? See{" "}
+              <a
+                href="/ecommerce-development"
+                className="underline font-semibold text-yellow-200 hover:text-white"
+              >
+                ecommerce live in 48 hours from ₹25,000
+              </a>
+              .
             </p>
           </Fade>
         </div>

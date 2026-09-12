@@ -38,8 +38,14 @@ export default function SolutionsHubPage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                href="/contact"
+                href="/ecommerce-development"
                 className="inline-flex items-center px-7 py-3.5 bg-theme-purple text-white rounded-full font-bold shadow-lg shadow-theme-purple/20 hover:scale-[1.02] transition-transform"
+              >
+                Ecommerce from ₹25,000
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center px-7 py-3.5 border-2 border-theme-blue/15 text-theme-blue rounded-full font-bold hover:border-theme-purple hover:text-theme-purple transition-colors"
               >
                 Get a free scoped estimate
               </Link>

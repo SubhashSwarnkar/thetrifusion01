@@ -15,7 +15,7 @@ export default function sitemap() {
       url: path === "/" ? `${siteConfig.url}/` : `${siteConfig.url}${path}`,
       lastModified:
         path === "/ecommerce-development"
-          ? new Date("2026-09-03")
+          ? new Date("2026-09-12")
           : fallbackDate,
       changeFrequency: path === "/" ? "weekly" : "monthly",
       priority:
