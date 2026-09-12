@@ -13,6 +13,19 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // When thetrifusion.com is attached on Vercel, force all hosts to .in
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "thetrifusion.com" }],
+        destination: "https://www.thetrifusion.in/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.thetrifusion.com" }],
+        destination: "https://www.thetrifusion.in/:path*",
+        permanent: true,
+      },
       // Canonicalize duplicate project routes to portfolio
       {
         source: "/project",
