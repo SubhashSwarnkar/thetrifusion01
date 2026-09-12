@@ -20,6 +20,8 @@ export default function robots() {
           "/planner",
           "/timeline",
           "/pricing/calculator",
+          "/appointment",
+          "/discuss-project",
         ],
       },
     ],

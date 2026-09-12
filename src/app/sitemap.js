@@ -1,25 +1,19 @@
 import { blogPosts, ARCHIVE_NOINDEX_SLUGS } from "data/blogData";
 import { services } from "data/servicesData";
 import { seoLandingPages, getSeoLandingBySlug } from "data/seoLandingPages";
-import { Portfolios } from "json/landingPageData";
+import { Portfolios, isIndexablePortfolio } from "json/landingPageData";
 import { NOINDEX_PATHS, pages } from "lib/seoConfig";
 import { siteConfig } from "config/site";
 
 export default function sitemap() {
-  const fallbackDate = new Date("2026-08-20");
-  const serviceUpdated = new Date("2026-08-28");
+  const fallbackDate = new Date("2026-09-12");
+  const serviceUpdated = new Date("2026-09-12");
 
   const staticRoutes = Object.keys(pages)
     .filter((path) => !NOINDEX_PATHS.has(path))
     .map((path) => ({
       url: path === "/" ? `${siteConfig.url}/` : `${siteConfig.url}${path}`,
-      lastModified:
-        path === "/ecommerce-development" ||
-        path === "/blog" ||
-        path === "/about" ||
-        path === "/portfolio"
-          ? new Date("2026-09-12")
-          : fallbackDate,
+      lastModified: fallbackDate,
       changeFrequency: path === "/" ? "weekly" : "monthly",
       priority:
         path === "/"
@@ -61,17 +55,19 @@ export default function sitemap() {
     .filter((post) => !ARCHIVE_NOINDEX_SLUGS.has(post.slug))
     .map((post) => ({
     url: `${siteConfig.url}/blog/${post.slug}`,
-    lastModified: new Date(post.updatedAt || post.date || "2026-08-20"),
+    lastModified: new Date(post.updatedAt || post.date || "2026-09-12"),
     changeFrequency: "weekly",
     priority: 0.75,
   }));
 
-  const portfolioRoutes = Portfolios.map((project) => ({
-    url: `${siteConfig.url}/portfolio/${project.id}`,
-    lastModified: fallbackDate,
-    changeFrequency: "monthly",
-    priority: 0.6,
-  }));
+  const portfolioRoutes = Portfolios.filter(isIndexablePortfolio).map(
+    (project) => ({
+      url: `${siteConfig.url}/portfolio/${project.id}`,
+      lastModified: fallbackDate,
+      changeFrequency: "monthly",
+      priority: project.featured ? 0.75 : 0.6,
+    })
+  );
 
   const all = [
     ...staticRoutes,

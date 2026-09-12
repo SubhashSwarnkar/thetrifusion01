@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const HERO_VIDEO_SRC = "/videos/hero-showcase.mp4";
@@ -37,7 +38,7 @@ export default function HeroVideo() {
   return (
     <div
       ref={wrapRef}
-      className="w-full aspect-[16/10] overflow-hidden rounded-2xl bg-gray-900"
+      className="relative w-full aspect-[16/10] overflow-hidden rounded-2xl bg-gray-900"
     >
       {shouldLoad ? (
         <video
@@ -55,12 +56,13 @@ export default function HeroVideo() {
           <source src={HERO_VIDEO_SRC} type="video/mp4" />
         </video>
       ) : (
-        <img
+        <Image
           src={HERO_POSTER}
           alt="TheTriFusion software development work in Jaipur, Rajasthan"
+          fill
+          priority
+          sizes="(max-width: 1024px) 100vw, 50vw"
           className={mediaClass}
-          width={1280}
-          height={800}
         />
       )}
     </div>

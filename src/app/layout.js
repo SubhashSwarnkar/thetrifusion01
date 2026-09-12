@@ -35,8 +35,8 @@ export const metadata = {
   category: "technology",
   alternates: {
     languages: {
-      "en-IN": SITE_URL,
-      "x-default": SITE_URL,
+      "en-IN": `${SITE_URL}/`,
+      "x-default": `${SITE_URL}/`,
     },
   },
   openGraph: {
@@ -71,11 +71,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en-IN">
       <head>
-        <Script id="gtag-consent-default" strategy="beforeInteractive">
+        <Script id="gtag-consent-default" strategy="afterInteractive">
           {CONSENT_DEFAULT_INLINE}
         </Script>
         {GTM_ID ? (
-          <Script id="gtm-loader" strategy="beforeInteractive">
+          <Script id="gtm-loader" strategy="afterInteractive">
             {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=

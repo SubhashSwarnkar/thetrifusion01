@@ -1,6 +1,6 @@
 import Page from "views/ProjectDetailPage";
 import JsonLd from "components/JsonLd";
-import { Portfolios } from "json/landingPageData";
+import { Portfolios, isIndexablePortfolio } from "json/landingPageData";
 import { buildMetadata } from "lib/seoConfig";
 import { breadcrumbSchema, creativeWorkSchema } from "lib/schema";
 
@@ -28,6 +28,7 @@ export function generateMetadata({ params }) {
       `View ${project.title} — a ${project.type} project by TheTriFusion.`,
     keywords: `${project.title}, portfolio, ${project.type}, case study, TheTriFusion`,
     path: `/portfolio/${project.id}`,
+    noIndex: !isIndexablePortfolio(project),
   });
 }
 

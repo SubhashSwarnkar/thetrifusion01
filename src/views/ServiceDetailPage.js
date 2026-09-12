@@ -200,7 +200,6 @@ export default function ServiceDetailPage() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
                   priority
-                  unoptimized
                 />
               </div>
               <div className={`absolute -bottom-4 -left-4 w-16 h-16 rounded-2xl shadow-xl flex items-center justify-center ${primary.check}`}>

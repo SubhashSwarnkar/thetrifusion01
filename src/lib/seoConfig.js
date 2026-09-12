@@ -169,12 +169,14 @@ export function absoluteUrl(path = "/") {
 }
 
 function robotsFor(noIndex) {
+  // Keep follow:true on noindex pages so Google can still pass link equity
+  // to money pages linked from tools, thank-you, and archived blogs.
   return {
     index: !noIndex,
-    follow: !noIndex,
+    follow: true,
     googleBot: {
       index: !noIndex,
-      follow: !noIndex,
+      follow: true,
       "max-image-preview": "large",
       "max-snippet": -1,
       "max-video-preview": -1,
@@ -190,6 +192,7 @@ export const NOINDEX_PATHS = new Set([
   "/pricing/calculator",
   "/thank-you",
   "/appointment",
+  "/discuss-project",
 ]);
 
 export function pageMetadata(path, options = {}) {

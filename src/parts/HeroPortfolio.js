@@ -32,7 +32,6 @@ export default function HeroPortfolio() {
               sizes="(max-width: 640px) 100vw, 50vw"
               className="object-contain"
               priority
-              unoptimized
             />
           </div>
         </Fade>

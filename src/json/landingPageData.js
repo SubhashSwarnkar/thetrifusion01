@@ -36,6 +36,19 @@ export const Services = [
   { title: "Digital Marketing", slug: "digital-marketing" },
 ];
 
+/** Demo / template portfolio URLs should stay out of Google's index. */
+const DEMO_CREDIT_HOST =
+  /\.pages\.dev(?:\/|$)|vercel\.app(?:\/|$)|netlify\.app(?:\/|$)/i;
+
+export function isIndexablePortfolio(project) {
+  if (!project) return false;
+  if (project.featured) return true;
+  const credit = String(project.credit || "").trim();
+  if (!credit) return false;
+  if (DEMO_CREDIT_HOST.test(credit)) return false;
+  return true;
+}
+
 export const Portfolios = [
   {
     id: "plugone-ev-charging-platform",
