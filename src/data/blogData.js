@@ -1,4 +1,5 @@
 import React from 'react';
+import { september2026Posts } from "./blogPostsSeptember2026";
 
 /**
  * Blog editorial: ship 2 Jaipur / Rajasthan / India delivery posts each month.
@@ -39,6 +40,7 @@ export const blogCategories = [
 export const isArchivedPost = (slug) => ARCHIVE_NOINDEX_SLUGS.has(slug);
 
 export const blogPosts = [
+  ...september2026Posts,
   {
     id: 1,
     slug: "generative-ai-revolution",
@@ -2667,8 +2669,17 @@ export const blogPosts = [
   },
 ];
 
+const sortNewestFirst = (posts) =>
+  [...posts].sort((a, b) => {
+    const dateA = new Date(a.updatedAt || a.date || 0).getTime();
+    const dateB = new Date(b.updatedAt || b.date || 0).getTime();
+    return dateB - dateA;
+  });
+
 export const getPublishedBlogPosts = () =>
-  blogPosts.filter((post) => !ARCHIVE_NOINDEX_SLUGS.has(post.slug));
+  sortNewestFirst(
+    blogPosts.filter((post) => !ARCHIVE_NOINDEX_SLUGS.has(post.slug))
+  );
 
 export const getBlogsByCategory = (category) => {
   const published = getPublishedBlogPosts();

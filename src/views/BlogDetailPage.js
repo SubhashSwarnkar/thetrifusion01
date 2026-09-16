@@ -18,7 +18,6 @@ import { getServiceBySlug } from "data/servicesData";
 import SEO from "components/common/SEO";
 import { SITE_URL } from "lib/seoConfig";
 import NotFoundPage from "./NotFoundPage";
-import Image from "next/image";
 import { WHATSAPP_NUMBER } from "data/companyInfo";
 import { trackEvent, AnalyticsEvents } from "utils/analytics";
 
@@ -135,22 +134,8 @@ export default function BlogDetailPage() {
           </div>
         </Fade>
 
-        {/* Featured Image */}
-        <Fade direction="up" delay={200} triggerOnce>
-          <div className="relative mb-8 h-64 sm:h-96 w-full overflow-hidden rounded-2xl shadow-xl">
-            <Image
-              src={post.imageUrl}
-              alt={`${post.title} — article by TheTriFusion`}
-              fill
-              sizes="(max-width: 768px) 100vw, 896px"
-              className="object-cover"
-              priority
-            />
-          </div>
-        </Fade>
-
         {/* Content */}
-        <Fade direction="up" delay={300} triggerOnce>
+        <Fade direction="up" delay={200} triggerOnce>
           <div className="prose prose-lg max-w-none">
             {post.content ? (
               <div
