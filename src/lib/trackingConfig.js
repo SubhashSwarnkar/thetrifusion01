@@ -8,4 +8,15 @@ export const GOOGLE_ADS_LEAD_LABEL =
 /** Google AdSense publisher client (site ownership / ads). */
 export const ADSENSE_CLIENT_ID =
   process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID || "ca-pub-3861153173590764";
+/** Optional display units — create in AdSense → Ads → By ad unit, then paste slot IDs. */
+export const ADSENSE_SLOT_BLOG_TOP =
+  process.env.NEXT_PUBLIC_ADSENSE_SLOT_BLOG_TOP || "";
+export const ADSENSE_SLOT_BLOG_SIDEBAR =
+  process.env.NEXT_PUBLIC_ADSENSE_SLOT_BLOG_SIDEBAR || "";
+export const ADSENSE_SLOT_BLOG_BOTTOM =
+  process.env.NEXT_PUBLIC_ADSENSE_SLOT_BLOG_BOTTOM || "";
+/** When true (default), enable Auto ads only on blog article pages. */
+export const ADSENSE_BLOG_AUTO_ADS =
+  (process.env.NEXT_PUBLIC_ADSENSE_BLOG_AUTO_ADS || "true").toLowerCase() !==
+  "false";
 export const CALENDLY_URL = process.env.NEXT_PUBLIC_CALENDLY_URL || "";
