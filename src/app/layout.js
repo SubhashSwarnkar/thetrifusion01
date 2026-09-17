@@ -72,13 +72,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en-IN">
       <head>
+        {/* Raw script tag required so AdSense crawler sees ownership snippet in HTML */}
         {ADSENSE_CLIENT_ID ? (
-          <Script
-            id="adsense-loader"
+          // eslint-disable-next-line @next/next/no-sync-scripts
+          <script
             async
             src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
             crossOrigin="anonymous"
-            strategy="beforeInteractive"
           />
         ) : null}
         <Script id="gtag-consent-default" strategy="afterInteractive">
