@@ -10,7 +10,7 @@ const BASE_URL = (process.env.BASE_URL || "http://127.0.0.1:3000").replace(
   ""
 );
 const MAX_PAGES = Number(process.env.SEO_AUDIT_MAX || 40);
-const WWW_HOST = "www.thetrifusion.in";
+const WWW_HOST = "thetrifusion.in";
 
 const failures = [];
 const warnings = [];
