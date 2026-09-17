@@ -5,7 +5,7 @@ import { siteGraphSchema } from "lib/schema";
 import { SITE_NAME, SITE_URL, pageMetadata, pages } from "lib/seoConfig";
 import { siteConfig } from "config/site";
 import { CONSENT_DEFAULT_INLINE } from "lib/gtagConsent";
-import { GTM_ID, META_PIXEL_ID } from "lib/trackingConfig";
+import { GTM_ID, META_PIXEL_ID, ADSENSE_CLIENT_ID } from "lib/trackingConfig";
 import { Poppins } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
@@ -64,6 +64,7 @@ export const metadata = {
     "geo.placename": "Jaipur",
     "geo.position": "26.9196;75.7878",
     ICBM: "26.9196, 75.7878",
+    "google-adsense-account": ADSENSE_CLIENT_ID,
   },
 };
 
@@ -71,6 +72,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en-IN">
       <head>
+        {ADSENSE_CLIENT_ID ? (
+          <Script
+            id="adsense-loader"
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
+            crossOrigin="anonymous"
+            strategy="beforeInteractive"
+          />
+        ) : null}
         <Script id="gtag-consent-default" strategy="afterInteractive">
           {CONSENT_DEFAULT_INLINE}
         </Script>
