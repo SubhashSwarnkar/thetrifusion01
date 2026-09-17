@@ -18,7 +18,7 @@ export const siteConfig = {
     "Trifusion Infotech Pvt. Ltd."
   ),
   tagline: "IT Solutions, Websites & Mobile Apps",
-  url: env("NEXT_PUBLIC_SITE_URL", "https://www.thetrifusion.in").replace(
+  url: env("NEXT_PUBLIC_SITE_URL", "https://thetrifusion.in").replace(
     /\/$/,
     ""
   ),

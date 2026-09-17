@@ -1,4 +1,4 @@
-const HOST = "www.thetrifusion.in";
+const HOST = "thetrifusion.in";
 const KEY = "trifusion-indexnow-2026a1b2c3d4e5";
 
 const urls = process.argv.slice(2);

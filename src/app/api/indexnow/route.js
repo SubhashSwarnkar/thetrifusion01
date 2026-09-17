@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const HOST = "www.thetrifusion.in";
+const HOST = "thetrifusion.in";
 const KEY = "trifusion-indexnow-2026a1b2c3d4e5";
 
 export async function POST(request) {

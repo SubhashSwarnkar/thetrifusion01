@@ -1,17 +1,11 @@
 import { NextResponse } from "next/server";
-import { siteConfig } from "config/site";
 
-export function middleware(request) {
-  const host = request.headers.get("host") || "";
-  const apex = siteConfig.url.replace(/^https?:\/\/(www\.)?/, "").split("/")[0];
-
-  if (host === apex) {
-    const url = request.nextUrl.clone();
-    url.protocol = "https:";
-    url.host = `www.${apex}`;
-    return NextResponse.redirect(url, 308);
-  }
-
+/**
+ * Host canonicalization is handled in Vercel Domains
+ * (apex thetrifusion.in = Production; www redirects to apex).
+ * Do not redirect apex → www here or it creates a redirect loop.
+ */
+export function middleware() {
   return NextResponse.next();
 }
 

@@ -17,13 +17,13 @@ const nextConfig = {
       {
         source: "/:path*",
         has: [{ type: "host", value: "thetrifusion.com" }],
-        destination: "https://www.thetrifusion.in/:path*",
+        destination: "https://thetrifusion.in/:path*",
         permanent: true,
       },
       {
         source: "/:path*",
         has: [{ type: "host", value: "www.thetrifusion.com" }],
-        destination: "https://www.thetrifusion.in/:path*",
+        destination: "https://thetrifusion.in/:path*",
         permanent: true,
       },
       // Canonicalize duplicate project routes to portfolio
