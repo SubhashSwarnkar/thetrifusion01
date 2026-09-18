@@ -59,10 +59,16 @@ export default function BlogPage() {
           </h1>
         </Fade>
         <Fade direction="up" delay={200} triggerOnce>
-          <p className="font-light text-lg text-gray-400 text-center mb-12">
+          <p className="font-light text-lg text-gray-400 text-center mb-6">
             Practical notes on websites, apps, MLM CRM, fintech, and delivery
             from Jaipur. We publish at least two India-relevant posts each month.
           </p>
+          <div className="flex flex-wrap justify-center gap-3 mb-12 text-sm">
+            <Link href="/about" className="px-4 py-2 rounded-full border border-theme-purple/30 text-theme-purple font-semibold hover:bg-light-theme-purple">About TheTriFusion</Link>
+            <Link href="/ecommerce-development" className="px-4 py-2 rounded-full border border-theme-purple/30 text-theme-purple font-semibold hover:bg-light-theme-purple">Ecommerce development</Link>
+            <Link href="/services/mobile-app-development" className="px-4 py-2 rounded-full border border-theme-purple/30 text-theme-purple font-semibold hover:bg-light-theme-purple">Mobile app development</Link>
+            <Link href="/ios-app-development" className="px-4 py-2 rounded-full border border-theme-purple/30 text-theme-purple font-semibold hover:bg-light-theme-purple">iOS apps</Link>
+          </div>
         </Fade>
 
         {/* Search Bar */}
