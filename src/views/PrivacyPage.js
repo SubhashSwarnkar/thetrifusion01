@@ -37,6 +37,30 @@ export default function PrivacyPage() {
             Reject on the cookie banner, or change later via Cookie settings in
             the footer.
           </p>
+          <p>
+            We may show ads through Google AdSense (publisher ID
+            pub-3861153173590764). AdSense and its partners can use cookies or
+            similar technologies to serve and measure ads, including interest-based
+            ads where allowed. See{" "}
+            <a
+              className="text-theme-blue underline"
+              href="https://policies.google.com/technologies/ads"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Google’s advertising policies
+            </a>{" "}
+            and how to control ads at{" "}
+            <a
+              className="text-theme-blue underline"
+              href="https://adssettings.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              adssettings.google.com
+            </a>
+            . Contact us at {siteConfig.email} for privacy questions.
+          </p>
         </div>
       </main>
       <Footer />
