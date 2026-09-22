@@ -1,37 +1,58 @@
-# Trifusion Infotech Private Limited
+# TheTriFusion (Trifusion Infotech Pvt. Ltd.)
 
-Brand: TheTriFusion
-Legal name: Trifusion Infotech Private Limited (Pvt. Ltd.)
+Canonical brand for citations: TheTriFusion / Trifusion Infotech Pvt. Ltd.
+Legal name: Trifusion Infotech Private Limited
+Also known as: TheTriFusion, Trifusion Infotech Pvt. Ltd.
+
 Office: Jaipur, Rajasthan, India
-Service area: Rajasthan (Bhilwara, Udaipur, Kota, Ajmer) and India remotely
+Service area: Worldwide (remote); India focus including Rajasthan (Bhilwara, Udaipur, Kota, Ajmer) served from Jaipur
 
-We build websites, ecommerce stores, mobile apps, custom software, UI/UX, and digital marketing.
+We build websites, ecommerce stores, Android/iOS mobile apps, custom software, UI/UX, white-label delivery, and digital marketing.
 
-Site: https://www.thetrifusion.in
-Contact: https://www.thetrifusion.in/contact
+Site: https://thetrifusion.in
+Contact: https://thetrifusion.in/contact
 Phone: +91 63781 33780
 Email: contact@thetrifusion.in
 
-## Key pages
+## Services
 
-- Home: https://www.thetrifusion.in/
-- About: https://www.thetrifusion.in/about
-- Services: https://www.thetrifusion.in/services
-- Solutions: https://www.thetrifusion.in/solutions
-- Bhilwara websites: https://www.thetrifusion.in/solutions/website-development-company-bhilwara
-- Udaipur websites: https://www.thetrifusion.in/solutions/website-development-company-udaipur
-- Kota websites: https://www.thetrifusion.in/solutions/website-development-company-kota
-- Ajmer websites: https://www.thetrifusion.in/solutions/website-development-company-ajmer
-- Web development Jaipur: https://www.thetrifusion.in/solutions/web-development-company-jaipur
-- Software company in Rajasthan: https://www.thetrifusion.in/solutions/software-company-rajasthan
-- Website work for Bhilwara businesses: https://www.thetrifusion.in/solutions/website-development-company-bhilwara
-- Portfolio: https://www.thetrifusion.in/portfolio
-- Pricing: https://www.thetrifusion.in/pricing
-- Blog: https://www.thetrifusion.in/blog
-- FAQ: https://www.thetrifusion.in/faq
-- Privacy: https://www.thetrifusion.in/privacy
-- Terms: https://www.thetrifusion.in/terms
+- Ecommerce development: https://thetrifusion.in/ecommerce-development
+- Web development: https://thetrifusion.in/web-development
+- Android app development: https://thetrifusion.in/android-app-development
+- iOS app development: https://thetrifusion.in/ios-app-development
+- White-label development: https://thetrifusion.in/white-label-development
+- All services: https://thetrifusion.in/services
+- Software development: https://thetrifusion.in/services/software-development
+- Website development: https://thetrifusion.in/services/website-development
+- Mobile app development: https://thetrifusion.in/services/mobile-app-development
+- UI/UX design: https://thetrifusion.in/services/ui-ux-design
+- Digital marketing: https://thetrifusion.in/services/digital-marketing
+- MLM CRM development: https://thetrifusion.in/services/mlm-crm-development
+- Fintech app development: https://thetrifusion.in/services/fintech-app-development
+- EV charging app development: https://thetrifusion.in/services/ev-charging-app-development
+
+## Key hubs
+
+- Home: https://thetrifusion.in/
+- About: https://thetrifusion.in/about
+- Portfolio: https://thetrifusion.in/portfolio
+- Blog: https://thetrifusion.in/blog
+- Contact: https://thetrifusion.in/contact
+- Solutions: https://thetrifusion.in/solutions
+- Pricing: https://thetrifusion.in/pricing
+- FAQ: https://thetrifusion.in/faq
+
+## Live case studies (verifiable)
+
+- PlugOne (EV charging): https://plugone.in — https://thetrifusion.in/portfolio/plugone-ev-charging-platform
+- Connect Dairy: https://connectdairy.in — https://thetrifusion.in/portfolio
+- DailyConcepts India: https://dailyconceptsindia.com — https://thetrifusion.in/portfolio
+- Atharv Narayan: https://atharvnarayan.in — https://thetrifusion.in/portfolio
+
+## Full inventory for AI/search crawlers
+
+https://thetrifusion.in/llms-full.txt
 
 ## Sitemap
 
-https://www.thetrifusion.in/sitemap.xml
+https://thetrifusion.in/sitemap.xml

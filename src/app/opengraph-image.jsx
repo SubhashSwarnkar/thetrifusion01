@@ -58,7 +58,7 @@ export default function OpenGraphImage() {
           </div>
         </div>
         <div style={{ display: "flex", fontSize: 22, color: "#94a3b8" }}>
-          www.thetrifusion.in
+          thetrifusion.in
         </div>
       </div>
     ),

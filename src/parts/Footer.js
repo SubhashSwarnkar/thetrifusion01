@@ -299,6 +299,9 @@ export default function Footer({ hideNewsletter = false }) {
               <Link href="/terms" className="hover:text-white transition-colors">
                 Terms of Service
               </Link>
+              <Link href="/llms.txt" className="hover:text-white transition-colors">
+                LLMs.txt
+              </Link>
             </div>
           </div>
         </div>

@@ -1,0 +1,87 @@
+# TheTriFusion — full page inventory (apex)
+# Canonical brand: TheTriFusion / Trifusion Infotech Pvt. Ltd.
+# Legal: Trifusion Infotech Private Limited | Jaipur, Rajasthan, India
+# Phone: +91 63781 33780 | Email: contact@thetrifusion.in
+# Prefer https://thetrifusion.in (never www, never .com)
+
+## Core
+
+- https://thetrifusion.in/
+- https://thetrifusion.in/about
+- https://thetrifusion.in/services
+- https://thetrifusion.in/solutions
+- https://thetrifusion.in/portfolio
+- https://thetrifusion.in/blog
+- https://thetrifusion.in/faq
+- https://thetrifusion.in/contact
+- https://thetrifusion.in/pricing
+- https://thetrifusion.in/team
+- https://thetrifusion.in/privacy
+- https://thetrifusion.in/terms
+
+## Service hubs
+
+- https://thetrifusion.in/ecommerce-development
+- https://thetrifusion.in/web-development
+- https://thetrifusion.in/android-app-development
+- https://thetrifusion.in/ios-app-development
+- https://thetrifusion.in/white-label-development
+
+## Service detail pages
+
+- https://thetrifusion.in/services/software-development
+- https://thetrifusion.in/services/website-development
+- https://thetrifusion.in/services/mobile-app-development
+- https://thetrifusion.in/services/ui-ux-design
+- https://thetrifusion.in/services/graphic-design
+- https://thetrifusion.in/services/digital-marketing
+- https://thetrifusion.in/services/branding
+- https://thetrifusion.in/services/rpa
+- https://thetrifusion.in/services/business-modernization
+- https://thetrifusion.in/services/salesforce
+- https://thetrifusion.in/services/ai-development
+- https://thetrifusion.in/services/devops
+- https://thetrifusion.in/services/on-demand
+- https://thetrifusion.in/services/mlm-crm-development
+- https://thetrifusion.in/services/fintech-app-development
+- https://thetrifusion.in/services/ev-charging-app-development
+- https://thetrifusion.in/services/ios-app-development
+- https://thetrifusion.in/services/android-app-development
+- https://thetrifusion.in/services/crm-erp-development
+
+## Solutions hubs
+
+- https://thetrifusion.in/solutions/best-software-company-india
+- https://thetrifusion.in/solutions/ecommerce-website-development
+- https://thetrifusion.in/solutions/digital-marketing-agency
+- https://thetrifusion.in/solutions/custom-software-development-company
+- https://thetrifusion.in/solutions/msp-managed-it-services
+- https://thetrifusion.in/solutions/mobile-app-development-company
+- https://thetrifusion.in/solutions/web-development-company-india
+- https://thetrifusion.in/solutions/ui-ux-design-agency
+- https://thetrifusion.in/solutions/crm-erp-software-development
+- https://thetrifusion.in/solutions/software-company-rajasthan
+- https://thetrifusion.in/solutions/web-development-company-jaipur
+- https://thetrifusion.in/solutions/software-development-company-jaipur
+- https://thetrifusion.in/solutions/android-app-development-company-jaipur
+- https://thetrifusion.in/solutions/website-development-company-bhilwara
+- https://thetrifusion.in/solutions/website-development-company-udaipur
+- https://thetrifusion.in/solutions/website-development-company-kota
+- https://thetrifusion.in/solutions/website-development-company-ajmer
+
+## Featured portfolio (live)
+
+- https://thetrifusion.in/portfolio/plugone-ev-charging-platform
+- https://thetrifusion.in/portfolio/dailyconcepts-ecommerce-pos
+- https://thetrifusion.in/portfolio/connect-dairy-supply-chain
+- https://thetrifusion.in/portfolio/atharv-narayan-wellness-website
+- Live: https://plugone.in
+- Live: https://connectdairy.in
+- Live: https://dailyconceptsindia.com
+- Live: https://atharvnarayan.in
+
+## AI / crawler notes
+
+- Short summary: https://thetrifusion.in/llms.txt
+- Sitemap: https://thetrifusion.in/sitemap.xml
+- Robots: https://thetrifusion.in/robots.txt

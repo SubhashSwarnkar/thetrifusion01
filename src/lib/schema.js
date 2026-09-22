@@ -7,9 +7,9 @@ function organizationNode() {
   return {
     "@type": "Organization",
     "@id": `${siteConfig.url}/#organization`,
-    name: siteConfig.legalName,
+    name: siteConfig.name,
     legalName: siteConfig.legalName,
-    alternateName: [siteConfig.name, siteConfig.legalNameShort],
+    alternateName: [siteConfig.legalName, siteConfig.legalNameShort],
     brand: {
       "@type": "Brand",
       name: siteConfig.name,
@@ -23,6 +23,21 @@ function organizationNode() {
     description: HOME_DESCRIPTION,
     email: siteConfig.email,
     telephone: siteConfig.phoneE164,
+    address: {
+      "@type": "PostalAddress",
+      ...(siteConfig.streetAddress
+        ? { streetAddress: siteConfig.streetAddress }
+        : {}),
+      addressLocality: siteConfig.city,
+      addressRegion: siteConfig.region,
+      addressCountry: siteConfig.country,
+    },
+    areaServed: [
+      { "@type": "City", name: "Jaipur" },
+      { "@type": "AdministrativeArea", name: siteConfig.region },
+      { "@type": "Country", name: siteConfig.countryName },
+      { "@type": "Place", name: "Worldwide" },
+    ],
     sameAs: [siteConfig.instagram, siteConfig.linkedin],
   };
 }

@@ -70,7 +70,7 @@ export default function OpenGraphImage({ params }) {
           </div>
         </div>
         <div style={{ display: "flex", fontSize: 22, color: "#94a3b8" }}>
-          www.thetrifusion.in/solutions/{params.slug}
+          thetrifusion.in/solutions/{params.slug}
         </div>
       </div>
     ),

@@ -5,6 +5,17 @@ import { Portfolios, isIndexablePortfolio } from "json/landingPageData";
 import { NOINDEX_PATHS, pages } from "lib/seoConfig";
 import { siteConfig } from "config/site";
 
+
+function safeDate(value, fallback) {
+  try {
+    const d = value instanceof Date ? value : new Date(value);
+    if (Number.isNaN(d.getTime())) return fallback;
+    return d;
+  } catch {
+    return fallback;
+  }
+}
+
 export default function sitemap() {
   const fallbackDate = new Date("2026-09-12");
   const serviceUpdated = new Date("2026-09-12");
@@ -44,7 +55,7 @@ export default function sitemap() {
     return {
       url: `${siteConfig.url}/solutions/${raw.slug}`,
       lastModified: page?.updatedAt
-        ? new Date(page.updatedAt)
+        ? safeDate(page.updatedAt, fallbackDate)
         : fallbackDate,
       changeFrequency: "weekly",
       priority: 0.85,
@@ -55,7 +66,7 @@ export default function sitemap() {
     .filter((post) => !ARCHIVE_NOINDEX_SLUGS.has(post.slug))
     .map((post) => ({
     url: `${siteConfig.url}/blog/${post.slug}`,
-    lastModified: new Date(post.updatedAt || post.date || "2026-09-12"),
+    lastModified: safeDate(post.updatedAt || post.date || "2026-09-12", fallbackDate),
     changeFrequency: "weekly",
     priority: 0.75,
   }));
