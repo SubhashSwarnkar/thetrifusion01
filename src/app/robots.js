@@ -29,6 +29,7 @@ const AI_SEARCH_AGENTS = [
   "Googlebot",
   "Bingbot",
   "Applebot",
+  "Mediapartners-Google",
 ];
 
 /** @returns {import("next").MetadataRoute.Robots} */

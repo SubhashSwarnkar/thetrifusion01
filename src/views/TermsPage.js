@@ -35,6 +35,13 @@ export default function TermsPage() {
             work in our portfolio unless you opt out in writing.
           </p>
           <p>
+            The site may display third-party advertisements served by Google
+            AdSense and its partners. Ad delivery, measurement, and any
+            personalized ads are governed by Google’s terms and our Privacy
+            Policy. Clicking an ad does not create a contract with
+            {siteConfig.name} for the advertiser’s product.
+          </p>
+          <p>
             Contact: {siteConfig.email} · {siteConfig.phone}
           </p>
         </div>
