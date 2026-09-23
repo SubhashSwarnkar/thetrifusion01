@@ -21,9 +21,12 @@ export function generateMetadata({ params }) {
     });
   }
 
-  // Prefer self-hosted unique OG cards so Google does not cluster us with
-  // unrelated sites that reuse the same Unsplash stock URLs.
-  const selfHostedOg = `/blog/${post.slug}/opengraph-image`;
+  // Prefer self-hosted unique cards (SVG under /images/blog-og) so Google
+  // does not cluster us with unrelated sites sharing Unsplash stock URLs.
+  // opengraph-image PNG route remains as a social-card enhancer.
+  const selfHostedOg = post.imageUrl?.startsWith("/images/blog-og/")
+    ? post.imageUrl
+    : `/images/blog-og/${post.slug}.svg`;
   return buildMetadata({
     title: post.metaTitle || `${post.title} | TheTriFusion`,
     description: post.excerpt,
