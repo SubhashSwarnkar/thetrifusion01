@@ -98,7 +98,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["asian games", "sports", "men's events", "india sports", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1461896836934-ffe607ba6851?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/asian-games-men-why-trending-explained/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -114,40 +114,40 @@ export const september2026Posts = [
     metaTitle: "Vivo V80 India: Specs, Price Rumours & Buying Checklist",
     excerpt: "Vivo V80 is trending. Known vs rumour on specs and India price, plus a practical buying checklist.",
     content: `
-      <p><strong>Vivo V80</strong> searches rise when buyers hunt specs, India price rumours, launch windows, and V-series comparisons. This page separates publicly known facts from leaks.</p>
-      <p><em>Verification note:</em> Until Vivo India publishes an official note, treat leak blogs as unverified. Region SKUs often differ.</p>
-      <p>This long explainer is written for worldwide readers who landed from Google Trends or social shares and need more than a headline. We cover what the query usually means, which subtopics matter, how to verify claims, and what to do next — without inventing fake quotes or unverified medical/financial promises.</p>
-      <h2>Where the V80 sits in Vivo’s lineup</h2>
-      <p>The V-series targets mid-to-upper midrange buyers focused on selfie cameras, design, and colourways — not X-series flagships or budget Y phones.</p>
-      <h2>Specs checklist to confirm before buying</h2>
-      <ul><li>Display size, refresh rate, brightness</li><li>Chipset and India RAM/storage variants</li><li>Camera setup and OIS</li><li>Battery and charging wattage</li><li>IP rating, speakers, OS update promise</li><li>5G bands for Indian carriers</li></ul>
-      <h2>Price expectations (framework, not a leak)</h2>
-      <p>Use prior V-series India MRP only as a range check. Final street price depends on launch offers, bank discounts, and exchange — reliable only when Vivo.in or major marketplaces list the SKU.</p>
-      <h2>Camera claim hygiene</h2>
-      <ol><li>Prefer reviewer samples over trailers</li><li>Judge low-light and portrait consistency</li><li>Clarify optical vs crop telephoto</li><li>Test 4K stabilisation in-store when possible</li></ol>
-      <h2>Software longevity questions</h2>
-      <p>Ask for launch Android version and promised OS/security updates. Check how easy it is to disable unnecessary preinstalled apps.</p>
-      <h2>India buying checklist</h2>
-      <ul><li>GST invoice and authorised seller</li><li>Open-box vs sealed policy</li><li>BIS markings</li><li>Screenshot launch price before offers expire</li><li>Budget for case and screen guard</li></ul>
-      <h2>Rumour hygiene</h2>
-      <p>Ignore “confirmed at ₹xx,999 tomorrow” posts without Vivo India or a major tech desk byline.</p>
-      <h2>Search intent map for “Vivo V80 Specs & Price in India”</h2>
-      <p>People typing the same Trends phrase rarely want the same outcome. Roughly, intents split into:</p>
+      <p><strong>Vivo V80</strong> India search interest climbs whenever leak accounts, Flipkart/Amazon listing whispers, or V-series comparison videos circulate — buyers want chipset, camera, and a realistic MRP band, not another “exclusive” rumour without a source.</p>
+      <p><em>Verification note (TheTriFusion editorial):</em> Until vivo.com/in (or Vivo India’s newsroom) publishes an official SKU sheet, treat tipster blogs as unverified. Global and India variants frequently differ on charging, bands, and colourways.</p>
+      <p>This TheTriFusion guide is built for smartphone shoppers who landed from Google Trends or YouTube thumbnails and need a <em>buying-hygiene</em> framework: where the V80 sits in Vivo’s lineup, which specs to confirm in writing, how to read India price rumours, and which red flags mean “wait.” We do not invent launch dates or ₹ prices.</p>
+      <h2>Where a V80 would sit in Vivo’s India ladder</h2>
+      <p>Vivo’s V-series historically targets mid-to-upper midrange buyers who prioritise selfie cameras, thin design, and colourways — above budget Y phones and below X-series flagships. Mentally place any “V80” claim in that band until an official brochure says otherwise.</p>
+      <h2>Specs checklist to demand before you pay</h2>
+      <ul><li>Display size, refresh rate, peak brightness</li><li>Chipset plus India-specific RAM/storage cuts</li><li>Rear/front camera modules and OIS details</li><li>Battery capacity and wired/wireless charging wattage</li><li>IP rating, speaker setup, OS/security update promise</li><li>5G band list matched to Indian carriers</li></ul>
+      <h2>Price rumours vs actionable MRP</h2>
+      <p>Prior V-series India MRP is only a range check. Street price moves with launch coupons, bank offers, and exchange — treat a figure as actionable only when vivo.com/in or a major marketplace shows a live SKU with GST invoice eligibility.</p>
+      <h2>Camera claim hygiene for V-series marketing</h2>
+      <ol><li>Prefer independent reviewer samples over launch trailers</li><li>Judge low-light and portrait consistency, not megapixel slogans</li><li>Ask whether “telephoto” is optical or a crop</li><li>If possible, test 4K stabilisation on a demo unit</li></ol>
+      <h2>Software longevity questions worth asking in-store</h2>
+      <p>Confirm launch Android version, promised OS upgrades, and security-patch cadence. Check how many preinstalled apps can be disabled without ADB tricks.</p>
+      <h2>India retail checklist</h2>
+      <ul><li>GST invoice from an authorised seller</li><li>Sealed vs open-box return policy in writing</li><li>BIS markings on the retail box</li><li>Screenshot of the listed price before flash offers rotate</li><li>Budget for a case and screen protector on day one</li></ul>
+      <h2>Rumour hygiene specific to phone launches</h2>
+      <p>Ignore “confirmed at ₹xx,999 tomorrow” Telegram forwards unless Vivo India or a major tech desk with a named byline repeats them. Deepfake unboxing clips are increasingly common ahead of midrange launches.</p>
+      <h2>Intent map for “Vivo V80 specs & price India”</h2>
+      <p>Phone Trends queries concentrate on four jobs-to-be-done:</p>
       <ul>
-        <li><strong>Now:</strong> live score, price, status, or breaking confirmation</li>
-        <li><strong>Explain:</strong> who/what is this and why does it matter</li>
-        <li><strong>Compare:</strong> alternatives, history, or head-to-head context</li>
-        <li><strong>Act:</strong> buy, book, apply, watch, or avoid a scam</li>
+        <li><strong>Spec sheet:</strong> chipset, camera, battery — in writing</li>
+        <li><strong>India price:</strong> MRP / expected street band</li>
+        <li><strong>Compare:</strong> vs previous V-series or rivals in the same band</li>
+        <li><strong>Buy/wait:</strong> launch timing and authorised channels</li>
       </ul>
-      <p>Good pages answer the “explain” and “act safely” intents even when they cannot provide a live ticker. That is the approach we take for <strong>Vivo V80 Specs & Price in India</strong>.</p>
-      <h2>Timeline thinking (useful even without a live blog)</h2>
+      <p>This page answers explain + buy-safely. It is not a live price ticker.</p>
+      <h2>Typical rumour-to-listing timeline</h2>
       <ol>
-        <li><strong>T-0:</strong> Spike begins — rumours outrun facts.</li>
-        <li><strong>T+1 hour:</strong> Named outlets publish first confirmations.</li>
-        <li><strong>T+1 day:</strong> Official statements and corrections appear.</li>
-        <li><strong>T+1 week:</strong> Deeper analysis replaces hot takes.</li>
+        <li><strong>Leak week:</strong> CAD renders and “exclusive” specs flood short-form video.</li>
+        <li><strong>Soft confirms:</strong> larger tech desks repeat carefully hedged details.</li>
+        <li><strong>Official note:</strong> Vivo India or a marketplace listing appears.</li>
+        <li><strong>Street price:</strong> bank offers and exchange reshape the effective cost.</li>
       </ol>
-      <p>If you are reading about <strong>Vivo V80 Specs & Price in India</strong> on day one, prefer primary sources. If you are reading a week later, prefer explainers that cite what changed.</p>
+      <p>On day one of a spike, prefer primary brand or marketplace pages. A week later, prefer explainers that cite what the official sheet actually changed.</p>
       <h2>Misinformation patterns to expect</h2>
       <ul>
         <li>Old articles reshared with today’s date implied</li>
@@ -202,9 +202,9 @@ export const september2026Posts = [
     `,
     category: "mobile",
     tags: ["vivo v80", "smartphones", "india", "mobile", "specs"],
-    imageUrl: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/vivo-v80-specs-price-india-what-we-know/opengraph-image",
     date: "2026-09-23",
-    updatedAt: "2026-09-23",
+    updatedAt: "2026-09-23T14:30:00+05:30",
     readTime: "12 min read",
     author: "TheTriFusion Team",
     featured: true,
@@ -302,7 +302,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["india vs japan", "sports", "diplomacy", "trends", "asia"],
-    imageUrl: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/india-vs-japan-why-trending-explained/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -405,7 +405,7 @@ export const september2026Posts = [
     `,
     category: "fintech",
     tags: ["nse", "ipo", "listing date", "share market", "india"],
-    imageUrl: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/nse-listing-date-how-ipo-listing-works-india/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -505,7 +505,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["nations league", "uefa", "football", "soccer", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/uefa-nations-league-why-trending-explained/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -607,7 +607,7 @@ export const september2026Posts = [
     `,
     category: "fintech",
     tags: ["epf", "epfo", "provident fund", "uan", "india"],
-    imageUrl: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/epf-employee-provident-fund-india-guide/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -707,7 +707,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["govinda", "bollywood", "entertainment", "india", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/govinda-why-trending-career-explained/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -807,7 +807,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["rani mukerji", "bollywood", "entertainment", "india", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/rani-mukerji-why-trending-explained/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -905,7 +905,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["england vs sri lanka", "cricket", "sports", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/england-vs-sri-lanka-why-trending-explained/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -1003,7 +1003,7 @@ export const september2026Posts = [
     `,
     category: "fintech",
     tags: ["hero motocorp", "share price", "nse", "auto stocks", "india"],
-    imageUrl: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/hero-motors-share-price-why-trending/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -1103,7 +1103,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["indigo", "airline", "aviation", "india", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/indigo-airline-why-trending-india/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -1203,7 +1203,7 @@ export const september2026Posts = [
     `,
     category: "fintech",
     tags: ["pmay", "pm awas yojana", "housing", "india", "government scheme"],
-    imageUrl: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/pm-awas-yojana-pmay-guide-india/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -1306,7 +1306,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["measles", "public health", "vaccination", "symptoms", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/measles-why-trending-symptoms-facts/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -1404,7 +1404,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["wnba", "lynx", "fever", "basketball", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/lynx-vs-fever-wnba-why-trending/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -1502,7 +1502,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["padres", "dodgers", "mlb", "baseball", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1566577739112-5180d4bf694f?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/padres-vs-dodgers-why-trending/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -1602,7 +1602,7 @@ export const september2026Posts = [
     `,
     category: "webdev",
     tags: ["opus 5.5", "ai", "llm", "anthropic", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/opus-5-5-ai-model-whats-known/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -1700,7 +1700,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["zelenskyy", "ukraine", "world news", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/zelenskyy-why-trending-explained/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -1798,7 +1798,7 @@ export const september2026Posts = [
     `,
     category: "mobile",
     tags: ["uber", "india", "ride hailing", "mobility", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/uber-india-why-trending-explained/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -1896,7 +1896,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["beats 360", "audio", "apple beats", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/beats-360-why-trending-explained/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -1994,7 +1994,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["23 september", "calendar", "india", "trends", "2026"],
-    imageUrl: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/23-september-2026-why-trending-india/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -2090,7 +2090,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["richard hammond", "top gear", "uk", "entertainment", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/richard-hammond-why-trending-explained/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -2106,32 +2106,32 @@ export const september2026Posts = [
     metaTitle: "Nigella Lawson Trending: Recipes, TV & UK Search Spike",
     excerpt: "Nigella Lawson is trending (50K+ interest). Why UK searches spike and how to find reliable recipes.",
     content: `
-      <p><strong>Nigella Lawson</strong> trends strongly in the UK when a TV appearance, cookbook mention, seasonal recipe, or viral food clip hits feeds — sometimes exceeding 50K+ interest bands on Trends graphs.</p>
-      <p><em>Verification note:</em> Use her official site/books and broadcaster recipe pages; random “Nigella said” image macros are often fake.</p>
-      <p>This long explainer is written for worldwide readers who landed from Google Trends or social shares and need more than a headline. We cover what the query usually means, which subtopics matter, how to verify claims, and what to do next — without inventing fake quotes or unverified medical/financial promises.</p>
-      <h2>Why she dominates food Trends</h2>
-      <p>A distinctive presenting style, trusted comfort-food brand, and frequent seasonal recipe demand (autumn baking, festive cooking) keep search elevated.</p>
-      <h2>What searchers want</h2>
-      <ul><li>Specific recipe names</li><li>TV episode recipes</li><li>Ingredient substitutions</li><li>Cookbook recommendations</li></ul>
-      <h2>Kitchen content quality tip</h2>
-      <p>The best recipe pages show ingredients, steps, timing, and allergen notes — the same clarity product sites need for conversion.</p>
-      <h2>Search intent map for “Nigella Lawson”</h2>
-      <p>People typing the same Trends phrase rarely want the same outcome. Roughly, intents split into:</p>
+      <p><strong>Nigella Lawson</strong> is one of the few food personalities who can push UK Google Trends above the 50K interest band overnight — usually when a BBC/ITV clip, a supermarket seasonal push, or a nostalgic cookbook reprint collides with dinner-planning searches.</p>
+      <p><em>Verification note (TheTriFusion editorial):</em> Prefer nigella.com, her named cookbooks, and licensed broadcaster recipe pages. Viral “Nigella said…” image macros and anonymous recipe dumps are frequently misattributed.</p>
+      <p>This TheTriFusion briefing is for readers who arrived from Trends, WhatsApp food groups, or social shares and need a calm map of <em>why</em> the name is loud right now — not another recycled rumour. We separate TV-driven spikes from evergreen recipe demand, list the intents behind the query, and show how to verify a “Nigella recipe” claim before you cook or share it.</p>
+      <h2>Why UK food Trends keep returning to Nigella</h2>
+      <p>Three durable signals stack: a recognisable comfort-food brand voice, seasonal baking and festive cooking windows, and high trust in published recipe formats. When a clip recirculates, searchers do not want celebrity gossip first — they want the dish name, the episode, and a reliable method.</p>
+      <h2>What people actually type next</h2>
+      <ul><li>Exact recipe titles from a recent episode</li><li>“Nigella” + ingredient (chocolate, chicken, pasta)</li><li>Cookbook vs TV-show distinctions</li><li>Substitution and allergen-friendly variants</li></ul>
+      <h2>Kitchen content quality bar (publishers take note)</h2>
+      <p>High-trust recipe pages list ingredients with quantities, step timing, yield, and allergen notes. That same clarity is what converts visitors on product sites — vague “trending food” posts do not.</p>
+      <h2>Intent map unique to “Nigella Lawson” spikes</h2>
+      <p>Unlike sports or markets Trends, Nigella queries skew toward <strong>cook-now</strong> and <strong>watch-again</strong> intents:</p>
       <ul>
-        <li><strong>Now:</strong> live score, price, status, or breaking confirmation</li>
-        <li><strong>Explain:</strong> who/what is this and why does it matter</li>
-        <li><strong>Compare:</strong> alternatives, history, or head-to-head context</li>
-        <li><strong>Act:</strong> buy, book, apply, watch, or avoid a scam</li>
+        <li><strong>Cook-now:</strong> find the recipe and shop the ingredients tonight</li>
+        <li><strong>Watch-again:</strong> which episode / series featured the dish</li>
+        <li><strong>Explain:</strong> why is she trending — TV, book, or viral clip?</li>
+        <li><strong>Gift/book:</strong> which cookbook matches the viral dish</li>
       </ul>
-      <p>Good pages answer the “explain” and “act safely” intents even when they cannot provide a live ticker. That is the approach we take for <strong>Nigella Lawson</strong>.</p>
-      <h2>Timeline thinking (useful even without a live blog)</h2>
+      <p>This page prioritises explain + cook-safely. We will not invent quotes, medical food claims, or unaffiliated “Nigella ranges.”</p>
+      <h2>How a Nigella spike usually unfolds</h2>
       <ol>
-        <li><strong>T-0:</strong> Spike begins — rumours outrun facts.</li>
-        <li><strong>T+1 hour:</strong> Named outlets publish first confirmations.</li>
-        <li><strong>T+1 day:</strong> Official statements and corrections appear.</li>
-        <li><strong>T+1 week:</strong> Deeper analysis replaces hot takes.</li>
+        <li><strong>Clip lands:</strong> a TV segment or short-form repost spreads.</li>
+        <li><strong>Recipe hunt:</strong> dish-name searches overtake the celebrity name alone.</li>
+        <li><strong>Retail echo:</strong> supermarket and cookbook pages rise in the same cluster.</li>
+        <li><strong>Cool-down:</strong> evergreen recipe URLs keep residual traffic for days.</li>
       </ol>
-      <p>If you are reading about <strong>Nigella Lawson</strong> on day one, prefer primary sources. If you are reading a week later, prefer explainers that cite what changed.</p>
+      <p>If you are reading during the first hours of a spike, chase primary recipe sources. A week later, look for pages that cite which broadcast or book edition actually changed.</p>
       <h2>Misinformation patterns to expect</h2>
       <ul>
         <li>Old articles reshared with today’s date implied</li>
@@ -2186,9 +2186,9 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["nigella lawson", "food", "uk", "tv", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/nigella-lawson-why-trending-explained/opengraph-image",
     date: "2026-09-23",
-    updatedAt: "2026-09-23",
+    updatedAt: "2026-09-23T14:30:00+05:30",
     readTime: "12 min read",
     author: "TheTriFusion Team",
     featured: true,
@@ -2284,7 +2284,7 @@ export const september2026Posts = [
     `,
     category: "mobile",
     tags: ["bbc sounds", "podcasts", "radio", "uk", "app"],
-    imageUrl: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/bbc-sounds-why-trending-explained/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -2384,7 +2384,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["isle of wight", "uk news", "english channel", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/migrant-boat-isle-of-wight-why-trending/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -2482,7 +2482,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["medmerry", "holiday park", "administration", "uk", "insolvency"],
-    imageUrl: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/medmerry-holiday-park-administration-explained/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -2580,7 +2580,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["polar vortex", "weather", "uk", "climate", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1514632597034-d53b5f30a6d6?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/polar-vortex-why-trending-explained/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -2676,7 +2676,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["hayden panettiere", "entertainment", "celebs", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/hayden-panettiere-why-trending-explained/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -2774,7 +2774,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["reform uk", "uk politics", "elections", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/reform-uk-why-trending-explained/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -2870,7 +2870,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["andre agassi", "tennis", "sports", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/andre-agassi-why-trending-explained/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -2966,7 +2966,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["anthony gordon", "football", "premier league", "newcastle", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/anthony-gordon-why-trending-explained/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -3062,7 +3062,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["tim westwood", "dj", "uk", "music", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/tim-westwood-why-trending-explained/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -3158,7 +3158,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["danny tommo", "youtube", "uk", "creators", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/danny-tommo-why-trending-explained/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -3256,7 +3256,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["hurricane polo", "weather", "storm", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1527482797697-01785c6805a6?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/hurricane-polo-why-trending-explained/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -3352,7 +3352,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["ella langley", "country music", "music", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/ella-langley-why-trending-explained/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -3448,7 +3448,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["amy hunt", "uk", "trends", "sports", "entertainment"],
-    imageUrl: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/amy-hunt-why-trending-explained/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -3546,7 +3546,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["chagos islands", "uk", "mauritius", "geopolitics", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/chagos-islands-why-trending-explained/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -3644,7 +3644,7 @@ export const september2026Posts = [
     `,
     category: "fintech",
     tags: ["bitcoin", "crypto", "price", "markets", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/bitcoin-why-trending-price-explained/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -3742,7 +3742,7 @@ export const september2026Posts = [
     `,
     category: "fintech",
     tags: ["diesel", "uk", "fuel prices", "energy", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/diesel-price-uk-why-trending-explained/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -3838,7 +3838,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["john goodman", "hollywood", "hollywood", "entertainment", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/john-goodman-why-trending-explained/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -3934,7 +3934,7 @@ export const september2026Posts = [
     `,
     category: "news",
     tags: ["angry anderson", "rose tattoo", "music", "australia", "trends"],
-    imageUrl: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/angry-anderson-why-trending-explained/opengraph-image",
     date: "2026-09-23",
     updatedAt: "2026-09-23",
     readTime: "12 min read",
@@ -4024,7 +4024,7 @@ export const september2026Posts = [
       <p>Finally: respect living family and colleagues. Avoid speculative medical narratives and deepfake clips. Readers remember which brands stayed careful when the search graph was loud.</p>
 `,
     category: "news",
-    imageUrl: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/gloria-steinem-why-trending-legacy-explained/opengraph-image",
     date: "2026-09-22",
     updatedAt: "2026-09-22",
     readTime: "9 min read",
@@ -4113,7 +4113,7 @@ export const september2026Posts = [
       <p>If your company needs help scoping AI features, CRM/agent pilots, or secure app integrations without buying every frontier SKU on day one, browse TheTriFusion <a href="/blog">blog</a> or outline the workflow on <a href="/discuss">/discuss</a>. Evergreen accuracy beats a thin “Astra is here!!!” post that ages in 48 hours.</p>
 `,
     category: "webdev",
-    imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/gpt-6-astra-whats-known-vs-rumor/opengraph-image",
     date: "2026-09-22",
     updatedAt: "2026-09-22",
     readTime: "10 min read",
@@ -4209,7 +4209,7 @@ export const september2026Posts = [
       <p>Finally, keep internal linking honest: send readers to related explainers only when they truly help. Forced ecommerce pitches on sports or religious observances feel tone-deaf; a single soft link to discuss project scoping or the blog is enough when it is natural.</p>
 `,
     category: "news",
-    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/nativity-of-the-blessed-virgin-mary-explained/opengraph-image",
     date: "2026-09-21",
     updatedAt: "2026-09-21",
     readTime: "10 min read",
@@ -4309,7 +4309,7 @@ export const september2026Posts = [
       <p>Additional context for heavy search days: open two independent sources before you share, prefer pages that show an author and update time, and be willing to say “we do not know yet.” That sentence is not weakness — it is how trustworthy publishers behave when facts are still moving.</p>
 `,
     category: "news",
-    imageUrl: "https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/election-results-itogi-vyborov-what-searchers-want/opengraph-image",
     date: "2026-09-21",
     updatedAt: "2026-09-21",
     readTime: "10 min read",
@@ -4406,7 +4406,7 @@ export const september2026Posts = [
       <p>Additional context for heavy search days: open two independent sources before you share, prefer pages that show an author and update time, and be willing to say “we do not know yet.” That sentence is not weakness — it is how trustworthy publishers behave when facts are still moving.</p>
 `,
     category: "news",
-    imageUrl: "https://images.unsplash.com/photo-1555597673-b21f3c383725?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/grigory-ponomarev-mma-fighter-profile/opengraph-image",
     date: "2026-09-21",
     updatedAt: "2026-09-21",
     readTime: "9 min read",
@@ -4498,7 +4498,7 @@ export const september2026Posts = [
       <p>Additional context for heavy search days: open two independent sources before you share, prefer pages that show an author and update time, and be willing to say “we do not know yet.” That sentence is not weakness — it is how trustworthy publishers behave when facts are still moving.</p>
 `,
     category: "news",
-    imageUrl: "https://images.unsplash.com/photo-1494172961521-33799ddd918b?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/who-won-the-elections-how-to-check-results/opengraph-image",
     date: "2026-09-21",
     updatedAt: "2026-09-21",
     readTime: "9 min read",
@@ -4595,7 +4595,7 @@ export const september2026Posts = [
       <p>Additional context for heavy search days: open two independent sources before you share, prefer pages that show an author and update time, and be willing to say “we do not know yet.” That sentence is not weakness — it is how trustworthy publishers behave when facts are still moving.</p>
 `,
     category: "news",
-    imageUrl: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/presley-gerber-trending-why-people-search/opengraph-image",
     date: "2026-09-21",
     updatedAt: "2026-09-21",
     readTime: "9 min read",
@@ -4696,7 +4696,7 @@ export const september2026Posts = [
       <p>Additional context for heavy search days: open two independent sources before you share, prefer pages that show an author and update time, and be willing to say “we do not know yet.” That sentence is not weakness — it is how trustworthy publishers behave when facts are still moving.</p>
 `,
     category: "webdev",
-    imageUrl: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/production-calendar-2027-russia-explained/opengraph-image",
     date: "2026-09-21",
     updatedAt: "2026-09-21",
     readTime: "11 min read",
@@ -4784,7 +4784,7 @@ export const september2026Posts = [
       <p>Additional context for heavy search days: open two independent sources before you share, prefer pages that show an author and update time, and be willing to say “we do not know yet.” That sentence is not weakness — it is how trustworthy publishers behave when facts are still moving.</p>
 `,
     category: "news",
-    imageUrl: "https://images.unsplash.com/photo-1566577739118-529608bb0d8f?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/caleb-williams-nfl-trending-update/opengraph-image",
     date: "2026-09-21",
     updatedAt: "2026-09-21",
     readTime: "9 min read",
@@ -4875,7 +4875,7 @@ export const september2026Posts = [
       <p>Additional context for heavy search days: open two independent sources before you share, prefer pages that show an author and update time, and be willing to say “we do not know yet.” That sentence is not weakness — it is how trustworthy publishers behave when facts are still moving.</p>
 `,
     category: "news",
-    imageUrl: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/colts-vs-chiefs-preview-what-fans-search/opengraph-image",
     date: "2026-09-21",
     updatedAt: "2026-09-21",
     readTime: "9 min read",
@@ -4968,7 +4968,7 @@ export const september2026Posts = [
       <p>Additional context for heavy search days: open two independent sources before you share, prefer pages that show an author and update time, and be willing to say “we do not know yet.” That sentence is not weakness — it is how trustworthy publishers behave when facts are still moving.</p>
 `,
     category: "news",
-    imageUrl: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/jayden-daniels-injury-what-is-known/opengraph-image",
     date: "2026-09-21",
     updatedAt: "2026-09-21",
     readTime: "10 min read",
@@ -5069,7 +5069,7 @@ export const september2026Posts = [
       <p>Additional context for heavy search days: open two independent sources before you share, prefer pages that show an author and update time, and be willing to say “we do not know yet.” That sentence is not weakness — it is how trustworthy publishers behave when facts are still moving.</p>
 `,
     category: "webdev",
-    imageUrl: "https://images.unsplash.com/photo-1501139083538-0139583c060f?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/permanent-daylight-savings-time-debate-explained/opengraph-image",
     date: "2026-09-21",
     updatedAt: "2026-09-21",
     readTime: "11 min read",
@@ -5157,7 +5157,7 @@ export const september2026Posts = [
       <p>Additional context for heavy search days: open two independent sources before you share, prefer pages that show an author and update time, and be willing to say “we do not know yet.” That sentence is not weakness — it is how trustworthy publishers behave when facts are still moving.</p>
 `,
     category: "news",
-    imageUrl: "https://images.unsplash.com/photo-1498038432885-c6f43dba55a4?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/chad-gilbert-trending-who-is-he/opengraph-image",
     date: "2026-09-21",
     updatedAt: "2026-09-21",
     readTime: "9 min read",
@@ -5248,7 +5248,7 @@ export const september2026Posts = [
       <p>Additional context for heavy search days: open two independent sources before you share, prefer pages that show an author and update time, and be willing to say “we do not know yet.” That sentence is not weakness — it is how trustworthy publishers behave when facts are still moving.</p>
 `,
     category: "news",
-    imageUrl: "https://images.unsplash.com/photo-1601142634808-51628e955174?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/yom-kippur-2026-meaning-date-observance/opengraph-image",
     date: "2026-09-21",
     updatedAt: "2026-09-21",
     readTime: "10 min read",
@@ -5352,8 +5352,7 @@ export const september2026Posts = [
       <p>If your customers are on Galaxy devices, do not wait for a one-star wave after One UI 9 lands in India. Send your Play Console vitals summary to TheTriFusion’s Jaipur Android team — we will tell you whether you need a weekend hotfix, a proper QA sprint, or a broader <a href="/services/mobile-app-development">mobile app</a> refresh before festive traffic.</p>
     `,
     category: "mobile",
-    imageUrl:
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/samsung-one-ui-9-india-android-apps-business/opengraph-image",
     date: "2026-09-21",
     updatedAt: "2026-09-21",
     readTime: "9 min read",
@@ -5470,8 +5469,7 @@ export const september2026Posts = [
       <p>Print this checklist, tick what is done, and send the gaps to TheTriFusion. Whether you need a full <strong>publish Android app India</strong> build or a listing-only rescue before festive season, we will scope in writing — no fake AI claims, just a store-ready Android product.</p>
     `,
     category: "mobile",
-    imageUrl:
-      "https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/google-play-store-app-launch-checklist-india-sme/opengraph-image",
     date: "2026-09-21",
     updatedAt: "2026-09-21",
     readTime: "10 min read",
@@ -5588,8 +5586,7 @@ export const september2026Posts = [
     `,
     category: "mobile",
     image: "/assets/images/blog/ecommerce-cost.jpg",
-    imageUrl:
-      "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/iphone-18-india-price-launch-ios-apps-business/opengraph-image",
     date: "2026-09-18",
     updatedAt: "2026-09-18",
     readTime: "10 min read",
@@ -5702,8 +5699,7 @@ export const september2026Posts = [
     `,
     category: "mobile",
     image: "/assets/images/blog/ecommerce-cost.jpg",
-    imageUrl:
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/iphone-18-apple-intelligence-business-apps-india/opengraph-image",
     date: "2026-09-18",
     updatedAt: "2026-09-18",
     readTime: "11 min read",
@@ -5806,7 +5802,7 @@ export const september2026Posts = [
     `,
     category: "fintech",
     image: "/assets/images/blog/fintech-india.jpg",
-    imageUrl: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/upi-charges-in-india-2026-complete-guide/opengraph-image",
     date: "2026-09-16",
     updatedAt: "2026-09-16",
     readTime: "12 min read",
@@ -5902,7 +5898,7 @@ export const september2026Posts = [
     `,
     category: "fintech",
     image: "/assets/images/blog/fintech-india.jpg",
-    imageUrl: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/upi-mdr-charges-for-merchants-india/opengraph-image",
     date: "2026-09-16",
     updatedAt: "2026-09-16",
     readTime: "12 min read",
@@ -5999,7 +5995,7 @@ export const september2026Posts = [
     `,
     category: "fintech",
     image: "/assets/images/blog/fintech-india.jpg",
-    imageUrl: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/upi-payment-gateway-charges-comparison-india/opengraph-image",
     date: "2026-09-16",
     updatedAt: "2026-09-16",
     readTime: "12 min read",
@@ -6090,7 +6086,7 @@ export const september2026Posts = [
     `,
     category: "fintech",
     image: "/assets/images/blog/fintech-india.jpg",
-    imageUrl: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/upi-vs-card-vs-netbanking-charges-ecommerce-india/opengraph-image",
     date: "2026-09-16",
     updatedAt: "2026-09-16",
     readTime: "12 min read",
@@ -6181,7 +6177,7 @@ export const september2026Posts = [
     `,
     category: "fintech",
     image: "/assets/images/blog/fintech-india.jpg",
-    imageUrl: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/free-upi-transactions-india-what-businesses-still-pay/opengraph-image",
     date: "2026-09-16",
     updatedAt: "2026-09-16",
     readTime: "12 min read",
@@ -6272,7 +6268,7 @@ export const september2026Posts = [
     `,
     category: "fintech",
     image: "/assets/images/blog/fintech-india.jpg",
-    imageUrl: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/upi-autopay-mandate-charges-india-explained/opengraph-image",
     date: "2026-09-16",
     updatedAt: "2026-09-16",
     readTime: "12 min read",
@@ -6363,7 +6359,7 @@ export const september2026Posts = [
     `,
     category: "fintech",
     image: "/assets/images/blog/fintech-india.jpg",
-    imageUrl: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/upi-p2m-charges-person-to-merchant-india/opengraph-image",
     date: "2026-09-16",
     updatedAt: "2026-09-16",
     readTime: "12 min read",
@@ -6454,7 +6450,7 @@ export const september2026Posts = [
     `,
     category: "fintech",
     image: "/assets/images/blog/fintech-india.jpg",
-    imageUrl: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/upi-charges-impact-ecommerce-checkout-cost-india/opengraph-image",
     date: "2026-09-16",
     updatedAt: "2026-09-16",
     readTime: "12 min read",
@@ -6545,7 +6541,7 @@ export const september2026Posts = [
     `,
     category: "fintech",
     image: "/assets/images/blog/fintech-india.jpg",
-    imageUrl: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/upi-qr-code-payment-charges-offline-shops-india/opengraph-image",
     date: "2026-09-16",
     updatedAt: "2026-09-16",
     readTime: "12 min read",
@@ -6642,7 +6638,7 @@ export const september2026Posts = [
     `,
     category: "fintech",
     image: "/assets/images/blog/fintech-india.jpg",
-    imageUrl: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/hidden-upi-charges-settlement-fees-indian-sme/opengraph-image",
     date: "2026-09-16",
     updatedAt: "2026-09-16",
     readTime: "12 min read",
@@ -6744,7 +6740,7 @@ export const september2026Posts = [
     `,
     category: "webdev",
     image: "/assets/images/blog/ecommerce-cost.jpg",
-    imageUrl: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/social-security-in-india-2026-epfo-esic-employer-guide/opengraph-image",
     date: "2026-09-16",
     updatedAt: "2026-09-16",
     readTime: "12 min read",
@@ -6841,7 +6837,7 @@ export const september2026Posts = [
     `,
     category: "webdev",
     image: "/assets/images/blog/ecommerce-cost.jpg",
-    imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/salesforce-koa-crm-reasoning-model-nvidia-nemotron-explained/opengraph-image",
     date: "2026-09-16",
     updatedAt: "2026-09-16",
     readTime: "11 min read",
@@ -6943,7 +6939,7 @@ export const september2026Posts = [
     `,
     category: "webdev",
     image: "/assets/images/blog/ecommerce-cost.jpg",
-    imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/salesforce-nvidia-koa-vs-frontier-ai-labs/opengraph-image",
     date: "2026-09-16",
     updatedAt: "2026-09-16",
     readTime: "11 min read",
@@ -7055,7 +7051,7 @@ export const september2026Posts = [
     `,
     category: "webdev",
     image: "/assets/images/blog/ecommerce-cost.jpg",
-    imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "/blog/salesforce-agentforce-koa-ai-push-what-investors-and-teams-watch/opengraph-image",
     date: "2026-09-16",
     updatedAt: "2026-09-16",
     readTime: "11 min read",

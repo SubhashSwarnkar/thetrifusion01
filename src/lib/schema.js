@@ -338,27 +338,51 @@ export function faqSchema(faqItems = []) {
 }
 
 export function articleSchema(post) {
+  const canonical = absoluteSiteUrl(`/blog/${post.slug}`);
+  const imageUrl = post.imageUrl
+    ? post.imageUrl.startsWith("http")
+      ? post.imageUrl
+      : absoluteSiteUrl(post.imageUrl)
+    : siteConfig.defaultOgImage;
+
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    "@id": `${canonical}#article`,
     headline: post.title,
     description: post.excerpt,
-    image: post.imageUrl || siteConfig.defaultOgImage,
+    image: [imageUrl],
     datePublished: post.date,
     dateModified: post.updatedAt || post.date,
+    inLanguage: "en-IN",
     author: {
       "@type": "Person",
       name: post.author || siteConfig.name,
+      url: siteConfig.url,
     },
     publisher: {
       "@type": "Organization",
       name: siteConfig.legalName,
+      url: siteConfig.url,
       logo: {
         "@type": "ImageObject",
         url: siteConfig.logoUrl,
       },
     },
-    mainEntityOfPage: absoluteSiteUrl(`/blog/${post.slug}`),
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": canonical,
+    },
+    url: canonical,
+    isPartOf: {
+      "@type": "Blog",
+      "@id": absoluteSiteUrl("/blog"),
+      name: "TheTriFusion Blog",
+      publisher: {
+        "@type": "Organization",
+        name: siteConfig.legalName,
+      },
+    },
     keywords: post.keywords || post.category,
     about: post.category,
   };

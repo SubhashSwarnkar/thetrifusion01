@@ -21,12 +21,15 @@ export function generateMetadata({ params }) {
     });
   }
 
+  // Prefer self-hosted unique OG cards so Google does not cluster us with
+  // unrelated sites that reuse the same Unsplash stock URLs.
+  const selfHostedOg = `/blog/${post.slug}/opengraph-image`;
   return buildMetadata({
     title: post.metaTitle || `${post.title} | TheTriFusion`,
     description: post.excerpt,
     path: `/blog/${post.slug}`,
     type: "article",
-    image: post.imageUrl,
+    image: selfHostedOg,
     publishedTime: post.date,
     authors: post.author ? [post.author] : undefined,
     noIndex: ARCHIVE_NOINDEX_SLUGS.has(post.slug),
