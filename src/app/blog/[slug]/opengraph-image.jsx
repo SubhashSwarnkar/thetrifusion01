@@ -1,12 +1,12 @@
 import { ImageResponse } from "next/og";
-import { blogPosts, getBlogBySlug } from "data/blogData";
+import { getBlogBySlug } from "data/blogData";
 
 export const alt = "TheTriFusion Blog";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export function generateStaticParams() {
-  return blogPosts.map((post) => ({ slug: post.slug }));
-}
+
+// On-demand only — avoid generating 100+ PNG cards at build (Vercel OOM/timeout risk).
+export const dynamic = "force-dynamic";
 
 /** Deterministic accent colour from slug so each post card looks unique. */
 function accentForSlug(slug = "") {
@@ -24,14 +24,15 @@ function accentForSlug(slug = "") {
   };
 }
 
-export default function OpenGraphImage({ params }) {
-  const post = getBlogBySlug(params.slug);
+export default async function OpenGraphImage({ params }) {
+  const slug = params?.slug || "";
+  const post = getBlogBySlug(slug);
   const title = post?.title || "TheTriFusion Blog";
   const category = post?.category || "Insights";
   const subtitle =
     post?.excerpt ||
     "Trends explainers, product notes & digital guides from TheTriFusion.";
-  const colors = accentForSlug(params.slug);
+  const colors = accentForSlug(slug);
   const titleSize = title.length > 72 ? 40 : title.length > 48 ? 48 : 56;
 
   return new ImageResponse(
@@ -108,7 +109,7 @@ export default function OpenGraphImage({ params }) {
             color: "#94a3b8",
           }}
         >
-          <span>thetrifusion.in/blog/{params.slug}</span>
+          <span>thetrifusion.in/blog/{slug}</span>
           <span>Self-hosted · unique card</span>
         </div>
       </div>
