@@ -30,11 +30,26 @@ export const ARCHIVE_NOINDEX_SLUGS = new Set([
 
 export const blogCategories = [
   { id: "all", name: "All Topics", icon: "🌐" },
+  { id: "news", name: "Trends & News", icon: "🔥" },
   { id: "casestudy", name: "Case Studies", icon: "📁" },
   { id: "mlm", name: "MLM & CRM", icon: "🌳" },
   { id: "fintech", name: "Fintech", icon: "💳" },
   { id: "mobile", name: "Mobile Apps", icon: "📱" },
   { id: "webdev", name: "Web Development", icon: "💻" },
+];
+
+/** High-volume Trends / hub picks (featured:true). */
+export const HUB_TRENDING_SLUGS = [
+  "asian-games-men-why-trending-explained",
+  "england-vs-sri-lanka-why-trending-explained",
+  "nigella-lawson-why-trending-explained",
+  "lynx-vs-fever-wnba-why-trending",
+  "vivo-v80-specs-price-india-what-we-know",
+  "opus-5-5-ai-model-whats-known",
+  "epf-employee-provident-fund-india-guide",
+  "measles-why-trending-symptoms-facts",
+  "bitcoin-why-trending-price-explained",
+  "zelenskyy-why-trending-explained",
 ];
 
 export const isArchivedPost = (slug) => ARCHIVE_NOINDEX_SLUGS.has(slug);
@@ -2694,6 +2709,20 @@ export const searchBlogs = (query) => {
       post.title.toLowerCase().includes(lowercaseQuery) ||
       post.excerpt.toLowerCase().includes(lowercaseQuery)
   );
+};
+
+
+export const getFeaturedBlogPosts = (limit = 12) =>
+  getPublishedBlogPosts()
+    .filter((post) => post.featured)
+    .slice(0, limit);
+
+export const getLatestBlogPosts = (limit = 40) =>
+  getPublishedBlogPosts().slice(0, limit);
+
+export const getHubTrendingPosts = () => {
+  const bySlug = new Map(getPublishedBlogPosts().map((p) => [p.slug, p]));
+  return HUB_TRENDING_SLUGS.map((slug) => bySlug.get(slug)).filter(Boolean);
 };
 
 export const getBlogBySlug = (slug) => {

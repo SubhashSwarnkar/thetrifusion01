@@ -67,8 +67,8 @@ export default function sitemap() {
     .map((post) => ({
     url: `${siteConfig.url}/blog/${post.slug}`,
     lastModified: safeDate(post.updatedAt || post.date || "2026-09-12", fallbackDate),
-    changeFrequency: "weekly",
-    priority: 0.75,
+    changeFrequency: post.featured ? "daily" : "weekly",
+    priority: post.featured ? 0.85 : 0.75,
   }));
 
   const portfolioRoutes = Portfolios.filter(isIndexablePortfolio).map(

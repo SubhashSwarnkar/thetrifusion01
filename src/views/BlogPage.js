@@ -11,6 +11,8 @@ import {
   getPublishedBlogPosts,
   getBlogsByCategory,
   searchBlogs,
+  getHubTrendingPosts,
+  getLatestBlogPosts,
 } from "data/blogData";
 import SEO from "components/common/SEO";
 
@@ -18,6 +20,8 @@ export default function BlogPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [displayedPosts, setDisplayedPosts] = useState(getPublishedBlogPosts());
+  const trendingPosts = getHubTrendingPosts();
+  const latestPosts = getLatestBlogPosts(40);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -43,6 +47,9 @@ export default function BlogPage() {
       day: "numeric",
     });
   };
+
+  const showDiscovery =
+    !searchQuery.trim() && selectedCategory === "all";
 
   return (
     <>
@@ -70,6 +77,77 @@ export default function BlogPage() {
             <Link href="/ios-app-development" className="px-4 py-2 rounded-full border border-theme-purple/30 text-theme-purple font-semibold hover:bg-light-theme-purple">iOS apps</Link>
           </div>
         </Fade>
+
+        {showDiscovery && trendingPosts.length > 0 && (
+          <Fade direction="up" delay={250} triggerOnce>
+            <div className="mb-12 rounded-2xl border border-theme-purple/20 bg-gradient-to-br from-light-theme-purple/40 to-white p-6 sm:p-8">
+              <div className="flex flex-wrap items-end justify-between gap-3 mb-4">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-theme-purple mb-1">
+                    Trending now
+                  </p>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-theme-blue">
+                    High-volume explainers (23 Sep 2026)
+                  </h2>
+                </div>
+                <Link
+                  href="#latest-trends"
+                  className="text-sm font-semibold text-theme-purple hover:underline"
+                >
+                  See all latest →
+                </Link>
+              </div>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {trendingPosts.map((post) => (
+                  <li key={post.slug}>
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="block rounded-xl border border-white/80 bg-white px-4 py-3 shadow-sm hover:border-theme-purple/40 transition-colors"
+                    >
+                      <span className="text-theme-blue font-semibold leading-snug">
+                        {post.title}
+                      </span>
+                      <span className="block text-xs text-gray-500 mt-1">
+                        {formatDate(post.date)} · Featured
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Fade>
+        )}
+
+        {showDiscovery && latestPosts.length > 0 && (
+          <Fade direction="up" delay={280} triggerOnce>
+            <div id="latest-trends" className="mb-12 scroll-mt-24">
+              <div className="flex flex-wrap items-end justify-between gap-3 mb-4">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-theme-purple mb-1">
+                    Latest
+                  </p>
+                  <h2 className="text-xl sm:text-2xl font-bold text-theme-blue">
+                    Newest posts — crawl-friendly index
+                  </h2>
+                </div>
+              </div>
+              <div className="rounded-2xl border border-gray-100 bg-white p-5 sm:p-6">
+                <ul className="columns-1 sm:columns-2 lg:columns-3 gap-x-8 text-sm leading-relaxed">
+                  {latestPosts.map((post) => (
+                    <li key={post.slug} className="mb-2 break-inside-avoid">
+                      <Link
+                        href={`/blog/${post.slug}`}
+                        className="text-theme-blue hover:text-theme-purple hover:underline"
+                      >
+                        {post.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </Fade>
+        )}
 
         {/* Search Bar */}
         <Fade direction="up" delay={300} triggerOnce>
@@ -133,7 +211,7 @@ export default function BlogPage() {
         {displayedPosts.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {displayedPosts.map((post, index) => (
-              <Fade key={post.id} direction="up" delay={index * 100} triggerOnce>
+              <Fade key={post.id} direction="up" delay={Math.min(index, 12) * 40} triggerOnce>
                 <Link href={`/blog/${post.slug}`}>
                   <article className="bg-white rounded-2xl shadow-xl border border-light-theme-purple overflow-hidden transform transition duration-300 hover:scale-105 cursor-pointer h-full flex flex-col">
                     <div className="relative h-48 bg-gray-200 overflow-hidden">
@@ -196,4 +274,3 @@ export default function BlogPage() {
     </>
   );
 }
-

@@ -307,7 +307,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing"],
   },
 
@@ -410,7 +410,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing"],
   },
 
@@ -510,7 +510,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing"],
   },
 
@@ -712,7 +712,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing"],
   },
 
@@ -812,7 +812,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing"],
   },
 
@@ -1008,7 +1008,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing"],
   },
 
@@ -1108,7 +1108,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing", "mobile-app-development"],
   },
 
@@ -1208,7 +1208,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing"],
   },
 
@@ -1507,7 +1507,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing"],
   },
 
@@ -1803,7 +1803,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["mobile-app-development", "digital-marketing"],
   },
 
@@ -1901,7 +1901,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing", "mobile-app-development"],
   },
 
@@ -1999,7 +1999,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing"],
   },
 
@@ -2095,7 +2095,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing"],
   },
 
@@ -2289,7 +2289,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["mobile-app-development", "digital-marketing"],
   },
 
@@ -2389,7 +2389,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing"],
   },
 
@@ -2487,7 +2487,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing", "web-development"],
   },
 
@@ -2585,7 +2585,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing"],
   },
 
@@ -2681,7 +2681,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing"],
   },
 
@@ -2779,7 +2779,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing"],
   },
 
@@ -2875,7 +2875,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing"],
   },
 
@@ -2971,7 +2971,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing"],
   },
 
@@ -3067,7 +3067,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing"],
   },
 
@@ -3163,7 +3163,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing", "web-development"],
   },
 
@@ -3261,7 +3261,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing"],
   },
 
@@ -3357,7 +3357,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing"],
   },
 
@@ -3453,7 +3453,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing"],
   },
 
@@ -3551,7 +3551,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing"],
   },
 
@@ -3747,7 +3747,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing"],
   },
 
@@ -3843,7 +3843,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing"],
   },
 
@@ -3939,7 +3939,7 @@ export const september2026Posts = [
     updatedAt: "2026-09-23",
     readTime: "12 min read",
     author: "TheTriFusion Team",
-    featured: true,
+    featured: false,
     relatedServiceSlugs: ["digital-marketing"],
   },
 
