@@ -21,12 +21,9 @@ export function generateMetadata({ params }) {
     });
   }
 
-  // Prefer self-hosted unique cards (SVG under /images/blog-og) so Google
-  // does not cluster us with unrelated sites sharing Unsplash stock URLs.
-  // opengraph-image PNG route remains as a social-card enhancer.
-  const selfHostedOg = post.imageUrl?.startsWith("/images/blog-og/")
-    ? post.imageUrl
-    : `/images/blog-og/${post.slug}.svg`;
+  // Prefer self-hosted unique PNG OG cards (edge opengraph-image). Hero still
+  // uses /images/blog-og/<slug>.svg. Avoids Unsplash stock URL clustering.
+  const selfHostedOg = `/blog/${post.slug}/opengraph-image`;
   return buildMetadata({
     title: post.metaTitle || `${post.title} | TheTriFusion`,
     description: post.excerpt,
