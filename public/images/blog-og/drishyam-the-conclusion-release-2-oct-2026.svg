@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="hsl(30,55%,14%)"/>
+      <stop offset="55%" stop-color="hsl(58,48%,22%)"/>
+      <stop offset="100%" stop-color="hsl(85,42%,28%)"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <text x="64" y="72" fill="hsl(30,80%,72%)" font-family="system-ui,sans-serif" font-size="26" font-weight="600">TheTriFusion Blog</text>
+  <text x="64" y="250" fill="#f8fafc" font-family="system-ui,sans-serif" font-size="48" font-weight="800"><tspan x="64" dy="0">Drishyam Conclusion:</tspan><tspan x="64" dy="58">Theatres 2 Oct 2026</tspan></text>
+  <text x="64" y="560" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="22">thetrifusion.in/blog/drishyam-the-conclusion-release-2-oct-2026</text>
+</svg>

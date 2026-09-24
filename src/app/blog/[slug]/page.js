@@ -2,7 +2,7 @@ import Page from "views/BlogDetailPage";
 import JsonLd from "components/JsonLd";
 import { blogPosts, getBlogBySlug, ARCHIVE_NOINDEX_SLUGS } from "data/blogData";
 import { buildMetadata } from "lib/seoConfig";
-import { articleSchema, breadcrumbSchema, faqSchema } from "lib/schema";
+import { articleSchema, breadcrumbSchema, faqSchema, eventSchema } from "lib/schema";
 import { extractBlogFaqs } from "lib/blogFaqs";
 
 export function generateStaticParams() {
@@ -54,6 +54,7 @@ export default function RoutePage({ params }) {
           {extractBlogFaqs(post.content).length > 0 ? (
             <JsonLd data={faqSchema(extractBlogFaqs(post.content))} />
           ) : null}
+          {eventSchema(post) ? <JsonLd data={eventSchema(post)} /> : null}
         </>
       ) : null}
       <Page />

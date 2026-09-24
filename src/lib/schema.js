@@ -337,6 +337,77 @@ export function faqSchema(faqItems = []) {
   };
 }
 
+
+/**
+ * Optional per-post Event / SportsEvent JSON-LD.
+ * Pass post.event = {
+ *   type: "SportsEvent" | "Event",
+ *   name, startDate (ISO), endDate?,
+ *   location: { name, addressLocality?, addressRegion?, addressCountry? },
+ *   organizer?: string,
+ *   eventStatus?: string (default EventScheduled),
+ *   eventAttendanceMode?: string (default OfflineEventAttendanceMode),
+ * }
+ * Missing/invalid event objects are ignored so other posts stay unchanged.
+ */
+export function eventSchema(post) {
+  const ev = post && post.event;
+  if (!ev || typeof ev !== "object" || !ev.name || !ev.startDate) return null;
+
+  const type = ev.type === "SportsEvent" ? "SportsEvent" : "Event";
+  const locationName =
+    typeof ev.location === "string"
+      ? ev.location
+      : ev.location && ev.location.name
+        ? ev.location.name
+        : null;
+  if (!locationName) return null;
+
+  const address =
+    typeof ev.location === "object" && ev.location
+      ? {
+          "@type": "PostalAddress",
+          ...(ev.location.addressLocality
+            ? { addressLocality: ev.location.addressLocality }
+            : {}),
+          ...(ev.location.addressRegion
+            ? { addressRegion: ev.location.addressRegion }
+            : {}),
+          ...(ev.location.addressCountry
+            ? { addressCountry: ev.location.addressCountry }
+            : {}),
+        }
+      : undefined;
+
+  const node = {
+    "@context": "https://schema.org",
+    "@type": type,
+    name: ev.name,
+    startDate: ev.startDate,
+    ...(ev.endDate ? { endDate: ev.endDate } : {}),
+    eventStatus: `https://schema.org/${ev.eventStatus || "EventScheduled"}`,
+    eventAttendanceMode: `https://schema.org/${
+      ev.eventAttendanceMode || "OfflineEventAttendanceMode"
+    }`,
+    location: {
+      "@type": "Place",
+      name: locationName,
+      ...(address && Object.keys(address).length > 1 ? { address } : {}),
+    },
+    url: absoluteSiteUrl(`/blog/${post.slug}`),
+    ...(ev.organizer
+      ? {
+          organizer: {
+            "@type": "Organization",
+            name: ev.organizer,
+          },
+        }
+      : {}),
+  };
+
+  return node;
+}
+
 export function articleSchema(post) {
   const canonical = absoluteSiteUrl(`/blog/${post.slug}`);
   const imageUrl = post.imageUrl
