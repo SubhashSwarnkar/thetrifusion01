@@ -5,7 +5,7 @@ import { upcomingEvents2026Posts } from "./blogPostsUpcomingEvents2026";
 /**
  * Blog editorial: ship 2 Jaipur / Rajasthan / India delivery posts each month.
  * Featured = local or product work. Off-topic 2024 posts are archived (noindex)
- * and hidden from /blog listing. URLs stay live so old links do not 404.
+ * and hidden from /blog listing. Retired slugs 301 to /blog (see next.config).
  */
 
 export const ARCHIVE_NOINDEX_SLUGS = new Set([
@@ -1837,7 +1837,7 @@ export const blogPosts = [
       'Gemini and ChatGPT dominate India AI search. A practical comparison for founders choosing APIs for support bots, apps, and internal tools — without fan wars.',
     content: `
       <h2>Pick by product needs, not brand loyalty or Twitter debates</h2>
-      <p>Founders often ask us to just pick "the better one" between Google Gemini and OpenAI's ChatGPT/GPT models. The honest answer is that both are strong, general-purpose models, and the right choice depends on your specific product — not on which one trends better online this month. Compare Hindi-language quality on your actual FAQ content, multimodal needs (does your product need to understand images or documents), latency requirements, pricing at your expected volume, and data-retention policies relevant to your compliance needs. Many teams we work with keep a model-agnostic API layer specifically so they are never locked into one vendor and can switch or A/B test later without a rebuild.</p>
+      <p>Founders often ask us to just pick "the better one" between Google Gemini and OpenAI's ChatGPT/GPT models. This comparison is written for Indian SMEs and product teams choosing an API stack in 2026 — not a generic US-centric model scorecard. The honest answer is that both are strong, general-purpose models, and the right choice depends on your specific product — not on which one trends better online this month. Compare Hindi-language quality on your actual FAQ content, multimodal needs (does your product need to understand images or documents), latency requirements, pricing at your expected volume, and data-retention policies relevant to your compliance needs. Many teams we work with keep a model-agnostic API layer specifically so they are never locked into one vendor and can switch or A/B test later without a rebuild.</p>
 
       <h3>Where Gemini tends to have an edge</h3>
       <p>Gemini benefits from tight Android and Google Workspace adjacency, which matters if your product already lives inside that ecosystem (Gmail, Docs, Android-native features). Its multimodal capabilities are strong for search-adjacent research flows and image/document understanding tasks where Google's underlying search and vision infrastructure gives it an advantage.</p>

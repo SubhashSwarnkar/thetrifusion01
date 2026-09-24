@@ -11,7 +11,7 @@ Every listing, profile, and schema field below must match this table **character
 | Legal name | `Trifusion Infotech Private Limited` |
 | Brand name | `TheTriFusion` |
 | City (HQ) | `Jaipur, Rajasthan, India` — **never Bhilwara** |
-| Website | `https://www.thetrifusion.in` |
+| Website | `https://thetrifusion.in` |
 | Public email | `contact@thetrifusion.in` |
 | Phone | Same number shown in the site footer — copy it from the live site at the time of each listing, do not retype from memory |
 | Street address | Only publish a street line once `NEXT_PUBLIC_COMPANY_STREET` is set **and** it matches Google Business Profile exactly. Until then, city-level NAP only. |
@@ -34,7 +34,7 @@ Priority: **P0** = fixes an active wrong/conflicting listing (do first) · **P1*
 | 8 | P2 | Create/update directory listing | DesignRush | Same NAP + same live portfolio URLs as Clutch | ☐ Not started | | |
 | 9 | P2 | Update existing listing to current NAP | IndiaMART (company profile, not just directory audit in row 3) | Jaipur address only — remove any old city reference | ☐ Not started | | |
 | 10 | P2 | Update existing listing to current NAP | Justdial (company profile, not just directory audit in row 2) | Jaipur address only — remove any old city reference | ☐ Not started | | |
-| 11 | P2 | Request a "Developed by TheTriFusion" credit + dofollow backlink | Each delivered client's live site (PlugOne, DailyConcepts, Connect Dairy, Atharv Narayan, and future clients) | Link text → `TheTriFusion`, target → `https://www.thetrifusion.in` | ☐ Not started | | |
+| 11 | P2 | Request a "Developed by TheTriFusion" credit + dofollow backlink | Each delivered client's live site (PlugOne, DailyConcepts, Connect Dairy, Atharv Narayan, and future clients) | Link text → `TheTriFusion`, target → `https://thetrifusion.in` | ☐ Not started | | |
 | 12 | P2 | Post one update per new live project | LinkedIn company page | Follow the PlugOne / DailyConcepts / Connect Dairy pattern. Keep the page active — an empty company page is a trust red flag to visitors who check it. | ☐ Not started | | |
 | 13 | P2 | Request reviews after each successful launch | Google Business Profile + Clutch | Ask the client directly within a week of go-live, while the experience is fresh | ☐ Not started | | |
 | 14 | P2 | Publish a guest post linking to a niche service page (not just the homepage) | dev.to, Hashnode, or an Indian startup blog | Link target → a specific niche page: MLM CRM, EV charging, or fintech service page | ☐ Not started | | |
@@ -46,7 +46,7 @@ Priority: **P0** = fixes an active wrong/conflicting listing (do first) · **P1*
 | Check | Detail |
 |---|---|
 | GA4 | Stream `G-NSKGY1KSP4` (see `.env.example`). If the same stream also fires inside GTM `GTM-M8RQSNHN`, keep only one source live — otherwise pageviews double-count. |
-| Search Console | Verification file `public/google3205c300891a938f.html` is already in the repo. In GSC: verify the `www.thetrifusion.in` property if not already verified, then submit `https://www.thetrifusion.in/sitemap.xml`. |
+| Search Console | Verification file `public/google3205c300891a938f.html` is already in the repo. In GSC: prefer the apex `https://thetrifusion.in` URL-prefix or Domain property; submit `https://thetrifusion.in/sitemap.xml`. Do not treat www as canonical. |
 
 ## 4. Recurring cadence
 

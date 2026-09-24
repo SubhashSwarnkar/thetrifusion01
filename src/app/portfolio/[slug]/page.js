@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import Page from "views/ProjectDetailPage";
 import JsonLd from "components/JsonLd";
 import { Portfolios, isIndexablePortfolio } from "json/landingPageData";
@@ -12,13 +13,10 @@ export function generateMetadata({ params }) {
   const project = Portfolios.find((item) => item.id === params.slug);
 
   if (!project) {
-    return buildMetadata({
+    return {
       title: "Project Not Found | TheTriFusion",
-      description: "The requested portfolio project could not be found.",
-      keywords: "portfolio, TheTriFusion",
-      path: `/portfolio/${params.slug}`,
-      noIndex: true,
-    });
+      robots: { index: false, follow: true },
+    };
   }
 
   return buildMetadata({
@@ -35,20 +33,20 @@ export function generateMetadata({ params }) {
 export default function RoutePage({ params }) {
   const project = Portfolios.find((item) => item.id === params.slug);
 
+  if (!project) {
+    notFound();
+  }
+
   return (
     <>
-      {project ? (
-        <>
-          <JsonLd data={creativeWorkSchema(project)} />
-          <JsonLd
-            data={breadcrumbSchema([
-              { name: "Home", path: "/" },
-              { name: "Portfolio", path: "/portfolio" },
-              { name: project.title, path: `/portfolio/${project.id}` },
-            ])}
-          />
-        </>
-      ) : null}
+      <JsonLd data={creativeWorkSchema(project)} />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Portfolio", path: "/portfolio" },
+          { name: project.title, path: `/portfolio/${project.id}` },
+        ])}
+      />
       <Page />
     </>
   );

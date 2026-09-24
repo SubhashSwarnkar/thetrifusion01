@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import Page from "views/SolutionLandingPage";
 import JsonLd from "components/JsonLd";
 import {
@@ -19,13 +20,10 @@ export function generateMetadata({ params }) {
   const page = getSeoLandingBySlug(params.slug);
 
   if (!page) {
-    return buildMetadata({
+    return {
       title: "Solution Not Found | TheTriFusion",
-      description: "The requested solution page could not be found.",
-      keywords: "solutions, TheTriFusion",
-      path: `/solutions/${params.slug}`,
-      noIndex: true,
-    });
+      robots: { index: false, follow: true },
+    };
   }
 
   return buildMetadata({
@@ -41,27 +39,27 @@ export function generateMetadata({ params }) {
 export default function RoutePage({ params }) {
   const page = getSeoLandingBySlug(params.slug);
 
+  if (!page) {
+    notFound();
+  }
+
   return (
     <>
-      {page ? (
-        <>
-          <JsonLd
-            data={serviceSchema({
-              name: page.h1,
-              description: page.metaDescription,
-              path: `/solutions/${page.slug}`,
-            })}
-          />
-          <JsonLd data={faqSchema(page.faqs)} />
-          <JsonLd
-            data={breadcrumbSchema([
-              { name: "Home", path: "/" },
-              { name: "Solutions", path: "/solutions" },
-              { name: page.h1, path: `/solutions/${page.slug}` },
-            ])}
-          />
-        </>
-      ) : null}
+      <JsonLd
+        data={serviceSchema({
+          name: page.h1,
+          description: page.metaDescription,
+          path: `/solutions/${page.slug}`,
+        })}
+      />
+      <JsonLd data={faqSchema(page.faqs)} />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Solutions", path: "/solutions" },
+          { name: page.h1, path: `/solutions/${page.slug}` },
+        ])}
+      />
       <Page />
     </>
   );

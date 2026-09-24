@@ -5,7 +5,6 @@ import { Portfolios, isIndexablePortfolio } from "json/landingPageData";
 import { NOINDEX_PATHS, pages } from "lib/seoConfig";
 import { siteConfig } from "config/site";
 
-
 function safeDate(value, fallback) {
   try {
     const d = value instanceof Date ? value : new Date(value);
@@ -17,14 +16,15 @@ function safeDate(value, fallback) {
 }
 
 export default function sitemap() {
-  const fallbackDate = new Date("2026-09-12");
-  const serviceUpdated = new Date("2026-09-12");
+  // Bump when core marketing pages change so GSC lastmod is not identical forever
+  const siteContentUpdated = new Date("2026-09-24");
+  const fallbackDate = siteContentUpdated;
 
   const staticRoutes = Object.keys(pages)
     .filter((path) => !NOINDEX_PATHS.has(path))
     .map((path) => ({
-      url: path === "/" ? `${siteConfig.url}/` : `${siteConfig.url}${path}`,
-      lastModified: fallbackDate,
+      url: path === "/" ? siteConfig.url : `${siteConfig.url}${path}`,
+      lastModified: siteContentUpdated,
       changeFrequency: path === "/" ? "weekly" : "monthly",
       priority:
         path === "/"
@@ -43,7 +43,7 @@ export default function sitemap() {
 
   const serviceRoutes = services.map((service) => ({
     url: `${siteConfig.url}/services/${service.slug}`,
-    lastModified: serviceUpdated,
+    lastModified: siteContentUpdated,
     changeFrequency: "weekly",
     priority: 0.8,
   }));
@@ -51,30 +51,33 @@ export default function sitemap() {
   const solutionRoutes = seoLandingPages
     .filter((raw) => raw.slug !== "online-store-development")
     .map((raw) => {
-    const page = getSeoLandingBySlug(raw.slug);
-    return {
-      url: `${siteConfig.url}/solutions/${raw.slug}`,
-      lastModified: page?.updatedAt
-        ? safeDate(page.updatedAt, fallbackDate)
-        : fallbackDate,
-      changeFrequency: "weekly",
-      priority: 0.85,
-    };
-  });
+      const page = getSeoLandingBySlug(raw.slug);
+      return {
+        url: `${siteConfig.url}/solutions/${raw.slug}`,
+        lastModified: page?.updatedAt
+          ? safeDate(page.updatedAt, fallbackDate)
+          : siteContentUpdated,
+        changeFrequency: "weekly",
+        priority: 0.85,
+      };
+    });
 
   const blogRoutes = blogPosts
     .filter((post) => !ARCHIVE_NOINDEX_SLUGS.has(post.slug))
     .map((post) => ({
-    url: `${siteConfig.url}/blog/${post.slug}`,
-    lastModified: safeDate(post.updatedAt || post.date || "2026-09-12", fallbackDate),
-    changeFrequency: post.featured ? "daily" : "weekly",
-    priority: post.featured ? 0.85 : 0.75,
-  }));
+      url: `${siteConfig.url}/blog/${post.slug}`,
+      lastModified: safeDate(
+        post.updatedAt || post.date || "2026-09-12",
+        fallbackDate
+      ),
+      changeFrequency: post.featured ? "daily" : "weekly",
+      priority: post.featured ? 0.85 : 0.75,
+    }));
 
   const portfolioRoutes = Portfolios.filter(isIndexablePortfolio).map(
     (project) => ({
       url: `${siteConfig.url}/portfolio/${project.id}`,
-      lastModified: fallbackDate,
+      lastModified: siteContentUpdated,
       changeFrequency: "monthly",
       priority: project.featured ? 0.75 : 0.6,
     })

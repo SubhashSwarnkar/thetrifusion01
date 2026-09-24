@@ -160,6 +160,22 @@ export default function Footer({ hideNewsletter = false }) {
                 </li>
                 <li>
                   <Link
+                    href="/team"
+                    className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block"
+                  >
+                    Team
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services"
+                    className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block"
+                  >
+                    All Services
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/portfolio"
                     className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block"
                   >
@@ -188,6 +204,14 @@ export default function Footer({ hideNewsletter = false }) {
                     className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block"
                   >
                     Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/faq"
+                    className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block"
+                  >
+                    FAQ
                   </Link>
                 </li>
               </ul>

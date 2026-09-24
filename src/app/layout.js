@@ -35,8 +35,8 @@ export const metadata = {
   category: "technology",
   alternates: {
     languages: {
-      "en-IN": `${SITE_URL}/`,
-      "x-default": `${SITE_URL}/`,
+      "en-IN": SITE_URL,
+      "x-default": SITE_URL,
     },
   },
   openGraph: {

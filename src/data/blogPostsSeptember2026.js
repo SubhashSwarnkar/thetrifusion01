@@ -4225,8 +4225,9 @@ export const september2026Posts = [
     metaTitle: "Election Results Itogi Vyborov: How to Read Official Counts",
     excerpt: "Итоги выборов / election results: how to read early returns, maps, and turnout — and which official sources to trust. No invented winners. Written for clarity.",
     content: `
-      <p>When people type <strong>итоги выборов</strong> or <strong>election results</strong>, they usually want a trustworthy number fast. Instead they find exit polls, partial precinct counts, influencer screenshots, and rumor threads. This guide explains what searchers want, how early results work, and how to verify outcomes <strong>without inventing a winner</strong>.</p>
+      <p>When people type <strong>итоги выборов</strong> or <strong>election results</strong>, they usually want a trustworthy number fast. Instead they find exit polls, partial precinct counts, influencer screenshots, and rumor threads. This guide explains what searchers want, how early results work, and how to verify outcomes <strong>without inventing a winner</strong> — and it is intentionally distinct from our other election explainers that focus on a single country race.</p>
       <p><em>Important:</em> This article does not declare any election winner. Treat live figures as <strong>developing</strong> until an official election authority certifies results.</p>
+      <p>For country-specific pages see <a href="/blog/who-won-the-elections-how-to-check-results">how to check election results</a> and upcoming-race notes on the <a href="/blog">blog</a>. Teams building results hubs can use our <a href="/services/website-development">website development</a> and <a href="/services/digital-marketing">digital marketing</a> services.</p>
       <h2>What “итоги выборов” searchers actually need</h2>
       <ul>
         <li><strong>Headline status</strong> — who leads / who is projected (media ≠ certification)</li>
@@ -4311,7 +4312,7 @@ export const september2026Posts = [
     category: "news",
     imageUrl: "/images/blog-og/election-results-itogi-vyborov-what-searchers-want.svg",
     date: "2026-09-21",
-    updatedAt: "2026-09-21",
+    updatedAt: "2026-09-24",
     readTime: "10 min read",
     author: "TheTriFusion Team",
     featured: false,
@@ -4984,8 +4985,9 @@ export const september2026Posts = [
     metaTitle: "Permanent Daylight Savings Time Debate Explained Clearly",
     excerpt: "Permanent daylight savings time vs standard time: what the debate means for clocks, sleep, business hours, and tracking real legislative status.",
     content: `
-      <p>Every clock-change season, searches for <strong>permanent daylight savings time</strong> (daylight <em>saving</em> time) spike. People want to know whether the twice-yearly switch is ending and how permanent DST would feel on winter mornings. This explainer separates debate from wishful posts.</p>
-      <p><em>Status caution:</em> Bills appear and stall. A viral petition is not enacted law. Check legislature and time-authority notices.</p>
+      <p>Every clock-change season, searches for <strong>permanent daylight savings time</strong> (daylight <em>saving</em> time) spike. People want to know whether the twice-yearly switch is ending and how permanent DST would feel on winter mornings. This explainer separates debate from wishful posts — written for readers who need a clear status check, not another recycled petition screenshot.</p>
+      <p><em>Status caution:</em> Bills appear and stall. A viral petition is not enacted law. Check legislature and time-authority notices before you change product schedules, store hours, or marketing calendars.</p>
+      <p>If you run an app or SaaS that shows local times (bookings, delivery windows, webinars), treat DST policy noise as a product risk: display time zones explicitly, store UTC, and avoid hard-coding “always IST+1 style” offsets. For India-based teams shipping global products, see our notes on <a href="/services/software-development">custom software development</a> and <a href="/blog/react-server-components">reliable web delivery patterns</a>.</p>
       <h2>DST vs standard time</h2>
       <ul>
         <li><strong>Standard time</strong> — closer to solar noon; darker summer evenings vs DST</li>
@@ -5071,7 +5073,7 @@ export const september2026Posts = [
     category: "webdev",
     imageUrl: "/images/blog-og/permanent-daylight-savings-time-debate-explained.svg",
     date: "2026-09-21",
-    updatedAt: "2026-09-21",
+    updatedAt: "2026-09-24",
     readTime: "11 min read",
     author: "TheTriFusion Team",
     featured: true,
@@ -5174,7 +5176,8 @@ export const september2026Posts = [
     excerpt: "Yom Kippur 2026 (10 Tishrei 5787): sundown Sep 20 to nightfall Sep 21 — Day of Atonement meaning, fasting basics, and observance notes. Read before you share.",
     content: `
       <p><strong>Yom Kippur 2026</strong> — the Jewish <strong>Day of Atonement</strong> — falls on <strong>10 Tishrei 5787</strong>. On the civil calendar, observance begins at sundown on <strong>Sunday, 20 September 2026</strong>, and ends at nightfall on <strong>Monday, 21 September 2026</strong> (confirm candle-lighting / fast-ending times for your city via Hebcal or local synagogue schedules).</p>
-      <p>This guide covers meaning, date logic, and observance basics for interfaith workplaces and curious searchers. It is educational, not a substitute for rabbinic guidance.</p>
+      <p>This guide covers meaning, date logic, and observance basics for interfaith workplaces and curious searchers. It is educational, not a substitute for rabbinic guidance. We publish it as a self-contained explainer with a clear canonical URL so calendars and shares do not collide with thinner stubs.</p>
+      <p>Related reading: <a href="/blog/nativity-of-the-blessed-virgin-mary-explained">Nativity of the Blessed Virgin Mary explained</a>, the <a href="/blog">Insights hub</a>, and <a href="/services/website-development">website development</a> if you need an event or faith-calendar landing page built.</p>
       <h2>What Yom Kippur means</h2>
       <p>Yom Kippur is widely regarded as the holiest day on the Jewish calendar — a day of atonement, repentance, and spiritual reset following the High Holy Days that begin with Rosh Hashanah. Themes include confession, forgiveness, charity, and ethical recommitment.</p>
       <ul>
@@ -5250,7 +5253,7 @@ export const september2026Posts = [
     category: "news",
     imageUrl: "/images/blog-og/yom-kippur-2026-meaning-date-observance.svg",
     date: "2026-09-21",
-    updatedAt: "2026-09-21",
+    updatedAt: "2026-09-24",
     readTime: "10 min read",
     author: "TheTriFusion Team",
     featured: false,

@@ -60,6 +60,8 @@ export const siteConfig = {
 };
 
 export function absoluteSiteUrl(path = "/") {
-  if (!path || path === "/") return `${siteConfig.url}/`;
+  // Keep homepage canonical without trailing slash to match Next.js default
+  // (trailingSlash: false) and avoid sitemap/canonical mismatch on "/".
+  if (!path || path === "/") return siteConfig.url;
   return `${siteConfig.url}${path.startsWith("/") ? path : `/${path}`}`;
 }
