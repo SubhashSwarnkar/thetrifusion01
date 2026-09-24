@@ -1,6 +1,7 @@
 import React from 'react';
 import { september2026Posts } from "./blogPostsSeptember2026";
 import { upcomingEvents2026Posts } from "./blogPostsUpcomingEvents2026";
+import { upcomingEventsBatchAPosts } from "./upcomingEventsBatchA";
 import { upcomingEventsBatchBPosts } from "./upcomingEventsBatchB";
 
 /**
@@ -57,6 +58,7 @@ export const HUB_TRENDING_SLUGS = [
 export const isArchivedPost = (slug) => ARCHIVE_NOINDEX_SLUGS.has(slug);
 
 export const blogPosts = [
+  ...upcomingEventsBatchAPosts,
   ...upcomingEventsBatchBPosts,
   ...upcomingEvents2026Posts,
   ...september2026Posts,
