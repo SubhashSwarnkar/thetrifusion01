@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { toast } from "react-toastify";
-import { Fade } from "react-awesome-reveal";
 import { sendSiteEmail } from "lib/sendSiteEmail";
 
 export default function Newsletter({ compact = false }) {
@@ -65,12 +64,11 @@ export default function Newsletter({ compact = false }) {
   }
 
   return (
-    <Fade direction="up" triggerOnce>
-      <section className="relative py-20 overflow-hidden">
+    <section className="relative py-20 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-theme-blue -z-20"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-theme-purple/40 to-transparent -z-10"></div>
-        <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none -z-10"></div>
+        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none -z-10 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.45)_1px,transparent_0)] bg-[length:14px_14px]"></div>
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-theme-cyan/20 rounded-full blur-[100px]"></div>
         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-theme-pink/10 rounded-full blur-[100px]"></div>
 
@@ -118,8 +116,7 @@ export default function Newsletter({ compact = false }) {
             </div>
           </div>
         </div>
-      </section>
-    </Fade>
+    </section>
   );
 }
 

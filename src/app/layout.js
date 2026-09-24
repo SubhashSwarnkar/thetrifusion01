@@ -5,18 +5,8 @@ import { siteGraphSchema } from "lib/schema";
 import { SITE_NAME, SITE_URL, pageMetadata, pages } from "lib/seoConfig";
 import { siteConfig } from "config/site";
 import { CONSENT_DEFAULT_INLINE } from "lib/gtagConsent";
-import { GTM_ID, META_PIXEL_ID, ADSENSE_CLIENT_ID } from "lib/trackingConfig";
-import { Poppins } from "next/font/google";
-import Script from "next/script";
+import { GTM_ID, ADSENSE_CLIENT_ID } from "lib/trackingConfig";
 import "./globals.css";
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-poppins",
-  display: "swap",
-  preload: true,
-});
 
 const home = pageMetadata("/");
 const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
@@ -46,9 +36,13 @@ export const metadata = {
   twitter: home.twitter,
   robots: home.robots,
   icons: {
-    icon: [{ url: "/logo.svg", type: "image/svg+xml" }],
-    shortcut: "/logo.svg",
-    apple: "/logo.svg",
+    // Inline mark so the tab icon is not a render-competing request for the 17KB logo.
+    icon: [
+      {
+        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236610f2'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='18' font-family='Arial' fill='white'%3ET%3C/text%3E%3C/svg%3E",
+        type: "image/svg+xml",
+      },
+    ],
   },
   manifest: "/manifest.json",
   ...(googleVerification
@@ -72,29 +66,42 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en-IN">
       <head>
-        {/* Raw script tag required so AdSense crawler sees ownership snippet in HTML */}
+        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://connect.facebook.net" />
+        {/*
+          AdSense ownership snippet stays in the HTML for review.
+          type=text/plain keeps the URL visible without downloading during LCP.
+          The boot below inserts a real script for every visitor at 4s.
+        */}
         {ADSENSE_CLIENT_ID ? (
-          // eslint-disable-next-line @next/next/no-sync-scripts
           <script
+            id="adsense-loader"
+            type="text/plain"
             async
             src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
             crossOrigin="anonymous"
+            data-ad-client={ADSENSE_CLIENT_ID}
           />
         ) : null}
-        <Script id="gtag-consent-default" strategy="afterInteractive">
-          {CONSENT_DEFAULT_INLINE}
-        </Script>
-        {GTM_ID ? (
-          <Script id="gtm-loader" strategy="afterInteractive">
-            {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','${GTM_ID}');`}
-          </Script>
+        {ADSENSE_CLIENT_ID ? (
+          <script
+            id="adsense-boot"
+            dangerouslySetInnerHTML={{
+              __html: `(function(){var src=${JSON.stringify(
+                `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`
+              )};function load(){if(document.querySelector('script[data-ad-live="1"]'))return;var s=document.createElement("script");s.src=src;s.async=true;s.crossOrigin="anonymous";s.setAttribute("data-ad-client",${JSON.stringify(
+                ADSENSE_CLIENT_ID
+              )});s.setAttribute("data-ad-live","1");document.head.appendChild(s);}setTimeout(load,4000);})();`,
+            }}
+          />
         ) : null}
+        <script
+          id="gtag-consent-default"
+          dangerouslySetInnerHTML={{ __html: CONSENT_DEFAULT_INLINE }}
+        />
       </head>
-      <body className={poppins.className + " antialiased"}>
+      <body className="antialiased">
         {GTM_ID ? (
           <noscript>
             <iframe
@@ -103,18 +110,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               width="0"
               style={{ display: "none", visibility: "hidden" }}
               title="Google Tag Manager"
-            />
-          </noscript>
-        ) : null}
-        {META_PIXEL_ID ? (
-          <noscript>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              height="1"
-              width="1"
-              style={{ display: "none" }}
-              src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
-              alt=""
             />
           </noscript>
         ) : null}

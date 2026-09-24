@@ -1,9 +1,6 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Fade } from "react-awesome-reveal";
 import PlugOneImg from "assets/images/Portfolio/PlugOne.jpg";
 
 const HIGHLIGHTS = [
@@ -24,8 +21,7 @@ const HIGHLIGHTS = [
 export default function FeaturedCaseStudy() {
   return (
     <section className="container mx-auto px-5 py-16 sm:py-20">
-      <Fade direction="up" triggerOnce>
-        <div className="text-center mb-12">
+      <div className="text-center mb-12">
           <span className="inline-block px-4 py-1.5 rounded-full bg-light-theme-purple/40 text-theme-purple text-xs font-bold uppercase tracking-[0.18em] mb-5">
             Featured case
           </span>
@@ -36,11 +32,9 @@ export default function FeaturedCaseStudy() {
             One deep look at how TheTriFusion ships niche products from Jaipur —
             with a URL you can verify today.
           </p>
-        </div>
-      </Fade>
+      </div>
 
-      <Fade direction="up" delay={100} triggerOnce>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           <a
             href="https://plugone.in/"
             target="_blank"
@@ -73,20 +67,21 @@ export default function FeaturedCaseStudy() {
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href="/services/ev-charging-app-development"
+                prefetch={false}
                 className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-theme-purple text-white font-bold hover:bg-dark-theme-purple transition-colors"
               >
                 EV charging service page
               </Link>
               <Link
                 href="/contact"
+                prefetch={false}
                 className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-gray-200 text-theme-blue font-bold hover:border-theme-purple hover:text-theme-purple transition-colors"
               >
                 Get a free scoped estimate
               </Link>
             </div>
           </div>
-        </div>
-      </Fade>
+      </div>
     </section>
   );
 }

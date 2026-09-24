@@ -56,6 +56,21 @@ section {
   }
 }
 
+@keyframes tf-drawer-in {
+  from {
+    transform: translateX(16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.mobile-menu {
+  animation: tf-drawer-in 0.28s ease-out;
+}
+
 /* Custom styles for Swiper navigation buttons */
 .swiper-button-next,
 .swiper-button-prev {
@@ -155,4 +170,20 @@ h6 {
   background-position: right center;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(102, 16, 242, 0.4);
+}
+
+/* Skip layout work for below-the-fold homepage sections until they scroll near. */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 1200px;
+}
+
+/* Metric-adjusted Arial so the first paint matches Poppins before the real files load. */
+@font-face {
+  font-family: PoppinsFallback;
+  src: local("Arial");
+  ascent-override: 93.62%;
+  descent-override: 31.21%;
+  line-gap-override: 8.92%;
+  size-adjust: 112.16%;
 }

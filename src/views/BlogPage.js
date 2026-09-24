@@ -5,39 +5,39 @@ import Link from "next/link";
 import Header from "parts/Header";
 import Footer from "parts/Footer";
 import Breadcrumbs from "components/Breadcrumbs";
-import { Fade } from "react-awesome-reveal";
-import {
-  blogCategories,
-  getPublishedBlogPosts,
-  getBlogsByCategory,
-  searchBlogs,
-  getHubTrendingPosts,
-  getLatestBlogPosts,
-} from "data/blogData";
 import SEO from "components/common/SEO";
 
-export default function BlogPage() {
+export default function BlogPage({
+  posts = [],
+  trendingPosts = [],
+  latestPosts = [],
+  categories = [],
+}) {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
-  const [displayedPosts, setDisplayedPosts] = useState(getPublishedBlogPosts());
-  const trendingPosts = getHubTrendingPosts();
-  const latestPosts = getLatestBlogPosts(40);
+  const [displayedPosts, setDisplayedPosts] = useState(posts);
+  const [visibleCount, setVisibleCount] = useState(18);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
-    let filtered = searchQuery.trim()
-      ? searchBlogs(searchQuery)
-      : getBlogsByCategory(selectedCategory);
-
-    if (searchQuery.trim() && selectedCategory !== "all") {
+    const query = searchQuery.trim().toLowerCase();
+    let filtered = posts;
+    if (query) {
+      filtered = filtered.filter(
+        (post) =>
+          post.title.toLowerCase().includes(query) ||
+          (post.excerpt || "").toLowerCase().includes(query)
+      );
+    }
+    if (selectedCategory !== "all") {
       filtered = filtered.filter((post) => post.category === selectedCategory);
     }
-
     setDisplayedPosts(filtered);
-  }, [selectedCategory, searchQuery]);
+    setVisibleCount(18);
+  }, [selectedCategory, searchQuery, posts]);
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -60,26 +60,21 @@ export default function BlogPage() {
       <Header />
       <Breadcrumbs />
       <section className="container mx-auto px-5 py-20">
-        <Fade direction="up" triggerOnce>
           <h1 className="text-4xl sm:text-5xl text-theme-blue text-center font-bold mb-3">
             Insights from a Jaipur software company
           </h1>
-        </Fade>
-        <Fade direction="up" delay={200} triggerOnce>
-          <p className="font-light text-lg text-gray-400 text-center mb-6">
+                  <p className="font-light text-lg text-gray-400 text-center mb-6">
             Practical notes on websites, apps, MLM CRM, fintech, and delivery
             from Jaipur. We publish at least two India-relevant posts each month.
           </p>
           <div className="flex flex-wrap justify-center gap-3 mb-12 text-sm">
-            <Link href="/about" className="px-4 py-2 rounded-full border border-theme-purple/30 text-theme-purple font-semibold hover:bg-light-theme-purple">About TheTriFusion</Link>
-            <Link href="/ecommerce-development" className="px-4 py-2 rounded-full border border-theme-purple/30 text-theme-purple font-semibold hover:bg-light-theme-purple">Ecommerce development</Link>
-            <Link href="/services/mobile-app-development" className="px-4 py-2 rounded-full border border-theme-purple/30 text-theme-purple font-semibold hover:bg-light-theme-purple">Mobile app development</Link>
-            <Link href="/ios-app-development" className="px-4 py-2 rounded-full border border-theme-purple/30 text-theme-purple font-semibold hover:bg-light-theme-purple">iOS apps</Link>
+            <Link prefetch={false} href="/about" className="px-4 py-2 rounded-full border border-theme-purple/30 text-theme-purple font-semibold hover:bg-light-theme-purple">About TheTriFusion</Link>
+            <Link prefetch={false} href="/ecommerce-development" className="px-4 py-2 rounded-full border border-theme-purple/30 text-theme-purple font-semibold hover:bg-light-theme-purple">Ecommerce development</Link>
+            <Link prefetch={false} href="/services/mobile-app-development" className="px-4 py-2 rounded-full border border-theme-purple/30 text-theme-purple font-semibold hover:bg-light-theme-purple">Mobile app development</Link>
+            <Link prefetch={false} href="/ios-app-development" className="px-4 py-2 rounded-full border border-theme-purple/30 text-theme-purple font-semibold hover:bg-light-theme-purple">iOS apps</Link>
           </div>
-        </Fade>
-
+        
         {showDiscovery && trendingPosts.length > 0 && (
-          <Fade direction="up" delay={250} triggerOnce>
             <div className="mb-12 rounded-2xl border border-theme-purple/20 bg-gradient-to-br from-light-theme-purple/40 to-white p-6 sm:p-8">
               <div className="flex flex-wrap items-end justify-between gap-3 mb-4">
                 <div>
@@ -91,6 +86,7 @@ export default function BlogPage() {
                   </h2>
                 </div>
                 <Link
+                  prefetch={false}
                   href="#latest-trends"
                   className="text-sm font-semibold text-theme-purple hover:underline"
                 >
@@ -101,6 +97,7 @@ export default function BlogPage() {
                 {trendingPosts.map((post) => (
                   <li key={post.slug}>
                     <Link
+                      prefetch={false}
                       href={`/blog/${post.slug}`}
                       className="block rounded-xl border border-white/80 bg-white px-4 py-3 shadow-sm hover:border-theme-purple/40 transition-colors"
                     >
@@ -115,11 +112,9 @@ export default function BlogPage() {
                 ))}
               </ul>
             </div>
-          </Fade>
-        )}
+                  )}
 
         {showDiscovery && latestPosts.length > 0 && (
-          <Fade direction="up" delay={280} triggerOnce>
             <div id="latest-trends" className="mb-12 scroll-mt-24">
               <div className="flex flex-wrap items-end justify-between gap-3 mb-4">
                 <div>
@@ -136,6 +131,7 @@ export default function BlogPage() {
                   {latestPosts.map((post) => (
                     <li key={post.slug} className="mb-2 break-inside-avoid">
                       <Link
+                        prefetch={false}
                         href={`/blog/${post.slug}`}
                         className="text-theme-blue hover:text-theme-purple hover:underline"
                       >
@@ -146,11 +142,9 @@ export default function BlogPage() {
                 </ul>
               </div>
             </div>
-          </Fade>
-        )}
+                  )}
 
         {/* Search Bar */}
-        <Fade direction="up" delay={300} triggerOnce>
           <div className="max-w-2xl mx-auto mb-8">
             <div className="relative">
               <input
@@ -185,12 +179,10 @@ export default function BlogPage() {
               )}
             </div>
           </div>
-        </Fade>
-
+        
         {/* Category Filter */}
-        <Fade direction="up" delay={400} triggerOnce>
           <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {blogCategories.map((category) => (
+            {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
@@ -205,14 +197,13 @@ export default function BlogPage() {
               </button>
             ))}
           </div>
-        </Fade>
-
+        
         {/* Blog Posts Grid */}
         {displayedPosts.length > 0 ? (
+          <>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {displayedPosts.map((post, index) => (
-              <Fade key={post.id} direction="up" delay={Math.min(index, 12) * 40} triggerOnce>
-                <Link href={`/blog/${post.slug}`}>
+            {displayedPosts.slice(0, visibleCount).map((post) => (
+                <Link key={post.slug} href={`/blog/${post.slug}`} prefetch={false}>
                   <article className="bg-white rounded-2xl shadow-xl border border-light-theme-purple overflow-hidden transform transition duration-300 hover:scale-105 cursor-pointer h-full flex flex-col">
                     <div className="relative h-48 bg-gray-200 overflow-hidden">
                       <img
@@ -241,7 +232,7 @@ export default function BlogPage() {
                       </p>
                       <div className="flex items-center justify-between mt-auto">
                         <span className="px-3 py-1 bg-light-theme-purple text-theme-purple rounded-full text-sm font-medium">
-                          {blogCategories.find((cat) => cat.id === post.category)?.name || post.category}
+                          {categories.find((cat) => cat.id === post.category)?.name || post.category}
                         </span>
                         <span className="text-theme-purple font-medium hover:underline">
                           Read More →
@@ -250,11 +241,21 @@ export default function BlogPage() {
                     </div>
                   </article>
                 </Link>
-              </Fade>
-            ))}
+                          ))}
           </div>
+          {visibleCount < displayedPosts.length ? (
+            <div className="flex justify-center mt-10">
+              <button
+                type="button"
+                onClick={() => setVisibleCount((count) => count + 18)}
+                className="px-8 py-3 bg-theme-purple text-white rounded-full font-bold hover:bg-dark-theme-purple transition duration-200"
+              >
+                Show more articles
+              </button>
+            </div>
+          ) : null}
+          </>
         ) : (
-          <Fade direction="up" triggerOnce>
             <div className="text-center py-12">
               <p className="text-xl text-gray-500 mb-4">No blog posts found matching your criteria.</p>
               <button
@@ -267,8 +268,7 @@ export default function BlogPage() {
                 Clear Filters
               </button>
             </div>
-          </Fade>
-        )}
+                  )}
       </section>
       <Footer />
     </>

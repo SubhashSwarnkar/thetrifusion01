@@ -3,7 +3,13 @@ import Page from "views/BlogPage";
 import JsonLd from "components/JsonLd";
 import { breadcrumbSchema } from "lib/schema";
 import { pageMetadata } from "lib/seoConfig";
-import { getPublishedBlogPosts } from "data/blogData";
+import {
+  blogCategories,
+  getHubTrendingPosts,
+  getLatestBlogPosts,
+  getPublishedBlogPosts,
+} from "data/blogData";
+import { toBlogCard } from "lib/blogArticleProps";
 
 export const metadata = pageMetadata("/blog");
 
@@ -18,7 +24,12 @@ export default function RoutePage() {
           { name: "Blog", path: "/blog" },
         ])}
       />
-      <Page />
+      <Page
+        posts={posts.map(toBlogCard)}
+        trendingPosts={getHubTrendingPosts().map(toBlogCard)}
+        latestPosts={getLatestBlogPosts(40).map(toBlogCard)}
+        categories={blogCategories}
+      />
       {/* Plain server-rendered link list so Googlebot always sees every post URL */}
       <nav
         aria-label="All blog articles"

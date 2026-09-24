@@ -1,7 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 
-const { fontFamily: _fontFamily } = require("tailwindcss/defaultTheme");
-
 module.exports = {
   content: [
     "./src/app/**/*.{js,jsx}",
@@ -14,7 +12,7 @@ module.exports = {
   darkMode: "media",
   theme: {
     fontFamily: {
-      sans: ["Poppins", ..._fontFamily.sans],
+      sans: ["Poppins", "PoppinsFallback", "Arial", "Helvetica", "sans-serif"],
     },
     fontSize: {
       xs: ".75rem",

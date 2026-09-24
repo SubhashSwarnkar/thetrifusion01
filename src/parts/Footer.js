@@ -1,9 +1,11 @@
+"use client";
+
 import React from "react";
 
 import BrandIcon from "./BrandIcon";
-import Newsletter from "../components/Newsletter";
-import { services } from "data/servicesData";
-import { getFeaturedSolutions } from "data/seoLandingPages";
+import DeferredNewsletter from "../components/DeferredNewsletter";
+import { serviceNav } from "data/serviceNav";
+import { featuredSolutionNav } from "data/footerNav";
 import { LINKEDIN_URL, INSTAGRAM_URL, COMPANY_EMAIL, COMPANY_PHONE_DISPLAY } from "data/companyInfo";
 import { trackEvent, AnalyticsEvents } from "utils/analytics";
 
@@ -11,11 +13,11 @@ import Link from "next/link";
 
 export default function Footer({ hideNewsletter = false }) {
   const currentYear = new Date().getFullYear();
-  const featuredSolutions = getFeaturedSolutions();
+  const featuredSolutions = featuredSolutionNav;
 
   return (
     <>
-      {hideNewsletter ? null : <Newsletter />}
+      {hideNewsletter ? null : <DeferredNewsletter />}
       <footer className="bg-theme-blue text-white pt-24 pb-12 overflow-hidden relative">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-theme-purple via-theme-cyan to-theme-pink"></div>
         <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-theme-purple/10 rounded-full blur-[100px]"></div>
@@ -105,7 +107,7 @@ export default function Footer({ hideNewsletter = false }) {
                   "fintech-app-development",
                   "ev-charging-app-development",
                 ].map((slug) => {
-                  const s = services.find((item) => item.slug === slug);
+                  const s = serviceNav.find((item) => item.slug === slug);
                   if (!s) return null;
                   return (
                   <li key={s.id}>
@@ -132,7 +134,7 @@ export default function Footer({ hideNewsletter = false }) {
                       href={`/solutions/${page.slug}`}
                       className="text-white/60 hover:text-white hover:translate-x-1 transition-all inline-block font-light leading-snug"
                     >
-                      {page.navLabel || page.h1}
+                      {page.navLabel}
                     </Link>
                   </li>
                 ))}

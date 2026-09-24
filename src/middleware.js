@@ -16,7 +16,14 @@ export function middleware(request) {
     url.port = "";
     return NextResponse.redirect(url, 308);
   }
-  return NextResponse.next();
+  const response = NextResponse.next();
+  if (!request.nextUrl.pathname.startsWith("/api")) {
+    response.headers.set(
+      "Cache-Control",
+      "public, s-maxage=86400, stale-while-revalidate=604800"
+    );
+  }
+  return response;
 }
 
 export const config = {
@@ -24,6 +31,6 @@ export const config = {
     /*
      * Skip Next internals and static assets; still cover HTML routes.
      */
-    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|woff2|txt|xml|json)$).*)",
+    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|avif|woff2|mp4|txt|xml|json)$).*)",
   ],
 };

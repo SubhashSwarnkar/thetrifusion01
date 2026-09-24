@@ -6,29 +6,10 @@ import Header from "parts/Header";
 import Footer from "parts/Footer";
 import Breadcrumbs from "components/Breadcrumbs";
 import BrandTrustStrip from "components/BrandTrustStrip";
-import { services } from "data/servicesData";
-import { motion } from "framer-motion";
+import { serviceNav as services } from "data/serviceNav";
 import SEO from "components/common/SEO";
 import ServiceIcon from "components/ServiceIcon";
 import { accentAt } from "lib/themeAccents";
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
-
-const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0, opacity: 1,
-    transition: { type: "spring", stiffness: 100 }
-  }
-};
 
 export default function ServicesPage() {
   useEffect(() => {
@@ -50,12 +31,7 @@ export default function ServicesPage() {
         <div className="absolute top-40 left-1/3 w-[16rem] h-[16rem] bg-theme-pink/10 rounded-full blur-[90px] -z-10" />
         
         <div className="container mx-auto px-5 relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mb-14"
-          >
+          <div className="max-w-3xl mb-14">
             <span className="inline-block px-4 py-1.5 rounded-full bg-light-theme-purple/30 text-theme-purple font-bold text-xs uppercase tracking-[0.2em] mb-5">
               Services
             </span>
@@ -68,7 +44,7 @@ export default function ServicesPage() {
               Software, websites, mobile apps, UI/UX, and digital marketing —
               scoped and delivered remotely across India.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -76,14 +52,9 @@ export default function ServicesPage() {
 
       <section className="relative py-16 overflow-hidden bg-white">
         <div className="container mx-auto px-5 relative z-10">
-          <motion.div 
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
-          >
-            <motion.div variants={itemVariants}>
-              <Link href="/ecommerce-development" className="group block h-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div>
+              <Link href="/ecommerce-development" prefetch={false} className="group block h-full">
                 <div className={`relative h-full rounded-2xl border p-6 overflow-hidden hover:shadow-lg transition-all duration-300 ${accentAt(0).card}`}>
                   <span className={`absolute left-0 top-0 h-full w-1.5 ${accentAt(0).bar}`} />
                   <div className={`w-11 h-11 mb-5 rounded-xl flex items-center justify-center ${accentAt(0).iconWrap} group-hover:bg-theme-purple group-hover:text-white transition-colors`}>
@@ -106,12 +77,12 @@ export default function ServicesPage() {
                   </span>
                 </div>
               </Link>
-            </motion.div>
+            </div>
             {services.map((service, idx) => {
               const accent = accentAt(idx);
               return (
-              <motion.div key={service.id} variants={itemVariants}>
-                <Link href={`/services/${service.slug}`} className="group block h-full">
+              <div key={service.id}>
+                <Link href={`/services/${service.slug}`} prefetch={false} className="group block h-full">
                   <div className={`relative h-full rounded-2xl border p-6 overflow-hidden hover:shadow-lg transition-all duration-300 ${accent.card}`}>
                     <span className={`absolute left-0 top-0 h-full w-1.5 ${accent.bar}`} />
                     <div className={`w-11 h-11 mb-5 rounded-xl flex items-center justify-center ${accent.iconWrap} group-hover:bg-theme-purple group-hover:text-white transition-colors`}>
@@ -134,22 +105,16 @@ export default function ServicesPage() {
                     </span>
                   </div>
                 </Link>
-              </motion.div>
+              </div>
               );
             })}
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Modern CTA Section */}
       <section className="container mx-auto px-5 py-16">
-        <motion.div 
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="bg-gradient-to-r from-theme-blue via-theme-purple to-theme-cyan rounded-[2rem] p-10 md:p-14 text-center relative overflow-hidden"
-        >
+        <div className="bg-gradient-to-r from-theme-blue via-theme-purple to-theme-cyan rounded-[2rem] p-10 md:p-14 text-center relative overflow-hidden">
           <h2 className="text-3xl md:text-4xl font-black text-white mb-4 relative z-10">
             Need a scoped estimate?
           </h2>
@@ -157,7 +122,8 @@ export default function ServicesPage() {
             Share the problem and the deadline. The Jaipur team replies with a written next step — usually within 24 hours.
           </p>
           <Link 
-            href="/contact" 
+            href="/contact"
+            prefetch={false}
             className="inline-flex items-center px-8 py-3.5 bg-white text-theme-purple rounded-full font-bold hover:bg-light-theme-purple transition-colors relative z-10"
           >
             Get a free scoped estimate
@@ -165,7 +131,7 @@ export default function ServicesPage() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
           </Link>
-        </motion.div>
+        </div>
       </section>
 
       <Footer />

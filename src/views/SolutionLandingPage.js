@@ -10,12 +10,11 @@ import BrandTrustStrip from "components/BrandTrustStrip";
 import WhatsAppButton from "components/WhatsAppButton";
 import { getSeoLandingBySlug } from "data/seoLandingPages";
 import { getServiceBySlug } from "data/servicesData";
-import { getBlogBySlug } from "data/blogData";
 import { Portfolios } from "json/landingPageData";
 import { trackEvent, AnalyticsEvents } from "utils/analytics";
 import NotFoundPage from "./NotFoundPage";
 
-export default function SolutionLandingPage() {
+export default function SolutionLandingPage({ relatedBlog = null }) {
   const { slug } = useParams();
   const page = getSeoLandingBySlug(slug);
   const [openFaqs, setOpenFaqs] = useState([]);
@@ -35,10 +34,6 @@ export default function SolutionLandingPage() {
   const relatedSolutions = (page.relatedSolutionSlugs || [])
     .map((s) => getSeoLandingBySlug(s))
     .filter(Boolean);
-
-  const relatedBlog = page.relatedBlogSlug
-    ? getBlogBySlug(page.relatedBlogSlug)
-    : null;
 
   const caseStudies = (page.relatedPortfolioIds || [])
     .map((id) => Portfolios.find((item) => item.id === id))

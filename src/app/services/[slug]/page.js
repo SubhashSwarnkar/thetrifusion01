@@ -1,6 +1,7 @@
 import Page from "views/ServiceDetailPage";
 import JsonLd from "components/JsonLd";
 import { getServiceBySlug, services } from "data/servicesData";
+import { getBlogBySlug } from "data/blogData";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "lib/schema";
 import { buildMetadata } from "lib/seoConfig";
 
@@ -76,7 +77,18 @@ export default function RoutePage({ params }) {
           {service.faqs?.length ? <JsonLd data={faqSchema(service.faqs)} /> : null}
         </>
       ) : null}
-      <Page />
+      <Page
+        relatedBlog={
+          service?.relatedBlogSlug
+            ? (() => {
+                const post = getBlogBySlug(service.relatedBlogSlug);
+                return post
+                  ? { slug: post.slug, title: post.title, excerpt: post.excerpt }
+                  : null;
+              })()
+            : null
+        }
+      />
     </>
   );
 }
