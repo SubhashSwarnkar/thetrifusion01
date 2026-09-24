@@ -123,6 +123,30 @@
 - https://thetrifusion.in/blog/diesel-price-uk-why-trending-explained
 - https://thetrifusion.in/blog/john-goodman-why-trending-explained
 - https://thetrifusion.in/blog/angry-anderson-why-trending-explained
+
+## Blog — Upcoming cricket and other sports (Batch B, 24 Sep 2026)
+
+- https://thetrifusion.in/blog/india-vs-west-indies-1st-odi-trivandrum-27-sep-2026
+- https://thetrifusion.in/blog/india-vs-west-indies-2nd-odi-guwahati-30-sep-2026
+- https://thetrifusion.in/blog/india-vs-west-indies-2nd-t20i-ranchi-9-oct-2026
+- https://thetrifusion.in/blog/india-vs-west-indies-3rd-t20i-indore-11-oct-2026
+- https://thetrifusion.in/blog/india-vs-west-indies-4th-t20i-hyderabad-14-oct-2026
+- https://thetrifusion.in/blog/india-vs-west-indies-5th-t20i-bengaluru-17-oct-2026
+- https://thetrifusion.in/blog/india-women-vs-zimbabwe-1st-t20i-raipur-16-oct-2026
+- https://thetrifusion.in/blog/india-women-vs-zimbabwe-1st-odi-baroda-23-oct-2026
+- https://thetrifusion.in/blog/pakistan-vs-england-odi-rawalpindi-20-oct-2026
+- https://thetrifusion.in/blog/ranji-trophy-2026-27-elite-phase-starts-11-oct
+- https://thetrifusion.in/blog/f1-singapore-grand-prix-2026-race-day-guide
+- https://thetrifusion.in/blog/f1-mexico-city-grand-prix-2026-race-guide
+- https://thetrifusion.in/blog/f1-sao-paulo-grand-prix-2026-brazil-guide
+- https://thetrifusion.in/blog/rolex-shanghai-masters-2026-start-guide
+- https://thetrifusion.in/blog/rolex-paris-masters-2026-start-guide
+- https://thetrifusion.in/blog/wta-finals-indian-wells-2026-start-guide
+- https://thetrifusion.in/blog/nba-celtics-at-pistons-season-opener-20-oct-2026
+- https://thetrifusion.in/blog/nfl-cowboys-at-packers-sunday-night-18-oct-2026
+- https://thetrifusion.in/blog/india-vs-bangladesh-asian-games-hockey-28-sep-2026
+- https://thetrifusion.in/blog/chicago-marathon-2026-start-time-guide
+
 ## AI / crawler notes
 
 - Short summary: https://thetrifusion.in/llms.txt
