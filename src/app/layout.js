@@ -71,8 +71,8 @@ export default function RootLayout({ children }) {
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
         {/*
           AdSense ownership snippet stays in the HTML for review.
-          type=text/plain keeps it from executing during LCP; GoogleAnalytics
-          injects the real loader after idle or first input.
+          type=text/plain keeps the URL visible without downloading during LCP.
+          The boot below inserts a real script for every visitor at 4s.
         */}
         {ADSENSE_CLIENT_ID ? (
           <script
@@ -82,6 +82,18 @@ export default function RootLayout({ children }) {
             src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
             crossOrigin="anonymous"
             data-ad-client={ADSENSE_CLIENT_ID}
+          />
+        ) : null}
+        {ADSENSE_CLIENT_ID ? (
+          <script
+            id="adsense-boot"
+            dangerouslySetInnerHTML={{
+              __html: `(function(){var src=${JSON.stringify(
+                `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`
+              )};function load(){if(document.querySelector('script[data-ad-live="1"]'))return;var s=document.createElement("script");s.src=src;s.async=true;s.crossOrigin="anonymous";s.setAttribute("data-ad-client",${JSON.stringify(
+                ADSENSE_CLIENT_ID
+              )});s.setAttribute("data-ad-live","1");document.head.appendChild(s);}setTimeout(load,4000);})();`,
+            }}
           />
         ) : null}
         <script
