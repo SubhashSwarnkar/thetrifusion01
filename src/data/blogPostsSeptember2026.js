@@ -7059,7 +7059,6 @@ export const september2026Posts = [
     featured: true,
     relatedServiceSlugs: ["salesforce","ai-development","digital-marketing"],
   },
-,
 
 {
     id: 128,
