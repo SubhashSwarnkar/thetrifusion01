@@ -11,7 +11,6 @@ import BrandTrustStrip from "components/BrandTrustStrip";
 import ServiceIcon from "components/ServiceIcon";
 import { getServiceBySlug, services } from "data/servicesData";
 import { getSolutionsForService } from "data/seoLandingPages";
-import { getBlogBySlug } from "data/blogData";
 import { accentAt, accentForSlug } from "lib/themeAccents";
 import NotFoundPage from "./NotFoundPage";
 import SEO from "components/common/SEO";
@@ -83,15 +82,12 @@ const STANDARD_DELIVERABLES = [
   "30-day post-launch support & stability warranty",
 ];
 
-export default function ServiceDetailPage() {
+export default function ServiceDetailPage({ relatedBlog = null }) {
   const { slug } = useParams();
   const service = getServiceBySlug(slug);
   const relatedSolutions = getSolutionsForService(slug || "");
   const otherServices = services.filter((item) => item.slug !== slug).slice(0, 6);
   const primary = accentForSlug(service?.slug);
-  const relatedBlog = service?.relatedBlogSlug
-    ? getBlogBySlug(service.relatedBlogSlug)
-    : null;
   const [openFaqs, setOpenFaqs] = useState([0]);
 
   useEffect(() => {

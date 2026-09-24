@@ -1,33 +1,19 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
-import { Fade } from "react-awesome-reveal";
 import Button from "../elements/Button";
 
 export default function Portfolio({ data }) {
   return (
     <section className="container mx-auto flex flex-col items-center mt-20">
-      <Fade direction="right" triggerOnce>
-        <h2 className="text-5xl text-theme-blue dark:text-white text-center font-bold">
-          Our Selected Project
-        </h2>
-      </Fade>
-      <Fade direction="left" triggerOnce>
-        <p className="font-light text-lg text-gray-400 dark:text-gray-300 text-center mb-12">
-          We are ready to scale up your business with our great work result.
-        </p>
-      </Fade>
+      <h2 className="text-5xl text-theme-blue dark:text-white text-center font-bold">
+        Our Selected Project
+      </h2>
+      <p className="font-light text-lg text-gray-400 dark:text-gray-300 text-center mb-12">
+        We are ready to scale up your business with our great work result.
+      </p>
       <div className="grid grid-cols-2 sm:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
         {data.slice(0, 6).map((item, index) => (
-          <Fade
-            direction="up"
-            triggerOnce
-            bottom
-            delay={Math.min(index * 80, 240)}
-            key={item.id}
-          >
-            <Button type="link" href={`/portfolio/${item.id}`}>
+          <Button type="link" href={`/portfolio/${item.id}`} key={item.id}>
               <div className="group rounded-2xl shadow-xl w-auto m-3 transform transition duration-500 hover:scale-110 portofolio-card">
                 <div className="relative">
                   <Image
@@ -36,6 +22,7 @@ export default function Portfolio({ data }) {
                     width={600}
                     height={400}
                     className="rounded-t-2xl z-0 w-full h-auto"
+                    loading="lazy"
                     unoptimized
                   />
                   <div className="absolute flex w-full h-full top-0 opacity-0 bg-black justify-center rounded-t-2xl rounded-b img-hover">
@@ -78,16 +65,14 @@ export default function Portfolio({ data }) {
                 </div>
               </div>
             </Button>
-          </Fade>
         ))}
       </div>
 
-      <Fade bottom triggerOnce>
-        <Button
-          href="/portfolio"
-          type="link"
-          className="flex flex-grow-0 w-36 h-12 sm:w-40 sm:h-14 lg:w-44 lg:h-16 xl:w-36 xl:h-12 text-theme-purple px-5 border border-theme-purple items-center mt-14 rounded-full justify-center transition duration-300 hover:bg-theme-purple hover:text-white"
-        >
+      <Button
+        href="/portfolio"
+        type="link"
+        className="flex flex-grow-0 w-36 h-12 sm:w-40 sm:h-14 lg:w-44 lg:h-16 xl:w-36 xl:h-12 text-theme-purple px-5 border border-theme-purple items-center mt-14 rounded-full justify-center transition duration-300 hover:bg-theme-purple hover:text-white"
+      >
           <p className="font-normal py-3 lg:text-lg xl:text-base">See More</p>
           <svg
             className="w-4 h-4"
@@ -117,8 +102,7 @@ export default function Portfolio({ data }) {
               d="M9 5l7 7-7 7"
             />
           </svg>
-        </Button>
-      </Fade>
+      </Button>
     </section>
   );
 }

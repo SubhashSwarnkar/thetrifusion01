@@ -1,8 +1,5 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
-import { Fade } from "react-awesome-reveal";
 
 const SPECIALIZED = [
   {
@@ -35,8 +32,7 @@ export default function SpecializedSolutions() {
   return (
     <section className="py-16 sm:py-20 bg-gray-50">
       <div className="container mx-auto px-5">
-        <Fade direction="up" triggerOnce>
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
             <div className="max-w-2xl">
               <span className="inline-block px-4 py-1.5 rounded-full bg-light-theme-purple/40 text-theme-purple text-xs font-bold uppercase tracking-[0.18em] mb-4">
                 Specialized solutions
@@ -51,18 +47,19 @@ export default function SpecializedSolutions() {
             </div>
             <Link
               href="/solutions"
+              prefetch={false}
               className="inline-flex items-center self-start lg:self-auto text-theme-purple font-bold hover:underline"
             >
               All solutions →
             </Link>
-          </div>
-        </Fade>
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {SPECIALIZED.map((item, index) => (
-            <Fade key={item.href} direction="up" delay={index * 80} triggerOnce>
+          {SPECIALIZED.map((item) => (
               <Link
+                key={item.href}
                 href={item.href}
+                prefetch={false}
                 className="group block h-full rounded-2xl border border-gray-100 bg-white p-6 hover:border-theme-purple/40 hover:shadow-md transition-all"
               >
                 <h3 className="text-lg font-bold text-theme-blue mb-2 group-hover:text-theme-purple transition-colors">
@@ -75,7 +72,6 @@ export default function SpecializedSolutions() {
                   Explore →
                 </span>
               </Link>
-            </Fade>
           ))}
         </div>
       </div>

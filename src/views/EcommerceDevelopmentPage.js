@@ -107,14 +107,17 @@ export default function EcommerceDevelopmentPage() {
               <p className="text-base text-gray-600 font-light leading-relaxed mb-6 max-w-xl">
                 {page.intro}
               </p>
-              <div className="relative aspect-[16/9] rounded-2xl overflow-hidden border border-gray-100 shadow-lg mb-8">
-                <Image
-                  src={page.heroImage}
+              <div className="relative aspect-[16/9] rounded-2xl overflow-hidden border border-gray-100 shadow-lg mb-8 bg-gray-100">
+                {/* Precompressed poster. Metadata/OG still uses the original PNG. */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/ecommerce/hero-storefront.webp"
                   alt={page.heroImageAlt}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                  priority
+                  width={960}
+                  height={540}
+                  loading="lazy"
+                  fetchPriority="low"
+                  className="absolute inset-0 h-full w-full object-cover"
                 />
               </div>
               <div className="hidden lg:flex flex-row gap-3 mb-8">

@@ -1,8 +1,5 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
-import { Fade } from "react-awesome-reveal";
 import Button from "../elements/Button";
 import HeroVideo from "components/HeroVideo";
 
@@ -45,7 +42,6 @@ export default function Hero() {
       <div className="container mx-auto px-5">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div className="text-center lg:text-left">
-            <Fade direction="up" triggerOnce>
               <span className="inline-block mb-6 px-4 py-1.5 rounded-full bg-light-theme-purple/40 text-theme-purple text-xs font-bold uppercase tracking-[0.18em]">
                 Jaipur, Rajasthan
               </span>
@@ -82,7 +78,7 @@ export default function Hero() {
                     />
                   </svg>
                 </Button>
-                <Link
+                <Link prefetch={false}
                   href="/portfolio"
                   className="flex items-center justify-center px-8 py-4 text-theme-purple text-lg bg-white border-2 border-theme-purple rounded-full shadow-lg hover:bg-light-theme-purple transition-all duration-300 hover:shadow-xl hover:scale-105"
                 >
@@ -92,13 +88,10 @@ export default function Hero() {
               <p className="mt-3 text-sm text-gray-400 font-medium">
                 Written quote reply within 24 hours
               </p>
-            </Fade>
           </div>
 
           <div className="w-full">
-            <Fade direction="up" triggerOnce className="w-full block">
-              <HeroVideo />
-            </Fade>
+            <HeroVideo />
           </div>
         </div>
 
@@ -108,7 +101,7 @@ export default function Hero() {
           </p>
           <div className="flex flex-wrap justify-center lg:justify-start gap-2.5">
             {HERO_CORE.map((chip) => (
-              <Link
+              <Link prefetch={false}
                 key={chip.label}
                 href={chip.href}
                 className={chip.highlight ? highlightChipClassName : chipClassName}

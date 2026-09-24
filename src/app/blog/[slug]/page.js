@@ -5,6 +5,7 @@ import { blogPosts, getBlogBySlug, ARCHIVE_NOINDEX_SLUGS } from "data/blogData";
 import { buildMetadata } from "lib/seoConfig";
 import { articleSchema, breadcrumbSchema, faqSchema, eventSchema } from "lib/schema";
 import { extractBlogFaqs } from "lib/blogFaqs";
+import { getBlogArticleView } from "lib/blogArticleProps";
 
 export function generateStaticParams() {
   // Exclude archived slugs (they 301 to /blog via next.config)
@@ -59,7 +60,7 @@ export default function RoutePage({ params }) {
         <JsonLd data={faqSchema(extractBlogFaqs(post.content))} />
       ) : null}
       {eventSchema(post) ? <JsonLd data={eventSchema(post)} /> : null}
-      <Page />
+      <Page {...getBlogArticleView(post)} />
     </>
   );
 }

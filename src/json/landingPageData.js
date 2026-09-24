@@ -11,11 +11,7 @@ import AtharvNarayanImg from "../assets/images/Portfolio/AtharvNarayan.jpg";
 import ShopNovaImg from "../assets/images/Portfolio/ShopNova.jpg";
 import PaySwiftImg from "../assets/images/Portfolio/PaySwift.jpg";
 
-// Advantages
-import Communicative from "../assets/images/Advantages/Communicative.png";
-import Collaborative from "../assets/images/Advantages/Collaborative.png";
-import Management from "../assets/images/Advantages/Management.png";
-import Favorite from "../assets/images/Advantages/Favorite.png";
+// Advantage art is served from /public and lazy-loaded so it is not preloaded.
 
 // TeamMembers - Shared imports for testimonials and team
 import CEO from "../assets/images/TeamMembers/CEO.png";
@@ -395,13 +391,13 @@ export const Advantages = [
       title: "Communicative",
       description:
         "We communicate our project ideas and progress to make it clear.",
-      imageUrl: Communicative,
+      imageUrl: "/images/advantages/Communicative.png",
     },
     {
       title: "Management",
       description:
         "We manage our project properly to make our project done well.",
-      imageUrl: Management,
+      imageUrl: "/images/advantages/Management.png",
     },
   ],
   [
@@ -409,12 +405,12 @@ export const Advantages = [
       title: "Collaborative​",
       description:
         "Our team are very collaborative to make our project done well.",
-      imageUrl: Collaborative,
+      imageUrl: "/images/advantages/Collaborative.png",
     },
     {
       title: "Favorite",
       description: "We've did so many project and all of our client love it.",
-      imageUrl: Favorite,
+      imageUrl: "/images/advantages/Favorite.png",
     },
   ],
 ];

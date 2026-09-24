@@ -1,14 +1,12 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { Transition } from "@headlessui/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
 import BrandIcon from "./BrandIcon";
 import ServiceIcon from "components/ServiceIcon";
 import { accentAt } from "lib/themeAccents";
-import { services } from "../data/servicesData";
+import { serviceNav as services } from "data/serviceNav";
 
 const SERVICE_MENU_GROUPS = [
   {
@@ -202,7 +200,7 @@ export default function Header() {
                   </button>
                 </div>
               ) : (
-                <Link
+                <Link prefetch={false}
                   href={item.to}
                   aria-current={isActive ? "page" : undefined}
                   className={linkClass}
@@ -214,7 +212,7 @@ export default function Header() {
             );
           })}
 
-          <Link
+          <Link prefetch={false}
             href="/contact"
             className="ml-3 xl:ml-5 px-6 py-2.5 bg-theme-purple text-white rounded-full text-sm font-bold shadow-md hover:shadow-lg whitespace-nowrap transition-shadow"
           >
@@ -235,15 +233,7 @@ export default function Header() {
         </button>
       </div>
 
-      <Transition
-        show={isServicesOpen}
-        enter="transition ease-out duration-150"
-        enterFrom="opacity-0 -translate-y-1"
-        enterTo="opacity-100 translate-y-0"
-        leave="transition ease-in duration-100"
-        leaveFrom="opacity-100 translate-y-0"
-        leaveTo="opacity-0 -translate-y-1"
-      >
+      {isServicesOpen ? (
         <div
           className="hidden lg:block absolute left-0 right-0 top-full pt-2"
           onMouseEnter={handleMouseEnter}
@@ -264,7 +254,7 @@ export default function Header() {
                         const accent = accentAt(group.accentIndex + idx);
                         return (
                           <li key={extra.slug}>
-                            <Link
+                            <Link prefetch={false}
                               href={extra.href}
                               onClick={handleLinkClick}
                               className="group/item flex items-start gap-3 rounded-xl px-2 py-2 hover:bg-gray-50 transition-colors"
@@ -292,7 +282,7 @@ export default function Header() {
                         );
                         return (
                           <li key={slug}>
-                            <Link
+                            <Link prefetch={false}
                               href={`/services/${service.slug}`}
                               onClick={handleLinkClick}
                               className="group/item flex items-start gap-3 rounded-xl px-2 py-2 hover:bg-gray-50 transition-colors"
@@ -321,7 +311,7 @@ export default function Header() {
                 <p className="text-xs text-theme-blue/50 hidden sm:block">
                   Web, apps, design and growth — from Jaipur.
                 </p>
-                <Link
+                <Link prefetch={false}
                   href="/services"
                   onClick={handleLinkClick}
                   className="ml-auto inline-flex items-center gap-2 text-sm font-bold text-theme-purple hover:text-dark-theme-purple"
@@ -335,18 +325,10 @@ export default function Header() {
             </div>
           </div>
         </div>
-      </Transition>
+      ) : null}
 
-      {/* Mobile Menu - Enhanced */}
-      <AnimatePresence>
-        {isCollapse && (
-          <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="mobile-menu fixed inset-0 bg-white z-[100] lg:hidden overflow-y-auto"
-          >
+      {isCollapse && (
+          <div className="mobile-menu fixed inset-0 bg-white z-[100] lg:hidden overflow-y-auto">
             <div className="container mx-auto px-6 py-24 h-full flex flex-col">
               <p className="text-sm font-semibold text-gray-500 mb-8">
                 Office · Jaipur, Rajasthan
@@ -360,13 +342,8 @@ export default function Header() {
                   { name: "Pricing", to: "/pricing" },
                   { name: "Insights", to: "/blog" },
                   { name: "Company", to: "/about" },
-                ].map((item, idx) => (
-                  <motion.div
-                    key={item.name}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 + idx * 0.05 }}
-                  >
+                ].map((item) => (
+                  <div key={item.name}>
                     {item.isDropdown ? (
                       <div className="space-y-4">
                         <button 
@@ -378,15 +355,9 @@ export default function Header() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
                           </svg>
                         </button>
-                        <AnimatePresence>
                           {isMobileServicesOpen && (
-                            <motion.div 
-                              initial={{ opacity: 0, height: 0 }}
-                              animate={{ opacity: 1, height: "auto" }}
-                              exit={{ opacity: 0, height: 0 }}
-                              className="grid grid-cols-1 gap-4 overflow-hidden pl-4"
-                            >
-                              <Link
+                            <div className="grid grid-cols-1 gap-4 overflow-hidden pl-4">
+                              <Link prefetch={false}
                                 href="/ecommerce-development"
                                 onClick={handleLinkClick}
                                 className={`flex items-center gap-3 py-2.5 px-3 rounded-xl border ${accentAt(0).card}`}
@@ -399,7 +370,7 @@ export default function Header() {
                               {services.map((s, sIdx) => {
                                 const accent = accentAt(sIdx + 1);
                                 return (
-                                <Link
+                                <Link prefetch={false}
                                   key={s.id}
                                   href={`/services/${s.slug}`}
                                   onClick={handleLinkClick}
@@ -412,12 +383,11 @@ export default function Header() {
                                 </Link>
                                 );
                               })}
-                            </motion.div>
+                            </div>
                           )}
-                        </AnimatePresence>
                       </div>
                     ) : (
-                      <Link 
+                      <Link prefetch={false} 
                         href={item.to} 
                         onClick={handleLinkClick}
                         className={`block py-4 text-4xl font-black transition-all ${
@@ -427,17 +397,12 @@ export default function Header() {
                         {item.name}
                       </Link>
                     )}
-                  </motion.div>
+                  </div>
                 ))}
               </nav>
 
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="mt-auto pt-10 pb-10"
-              >
-                <Link 
+              <div className="mt-auto pt-10 pb-10">
+                <Link prefetch={false} 
                   href="/contact" 
                   onClick={handleLinkClick} 
                   className="block w-full text-center py-6 bg-theme-purple text-white rounded-3xl text-2xl font-black shadow-2xl shadow-theme-purple/30 group relative overflow-hidden"
@@ -450,11 +415,10 @@ export default function Header() {
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-theme-purple to-theme-cyan opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </Link>
-              </motion.div>
+              </div>
             </div>
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
     </header>
   );
 }

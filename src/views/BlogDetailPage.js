@@ -2,19 +2,9 @@
 
 import React, { useEffect } from "react";
 import Link from "next/link";
-import { useParams } from "next/navigation";
 import Header from "parts/Header";
 import Footer from "parts/Footer";
 import Breadcrumbs from "components/Breadcrumbs";
-import { Fade } from "react-awesome-reveal";
-import {
-  getBlogBySlug,
-  getPublishedBlogPosts,
-  blogCategories,
-  isArchivedPost,
-} from "data/blogData";
-import { getSeoLandingBySlug } from "data/seoLandingPages";
-import { getServiceBySlug } from "data/servicesData";
 import SEO from "components/common/SEO";
 import {
   BlogAdBottom,
@@ -23,45 +13,24 @@ import {
   BlogAdTop,
 } from "components/BlogAdSense";
 import { SITE_URL } from "lib/seoConfig";
-import NotFoundPage from "./NotFoundPage";
 import { WHATSAPP_NUMBER } from "data/companyInfo";
 import { trackEvent, AnalyticsEvents } from "utils/analytics";
 
-const BLOG_SOLUTION_MAP = {
-  webdev: [
-    "web-development-company-india",
-    "ecommerce-website-development",
-  ],
-  mobile: ["mobile-app-development-company", "ui-ux-design-agency"],
-  casestudy: [
-    "ecommerce-website-development",
-    "mobile-app-development-company",
-  ],
-  mlm: [
-    "crm-erp-software-development",
-    "custom-software-development-company",
-  ],
-  fintech: [
-    "custom-software-development-company",
-    "mobile-app-development-company",
-  ],
-  default: [
-    "best-software-company-india",
-    "custom-software-development-company",
-  ],
-};
-
-export default function BlogDetailPage() {
-  const { slug } = useParams();
-  const post = getBlogBySlug(slug);
-  const shareUrl = `${SITE_URL}/blog/${slug}`;
+export default function BlogDetailPage({
+  post,
+  categoryName,
+  relatedSolutions = [],
+  relatedServices = [],
+  relatedPosts = [],
+}) {
+  const shareUrl = `${SITE_URL}/blog/${post?.slug || ""}`;
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [slug]);
+  }, [post?.slug]);
 
   if (!post) {
-    return <NotFoundPage />;
+    return null;
   }
 
   const formatDate = (dateString) => {
@@ -72,28 +41,6 @@ export default function BlogDetailPage() {
       day: "numeric",
     });
   };
-
-  const category = blogCategories.find((cat) => cat.id === post.category);
-  const relatedSolutions = (
-    BLOG_SOLUTION_MAP[post.category] || BLOG_SOLUTION_MAP.default
-  )
-    .map((s) => getSeoLandingBySlug(s))
-    .filter(Boolean)
-    .slice(0, 2);
-
-  const relatedServices = (post.relatedServiceSlugs || [])
-    .map((serviceSlug) => getServiceBySlug(serviceSlug))
-    .filter(Boolean)
-    .slice(0, 2);
-
-  const relatedPosts = getPublishedBlogPosts()
-    .filter(
-      (p) =>
-        p.slug !== post.slug &&
-        p.category === post.category &&
-        !isArchivedPost(p.slug)
-    )
-    .slice(0, 2);
 
   return (
     <>
@@ -110,7 +57,6 @@ export default function BlogDetailPage() {
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_300px]">
           <article className="min-w-0">
             {/* Header */}
-            <Fade direction="up" triggerOnce>
               <div className="mb-8">
                 <Link
                   href="/blog"
@@ -124,7 +70,7 @@ export default function BlogDetailPage() {
                   <span>{post.readTime}</span>
                   <span>•</span>
                   <span className="rounded-full bg-light-theme-purple px-3 py-1 text-sm font-medium text-theme-purple">
-                    {category?.name || post.category}
+                    {categoryName}
                   </span>
                 </div>
                 <h1 className="mb-4 text-3xl font-bold text-theme-blue sm:text-4xl md:text-5xl">
@@ -143,12 +89,10 @@ export default function BlogDetailPage() {
                   </div>
                 </div>
               </div>
-            </Fade>
-
+            
             <BlogAdTop />
 
             {/* Content */}
-            <Fade direction="up" delay={200} triggerOnce>
               <div className="prose prose-lg max-w-none">
                 {post.content ? (
                   <div
@@ -161,12 +105,10 @@ export default function BlogDetailPage() {
                   </p>
                 )}
               </div>
-            </Fade>
-
+            
             <BlogAdBottom />
 
             {/* Lead CTA — convert organic readers */}
-            <Fade direction="up" delay={350} triggerOnce>
               <div
                 id="blog-lead-cta"
                 className="mt-12 rounded-2xl border border-theme-purple/20 bg-gradient-to-br from-light-theme-purple/40 to-white p-6 shadow-sm sm:p-8"
@@ -212,10 +154,8 @@ export default function BlogDetailPage() {
                   </Link>
                 </div>
               </div>
-            </Fade>
-
+            
             {/* Social Share */}
-            <Fade direction="up" delay={400} triggerOnce>
               <div className="mt-12 border-t border-gray-200 pt-8">
                 <h3 className="mb-4 text-xl font-bold text-theme-blue">
                   Share this article
@@ -247,10 +187,8 @@ export default function BlogDetailPage() {
                   </a>
                 </div>
               </div>
-            </Fade>
-
+            
             {relatedServices.length > 0 && (
-              <Fade direction="up" delay={430} triggerOnce>
                 <div className="mt-12 border-t border-gray-200 pt-8">
                   <h3 className="mb-6 text-2xl font-bold text-theme-blue">
                     Related services
@@ -272,11 +210,9 @@ export default function BlogDetailPage() {
                     ))}
                   </div>
                 </div>
-              </Fade>
-            )}
+                          )}
 
             {relatedSolutions.length > 0 && (
-              <Fade direction="up" delay={450} triggerOnce>
                 <div className="mt-12 border-t border-gray-200 pt-8">
                   <h3 className="mb-6 text-2xl font-bold text-theme-blue">
                     Related solutions
@@ -298,11 +234,9 @@ export default function BlogDetailPage() {
                     ))}
                   </div>
                 </div>
-              </Fade>
-            )}
+                          )}
 
             {relatedPosts.length > 0 && (
-              <Fade direction="up" delay={500} triggerOnce>
                 <div className="mt-12 border-t border-gray-200 pt-8">
                   <h3 className="mb-6 text-2xl font-bold text-theme-blue">
                     Related Articles
@@ -324,8 +258,7 @@ export default function BlogDetailPage() {
                     ))}
                   </div>
                 </div>
-              </Fade>
-            )}
+                          )}
           </article>
 
           <aside className="hidden lg:block">

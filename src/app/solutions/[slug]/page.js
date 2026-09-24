@@ -5,6 +5,7 @@ import {
   getSeoLandingBySlug,
   seoLandingPages,
 } from "data/seoLandingPages";
+import { getBlogBySlug } from "data/blogData";
 import { buildMetadata } from "lib/seoConfig";
 import {
   breadcrumbSchema,
@@ -60,7 +61,18 @@ export default function RoutePage({ params }) {
           { name: page.h1, path: `/solutions/${page.slug}` },
         ])}
       />
-      <Page />
+      <Page
+        relatedBlog={
+          page.relatedBlogSlug
+            ? (() => {
+                const post = getBlogBySlug(page.relatedBlogSlug);
+                return post
+                  ? { slug: post.slug, title: post.title, excerpt: post.excerpt }
+                  : null;
+              })()
+            : null
+        }
+      />
     </>
   );
 }

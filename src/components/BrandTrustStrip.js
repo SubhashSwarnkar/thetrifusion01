@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 const clients = [
@@ -94,7 +96,7 @@ const clients = [
   },
 ];
 
-function ClientMarks({ hidden = false }) {
+function ClientMarks({ hidden = false, showLogos = false }) {
   return (
     <ul
       className="flex shrink-0 items-center gap-4 pr-4 sm:gap-6 sm:pr-6"
@@ -110,13 +112,18 @@ function ClientMarks({ hidden = false }) {
             className="group flex h-28 min-w-[250px] items-center justify-center rounded-2xl border border-theme-blue/10 bg-white px-5 py-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-theme-purple/25 hover:shadow-md sm:min-w-[290px]"
           >
             <span className="relative block h-full w-full transition-transform duration-300 group-hover:scale-105">
-              <Image
-                src={client.logo}
-                alt={`${client.name} logo`}
-                fill
-                sizes="290px"
-                className="object-contain"
-              />
+              {showLogos ? (
+                <Image
+                  src={client.logo}
+                  alt={`${client.name} logo`}
+                  fill
+                  sizes="290px"
+                  loading="lazy"
+                  className="object-contain"
+                />
+              ) : (
+                <span className="sr-only">{client.name}</span>
+              )}
             </span>
           </a>
         </li>
@@ -126,6 +133,24 @@ function ClientMarks({ hidden = false }) {
 }
 
 export default function BrandTrustStrip() {
+  const [showLogos, setShowLogos] = useState(false);
+
+  useEffect(() => {
+    const start = () => setShowLogos(true);
+    const id = window.setTimeout(start, 6000);
+    const onIntent = () => {
+      window.clearTimeout(id);
+      start();
+    };
+    window.addEventListener("pointerdown", onIntent, { once: true, passive: true });
+    window.addEventListener("keydown", onIntent, { once: true });
+    return () => {
+      window.clearTimeout(id);
+      window.removeEventListener("pointerdown", onIntent);
+      window.removeEventListener("keydown", onIntent);
+    };
+  }, []);
+
   return (
     <section
       className="relative !mb-0 overflow-hidden border-y border-theme-purple/10 bg-gradient-to-b from-white via-light-theme-purple/20 to-white py-14 sm:py-16 lg:py-20"
@@ -155,8 +180,8 @@ export default function BrandTrustStrip() {
         <div className="pointer-events-none absolute inset-y-0 right-0 z-20 w-12 bg-gradient-to-l from-white via-white/80 to-transparent sm:w-24 lg:w-40" />
 
         <div className="flex w-max animate-marquee-left hover:[animation-play-state:paused] motion-reduce:animate-none">
-          <ClientMarks />
-          <ClientMarks hidden />
+          <ClientMarks showLogos={showLogos} />
+          <ClientMarks hidden showLogos={showLogos} />
         </div>
       </div>
     </section>

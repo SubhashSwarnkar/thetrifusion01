@@ -37,6 +37,7 @@ export default function Button({
     return (
       <Link
         href={href}
+        prefetch={false}
         className={className}
         style={style}
         onClick={onClickHandler}

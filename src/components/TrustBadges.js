@@ -1,7 +1,4 @@
-"use client";
-
 import React from "react";
-import { Fade } from "react-awesome-reveal";
 
 export default function TrustBadges() {
   const stats = [
@@ -22,8 +19,7 @@ export default function TrustBadges() {
     <section className="bg-gray-50 py-16">
       <div className="container mx-auto px-5">
         {/* Stats */}
-        <Fade direction="up" triggerOnce>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             {stats.map((stat, index) => (
               <div
                 key={index}
@@ -36,12 +32,9 @@ export default function TrustBadges() {
                 <div className="text-sm sm:text-base text-gray-600">{stat.label}</div>
               </div>
             ))}
-          </div>
-        </Fade>
+        </div>
 
-        {/* Certifications/Badges */}
-        <Fade direction="up" delay={200} triggerOnce>
-          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
             <p className="text-gray-600 font-medium text-sm sm:text-base">Trusted by:</p>
             {certifications.map((cert, index) => (
               <div
@@ -54,8 +47,7 @@ export default function TrustBadges() {
                 </span>
               </div>
             ))}
-          </div>
-        </Fade>
+        </div>
       </div>
     </section>
   );
