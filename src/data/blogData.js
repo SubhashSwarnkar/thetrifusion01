@@ -1,6 +1,7 @@
 import React from 'react';
 import { september2026Posts } from "./blogPostsSeptember2026";
 import { upcomingEvents2026Posts } from "./blogPostsUpcomingEvents2026";
+import { upcomingEventsBatchDPosts } from "./upcomingEventsBatchD";
 
 /**
  * Blog editorial: ship 2 Jaipur / Rajasthan / India delivery posts each month.
@@ -56,6 +57,7 @@ export const HUB_TRENDING_SLUGS = [
 export const isArchivedPost = (slug) => ARCHIVE_NOINDEX_SLUGS.has(slug);
 
 export const blogPosts = [
+  ...upcomingEventsBatchDPosts,
   ...upcomingEvents2026Posts,
   ...september2026Posts,
   {
