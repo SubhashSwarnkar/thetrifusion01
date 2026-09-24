@@ -4,6 +4,7 @@ import { upcomingEvents2026Posts } from "./blogPostsUpcomingEvents2026";
 import { upcomingEventsBatchAPosts } from "./upcomingEventsBatchA";
 import { upcomingEventsBatchBPosts } from "./upcomingEventsBatchB";
 import { upcomingEventsBatchCPosts } from "./upcomingEventsBatchC";
+import { upcomingEventsBatchDPosts } from "./upcomingEventsBatchD";
 
 /**
  * Blog editorial: ship 2 Jaipur / Rajasthan / India delivery posts each month.
@@ -62,6 +63,7 @@ export const blogPosts = [
   ...upcomingEventsBatchAPosts,
   ...upcomingEventsBatchBPosts,
   ...upcomingEventsBatchCPosts,
+  ...upcomingEventsBatchDPosts,
   ...upcomingEvents2026Posts,
   ...september2026Posts,
   {
