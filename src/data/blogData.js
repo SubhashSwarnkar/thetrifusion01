@@ -3,6 +3,7 @@ import { september2026Posts } from "./blogPostsSeptember2026";
 import { upcomingEvents2026Posts } from "./blogPostsUpcomingEvents2026";
 import { upcomingEventsBatchAPosts } from "./upcomingEventsBatchA";
 import { upcomingEventsBatchBPosts } from "./upcomingEventsBatchB";
+import { upcomingEventsBatchCPosts } from "./upcomingEventsBatchC";
 
 /**
  * Blog editorial: ship 2 Jaipur / Rajasthan / India delivery posts each month.
@@ -60,6 +61,7 @@ export const isArchivedPost = (slug) => ARCHIVE_NOINDEX_SLUGS.has(slug);
 export const blogPosts = [
   ...upcomingEventsBatchAPosts,
   ...upcomingEventsBatchBPosts,
+  ...upcomingEventsBatchCPosts,
   ...upcomingEvents2026Posts,
   ...september2026Posts,
   {
