@@ -47,7 +47,10 @@ export default function sitemap() {
       ? safeDate(service.contentUpdatedAt, siteContentUpdated)
       : siteContentUpdated,
     changeFrequency: "weekly",
-    priority: 0.8,
+    priority:
+      typeof service.sitemapPriority === "number"
+        ? service.sitemapPriority
+        : 0.8,
   }));
 
   const solutionRoutes = seoLandingPages

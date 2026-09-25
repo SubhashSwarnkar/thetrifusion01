@@ -374,6 +374,11 @@ export const devopsPageContent = {
       title: "Ecommerce website guide",
       text: "If the workload you want to host is an online store.",
     },
+    {
+      href: "/services/ev-charging-app-development",
+      title: "EV charging app development",
+      text: "When the product is a charger network, the app and OCPP backend come before the pipeline.",
+    },
   ],
   faqs: [
     {

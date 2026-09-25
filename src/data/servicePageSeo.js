@@ -4,6 +4,7 @@
  * metaDescription target: 150–160 characters.
  */
 import { devopsPageContent } from "./devopsPageContent";
+import { evChargingPageContent } from "./evChargingPageContent";
 
 export const servicePageSeo = {
   "software-development": {
@@ -53,6 +54,13 @@ export const servicePageSeo = {
         question: "Do you work with clients outside Jaipur?",
         answer:
           "Yes. The office is Jaipur; delivery is remote with weekly demos for clients across India.",
+      },
+    ],
+    relatedLinks: [
+      {
+        href: "/services/ev-charging-app-development",
+        title: "EV charging app development",
+        text: "Driver apps, OCPP backends, and OCPI roaming when the product is charging software.",
       },
     ],
   },
@@ -155,6 +163,13 @@ export const servicePageSeo = {
           "Cross-platform when both stores ship together. Swift or Kotlin when one store needs platform APIs we cannot share cleanly.",
       },
     ],
+    relatedLinks: [
+      {
+        href: "/services/ev-charging-app-development",
+        title: "EV charging app development",
+        text: "The driver app for finding a charger, starting a session, and paying, with the OCPP backend behind it.",
+      },
+    ],
   },
   "ui-ux-design": {
     metaTitle: "UI/UX Design Agency in Jaipur | Product Design | TheTriFusion",
@@ -203,6 +218,13 @@ export const servicePageSeo = {
         question: "Can design start from Jaipur remotely?",
         answer:
           "Yes. Workshops on video, Figma shared, weekly reviews.",
+      },
+    ],
+    relatedLinks: [
+      {
+        href: "/services/ev-charging-app-development",
+        title: "EV charging app development",
+        text: "Driver map, session, and operator dashboard flows for charging products.",
       },
     ],
   },
@@ -679,25 +701,7 @@ export const servicePageSeo = {
       },
     ],
   },
-  "ev-charging-app-development": {
-    metaTitle:
-      "EV Charging App Development Company in Jaipur India | OCPI, OCPP & eMSP",
-    metaDescription:
-      "Leading EV charging app development company in Jaipur India. We build eMSP driver apps, CPO management software, OCPP 1.6/2.0.1 integrations & OCPI roaming platforms.",
-    keywords:
-      "EV charging app development Jaipur, EV charging app development company India, eMSP app development, CPO software development India, OCPP 1.6 2.0.1 charger integration, OCPI roaming software, EV billing and wallet app, smart EV navigation map, electric vehicle charging software India, EV fleet charging station platform",
-    locationLine:
-      "Production-proven EV charging software from Jaipur — creators of PlugOne (live at plugone.in) with multi-protocol OCPP & OCPI integration.",
-    scopeKicker: "EV Mobility Tech",
-    scopeHeading: "End-to-End EV Charging, eMSP & CPO Software Solutions",
-    processHeading: "How We Scope & Deliver Production EV Charging Platforms",
-    ctaHeading: "Building an EV Charging Network, eMSP, or CPO Platform?",
-    ctaText:
-      "Talk to the team that built PlugOne (live at plugone.in). Whether you need driver mobile apps, OCPI roaming, or OCPP 1.6/2.0.1 station management, we provide a scoped technical estimate from Jaipur.",
-    serviceType: "EV Charging Application, eMSP & CPO Software Development",
-    whatsappMessage:
-      "Hi TriFusion, I want an EV charging app (OCPI/OCPP / eMSP) quote from the Jaipur team.",
-  },
+  "ev-charging-app-development": evChargingPageContent,
   "ios-app-development": {
     metaTitle: "iOS App Development Company in Jaipur | App Store Ready",
     metaDescription:

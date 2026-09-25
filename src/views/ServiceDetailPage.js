@@ -284,7 +284,7 @@ export default function ServiceDetailPage({ relatedBlog = null }) {
             <InlineText text={service.description} />
           </p>
           {service.detailSections?.length ? (
-            <nav id="services-toc" aria-label="DevOps services on this page" className="mb-4">
+            <nav id="services-toc" aria-label={service.tocAriaLabel || "DevOps services on this page"} className="mb-4">
               <ol className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {service.detailSections.map((section, idx) => (
                   <li key={section.id}>
@@ -376,7 +376,7 @@ export default function ServiceDetailPage({ relatedBlog = null }) {
           </h2>
           <div className="mt-3 mb-6 h-1.5 w-16 rounded-full bg-gradient-to-r from-theme-purple via-theme-cyan to-theme-pink" />
           <p className="text-gray-600 font-light leading-relaxed max-w-3xl mb-8">
-            {service.starterPack.intro}
+            <InlineText text={service.starterPack.intro} />
           </p>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl">
             {service.starterPack.items?.map((item) => (
@@ -390,10 +390,10 @@ export default function ServiceDetailPage({ relatedBlog = null }) {
             <p className="mt-6 text-sm text-gray-600 font-light max-w-3xl">{service.starterPack.note}</p>
           ) : null}
           <Link
-            href="/contact"
+            href={service.starterPack.ctaHref || "/contact"}
             className="mt-6 inline-flex items-center px-6 py-3 bg-theme-purple text-white rounded-full font-bold text-sm"
           >
-            Request the free infrastructure audit
+            {service.starterPack.ctaLabel || "Request the free infrastructure audit"}
           </Link>
         </section>
       ) : null}

@@ -71,6 +71,7 @@ export default function RoutePage({ params }) {
                   }))
                 : service.services,
               areaServed: service.schemaAreaServed,
+              provider: service.schemaProvider,
             })}
           />
           <JsonLd
@@ -78,7 +79,10 @@ export default function RoutePage({ params }) {
               { name: "Home", path: "/" },
               { name: "Services", path: "/services" },
               {
-                name: service.bannerTitle || service.title,
+                name:
+                  service.breadcrumbName ||
+                  service.bannerTitle ||
+                  service.title,
                 path: `/services/${service.slug}`,
               },
             ])}

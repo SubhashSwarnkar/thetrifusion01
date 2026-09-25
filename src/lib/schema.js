@@ -235,6 +235,7 @@ export function serviceSchema({
   offers = [],
   pricedOffers = [],
   areaServed,
+  provider,
 }) {
   const url = absoluteSiteUrl(path);
   const offerUrl = (value) => {
@@ -276,7 +277,7 @@ export function serviceSchema({
     description,
     url,
     category: "Information Technology Services",
-    provider: { "@id": `${siteConfig.url}/#localbusiness` },
+    provider: provider || { "@id": `${siteConfig.url}/#localbusiness` },
     brand: { "@id": `${siteConfig.url}/#organization` },
     areaServed: areaServed || [
       { "@type": "City", name: "Jaipur" },
