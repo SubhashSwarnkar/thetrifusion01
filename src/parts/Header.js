@@ -14,12 +14,12 @@ const SERVICE_MENU_GROUPS = [
     accentIndex: 0,
     slugs: [
       "software-development",
+      "devops",
       "website-development",
       "mobile-app-development",
       "ios-app-development",
       "android-app-development",
       "ai-development",
-      "devops",
     ],
   },
   {
@@ -61,6 +61,18 @@ const SERVICE_MENU_GROUPS = [
 
 function getService(slug) {
   return services.find((item) => item.slug === slug);
+}
+
+function servicesForMobileMenu(items) {
+  const devops = items.find((item) => item.slug === "devops");
+  const withoutDevops = items.filter((item) => item.slug !== "devops");
+  const softwareIndex = withoutDevops.findIndex(
+    (item) => item.slug === "software-development"
+  );
+  if (!devops || softwareIndex === -1) return items;
+  const next = withoutDevops.slice();
+  next.splice(softwareIndex + 1, 0, devops);
+  return next;
 }
 
 export default function Header() {
@@ -365,7 +377,7 @@ export default function Header() {
                                 </span>
                                 <span className="font-semibold text-theme-blue text-base">Ecommerce Development</span>
                               </Link>
-                              {services.map((s, sIdx) => {
+                              {servicesForMobileMenu(services).map((s, sIdx) => {
                                 const accent = accentAt(sIdx + 1);
                                 return (
                                 <Link prefetch={false}
