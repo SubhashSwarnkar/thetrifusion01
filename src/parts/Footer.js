@@ -103,6 +103,7 @@ export default function Footer({ hideNewsletter = false }) {
                     </Link>
                   </li>
                 {[
+                  "devops",
                   "mlm-crm-development",
                   "fintech-app-development",
                   "ev-charging-app-development",

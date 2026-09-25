@@ -42,6 +42,21 @@
 - https://thetrifusion.in/services/ai-development
 - https://thetrifusion.in/services/devops
 - https://thetrifusion.in/services/on-demand
+
+## DevOps & Cloud services
+
+https://thetrifusion.in/services/devops
+Jaipur-based DevOps and cloud delivery for India and worldwide. The initial infrastructure audit and cloud cost audit are free. The DevOps Starter Pack for startups is a scoped engagement and is not a free bundle.
+
+- AI-powered DevOps / AIOps — https://thetrifusion.in/services/devops#ai-devops-aiops
+- Cloud cost optimization / FinOps — https://thetrifusion.in/services/devops#cloud-cost-optimization
+- Kubernetes management — https://thetrifusion.in/services/devops#kubernetes-management
+- CI/CD automation — https://thetrifusion.in/services/devops#ci-cd-automation
+- Security and compliance / DevSecOps (readiness support, not ISO 27001 or SOC 2 certification) — https://thetrifusion.in/services/devops#devsecops
+- Infrastructure as Code — https://thetrifusion.in/services/devops#infrastructure-as-code
+- Cloud migration to AWS, Azure, or GCP — https://thetrifusion.in/services/devops#cloud-migration
+- Managed DevOps — https://thetrifusion.in/services/devops#managed-devops
+- DevOps Starter Pack for startups — https://thetrifusion.in/services/devops#devops-starter-pack
 - https://thetrifusion.in/services/mlm-crm-development
 - https://thetrifusion.in/services/fintech-app-development
 - https://thetrifusion.in/services/ev-charging-app-development

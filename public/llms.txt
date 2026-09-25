@@ -31,6 +31,21 @@ Email: contact@thetrifusion.in
 - Fintech app development: https://thetrifusion.in/services/fintech-app-development
 - EV charging app development: https://thetrifusion.in/services/ev-charging-app-development
 
+## DevOps & Cloud services
+
+Page: https://thetrifusion.in/services/devops
+Jaipur-based delivery for India and worldwide. The initial infrastructure audit and cloud cost audit are free. The DevOps Starter Pack for startups is scoped separately and is not free.
+
+- AI-powered DevOps / AIOps: https://thetrifusion.in/services/devops#ai-devops-aiops
+- Cloud cost optimization / FinOps: https://thetrifusion.in/services/devops#cloud-cost-optimization
+- Kubernetes management: https://thetrifusion.in/services/devops#kubernetes-management
+- CI/CD automation: https://thetrifusion.in/services/devops#ci-cd-automation
+- DevSecOps readiness (not certification): https://thetrifusion.in/services/devops#devsecops
+- Infrastructure as Code: https://thetrifusion.in/services/devops#infrastructure-as-code
+- Cloud migration (AWS, Azure, or GCP): https://thetrifusion.in/services/devops#cloud-migration
+- Managed DevOps: https://thetrifusion.in/services/devops#managed-devops
+- DevOps Starter Pack for startups: https://thetrifusion.in/services/devops#devops-starter-pack
+
 ## Key hubs
 
 - Home: https://thetrifusion.in/
