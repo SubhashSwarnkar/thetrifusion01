@@ -52,33 +52,12 @@ const SERVICE_MENU_GROUPS = [
         href: "/ecommerce-development",
         slug: "ecommerce-development",
         title: "Ecommerce Development",
+        shortDescription:
+          "Live in 48 hrs or 50% refund. From ₹25,000 — web + apps.",
       },
     ],
   },
 ];
-
-const MENU_DESCRIPTIONS = {
-  "software-development": "Custom CRM, APIs and ops tools",
-  devops: "Kubernetes, CI/CD, AWS, Azure, GCP",
-  "website-development": "React/Next.js sites with SEO",
-  "mobile-app-development": "iOS and Android apps",
-  "ios-app-development": "Swift and React Native for iOS",
-  "android-app-development": "Kotlin and React Native apps",
-  "ai-development": "AI features inside real products",
-  "ui-ux-design": "Flows, UI systems and handoff",
-  "graphic-design": "Social, ads and campaign visuals",
-  branding: "Identity and positioning",
-  "digital-marketing": "SEO, Google Ads and Meta Ads",
-  rpa: "Automate repetitive workflows",
-  salesforce: "Setup, customization, optimization",
-  "business-modernization": "Replace spreadsheets with apps",
-  "on-demand": "Extra developers, named lead",
-  "ecommerce-development": "Store live fast, web and apps",
-  "mlm-crm-development": "Unilevel plans, genealogy, KYC",
-  "fintech-app-development": "BBPS, AEPS, DMT and UPI apps",
-  "ev-charging-app-development": "OCPI, OCPP and driver apps",
-  "crm-erp-development": "Pipelines, inventory and billing",
-};
 
 function getService(slug) {
   return services.find((item) => item.slug === slug);
@@ -104,6 +83,7 @@ export default function Header() {
   const pathname = usePathname();
   const path = pathname;
   const timeoutRef = useRef(null);
+  const menuScrollRef = useRef(null);
 
   // Scroll handler
   useEffect(() => {
@@ -152,6 +132,21 @@ export default function Header() {
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
+  useEffect(() => {
+    const el = menuScrollRef.current;
+    if (!el) return;
+    const onWheel = (event) => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      const maxScroll = el.scrollHeight - el.clientHeight;
+      if (maxScroll <= 0) return;
+      const atTop = el.scrollTop <= 0 && event.deltaY < 0;
+      const atBottom = el.scrollTop >= maxScroll - 1 && event.deltaY > 0;
+      if (atTop || atBottom) event.preventDefault();
+    };
+    el.addEventListener("wheel", onWheel, { passive: false });
+    return () => el.removeEventListener("wheel", onWheel);
   }, []);
 
   const handleMouseEnter = () => {
@@ -272,16 +267,19 @@ export default function Header() {
         onMouseLeave={handleMouseLeave}
       >
           <div className="container mx-auto px-5">
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-[0_16px_40px_rgba(21,44,91,0.12)] max-h-[calc(100vh-7rem)] overflow-y-auto p-4">
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-3">
+            <div
+              ref={menuScrollRef}
+              className="bg-white rounded-2xl border border-gray-100 shadow-[0_16px_40px_rgba(21,44,91,0.12)] max-h-[calc(100vh-7.5rem)] overflow-y-auto overscroll-contain p-5 md:p-6 [scrollbar-gutter:stable] [scrollbar-width:thin] [scrollbar-color:rgb(102_16_242)_rgb(243_244_246)] [&::-webkit-scrollbar]:w-2.5 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-theme-purple/60"
+            >
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
                 {SERVICE_MENU_GROUPS.map((group) => {
                   const groupAccent = accentAt(group.accentIndex);
                   return (
                   <div key={group.heading}>
-                    <p className={`text-[11px] font-bold uppercase tracking-[0.18em] mb-1.5 px-2 ${groupAccent.text}`}>
+                    <p className={`text-[11px] font-bold uppercase tracking-[0.18em] mb-3 px-2 ${groupAccent.text}`}>
                       {group.heading}
                     </p>
-                    <ul className="space-y-0">
+                    <ul className="space-y-0.5">
                       {(group.extras || []).map((extra, idx) => {
                         const accent = accentAt(group.accentIndex + idx);
                         return (
@@ -289,17 +287,17 @@ export default function Header() {
                             <Link prefetch={false}
                               href={extra.href}
                               onClick={handleLinkClick}
-                              className="group/item flex items-center gap-2.5 rounded-xl px-2 py-1 hover:bg-gray-50 transition-colors"
+                              className="group/item flex items-start gap-3 rounded-xl px-2 py-2 hover:bg-gray-50 transition-colors"
                             >
-                              <span className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${accent.iconWrap} group-hover/item:bg-theme-purple group-hover/item:text-white transition-colors`}>
-                                <ServiceIcon slug={extra.slug} className="w-3.5 h-3.5" />
+                              <span className={`mt-0.5 w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${accent.iconWrap} group-hover/item:bg-theme-purple group-hover/item:text-white transition-colors`}>
+                                <ServiceIcon slug={extra.slug} className="w-4 h-4" />
                               </span>
                               <span className="min-w-0">
-                                <span className="block truncate text-sm font-semibold leading-tight text-theme-blue group-hover/item:text-theme-purple transition-colors">
+                                <span className="block text-sm font-semibold text-theme-blue group-hover/item:text-theme-purple transition-colors">
                                   {extra.title}
                                 </span>
-                                <span className="block truncate text-xs text-gray-400 font-light leading-tight">
-                                  {MENU_DESCRIPTIONS[extra.slug]}
+                                <span className="block text-xs text-gray-400 font-light leading-snug line-clamp-1">
+                                  {extra.shortDescription}
                                 </span>
                               </span>
                             </Link>
@@ -317,17 +315,17 @@ export default function Header() {
                             <Link prefetch={false}
                               href={`/services/${service.slug}`}
                               onClick={handleLinkClick}
-                              className="group/item flex items-center gap-2.5 rounded-xl px-2 py-1 hover:bg-gray-50 transition-colors"
+                              className="group/item flex items-start gap-3 rounded-xl px-2 py-2 hover:bg-gray-50 transition-colors"
                             >
-                              <span className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${accent.iconWrap} group-hover/item:bg-theme-purple group-hover/item:text-white transition-colors`}>
-                                <ServiceIcon slug={service.slug} className="w-3.5 h-3.5" />
+                              <span className={`mt-0.5 w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${accent.iconWrap} group-hover/item:bg-theme-purple group-hover/item:text-white transition-colors`}>
+                                <ServiceIcon slug={service.slug} className="w-4 h-4" />
                               </span>
                               <span className="min-w-0">
-                                <span className="block truncate text-sm font-semibold leading-tight text-theme-blue group-hover/item:text-theme-purple transition-colors">
+                                <span className="block text-sm font-semibold text-theme-blue group-hover/item:text-theme-purple transition-colors">
                                   {service.title}
                                 </span>
-                                <span className="block truncate text-xs text-gray-400 font-light leading-tight">
-                                  {MENU_DESCRIPTIONS[service.slug]}
+                                <span className="block text-xs text-gray-400 font-light leading-snug line-clamp-1">
+                                  {service.shortDescription}
                                 </span>
                               </span>
                             </Link>
@@ -339,7 +337,7 @@ export default function Header() {
                   );
                 })}
               </div>
-              <div className="mt-3 pt-3 border-t border-theme-purple/10 flex items-center justify-between gap-4">
+              <div className="mt-4 pt-4 border-t border-theme-purple/10 flex items-center justify-between gap-4">
                 <p className="text-xs text-theme-blue/50 hidden sm:block">
                   Web, apps, design and growth — from Jaipur.
                 </p>
