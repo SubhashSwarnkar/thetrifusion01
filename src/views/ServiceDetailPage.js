@@ -98,6 +98,122 @@ const WHY_CHOOSE_POINTS = [
   },
 ];
 
+function DetailBlock({ section }) {
+  return (
+    <section
+      id={section.id}
+      className="container mx-auto px-5 py-14 border-t border-gray-100 scroll-mt-28"
+    >
+      <h2 className="text-3xl sm:text-4xl font-black text-theme-blue tracking-tight">
+        {section.heading}
+      </h2>
+      <div className="mt-3 mb-6 h-1.5 w-16 rounded-full bg-gradient-to-r from-theme-purple via-theme-cyan to-theme-pink" />
+      <div className="max-w-3xl space-y-4">
+        {section.paragraphs?.map((paragraph) => (
+          <p key={paragraph} className="text-gray-600 font-light leading-relaxed">
+            <InlineText text={paragraph} />
+          </p>
+        ))}
+      </div>
+      {section.roles?.map((role) => (
+        <div key={role.id} id={role.id} className="mt-10 max-w-3xl scroll-mt-28">
+          <h3 className="text-2xl font-black text-theme-blue tracking-tight mb-3">
+            {role.heading}
+          </h3>
+          <div className="space-y-4">
+            {role.paragraphs?.map((paragraph) => (
+              <p key={paragraph} className="text-gray-600 font-light leading-relaxed">
+                <InlineText text={paragraph} />
+              </p>
+            ))}
+          </div>
+          {role.points?.length ? (
+            <ul className="mt-4 space-y-2">
+              {role.points.map((item) => (
+                <li key={item} className="flex gap-2 text-sm text-gray-600 font-light leading-relaxed">
+                  <span aria-hidden="true" className="text-emerald-600 font-bold">✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          ) : null}
+        </div>
+      ))}
+      {section.comparison ? (
+        <div className="mt-10 max-w-5xl">
+          <h3 className="text-2xl font-black text-theme-blue tracking-tight mb-3">
+            {section.comparison.heading}
+          </h3>
+          {section.comparison.intro ? (
+            <p className="text-gray-600 font-light leading-relaxed max-w-3xl mb-4">
+              <InlineText text={section.comparison.intro} />
+            </p>
+          ) : null}
+          <div className="overflow-x-auto rounded-2xl border border-gray-200">
+            <table className="min-w-full text-sm text-left">
+              <thead className="bg-gray-50 text-theme-blue">
+                <tr>
+                  <th scope="col" className="px-4 py-3 font-bold">
+                    {section.comparison.rowHeader || " "}
+                  </th>
+                  {section.comparison.columns.map((column) => (
+                    <th key={column} scope="col" className="px-4 py-3 font-bold">
+                      {column}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {section.comparison.rows.map((row) => (
+                  <tr key={row.label} className="border-t border-gray-100">
+                    <th scope="row" className="px-4 py-3 font-semibold text-theme-blue align-top">
+                      {row.label}
+                    </th>
+                    {row.cells.map((cell, index) => (
+                      <td key={`${row.label}-${index}`} className="px-4 py-3 text-gray-600 font-light align-top">
+                        {cell}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      ) : null}
+      {section.included?.length || section.tools?.length ? (
+        <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl">
+          {section.included?.length ? (
+            <div>
+              <h3 className="text-lg font-bold text-theme-blue mb-3">What&apos;s included</h3>
+              <ul className="space-y-2">
+                {section.included.map((item) => (
+                  <li key={item} className="flex gap-2 text-sm text-gray-600 font-light leading-relaxed">
+                    <span aria-hidden="true" className="text-emerald-600 font-bold">✓</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+          {section.tools?.length ? (
+            <div>
+              <h3 className="text-lg font-bold text-theme-blue mb-3">Typical tools</h3>
+              <ul className="flex flex-wrap gap-2">
+                {section.tools.map((tool) => (
+                  <li key={tool} className="px-3 py-1.5 rounded-full border border-gray-200 bg-white text-xs font-semibold text-theme-blue">
+                    {tool}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+        </div>
+      ) : null}
+    </section>
+  );
+}
+
 const STANDARD_DELIVERABLES = [
   "Complete clean-architecture source code repo",
   "Production-ready deployment & CI/CD pipeline setup",
@@ -124,6 +240,9 @@ export default function ServiceDetailPage({ relatedBlog = null }) {
   }
 
   const startingPrice = service.startingFrom || service.pricing?.basic;
+  const detailSections = service.detailSections || [];
+  const leadSections = detailSections.filter((section) => section.lead);
+  const bodySections = detailSections.filter((section) => !section.lead);
 
   return (
     <div className="min-h-screen bg-white">
@@ -242,6 +361,10 @@ export default function ServiceDetailPage({ relatedBlog = null }) {
 
       {service.hideClientStrip ? null : <BrandTrustStrip />}
 
+      {leadSections.map((section) => (
+        <DetailBlock key={section.id} section={section} />
+      ))}
+
       {/* In-Page Quick Jump Navigation */}
       <nav aria-label="Page navigation" className="sticky top-16 z-30 bg-white/90 backdrop-blur-md border-y border-gray-100 hidden md:block">
         <div className="container mx-auto px-5 py-3 flex items-center gap-6 text-xs font-bold uppercase tracking-wider text-gray-500 overflow-x-auto">
@@ -326,47 +449,8 @@ export default function ServiceDetailPage({ relatedBlog = null }) {
         </div>
       </section>
 
-      {service.detailSections?.map((section) => (
-        <section
-          key={section.id}
-          id={section.id}
-          className="container mx-auto px-5 py-14 border-t border-gray-100 scroll-mt-28"
-        >
-          <h2 className="text-3xl sm:text-4xl font-black text-theme-blue tracking-tight">
-            {section.heading}
-          </h2>
-          <div className="mt-3 mb-6 h-1.5 w-16 rounded-full bg-gradient-to-r from-theme-purple via-theme-cyan to-theme-pink" />
-          <div className="max-w-3xl space-y-4">
-            {section.paragraphs?.map((paragraph) => (
-              <p key={paragraph} className="text-gray-600 font-light leading-relaxed">
-                <InlineText text={paragraph} />
-              </p>
-            ))}
-          </div>
-          <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl">
-            <div>
-              <h3 className="text-lg font-bold text-theme-blue mb-3">What&apos;s included</h3>
-              <ul className="space-y-2">
-                {section.included?.map((item) => (
-                  <li key={item} className="flex gap-2 text-sm text-gray-600 font-light leading-relaxed">
-                    <span aria-hidden="true" className="text-emerald-600 font-bold">✓</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-theme-blue mb-3">Typical tools</h3>
-              <ul className="flex flex-wrap gap-2">
-                {section.tools?.map((tool) => (
-                  <li key={tool} className="px-3 py-1.5 rounded-full border border-gray-200 bg-white text-xs font-semibold text-theme-blue">
-                    {tool}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
+      {bodySections.map((section) => (
+        <DetailBlock key={section.id} section={section} />
       ))}
 
       {service.starterPack ? (

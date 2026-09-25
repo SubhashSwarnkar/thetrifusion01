@@ -64,11 +64,20 @@ export default function RoutePage({ params }) {
                 ? undefined
                 : service.startingFrom || service.pricing?.basic,
               offers: service.detailSections?.length
-                ? service.detailSections.map((section) => ({
-                    title: section.heading,
-                    description: section.schemaDescription,
-                    url: `/services/${service.slug}#${section.id}`,
-                  }))
+                ? service.detailSections.flatMap((section) => [
+                    {
+                      title: section.heading,
+                      description: section.schemaDescription,
+                      url: `/services/${service.slug}#${section.id}`,
+                    },
+                    ...(section.roles || [])
+                      .filter((role) => role.catalogTitle)
+                      .map((role) => ({
+                        title: role.catalogTitle,
+                        description: role.schemaDescription,
+                        url: `/services/${service.slug}#${role.id}`,
+                      })),
+                  ])
                 : service.services,
               areaServed: service.schemaAreaServed,
               provider: service.schemaProvider,
