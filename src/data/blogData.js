@@ -6,6 +6,7 @@ import { upcomingEventsBatchBPosts } from "./upcomingEventsBatchB";
 import { upcomingEventsBatchCPosts } from "./upcomingEventsBatchC";
 import { upcomingEventsBatchDPosts } from "./upcomingEventsBatchD";
 import { dailyOrganicBatch20260925Posts } from "./dailyOrganicBatch20260925";
+import { dailyOrganicTrends20260925pmPosts } from "./dailyOrganicTrends20260925pm";
 
 /**
  * Blog editorial: ship 2 Jaipur / Rajasthan / India delivery posts each month.
@@ -46,21 +47,22 @@ export const blogCategories = [
 
 /** High-volume Trends / hub picks (featured:true). */
 export const HUB_TRENDING_SLUGS = [
-  "asian-games-men-why-trending-explained",
-  "england-vs-sri-lanka-why-trending-explained",
-  "nigella-lawson-why-trending-explained",
-  "lynx-vs-fever-wnba-why-trending",
-  "vivo-v80-specs-price-india-what-we-know",
-  "opus-5-5-ai-model-whats-known",
-  "epf-employee-provident-fund-india-guide",
-  "measles-why-trending-symptoms-facts",
-  "bitcoin-why-trending-price-explained",
-  "zelenskyy-why-trending-explained",
+  "australia-vs-brazil-friendly-why-trending",
+  "afghanistan-vs-nepal-asian-games-cricket-explained",
+  "portugal-vs-wales-nations-league-why-trending",
+  "netherlands-vs-germany-nations-league-why-trending",
+  "falcons-vs-packers-nfl-why-trending",
+  "norway-vs-denmark-nations-league-standings-explained",
+  "tata-aeris-price-launch-india-explained",
+  "cec-gyanesh-kumar-why-trending-explained",
+  "patient-zero-lyrics-why-trending",
+  "mark-carney-donald-trump-canada-why-trending",
 ];
 
 export const isArchivedPost = (slug) => ARCHIVE_NOINDEX_SLUGS.has(slug);
 
 export const blogPosts = [
+  ...dailyOrganicTrends20260925pmPosts,
   ...dailyOrganicBatch20260925Posts,
   ...upcomingEventsBatchAPosts,
   ...upcomingEventsBatchBPosts,
