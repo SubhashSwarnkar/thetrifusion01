@@ -233,14 +233,13 @@ export default function Header() {
         </button>
       </div>
 
-      {isServicesOpen ? (
-        <div
-          className="hidden lg:block absolute left-0 right-0 top-full pt-2"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
+      <div
+        className={`${isServicesOpen ? "hidden lg:block" : "hidden"} absolute left-0 right-0 top-full pt-2`}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
           <div className="container mx-auto px-5">
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-[0_16px_40px_rgba(21,44,91,0.12)] p-5 md:p-6">
+            <div className="bg-white rounded-2xl border border-gray-100 shadow-[0_16px_40px_rgba(21,44,91,0.12)] max-h-[calc(100vh-7rem)] overflow-y-auto p-5 md:p-6">
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
                 {SERVICE_MENU_GROUPS.map((group) => {
                   const groupAccent = accentAt(group.accentIndex);
@@ -325,7 +324,6 @@ export default function Header() {
             </div>
           </div>
         </div>
-      ) : null}
 
       {isCollapse && (
           <div className="mobile-menu fixed inset-0 bg-white z-[100] lg:hidden overflow-y-auto">

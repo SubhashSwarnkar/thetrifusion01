@@ -39,8 +39,8 @@ export const serviceNav = [
   {
     "id": "devops",
     "slug": "devops",
-    "title": "DevOps & Cloud Services",
-    "shortDescription": "DevOps and cloud services from Jaipur: managed DevOps, Kubernetes, CI/CD, DevSecOps, FinOps, infrastructure as code, and cloud migration for India and worldwide."
+    "title": "DevOps & Cloud",
+    "shortDescription": "TheTriFusion in Jaipur runs DevOps and cloud: Kubernetes, CI/CD, Terraform, AWS/Azure/GCP migration, cost optimization and managed DevOps. Free infrastructure audit."
   },
   {
     "id": "ui-ux-design",
