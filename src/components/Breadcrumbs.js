@@ -43,7 +43,7 @@ export default function Breadcrumbs() {
       "ios-app-development": "iOS Apps",
       "android-app-development": "Android Apps",
       "ai-development": "AI Development",
-      devops: "DevOps & Cloud",
+      devops: "DevOps & Cloud Services",
       "ui-ux-design": "UI/UX Design",
       "graphic-design": "Graphic Design",
       branding: "Branding",

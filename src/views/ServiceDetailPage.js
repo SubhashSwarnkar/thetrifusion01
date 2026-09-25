@@ -29,6 +29,31 @@ function SectionHeading({ children, kicker, id }) {
   );
 }
 
+function InlineText({ text }) {
+  if (!text) return null;
+  const re = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const nodes = [];
+  let last = 0;
+  let match;
+  let key = 0;
+  while ((match = re.exec(text))) {
+    if (match.index > last) nodes.push(text.slice(last, match.index));
+    const href = match[2];
+    nodes.push(
+      <Link
+        key={key++}
+        href={href}
+        className="font-semibold text-theme-purple hover:underline"
+      >
+        {match[1]}
+      </Link>
+    );
+    last = match.index + match[0].length;
+  }
+  if (last < text.length) nodes.push(text.slice(last));
+  return nodes;
+}
+
 function AccentCards({ items }) {
   if (!items?.length) return null;
   return (
@@ -150,20 +175,29 @@ export default function ServiceDetailPage({ relatedBlog = null }) {
 
               <div className="flex flex-col sm:flex-row gap-3 mb-8">
                 <Link
-                  href="/contact"
+                  href={service.primaryCtaHref || "/contact"}
                   className="inline-flex items-center justify-center px-7 py-3.5 bg-theme-purple text-white rounded-full font-bold shadow-lg shadow-theme-purple/25 hover:bg-dark-theme-purple hover:scale-[1.02] transition-all"
                 >
-                  Get a free scoped estimate
+                  {service.primaryCtaLabel || "Get a free scoped estimate"}
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </Link>
-                <Link
-                  href="/pricing"
-                  className="inline-flex items-center justify-center px-7 py-3.5 bg-white text-theme-purple border-2 border-theme-purple/40 rounded-full font-bold hover:bg-light-theme-purple transition-colors"
-                >
-                  View Pricing Plans
-                </Link>
+                {service.secondaryCtaHref ? (
+                  <Link
+                    href={service.secondaryCtaHref}
+                    className="inline-flex items-center justify-center px-7 py-3.5 bg-white text-theme-purple border-2 border-theme-purple/40 rounded-full font-bold hover:bg-light-theme-purple transition-colors"
+                  >
+                    {service.secondaryCtaLabel || "Learn more"}
+                  </Link>
+                ) : (
+                  <Link
+                    href="/pricing"
+                    className="inline-flex items-center justify-center px-7 py-3.5 bg-white text-theme-purple border-2 border-theme-purple/40 rounded-full font-bold hover:bg-light-theme-purple transition-colors"
+                  >
+                    View Pricing Plans
+                  </Link>
+                )}
               </div>
 
               {service.features?.length > 0 && (
@@ -206,25 +240,35 @@ export default function ServiceDetailPage({ relatedBlog = null }) {
         </div>
       </section>
 
-      <BrandTrustStrip />
+      {service.hideClientStrip ? null : <BrandTrustStrip />}
 
       {/* In-Page Quick Jump Navigation */}
       <nav aria-label="Page navigation" className="sticky top-16 z-30 bg-white/90 backdrop-blur-md border-y border-gray-100 hidden md:block">
         <div className="container mx-auto px-5 py-3 flex items-center gap-6 text-xs font-bold uppercase tracking-wider text-gray-500 overflow-x-auto">
-          <a href="#deliverables" className="hover:text-theme-purple whitespace-nowrap transition-colors">Deliverables</a>
-          <a href="#stack" className="hover:text-theme-purple whitespace-nowrap transition-colors">Tech Stack</a>
-          <a href="#process" className="hover:text-theme-purple whitespace-nowrap transition-colors">Process</a>
-          <a href="#why-us" className="hover:text-theme-purple whitespace-nowrap transition-colors">Why TheTriFusion</a>
-          {startingPrice ? (
-            <a href="#pricing" className="hover:text-theme-purple whitespace-nowrap transition-colors">Pricing & Timeline</a>
-          ) : null}
-          {service.industries?.length ? (
-            <a href="#products" className="hover:text-theme-purple whitespace-nowrap transition-colors">Products</a>
-          ) : null}
-          <a href="#faq" className="hover:text-theme-purple whitespace-nowrap transition-colors">FAQs</a>
-          <a href="#related" className="hover:text-theme-purple whitespace-nowrap transition-colors">Related</a>
-          <Link href="/contact" className="ml-auto text-theme-purple font-black hover:underline whitespace-nowrap">
-            Get a free scoped estimate →
+          {service.quickNav?.length ? (
+            service.quickNav.map((item) => (
+              <a key={item.href} href={item.href} className="hover:text-theme-purple whitespace-nowrap transition-colors">
+                {item.label}
+              </a>
+            ))
+          ) : (
+            <>
+              <a href="#deliverables" className="hover:text-theme-purple whitespace-nowrap transition-colors">Deliverables</a>
+              <a href="#stack" className="hover:text-theme-purple whitespace-nowrap transition-colors">Tech Stack</a>
+              <a href="#process" className="hover:text-theme-purple whitespace-nowrap transition-colors">Process</a>
+              <a href="#why-us" className="hover:text-theme-purple whitespace-nowrap transition-colors">Why TheTriFusion</a>
+              {startingPrice && !service.hidePricingEstimates ? (
+                <a href="#pricing" className="hover:text-theme-purple whitespace-nowrap transition-colors">Pricing & Timeline</a>
+              ) : null}
+              {service.industries?.length ? (
+                <a href="#products" className="hover:text-theme-purple whitespace-nowrap transition-colors">Products</a>
+              ) : null}
+              <a href="#faq" className="hover:text-theme-purple whitespace-nowrap transition-colors">FAQs</a>
+              <a href="#related" className="hover:text-theme-purple whitespace-nowrap transition-colors">Related</a>
+            </>
+          )}
+          <Link href={service.primaryCtaHref || "/contact"} className="ml-auto text-theme-purple font-black hover:underline whitespace-nowrap">
+            {service.primaryCtaLabel || "Get a free scoped estimate"} →
           </Link>
         </div>
       </nav>
@@ -237,11 +281,29 @@ export default function ServiceDetailPage({ relatedBlog = null }) {
             {service.scopeHeading || "What we deliver"}
           </SectionHeading>
           <p className="text-gray-600 font-light leading-relaxed max-w-3xl mb-10 -mt-4 text-base sm:text-lg">
-            {service.description}
+            <InlineText text={service.description} />
           </p>
-          <AccentCards items={service.services} />
+          {service.detailSections?.length ? (
+            <nav id="services-toc" aria-label="DevOps services on this page" className="mb-4">
+              <ol className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {service.detailSections.map((section, idx) => (
+                  <li key={section.id}>
+                    <a
+                      href={`#${section.id}`}
+                      className="flex items-center gap-3 rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm font-semibold text-theme-blue hover:border-theme-purple hover:text-theme-purple"
+                    >
+                      <span className="text-theme-purple">{String(idx + 1).padStart(2, "0")}</span>
+                      {section.tocLabel || section.heading}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </nav>
+          ) : (
+            <AccentCards items={service.services} />
+          )}
           
-          {service.technologiesList?.length > 0 && (
+          {service.technologiesList?.length > 0 && !service.techStackHeading && (
             <div className="mt-10 p-6 rounded-2xl bg-white border border-gray-100 shadow-sm">
               <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">
                 Core Technologies & Tools
@@ -264,6 +326,94 @@ export default function ServiceDetailPage({ relatedBlog = null }) {
         </div>
       </section>
 
+      {service.detailSections?.map((section) => (
+        <section
+          key={section.id}
+          id={section.id}
+          className="container mx-auto px-5 py-14 border-t border-gray-100 scroll-mt-28"
+        >
+          <h2 className="text-3xl sm:text-4xl font-black text-theme-blue tracking-tight">
+            {section.heading}
+          </h2>
+          <div className="mt-3 mb-6 h-1.5 w-16 rounded-full bg-gradient-to-r from-theme-purple via-theme-cyan to-theme-pink" />
+          <div className="max-w-3xl space-y-4">
+            {section.paragraphs?.map((paragraph) => (
+              <p key={paragraph} className="text-gray-600 font-light leading-relaxed">
+                <InlineText text={paragraph} />
+              </p>
+            ))}
+          </div>
+          <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl">
+            <div>
+              <h3 className="text-lg font-bold text-theme-blue mb-3">What&apos;s included</h3>
+              <ul className="space-y-2">
+                {section.included?.map((item) => (
+                  <li key={item} className="flex gap-2 text-sm text-gray-600 font-light leading-relaxed">
+                    <span aria-hidden="true" className="text-emerald-600 font-bold">✓</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-theme-blue mb-3">Typical tools</h3>
+              <ul className="flex flex-wrap gap-2">
+                {section.tools?.map((tool) => (
+                  <li key={tool} className="px-3 py-1.5 rounded-full border border-gray-200 bg-white text-xs font-semibold text-theme-blue">
+                    {tool}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+      ))}
+
+      {service.starterPack ? (
+        <section id={service.starterPack.id} className="container mx-auto px-5 py-14 border-t border-gray-100 scroll-mt-28">
+          <h2 className="text-3xl sm:text-4xl font-black text-theme-blue tracking-tight">
+            {service.starterPack.heading}
+          </h2>
+          <div className="mt-3 mb-6 h-1.5 w-16 rounded-full bg-gradient-to-r from-theme-purple via-theme-cyan to-theme-pink" />
+          <p className="text-gray-600 font-light leading-relaxed max-w-3xl mb-8">
+            {service.starterPack.intro}
+          </p>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl">
+            {service.starterPack.items?.map((item) => (
+              <li key={item.title} className="rounded-2xl border border-gray-100 bg-white p-5">
+                <h3 className="text-base font-bold text-theme-blue mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-600 font-light leading-relaxed">{item.text}</p>
+              </li>
+            ))}
+          </ul>
+          {service.starterPack.note ? (
+            <p className="mt-6 text-sm text-gray-600 font-light max-w-3xl">{service.starterPack.note}</p>
+          ) : null}
+          <Link
+            href="/contact"
+            className="mt-6 inline-flex items-center px-6 py-3 bg-theme-purple text-white rounded-full font-bold text-sm"
+          >
+            Request the free infrastructure audit
+          </Link>
+        </section>
+      ) : null}
+
+      {service.techStackHeading && service.technologiesList?.length > 0 ? (
+        <section id="tech-stack" className="container mx-auto px-5 py-14 border-t border-gray-100 scroll-mt-28">
+          <h2 className="text-3xl sm:text-4xl font-black text-theme-blue tracking-tight">
+            {service.techStackHeading}
+          </h2>
+          <div className="mt-3 mb-6 h-1.5 w-16 rounded-full bg-gradient-to-r from-theme-purple via-theme-cyan to-theme-pink" />
+          <ul className="flex flex-wrap gap-2">
+            {service.technologiesList.map((tech) => (
+              <li key={tech} className="px-3 py-1.5 rounded-full border border-gray-200 bg-white text-sm font-semibold text-theme-blue">
+                {tech}
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
       {/* Technologies Section */}
       {service.technologies?.length > 0 && (
         <section id="stack" className="container mx-auto px-5 py-16 border-t border-gray-100">
@@ -273,6 +423,7 @@ export default function ServiceDetailPage({ relatedBlog = null }) {
       )}
 
       {/* Deliverables Checklist Box */}
+      {!service.hideStandardDeliverables ? (
       <section className="container mx-auto px-5 py-8">
         <div className="rounded-2xl border border-theme-purple/20 bg-gradient-to-br from-light-theme-purple/30 via-white to-cyan-50/40 p-8 md:p-10 shadow-sm">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-8">
@@ -303,6 +454,7 @@ export default function ServiceDetailPage({ relatedBlog = null }) {
           </div>
         </div>
       </section>
+      ) : null}
 
       {/* Process Section */}
       {service.process?.length > 0 && (
@@ -312,17 +464,19 @@ export default function ServiceDetailPage({ relatedBlog = null }) {
             <SectionHeading kicker="Process">
               {service.processHeading || "How We Build & Ship"}
             </SectionHeading>
-            <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <ol className={service.processLayout === "howto" ? "max-w-3xl list-decimal space-y-6 pl-6" : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"}>
               {service.process.map((step, idx) => {
                 const accent = accentAt(idx);
                 return (
                   <li
                     key={step.title}
-                    className={`relative p-6 rounded-2xl border overflow-hidden ${accent.card}`}
+                    className={service.processLayout === "howto" ? "pl-2" : `relative p-6 rounded-2xl border overflow-hidden ${accent.card}`}
                   >
-                    <span className={`inline-flex items-center justify-center w-11 h-11 rounded-xl text-white text-sm font-black mb-4 ${accent.bar}`}>
-                      {String(idx + 1).padStart(2, "0")}
-                    </span>
+                    {service.processLayout === "howto" ? null : (
+                      <span className={`inline-flex items-center justify-center w-11 h-11 rounded-xl text-white text-sm font-black mb-4 ${accent.bar}`}>
+                        {String(idx + 1).padStart(2, "0")}
+                      </span>
+                    )}
                     <h3 className="text-lg font-bold text-theme-blue mb-2">{step.title}</h3>
                     <p className="text-sm text-gray-600 font-light leading-relaxed">{step.description}</p>
                   </li>
@@ -339,7 +493,7 @@ export default function ServiceDetailPage({ relatedBlog = null }) {
           Why Choose TheTriFusion For {service.title}
         </SectionHeading>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {WHY_CHOOSE_POINTS.map((point, idx) => {
+          {(service.whyPoints?.length ? service.whyPoints : WHY_CHOOSE_POINTS).map((point, idx) => {
             const accent = accentAt(idx);
             return (
               <div
@@ -393,6 +547,7 @@ export default function ServiceDetailPage({ relatedBlog = null }) {
       )}
 
       {/* Pricing & Timeline Estimates Box */}
+      {service.hidePricingEstimates ? null : (
       <section id="pricing" className="container mx-auto px-5 py-16 border-t border-gray-100">
         <SectionHeading kicker="Investment">
           Transparent Estimates & Scoping
@@ -460,6 +615,7 @@ export default function ServiceDetailPage({ relatedBlog = null }) {
           </div>
         </div>
       </section>
+      )}
 
       {/* Case Study / Proof Section */}
       {service.caseStudy && (
@@ -520,6 +676,16 @@ export default function ServiceDetailPage({ relatedBlog = null }) {
               ? `Frequently Asked Questions About ${service.serviceType}`
               : `Frequently Asked Questions About ${service.title}`}
           </SectionHeading>
+          {service.faqsExpanded ? (
+            <div className="max-w-3xl space-y-6">
+              {service.faqs.map((faq) => (
+                <article key={faq.question}>
+                  <h3 className="text-lg font-bold text-theme-blue mb-2">{faq.question}</h3>
+                  <p className="text-sm text-gray-600 font-light leading-relaxed">{faq.answer}</p>
+                </article>
+              ))}
+            </div>
+          ) : (
           <div className="max-w-3xl space-y-3">
             {service.faqs.map((faq, index) => {
               const open = openFaqs.includes(index);
@@ -554,8 +720,25 @@ export default function ServiceDetailPage({ relatedBlog = null }) {
               );
             })}
           </div>
+          )}
         </section>
       )}
+
+      {service.relatedLinks?.length ? (
+        <section id="further-reading" className="container mx-auto px-5 py-16 border-t border-gray-100">
+          <SectionHeading kicker="Related">Related services and guides</SectionHeading>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl">
+            {service.relatedLinks.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="block h-full rounded-2xl border border-gray-100 p-5 hover:border-theme-purple/40">
+                  <h3 className="text-lg font-bold text-theme-blue mb-2">{item.title}</h3>
+                  <p className="text-sm text-gray-600 font-light leading-relaxed">{item.text}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       {/* Related Solutions Cross-Linking */}
       {relatedSolutions.length > 0 && (
@@ -628,17 +811,26 @@ export default function ServiceDetailPage({ relatedBlog = null }) {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/contact"
+              href={service.primaryCtaHref || "/contact"}
               className="inline-flex items-center px-8 py-3.5 bg-white text-theme-purple rounded-full font-bold hover:bg-light-theme-purple transition-colors shadow-lg"
             >
-              Get a free scoped estimate
+              {service.primaryCtaLabel || "Get a free scoped estimate"}
             </Link>
-            <Link
-              href="/pricing"
-              className="inline-flex items-center px-8 py-3.5 bg-white/10 hover:bg-white/20 text-white rounded-full font-bold border border-white/30 transition-colors"
-            >
-              See pricing
-            </Link>
+            {service.hidePricingEstimates ? (
+              <Link
+                href="/contact"
+                className="inline-flex items-center px-8 py-3.5 bg-white/10 hover:bg-white/20 text-white rounded-full font-bold border border-white/30 transition-colors"
+              >
+                Contact the Jaipur team
+              </Link>
+            ) : (
+              <Link
+                href="/pricing"
+                className="inline-flex items-center px-8 py-3.5 bg-white/10 hover:bg-white/20 text-white rounded-full font-bold border border-white/30 transition-colors"
+              >
+                See pricing
+              </Link>
+            )}
           </div>
         </div>
       </section>

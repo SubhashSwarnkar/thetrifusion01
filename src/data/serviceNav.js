@@ -39,8 +39,8 @@ export const serviceNav = [
   {
     "id": "devops",
     "slug": "devops",
-    "title": "DevOps",
-    "shortDescription": "DevOps services that accelerate delivery and improve software reliability."
+    "title": "DevOps & Cloud Services",
+    "shortDescription": "DevOps and cloud services from Jaipur: managed DevOps, Kubernetes, CI/CD, DevSecOps, FinOps, infrastructure as code, and cloud migration for India and worldwide."
   },
   {
     "id": "ui-ux-design",

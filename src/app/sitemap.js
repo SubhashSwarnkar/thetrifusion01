@@ -43,7 +43,9 @@ export default function sitemap() {
 
   const serviceRoutes = services.map((service) => ({
     url: `${siteConfig.url}/services/${service.slug}`,
-    lastModified: siteContentUpdated,
+    lastModified: service.contentUpdatedAt
+      ? safeDate(service.contentUpdatedAt, siteContentUpdated)
+      : siteContentUpdated,
     changeFrequency: "weekly",
     priority: 0.8,
   }));

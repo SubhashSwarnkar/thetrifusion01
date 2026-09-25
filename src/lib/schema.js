@@ -234,8 +234,14 @@ export function serviceSchema({
   price,
   offers = [],
   pricedOffers = [],
+  areaServed,
 }) {
   const url = absoluteSiteUrl(path);
+  const offerUrl = (value) => {
+    if (!value) return undefined;
+    if (value.startsWith("http")) return value;
+    return absoluteSiteUrl(value);
+  };
   const priceOfferNodes =
     pricedOffers.length > 0
       ? pricedOffers.map((offer) => ({
@@ -272,7 +278,7 @@ export function serviceSchema({
     category: "Information Technology Services",
     provider: { "@id": `${siteConfig.url}/#localbusiness` },
     brand: { "@id": `${siteConfig.url}/#organization` },
-    areaServed: [
+    areaServed: areaServed || [
       { "@type": "City", name: "Jaipur" },
       { "@type": "AdministrativeArea", name: siteConfig.region },
       { "@type": "City", name: "Delhi" },
@@ -294,15 +300,20 @@ export function serviceSchema({
           hasOfferCatalog: {
             "@type": "OfferCatalog",
             name: `${name} Offerings`,
-            itemListElement: offers.map((offer, index) => ({
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Service",
-                name: offer.title,
-                description: offer.description,
-              },
-              position: index + 1,
-            })),
+            itemListElement: offers.map((offer, index) => {
+              const itemUrl = offerUrl(offer.url);
+              return {
+                "@type": "Offer",
+                ...(itemUrl ? { url: itemUrl } : {}),
+                itemOffered: {
+                  "@type": "Service",
+                  name: offer.title || offer.name,
+                  description: offer.description,
+                  ...(itemUrl ? { url: itemUrl } : {}),
+                },
+                position: index + 1,
+              };
+            }),
           },
         }
       : {}),

@@ -3,6 +3,8 @@
  * Each page owns one primary keyword so they do not cannibalize each other.
  * metaDescription target: 150–160 characters.
  */
+import { devopsPageContent } from "./devopsPageContent";
+
 export const servicePageSeo = {
   "software-development": {
     metaTitle: "Custom Software Development Company in Jaipur | TheTriFusion",
@@ -556,58 +558,7 @@ export const servicePageSeo = {
       },
     ],
   },
-  devops: {
-    metaTitle:
-      "DevOps & AWS Cloud Services Company in Jaipur India | CI/CD, Kubernetes & IaC",
-    metaDescription:
-      "Top DevOps & AWS cloud consulting company in Jaipur & India. We engineer automated CI/CD pipelines, Docker/Kubernetes orchestration, Terraform IaC, serverless architecture & 24/7 cloud observability.",
-    keywords:
-      "DevOps services company Jaipur, AWS cloud consulting India, CI CD pipeline automation, Kubernetes Docker orchestration Jaipur, Terraform Infrastructure as Code, cloud migration services India, DevOps consulting company Rajasthan, serverless AWS architectures, Prometheus Grafana monitoring, DevSecOps cloud security",
-    bannerTitle:
-      "DevOps & AWS Cloud Infrastructure Engineering in Jaipur, India",
-    bannerDescription:
-      "Automated CI/CD pipelines, Infrastructure as Code (Terraform), Kubernetes cluster orchestration, and resilient AWS/GCP cloud environments engineered for zero-downtime scalability.",
-    shortDescription:
-      "TheTriFusion in Jaipur delivers production DevOps & AWS cloud services — automated CI/CD, Terraform IaC, Docker/Kubernetes, and comprehensive monitoring for modern applications.",
-    description:
-      "TheTriFusion is a dedicated DevOps and cloud engineering team in Jaipur. We help startups and enterprises eliminate deployment friction, modernize legacy infrastructure, and automate cloud operations. From zero-downtime CI/CD workflows and Docker/Kubernetes cluster setup to Terraform Infrastructure as Code (IaC) and Prometheus/Grafana monitoring, we ensure your production infrastructure is secure, scalable, and resilient.",
-    locationLine:
-      "DevOps & AWS cloud architecture from Jaipur — powering high-availability systems across India.",
-    scopeKicker: "Cloud & Reliability",
-    scopeHeading: "DevOps & Cloud Engineering Services We Deliver",
-    processHeading: "Our Battle-Tested DevOps Transformation & Migration Framework",
-    ctaHeading: "Ready to Automate Deployments & Scale Your Cloud Infrastructure?",
-    ctaText:
-      "Share your current tech stack, cloud hosting setup, and operational pain points. Our Jaipur DevOps engineers will prepare a clear architectural and automation roadmap.",
-    serviceType: "DevOps & Cloud Infrastructure Engineering",
-    whatsappMessage:
-      "Hi TriFusion, I want a DevOps / AWS cloud infrastructure quote from the Jaipur team.",
-    imageAlt:
-      "DevOps CI/CD pipelines and AWS cloud architecture by TheTriFusion in Jaipur",
-    relatedBlogSlug: "future-of-devops",
-    faqs: [
-      {
-        question: "Which cloud platforms and tools do your DevOps engineers specialize in?",
-        answer:
-          "We primarily specialize in Amazon Web Services (AWS) and Google Cloud Platform (GCP). Our toolchain includes Terraform, Docker, Kubernetes, GitHub Actions, GitLab CI, Jenkins, Helm, Prometheus, Grafana, and NGINX.",
-      },
-      {
-        question: "Can you migrate our legacy on-premise servers to AWS or GCP cloud?",
-        answer:
-          "Yes! We design seamless, zero-downtime cloud migration strategies including containerization of legacy monolithic apps, database migrations, VPC network isolation, and autoscaling group configurations.",
-      },
-      {
-        question: "What is Infrastructure as Code (IaC) and why do we need it?",
-        answer:
-          "IaC (using Terraform / CloudFormation) allows your entire cloud infrastructure to be defined as code in version control. This ensures predictable, reproducible staging and production environments, automated disaster recovery, and eliminates human configuration errors.",
-      },
-      {
-        question: "Do you provide ongoing cloud monitoring, security hardening, and cost optimization?",
-        answer:
-          "Yes. We implement proactive alerting (Slack/PagerDuty integration), centralized log management (ELK / CloudWatch), DevSecOps vulnerability scans, and AWS cost-saving strategies (Reserved Instances, Spot fleets, S3 lifecycle policies).",
-      },
-    ],
-  },
+  devops: devopsPageContent,
   "on-demand": {
     metaTitle: "Hire On-Demand Developers in Jaipur | TheTriFusion",
     metaDescription:

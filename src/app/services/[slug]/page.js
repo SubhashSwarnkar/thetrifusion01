@@ -60,8 +60,17 @@ export default function RoutePage({ params }) {
                 service.shortDescription ||
                 service.description,
               path: `/services/${service.slug}`,
-              price: service.startingFrom || service.pricing?.basic,
-              offers: service.services,
+              price: service.omitSchemaPrice
+                ? undefined
+                : service.startingFrom || service.pricing?.basic,
+              offers: service.detailSections?.length
+                ? service.detailSections.map((section) => ({
+                    title: section.heading,
+                    description: section.schemaDescription,
+                    url: `/services/${service.slug}#${section.id}`,
+                  }))
+                : service.services,
+              areaServed: service.schemaAreaServed,
             })}
           />
           <JsonLd
