@@ -46,6 +46,28 @@ Jaipur-based delivery for India and worldwide. The initial infrastructure audit 
 - Managed DevOps: https://thetrifusion.in/services/devops#managed-devops
 - DevOps Starter Pack for startups: https://thetrifusion.in/services/devops#devops-starter-pack
 
+## EV charging app development
+
+Page: https://thetrifusion.in/services/ev-charging-app-development
+Jaipur-based EV charging software for India and worldwide: driver apps (iOS/Android), charge point management (CPMS), OCPP 1.6J and 2.0.1 backends, OCPI 2.2.1 roaming, operator dashboards, billing with GST invoice fields, fleet charging, and white-label apps. The pricing page lists a starting range; this page does not sell a fixed package. No separate IoT service page — charger connectivity is part of this engagement.
+
+- CPMS / EV charging station software: https://thetrifusion.in/services/ev-charging-app-development#cpms
+- OCPP 1.6J and 2.0.1 backend: https://thetrifusion.in/services/ev-charging-app-development#ocpp-backend
+- OCPI 2.2.1 roaming: https://thetrifusion.in/services/ev-charging-app-development#ocpi-roaming
+- OCPP vs OCPI: https://thetrifusion.in/services/ev-charging-app-development#ocpp-vs-ocpi
+- eMSP and CPO platforms: https://thetrifusion.in/services/ev-charging-app-development#emsp-cpo
+- Driver mobile app: https://thetrifusion.in/services/ev-charging-app-development#driver-app
+- Operator dashboard: https://thetrifusion.in/services/ev-charging-app-development#operator-dashboard
+- Load management and smart charging: https://thetrifusion.in/services/ev-charging-app-development#smart-charging
+- OCPP hardware integration: https://thetrifusion.in/services/ev-charging-app-development#hardware-integration
+- Billing, tariffs, GST invoices: https://thetrifusion.in/services/ev-charging-app-development#billing-tariffs
+- Fleet charging: https://thetrifusion.in/services/ev-charging-app-development#fleet-charging
+- White-label EV app: https://thetrifusion.in/services/ev-charging-app-development#white-label
+- ISO 15118 / Plug & Charge readiness: https://thetrifusion.in/services/ev-charging-app-development#plug-and-charge
+- Analytics: https://thetrifusion.in/services/ev-charging-app-development#analytics
+- India context (Bharat, UPI, GST): https://thetrifusion.in/services/ev-charging-app-development#india-context
+- Guide: https://thetrifusion.in/blog/ev-charging-app-ocpi-ocpp-guide
+
 ## Key hubs
 
 - Home: https://thetrifusion.in/
