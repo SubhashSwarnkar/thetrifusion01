@@ -6,37 +6,38 @@ import { siteConfig } from "../config/site";
 
 export const evChargingPageContent = {
   title: "EV Charging App Development",
-  metaTitle: "EV Charging App Development in Jaipur, India | OCPP OCPI",
+  metaTitle: "EV Charging CMS for CPO & eMSP | OCPP OCPI | TheTriFusion",
   metaDescription:
-    "EV charging app development in Jaipur, India. We build OCPP backends, OCPI roaming, driver apps, and CPMS software. Request a scoped estimate.",
+    "EV charging CMS for CPOs and eMSPs in Jaipur, India. We build OCPP 1.6J/2.0.1 and OCPI 2.2.1 into one platform. Request your scoped estimate.",
   keywords:
-    "EV charging app development Jaipur, EV charging app development India, EV charging station software, CPMS charge point management system, OCPP 1.6J 2.0.1 backend, OCPI 2.2.1 roaming, eMSP CPO platform, white-label EV charging app, fleet charging software India",
-  bannerTitle: "EV Charging App Development in Jaipur, India",
+    "CMS for CPO, CMS for eMSP, EV charging management system, CPO software, eMSP software, eMSP platform, charge point operator software, e-mobility service provider platform, OCPP CMS, white-label EV CMS, EV charging app development Jaipur",
+  bannerTitle:
+    "EV Charging Management System (CMS) for CPO & eMSP | OCPP & OCPI Software",
   bannerDescription:
-    "TheTriFusion in Jaipur builds the software around EV chargers: a driver app, an operator dashboard, an OCPP backend, and OCPI roaming when you need to exchange sessions with another network.",
+    "TheTriFusion in Jaipur builds an EV charging management system for charge point operators and e-mobility service providers: OCPP to your chargers, OCPI when you roam, and one CMS when you do both.",
   shortDescription:
-    "EV charging app development from Jaipur: driver apps, CPMS, OCPP 1.6J and 2.0.1, OCPI 2.2.1 roaming, billing, and fleet charging for India and remote teams worldwide.",
+    "EV charging CMS for CPOs and eMSPs in Jaipur: OCPP 1.6J/2.0.1, OCPI 2.2.1 roaming, driver app, billing, and white-label.",
   description:
-    "EV charging app development at TheTriFusion is the product a charge point operator or e-mobility service provider actually runs: find a charger, start a session, meter energy, and settle the payment. The team is in Jaipur and delivers remotely across India and worldwide. A driver map with no charger connection goes stale the moment a connector changes state. We connect OCPP-compliant hardware to a charge point management system, and we add OCPI when your drivers must use another network or another network's drivers must use yours. The mobile client is covered on [mobile app development](/services/mobile-app-development). The screens are covered on [UI/UX design](/services/ui-ux-design). Hosting and pipelines sit with [DevOps and cloud](/services/devops). If the product is a broader platform with charging as one module, start from [custom software development](/services/software-development). There is no separate IoT service page: charger connectivity is part of this engagement.",
+    "The core product is an EV charging management system (CMS) for a charge point operator, an e-mobility service provider, or both. The team is in Jaipur and delivers remotely across India and worldwide. A driver map with no charger connection goes stale the moment a connector changes state. The CPO side of the CMS connects OCPP-compliant hardware. The eMSP side adds OCPI when your drivers use another network, or another network's drivers use yours. The mobile client is covered on [mobile app development](/services/mobile-app-development). The screens are covered on [UI/UX design](/services/ui-ux-design). Hosting and pipelines sit with [DevOps and cloud](/services/devops). If the product is a broader platform with charging as one module, start from [custom software development](/services/software-development). There is no separate IoT service page: charger connectivity is part of this engagement.",
   locationLine:
     "Jaipur-based EV charging software — delivered remotely across India and worldwide.",
   scopeKicker: "On this page",
-  scopeHeading: "EV Charging App Development We Deliver",
-  processHeading: "How an EV Charging Software Project Runs",
+  scopeHeading: "What This EV Charging CMS Includes",
+  processHeading: "How a Charging Management System Project Runs",
   processLayout: "howto",
-  ctaHeading: "Request an EV charging software estimate from Jaipur",
+  ctaHeading: "Request a CMS estimate for your CPO or eMSP",
   ctaText:
-    "Tell us whether you operate chargers, sell charging to drivers, or both, and which charger models you already have. We reply with a written scope. This page does not sell a fixed package.",
+    "Tell us whether you need a CPO CMS, an eMSP platform, or both, and which charger models you already have. We reply with a written scope. This page does not sell a fixed package.",
   primaryCtaLabel: "Request a scoped estimate",
   primaryCtaHref: "/contact",
   secondaryCtaLabel: "Browse the build sections",
   secondaryCtaHref: "#services-toc",
-  serviceType: "EV Charging App Development",
-  breadcrumbName: "EV Charging App Development",
+  serviceType: "EV Charging Management System (CMS) for CPO & eMSP",
+  breadcrumbName: "EV Charging CMS",
   whatsappMessage:
     "Hi TriFusion, I want an EV charging app quote from the Jaipur team (OCPP, OCPI, driver app, or CPMS).",
   imageAlt:
-    "EV charging app development in Jaipur: driver map, OCPP charge point software, and operator dashboard by TheTriFusion",
+    "EV charging management system CMS for CPO and eMSP: OCPP charge point software and OCPI roaming by TheTriFusion in Jaipur",
   contentUpdatedAt: "2026-09-25",
   sitemapPriority: 0.85,
   hideClientStrip: true,
@@ -67,6 +68,7 @@ export const evChargingPageContent = {
     liveLabel: "Open plugone.in",
   },
   quickNav: [
+    { href: "#cms-for-cpo-emsp", label: "CMS for CPO & eMSP" },
     { href: "#services-toc", label: "What we build" },
     { href: "#ocpp-vs-ocpi", label: "OCPP vs OCPI" },
     { href: "#process", label: "Process" },
@@ -85,7 +87,7 @@ export const evChargingPageContent = {
   ],
   technologies: [],
   industries: [],
-  techStackHeading: "Tech Stack for EV Charging App Development",
+  techStackHeading: "Tech Stack for the EV Charging CMS",
   technologiesList: [
     "OCPP 1.6J",
     "OCPP 2.0.1",
@@ -103,9 +105,112 @@ export const evChargingPageContent = {
   ],
   detailSections: [
     {
+      id: "cms-for-cpo-emsp",
+      lead: true,
+      tocLabel: "CMS for CPO and eMSP",
+      heading: "CMS for CPO and eMSP: One Platform, Two Roles",
+      schemaDescription:
+        "An EV charging management system that can run a CPO CMS, an eMSP platform, or both roles without treating them as the same record.",
+      paragraphs: [
+        "A charging management system (CMS) is the product a network actually operates. On the charge point operator side it is the CPMS, and OCPP 2.0.1 calls that server a CSMS. On the e-mobility service provider side it is the platform the driver belongs to. TheTriFusion builds those as two roles in one EV charging CMS, not as two unrelated products that happen to share a logo.",
+        "You can launch one role. A CPO that does not roam yet still needs OCPP. An eMSP that owns no chargers needs OCPI and a driver app, not a yard of hardware. A company that is both keeps stations and driver tokens in the same CMS so the second role is a phase, not a rewrite. Roaming between you and a partner is OCPI 2.2.1. That is not the same thing as operating a public roaming hub for every network in the country.",
+      ],
+      roles: [
+        {
+          id: "cpo-cms",
+          catalogTitle: "CPO CMS",
+          heading: "CPO CMS (Charge Point Operator)",
+          schemaDescription:
+            "Charge point operator software: OCPP onboarding, remote start and stop, tariffs, load management, alerts, settlement, and GST invoice fields.",
+          paragraphs: [
+            "CPO software is the charging management system for stations you operate. Chargers onboard over OCPP 1.6J or 2.0.1. Operators remote-start and remote-stop when that firmware allows it, store meter values, and see an alert when the heartbeat stops. Tariffs sit on the site. Smart charging sends a charging profile only if the charger accepts one. Firmware commands and diagnostics are limited to the messages that model answered in the protocol test. A partner eMSP, if you roam, is a business you publish locations to. It is not a second copy of your charger.",
+          ],
+          points: [
+            "Charger onboarding over OCPP",
+            "Remote start and stop",
+            "Firmware and diagnostics for the messages that charger implements",
+            "Tariffs per site",
+            "Load management and smart charging inside the site limit",
+            "Uptime and alerts from heartbeats and status",
+            "Sites you operate and partners you roam with",
+            "Settlement records and GST invoice fields (you still file the return)",
+          ],
+        },
+        {
+          id: "emsp-cms",
+          catalogTitle: "eMSP Platform",
+          heading: "eMSP CMS (e-Mobility Service Provider)",
+          schemaDescription:
+            "e-mobility service provider platform: driver accounts, app and RFID tokens, OCPI roaming, session authorisation, pricing, UPI, CDRs, and support.",
+          paragraphs: [
+            "An eMSP platform is who the driver has an account with. The token in the app or on an RFID card is what a partner CPO authorizes. OCPI 2.2.1 carries that partner's locations, tariffs, tokens, session updates, and charge detail records (CDRs). The price the driver accepts is the price on the receipt. UPI and cards go through a gateway you contract. An in-app balance can pay for charging on your platform; if that balance can be withdrawn, your counsel confirms the position before we shape it. Support staff can see the session and the CDR. They reach a partner charger only through OCPI commands that partner implements.",
+          ],
+          points: [
+            "Driver accounts",
+            "App tokens and RFID tokens",
+            "OCPI 2.2.1 roaming to partner CPOs",
+            "Session authorisation with the token the partner accepts",
+            "Driver pricing and billing",
+            "UPI, cards, and an in-app charging balance",
+            "CDRs for settlement with the partner CPO",
+            "A support view of the session, not a hidden hardware button",
+          ],
+        },
+      ],
+      comparison: {
+        heading: "CPO vs eMSP vs a combined setup",
+        intro:
+          "The same CMS can hold one role or both. The third column is a combined setup with roaming. It is not a claim that we operate a national OCPI hub.",
+        rowHeader: "Question",
+        columns: ["CPO CMS", "eMSP platform", "Combined CMS"],
+        rows: [
+          {
+            label: "Who it is for",
+            cells: [
+              "You operate chargers",
+              "You serve drivers, on your brand",
+              "You do both, or you roam with partners",
+            ],
+          },
+          {
+            label: "Charger link",
+            cells: [
+              "OCPP 1.6J and 2.0.1 to hardware you run",
+              "None of your own. The partner CPO runs OCPP",
+              "OCPP on your sites",
+            ],
+          },
+          {
+            label: "Roaming",
+            cells: [
+              "Optional. Publish locations when an eMSP should see them",
+              "OCPI 2.2.1 toward the CPOs you sign",
+              "Both directions, module by module. Not an automatic public hub",
+            ],
+          },
+          {
+            label: "What you bill",
+            cells: [
+              "Site tariffs, host settlement, GST invoice fields",
+              "The driver price, UPI or cards, CDRs you receive",
+              "Your tariffs plus CDRs in and out",
+            ],
+          },
+          {
+            label: "Sensible first release",
+            cells: [
+              "Onboarding, remote start and stop, one tariff",
+              "Accounts, tokens, and one partner's locations",
+              "One role first, unless discovery includes both",
+            ],
+          },
+        ],
+      },
+    },
+    {
       id: "cpms",
-      tocLabel: "EV charging station software / CPMS",
-      heading: "EV Charging Station Software and CPMS",
+      tocLabel: "Charging management system / CPMS",
+      heading: "Charging Management System, CPMS, and CSMS",
       schemaDescription:
         "Charge point management system software that tracks connectors, sessions, faults, and tariffs for stations you operate.",
       paragraphs: [
@@ -123,12 +228,12 @@ export const evChargingPageContent = {
     },
     {
       id: "ocpp-backend",
-      tocLabel: "OCPP 1.6J / 2.0.1 backend",
-      heading: "OCPP 1.6J and 2.0.1 Backend",
+      tocLabel: "OCPP CMS",
+      heading: "OCPP CMS Backend for 1.6J and 2.0.1",
       schemaDescription:
-        "An OCPP backend for JSON 1.6J and 2.0.1, covering authorize, remote start and stop, meter values, and charger configuration.",
+        "OCPP CMS backend for JSON 1.6J and 2.0.1, covering authorize, remote start and stop, meter values, and charger configuration.",
       paragraphs: [
-        "An OCPP backend is the server chargers dial. OCPP 1.6J is JSON over a WebSocket. The messages operators rely on are BootNotification, Heartbeat, StatusNotification, Authorize, StartTransaction, StopTransaction, MeterValues, RemoteStartTransaction, and RemoteStopTransaction. Configuration, firmware triggers, and charging profiles are in the same specification, and a given charger implements a subset. We record which subset each model actually answers.",
+        "The OCPP CMS backend is the server chargers dial. OCPP 1.6J is JSON over a WebSocket. The messages operators rely on are BootNotification, Heartbeat, StatusNotification, Authorize, StartTransaction, StopTransaction, MeterValues, RemoteStartTransaction, and RemoteStopTransaction. Configuration, firmware triggers, and charging profiles are in the same specification, and a given charger implements a subset. We record which subset each model actually answers.",
         "OCPP 2.0.1 is not a rename of 1.6. It uses a device model, TransactionEvent instead of the old start and stop pair, and stronger security options, including certificate-based connections. It is also the practical path when you later want ISO 15118 messages to pass through the charger. Many chargers already installed in India still speak 1.6J only. A backend that must run a mixed fleet implements both and keeps the session model identical so billing does not care which protocol started the energy flow.",
       ],
       included: [
@@ -180,12 +285,12 @@ export const evChargingPageContent = {
     },
     {
       id: "emsp-cpo",
-      tocLabel: "eMSP and CPO platforms",
-      heading: "eMSP and CPO Platforms",
+      tocLabel: "CPO and eMSP records",
+      heading: "CPO and eMSP Records in the CMS",
       schemaDescription:
         "Software for an e-mobility service provider, a charge point operator, or both roles in one account model.",
       paragraphs: [
-        "A charge point operator (CPO) runs chargers. The CPO platform is the CPMS, the OCPP connection, site tariffs, and the people who get the fault ticket. An e-mobility service provider (eMSP) is who the driver has an account with. The eMSP platform is the app, the payment method, the token, and the invoice the driver receives. One company can be both. Many start as one.",
+        "The CPO CMS and the eMSP platform above share one charging management system, and the records stay separate. A station, a driver token, and a session are not the same table. The CPO side holds the OCPP connection, site tariffs, and the fault ticket. The eMSP side holds the driver account, the payment method, and the invoice the driver receives. Many networks start as one role.",
         "We keep the roles in the data model even when the first release has a single brand. A driver, a token, a session, and a station should not be the same table. If you later roam, the eMSP side already knows how to hold a token that is not tied to a charger you own, and the CPO side already knows how to accept a token that did not originate in your app. That is a structure choice on day one, not a rewrite on day two hundred.",
       ],
       included: [
@@ -218,8 +323,8 @@ export const evChargingPageContent = {
     },
     {
       id: "operator-dashboard",
-      tocLabel: "Admin and operator dashboard",
-      heading: "Admin and Operator Dashboard",
+      tocLabel: "CMS operator dashboard",
+      heading: "CMS Operator Dashboard",
       schemaDescription:
         "Web dashboard for operators to watch charger health, sessions, tariffs, users, and settlements.",
       paragraphs: [
@@ -313,12 +418,12 @@ export const evChargingPageContent = {
     },
     {
       id: "white-label",
-      tocLabel: "White-label EV app",
-      heading: "White-Label EV Charging App",
+      tocLabel: "White-label EV CMS",
+      heading: "White-Label EV Charging CMS",
       schemaDescription:
-        "A white-label driver app and operator console under your brand, your stores, and your domain.",
+        "A white-label EV charging CMS: your brand on the driver app and operator console, your stores, and your domain.",
       paragraphs: [
-        "A white-label EV charging app is your name on the store listing, your colors, your support address, and your domain on the dashboard. The protocol behavior does not change because the logo did. We still need to know whose chargers, whose payment gateway, and whose GSTIN appear on the invoice. White-label is a brand and release choice. It is not a shortcut around OCPP testing.",
+        "A white-label EV charging CMS is your name on the store listing, your colors, your support address, and your domain on the dashboard. The protocol behavior does not change because the logo did. We still need to know whose chargers, whose payment gateway, and whose GSTIN appear on the invoice. White-label is a brand and release choice. It is not a shortcut around OCPP testing.",
         "Agencies that want us to build under their client relationship can also use the [white-label development](/white-label-development) engagement. On this page the product is the charging stack. You receive the repositories for the app and the backend that the scope names. We do not keep a hidden production lock. App Store and Play policies still apply to the legal entity that publishes the app.",
       ],
       included: [
@@ -390,7 +495,7 @@ export const evChargingPageContent = {
     {
       id: "who-its-for",
       tocLabel: "Who it's for",
-      heading: "Who EV Charging App Development Is For",
+      heading: "Who This Charging Management System Is For",
       schemaDescription:
         "CPOs, eMSPs, fleets, malls and real estate, hotels, and startups that need charging software rather than a brochure site.",
       paragraphs: [
@@ -553,6 +658,26 @@ export const evChargingPageContent = {
     },
   ],
   faqs: [
+    {
+      question: "What is a CMS for CPO?",
+      answer:
+        "A CMS for a CPO (charge point operator) is the software that runs the chargers you operate. Teams also call it a CPMS, and OCPP 2.0.1 calls the server a CSMS. It onboards chargers over OCPP, shows connector status, sends remote start and stop, stores meter values, holds tariffs, and raises an alert when heartbeats stop. It does not, by itself, let your drivers use another company's chargers. That link is OCPI, on the eMSP side.",
+    },
+    {
+      question: "What is an eMSP platform and how is it different from a CPO CMS?",
+      answer:
+        "An eMSP platform is the product the driver belongs to: the account, the app or RFID token, the price, the payment, and the invoice. A CPO CMS is the product the charger belongs to. The eMSP reaches partner chargers through OCPI 2.2.1 (locations, tokens, sessions, and charge detail records). The CPO reaches its own hardware through OCPP 1.6J or 2.0.1. They can live in one charging management system. They are not the same screen.",
+    },
+    {
+      question: "Can one CMS serve both CPO and eMSP roles?",
+      answer:
+        "Yes. Stations and driver tokens stay separate records, so one EV charging CMS can operate your chargers and also let your drivers roam onto partner CPOs. You do not have to launch both roles on day one. Roaming still needs a partner that implements the OCPI modules you use. A combined CMS is not automatically a public roaming hub.",
+    },
+    {
+      question: "Do you offer a white-label EV charging CMS?",
+      answer:
+        "Yes. White-label means your brand, your store accounts, your domain, and your payment gateway on the CMS. OCPP and OCPI testing does not change because the logo did. You receive the repositories named in the scope. This page does not sell a fixed package. The pricing page lists a starting range for an MVP.",
+    },
     {
       question: "How much does it cost to develop an EV charging app in India?",
       answer:

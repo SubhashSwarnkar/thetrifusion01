@@ -64,12 +64,15 @@ Jaipur-based DevOps and cloud delivery for India and worldwide. The initial infr
 - https://thetrifusion.in/services/android-app-development
 - https://thetrifusion.in/services/crm-erp-development
 
-## EV charging app development
+## EV charging CMS for CPOs and eMSPs
 
 https://thetrifusion.in/services/ev-charging-app-development
-Jaipur-based EV charging app development for India and worldwide. The page covers driver apps (find charger, booking when the charger supports it, RFID/QR start, UPI/cards/in-app balance), CPMS / CSMS, OCPP 1.6J and 2.0.1, OCPI 2.2.1 roaming, operator dashboards, load management, OCPP hardware integration, billing and GST invoice fields, fleet charging, white-label apps, ISO 15118 readiness (not a live Plug & Charge claim), and analytics. The pricing page lists a starting range of ₹4,50,000 ex-GST for an MVP; this page does not treat that figure as a fixed package. PlugOne (https://plugone.in) is a live product. There is no separate IoT service page.
+EV charging CMS for CPOs and eMSPs, built in Jaipur for India and worldwide. One charging management system covers CPO software (OCPP 1.6J and 2.0.1: onboarding, remote start/stop, tariffs, load management, alerts, settlement, GST invoice fields) and an eMSP platform (driver accounts, app/RFID tokens, OCPI 2.2.1 roaming, session authorisation, UPI, CDRs, support). The same CMS can run one role or both. Also covers driver apps, the operator dashboard, fleet charging, a white-label EV CMS, ISO 15118 readiness (not a live Plug & Charge claim), and analytics. The pricing page lists a starting range of ₹4,50,000 ex-GST for an MVP; this page does not treat that figure as a fixed package. PlugOne (https://plugone.in) is a live product. There is no separate IoT service page.
 
-- CPMS — https://thetrifusion.in/services/ev-charging-app-development#cpms
+- CMS for CPO and eMSP — https://thetrifusion.in/services/ev-charging-app-development#cms-for-cpo-emsp
+- CPO CMS — https://thetrifusion.in/services/ev-charging-app-development#cpo-cms
+- eMSP platform — https://thetrifusion.in/services/ev-charging-app-development#emsp-cms
+- CPMS / charging management system — https://thetrifusion.in/services/ev-charging-app-development#cpms
 - OCPP 1.6J and 2.0.1 backend — https://thetrifusion.in/services/ev-charging-app-development#ocpp-backend
 - OCPI 2.2.1 roaming — https://thetrifusion.in/services/ev-charging-app-development#ocpi-roaming
 - OCPP vs OCPI — https://thetrifusion.in/services/ev-charging-app-development#ocpp-vs-ocpi
@@ -80,7 +83,7 @@ Jaipur-based EV charging app development for India and worldwide. The page cover
 - Hardware integration — https://thetrifusion.in/services/ev-charging-app-development#hardware-integration
 - Billing and tariffs — https://thetrifusion.in/services/ev-charging-app-development#billing-tariffs
 - Fleet charging — https://thetrifusion.in/services/ev-charging-app-development#fleet-charging
-- White-label — https://thetrifusion.in/services/ev-charging-app-development#white-label
+- White-label EV CMS — https://thetrifusion.in/services/ev-charging-app-development#white-label
 - ISO 15118 readiness — https://thetrifusion.in/services/ev-charging-app-development#plug-and-charge
 - Analytics — https://thetrifusion.in/services/ev-charging-app-development#analytics
 - India context — https://thetrifusion.in/services/ev-charging-app-development#india-context
