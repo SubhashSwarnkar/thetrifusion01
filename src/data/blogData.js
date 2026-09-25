@@ -5,6 +5,7 @@ import { upcomingEventsBatchAPosts } from "./upcomingEventsBatchA";
 import { upcomingEventsBatchBPosts } from "./upcomingEventsBatchB";
 import { upcomingEventsBatchCPosts } from "./upcomingEventsBatchC";
 import { upcomingEventsBatchDPosts } from "./upcomingEventsBatchD";
+import { dailyOrganicBatch20260925Posts } from "./dailyOrganicBatch20260925";
 
 /**
  * Blog editorial: ship 2 Jaipur / Rajasthan / India delivery posts each month.
@@ -60,6 +61,7 @@ export const HUB_TRENDING_SLUGS = [
 export const isArchivedPost = (slug) => ARCHIVE_NOINDEX_SLUGS.has(slug);
 
 export const blogPosts = [
+  ...dailyOrganicBatch20260925Posts,
   ...upcomingEventsBatchAPosts,
   ...upcomingEventsBatchBPosts,
   ...upcomingEventsBatchCPosts,
