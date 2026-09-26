@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "seo:audit": "node scripts/seo-audit.mjs",
+    "seo:events": "node --import ./scripts/register-extensionless.mjs scripts/validate-event-schema.mjs",
     "ci:seo": "node scripts/seo-ci.mjs"
   },
   "dependencies": {
