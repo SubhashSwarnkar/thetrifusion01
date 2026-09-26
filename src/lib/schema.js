@@ -559,22 +559,119 @@ function resolveEndDate(post, ev) {
   return endOfLocalDay(ev.startDate, ev);
 }
 
-function knownPerformer(ev) {
-  if (typeof ev.performer === "string" && ev.performer.trim()) {
-    return { "@type": "Person", name: ev.performer.trim() };
+function asPerformerNode(value) {
+  if (typeof value === "string" && value.trim()) {
+    return { "@type": "Person", name: value.trim() };
   }
-  if (ev.performer && typeof ev.performer === "object" && ev.performer.name) {
+  if (value && typeof value === "object" && value.name) {
+    const name = String(value.name).trim();
+    if (!name) return null;
     return {
-      "@type": ev.performer["@type"] || "Person",
-      name: String(ev.performer.name),
+      "@type": value["@type"] || "Person",
+      name,
+      ...(value.url ? { url: String(value.url) } : {}),
     };
   }
+  return null;
+}
+
+function oneOrMany(nodes) {
+  if (!nodes || nodes.length === 0) return null;
+  return nodes.length === 1 ? nodes[0] : nodes;
+}
+
+function sportsTeam(name) {
+  return { "@type": "SportsTeam", name };
+}
+
+function contestSides(name) {
+  const value = String(name || "");
+  if (/\slive\s+/i.test(value)) return null;
+  const versus = value.split(/\s+vs\.?\s+/i);
+  if (versus.length === 2) {
+    const sides = versus.map((side) => cleanSide(side)).filter(Boolean);
+    return sides.length === 2 ? sides : null;
+  }
+  const at = value.split(/\s+at\s+/i);
+  if (at.length === 2) {
+    const sides = at.map((side) => side.trim()).filter(Boolean);
+    return sides.length === 2 ? sides : null;
+  }
+  return null;
+}
+
+function explicitPerformer(ev) {
+  if (!ev.performer) return null;
+  const list = Array.isArray(ev.performer) ? ev.performer : [ev.performer];
+  return oneOrMany(list.map(asPerformerNode).filter(Boolean));
+}
+
+function namedAthletes(ev) {
+  const raw = ev.athletes ?? ev.athlete;
+  if (raw == null || raw === "") return null;
+  const list = Array.isArray(raw) ? raw : [raw];
+  const people = list
+    .map((athlete) => {
+      const node = asPerformerNode(athlete);
+      if (!node) return null;
+      if (!node["@type"] || node["@type"] === "Person") node["@type"] = "Person";
+      return node;
+    })
+    .filter(Boolean);
+  return oneOrMany(people);
+}
+
+function concertAct(ev) {
   const live = String(ev.name || "").match(/^(.+?)\s+live\s+(?:at|in)\b/i);
   if (!live) return null;
   const name = live[1].trim();
   if (!name) return null;
-  const group = /guns n['’]? roses|\bband\b/i.test(name);
+  const group = /guns n['’]? roses|\bband\b|\borchestra\b/i.test(name);
   return { "@type": group ? "MusicGroup" : "Person", name };
+}
+
+function organizerPerforms(post, ev) {
+  if (!ev || ev.type === "SportsEvent") return false;
+  const blob = sportBlob(post, ev);
+  return (
+    /film festival/.test(blob) ||
+    /ballon|nobel|award|ceremony/.test(blob) ||
+    /\bexpo\b|exhibition/.test(blob) ||
+    /conference|\bigdc\b|summit/.test(blob) ||
+    /\blaunch\b|\bpremiere\b|theatrical|\brelease\b|\bnetflix\b/.test(blob) ||
+    /\bsale\b|big billion|great indian festival|big deal|black friday|singles.?day|11\.11/.test(
+      blob
+    ) ||
+    /\belections?\b|bye-election|bypoll|knesset|midterms?/.test(blob) ||
+    /\bmeetings?\b|\bmpc\b|\bfomc\b|cop31|climate change|g20|first committee|monetary policy/.test(
+      blob
+    )
+  );
+}
+
+/**
+ * Performer only when the post already names who is performing.
+ * Team sports: both sides as SportsTeam. Single-athlete sports: named athletes.
+ * Concerts: the act. Festivals, awards, expos, conferences, launches, sales,
+ * elections and policy meetings: the organiser, when that organiser is emitted.
+ */
+function resolvePerformer(post, ev, teams, organizer) {
+  if (ev.type === "SportsEvent") {
+    if (teams) {
+      return [sportsTeam(teams.home), sportsTeam(teams.away)];
+    }
+    const sides = contestSides(ev.name);
+    if (sides) return sides.map(sportsTeam);
+    return explicitPerformer(ev) || namedAthletes(ev);
+  }
+
+  return (
+    explicitPerformer(ev) ||
+    concertAct(ev) ||
+    (organizerPerforms(post, ev) && organizer
+      ? { "@type": "Organization", name: organizer.name, url: organizer.url }
+      : null)
+  );
 }
 
 function resolveOffer(ev, post, organizer) {
@@ -686,7 +783,7 @@ export function eventSchema(post) {
   const endDate = resolveEndDate(post, ev);
   const description = eventDescription(post);
   const teams = knownTeams(post, ev);
-  const performer = teams ? null : knownPerformer(ev);
+  const performer = resolvePerformer(post, ev, teams, organizer);
 
   return {
     "@context": "https://schema.org",

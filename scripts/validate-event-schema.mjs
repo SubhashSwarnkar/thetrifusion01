@@ -121,10 +121,69 @@ function assertEventNode(post, node) {
   }
   if (!node.eventStatus) fail(slug, "missing eventStatus");
   if (!node.eventAttendanceMode) fail(slug, "missing eventAttendanceMode");
+
+  const performers = Array.isArray(node.performer)
+    ? node.performer
+    : node.performer
+      ? [node.performer]
+      : [];
+  for (const performer of performers) {
+    if (!performer || !performer.name || typeof performer.name !== "string") {
+      fail(slug, "performer is missing a name");
+    }
+  }
+  if (node.homeTeam && node.awayTeam) {
+    const names = performers.map((performer) => performer && performer.name);
+    if (!names.includes(node.homeTeam.name) || !names.includes(node.awayTeam.name)) {
+      fail(slug, "SportsEvent performer is missing homeTeam or awayTeam");
+    }
+    if (performers.some((performer) => !performer || performer["@type"] !== "SportsTeam")) {
+      fail(slug, "team performer is not a SportsTeam");
+    }
+  }
+  const contest = contestSides(node.name);
+  if (node["@type"] === "SportsEvent" && contest) {
+    if (performers.length !== 2) {
+      fail(slug, `contest performer should be both teams, got ${performers.length}`);
+    } else if (performers.some((performer) => performer["@type"] !== "SportsTeam")) {
+      fail(slug, "contest performer is not a SportsTeam");
+    }
+  }
+  if (
+    performers.length === 1 &&
+    performers[0]["@type"] === "Organization" &&
+    node.organizer
+  ) {
+    if (
+      performers[0].name !== node.organizer.name ||
+      performers[0].url !== node.organizer.url
+    ) {
+      fail(slug, "organizer performer does not match organizer name and url");
+    }
+  }
+}
+
+function contestSides(name) {
+  const value = String(name || "");
+  if (/\slive\s+/i.test(value)) return null;
+  const versus = value.split(/\s+vs\.?\s+/i);
+  if (versus.length === 2) return versus;
+  const at = value.split(/\s+at\s+/i);
+  if (at.length === 2) return at;
+  return null;
+}
+
+function hasPerformer(node) {
+  if (!node.performer) return false;
+  const list = Array.isArray(node.performer) ? node.performer : [node.performer];
+  return list.some((performer) => performer && performer.name);
 }
 
 const scheduled = [];
 const explainers = [];
+const nodesWithoutPerformer = [];
+let eventNodes = 0;
+let nodesWithPerformer = 0;
 
 for (const post of blogPosts) {
   const jsonLd = eventSchema(post);
@@ -135,7 +194,12 @@ for (const post of blogPosts) {
       fail(post.slug, "scheduled event post emitted no Event node");
       continue;
     }
-    for (const node of nodes) assertEventNode(post, node);
+    for (const node of nodes) {
+      eventNodes += 1;
+      assertEventNode(post, node);
+      if (hasPerformer(node)) nodesWithPerformer += 1;
+      else nodesWithoutPerformer.push(`${post.slug} — ${node.name}`);
+    }
   } else if (isTrendsExplainer(post)) {
     explainers.push(post);
     if (nodes.length > 0) {
@@ -146,12 +210,14 @@ for (const post of blogPosts) {
   }
 }
 
-const eventNodes = scheduled.reduce((count, post) => {
-  return count + eventNodesFrom(eventSchema(post)).length;
-}, 0);
-
 console.log(`posts checked: ${scheduled.length}`);
 console.log(`event nodes: ${eventNodes}`);
+console.log(`event nodes with performer: ${nodesWithPerformer}`);
+console.log(`event nodes without performer: ${nodesWithoutPerformer.length}`);
+if (nodesWithoutPerformer.length) {
+  console.log("without performer:");
+  for (const line of nodesWithoutPerformer) console.log(`- ${line}`);
+}
 console.log(`explainer posts checked: ${explainers.length}`);
 console.log(`failures: ${failures.length}`);
 
