@@ -24,6 +24,8 @@ export const siteConfig = {
   ),
   email: env("NEXT_PUBLIC_COMPANY_EMAIL", "contact@thetrifusion.in"),
   phone: env("NEXT_PUBLIC_COMPANY_PHONE", "+91 63781 33780"),
+  /** Schema telephone. Hyphenated display, distinct from the spaced public phone. */
+  phoneSchema: "+91-63781-33780",
   phoneE164: env("NEXT_PUBLIC_COMPANY_PHONE_E164", "+916378133780"),
   whatsappNumber: env("NEXT_PUBLIC_WHATSAPP_NUMBER", "+916378133780"),
   linkedin: env(
@@ -38,15 +40,26 @@ export const siteConfig = {
   region: env("NEXT_PUBLIC_COMPANY_REGION", "Rajasthan"),
   country: env("NEXT_PUBLIC_COMPANY_COUNTRY", "IN"),
   countryName: "India",
-  streetAddress: env("NEXT_PUBLIC_COMPANY_STREET", ""),
+  streetAddress: env(
+    "NEXT_PUBLIC_COMPANY_STREET",
+    "5th Floor, Amoro Building, Patrakar Colony"
+  ),
+  postalCode: env("NEXT_PUBLIC_COMPANY_POSTAL_CODE", "302020"),
   locale: "en_IN",
-  latitude: Number(env("NEXT_PUBLIC_COMPANY_LAT", "26.9196")),
-  longitude: Number(env("NEXT_PUBLIC_COMPANY_LNG", "75.7878")),
   openingHours: env("NEXT_PUBLIC_OPENING_HOURS", "Mo-Sa 10:00-19:00"),
+  hoursLabel:
+    "Monday to Saturday, 10:00 AM to 7:00 PM IST (closed Sunday)",
   calendlyUrl: env("NEXT_PUBLIC_CALENDLY_URL", ""),
+  /** One-line NAP used everywhere the office is shown. */
+  get addressLine() {
+    return `${this.streetAddress}, ${this.city}, ${this.region} ${this.postalCode}, ${this.countryName}`;
+  },
+  get telHref() {
+    return `tel:${this.phoneE164}`;
+  },
   get mapsUrl() {
     return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-      `${this.legalName} ${this.city} ${this.region}`
+      `${this.legalName}, ${this.addressLine}`
     )}`;
   },
   defaultOgImagePath: "/images/Web.png",

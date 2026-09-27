@@ -16,7 +16,7 @@ import { trackEvent, AnalyticsEvents } from "utils/analytics";
 
 export default function AppointmentPage() {
   const calendlyUrl = siteConfig.calendlyUrl;
-  const phoneHref = `tel:${COMPANY_PHONE_DISPLAY.replace(/\s/g, "")}`;
+  const phoneHref = siteConfig.telHref;
   const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(
     "Hi TriFusion, I want to book a discovery call."
   )}`;
@@ -144,7 +144,10 @@ export default function AppointmentPage() {
                   <h3 className="text-lg font-semibold text-theme-blue mb-2">
                     Office
                   </h3>
-                  <p className="text-gray-600">Jaipur, Rajasthan, India</p>
+                  <address className="not-italic text-gray-600">
+                    <span className="block">{siteConfig.addressLine}</span>
+                    <span className="block mt-1">{siteConfig.hoursLabel}</span>
+                  </address>
                 </div>
               </div>
             </div>

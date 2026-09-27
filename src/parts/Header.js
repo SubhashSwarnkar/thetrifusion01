@@ -7,6 +7,7 @@ import BrandIcon from "./BrandIcon";
 import ServiceIcon from "components/ServiceIcon";
 import { accentAt } from "lib/themeAccents";
 import { serviceNav as services } from "data/serviceNav";
+import { siteConfig } from "config/site";
 
 const SERVICE_MENU_GROUPS = [
   {
@@ -183,9 +184,9 @@ export default function Header() {
       <div className="container mx-auto flex items-center gap-6 px-5">
         <div className="flex flex-col justify-center flex-shrink-0">
           <BrandIcon compact />
-          <span className="hidden lg:block text-[10px] font-medium text-gray-500 tracking-wide mt-0.5">
-            Jaipur, Rajasthan
-          </span>
+          <address className="hidden lg:block max-w-[11rem] text-[10px] font-medium text-gray-500 leading-snug mt-0.5 not-italic">
+            {siteConfig.addressLine}
+          </address>
         </div>
 
         {/* Desktop Navigation */}
@@ -367,9 +368,14 @@ export default function Header() {
       {isCollapse && (
           <div className="mobile-menu fixed inset-0 bg-white z-[100] lg:hidden overflow-y-auto">
             <div className="container mx-auto px-6 py-24 h-full flex flex-col">
-              <p className="text-sm font-semibold text-gray-500 mb-8">
-                Office · Jaipur, Rajasthan
-              </p>
+              <address className="text-sm text-gray-500 mb-8 not-italic">
+                <span className="block font-semibold text-theme-blue">Office</span>
+                <span className="block mt-1">{siteConfig.addressLine}</span>
+                <a className="block mt-1 font-semibold text-theme-purple" href={siteConfig.telHref}>
+                  {siteConfig.phone}
+                </a>
+                <span className="block mt-1">{siteConfig.hoursLabel}</span>
+              </address>
               <nav className="flex flex-col space-y-6">
                 {[
                   { name: "Home", to: "/" },

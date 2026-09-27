@@ -1,6 +1,7 @@
 import React from "react";
 
 import Button from "../elements/Button";
+import { siteConfig } from "config/site";
 
 export default function Discuss() {
   return (
@@ -30,6 +31,13 @@ export default function Discuss() {
           </a>
           .
         </p>
+        <address className="not-italic font-light px-5 sm:px-0 mt-4 text-sm sm:text-base text-yellow-100">
+          <span className="block">{siteConfig.addressLine}</span>
+          <a className="underline" href={siteConfig.telHref}>
+            {siteConfig.phone}
+          </a>
+          <span className="block">{siteConfig.hoursLabel}</span>
+        </address>
       </div>
     </section>
   );

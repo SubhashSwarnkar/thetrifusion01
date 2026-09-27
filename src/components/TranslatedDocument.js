@@ -120,9 +120,17 @@ export default function TranslatedDocument({
       </main>
       <footer className="border-t border-gray-100 py-8 text-sm text-gray-500">
         <div className="mx-auto max-w-6xl px-5">
-          <p>
-            {siteConfig.legalName} · {siteConfig.city}, {siteConfig.region}
-          </p>
+          <address className="not-italic">
+            <span className="block font-semibold text-theme-blue">
+              {siteConfig.name}
+            </span>
+            <span className="block">{siteConfig.legalName}</span>
+            <span className="block">{siteConfig.addressLine}</span>
+            <a className="block text-theme-purple hover:underline" href={siteConfig.telHref}>
+              {siteConfig.phone}
+            </a>
+            <span className="block">{siteConfig.hoursLabel}</span>
+          </address>
           <p className="mt-2">
             <a href="/privacy" className="hover:underline">
               {locale.ui.privacy}

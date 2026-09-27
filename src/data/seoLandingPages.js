@@ -1,3 +1,4 @@
+import { siteConfig } from "config/site";
 import { enrichLandingPage } from "./seoLandingEnrichment";
 import { cityServiceAreaPages } from "./cityServiceAreaPages";
 import { REDIRECTED_SOLUTION_SLUGS } from "lib/solutionRedirects";
@@ -44,7 +45,7 @@ export const seoLandingPages = [
       {
         question: "Where is your software agency located?",
         answer:
-          "We are based in Jaipur, Rajasthan, India, and work with clients across India and internationally through remote collaboration.",
+          `Our office is at ${siteConfig.addressLine}. Phone ${siteConfig.phone}. Hours: ${siteConfig.hoursLabel}. We work with clients across India and internationally through remote collaboration.`,
       },
       {
         question: "What makes you different from other IT companies in India?",
@@ -84,13 +85,13 @@ export const seoLandingPages = [
     intro:
       "Ecommerce website development is the work of planning, designing, building and launching an online store: product catalog, cart, checkout, payments, shipping and an admin panel to run orders. TheTriFusion (Trifusion Infotech Pvt. Ltd.) is a software development company in Jaipur, India that builds Shopify, WooCommerce and custom ecommerce websites, B2B ordering portals and multi-vendor marketplaces for businesses in India and abroad.",
     keyFacts: [
-      { label: "Company", value: "TheTriFusion — Trifusion Infotech Pvt. Ltd., Jaipur, Rajasthan, India" },
+      { label: "Company", value: `TheTriFusion — Trifusion Infotech Pvt. Ltd., ${siteConfig.addressLine}` },
       { label: "Platforms", value: "Shopify, WooCommerce, and custom builds (Next.js, React, Node.js)" },
       { label: "Store types", value: "Single-vendor D2C stores, B2B / wholesale portals, multi-vendor marketplaces" },
       { label: "Packages", value: "Single vendor ₹25,000 · Multi-vendor ₹35,000 (web + Android + iOS)" },
       { label: "Custom builds", value: "Quoted after discovery; a typical ecommerce MVP takes 4–10 weeks" },
       { label: "Clients", value: "Businesses across India and international clients, working remotely" },
-      { label: "Contact", value: "+91 63781 33780 · contact@thetrifusion.in" },
+      { label: "Contact", value: `${siteConfig.phone} · ${siteConfig.email}` },
     ],
     sections: [
       {
@@ -283,7 +284,7 @@ export const seoLandingPages = [
       {
         question: "Where is TheTriFusion located and how can I contact you?",
         answer:
-          "TheTriFusion is the brand of Trifusion Infotech Pvt. Ltd., a software development company in Jaipur, Rajasthan, India. Call or WhatsApp +91 63781 33780 or email contact@thetrifusion.in to discuss your ecommerce website.",
+          `TheTriFusion is the brand of Trifusion Infotech Pvt. Ltd. Office: ${siteConfig.addressLine}. Hours: ${siteConfig.hoursLabel}. Call or WhatsApp ${siteConfig.phone} or email ${siteConfig.email} to discuss your ecommerce website.`,
       },
     ],
     relatedServiceSlugs: [
@@ -809,7 +810,7 @@ export const seoLandingPages = [
     sections: [
       {
         title: "Jaipur office, Bhilwara clients",
-        body: "Our registered base is Jaipur, Rajasthan. Bhilwara projects run on video calls, WhatsApp, and weekly demos. Hindi/English communication, GST invoicing, and UPI/Razorpay checkouts are standard. We can travel for kickoff when the project needs it.",
+        body: `Our office is at ${siteConfig.addressLine}. Phone ${siteConfig.phone}. Hours: ${siteConfig.hoursLabel}. Bhilwara projects run on video calls, WhatsApp, and weekly demos. Hindi/English communication, GST invoicing, and UPI/Razorpay checkouts are standard. We can travel for kickoff when the project needs it.`,
       },
       {
         title: "What we build for Bhilwara businesses",
@@ -824,7 +825,7 @@ export const seoLandingPages = [
       {
         question: "Do you have an office in Bhilwara?",
         answer:
-          "No. Our office is in Jaipur. We serve Bhilwara as a service area — remote delivery with optional travel for discovery or launch.",
+          `No. Our office is at ${siteConfig.addressLine}. Phone ${siteConfig.phone}. Hours: ${siteConfig.hoursLabel}. We serve Bhilwara as a service area — remote delivery with optional travel for discovery or launch.`,
       },
       {
         question: "Can Bhilwara clients still work with you?",
@@ -883,7 +884,7 @@ export const seoLandingPages = [
       {
         question: "Where in Rajasthan is TheTriFusion located?",
         answer:
-          "Our base is Jaipur, Rajasthan. We serve Udaipur, Kota, Jodhpur, and clients across India through remote collaboration.",
+          `Our office is at ${siteConfig.addressLine}. Phone ${siteConfig.phone}. Hours: ${siteConfig.hoursLabel}. We serve Udaipur, Kota, Jodhpur, and clients across India through remote collaboration.`,
       },
       {
         question: "Can you work with a Jaipur or Udaipur client remotely?",
@@ -941,7 +942,7 @@ export const seoLandingPages = [
       {
         question: "Are you physically in Jaipur?",
         answer:
-          "Our studio is in Jaipur, Rajasthan. We regularly work with Jaipur clients remotely or in-person, and can meet for discovery or launch when needed.",
+          `Our office is at ${siteConfig.addressLine}. Phone ${siteConfig.phone}. Hours: ${siteConfig.hoursLabel}. We regularly work with Jaipur clients remotely or in person, and can meet for discovery or launch when needed.`,
       },
       {
         question: "How fast can a Jaipur business website launch?",
@@ -1001,7 +1002,7 @@ export const seoLandingPages = [
       {
         question: "Is TheTriFusion a software development company in Jaipur?",
         answer:
-          "Yes. Our primary office is in Jaipur, Rajasthan. We serve clients across India through video calls and WhatsApp.",
+          `Yes. Our office is at ${siteConfig.addressLine}. Phone ${siteConfig.phone}. Hours: ${siteConfig.hoursLabel}. We serve clients across India through video calls and WhatsApp.`,
       },
       {
         question: "What should I prepare for a quote?",

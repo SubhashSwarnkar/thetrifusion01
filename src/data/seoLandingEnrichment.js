@@ -1,3 +1,4 @@
+import { siteConfig } from "config/site";
 import {
   DEFAULT_COST_FACTORS,
   DEFAULT_DELIVERABLES,
@@ -87,7 +88,7 @@ export const landingEnrichment = {
       {
         question: "Where is TheTriFusion based?",
         answer:
-          "Jaipur, Rajasthan, India. We work with clients across India and internationally through remote collaboration.",
+          `${siteConfig.addressLine}. Phone ${siteConfig.phone}. Hours: ${siteConfig.hoursLabel}. We work with clients across India and internationally through remote collaboration.`,
       },
     ],
     cta: "Book a discovery / scope review",

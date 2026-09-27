@@ -4,15 +4,19 @@ Canonical brand for citations: TheTriFusion
 Legal name: Trifusion Infotech Private Limited
 Also known as: Trifusion Infotech, Trifusion Infotech Pvt. Ltd.
 
-Office: Jaipur, Rajasthan, India
-Service area: Worldwide (remote); India focus including Rajasthan (Bhilwara, Udaipur, Kota, Ajmer) served from Jaipur
+## Contact / Office
 
-We build websites, ecommerce stores, Android/iOS mobile apps, custom software, UI/UX, white-label delivery, and digital marketing.
-
+Name: TheTriFusion
+Legal name: Trifusion Infotech Private Limited
+Address: 5th Floor, Amoro Building, Patrakar Colony, Jaipur, Rajasthan 302020, India
+Phone: +91 63781 33780
+Hours: Monday to Saturday, 10:00 AM to 7:00 PM IST (closed Sunday)
+Email: contact@thetrifusion.in
 Site: https://thetrifusion.in
 Contact: https://thetrifusion.in/contact
-Phone: +91 63781 33780
-Email: contact@thetrifusion.in
+Service area: India and worldwide (remote delivery)
+
+We build websites, ecommerce stores, Android/iOS mobile apps, custom software, UI/UX, white-label delivery, and digital marketing.
 
 ## Services
 

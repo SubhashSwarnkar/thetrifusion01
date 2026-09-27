@@ -13,8 +13,9 @@ Every listing, profile, and schema field below must match this table **character
 | City (HQ) | `Jaipur, Rajasthan, India` — **never Bhilwara** |
 | Website | `https://thetrifusion.in` |
 | Public email | `contact@thetrifusion.in` |
-| Phone | Same number shown in the site footer — copy it from the live site at the time of each listing, do not retype from memory |
-| Street address | Only publish a street line once `NEXT_PUBLIC_COMPANY_STREET` is set **and** it matches Google Business Profile exactly. Until then, city-level NAP only. |
+| Phone | `+91 63781 33780` |
+| Hours | `Monday to Saturday, 10:00 AM to 7:00 PM IST (closed Sunday)` |
+| Street address | `5th Floor, Amoro Building, Patrakar Colony, Jaipur, Rajasthan 302020, India` |
 
 **Live proof URLs** (use these as portfolio evidence on every directory/profile below): [plugone.in](https://plugone.in/), [dailyconceptsindia.com](https://dailyconceptsindia.com), [connectdairy.in](https://www.connectdairy.in/), [atharvnarayan.in](https://www.atharvnarayan.in/).
 

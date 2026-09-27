@@ -1,4 +1,5 @@
 import React from "react";
+import { siteConfig } from "config/site";
 
 export default function TrustBadges() {
   const stats = [
@@ -10,7 +11,7 @@ export default function TrustBadges() {
 
   const certifications = [
     { name: "Pvt. Ltd. Company", icon: "🏢" },
-    { name: "Jaipur, Rajasthan", icon: "📍" },
+    { name: siteConfig.addressLine, icon: "📍" },
     { name: "GST invoicing", icon: "✓" },
     { name: "Hindi + English", icon: "🗣️" },
   ];

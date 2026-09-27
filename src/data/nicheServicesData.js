@@ -1,3 +1,4 @@
+import { siteConfig } from "config/site";
 import Web from "../assets/images/Services/Web.png";
 import Mobile from "../assets/images/Services/Mobile.png";
 import SoftwareFeatures from "../assets/images/Services/SoftwareFeatures.png";
@@ -130,7 +131,7 @@ export const nicheServices = [
       {
         question: "Where are you based?",
         answer:
-          "Jaipur, Rajasthan. We deliver remotely across India with weekly demos.",
+          `${siteConfig.addressLine}. Phone ${siteConfig.phone}. Hours: ${siteConfig.hoursLabel}. We deliver remotely across India with weekly demos.`,
       },
     ],
     pricing: { basic: 350000, standard: 650000, premium: 1200000 },

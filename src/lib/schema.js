@@ -4,10 +4,29 @@ import { lookupOrganizer } from "./eventOrganizers.js";
 const HOME_DESCRIPTION =
   "Trifusion Infotech Private Limited (TheTriFusion) is a software development company in Jaipur, Rajasthan offering custom software, ecommerce websites, mobile apps, UI/UX, and digital marketing for businesses across India.";
 
+const ORGANIZATION_ID = `${siteConfig.url}/#organization`;
+
+/** India and worldwide. No invented coordinates or city-level office pins. */
+const AREA_SERVED = [
+  { "@type": "Country", name: "India" },
+  { "@type": "Place", name: "Worldwide" },
+];
+
+function postalAddress() {
+  return {
+    "@type": "PostalAddress",
+    streetAddress: siteConfig.streetAddress,
+    addressLocality: siteConfig.city,
+    addressRegion: siteConfig.region,
+    postalCode: siteConfig.postalCode,
+    addressCountry: siteConfig.country,
+  };
+}
+
 function organizationNode() {
   return {
     "@type": "Organization",
-    "@id": `${siteConfig.url}/#organization`,
+    "@id": ORGANIZATION_ID,
     name: siteConfig.name,
     legalName: siteConfig.legalName,
     alternateName: "Trifusion Infotech",
@@ -23,22 +42,9 @@ function organizationNode() {
     image: siteConfig.defaultOgImage,
     description: HOME_DESCRIPTION,
     email: siteConfig.email,
-    telephone: siteConfig.phoneE164,
-    address: {
-      "@type": "PostalAddress",
-      ...(siteConfig.streetAddress
-        ? { streetAddress: siteConfig.streetAddress }
-        : {}),
-      addressLocality: siteConfig.city,
-      addressRegion: siteConfig.region,
-      addressCountry: siteConfig.country,
-    },
-    areaServed: [
-      { "@type": "City", name: "Jaipur" },
-      { "@type": "AdministrativeArea", name: siteConfig.region },
-      { "@type": "Country", name: siteConfig.countryName },
-      { "@type": "Place", name: "Worldwide" },
-    ],
+    telephone: siteConfig.phoneSchema,
+    address: postalAddress(),
+    areaServed: AREA_SERVED,
     sameAs: [siteConfig.instagram, siteConfig.linkedin],
   };
 }
@@ -58,7 +64,7 @@ function websiteNode() {
 function localBusinessNode() {
   return {
     "@type": ["ProfessionalService", "LocalBusiness"],
-    "@id": `${siteConfig.url}/#localbusiness`,
+    "@id": ORGANIZATION_ID,
     name: siteConfig.name,
     legalName: siteConfig.legalName,
     alternateName: "Trifusion Infotech",
@@ -70,23 +76,9 @@ function localBusinessNode() {
     },
     description: HOME_DESCRIPTION,
     slogan: siteConfig.tagline,
-    priceRange: "$$",
     email: siteConfig.email,
-    telephone: siteConfig.phoneE164,
-    address: {
-      "@type": "PostalAddress",
-      ...(siteConfig.streetAddress
-        ? { streetAddress: siteConfig.streetAddress }
-        : {}),
-      addressLocality: siteConfig.city,
-      addressRegion: siteConfig.region,
-      addressCountry: siteConfig.country,
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: siteConfig.latitude,
-      longitude: siteConfig.longitude,
-    },
+    telephone: siteConfig.phoneSchema,
+    address: postalAddress(),
     openingHours: siteConfig.openingHours,
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
@@ -103,39 +95,7 @@ function localBusinessNode() {
     },
     currenciesAccepted: "INR",
     paymentAccepted: "UPI, Bank Transfer, Cards",
-    foundingLocation: {
-      "@type": "Place",
-      name: `${siteConfig.city}, ${siteConfig.region}, ${siteConfig.countryName}`,
-    },
-    areaServed: [
-      {
-        "@type": "City",
-        name: "Jaipur",
-        description: "Primary office and service location",
-      },
-      {
-        "@type": "City",
-        name: "Bhilwara",
-        description: "Service area served remotely from Jaipur",
-      },
-      {
-        "@type": "City",
-        name: "Udaipur",
-        description: "Service area served remotely from Jaipur",
-      },
-      {
-        "@type": "City",
-        name: "Kota",
-        description: "Service area served remotely from Jaipur",
-      },
-      {
-        "@type": "City",
-        name: "Ajmer",
-        description: "Service area served remotely from Jaipur",
-      },
-      { "@type": "AdministrativeArea", name: siteConfig.region },
-      { "@type": "Country", name: siteConfig.countryName },
-    ],
+    areaServed: AREA_SERVED,
     knowsLanguage: ["en-IN", "hi"],
     knowsAbout: [
       "Software Development",
@@ -163,12 +123,11 @@ function localBusinessNode() {
       "@type": "ContactPoint",
       contactType: "customer service",
       email: siteConfig.email,
-      telephone: siteConfig.phoneE164,
+      telephone: siteConfig.phoneSchema,
       url: absoluteSiteUrl("/contact"),
       availableLanguage: ["English", "Hindi"],
       areaServed: "IN",
     },
-    parentOrganization: { "@id": `${siteConfig.url}/#organization` },
     sameAs: [siteConfig.instagram, siteConfig.linkedin],
   };
 }

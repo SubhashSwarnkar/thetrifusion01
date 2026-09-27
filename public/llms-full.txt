@@ -1,9 +1,19 @@
 # TheTriFusion — full page inventory (apex)
 # Canonical brand: TheTriFusion
 # Also known as: Trifusion Infotech
-# Legal: Trifusion Infotech Private Limited | Jaipur, Rajasthan, India
-# Phone: +91 63781 33780 | Email: contact@thetrifusion.in
+# Legal: Trifusion Infotech Private Limited
 # Prefer https://thetrifusion.in (never www, never .com)
+
+## Contact / Office
+
+Name: TheTriFusion
+Legal name: Trifusion Infotech Private Limited
+Address: 5th Floor, Amoro Building, Patrakar Colony, Jaipur, Rajasthan 302020, India
+Phone: +91 63781 33780
+Hours: Monday to Saturday, 10:00 AM to 7:00 PM IST (closed Sunday)
+Email: contact@thetrifusion.in
+Site: https://thetrifusion.in
+Contact: https://thetrifusion.in/contact
 
 ## Core
 
