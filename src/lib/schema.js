@@ -10,7 +10,7 @@ function organizationNode() {
     "@id": `${siteConfig.url}/#organization`,
     name: siteConfig.name,
     legalName: siteConfig.legalName,
-    alternateName: [siteConfig.legalName, siteConfig.legalNameShort],
+    alternateName: "Trifusion Infotech",
     brand: {
       "@type": "Brand",
       name: siteConfig.name,
@@ -59,12 +59,15 @@ function localBusinessNode() {
   return {
     "@type": ["ProfessionalService", "LocalBusiness"],
     "@id": `${siteConfig.url}/#localbusiness`,
-    name: siteConfig.legalName,
+    name: siteConfig.name,
     legalName: siteConfig.legalName,
-    alternateName: [siteConfig.name, siteConfig.legalNameShort],
+    alternateName: "Trifusion Infotech",
     url: siteConfig.url,
     image: siteConfig.defaultOgImage,
-    logo: siteConfig.logoUrl,
+    logo: {
+      "@type": "ImageObject",
+      url: siteConfig.logoUrl,
+    },
     description: HOME_DESCRIPTION,
     slogan: siteConfig.tagline,
     priceRange: "$$",
@@ -84,7 +87,6 @@ function localBusinessNode() {
       latitude: siteConfig.latitude,
       longitude: siteConfig.longitude,
     },
-    hasMap: siteConfig.mapsUrl,
     openingHours: siteConfig.openingHours,
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
@@ -236,7 +238,6 @@ export function serviceSchema({
   offers = [],
   pricedOffers = [],
   areaServed,
-  provider,
   inLanguage,
 }) {
   const url = absoluteSiteUrl(path);
@@ -245,7 +246,7 @@ export function serviceSchema({
     if (value.startsWith("http")) return value;
     return absoluteSiteUrl(value);
   };
-  const priceOfferNodes =
+  const exactOfferNodes =
     pricedOffers.length > 0
       ? pricedOffers.map((offer) => ({
           "@type": "Offer",
@@ -257,18 +258,25 @@ export function serviceSchema({
           validFrom: "2026-01-01",
           url: offer.url ? absoluteSiteUrl(offer.url) : url,
         }))
-      : price
-        ? [
-            {
-              "@type": "Offer",
-              priceCurrency: "INR",
-              price: String(price),
-              availability: "https://schema.org/InStock",
-              validFrom: "2026-01-01",
-              url,
-            },
-          ]
-        : [];
+      : [];
+  const fromAmount = Number(price);
+  const fromPriceOffer =
+    exactOfferNodes.length === 0 && Number.isFinite(fromAmount) && fromAmount > 0
+      ? {
+          "@type": "Offer",
+          priceCurrency: "INR",
+          availability: "https://schema.org/InStock",
+          url,
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            priceCurrency: "INR",
+            minPrice: fromAmount,
+          },
+        }
+      : null;
+  const priceOfferNodes = fromPriceOffer
+    ? [fromPriceOffer]
+    : exactOfferNodes;
 
   return {
     "@context": "https://schema.org",
@@ -280,7 +288,7 @@ export function serviceSchema({
     url,
     ...(inLanguage ? { inLanguage } : {}),
     category: "Information Technology Services",
-    provider: provider || { "@id": `${siteConfig.url}/#localbusiness` },
+    provider: { "@id": `${siteConfig.url}/#organization` },
     brand: { "@id": `${siteConfig.url}/#organization` },
     areaServed: areaServed || [
       { "@type": "City", name: "Jaipur" },

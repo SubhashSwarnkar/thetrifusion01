@@ -48,9 +48,9 @@ export const ecommercePage = {
   intro:
     "TheTriFusion in Jaipur builds complete ecommerce products for Indian sellers: grocery, fashion, electronics, and every store type. You get a customer website that we guarantee live in 48 hours once your brief and assets are ready — plus Android and iOS apps, admin, catalog, checkout, and Razorpay/UPI. Play Store and Apple Developer accounts stay in your name.",
   metaTitle:
-    "Ecommerce Live in 48 Hours or 50% Refund | Single & Multi-Vendor from ₹25,000 | TheTriFusion",
+    "Ecommerce from ₹25,000 | 48-Hour Launch | TheTriFusion",
   metaDescription:
-    "Single vendor ₹25,000 & multi-vendor ₹35,000 ecommerce. Website live in 48 hours after locked brief — or 50% refund. Web + Android + iOS. Grocery, fashion & more. Jaipur.",
+    "Single vendor ₹25,000 and multi-vendor ₹35,000. Website live in 48 hours after a locked brief, or 50% refund. Web, Android, and iOS.",
   keywords:
     "ecommerce website live in 48 hours, ecommerce 50% refund guarantee, single vendor ecommerce website India, multi vendor marketplace website 48 hours, ecommerce development company India, grocery ecommerce website, clothing ecommerce app, ecommerce web android ios package, online store live fast India, D2C ecommerce Jaipur, white label ecommerce website",
   whatsappMessage:

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Footer from "parts/Footer";
@@ -56,7 +56,6 @@ function AdsHeader({ phoneHref, whatsappMessage }) {
 }
 
 export default function AdsLandingPage({ landing }) {
-  const [openFaq, setOpenFaq] = useState(0);
   const proofs = landing.proofIds
     .map((id) => Portfolios.find((item) => item.id === id))
     .filter(Boolean);
@@ -279,33 +278,23 @@ export default function AdsLandingPage({ landing }) {
           <h2 className="text-3xl font-black text-theme-blue mb-8">
             Budget, timeline, stack
           </h2>
-          <div className="space-y-3">
-            {landing.faqs.map((faq, idx) => {
-              const open = openFaq === idx;
-              return (
-                <div
-                  key={faq.question}
-                  className="rounded-2xl border border-gray-100 bg-white overflow-hidden"
-                >
-                  <button
-                    type="button"
-                    className="w-full text-left px-5 py-4 font-bold text-theme-blue flex items-center justify-between gap-4"
-                    onClick={() => setOpenFaq(open ? -1 : idx)}
-                    aria-expanded={open}
+          <div className="divide-y divide-gray-100 border-y border-gray-100 bg-white rounded-2xl px-5">
+            {landing.faqs.map((faq) => (
+              <details key={faq.question} className="group">
+                <summary className="w-full cursor-pointer list-none py-5 flex justify-between items-start gap-4 font-bold text-theme-blue [&::-webkit-details-marker]:hidden">
+                  <h3 className="text-base font-bold">{faq.question}</h3>
+                  <span
+                    aria-hidden="true"
+                    className="text-theme-purple text-xl leading-none flex-shrink-0 group-open:rotate-45 transition-transform"
                   >
-                    {faq.question}
-                    <span className="text-theme-purple text-xl leading-none">
-                      {open ? "–" : "+"}
-                    </span>
-                  </button>
-                  {open ? (
-                    <p className="px-5 pb-5 text-sm text-gray-600 font-light leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  ) : null}
-                </div>
-              );
-            })}
+                    +
+                  </span>
+                </summary>
+                <p className="pb-5 -mt-1 text-sm text-gray-600 font-light leading-relaxed pr-8">
+                  {faq.answer}
+                </p>
+              </details>
+            ))}
           </div>
           {landing.relatedService ? (
             <p className="mt-8 text-sm text-gray-500">

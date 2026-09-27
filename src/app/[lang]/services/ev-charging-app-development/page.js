@@ -82,13 +82,7 @@ export default function TranslatedEvServicePage({ params }) {
             { "@type": "Country", name: "India" },
             { "@type": "Place", name: "Worldwide" },
           ],
-          provider: {
-            "@type": "Organization",
-            "@id": "https://thetrifusion.in/#organization",
-            name: "TheTriFusion",
-            legalName: "Trifusion Infotech Private Limited",
-            url: "https://thetrifusion.in",
-          },
+          provider: { "@id": "https://thetrifusion.in/#organization" },
         })}
       />
       <JsonLd data={breadcrumbSchema(crumbs)} />

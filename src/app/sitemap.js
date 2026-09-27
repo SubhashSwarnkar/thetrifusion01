@@ -11,6 +11,7 @@ import {
 } from "data/i18n/routes";
 import { Portfolios, isIndexablePortfolio } from "json/landingPageData";
 import { NOINDEX_PATHS, pages } from "lib/seoConfig";
+import { REDIRECTED_SOLUTION_SLUGS } from "lib/solutionRedirects";
 import { siteConfig } from "config/site";
 
 function withHreflang(entry, englishPath) {
@@ -73,7 +74,11 @@ export default function sitemap() {
   );
 
   const solutionRoutes = seoLandingPages
-    .filter((raw) => raw.slug !== "online-store-development")
+    .filter(
+      (raw) =>
+        raw.slug !== "online-store-development" &&
+        !REDIRECTED_SOLUTION_SLUGS.has(raw.slug)
+    )
     .map((raw) => {
       const page = getSeoLandingBySlug(raw.slug);
       return {

@@ -1,8 +1,8 @@
 # TheTriFusion (Trifusion Infotech Pvt. Ltd.)
 
-Canonical brand for citations: TheTriFusion / Trifusion Infotech Pvt. Ltd.
+Canonical brand for citations: TheTriFusion
 Legal name: Trifusion Infotech Private Limited
-Also known as: TheTriFusion, Trifusion Infotech Pvt. Ltd.
+Also known as: Trifusion Infotech, Trifusion Infotech Pvt. Ltd.
 
 Office: Jaipur, Rajasthan, India
 Service area: Worldwide (remote); India focus including Rajasthan (Bhilwara, Udaipur, Kota, Ajmer) served from Jaipur
@@ -16,27 +16,154 @@ Email: contact@thetrifusion.in
 
 ## Services
 
-- Ecommerce website development (Shopify, WooCommerce, custom, B2B, marketplaces): https://thetrifusion.in/solutions/ecommerce-website-development
-- Ecommerce packages (₹25,000 single vendor / ₹35,000 multi-vendor): https://thetrifusion.in/ecommerce-development
-- Web development: https://thetrifusion.in/web-development
-- Android app development: https://thetrifusion.in/android-app-development
-- iOS app development: https://thetrifusion.in/ios-app-development
-- White-label development: https://thetrifusion.in/white-label-development
+Canonical page for each service is the /services/* URL below. Ecommerce's canonical page is /solutions/ecommerce-website-development. Do not cite paid landing URLs as the service page.
+
+### Ecommerce website development
+URL: https://thetrifusion.in/solutions/ecommerce-website-development
+What: Shopify, WooCommerce, and custom (Next.js / React / Node.js) online stores, B2B ordering portals, and multi-vendor marketplaces.
+Platforms: Shopify, WooCommerce, Next.js, React, Node.js; payments via Razorpay, Cashfree, PayU, CCAvenue, Stripe, UPI; shipping via Shiprocket, Delhivery.
+Who: D2C brands, wholesalers, and marketplace operators in India and remote clients elsewhere.
+Price from: ₹25,000 single-vendor; ₹35,000 multi-vendor. Both include web + Android + iOS. Custom builds are quoted after discovery.
+
+### Custom software development
+URL: https://thetrifusion.in/services/software-development
+What: Business portals, CRM/ERP modules, APIs, and admin tools scoped to a workflow.
+Platforms: React, Node.js, Python, Java, PostgreSQL, MongoDB.
+Who: Indian SMEs replacing spreadsheet operations.
+Price from: ₹1,00,000 for a starter MVP shown on the page.
+
+### Website development
+URL: https://thetrifusion.in/services/website-development
+What: Marketing sites, lead funnels, and ecommerce storefronts with SEO basics and hosting after launch.
+Platforms: React, Next.js, Node.js, MongoDB, WordPress.
+Who: Indian businesses that need a public site, not an internal operating system.
+Price from: ₹15,000.
+
+### Mobile app development
+URL: https://thetrifusion.in/services/mobile-app-development
+What: One product on iOS and Android, with a shared data model and web admin.
+Platforms: React Native, Flutter, Swift, Kotlin, Firebase.
+Who: Teams shipping both stores. Typical MVP is 8–12 weeks.
+Price from: ₹50,000.
+
+### iOS app development
+URL: https://thetrifusion.in/services/ios-app-development
+What: App Store apps with TestFlight and review support.
+Platforms: Swift or React Native, plus a web admin when scoped.
+Who: Businesses that need an iPhone app. Typical MVP is 8–12 weeks.
+Price from: ₹2,50,000.
+
+### Android app development
+URL: https://thetrifusion.in/services/android-app-development
+What: Play Store apps with listing support.
+Platforms: Kotlin or React Native, plus a web admin when scoped.
+Who: Businesses that need an Android app. Typical MVP is 8–12 weeks.
+Price from: ₹2,50,000.
+
+### UI/UX design
+URL: https://thetrifusion.in/services/ui-ux-design
+What: Product flows, screens, and a component set handed to engineering.
+Platforms: Figma, Adobe XD, Sketch.
+Who: Teams building a website or app, not a poster.
+Price from: ₹20,000.
+
+### Graphic design
+URL: https://thetrifusion.in/services/graphic-design
+What: Social kits, ad creatives, and campaign visuals that match a live website.
+Platforms: Adobe Illustrator, Photoshop, InDesign.
+Who: Indian brands running a campaign next to an existing site.
+Price from: ₹10,000.
+
+### Digital marketing
+URL: https://thetrifusion.in/services/digital-marketing
+What: SEO, Google Ads, Meta Ads, and landing pages measured against leads.
+Platforms: Google Analytics, Google Ads, Meta Ads.
+Who: Indian brands that already have a site or store to send traffic to.
+Price from: ₹15,000.
+
+### Branding
+URL: https://thetrifusion.in/services/branding
+What: Logo, voice, colour, and type, then rules the website can use.
+Platforms: Adobe Creative Suite, Figma.
+Who: Companies that need the mark and the site to match.
+Price from: ₹30,000.
+
+### RPA
+URL: https://thetrifusion.in/services/rpa
+What: Bots for repetitive office work, with a human handoff where a bot should not decide.
+Platforms: UiPath, Automation Anywhere, Python.
+Who: Indian SMEs with a written process list.
+Price from: ₹50,000.
+
+### Business modernization
+URL: https://thetrifusion.in/services/business-modernization
+What: Phased replacement of spreadsheet workflows with a web or mobile app.
+Platforms: Web apps, CRM, and mobile, scoped per workflow.
+Who: Indian SMEs that have outgrown Excel and are not buying a full ERP.
+Price from: ₹1,50,000.
+
+### Salesforce
+URL: https://thetrifusion.in/services/salesforce
+What: Objects, flows, and integrations in an existing Salesforce org.
+Platforms: Sales Cloud, Service Cloud, Lightning, Apex.
+Who: Indian sales teams that already pay for Salesforce.
+Price from: ₹80,000.
+
+### AI development
+URL: https://thetrifusion.in/services/ai-development
+What: Assistants, document operations, and search, with a human step in the workflow.
+Platforms: Python, existing model APIs, AWS.
+Who: Product teams adding a practical AI feature, not a research lab.
+Price from: ₹2,00,000.
+
+### DevOps and cloud
+URL: https://thetrifusion.in/services/devops
+What: Pipelines, infrastructure as code, Kubernetes where it earns its place, monitoring, and cloud migration on AWS, Azure, or GCP.
+Platforms: Jenkins, GitLab CI, Docker, Kubernetes, Terraform, AWS, Azure, Ansible.
+Who: Teams in India and elsewhere that need the operations layer under a product. The infrastructure audit is free. This page does not publish a package price.
+
+### On-demand developers
+URL: https://thetrifusion.in/services/on-demand
+What: Extra React, Node, or mobile hours with a named lead.
+Platforms: React, Node.js, Python, Java, mobile.
+Who: Indian product teams that need capacity without handing over the whole project.
+Price from: ₹50,000.
+
+### MLM CRM development
+URL: https://thetrifusion.in/services/mlm-crm-development
+What: Unilevel compensation software with genealogy, KYC, and lead tools.
+Platforms: Web admin plus iOS and Android field apps.
+Who: Network-marketing operators with a written compensation plan.
+Price from: ₹3,50,000.
+
+### Fintech app development
+URL: https://thetrifusion.in/services/fintech-app-development
+What: BBPS, AEPS, DMT, and XDMT software with retailer, distributor, and admin panels, plus UPI and KYC.
+Platforms: iOS, Android, and web. The client brings bank or NPCI access.
+Who: Retailers, distributors, and fintech operators in India.
+Price from: ₹99,999.
+
+### EV charging app development
+URL: https://thetrifusion.in/services/ev-charging-app-development
+What: One charging management system for a CPO, an eMSP, or both: OCPP 1.6J/2.0.1, OCPI 2.2.1 roaming, driver app, operator dashboard, and GST invoice fields.
+Platforms: iOS, Android, web admin. Charger connectivity is part of this engagement.
+Who: Charge point operators and e-mobility service providers.
+Price from: ₹4,50,000 ex-GST after discovery, as a starting range on the page, not a fixed package.
+
+### CRM and ERP development
+URL: https://thetrifusion.in/services/crm-erp-development
+What: Custom sales CRM and operations modules for pipelines, inventory, and billing.
+Platforms: Web admin, iOS, and Android.
+Who: Indian operators that need a system shaped to their process.
+Price from: ₹3,00,000.
+
 - All services: https://thetrifusion.in/services
-- Software development: https://thetrifusion.in/services/software-development
-- Website development: https://thetrifusion.in/services/website-development
-- Mobile app development: https://thetrifusion.in/services/mobile-app-development
-- UI/UX design: https://thetrifusion.in/services/ui-ux-design
-- Digital marketing: https://thetrifusion.in/services/digital-marketing
-- MLM CRM development: https://thetrifusion.in/services/mlm-crm-development
-- Fintech app development: https://thetrifusion.in/services/fintech-app-development
-- EV charging CMS for CPOs and eMSPs: https://thetrifusion.in/services/ev-charging-app-development
 
 ## Ecommerce website development
 
 Primary page: https://thetrifusion.in/solutions/ecommerce-website-development
 Summary: TheTriFusion (Trifusion Infotech Pvt. Ltd., Jaipur, India) is an ecommerce website development company building Shopify, WooCommerce and custom (Next.js / React / Node.js) online stores, B2B / wholesale ordering portals and multi-vendor marketplaces for clients in India and worldwide (remote).
-- Packaged pricing (published): single-vendor ecommerce ₹25,000; multi-vendor marketplace ₹35,000; both include web + Android + iOS apps; website live within 48 hours after a locked brief and assets, or 50% refund. Details: https://thetrifusion.in/ecommerce-development
+- Packaged pricing (published on the canonical page): single-vendor ecommerce ₹25,000; multi-vendor marketplace ₹35,000; both include web + Android + iOS apps; website live within 48 hours after a locked brief and assets, or 50% refund.
 - Custom / B2B / ERP-integrated builds: quoted after discovery; a typical custom ecommerce MVP takes 4–10 weeks.
 - Integrations: Razorpay, Cashfree, PayU, CCAvenue, Stripe, UPI; Shiprocket, Delhivery; offline POS / inventory sync (live example: DailyConcepts India).
 - Platform comparison (Shopify vs WooCommerce vs custom): https://thetrifusion.in/solutions/ecommerce-website-development

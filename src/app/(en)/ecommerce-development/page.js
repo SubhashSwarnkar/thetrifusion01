@@ -24,6 +24,8 @@ export const metadata = buildMetadata({
   keywords: ecommercePage.keywords,
   path: PATH,
   image: ecommercePage.heroImage,
+  noIndex: true,
+  languages: null,
 });
 
 export default function RoutePage() {

@@ -7,6 +7,7 @@ import Footer from "parts/Footer";
 import Breadcrumbs from "components/Breadcrumbs";
 import BrandTrustStrip from "components/BrandTrustStrip";
 import { seoLandingPages, getSeoLandingBySlug } from "data/seoLandingPages";
+import { REDIRECTED_SOLUTION_SLUGS } from "lib/solutionRedirects";
 
 export default function SolutionsHubPage() {
   useEffect(() => {
@@ -14,7 +15,11 @@ export default function SolutionsHubPage() {
   }, []);
 
   const pages = seoLandingPages
-    .filter((raw) => raw.slug !== "online-store-development")
+    .filter(
+      (raw) =>
+        raw.slug !== "online-store-development" &&
+        !REDIRECTED_SOLUTION_SLUGS.has(raw.slug)
+    )
     .map((raw) => getSeoLandingBySlug(raw.slug))
     .filter(Boolean);
 

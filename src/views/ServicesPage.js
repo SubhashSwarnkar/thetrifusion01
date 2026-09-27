@@ -55,7 +55,7 @@ export default function ServicesPage() {
         <div className="container mx-auto px-5 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             <div>
-              <Link href="/ecommerce-development" prefetch={false} className="group block h-full">
+              <Link href="/solutions/ecommerce-website-development" prefetch={false} className="group block h-full">
                 <div className={`relative h-full rounded-2xl border p-6 overflow-hidden hover:shadow-lg transition-all duration-300 ${accentAt(0).card}`}>
                   <span className={`absolute left-0 top-0 h-full w-1.5 ${accentAt(0).bar}`} />
                   <div className={`w-11 h-11 mb-5 rounded-xl flex items-center justify-center ${accentAt(0).iconWrap} group-hover:bg-theme-purple group-hover:text-white transition-colors`}>

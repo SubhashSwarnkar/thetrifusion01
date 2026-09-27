@@ -190,12 +190,14 @@ export default function BlogDetailPage({
                   >
                     Discuss project
                   </Link>
-                  <Link
-                    href="/ecommerce-development"
-                    className="inline-flex items-center justify-center rounded-full border border-theme-purple px-6 py-3.5 font-bold text-theme-purple"
-                  >
-                    Ecommerce ₹25k offer
-                  </Link>
+                  {isEcommerceTopic ? (
+                    <Link
+                      href="/ecommerce-development"
+                      className="inline-flex items-center justify-center rounded-full border border-theme-purple px-6 py-3.5 font-bold text-theme-purple"
+                    >
+                      Ecommerce ₹25k offer
+                    </Link>
+                  ) : null}
                 </div>
               </div>
             
@@ -265,7 +267,7 @@ export default function BlogDetailPage({
                     {relatedSolutions.map((solution) => (
                       <Link
                         key={solution.slug}
-                        href={`/solutions/${solution.slug}`}
+                        href={solution.href || `/solutions/${solution.slug}`}
                         className="rounded-2xl border border-gray-100 p-5 transition-all hover:border-theme-purple/40"
                       >
                         <h4 className="mb-2 text-lg font-bold text-theme-blue">

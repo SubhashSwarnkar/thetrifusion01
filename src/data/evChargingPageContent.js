@@ -44,19 +44,12 @@ export const evChargingPageContent = {
   hidePricingEstimates: true,
   hideStandardDeliverables: true,
   faqsExpanded: true,
-  omitSchemaPrice: true,
   tocAriaLabel: "EV charging services on this page",
   schemaAreaServed: [
     { "@type": "Country", name: "India" },
     { "@type": "Place", name: "Worldwide" },
   ],
-  schemaProvider: {
-    "@type": "Organization",
-    "@id": `${siteConfig.url}/#organization`,
-    name: "TheTriFusion",
-    legalName: "Trifusion Infotech Private Limited",
-    url: siteConfig.url,
-  },
+  schemaProvider: { "@id": `${siteConfig.url}/#organization` },
   relatedBlogSlug: "ev-charging-app-ocpi-ocpp-guide",
   softwareGuides: [
     {
@@ -677,11 +670,6 @@ export const evChargingPageContent = {
       href: "/portfolio/plugone-ev-charging-platform",
       title: "PlugOne case study",
       text: "The live EV charging product. Open plugone.in as well if you want the running site.",
-    },
-    {
-      href: "/white-label-development",
-      title: "White-label development",
-      text: "For agencies that need the build delivered under their client relationship.",
     },
   ],
   faqs: [

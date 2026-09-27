@@ -21,6 +21,7 @@ export function createAdsRoute(path) {
         <JsonLd
           data={serviceSchema({
             name: landing.serviceName,
+            serviceType: landing.serviceType || landing.serviceName,
             description: landing.intro,
             path: landing.path,
           })}

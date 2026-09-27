@@ -98,7 +98,7 @@ def expand_article(t):
         prior,
         ' For build or SEO help on event hubs, see <a href="/services/digital-marketing">digital marketing</a>, '
         + '<a href="/services/website-development">web development</a>, and '
-        + '<a href="/ecommerce-development">ecommerce development</a>.',
+        + '<a href="/solutions/ecommerce-website-development">ecommerce development</a>.',
     )
     parts.append(
         "<p>Related reading on TheTriFusion: "

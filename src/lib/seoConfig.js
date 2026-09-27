@@ -22,16 +22,14 @@ export const pages = {
       "software company Jaipur, IT company Rajasthan, about TheTriFusion, software agency India, web development team Jaipur",
   },
   "/services": {
-    title:
-      "IT Services in Jaipur | Software, Websites, Apps & Marketing | TheTriFusion",
+    title: "IT Services in Jaipur | TheTriFusion",
     description:
-      "TheTriFusion services from Jaipur, Rajasthan: custom software, ecommerce websites, mobile apps, UI/UX, CRM/ERP, MSP support, and digital marketing for Indian businesses.",
+      "IT services in Jaipur for software, websites, apps, UI/UX, and digital marketing. TheTriFusion.",
     keywords:
       "IT services Jaipur, website development Rajasthan, software development services, ecommerce website development, mobile app development India",
   },
   "/solutions": {
-    title:
-      "Digital Solutions Hub | Jaipur, Rajasthan & India | TheTriFusion",
+    title: "Digital Solutions in Jaipur | TheTriFusion",
     description:
       "TheTriFusion solution pages for website development in Jaipur, software company Rajasthan, ecommerce, apps, and digital marketing.",
     keywords:
@@ -55,41 +53,37 @@ export const pages = {
       "price calculator, project cost estimator, website cost calculator, app pricing",
   },
   "/web-development": {
-    title:
-      "Website Development in Jaipur | React & Next.js | TheTriFusion",
+    title: "Website Development in Jaipur | TheTriFusion",
     description:
       "Business websites from TheTriFusion in Jaipur. React/Next.js, 6–8 week typical delivery, live work you can open, and support after launch.",
     keywords:
       "web development company Jaipur, hire React developer India, website development Jaipur, Next.js agency Rajasthan",
   },
   "/android-app-development": {
-    title:
-      "Android App Development in Jaipur | Play Store Ready | TheTriFusion",
+    title: "Android App Development in Jaipur | TheTriFusion",
     description:
       "Android apps from TheTriFusion in Jaipur. Kotlin or React Native, typical MVP in 8–12 weeks, Play Store listing, and post-launch support.",
     keywords:
       "android app development company Jaipur, hire app developers India, Play Store app development Jaipur",
   },
   "/ios-app-development": {
-    title: "iOS App Development in Jaipur | App Store Ready | TheTriFusion",
+    title: "iOS App Development in Jaipur | TheTriFusion",
     description:
       "iOS apps from TheTriFusion in Jaipur. Swift or React Native, App Store submission, typical MVP in 8–12 weeks, and support after launch.",
     keywords:
       "iOS app development Jaipur, hire iOS developers India, App Store app development Rajasthan",
   },
   "/white-label-development": {
-    title:
-      "White-label Development Partner in Jaipur | Agencies & AWS | TheTriFusion",
+    title: "White-label Development in Jaipur | TheTriFusion",
     description:
       "White-label web and app delivery from TheTriFusion in Jaipur for agencies and AWS partners. You keep the client. We keep the build.",
     keywords:
       "white label development India, software development partner Jaipur, AWS partner development, agency white label apps",
   },
   "/ecommerce-development": {
-    title:
-      "Ecommerce Live in 48 Hours or 50% Refund | Single & Multi-Vendor from ₹25,000 | TheTriFusion",
+    title: "Ecommerce from ₹25,000 | 48-Hour Launch | TheTriFusion",
     description:
-      "Single vendor ₹25,000 & multi-vendor ₹35,000 ecommerce. Website live in 48 hours after locked brief — or 50% refund. Web + Android + iOS. Grocery, fashion & more. Jaipur.",
+      "Single vendor ₹25,000 and multi-vendor ₹35,000. Website live in 48 hours after a locked brief, or 50% refund. Web, Android, and iOS.",
     keywords:
       "ecommerce website live in 48 hours, ecommerce 50% refund guarantee, single vendor ecommerce website India, multi vendor marketplace website 48 hours, ecommerce development company India, grocery ecommerce website, clothing ecommerce app, ecommerce web android ios package, online store live fast India, D2C ecommerce Jaipur",
   },
@@ -184,7 +178,19 @@ function robotsFor(noIndex) {
   };
 }
 
-/** Tool / utility routes that should stay out of the index. */
+/**
+ * Paid landing URLs stay HTTP 200 for live campaigns. They are noindex, follow
+ * so organic results use the matching /services or ecommerce solution page.
+ */
+export const ADS_LANDING_PATHS = new Set([
+  "/web-development",
+  "/android-app-development",
+  "/ios-app-development",
+  "/ecommerce-development",
+  "/white-label-development",
+]);
+
+/** Tool routes and paid landings that should stay out of the index. */
 export const NOINDEX_PATHS = new Set([
   "/estimate",
   "/planner",
@@ -193,6 +199,7 @@ export const NOINDEX_PATHS = new Set([
   "/thank-you",
   "/appointment",
   "/discuss-project",
+  ...ADS_LANDING_PATHS,
 ]);
 
 export function pageMetadata(path, options = {}) {
@@ -208,10 +215,16 @@ export function pageMetadata(path, options = {}) {
     ...(page.keywords ? { keywords: page.keywords } : {}),
     alternates: {
       canonical: url,
-      languages: {
-        "en-IN": url,
-        "x-default": url,
-      },
+      // Ads landings stay self-canonical but must not advertise hreflang
+      // alternates that point at the noindex URL.
+      ...(ADS_LANDING_PATHS.has(path)
+        ? {}
+        : {
+            languages: {
+              "en-IN": url,
+              "x-default": url,
+            },
+          }),
     },
     openGraph: {
       title: page.title,
@@ -267,10 +280,15 @@ export function buildMetadata({
     ...(keywords ? { keywords } : {}),
     alternates: {
       canonical: url,
-      languages: languages || {
-        "en-IN": url,
-        "x-default": url,
-      },
+      // `languages: null` omits hreflang. Undefined keeps the self alternates.
+      ...(languages === null
+        ? {}
+        : {
+            languages: languages || {
+              "en-IN": url,
+              "x-default": url,
+            },
+          }),
     },
     openGraph: {
       title,

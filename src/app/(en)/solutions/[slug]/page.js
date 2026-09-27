@@ -13,6 +13,20 @@ import {
   serviceSchema,
 } from "lib/schema";
 
+const CITY_BY_SLUG_SUFFIX = {
+  ajmer: "Ajmer",
+  bhilwara: "Bhilwara",
+  jaipur: "Jaipur",
+  jodhpur: "Jodhpur",
+  kota: "Kota",
+  udaipur: "Udaipur",
+};
+
+function solutionCity(slug) {
+  const suffix = String(slug || "").split("-").pop();
+  return CITY_BY_SLUG_SUFFIX[suffix] || null;
+}
+
 export function generateStaticParams() {
   return seoLandingPages.map((page) => ({ slug: page.slug }));
 }
@@ -52,6 +66,16 @@ export default function RoutePage({ params }) {
           description: page.metaDescription,
           path: `/solutions/${page.slug}`,
           ...(page.schema || {}),
+          serviceType: page.schema?.serviceType || page.h1,
+          ...(solutionCity(page.slug)
+            ? {
+                areaServed: [
+                  { "@type": "City", name: solutionCity(page.slug) },
+                  { "@type": "AdministrativeArea", name: "Rajasthan" },
+                  { "@type": "Country", name: "India" },
+                ],
+              }
+            : {}),
         })}
       />
       <JsonLd data={faqSchema(page.faqs)} />

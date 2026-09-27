@@ -65,7 +65,50 @@ const nextConfig = {
       },
       {
         source: "/services/ecommerce-development",
-        destination: "/ecommerce-development",
+        destination: "/solutions/ecommerce-website-development",
+        permanent: true,
+      },
+      // Same service and intent as the /services twin. Keep in sync with
+      // src/lib/solutionRedirects.js. City pages, ecommerce, MSP, the buyer
+      // guide, Rajasthan, and the general Jaipur company page are not here.
+      {
+        source: "/solutions/android-app-development-company-jaipur",
+        destination: "/services/android-app-development",
+        permanent: true,
+      },
+      {
+        source: "/solutions/web-development-company-jaipur",
+        destination: "/services/website-development",
+        permanent: true,
+      },
+      {
+        source: "/solutions/web-development-company-india",
+        destination: "/services/website-development",
+        permanent: true,
+      },
+      {
+        source: "/solutions/custom-software-development-company",
+        destination: "/services/software-development",
+        permanent: true,
+      },
+      {
+        source: "/solutions/crm-erp-software-development",
+        destination: "/services/crm-erp-development",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ui-ux-design-agency",
+        destination: "/services/ui-ux-design",
+        permanent: true,
+      },
+      {
+        source: "/solutions/digital-marketing-agency",
+        destination: "/services/digital-marketing",
+        permanent: true,
+      },
+      {
+        source: "/solutions/mobile-app-development-company",
+        destination: "/services/mobile-app-development",
         permanent: true,
       },
       // Retired 2024 archive posts → /blog (drop soft-200 noindex URLs)

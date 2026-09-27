@@ -1,15 +1,16 @@
 import { enrichLandingPage } from "./seoLandingEnrichment";
 import { cityServiceAreaPages } from "./cityServiceAreaPages";
+import { REDIRECTED_SOLUTION_SLUGS } from "lib/solutionRedirects";
 
 export const seoLandingPages = [
   {
     slug: "best-software-company-india",
     title:
-      "How to Choose a Software Company in India | Buyer Guide | TheTriFusion",
+      "How to Choose a Software Company in India | TheTriFusion",
     h1: "How to Choose a Software Company in India",
     navLabel: "Software company in India",
     metaDescription:
-      "TheTriFusion is a trusted software development company and digital agency in India. Custom software, websites, mobile apps, ecommerce, and digital marketing for startups and enterprises.",
+      "A buyer guide to software companies in India: portfolio, process, ownership, and support. See how TheTriFusion in Jaipur scopes work for startups and SMEs.",
     primaryKeyword: "best software company in India",
     secondaryKeywords: [
       "software agency India",
@@ -62,7 +63,7 @@ export const seoLandingPages = [
   {
     slug: "ecommerce-website-development",
     title:
-      "Ecommerce Website Development Company India & Jaipur | TheTriFusion",
+      "Ecommerce Website Development in India | TheTriFusion",
     h1: "Ecommerce Website Development Company in India — Shopify, WooCommerce & Custom Stores",
     navLabel: "Ecommerce website development",
     metaDescription:
@@ -323,10 +324,10 @@ export const seoLandingPages = [
   {
     slug: "online-store-development",
     title:
-      "Online Store Development Company India | Custom Web Shop & Multi-Vendor Marketplace",
+      "Online Store Development in India | TheTriFusion",
     h1: "Online Store & Digital Storefront Development Company",
     metaDescription:
-      "Expert online store development company in India. We build high-performing digital retail stores, multi-brand shopping websites, mobile shopping apps, and automated inventory systems.",
+      "Online store development in India for D2C catalogs, multi-vendor shops, and inventory. TheTriFusion builds the storefront from Jaipur.",
     primaryKeyword: "online store development",
     secondaryKeywords: [
       "create online store India",
@@ -381,11 +382,11 @@ export const seoLandingPages = [
   {
     slug: "digital-marketing-agency",
     title:
-      "Digital Marketing & Performance Marketing Agency in India | High ROAS Ads & SEO",
+      "Digital Marketing Agency in India | TheTriFusion",
     h1: "Digital Marketing & Performance Marketing Agency in India",
     navLabel: "Digital marketing & performance ads",
     metaDescription:
-      "Leading digital marketing & performance marketing agency in Jaipur & India. We scale businesses with high-ROAS Google Ads, Meta Ads (FB & Instagram), technical SEO, CRO & B2B/D2C lead generation funnels.",
+      "Digital marketing agency in Jaipur and India for Google Ads, Meta Ads, technical SEO, and lead funnels. TheTriFusion scopes the plan before spend.",
     primaryKeyword: "digital marketing agency",
     secondaryKeywords: [
       "digital marketing company India",
@@ -502,10 +503,10 @@ export const seoLandingPages = [
   },
   {
     slug: "msp-managed-it-services",
-    title: "MSP Managed IT Services India | Support, Monitoring & Maintenance",
+    title: "MSP Managed IT Services in India | TheTriFusion",
     h1: "MSP & Managed IT Services",
     metaDescription:
-      "Managed IT services (MSP) from TheTriFusion: website/app maintenance, monitoring, security updates, backups, and ongoing technical support for growing businesses.",
+      "Managed IT services from TheTriFusion: website and app maintenance, monitoring, security updates, and backups for growing businesses.",
     primaryKeyword: "MSP managed IT services",
     secondaryKeywords: [
       "managed service provider India",
@@ -613,7 +614,7 @@ export const seoLandingPages = [
   },
   {
     slug: "web-development-company-india",
-    title: "Web Development Company in India | Custom Websites & Web Apps",
+    title: "Web Development Company in India | TheTriFusion",
     h1: "Web Development Company in India",
     metaDescription:
       "Hire TheTriFusion — a web development company in India for corporate sites, web apps, landing pages, CMS, and high-performance marketing websites.",
@@ -671,7 +672,7 @@ export const seoLandingPages = [
     title: "UI UX Design Agency India | Product Design That Converts",
     h1: "UI/UX Design Agency",
     metaDescription:
-      "TheTriFusion UI/UX design agency crafts product interfaces, website experiences, and design systems that improve usability and conversion for apps and digital products.",
+      "UI/UX design agency in India for product interfaces, websites, and design systems. TheTriFusion designs flows that engineering can build.",
     primaryKeyword: "UI UX design agency",
     secondaryKeywords: [
       "UI UX design company India",
@@ -723,7 +724,7 @@ export const seoLandingPages = [
   },
   {
     slug: "crm-erp-software-development",
-    title: "CRM & ERP Software Development Company | Custom Business Systems",
+    title: "CRM & ERP Development Company | TheTriFusion",
     h1: "CRM & ERP Software Development for Indian Operations Teams",
     metaDescription:
       "Custom CRM and ERP software development by TheTriFusion. Automate sales, inventory, finance workflows, and operations with tailored enterprise software.",
@@ -788,12 +789,14 @@ export const seoLandingPages = [
   {
     slug: "website-development-company-bhilwara",
     title:
-      "Website Development for Bhilwara Businesses | TheTriFusion Jaipur",
+      "Website Development in Bhilwara | TheTriFusion",
     h1: "Website Development for Bhilwara — From Our Jaipur Office",
     navLabel: "Bhilwara websites (from Jaipur office)",
     metaDescription:
-      "Need a website in Bhilwara? TheTriFusion is a Jaipur-based software company serving Bhilwara clients remotely for websites, ecommerce, apps, and digital marketing.",
+      "Website development for Bhilwara businesses from TheTriFusion in Jaipur. Remote delivery for textile, retail, and local firms. No Bhilwara office.",
     primaryKeyword: "website development company in Bhilwara",
+    outcomeLine:
+      "Website development for Bhilwara is the design and build of a business site — catalogue, lead form, or store — for mills, traders, and local firms that sell suiting, yarn, or retail goods. TheTriFusion does this from its Jaipur office by video and WhatsApp, with no Bhilwara storefront.",
     secondaryKeywords: [
       "web development Bhilwara from Jaipur",
       "website designer for Bhilwara businesses",
@@ -845,12 +848,14 @@ export const seoLandingPages = [
   ...cityServiceAreaPages,
   {
     slug: "software-company-rajasthan",
-    title: "Software Company in Rajasthan | Web & App Development | TheTriFusion",
+    title: "Software Company in Rajasthan | TheTriFusion",
     h1: "Software Company in Rajasthan",
     navLabel: "Software company in Rajasthan",
     metaDescription:
-      "Hire TheTriFusion — a software company in Rajasthan for websites, custom software, mobile apps, ecommerce, and digital marketing. Based in Jaipur, serving Udaipur, Jodhpur, and all of India.",
+      "Software company in Rajasthan for websites, custom software, and mobile apps. TheTriFusion is based in Jaipur and serves clients across India.",
     primaryKeyword: "software company in Rajasthan",
+    outcomeLine:
+      "A software company in Rajasthan builds websites, custom software, and mobile apps for SMEs and startups that need a Jaipur team in the same time zone. TheTriFusion is that company: Trifusion Infotech Private Limited, based in Jaipur, working with clients in Udaipur, Kota, Jodhpur, and across India by remote demos.",
     secondaryKeywords: [
       "IT company Rajasthan",
       "web development company Rajasthan",
@@ -905,8 +910,10 @@ export const seoLandingPages = [
     h1: "Web Development for Jaipur Businesses",
     navLabel: "Web development — Jaipur office",
     metaDescription:
-      "TheTriFusion builds websites, ecommerce stores, and apps for Jaipur businesses. A leading Rajasthan software team based in Jaipur with remote delivery and on-site support.",
+      "Web development for Jaipur businesses covers websites, ecommerce stores, and apps. TheTriFusion delivers from its Jaipur office with a written scope.",
     primaryKeyword: "web development company Jaipur",
+    outcomeLine:
+      "Web development for Jaipur businesses is the design and build of a marketing site, ecommerce store, or web app that the company can update after launch. It is for local service firms, retailers, and teams that want a Jaipur software partner, TheTriFusion, with written scope and weekly demos.",
     secondaryKeywords: [
       "website development Jaipur",
       "software company Jaipur Rajasthan",
@@ -958,12 +965,14 @@ export const seoLandingPages = [
   {
     slug: "software-development-company-jaipur",
     title:
-      "Software Development Company in Jaipur | Custom Software, Apps & Web — TheTriFusion",
+      "Software Development Company in Jaipur | TheTriFusion",
     h1: "Software Development Company in Jaipur",
     navLabel: "Software company Jaipur",
     metaDescription:
-      "Software development company in Jaipur for SMEs: custom software, websites, Android/iOS apps, ecommerce, and AI tools. Clear scope, GST invoicing, Hindi + English support — TheTriFusion.",
+      "Software development company in Jaipur for custom software, websites, and Android/iOS apps. TheTriFusion writes the scope before it builds.",
     primaryKeyword: "software development company in Jaipur",
+    outcomeLine:
+      "A software development company in Jaipur designs and builds custom software, websites, and Android or iOS apps for SMEs that have outgrown spreadsheets. TheTriFusion, Trifusion Infotech Private Limited, does this work from Jaipur for teams across Rajasthan and India, with a written estimate before build.",
     secondaryKeywords: [
       "software company Jaipur",
       "IT company Jaipur",
@@ -1022,12 +1031,14 @@ export const seoLandingPages = [
   {
     slug: "android-app-development-company-jaipur",
     title:
-      "Android App Development Company in Jaipur | Play Store Apps — TheTriFusion",
+      "Android App Development in Jaipur | TheTriFusion",
     h1: "Android App Development Company in Jaipur",
     navLabel: "Android app company Jaipur",
     metaDescription:
-      "Looking for an Android app development company in Jaipur? TheTriFusion builds Kotlin and React Native apps with Play Store listing, crash monitoring, and Hindi + English support.",
+      "Android app development company in Jaipur. TheTriFusion builds Kotlin and React Native apps, with Play Store listing and Hindi plus English support.",
     primaryKeyword: "android app development company in jaipur",
+    outcomeLine:
+      "An Android app development company in Jaipur builds Play Store apps for businesses that need a phone product, not only a website. TheTriFusion writes Kotlin or React Native apps for SMEs in Jaipur and across India, including listing support, after a scoped estimate.",
     secondaryKeywords: [
       "android app development company jaipur",
       "android app development services jaipur",
@@ -1088,15 +1099,17 @@ export const getAllSeoLandingSlugs = () =>
 
 export const getSolutionsForService = (serviceSlug) =>
   seoLandingPages
-    .filter((page) => page.relatedServiceSlugs.includes(serviceSlug))
+    .filter(
+      (page) =>
+        page.relatedServiceSlugs.includes(serviceSlug) &&
+        !REDIRECTED_SOLUTION_SLUGS.has(page.slug)
+    )
     .map(enrichLandingPage);
 
 export const featuredSolutionSlugs = [
-  "web-development-company-jaipur",
   "software-company-rajasthan",
   "ecommerce-website-development",
-  "mobile-app-development-company",
-  "digital-marketing-agency",
+  "software-development-company-jaipur",
   "website-development-company-bhilwara",
   "website-development-company-udaipur",
   "website-development-company-kota",
