@@ -280,17 +280,17 @@ export const landingEnrichment = {
 const RELATED_BY_SLUG = {
   "best-software-company-india": {
     relatedSolutionSlugs: [
-      "custom-software-development-company",
-      "web-development-company-india",
-      "digital-marketing-agency",
+      "software-development-company-jaipur",
+      "software-company-rajasthan",
+      "ecommerce-website-development",
     ],
     relatedBlogSlug: "ecommerce-website-development-cost-india",
   },
   "ecommerce-website-development": {
     relatedSolutionSlugs: [
-      "digital-marketing-agency",
-      "ui-ux-design-agency",
-      "web-development-company-india",
+      "software-development-company-jaipur",
+      "msp-managed-it-services",
+      "software-company-rajasthan",
     ],
     relatedBlogSlug: "custom-website-vs-shopify-vs-woocommerce",
   },
@@ -320,9 +320,9 @@ const RELATED_BY_SLUG = {
   },
   "msp-managed-it-services": {
     relatedSolutionSlugs: [
-      "custom-software-development-company",
-      "web-development-company-india",
-      "crm-erp-software-development",
+      "software-development-company-jaipur",
+      "software-company-rajasthan",
+      "ecommerce-website-development",
     ],
     relatedBlogSlug: "dailyconcepts-ecommerce-case-notes",
   },
@@ -361,16 +361,16 @@ const RELATED_BY_SLUG = {
   "website-development-company-bhilwara": {
     relatedSolutionSlugs: [
       "software-company-rajasthan",
-      "web-development-company-jaipur",
-      "web-development-company-india",
+      "software-development-company-jaipur",
+      "ecommerce-website-development",
     ],
     relatedBlogSlug: "website-development-company-bhilwara",
   },
   "software-company-rajasthan": {
     relatedSolutionSlugs: [
       "website-development-company-bhilwara",
-      "web-development-company-jaipur",
-      "custom-software-development-company",
+      "software-development-company-jaipur",
+      "ecommerce-website-development",
     ],
     relatedBlogSlug: "website-development-company-bhilwara",
   },

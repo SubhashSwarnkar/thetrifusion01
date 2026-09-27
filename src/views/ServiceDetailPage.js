@@ -760,6 +760,28 @@ export default function ServiceDetailPage({
         </section>
       )}
 
+      {service.coverageSections?.length ? (
+        <section id="coverage" className="container mx-auto px-5 py-16 border-t border-gray-100">
+          <div className="max-w-3xl space-y-12">
+            {service.coverageSections.map((section) => (
+              <div key={section.id || section.heading} id={section.id}>
+                <h2 className="text-2xl md:text-3xl font-bold text-theme-blue mb-4">
+                  {section.heading}
+                </h2>
+                {section.paragraphs?.map((paragraph) => (
+                  <p
+                    key={paragraph}
+                    className="text-gray-600 font-light leading-relaxed mb-4 last:mb-0"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       {/* FAQs Section (Targeting Google PAA) */}
       {service.faqs?.length > 0 && (
         <section id="faq" className="container mx-auto px-5 py-16 border-t border-gray-100">

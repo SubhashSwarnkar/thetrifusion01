@@ -23,29 +23,55 @@ function serviceHrefsInHtml(html) {
   return found;
 }
 
-const BLOG_SOLUTION_MAP = {
+/** Related cards on blog posts. Merged solutions point at the /services twin. */
+const BLOG_RELATED = {
   webdev: [
-    "web-development-company-india",
-    "ecommerce-website-development",
+    { type: "service", slug: "website-development" },
+    { type: "solution", slug: "ecommerce-website-development" },
   ],
-  mobile: ["mobile-app-development-company", "ui-ux-design-agency"],
+  mobile: [
+    { type: "service", slug: "mobile-app-development" },
+    { type: "service", slug: "ui-ux-design" },
+  ],
   casestudy: [
-    "ecommerce-website-development",
-    "mobile-app-development-company",
+    { type: "solution", slug: "ecommerce-website-development" },
+    { type: "service", slug: "mobile-app-development" },
   ],
   mlm: [
-    "crm-erp-software-development",
-    "custom-software-development-company",
+    { type: "service", slug: "crm-erp-development" },
+    { type: "service", slug: "software-development" },
   ],
   fintech: [
-    "custom-software-development-company",
-    "mobile-app-development-company",
+    { type: "service", slug: "software-development" },
+    { type: "service", slug: "mobile-app-development" },
   ],
   default: [
-    "best-software-company-india",
-    "custom-software-development-company",
+    { type: "solution", slug: "best-software-company-india" },
+    { type: "service", slug: "software-development" },
   ],
 };
+
+function relatedCard(item) {
+  if (!item) return null;
+  if (item.type === "service") {
+    const service = getServiceBySlug(item.slug);
+    if (!service) return null;
+    return {
+      slug: service.slug,
+      h1: service.bannerTitle || service.title,
+      outcomeLine: service.shortDescription,
+      href: `/services/${service.slug}`,
+    };
+  }
+  const solution = getSeoLandingBySlug(item.slug);
+  if (!solution) return null;
+  return {
+    slug: solution.slug,
+    h1: solution.h1,
+    outcomeLine: solution.outcomeLine,
+    href: `/solutions/${solution.slug}`,
+  };
+}
 
 /** Fields the blog index needs. Omits article HTML so it stays off the client bundle. */
 export function toBlogCard(post) {
@@ -84,25 +110,23 @@ export function isEvTopicPost(post) {
 export function getBlogArticleView(post) {
   const category = blogCategories.find((cat) => cat.id === post.category);
   const isEcommerceTopic = isEcommerceTopicPost(post);
-  const baseSolutionSlugs =
-    BLOG_SOLUTION_MAP[post.category] || BLOG_SOLUTION_MAP.default;
-  const relatedSolutions = (
-    isEcommerceTopic
-      ? [
-          PRIMARY_ECOMMERCE_SOLUTION,
-          ...baseSolutionSlugs.filter((s) => s !== PRIMARY_ECOMMERCE_SOLUTION),
-        ]
-      : baseSolutionSlugs
-  )
-    .map((slug) => getSeoLandingBySlug(slug))
+  const baseRelated = BLOG_RELATED[post.category] || BLOG_RELATED.default;
+  const relatedItems = isEcommerceTopic
+    ? [
+        { type: "solution", slug: PRIMARY_ECOMMERCE_SOLUTION },
+        ...baseRelated.filter(
+          (item) =>
+            !(
+              item.type === "solution" &&
+              item.slug === PRIMARY_ECOMMERCE_SOLUTION
+            )
+        ),
+      ]
+    : baseRelated;
+  const relatedSolutions = relatedItems
+    .map(relatedCard)
     .filter(Boolean)
-    .slice(0, 2)
-    .map((solution) => ({
-      slug: solution.slug,
-      h1: solution.h1,
-      outcomeLine: solution.outcomeLine,
-      href: `/solutions/${solution.slug}`,
-    }));
+    .slice(0, 2);
 
   if (isEvTopicPost(post)) {
     const evService = getServiceBySlug("ev-charging-app-development");

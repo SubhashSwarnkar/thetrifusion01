@@ -38,7 +38,7 @@ export const servicePageSeo = {
       {
         question: "What custom software do you build in Jaipur?",
         answer:
-          "Business portals, CRM/ERP modules, MLM engines, fintech admin tools, and APIs. We scope around your workflow, then ship web plus iOS/Android when field teams need apps.",
+          "Business portals, CRM and ERP modules, booking systems, inventory tools, dashboards, SaaS products, MLM engines, fintech admin tools, and APIs. We scope around your workflow, then ship web plus iOS or Android when field teams need apps.",
       },
       {
         question: "How is this different from website development?",
@@ -54,6 +54,26 @@ export const servicePageSeo = {
         question: "Do you work with clients outside Jaipur?",
         answer:
           "Yes. The office is Jaipur; delivery is remote with weekly demos for clients across India.",
+      },
+      {
+        question: "Do you provide post-launch support?",
+        answer:
+          "Yes. Maintenance, feature upgrades, monitoring, and managed support packages are available after launch.",
+      },
+      {
+        question: "Can you work with our existing systems?",
+        answer:
+          "Yes. We integrate with CRMs, ERPs, payment providers, and third-party APIs when the project needs them.",
+      },
+    ],
+    coverageSections: [
+      {
+        id: "custom-software-company",
+        heading: "Custom software development company",
+        paragraphs: [
+          "Off-the-shelf tools falling short is the usual reason a team asks for custom software. TheTriFusion designs and engineers software around the process you already run — internal tools, customer-facing platforms, and APIs — from the Jaipur office, for clients across India.",
+          "A focused MVP module is often 6–12 weeks. Broader platforms are phased. You get a written scope, weekly demos, and the source agreed in the contract.",
+        ],
       },
     ],
     relatedLinks: [
@@ -95,7 +115,7 @@ export const servicePageSeo = {
       {
         question: "Is this different from /web-development?",
         answer:
-          "The ads URL is a short conversion page. This service page is the organic, longer capability write-up. Both stay live with different intent.",
+          "The ads URL is a short conversion page kept live for campaigns. It is noindex. This service page is the indexed, longer capability write-up.",
       },
       {
         question: "What does a typical Jaipur website cost?",
@@ -111,6 +131,38 @@ export const servicePageSeo = {
         question: "Which stack do you use for websites?",
         answer:
           "React and Next.js on the front, Node.js on the back, with MongoDB or PostgreSQL. We match the stack to your ops, not a trend.",
+      },
+      {
+        question: "Are you physically in Jaipur?",
+        answer:
+          "Our studio is in Jaipur, Rajasthan. We work with Jaipur clients remotely or in person, and can meet for discovery or launch when needed.",
+      },
+      {
+        question: "How fast can a Jaipur business website launch?",
+        answer:
+          "A focused marketing website is often 3–8 weeks. Ecommerce or custom features take longer. Use the estimate tool or book a call for a range based on pages and integrations.",
+      },
+      {
+        question: "Can you redesign an old website?",
+        answer:
+          "Yes. We modernize design, performance, and conversion paths while protecting important URLs with redirects.",
+      },
+    ],
+    coverageSections: [
+      {
+        id: "web-development-jaipur",
+        heading: "Web development company in Jaipur",
+        paragraphs: [
+          "Web development for Jaipur businesses is the design and build of a marketing site, ecommerce store, or web app that the company can update after launch. It is for local service firms, retailers, and teams that want a Jaipur software partner, TheTriFusion, with written scope and weekly demos.",
+          "The studio is in Jaipur — close enough for a kickoff visit, with day-to-day work on video, WhatsApp, and shared boards. Typical briefs are service-business sites for tourism, education, healthcare, and real estate, plus D2C stores, booking or lead funnels, and internal tools. The build includes titles, a sitemap, mobile speed, and Google Business alignment.",
+        ],
+      },
+      {
+        id: "web-development-india",
+        heading: "Web development company in India",
+        paragraphs: [
+          "The same Jaipur team builds for clients across India: marketing sites that convert, dashboards, portals, booking systems, and SaaS frontends with secure sign-in and API integrations. Technical SEO — clean URLs, metadata, structured data, and a crawlable structure — is part of the build, including when we redesign a site that already ranks.",
+        ],
       },
     ],
   },
@@ -161,6 +213,26 @@ export const servicePageSeo = {
         question: "Native or cross-platform?",
         answer:
           "Cross-platform when both stores ship together. Swift or Kotlin when one store needs platform APIs we cannot share cleanly.",
+      },
+      {
+        question: "Can you build an ecommerce mobile app?",
+        answer:
+          "Yes. Product browsing, cart, payments, orders, and notifications are common ecommerce app deliverables, for a consumer shop or a business workflow.",
+      },
+      {
+        question: "Will I own the source code?",
+        answer:
+          "Yes. Project agreements transfer the agreed deliverables and source ownership to you upon completion and payment.",
+      },
+    ],
+    coverageSections: [
+      {
+        id: "mobile-app-company",
+        heading: "Mobile app development company",
+        paragraphs: [
+          "TheTriFusion is a mobile app development company in Jaipur for consumer apps and business apps: ecommerce, booking, delivery flows, workforce tools, and customer portals, with a scalable backend.",
+          "Android and iOS can ship together on Flutter or React Native, or native when one store needs it. Listing assets, release pipelines, analytics, and the next feature cycle are part of the engagement — not a file handoff.",
+        ],
       },
     ],
     relatedLinks: [
@@ -218,6 +290,21 @@ export const servicePageSeo = {
         question: "Can design start from Jaipur remotely?",
         answer:
           "Yes. Workshops on video, Figma shared, weekly reviews.",
+      },
+      {
+        question: "Can you redesign an existing app or website?",
+        answer:
+          "Yes. We audit usability and conversion friction, then redesign the key flows for clarity and results.",
+      },
+    ],
+    coverageSections: [
+      {
+        id: "ui-ux-design-agency",
+        heading: "UI/UX design agency",
+        paragraphs: [
+          "TheTriFusion is a UI/UX design agency in Jaipur for founders and product teams. We research users, prototype flows, and deliver interfaces for web and mobile that engineering can build — design only, or design through to development with the same team.",
+          "Growing products can take a design system: reusable components and guidelines, not a one-off screen set.",
+        ],
       },
     ],
     relatedLinks: [
@@ -326,6 +413,21 @@ export const servicePageSeo = {
         question: "Do you manage both B2B lead generation and B2C / D2C ecommerce marketing?",
         answer:
           "Yes. We specialize in B2B account-targeted lead generation funnels (LinkedIn + Google Search) as well as high-volume D2C ecommerce catalog campaigns (Google Shopping + Meta Dynamic Product Ads).",
+      },
+      {
+        question: "What monthly ad spend budgets do you manage?",
+        answer:
+          "We manage performance campaigns from testing budgets of ₹25,000 per month for local SMEs up to multi-lakh monthly ad spends for D2C and SaaS brands across India.",
+      },
+    ],
+    coverageSections: [
+      {
+        id: "digital-marketing-agency-jaipur",
+        heading: "Digital marketing agency in Jaipur",
+        paragraphs: [
+          "TheTriFusion is a digital marketing and performance marketing agency in Jaipur. Campaigns cover Google Search, Performance Max, and Meta ads, plus technical SEO: Core Web Vitals, structured data, content structure, and local Google Business Profile ranking.",
+          "A typical engagement includes an SEO audit and on-page plan, ads account setup and tracking, landing-page recommendations, a basic content calendar, weekly or biweekly reporting, and conversion work on the pages the ads send people to.",
+        ],
       },
     ],
   },
@@ -735,6 +837,16 @@ export const servicePageSeo = {
     serviceType: "Android App Development",
     whatsappMessage:
       "Hi TriFusion, I want an Android / Play Store app quote from the Jaipur team.",
+    coverageSections: [
+      {
+        id: "android-company-jaipur",
+        heading: "Android app development company in Jaipur",
+        paragraphs: [
+          "An Android app development company in Jaipur builds Play Store apps for businesses that need a phone product, not only a website. TheTriFusion writes Kotlin or React Native apps for SMEs in Jaipur and across India, including listing support, after a scoped estimate.",
+          "Trifusion Infotech Private Limited is based in Jaipur. You get discovery, mobile UI, the app build, API integration, and Play Console signing. You own the Play Console account. When iOS should follow, the same team can share logic with React Native or Flutter instead of a second agency.",
+        ],
+      },
+    ],
   },
   "crm-erp-development": {
     metaTitle: "Custom CRM & ERP Development in Jaipur | TheTriFusion",
@@ -753,5 +865,15 @@ export const servicePageSeo = {
     serviceType: "Custom CRM and ERP Development",
     whatsappMessage:
       "Hi TriFusion, I want a custom CRM/ERP quote from the Jaipur team.",
+    coverageSections: [
+      {
+        id: "crm-erp-operations",
+        heading: "CRM and ERP software development",
+        paragraphs: [
+          "Unify sales, inventory, finance, and operations with CRM and ERP software built for how the company actually works. TheTriFusion does this from Jaipur for teams across India. A single CRM module MVP is often 6–12 weeks; multi-module ERP is phased.",
+          "For network-marketing companies, unilevel compensation is built into the CRM rather than bolted onto a generic sales tool. DailyConcepts India (dailyconceptsindia.com) is a live storefront plus POS-style admin. Connect Dairy (connectdairy.in) is live fleet, role, and P&L operations. If Salesforce cannot hold a commissions tree, we say so and scope a custom CRM.",
+        ],
+      },
+    ],
   },
 };

@@ -1,7 +1,8 @@
 // Slim footer links so seoLandingPages stays off the client bundle.
 export const featuredSolutionNav = [
   {
-    "slug": "web-development-company-jaipur",
+    "slug": "website-development",
+    "href": "/services/website-development",
     "navLabel": "Web development — Jaipur office"
   },
   {
@@ -13,11 +14,13 @@ export const featuredSolutionNav = [
     "navLabel": "Ecommerce website development"
   },
   {
-    "slug": "mobile-app-development-company",
+    "slug": "mobile-app-development",
+    "href": "/services/mobile-app-development",
     "navLabel": "Mobile app development"
   },
   {
-    "slug": "digital-marketing-agency",
+    "slug": "digital-marketing",
+    "href": "/services/digital-marketing",
     "navLabel": "Digital marketing & performance ads"
   },
   {

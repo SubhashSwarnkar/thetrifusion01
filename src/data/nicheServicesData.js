@@ -499,7 +499,7 @@ export const nicheServices = [
       {
         question: "Is this the same as /ios-app-development?",
         answer:
-          "That URL is the paid conversion landing. This /services page is the organic capability page — more process, stack, and FAQs. They link to each other; we do not 301 one onto the other.",
+          "That URL is the paid conversion landing. It stays live for campaigns and is noindex. This /services page is the indexed capability page — more process, stack, and FAQs. We do not redirect one onto the other.",
       },
       {
         question: "How long to App Store?",
@@ -584,7 +584,7 @@ export const nicheServices = [
       {
         question: "Difference vs /android-app-development?",
         answer:
-          "The root ads URL is for paid traffic and a short form. This service page is the organic, longer capability page. Both stay indexed with different intents.",
+          "The root ads URL is for paid traffic and a short form. It stays live for campaigns and is noindex. This service page is the indexed capability write-up.",
       },
       {
         question: "MVP timeline?",
@@ -594,7 +594,17 @@ export const nicheServices = [
       {
         question: "Do you handle Play Store?",
         answer:
-          "Yes. Listing, screenshots, and the first production track.",
+          "Yes. Listing, screenshots, and the first production track. You own the Play Console account.",
+      },
+      {
+        question: "Is TheTriFusion based in Jaipur?",
+        answer:
+          "Yes. Trifusion Infotech Private Limited is in Jaipur. We serve clients across Rajasthan and India remotely, and can meet when a kickoff needs it.",
+      },
+      {
+        question: "Do you build native Kotlin Android apps?",
+        answer:
+          "Yes — Kotlin native, or React Native or Flutter when iOS parity matters. We recommend one after seeing the product, not before.",
       },
     ],
     pricing: { basic: 250000, standard: 500000, premium: 900000 },
@@ -671,7 +681,7 @@ export const nicheServices = [
       {
         question: "SaaS CRM or custom?",
         answer:
-          "If HubSpot/Zoho fit, buy them. We build when workflows, commissions, or ops modules do not. The keyword landing at /solutions/crm-erp-software-development covers buyer intent; this page covers how we build.",
+          "If HubSpot or Zoho fit, buy them. We build when workflows, commissions, or ops modules do not. If your process is unique or the tools feel limiting, a custom or heavily customized system often pays off — we decide that in discovery.",
       },
       {
         question: "Can you show live work?",
@@ -682,6 +692,16 @@ export const nicheServices = [
         question: "Starting range?",
         answer:
           "A single CRM module MVP often starts around ₹3L. Multi-module ERP is phased.",
+      },
+      {
+        question: "Can you integrate CRM with my website or ecommerce store?",
+        answer:
+          "Yes. Lead forms, orders, and customer data can sync into the CRM so there is one customer view.",
+      },
+      {
+        question: "Do you offer Salesforce-related services?",
+        answer:
+          "Yes. Salesforce customization is a separate service when a platform-first approach fits. If Salesforce cannot hold your commissions tree, we scope a custom CRM instead.",
       },
     ],
     pricing: { basic: 300000, standard: 600000, premium: 1100000 },

@@ -178,7 +178,19 @@ function robotsFor(noIndex) {
   };
 }
 
-/** Tool / utility routes that should stay out of the index. */
+/**
+ * Paid landing URLs stay HTTP 200 for live campaigns. They are noindex, follow
+ * so organic results use the matching /services or ecommerce solution page.
+ */
+export const ADS_LANDING_PATHS = new Set([
+  "/web-development",
+  "/android-app-development",
+  "/ios-app-development",
+  "/ecommerce-development",
+  "/white-label-development",
+]);
+
+/** Tool routes and paid landings that should stay out of the index. */
 export const NOINDEX_PATHS = new Set([
   "/estimate",
   "/planner",
@@ -187,6 +199,7 @@ export const NOINDEX_PATHS = new Set([
   "/thank-you",
   "/appointment",
   "/discuss-project",
+  ...ADS_LANDING_PATHS,
 ]);
 
 export function pageMetadata(path, options = {}) {
@@ -202,10 +215,16 @@ export function pageMetadata(path, options = {}) {
     ...(page.keywords ? { keywords: page.keywords } : {}),
     alternates: {
       canonical: url,
-      languages: {
-        "en-IN": url,
-        "x-default": url,
-      },
+      // Ads landings stay self-canonical but must not advertise hreflang
+      // alternates that point at the noindex URL.
+      ...(ADS_LANDING_PATHS.has(path)
+        ? {}
+        : {
+            languages: {
+              "en-IN": url,
+              "x-default": url,
+            },
+          }),
     },
     openGraph: {
       title: page.title,
@@ -261,10 +280,15 @@ export function buildMetadata({
     ...(keywords ? { keywords } : {}),
     alternates: {
       canonical: url,
-      languages: languages || {
-        "en-IN": url,
-        "x-default": url,
-      },
+      // `languages: null` omits hreflang. Undefined keeps the self alternates.
+      ...(languages === null
+        ? {}
+        : {
+            languages: languages || {
+              "en-IN": url,
+              "x-default": url,
+            },
+          }),
     },
     openGraph: {
       title,

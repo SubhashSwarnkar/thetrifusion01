@@ -644,11 +644,6 @@ export const evChargingPageContent = {
       title: "PlugOne case study",
       text: "The live EV charging product. Open plugone.in as well if you want the running site.",
     },
-    {
-      href: "/white-label-development",
-      title: "White-label development",
-      text: "For agencies that need the build delivered under their client relationship.",
-    },
   ],
   faqs: [
     {

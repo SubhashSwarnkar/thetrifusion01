@@ -15,6 +15,14 @@ CANONICAL_HREFS = {
     "/android-app-development": "/services/android-app-development",
     "/ios-app-development": "/services/ios-app-development",
     "/ecommerce-development": "/solutions/ecommerce-website-development",
+    "/solutions/android-app-development-company-jaipur": "/services/android-app-development",
+    "/solutions/web-development-company-jaipur": "/services/website-development",
+    "/solutions/web-development-company-india": "/services/website-development",
+    "/solutions/custom-software-development-company": "/services/software-development",
+    "/solutions/crm-erp-software-development": "/services/crm-erp-development",
+    "/solutions/ui-ux-design-agency": "/services/ui-ux-design",
+    "/solutions/digital-marketing-agency": "/services/digital-marketing",
+    "/solutions/mobile-app-development-company": "/services/mobile-app-development",
 }
 
 ECOMMERCE_CANONICAL = "/solutions/ecommerce-website-development"

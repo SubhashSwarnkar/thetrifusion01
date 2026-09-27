@@ -102,14 +102,6 @@ export default function Footer({ hideNewsletter = false }) {
                       iOS Apps
                     </Link>
                   </li>
-                  <li>
-                    <Link
-                      href="/white-label-development"
-                      className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block font-light"
-                    >
-                      White-label
-                    </Link>
-                  </li>
                 {[
                   "devops",
                   "mlm-crm-development",
@@ -140,7 +132,7 @@ export default function Footer({ hideNewsletter = false }) {
                 {featuredSolutions.map((page) => (
                   <li key={page.slug}>
                     <Link
-                      href={`/solutions/${page.slug}`}
+                      href={page.href || `/solutions/${page.slug}`}
                       className="text-white/60 hover:text-white hover:translate-x-1 transition-all inline-block font-light leading-snug"
                     >
                       {page.navLabel}

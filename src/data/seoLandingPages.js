@@ -1,5 +1,6 @@
 import { enrichLandingPage } from "./seoLandingEnrichment";
 import { cityServiceAreaPages } from "./cityServiceAreaPages";
+import { REDIRECTED_SOLUTION_SLUGS } from "lib/solutionRedirects";
 
 export const seoLandingPages = [
   {
@@ -1098,15 +1099,17 @@ export const getAllSeoLandingSlugs = () =>
 
 export const getSolutionsForService = (serviceSlug) =>
   seoLandingPages
-    .filter((page) => page.relatedServiceSlugs.includes(serviceSlug))
+    .filter(
+      (page) =>
+        page.relatedServiceSlugs.includes(serviceSlug) &&
+        !REDIRECTED_SOLUTION_SLUGS.has(page.slug)
+    )
     .map(enrichLandingPage);
 
 export const featuredSolutionSlugs = [
-  "web-development-company-jaipur",
   "software-company-rajasthan",
   "ecommerce-website-development",
-  "mobile-app-development-company",
-  "digital-marketing-agency",
+  "software-development-company-jaipur",
   "website-development-company-bhilwara",
   "website-development-company-udaipur",
   "website-development-company-kota",
