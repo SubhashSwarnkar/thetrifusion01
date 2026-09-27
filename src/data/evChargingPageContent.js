@@ -38,7 +38,7 @@ export const evChargingPageContent = {
     "Hi TriFusion, I want an EV charging app quote from the Jaipur team (OCPP, OCPI, driver app, or CPMS).",
   imageAlt:
     "EV charging management system CMS for CPO and eMSP: OCPP charge point software and OCPI roaming by TheTriFusion in Jaipur",
-  contentUpdatedAt: "2026-09-25",
+  contentUpdatedAt: "2026-09-27",
   sitemapPriority: 0.85,
   hideClientStrip: true,
   hidePricingEstimates: true,
@@ -51,6 +51,33 @@ export const evChargingPageContent = {
   ],
   schemaProvider: { "@id": `${siteConfig.url}/#organization` },
   relatedBlogSlug: "ev-charging-app-ocpi-ocpp-guide",
+  softwareGuides: [
+    {
+      href: "/blog/ocpp-1-6-vs-2-0-1-vs-2-1-comparison",
+      title: "OCPP 1.6 vs 2.0.1 vs 2.1",
+      text: "Which version a CPO should implement, and why 1.6 and 2.x are separate stacks.",
+    },
+    {
+      href: "/blog/ocpi-roaming-explained-cpo-emsp",
+      title: "OCPI roaming for CPO and eMSP",
+      text: "Roles, the modules for locations, sessions, CDRs, tariffs and tokens, and hubs versus peer-to-peer.",
+    },
+    {
+      href: "/blog/ev-charging-cms-software-cost-guide",
+      title: "What drives EV charging CMS cost",
+      text: "The published starting range, and the scope choices that move a quote.",
+    },
+    {
+      href: "/blog/build-vs-buy-ev-charging-csms",
+      title: "White-label, custom, or SaaS",
+      text: "A decision table for branding a CMS, commissioning one, or renting one.",
+    },
+    {
+      href: "/blog/ev-charging-software-glossary",
+      title: "EV charging software glossary",
+      text: "CPO, eMSP, CSMS, OCPP, OCPI, ISO 15118, CDR, EVSE, and the connector names.",
+    },
+  ],
   caseStudy: {
     title: "PlugOne — a live EV charging product",
     summary:

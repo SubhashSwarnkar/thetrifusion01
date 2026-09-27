@@ -744,6 +744,22 @@ export default function ServiceDetailPage({
         </section>
       )}
 
+      {service.softwareGuides?.length ? (
+        <section id="ev-charging-software-guides" className="container mx-auto px-5 pb-8">
+          <h2 className="text-xl font-bold text-theme-blue mb-4">EV charging software guides</h2>
+          <ul className="max-w-3xl divide-y divide-gray-100 rounded-2xl border border-gray-100">
+            {service.softwareGuides.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="block px-5 py-4 hover:bg-light-theme-purple/30">
+                  <span className="block font-semibold text-theme-blue">{item.title}</span>
+                  <span className="mt-1 block text-sm font-light text-gray-600">{item.text}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
       {/* Related Blog Article */}
       {relatedBlog && (
         <section className="container mx-auto px-5 pb-8">
