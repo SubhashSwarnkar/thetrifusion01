@@ -8,6 +8,10 @@ import { buildMetadata } from "lib/seoConfig";
 import { articleSchema, breadcrumbSchema, faqSchema, eventSchema } from "lib/schema";
 import { extractBlogFaqs } from "lib/blogFaqs";
 import { getBlogArticleView } from "lib/blogArticleProps";
+import EventWorldTimes, {
+  eventHasWorldTimes,
+  withEventWorldTimeFaq,
+} from "components/blog/EventWorldTimes";
 
 export function generateStaticParams() {
   // Exclude archived slugs (they 301 to /blog via next.config)
@@ -51,6 +55,8 @@ export default function RoutePage({ params }) {
     notFound();
   }
 
+  const faqs = withEventWorldTimeFaq(post.event, extractBlogFaqs(post.content));
+
   return (
     <>
       <JsonLd data={articleSchema(post)} />
@@ -61,15 +67,18 @@ export default function RoutePage({ params }) {
           { name: post.title, path: `/blog/${post.slug}` },
         ])}
       />
-      {extractBlogFaqs(post.content).length > 0 ? (
-        <JsonLd data={faqSchema(extractBlogFaqs(post.content))} />
-      ) : null}
+      {faqs.length > 0 ? <JsonLd data={faqSchema(faqs)} /> : null}
       {eventSchema(post) ? <JsonLd data={eventSchema(post)} /> : null}
       <Page
         {...getBlogArticleView(post)}
         languageSwitcher={
           hreflangLanguagesForPath(`/blog/${post.slug}`) ? (
             <LanguageSwitcher path={`/blog/${post.slug}`} current="en" />
+          ) : null
+        }
+        worldTimes={
+          eventHasWorldTimes(post.event) ? (
+            <EventWorldTimes event={post.event} />
           ) : null
         }
       />

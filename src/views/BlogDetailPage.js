@@ -16,6 +16,36 @@ import { SITE_URL } from "lib/seoConfig";
 import { WHATSAPP_NUMBER } from "data/companyInfo";
 import { trackEvent, AnalyticsEvents } from "utils/analytics";
 
+function splitAfterIntro(html) {
+  const source = typeof html === "string" ? html : "";
+  const match = /<h2\b/i.exec(source);
+  if (!match) return { before: source, after: "" };
+  const before = source.slice(0, match.index);
+  if (!before.replace(/<[^>]+>/g, " ").trim()) {
+    return { before: "", after: source };
+  }
+  return { before, after: source.slice(match.index) };
+}
+
+function ArticleBody({ html, worldTimes }) {
+  const className = "blog-html text-lg leading-relaxed text-gray-700";
+  if (!worldTimes) {
+    return <div className={className} dangerouslySetInnerHTML={{ __html: html }} />;
+  }
+  const { before, after } = splitAfterIntro(html);
+  return (
+    <>
+      {before ? (
+        <div className={className} dangerouslySetInnerHTML={{ __html: before }} />
+      ) : null}
+      {worldTimes}
+      {after ? (
+        <div className={className} dangerouslySetInnerHTML={{ __html: after }} />
+      ) : null}
+    </>
+  );
+}
+
 export default function BlogDetailPage({
   post,
   categoryName,
@@ -23,6 +53,7 @@ export default function BlogDetailPage({
   relatedServices = [],
   relatedPosts = [],
   languageSwitcher = null,
+  worldTimes = null,
 }) {
   const shareUrl = `${SITE_URL}/blog/${post?.slug || ""}`;
 
@@ -97,10 +128,7 @@ export default function BlogDetailPage({
             {/* Content */}
               <div className="prose prose-lg max-w-none">
                 {post.content ? (
-                  <div
-                    className="blog-html text-lg leading-relaxed text-gray-700"
-                    dangerouslySetInnerHTML={{ __html: post.content }}
-                  />
+                  <ArticleBody html={post.content} worldTimes={worldTimes} />
                 ) : (
                   <p className="text-gray-600">
                     This article has no body content yet.
