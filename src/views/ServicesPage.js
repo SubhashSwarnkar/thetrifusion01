@@ -25,6 +25,7 @@ export default function ServicesPage() {
       <Header />
       
       <Breadcrumbs />
+      <main>
       <section className="relative pt-10 pb-16 overflow-hidden bg-white">
         <div className="absolute top-0 right-0 w-[32rem] h-[32rem] bg-light-theme-purple/40 rounded-full blur-[120px] -z-10" />
         <div className="absolute bottom-10 left-0 w-[22rem] h-[22rem] bg-theme-cyan/15 rounded-full blur-[100px] -z-10" />
@@ -133,6 +134,7 @@ export default function ServicesPage() {
           </Link>
         </div>
       </section>
+      </main>
 
       <Footer />
     </div>

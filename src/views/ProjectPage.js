@@ -31,10 +31,12 @@ export default class ProjectPage extends Component {
         />
         <Header />
         <Breadcrumbs />
+        <main>
         <HeroPortfolio />
         <BrandTrustStrip />
         <AllPortfolioEnhanced data={Portfolios} />
         <Discuss />
+        </main>
         <Footer />
       </>
     );

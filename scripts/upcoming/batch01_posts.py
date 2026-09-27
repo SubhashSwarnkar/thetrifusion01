@@ -43,7 +43,7 @@ POSTS = []
 p133_content = r'''
       <p>Anfield on a Super Sunday in mid-October rarely needs marketing copy. On <strong>11 October 2026</strong>, Liverpool host Manchester City in the Premier League with kick-off locked at <strong>16:30 BST / 21:00 IST</strong>, live on Sky Sports in the UK — a fixture that already sits near the top of every “must-watch” calendar for fans in India, the Gulf, and North America. This guide is written ahead of the search peak so you can confirm the clock, the broadcaster stack, and the football context without wading through rumour threads.</p>
       <p><em>Verification note (TheTriFusion):</em> Kick-off and Sky Sports selection follow Premier League / Sky Sports published October–November TV picks. India streaming brands and exact Star Sports channel names can still be refined in the weekly EPG — treat late changes as normal and re-check the day before.</p>
-      <p>If you are building a sports content hub or match-day CMS for a brand site, the same editorial discipline applies: publish verified times once, update when the league amends, and never invent lineups. Our <a href="/services/web-development">web development</a> and <a href="/services/digital-marketing">digital marketing</a> teams in Jaipur use that pattern for clients who need SEO-clean sports pages that stay AdSense-safe.</p>
+      <p>If you are building a sports content hub or match-day CMS for a brand site, the same editorial discipline applies: publish verified times once, update when the league amends, and never invent lineups. Our <a href="/services/website-development">web development</a> and <a href="/services/digital-marketing">digital marketing</a> teams in Jaipur use that pattern for clients who need SEO-clean sports pages that stay AdSense-safe.</p>
 
       <h2>Date and time (IST)</h2>
       <ul>
@@ -138,7 +138,7 @@ POSTS.append(dict(
         "location": {"name": "Anfield", "addressLocality": "Liverpool", "addressCountry": "GB"},
         "organizer": "Premier League",
     },
-    related=["digital-marketing", "web-development"],
+    related=["digital-marketing", "website-development"],
     readTime="14 min read",
 ))
 
@@ -227,7 +227,7 @@ POSTS.append(dict(
         "location": {"name": "Etihad Stadium", "addressLocality": "Manchester", "addressCountry": "GB"},
         "organizer": "UEFA",
     },
-    related=["digital-marketing", "web-development"],
+    related=["digital-marketing", "website-development"],
     readTime="14 min read",
 ))
 

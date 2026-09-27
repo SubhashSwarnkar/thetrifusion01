@@ -71,6 +71,7 @@ export default function PriceCalculatorPage() {
         description="Get an instant, transparent cost estimate for your next digital project. Fast, accurate pricing calculation."
       />
       <Header />
+      <main>
       
       {/* Background decoration */}
       <div className="fixed inset-0 pointer-events-none opacity-40 z-0 overflow-hidden">
@@ -309,6 +310,7 @@ export default function PriceCalculatorPage() {
           </div>
         </div>
       </section>
+      </main>
 
       <Footer />
     </div>

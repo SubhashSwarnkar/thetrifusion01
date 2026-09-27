@@ -51,6 +51,7 @@ export default function FAQPage() {
       />
       <Header />
       <Breadcrumbs />
+      <main>
       <section className="container mx-auto px-5 py-20">
         <Fade direction="up" triggerOnce>
           <h1 className="text-4xl sm:text-5xl text-theme-blue text-center font-bold mb-3">
@@ -233,6 +234,7 @@ export default function FAQPage() {
           </div>
         </Fade>
       </section>
+      </main>
       <Footer />
     </>
   );

@@ -63,6 +63,7 @@ export default function AIEstimatorPage() {
   return (
     <>
       <Header />
+      <main>
       <section className="container mx-auto px-5 py-20">
         <Fade direction="up" triggerOnce>
           <div className="text-center mb-16">
@@ -143,6 +144,7 @@ export default function AIEstimatorPage() {
           </div>
         </Fade>
       </section>
+      </main>
       <Footer />
     </>
   );

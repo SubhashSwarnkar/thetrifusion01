@@ -50,12 +50,14 @@ export const DiscussProjectPage = () => {
   return (
     <>
       <Header />
+      <main>
       <DiscussForm
         data={data}
         onChange={onChange}
         resetForm={resetForm}
         titleAs="h1"
       />
+      </main>
       <Footer />
     </>
   );

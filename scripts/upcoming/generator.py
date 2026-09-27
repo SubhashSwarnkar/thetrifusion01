@@ -14,9 +14,11 @@ and validFrom.
 """
 from __future__ import annotations
 from pathlib import Path
-import json, re
+import json, re, sys
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "scripts"))
+from blog_links import cap_service_anchors, canonicalize_hrefs
 OG_DIR = ROOT / "public/images/blog-og"
 OUT = ROOT / "src/data/blogPostsUpcomingEvents2026.js"
 
@@ -91,12 +93,19 @@ def expand_article(t):
         parts.append(f"<li>{c}</li>")
     parts.append("</ul>")
     link_html = ", ".join(f'<a href="{href}">{label}</a>' for href, label in t["internal_links"])
+    prior = "\n".join(parts)
+    service_cta = cap_service_anchors(
+        prior,
+        ' For build or SEO help on event hubs, see <a href="/services/digital-marketing">digital marketing</a>, '
+        + '<a href="/services/website-development">web development</a>, and '
+        + '<a href="/ecommerce-development">ecommerce development</a>.',
+    )
     parts.append(
         "<p>Related reading on TheTriFusion: "
         + link_html
-        + '. For build or SEO help on event hubs, see <a href="/services/digital-marketing">digital marketing</a>, '
-        + '<a href="/services/web-development">web development</a>, and '
-        + '<a href="/ecommerce-development">ecommerce development</a>.</p>'
+        + "."
+        + service_cta
+        + "</p>"
     )
     parts.append("<h2>FAQ</h2>")
     for q, a in t["faqs"]:
@@ -106,7 +115,7 @@ def expand_article(t):
         parts.append("<h2>Additional notes for planners and publishers</h2>")
         for para in t["pad_paras"]:
             parts.append(f"<p>{para}</p>")
-    html = "\n      ".join([""] + parts)
+    html = canonicalize_hrefs("\n      ".join([""] + parts))
     # Ensure long-form length (target 1500+, minimum 1200)
     bank = [
         "<h2>Why early, accurate pages win the search peak</h2>",
@@ -263,14 +272,14 @@ DEFAULT_PAD = [
 ]
 
 DEFAULT_CLOSING = 'Need a fast, indexable event or media hub? <a href="/contact">Contact TheTriFusion</a> or book via <a href="/appointment">appointment</a>.'
-DEFAULT_BIZ = 'Teams that need SEO-clean event hubs with correct IST rendering regularly use our Jaipur <a href="/services/web-development">web development</a> and <a href="/services/digital-marketing">digital marketing</a> stack.'
+DEFAULT_BIZ = 'Teams that need SEO-clean event hubs with correct IST rendering regularly use our Jaipur <a href="/services/website-development">web development</a> and <a href="/services/digital-marketing">digital marketing</a> stack.'
 
 def normalize_topic(t):
     t = dict(t)
     t.setdefault("biz_bridge", DEFAULT_BIZ)
     t.setdefault("closing", DEFAULT_CLOSING)
     t.setdefault("pad_paras", DEFAULT_PAD)
-    t.setdefault("related", ["digital-marketing", "web-development"])
+    t.setdefault("related", ["digital-marketing", "website-development"])
     t.setdefault("category", "news")
     t.setdefault("readTime", "15 min read")
     t.setdefault("hue", 250)

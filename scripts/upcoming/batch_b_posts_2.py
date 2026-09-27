@@ -49,7 +49,7 @@ POSTS.append({
 <p>None of those points carries a price. TheTriFusion does not run betting tips beside fixture guides.</p>
 <h2>Keep the neighbouring pages separate</h2>
 <p>Ranchi on 9 October is the second T20I and has its own guide in this batch once published; until you need only the confirmed list, the <a href="/blog/india-vs-west-indies-t20i-series-october-2026-guide">series schedule</a> already names Indore as 11 October. Lucknow’s opener is covered in the <a href="/blog/india-vs-west-indies-1st-t20i-lucknow-6-oct-2026">6 October page</a>. The ODI that people still search in early October is the <a href="/blog/india-vs-west-indies-3rd-odi-chandigarh-3-oct-2026">New Chandigarh game</a>, which is a 2:00 PM start and a different format. The <a href="/blog/f1-united-states-grand-prix-2026-austin-guide">US Grand Prix guide</a> is for later in the month in Austin, not for this Sunday’s night cricket.</p>
-<p>Singapore’s Grand Prix is the motorsport event on this same date. If you are building a multi-sport calendar, store sport, city and start timezone as separate fields. Our <a href="/services/web-development">web development</a> projects do that so a cricket URL never inherits a race time. For the marketing layer around launch week, see <a href="/services/digital-marketing">digital marketing</a>.</p>
+<p>Singapore’s Grand Prix is the motorsport event on this same date. If you are building a multi-sport calendar, store sport, city and start timezone as separate fields. Our <a href="/services/website-development">web development</a> projects do that so a cricket URL never inherits a race time. For the marketing layer around launch week, see <a href="/services/digital-marketing">digital marketing</a>.</p>
 <h2>Sunday plan</h2>
 <ul>
 <li>Save 7:00 PM IST, not 7:00 PM UK and not 7:00 PM US Central.</li>
@@ -125,7 +125,7 @@ POSTS.append({
 <p>This is analysis of a cricket match. It is not a gambling note, and no odds are published.</p>
 <h2>Related pages that are easy to confuse with this one</h2>
 <p>The <a href="/blog/india-vs-west-indies-t20i-series-october-2026-guide">full T20I schedule</a> lists Hyderabad as the fourth city. The <a href="/blog/india-vs-west-indies-1st-t20i-lucknow-6-oct-2026">Lucknow opener</a> is eight days earlier. The <a href="/blog/india-vs-west-indies-3rd-odi-chandigarh-3-oct-2026">New Chandigarh ODI</a> is a 50-over game at 2:00 PM. None of them is this Wednesday night. For a non-cricket sports trending example, the <a href="/blog/colts-vs-chiefs-preview-what-fans-search">Colts vs Chiefs search note</a> shows how fast a fixture query spreads once a kickoff is mis-stated.</p>
-<p>Event sites that mix those URLs lose the click. A clean information architecture is part of <a href="/services/digital-marketing">digital marketing</a> and part of the <a href="/services/web-development">web development</a> build underneath it.</p>
+<p>Event sites that mix those URLs lose the click. A clean information architecture is part of <a href="/services/digital-marketing">digital marketing</a> and part of the <a href="/services/website-development">web development</a> build underneath it.</p>
 <h2>Midweek checklist</h2>
 <ul>
 <li>Confirm the series score on Wednesday afternoon from the board, then write.</li>
@@ -199,7 +199,7 @@ POSTS.append({
 <p>No betting market is attached to any of those. A dead rubber is still a cricket match, and it is still not an odds page.</p>
 <h2>Pages to read beside this one</h2>
 <p>The <a href="/blog/india-vs-west-indies-t20i-series-october-2026-guide">T20I series guide</a> is the five-date list. The <a href="/blog/india-vs-west-indies-1st-t20i-lucknow-6-oct-2026">Lucknow page</a> is the start of the T20I leg. The <a href="/blog/india-vs-west-indies-3rd-odi-chandigarh-3-oct-2026">third ODI</a> is the last 50-over game, two weeks earlier. The <a href="/blog/england-vs-sri-lanka-why-trending-explained">England vs Sri Lanka note</a> is a different rivalry that trends for different reasons. Use it as a caution about recycled cricket headlines, not as a clue to this XI.</p>
-<p>If you publish multi-match tours, give the last match its own canonical URL so the “final score” query does not land on the series hub and bounce. That is ordinary <a href="/services/digital-marketing">digital marketing</a> structure, built on <a href="/services/web-development">web development</a> that can store a startDate per match.</p>
+<p>If you publish multi-match tours, give the last match its own canonical URL so the “final score” query does not land on the series hub and bounce. That is ordinary <a href="/services/digital-marketing">digital marketing</a> structure, built on <a href="/services/website-development">web development</a> that can store a startDate per match.</p>
 <h2>Saturday checklist</h2>
 <ul>
 <li>Read the series score on Saturday morning before you type “decider”.</li>
@@ -272,7 +272,7 @@ POSTS.append({
 <p>There are no odds and no fantasy points on this page.</p>
 <h2>Do not merge it with the men’s Bengaluru night</h2>
 <p>The men’s <a href="/blog/india-vs-west-indies-5th-t20i-bengaluru-17-oct-2026">fifth T20I is in Bengaluru on 17 October</a> if you are reading the batch that includes both guides; the confirmed series list is on the <a href="/blog/india-vs-west-indies-t20i-series-october-2026-guide">West Indies T20I schedule</a>. The <a href="/blog/india-vs-west-indies-1st-t20i-lucknow-6-oct-2026">Lucknow men’s game</a> is ten days earlier. Women’s cricket searchers also land on explainers such as <a href="/blog/lynx-vs-fever-wnba-why-trending">Lynx vs Fever</a> when they are browsing sport pages; that is basketball, and it will not tell you the Raipur toss time.</p>
-<p>Separate URLs are how you stop those audiences mixing. We build that separation in <a href="/services/web-development">web development</a> projects and in <a href="/services/digital-marketing">digital marketing</a> information architecture.</p>
+<p>Separate URLs are how you stop those audiences mixing. We build that separation in <a href="/services/website-development">web development</a> projects and in <a href="/services/digital-marketing">digital marketing</a> information architecture.</p>
 <h2>Match-week checklist</h2>
 <ul>
 <li>Friday, 16 October, 7:00 PM IST, Raipur, 1st T20I, women.</li>
@@ -349,7 +349,7 @@ POSTS.append({
 <p>No prices, no fantasy scores, no “lock”. A championship match is still just a match for the purposes of this guide.</p>
 <h2>Related reading</h2>
 <p>The Raipur T20I is a different page and a different clock. The men’s tour pages, including the <a href="/blog/india-vs-west-indies-t20i-series-october-2026-guide">West Indies T20I schedule</a> and the <a href="/blog/india-vs-west-indies-3rd-odi-chandigarh-3-oct-2026">New Chandigarh ODI</a>, are men’s cricket. The <a href="/blog/england-vs-sri-lanka-why-trending-explained">England vs Sri Lanka explainer</a> shows how a bilateral series becomes a search spike. The <a href="/blog/lynx-vs-fever-wnba-why-trending">Lynx vs Fever note</a> is women’s sport in another code, useful only as a reminder to label the sport in the headline.</p>
-<p>Championship coverage needs clean schema and a stable canonical. That is the same problem we solve in <a href="/services/web-development">web development</a> and <a href="/services/digital-marketing">digital marketing</a> for publishers.</p>
+<p>Championship coverage needs clean schema and a stable canonical. That is the same problem we solve in <a href="/services/website-development">web development</a> and <a href="/services/digital-marketing">digital marketing</a> for publishers.</p>
 <h2>Friday plan for Baroda</h2>
 <ul>
 <li>2:00 PM IST, not 7:00 PM.</li>

@@ -29,6 +29,7 @@ export default function AppointmentPage() {
     <>
       <Header />
       <Breadcrumbs />
+      <main>
       <section className="container mx-auto px-5 py-20">
         <Fade direction="up" triggerOnce>
           <div className="text-center mb-12">
@@ -150,6 +151,7 @@ export default function AppointmentPage() {
           </div>
         </Fade>
       </section>
+      </main>
       <Footer />
     </>
   );

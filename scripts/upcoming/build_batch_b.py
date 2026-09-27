@@ -46,7 +46,7 @@ def main() -> None:
             post["content"] = post["content"].rstrip() + "\n" + extra.strip() + "\n"
         line1, line2, hue = post.pop("og")
         post["imageUrl"] = make_og(post["slug"], line1, line2, hue)
-        post["relatedServiceSlugs"] = ["digital-marketing", "web-development"]
+        post["relatedServiceSlugs"] = ["digital-marketing", "website-development"]
         n = words(post["content"])
         title_len = len(post["title"])
         print(f"{post['id']} {n} words title={title_len} {post['slug']}")

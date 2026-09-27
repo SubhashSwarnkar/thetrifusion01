@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import Page from "views/ServiceDetailPage";
 import JsonLd from "components/JsonLd";
 import LanguageSwitcher from "components/LanguageSwitcher";
@@ -10,6 +11,8 @@ import { buildMetadata } from "lib/seoConfig";
 export function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
 }
+
+export const dynamicParams = false;
 
 function serviceMeta(service) {
   return {
@@ -28,12 +31,7 @@ export function generateMetadata({ params }) {
   const service = getServiceBySlug(params.slug);
 
   if (!service) {
-    return buildMetadata({
-      title: "Service Not Found | TheTriFusion",
-      description: "The requested service page could not be found.",
-      path: `/services/${params.slug}`,
-      noIndex: true,
-    });
+    notFound();
   }
 
   const { title, description, keywords } = serviceMeta(service);
@@ -51,6 +49,7 @@ export function generateMetadata({ params }) {
 
 export default function RoutePage({ params }) {
   const service = getServiceBySlug(params.slug);
+  if (!service) notFound();
 
   return (
     <>

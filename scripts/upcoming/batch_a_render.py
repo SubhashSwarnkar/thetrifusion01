@@ -4,9 +4,12 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "scripts"))
+from blog_links import cap_service_anchors, canonicalize_hrefs
 OG_DIR = ROOT / "public" / "images" / "blog-og"
 OUT = ROOT / "src" / "data" / "upcomingEventsBatchA.js"
 
@@ -128,12 +131,12 @@ def render_post(p: dict) -> str:
       <p>{p["opener"]}</p>
       <p><em>Verification note (TheTriFusion editorial):</em> {p["verify"]}</p>
 {middle}{more}
-      <p>Related reading already on TheTriFusion: {linkify(live)}. {p.get("sib_sentence", "")} For a calendar product or club-site build, see <a href="/services/digital-marketing">digital marketing</a>, <a href="/services/web-development">web development</a>, and <a href="{p.get("hub", "/ecommerce-development")}">{p.get("hub_label", "ecommerce development")}</a>.</p>
+      <p>Related reading already on TheTriFusion: {linkify(live)}. {p.get("sib_sentence", "")}{cap_service_anchors(middle + more, f' For a calendar product or club-site build, see <a href="/services/digital-marketing">digital marketing</a>, <a href="/services/website-development">web development</a>, and <a href="{p.get("hub", "/ecommerce-development")}">{p.get("hub_label", "ecommerce development")}</a>.')}</p>
       <h2>FAQ</h2>
 {faqs}
       <p>{p["close"]}</p>
 """
-    return html
+    return canonicalize_hrefs(html)
 
 
 def js_post(p: dict, content: str) -> str:
@@ -158,7 +161,7 @@ def js_post(p: dict, content: str) -> str:
     readTime: "16 min read",
     author: "TheTriFusion Team",
     featured: true,
-    relatedServiceSlugs: ["digital-marketing", "web-development"],
+    relatedServiceSlugs: ["digital-marketing", "website-development"],
     event: {{
       type: {json.dumps(event["type"])},
       name: {json.dumps(event["name"])},

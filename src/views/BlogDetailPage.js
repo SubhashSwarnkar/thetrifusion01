@@ -86,7 +86,7 @@ export default function BlogDetailPage({
       <Breadcrumbs />
       {languageSwitcher}
       <BlogAdSenseAuto />
-      <div className="container mx-auto max-w-6xl px-5 py-20">
+      <main className="container mx-auto max-w-6xl px-5 py-20">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_300px]">
           <article className="min-w-0">
             {/* Header */}
@@ -302,7 +302,7 @@ export default function BlogDetailPage({
         <div className="mt-8 lg:hidden">
           <BlogAdSidebar />
         </div>
-      </div>
+      </main>
       <Footer />
     </>
   );

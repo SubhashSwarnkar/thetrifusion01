@@ -4,16 +4,19 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "scripts"))
+from blog_links import cap_service_anchors, canonicalize_hrefs
 OG_DIR = ROOT / "public/images/blog-og"
 OUT = ROOT / "src/data/dailyOrganicTrends20260925pm2.js"
 DATE, UPDATED = "2026-09-25", "2026-09-25T18:45:00+05:30"
 
 PAD = """
 <h2>Why Trends pages matter for publishers</h2>
-<p>Search spikes reward the first accurate URL, not the loudest caption. Date-stamp updates, name your sources, and leave conflicts in the open when two outlets disagree. Soft CTAs to <a href="/services/web-development">web development</a> and <a href="/services/digital-marketing">digital marketing</a> belong after the facts.</p>
+<p>Search spikes reward the first accurate URL, not the loudest caption. Date-stamp updates, name your sources, and leave conflicts in the open when two outlets disagree. Soft CTAs to <a href="/services/website-development">web development</a> and <a href="/services/digital-marketing">digital marketing</a> belong after the facts.</p>
 <p>AdSense-safe coverage on TheTriFusion means no betting odds, no graphic medical or injury detail, no adult framing, and no invented quotes. Prefer primary documents over anonymous forwards.</p>
 <p>If you run a media or ecommerce CMS, store times in UTC, render IST for Indian readers, and show “last updated.” Thin pages that only repeat the Trends phrase rarely rank past the peak day.</p>
 <p>Bookmark this explainer, share only verified lines, and return when official updates land. We amend confirmed fields instead of padding speculation.</p>
@@ -48,9 +51,9 @@ def make_og(slug: str, a: str, b: str, hue: int) -> str:
 
 
 def pad(html: str) -> str:
-    out = html.strip()
+    out = canonicalize_hrefs(html.strip())
     while words(out) < 1350:
-        out += "\n" + PAD
+        out += "\n" + cap_service_anchors(out, PAD)
         if words(out) > 2800:
             break
     return out
@@ -73,7 +76,7 @@ def P(id_, slug, title, meta, excerpt, body, tags, og, hue, related=None, read="
         "readTime": read,
         "author": "TheTriFusion Team",
         "featured": True,
-        "relatedServiceSlugs": related or ["digital-marketing", "web-development"],
+        "relatedServiceSlugs": related or ["digital-marketing", "website-development"],
     }
 
 
@@ -84,7 +87,7 @@ def hygiene(name, why, intents, checks, faqs, extra=""):
     return f"""
 <p><strong>{name}</strong> appeared on Google Trends boards on 25 September 2026. {why}</p>
 <p><em>Verification note:</em> Prefer named outlets and official pages over anonymous forwards. This TheTriFusion page is a Trends hygiene explainer dated 25 September 2026 (Asia/Kolkata), not a live wire.</p>
-<p>Calm public-information sites are what we build via <a href="/services/web-development">web development</a>.</p>
+<p>Calm public-information sites are what we build via <a href="/services/website-development">web development</a>.</p>
 <h2>What searchers usually want</h2>
 <ul>{intent_li}</ul>
 <h2>Checklist before you share</h2>

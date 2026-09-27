@@ -62,7 +62,7 @@ POSTS.append({
 <p>No odds. A tri-series preview that slides into betting lines is a different website.</p>
 <h2>Related cricket reading</h2>
 <p>India’s home season is a different board and a different set of clocks. The <a href="/blog/india-vs-west-indies-t20i-series-october-2026-guide">West Indies T20I schedule</a>, the <a href="/blog/india-vs-west-indies-3rd-odi-chandigarh-3-oct-2026">New Chandigarh ODI</a> and the <a href="/blog/england-vs-sri-lanka-why-trending-explained">England vs Sri Lanka trending note</a> are easy to confuse with this tri-series because Sri Lanka and England appear in all of them. Read the opponent and the country before you reuse a paragraph. The <a href="/blog/afghanistan-vs-japan-asian-games-cricket-explained">Asian Games cricket explainer</a> is another October cricket query with a morning IST start in Japan.</p>
-<p>Publishers who cover multi-country tours need one URL per match and a visible “time not yet confirmed” state. We build that in <a href="/services/web-development">web development</a> and support it with <a href="/services/digital-marketing">digital marketing</a> so the page can rank before the toss without inventing the toss.</p>
+<p>Publishers who cover multi-country tours need one URL per match and a visible “time not yet confirmed” state. We build that in <a href="/services/website-development">web development</a> and support it with <a href="/services/digital-marketing">digital marketing</a> so the page can rank before the toss without inventing the toss.</p>
 <h2>Checklist</h2>
 <ul>
 <li>Save 20 October, Rawalpindi, Pakistan vs England, ODI, time blank.</li>
@@ -138,7 +138,7 @@ POSTS.append({
 </ol>
 <h2>Reading list</h2>
 <p>International context around the same fortnight lives on the <a href="/blog/india-vs-west-indies-1st-t20i-lucknow-6-oct-2026">Lucknow T20I page</a>, the <a href="/blog/india-vs-west-indies-3rd-odi-chandigarh-3-oct-2026">New Chandigarh ODI page</a> and the <a href="/blog/afghanistan-vs-japan-asian-games-cricket-explained">Asian Games cricket explainer</a>. None of those is a Ranji game. For how a sports query spreads once the clock is fuzzy, see <a href="/blog/colts-vs-chiefs-preview-what-fans-search">Colts vs Chiefs</a>.</p>
-<p>State bodies that want a fixture site with a real startDate per match, and a clean “not yet confirmed” state, can use our <a href="/services/web-development">web development</a> and <a href="/ecommerce-development">ecommerce development</a> teams. Ticket modules only help if the fixture underneath them is true.</p>
+<p>State bodies that want a fixture site with a real startDate per match, and a clean “not yet confirmed” state, can use our <a href="/services/website-development">web development</a> and <a href="/ecommerce-development">ecommerce development</a> teams. Ticket modules only help if the fixture underneath them is true.</p>
 <h2>FAQ</h2>
 <h3>When does the Ranji Trophy 2026-27 start?</h3>
 <p>Elite and Plate phase 1 are listed from 11 October 2026 to 5 November 2026.</p>
@@ -203,7 +203,7 @@ POSTS.append({
 <p>No odds, no “lock of the week”. A race guide is a timetable plus a way to watch.</p>
 <h2>Do not mix this up with Austin or with Indore</h2>
 <p>The <a href="/blog/f1-united-states-grand-prix-2026-austin-guide">United States Grand Prix guide</a> is Austin, 23–25 October, a different continent and a different IST window. The <a href="/blog/india-vs-west-indies-t20i-series-october-2026-guide">India vs West Indies T20I series</a> includes Indore on this same Sunday at 7:00 PM IST. The <a href="/blog/india-vs-west-indies-1st-t20i-lucknow-6-oct-2026">Lucknow T20I</a> is the previous Tuesday. The <a href="/blog/caleb-williams-nfl-trending-update">Caleb Williams NFL note</a> is American football, not open-wheel racing, and it will not give you a Marina Bay start.</p>
-<p>A publisher who runs both a race hub and a cricket hub should keep the schemas separate. That is routine work for our <a href="/services/web-development">web development</a> and <a href="/services/digital-marketing">digital marketing</a> teams when a brand covers more than one sport.</p>
+<p>A publisher who runs both a race hub and a cricket hub should keep the schemas separate. That is routine work for our <a href="/services/website-development">web development</a> and <a href="/services/digital-marketing">digital marketing</a> teams when a brand covers more than one sport.</p>
 <h2>Weekend checklist</h2>
 <ul>
 <li>Sprint: Saturday 2:30 PM IST.</li>
@@ -276,7 +276,7 @@ POSTS.append({
 <p>No odds are attached. A late-night IST race is not an invitation to dress the page as a gambling guide.</p>
 <h2>Nearby events on this site</h2>
 <p>Read the <a href="/blog/f1-united-states-grand-prix-2026-austin-guide">Austin US Grand Prix guide</a> for the round before Mexico. Cricket readers in the same fortnight still have the <a href="/blog/india-vs-west-indies-t20i-series-october-2026-guide">West Indies T20I schedule</a> and the <a href="/blog/india-vs-west-indies-3rd-odi-chandigarh-3-oct-2026">New Chandigarh ODI</a>, both finished or underway depending on when you open this page, and neither shares a clock with Mexico. The <a href="/blog/brazil-election-2026-first-round-4-october">Brazil election guide</a> is politics, not Interlagos; the Sao Paulo Grand Prix is a different November weekend and a different article.</p>
-<p>Late-night sports pages need honest dates in the title, or the Monday-morning searcher thinks they missed a Sunday race that has not started. Building that correctly is <a href="/services/web-development">web development</a> work, and ranking it is <a href="/services/digital-marketing">digital marketing</a> work.</p>
+<p>Late-night sports pages need honest dates in the title, or the Monday-morning searcher thinks they missed a Sunday race that has not started. Building that correctly is <a href="/services/website-development">web development</a> work, and ranking it is <a href="/services/digital-marketing">digital marketing</a> work.</p>
 <h2>Checklist for a Monday 1:30 AM start</h2>
 <ul>
 <li>Calendar title: Monday 2 November, 1:30 AM IST, Mexico City GP race.</li>
@@ -351,7 +351,7 @@ POSTS.append({
 <p>This page publishes no odds and no fantasy prices.</p>
 <h2>Other November and October pages</h2>
 <p>Austin’s round is the <a href="/blog/f1-united-states-grand-prix-2026-austin-guide">US Grand Prix guide</a>. India’s October cricket is on the <a href="/blog/india-vs-west-indies-t20i-series-october-2026-guide">West Indies T20I schedule</a> and the <a href="/blog/india-vs-west-indies-1st-t20i-lucknow-6-oct-2026">Lucknow T20I page</a>. The <a href="/blog/brazil-election-runoff-25-october-2026-guide">Brazil election runoff guide</a> is about the vote on 25 October, not about this race. The <a href="/blog/brazil-election-2026-first-round-4-october">first-round election page</a> is earlier still. Do not let a shared country name merge a sporting event and a political one.</p>
-<p>Multi-zone sports desks get this wrong when one CMS field tries to hold “local” and “IST” in a single string with no offset. Split the fields. Our <a href="/services/web-development">web development</a> and <a href="/services/digital-marketing">digital marketing</a> work for publishers starts there.</p>
+<p>Multi-zone sports desks get this wrong when one CMS field tries to hold “local” and “IST” in a single string with no offset. Split the fields. Our <a href="/services/website-development">web development</a> and <a href="/services/digital-marketing">digital marketing</a> work for publishers starts there.</p>
 <h2>Checklist</h2>
 <ul>
 <li>Qualifying: Saturday 7 November, 11:30 PM IST.</li>

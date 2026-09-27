@@ -64,6 +64,7 @@ export default function EcommerceDevelopmentPage() {
     <div className="min-h-screen bg-white pb-24 lg:pb-0">
       <Header />
       <Breadcrumbs />
+      <main>
 
       <section className="relative pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-light-theme-purple via-white to-cyan-50 -z-10" />
@@ -790,6 +791,7 @@ export default function EcommerceDevelopmentPage() {
           Claim offer
         </a>
       </div>
+      </main>
 
       <Footer />
     </div>
