@@ -10,6 +10,7 @@ import { serviceNav as services } from "data/serviceNav";
 import SEO from "components/common/SEO";
 import ServiceIcon from "components/ServiceIcon";
 import { accentAt } from "lib/themeAccents";
+import { siteConfig } from "config/site";
 
 export default function ServicesPage() {
   useEffect(() => {
@@ -129,9 +130,16 @@ export default function ServicesPage() {
           <h2 className="text-3xl md:text-4xl font-black text-white mb-4 relative z-10">
             Need a scoped estimate?
           </h2>
-          <p className="text-white/70 text-base md:text-lg mb-8 max-w-xl mx-auto relative z-10 font-light">
+          <p className="text-white/70 text-base md:text-lg mb-4 max-w-xl mx-auto relative z-10 font-light">
             Share the problem and the deadline. The Jaipur team replies with a written next step — usually within 24 hours.
           </p>
+          <address className="not-italic text-white/80 text-sm mb-8 relative z-10">
+            <span className="block">{siteConfig.addressLine}</span>
+            <a className="underline" href={siteConfig.telHref}>
+              {siteConfig.phone}
+            </a>
+            <span className="block">{siteConfig.hoursLabel}</span>
+          </address>
           <Link 
             href="/contact"
             prefetch={false}

@@ -10,6 +10,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { getAllServicePricingPlans } from "data/servicePricingData";
 import { nicheServices } from "data/nicheServicesData";
 import SEO from "components/common/SEO";
+import { siteConfig } from "config/site";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -86,11 +87,18 @@ export default function PricingPage() {
             <h1 className="text-5xl md:text-7xl font-bold text-theme-blue mb-8 tracking-tight">
               Invest in <span className="text-theme-purple">Excellence</span>
             </h1>
-            <p className="text-xl text-gray-500 font-light leading-relaxed mb-12">
+            <p className="text-xl text-gray-500 font-light leading-relaxed mb-4">
               Starting ranges from Jaipur so you can see order of magnitude.
               They are not Basic/Standard/Premium SKUs — every brief still gets
               a written scope. Illustrative tiers below show how effort scales.
             </p>
+            <address className="not-italic text-sm text-gray-500 mb-12">
+              <span className="block">{siteConfig.addressLine}</span>
+              <a className="text-theme-purple font-semibold" href={siteConfig.telHref}>
+                {siteConfig.phone}
+              </a>
+              <span className="block">{siteConfig.hoursLabel}</span>
+            </address>
 
             <div className="max-w-4xl mx-auto mb-16 text-left bg-white border border-gray-100 rounded-3xl p-6 md:p-8 shadow-sm">
               <h2 className="text-2xl font-bold text-theme-blue mb-2">

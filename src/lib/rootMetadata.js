@@ -50,8 +50,6 @@ export const rootMetadata = {
     "theme-color": "#0f172a",
     "geo.region": "IN-RJ",
     "geo.placename": "Jaipur",
-    "geo.position": "26.9196;75.7878",
-    ICBM: "26.9196, 75.7878",
     "google-adsense-account": ADSENSE_CLIENT_ID,
   },
 };

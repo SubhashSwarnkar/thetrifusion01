@@ -1,3 +1,5 @@
+import { siteConfig } from "config/site";
+
 /**
  * Rajasthan city service-area landings (Jaipur office — no local storefronts).
  * Each city page is written separately. Shared chrome in the solution template
@@ -49,7 +51,7 @@ const bhilwara = {
     {
       question: "Do you have an office in Bhilwara?",
       answer:
-        "No. TheTriFusion’s office is in Jaipur. Bhilwara is a service area: video calls, WhatsApp, weekly demos, and travel when a kickoff or launch needs to be on site.",
+        `No. TheTriFusion’s office is at ${siteConfig.addressLine}. Phone ${siteConfig.phone}. Hours: ${siteConfig.hoursLabel}. Bhilwara is a service area: video calls, WhatsApp, weekly demos, and travel when a kickoff or launch needs to be on site.`,
     },
     {
       question: "Can you build a suiting or yarn catalogue for a Bhilwara mill?",
@@ -180,7 +182,7 @@ const udaipur = {
     {
       question: "Do you have a team sitting in Udaipur?",
       answer:
-        "No. Delivery is from Jaipur. We schedule calls around check-in and event hours, and we can travel for a kickoff when the property needs an in-person walk-through.",
+        `No. Delivery is from our Jaipur office at ${siteConfig.addressLine}. Phone ${siteConfig.phone}. We schedule calls around check-in and event hours, and we can travel for a kickoff when the property needs an in-person walk-through.`,
     },
     {
       question: "Can a handicraft shop sell online?",
@@ -310,7 +312,7 @@ const kota = {
     {
       question: "Is your office in Kota?",
       answer:
-        "No. We work from Jaipur. Calls are timed around evening batches or morning dispatch, with WhatsApp in between. Travel for a kickoff is possible when you want it.",
+        `No. We work from ${siteConfig.addressLine}. Phone ${siteConfig.phone}. Hours: ${siteConfig.hoursLabel}. Calls are timed around evening batches or morning dispatch, with WhatsApp in between. Travel for a kickoff is possible when you want it.`,
     },
     {
       question: "Will you mention student-welfare issues on our institute site?",
@@ -445,7 +447,7 @@ const ajmer = {
     {
       question: "Is TheTriFusion based in Ajmer?",
       answer:
-        "No. The company is in Jaipur. Ajmer and Kishangarh are service areas: video, WhatsApp, weekly demos, and a visit when the kickoff needs to be local.",
+        `No. The company office is at ${siteConfig.addressLine}. Phone ${siteConfig.phone}. Hours: ${siteConfig.hoursLabel}. Ajmer and Kishangarh are service areas: video, WhatsApp, weekly demos, and a visit when the kickoff needs to be local.`,
     },
     {
       question: "Can the site be in Hindi?",

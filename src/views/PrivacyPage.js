@@ -17,9 +17,14 @@ export default function PrivacyPage() {
         <h1 className="text-4xl font-black text-theme-blue mb-6">
           Privacy Policy
         </h1>
-        <p className="text-gray-500 mb-8">
-          {siteConfig.legalName} (“TheTriFusion”), Jaipur, Rajasthan.
-        </p>
+        <address className="text-gray-500 mb-8 not-italic">
+          {siteConfig.legalName} (“TheTriFusion”)
+          <span className="block">{siteConfig.addressLine}</span>
+          <a className="text-theme-purple" href={siteConfig.telHref}>
+            {siteConfig.phone}
+          </a>
+          <span className="block">{siteConfig.hoursLabel}</span>
+        </address>
         <div className="space-y-6 text-gray-600 font-light leading-relaxed">
           <p>
             We collect contact details you submit (name, email, phone, project

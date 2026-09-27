@@ -11,8 +11,7 @@ export const INSTAGRAM_URL = siteConfig.instagram;
 export const HOME_FAQS = [
   {
     question: "Where is TheTriFusion located?",
-    answer:
-      "Trifusion Infotech Private Limited is based in Jaipur, Rajasthan. We serve clients across Rajasthan and India through remote collaboration.",
+    answer: `Trifusion Infotech Private Limited’s office is at ${siteConfig.addressLine}. Phone ${siteConfig.phone}. Hours: ${siteConfig.hoursLabel}. We serve clients across Rajasthan and India through remote collaboration.`,
   },
   {
     question: "What does TheTriFusion build?",
@@ -34,11 +33,15 @@ export const HOME_FAQS = [
 export const NAP = {
   name: siteConfig.legalName,
   brand: siteConfig.name,
+  streetAddress: siteConfig.streetAddress,
+  addressLine: siteConfig.addressLine,
   locality: siteConfig.city,
   region: siteConfig.region,
+  postalCode: siteConfig.postalCode,
   country: siteConfig.countryName,
   email: siteConfig.email,
   phone: siteConfig.phone,
+  hours: siteConfig.hoursLabel,
 };
 
 export const DEFAULT_DELIVERABLES = [

@@ -6,7 +6,8 @@ import BrandIcon from "./BrandIcon";
 import DeferredNewsletter from "../components/DeferredNewsletter";
 import { serviceNav } from "data/serviceNav";
 import { featuredSolutionNav } from "data/footerNav";
-import { LINKEDIN_URL, INSTAGRAM_URL, COMPANY_EMAIL, COMPANY_PHONE_DISPLAY } from "data/companyInfo";
+import { LINKEDIN_URL, INSTAGRAM_URL, COMPANY_EMAIL } from "data/companyInfo";
+import { siteConfig } from "config/site";
 import { trackEvent, AnalyticsEvents } from "utils/analytics";
 
 import Link from "next/link";
@@ -222,7 +223,7 @@ export default function Footer({ hideNewsletter = false }) {
 
             <div className="space-y-6 min-w-0">
               <h4 className="text-xl font-black mb-6 text-theme-purple">Office</h4>
-              <div className="space-y-4 text-white/60 font-light">
+              <address className="space-y-4 text-white/60 font-light not-italic">
                 <p className="flex items-start gap-3">
                   <svg
                     className="w-5 h-5 text-theme-purple mt-1"
@@ -243,7 +244,7 @@ export default function Footer({ hideNewsletter = false }) {
                       d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                     />
                   </svg>
-                  Jaipur, Rajasthan, India
+                  {siteConfig.addressLine}
                 </p>
                 <p className="flex items-center gap-3">
                   <svg
@@ -260,12 +261,29 @@ export default function Footer({ hideNewsletter = false }) {
                     />
                   </svg>
                   <a
-                    href={`tel:${COMPANY_PHONE_DISPLAY.replace(/\s/g, "")}`}
+                    href={siteConfig.telHref}
                     onClick={() => trackEvent(AnalyticsEvents.CLICK_PHONE, { source: "footer" })}
                     className="hover:text-white transition-colors"
                   >
-                    {COMPANY_PHONE_DISPLAY}
+                    {siteConfig.phone}
                   </a>
+                </p>
+                <p className="flex items-start gap-3">
+                  <svg
+                    className="w-5 h-5 text-theme-purple mt-0.5 flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <span>{siteConfig.hoursLabel}</span>
                 </p>
                 <p className="flex items-center gap-3">
                   <svg
@@ -289,7 +307,7 @@ export default function Footer({ hideNewsletter = false }) {
                     {COMPANY_EMAIL}
                   </a>
                 </p>
-              </div>
+              </address>
               <Link
                 href="/appointment"
                 onClick={() =>

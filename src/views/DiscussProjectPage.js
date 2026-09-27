@@ -8,6 +8,7 @@ import { DiscussForm } from "parts/DiscussForm";
 
 import Header from "parts/Header";
 import Footer from "parts/Footer";
+import { siteConfig } from "config/site";
 
 export const DiscussProjectPage = () => {
   const [data, setData] = useState({
@@ -51,6 +52,13 @@ export const DiscussProjectPage = () => {
     <>
       <Header />
       <main>
+      <address className="not-italic container mx-auto px-5 pt-28 text-center text-sm text-gray-500">
+        <span className="block">{siteConfig.addressLine}</span>
+        <a className="font-semibold text-theme-purple" href={siteConfig.telHref}>
+          {siteConfig.phone}
+        </a>
+        <span className="block">{siteConfig.hoursLabel}</span>
+      </address>
       <DiscussForm
         data={data}
         onChange={onChange}

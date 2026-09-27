@@ -18,6 +18,7 @@ import {
   INSTAGRAM_URL,
 } from "data/companyInfo";
 import { AWS_PROMO_OFFER, getOfferPrefill } from "data/promoOffer";
+import { siteConfig } from "config/site";
 
 export default function ContactPage() {
   const [isAwsOffer, setIsAwsOffer] = useState(false);
@@ -115,11 +116,21 @@ export default function ContactPage() {
                   Contact a Software Company <br />
                   <span className="text-gradient">in Jaipur</span>
                 </h1>
-                <p className="text-xl md:text-2xl text-gray-500 font-light max-w-3xl mx-auto leading-relaxed">
-                  Trifusion Infotech Private Limited — office in Jaipur,
-                  Rajasthan. Call, WhatsApp, or send a brief. Delivery is remote
-                  across India.
-                </p>
+                <address className="text-xl md:text-2xl text-gray-500 font-light max-w-3xl mx-auto leading-relaxed not-italic">
+                  Trifusion Infotech Private Limited
+                  <span className="block mt-3 text-base md:text-lg text-theme-blue">
+                    {siteConfig.addressLine}
+                  </span>
+                  <a
+                    className="block mt-2 text-base md:text-lg font-semibold text-theme-purple"
+                    href={siteConfig.telHref}
+                  >
+                    {siteConfig.phone}
+                  </a>
+                  <span className="block mt-2 text-base text-gray-500">
+                    {siteConfig.hoursLabel}
+                  </span>
+                </address>
             </div>
           </div>
         </section>
@@ -152,15 +163,22 @@ export default function ContactPage() {
                       },
                       {
                         title: "Visit Us",
-                        value: "Jaipur, Rajasthan, India",
+                        value: siteConfig.addressLine,
                         icon: "📍",
-                        link: "https://www.google.com/maps/search/?api=1&query=Trifusion%20Infotech%20Jaipur%20Rajasthan",
+                        link: siteConfig.mapsUrl,
+                        asAddress: true,
+                      },
+                      {
+                        title: "Hours",
+                        value: siteConfig.hoursLabel,
+                        icon: "🕐",
+                        link: null,
                       },
                       {
                         title: "Call",
                         value: COMPANY_PHONE_DISPLAY,
                         icon: "📞",
-                        link: `tel:${COMPANY_PHONE_DISPLAY.replace(/\s/g, "")}`,
+                        link: siteConfig.telHref,
                         event: AnalyticsEvents.CLICK_PHONE,
                       },
                       {
@@ -188,6 +206,18 @@ export default function ContactPage() {
                             {item.title}
                           </p>
                           {item.link ? (
+                            item.asAddress ? (
+                              <address className="not-italic">
+                                <a
+                                  href={item.link}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  className="text-xl font-bold text-theme-blue hover:text-theme-purple transition-colors"
+                                >
+                                  {item.value}
+                                </a>
+                              </address>
+                            ) : (
                             <a
                               href={item.link}
                               target={
@@ -201,12 +231,20 @@ export default function ContactPage() {
                                   : undefined
                               }
                               onClick={() => {
-                                if (item.event) trackEvent(item.event);
+                                if (item.event) {
+                                  trackEvent(
+                                    item.event,
+                                    item.event === AnalyticsEvents.CLICK_PHONE
+                                      ? { source: "contact" }
+                                      : undefined
+                                  );
+                                }
                               }}
                               className="text-xl font-bold text-theme-blue hover:text-theme-purple transition-colors"
                             >
                               {item.value}
                             </a>
+                            )
                           ) : (
                             <p className="text-xl font-bold text-theme-blue">
                               {item.value}

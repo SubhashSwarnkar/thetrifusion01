@@ -8,6 +8,7 @@ import Breadcrumbs from "components/Breadcrumbs";
 import BrandTrustStrip from "components/BrandTrustStrip";
 import { Fade } from "react-awesome-reveal";
 import SEO from "components/common/SEO";
+import { siteConfig } from "config/site";
 
 export default function AboutPage() {
   useEffect(() => {
@@ -79,9 +80,13 @@ export default function AboutPage() {
                 <p className="mt-6 text-base md:text-lg font-semibold text-theme-blue">
                   Trifusion Infotech Private Limited
                 </p>
-                <p className="text-sm text-gray-400 mt-1">
-                  Registered private limited company · Jaipur, Rajasthan
-                </p>
+                <address className="not-italic text-sm text-gray-500 mt-2">
+                  <span className="block">{siteConfig.addressLine}</span>
+                  <a className="block mt-1 font-semibold text-theme-purple" href={siteConfig.telHref}>
+                    {siteConfig.phone}
+                  </a>
+                  <span className="block mt-1">{siteConfig.hoursLabel}</span>
+                </address>
               </Fade>
             </div>
           </div>

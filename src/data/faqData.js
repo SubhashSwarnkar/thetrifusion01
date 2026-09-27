@@ -1,3 +1,5 @@
+import { siteConfig } from "config/site";
+
 // FAQ Data
 export const faqCategories = [
   {
@@ -38,13 +40,13 @@ export const faqs = [
     id: 1,
     category: "general",
     question: "What is TheTriFusion?",
-    answer: "TheTriFusion is the brand of Trifusion Infotech Private Limited, a registered software company based in Jaipur, Rajasthan, India. We specialize in web development, mobile app development, UI/UX design, digital marketing, and other IT services."
+    answer: `TheTriFusion is the brand of Trifusion Infotech Private Limited, a registered software company at ${siteConfig.addressLine}. Phone ${siteConfig.phone}. We specialize in web development, mobile app development, UI/UX design, digital marketing, and other IT services.`
   },
   {
     id: 2,
     category: "general",
     question: "Where is TheTriFusion located?",
-    answer: "Trifusion Infotech Private Limited is based in Jaipur, Rajasthan. We serve clients across India remotely. Bhilwara, Udaipur, Kota, and Ajmer are service areas from the Jaipur office — we do not claim storefronts in those cities."
+    answer: `Trifusion Infotech Private Limited’s office is at ${siteConfig.addressLine}. Phone ${siteConfig.phone}. Hours: ${siteConfig.hoursLabel}. We serve clients across India remotely. Bhilwara, Udaipur, Kota, and Ajmer are service areas from the Jaipur office — we do not claim storefronts in those cities.`
   },
   {
     id: "2b",

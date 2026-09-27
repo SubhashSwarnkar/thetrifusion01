@@ -17,9 +17,14 @@ export default function TermsPage() {
         <h1 className="text-4xl font-black text-theme-blue mb-6">
           Terms of Service
         </h1>
-        <p className="text-gray-500 mb-8">
-          {siteConfig.legalName}, Jaipur, Rajasthan.
-        </p>
+        <address className="text-gray-500 mb-8 not-italic">
+          {siteConfig.legalName}
+          <span className="block">{siteConfig.addressLine}</span>
+          <a className="text-theme-purple" href={siteConfig.telHref}>
+            {siteConfig.phone}
+          </a>
+          <span className="block">{siteConfig.hoursLabel}</span>
+        </address>
         <div className="space-y-6 text-gray-600 font-light leading-relaxed">
           <p>
             Website content is for information. Project work starts only after a
@@ -42,7 +47,10 @@ export default function TermsPage() {
             {siteConfig.name} for the advertiser’s product.
           </p>
           <p>
-            Contact: {siteConfig.email} · {siteConfig.phone}
+            Contact: {siteConfig.email} ·{" "}
+            <a className="text-theme-purple" href={siteConfig.telHref}>
+              {siteConfig.phone}
+            </a>
           </p>
         </div>
       </main>

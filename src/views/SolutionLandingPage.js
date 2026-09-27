@@ -518,7 +518,9 @@ export default function SolutionLandingPage({ relatedBlog = null }) {
                   stores, mobile apps and custom software for businesses in India
                   and worldwide.
                 </p>
-                <p className="mt-3 text-gray-700">
+                <address className="not-italic mt-3 text-gray-700">
+                  <span className="block">{siteConfig.addressLine}</span>
+                  <span className="block">{siteConfig.hoursLabel}</span>
                   Phone / WhatsApp:{" "}
                   <a href={telHref} className="font-semibold text-theme-purple hover:underline">
                     {siteConfig.phone}
@@ -530,7 +532,7 @@ export default function SolutionLandingPage({ relatedBlog = null }) {
                   >
                     {siteConfig.email}
                   </a>
-                </p>
+                </address>
               </div>
             </div>
           </section>
@@ -560,6 +562,21 @@ export default function SolutionLandingPage({ relatedBlog = null }) {
                 </WhatsAppButton>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="!mb-0 pb-16">
+          <div className="container mx-auto px-5 max-w-3xl">
+            <h2 className="text-xl font-bold text-theme-blue mb-3">Office</h2>
+            <address className="not-italic text-gray-600 leading-relaxed">
+              <span className="block font-semibold text-theme-blue">{siteConfig.name}</span>
+              <span className="block">{siteConfig.legalName}</span>
+              <span className="block">{siteConfig.addressLine}</span>
+              <a className="block font-semibold text-theme-purple hover:underline" href={telHref}>
+                {siteConfig.phone}
+              </a>
+              <span className="block">{siteConfig.hoursLabel}</span>
+            </address>
           </div>
         </section>
       </main>

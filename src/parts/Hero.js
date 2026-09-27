@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Button from "../elements/Button";
 import HeroVideo from "components/HeroVideo";
+import { siteConfig } from "config/site";
 
 /** Homepage hero: only the four core services visitors should remember. */
 const HERO_CORE = [
@@ -42,9 +43,9 @@ export default function Hero() {
       <div className="container mx-auto px-5">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div className="text-center lg:text-left">
-              <span className="inline-block mb-6 px-4 py-1.5 rounded-full bg-light-theme-purple/40 text-theme-purple text-xs font-bold uppercase tracking-[0.18em]">
-                Jaipur, Rajasthan
-              </span>
+              <address className="inline-block mb-6 px-4 py-1.5 rounded-full bg-light-theme-purple/40 text-theme-purple text-xs font-semibold leading-relaxed max-w-xl not-italic">
+                {siteConfig.addressLine}
+              </address>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.12] text-theme-blue mb-3">
                 Software Company in Jaipur for Websites, Apps &amp; Digital Marketing
               </h1>
