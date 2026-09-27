@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
 import Page from "views/BlogDetailPage";
 import JsonLd from "components/JsonLd";
+import LanguageSwitcher from "components/LanguageSwitcher";
 import { blogPosts, getBlogBySlug, ARCHIVE_NOINDEX_SLUGS } from "data/blogData";
+import { hreflangLanguagesForPath } from "data/i18n/routes";
 import { buildMetadata } from "lib/seoConfig";
 import { articleSchema, breadcrumbSchema, faqSchema, eventSchema } from "lib/schema";
 import { extractBlogFaqs } from "lib/blogFaqs";
@@ -31,15 +33,18 @@ export function generateMetadata({ params }) {
   // Prefer self-hosted unique PNG OG cards (edge opengraph-image). Hero still
   // uses /images/blog-og/<slug>.svg. Avoids Unsplash stock URL clustering.
   const selfHostedOg = `/blog/${post.slug}/opengraph-image`;
+  const path = `/blog/${post.slug}`;
+  const languages = hreflangLanguagesForPath(path);
   return buildMetadata({
     title: post.metaTitle || `${post.title} | TheTriFusion`,
     description: post.excerpt,
-    path: `/blog/${post.slug}`,
+    path,
     type: "article",
     image: selfHostedOg,
     publishedTime: post.date,
     authors: post.author ? [post.author] : undefined,
     noIndex: false,
+    ...(languages ? { languages } : {}),
   });
 }
 
@@ -66,6 +71,11 @@ export default function RoutePage({ params }) {
       {eventSchema(post) ? <JsonLd data={eventSchema(post)} /> : null}
       <Page
         {...getBlogArticleView(post)}
+        languageSwitcher={
+          hreflangLanguagesForPath(`/blog/${post.slug}`) ? (
+            <LanguageSwitcher path={`/blog/${post.slug}`} current="en" />
+          ) : null
+        }
         worldTimes={
           eventHasWorldTimes(post.event) ? (
             <EventWorldTimes event={post.event} />

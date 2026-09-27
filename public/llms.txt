@@ -96,3 +96,72 @@ https://thetrifusion.in/llms-full.txt
 ## Sitemap
 
 https://thetrifusion.in/sitemap.xml
+
+## Other languages
+
+Evergreen guides and the EV charging CMS page are also published in Spanish (es), Portuguese (pt), Arabic (ar), Indonesian (id), and Hindi (hi). English URLs stay unprefixed. Each translated URL is self-canonical and lists hreflang alternates for en, es, pt, ar, id, hi, and x-default (English).
+
+### Spanish (es)
+- EV charging CMS: https://thetrifusion.in/es/services/ev-charging-app-development
+- https://thetrifusion.in/es/blog/ev-charging-app-ocpi-ocpp-guide
+- https://thetrifusion.in/es/blog/ecommerce-website-development-cost-india
+- https://thetrifusion.in/es/blog/ecommerce-app-development-cost-india
+- https://thetrifusion.in/es/blog/custom-website-vs-shopify-vs-woocommerce
+- https://thetrifusion.in/es/blog/flutter-vs-react-native-2024
+- https://thetrifusion.in/es/blog/how-to-build-ecommerce-website-india-2026
+- https://thetrifusion.in/es/blog/chatgpt-1980s-ai-photo-prompt-guide
+- https://thetrifusion.in/es/blog/google-gemini-vs-chatgpt-india-business
+- https://thetrifusion.in/es/blog/ai-app-development-cost-india-2026
+- https://thetrifusion.in/es/blog/ui-ux-for-ai-products-india
+
+### Portuguese (pt)
+- EV charging CMS: https://thetrifusion.in/pt/services/ev-charging-app-development
+- https://thetrifusion.in/pt/blog/ev-charging-app-ocpi-ocpp-guide
+- https://thetrifusion.in/pt/blog/ecommerce-website-development-cost-india
+- https://thetrifusion.in/pt/blog/ecommerce-app-development-cost-india
+- https://thetrifusion.in/pt/blog/custom-website-vs-shopify-vs-woocommerce
+- https://thetrifusion.in/pt/blog/flutter-vs-react-native-2024
+- https://thetrifusion.in/pt/blog/how-to-build-ecommerce-website-india-2026
+- https://thetrifusion.in/pt/blog/chatgpt-1980s-ai-photo-prompt-guide
+- https://thetrifusion.in/pt/blog/google-gemini-vs-chatgpt-india-business
+- https://thetrifusion.in/pt/blog/ai-app-development-cost-india-2026
+- https://thetrifusion.in/pt/blog/ui-ux-for-ai-products-india
+
+### Arabic (ar)
+- EV charging CMS: https://thetrifusion.in/ar/services/ev-charging-app-development
+- https://thetrifusion.in/ar/blog/ev-charging-app-ocpi-ocpp-guide
+- https://thetrifusion.in/ar/blog/ecommerce-website-development-cost-india
+- https://thetrifusion.in/ar/blog/ecommerce-app-development-cost-india
+- https://thetrifusion.in/ar/blog/custom-website-vs-shopify-vs-woocommerce
+- https://thetrifusion.in/ar/blog/flutter-vs-react-native-2024
+- https://thetrifusion.in/ar/blog/how-to-build-ecommerce-website-india-2026
+- https://thetrifusion.in/ar/blog/chatgpt-1980s-ai-photo-prompt-guide
+- https://thetrifusion.in/ar/blog/google-gemini-vs-chatgpt-india-business
+- https://thetrifusion.in/ar/blog/ai-app-development-cost-india-2026
+- https://thetrifusion.in/ar/blog/ui-ux-for-ai-products-india
+
+### Indonesian (id)
+- EV charging CMS: https://thetrifusion.in/id/services/ev-charging-app-development
+- https://thetrifusion.in/id/blog/ev-charging-app-ocpi-ocpp-guide
+- https://thetrifusion.in/id/blog/ecommerce-website-development-cost-india
+- https://thetrifusion.in/id/blog/ecommerce-app-development-cost-india
+- https://thetrifusion.in/id/blog/custom-website-vs-shopify-vs-woocommerce
+- https://thetrifusion.in/id/blog/flutter-vs-react-native-2024
+- https://thetrifusion.in/id/blog/how-to-build-ecommerce-website-india-2026
+- https://thetrifusion.in/id/blog/chatgpt-1980s-ai-photo-prompt-guide
+- https://thetrifusion.in/id/blog/google-gemini-vs-chatgpt-india-business
+- https://thetrifusion.in/id/blog/ai-app-development-cost-india-2026
+- https://thetrifusion.in/id/blog/ui-ux-for-ai-products-india
+
+### Hindi (hi)
+- EV charging CMS: https://thetrifusion.in/hi/services/ev-charging-app-development
+- https://thetrifusion.in/hi/blog/ev-charging-app-ocpi-ocpp-guide
+- https://thetrifusion.in/hi/blog/ecommerce-website-development-cost-india
+- https://thetrifusion.in/hi/blog/ecommerce-app-development-cost-india
+- https://thetrifusion.in/hi/blog/custom-website-vs-shopify-vs-woocommerce
+- https://thetrifusion.in/hi/blog/flutter-vs-react-native-2024
+- https://thetrifusion.in/hi/blog/how-to-build-ecommerce-website-india-2026
+- https://thetrifusion.in/hi/blog/chatgpt-1980s-ai-photo-prompt-guide
+- https://thetrifusion.in/hi/blog/google-gemini-vs-chatgpt-india-business
+- https://thetrifusion.in/hi/blog/ai-app-development-cost-india-2026
+- https://thetrifusion.in/hi/blog/ui-ux-for-ai-products-india

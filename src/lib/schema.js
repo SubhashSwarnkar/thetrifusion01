@@ -237,6 +237,7 @@ export function serviceSchema({
   pricedOffers = [],
   areaServed,
   provider,
+  inLanguage,
 }) {
   const url = absoluteSiteUrl(path);
   const offerUrl = (value) => {
@@ -277,6 +278,7 @@ export function serviceSchema({
     ...(serviceType ? { serviceType, alternateName: serviceType } : {}),
     description,
     url,
+    ...(inLanguage ? { inLanguage } : {}),
     category: "Information Technology Services",
     provider: provider || { "@id": `${siteConfig.url}/#localbusiness` },
     brand: { "@id": `${siteConfig.url}/#organization` },
@@ -335,10 +337,11 @@ export function breadcrumbSchema(items) {
   };
 }
 
-export function faqSchema(faqItems = []) {
+export function faqSchema(faqItems = [], inLanguage) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    ...(inLanguage ? { inLanguage } : {}),
     mainEntity: faqItems.map((faq) => ({
       "@type": "Question",
       name: faq.question,
@@ -809,8 +812,9 @@ export function eventSchema(post) {
   };
 }
 
-export function articleSchema(post) {
-  const canonical = absoluteSiteUrl(`/blog/${post.slug}`);
+export function articleSchema(post, options = {}) {
+  const path = options.path || `/blog/${post.slug}`;
+  const canonical = absoluteSiteUrl(path);
   const imageUrl = post.imageUrl
     ? post.imageUrl.startsWith("http")
       ? post.imageUrl
@@ -821,15 +825,15 @@ export function articleSchema(post) {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "@id": `${canonical}#article`,
-    headline: post.title,
-    description: post.excerpt,
+    headline: options.headline || post.title,
+    description: options.description || post.excerpt,
     image: [imageUrl],
     datePublished: post.date,
     dateModified: post.updatedAt || post.date,
-    inLanguage: "en-IN",
+    inLanguage: options.inLanguage || "en-IN",
     author: {
       "@type": "Person",
-      name: post.author || siteConfig.name,
+      name: options.author || post.author || siteConfig.name,
       url: siteConfig.url,
     },
     publisher: {

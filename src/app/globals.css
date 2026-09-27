@@ -46,6 +46,41 @@ section {
   @apply font-semibold text-theme-blue;
 }
 
+.blog-html ol {
+  @apply mb-4 list-inside list-decimal space-y-2;
+}
+
+.blog-html code {
+  @apply rounded bg-slate-100 px-1.5 py-0.5 text-base;
+}
+
+.blog-html table {
+  @apply mb-4 w-full border-collapse text-sm;
+}
+
+.blog-html th,
+.blog-html td {
+  @apply border border-slate-200 px-3 py-2 text-start align-top;
+}
+
+.blog-html th {
+  @apply bg-slate-50 font-semibold text-theme-blue;
+}
+
+[dir="rtl"] .blog-html code {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* System fonts only. Poppins covers Latin; Arabic and Hindi use the OS face. */
+[lang="ar"] {
+  font-family: "Segoe UI", Tahoma, "Noto Naskh Arabic", "Geeza Pro", Arial, sans-serif;
+}
+
+[lang="hi"] {
+  font-family: "Nirmala UI", "Noto Sans Devanagari", Mangal, "Kohinoor Devanagari", Arial, sans-serif;
+}
+
 .event-world-times {
   position: relative;
   margin: 2rem 0;

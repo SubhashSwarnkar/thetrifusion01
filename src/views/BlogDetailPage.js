@@ -52,6 +52,7 @@ export default function BlogDetailPage({
   relatedSolutions = [],
   relatedServices = [],
   relatedPosts = [],
+  languageSwitcher = null,
   worldTimes = null,
 }) {
   const shareUrl = `${SITE_URL}/blog/${post?.slug || ""}`;
@@ -83,6 +84,7 @@ export default function BlogDetailPage({
       />
       <Header />
       <Breadcrumbs />
+      {languageSwitcher}
       <BlogAdSenseAuto />
       <div className="container mx-auto max-w-6xl px-5 py-20">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_300px]">
