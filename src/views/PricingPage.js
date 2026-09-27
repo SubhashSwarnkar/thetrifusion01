@@ -51,6 +51,7 @@ export default function PricingPage() {
       />
       <Header />
       <Breadcrumbs />
+      <main>
       
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
@@ -281,6 +282,7 @@ export default function PricingPage() {
           </div>
         </motion.div>
       </section>
+      </main>
 
       <Footer />
     </div>

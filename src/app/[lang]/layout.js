@@ -1,6 +1,11 @@
 import { notFound } from "next/navigation";
+import { SiteBody, SiteHead } from "components/SiteDocument";
 import { getLocale } from "data/i18n";
 import { LOCALE_CODES } from "data/i18n/routes";
+import { rootMetadata } from "lib/rootMetadata";
+import "../globals.css";
+
+export const metadata = rootMetadata;
 
 export function generateStaticParams() {
   return LOCALE_CODES.map((lang) => ({ lang }));
@@ -9,28 +14,21 @@ export function generateStaticParams() {
 export const dynamicParams = false;
 
 /**
- * The root layout is the only place the App Router allows <html> and <body>,
- * and that shell is shared by every route, so <html lang> stays en-IN.
- * This segment sets lang and dir on the content wrapper (the no-JS source of
- * truth, including dir="rtl" for Arabic). The inline script updates
- * document.documentElement so the html element matches after parse. It is not
- * a client component and adds no JS bundle.
+ * Root layout for /es, /pt, /ar, /id, and /hi.
+ * The English site uses src/app/(en)/layout.js so each tree can set <html lang>.
  */
 export default function LocaleLayout({ children, params }) {
   const locale = getLocale(params.lang);
   if (!locale) notFound();
 
-  const htmlLang = locale.htmlLang;
-  const dir = locale.dir;
-
   return (
-    <div lang={htmlLang} dir={dir}>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `document.documentElement.lang=${JSON.stringify(htmlLang)};document.documentElement.dir=${JSON.stringify(dir)};`,
-        }}
-      />
-      {children}
-    </div>
+    <html lang={locale.htmlLang} dir={locale.dir}>
+      <head>
+        <SiteHead />
+      </head>
+      <body className="antialiased">
+        <SiteBody>{children}</SiteBody>
+      </body>
+    </html>
   );
 }

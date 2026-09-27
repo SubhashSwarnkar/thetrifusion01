@@ -19,6 +19,7 @@ export default function ThankYouPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
+      <main>
       <section className="relative pt-32 pb-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-light-theme-purple via-white to-cyan-50 -z-10" />
         <div className="container mx-auto px-5 max-w-2xl text-center">
@@ -55,6 +56,7 @@ export default function ThankYouPage() {
           </Link>
         </div>
       </section>
+      </main>
       <Footer />
     </div>
   );

@@ -73,6 +73,7 @@ export default function AdsLandingPage({ landing }) {
   return (
     <div className="min-h-screen bg-white pb-24 lg:pb-0">
       <AdsHeader phoneHref={phoneHref} whatsappMessage={landing.whatsappMessage} />
+      <main>
 
       <section className="relative pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-light-theme-purple via-white to-cyan-50 -z-10" />
@@ -372,6 +373,7 @@ export default function AdsLandingPage({ landing }) {
           Form
         </a>
       </div>
+      </main>
 
       <Footer hideNewsletter />
     </div>

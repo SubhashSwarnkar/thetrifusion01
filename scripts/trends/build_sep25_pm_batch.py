@@ -4,9 +4,12 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "scripts"))
+from blog_links import cap_service_anchors, canonicalize_hrefs
 OG_DIR = ROOT / "public/images/blog-og"
 OUT = ROOT / "src/data/dailyOrganicTrends20260925pm.js"
 
@@ -57,9 +60,9 @@ PAD = """
 
 def ensure_length(html: str, topic: str) -> str:
     bank = PAD.replace("this page", f"this page on <strong>{topic}</strong>", 1)
-    out = html
+    out = canonicalize_hrefs(html)
     while words(out) < 1400:
-        out += "\n" + bank
+        out += "\n" + cap_service_anchors(out, bank)
         if words(out) > 3200:
             break
     return out
@@ -95,7 +98,7 @@ def post(
         "readTime": read,
         "author": "TheTriFusion Team",
         "featured": True,
-        "relatedServiceSlugs": related or ["digital-marketing", "web-development"],
+        "relatedServiceSlugs": related or ["digital-marketing", "website-development"],
     }
 
 
@@ -112,7 +115,7 @@ POSTS.append(
         """
 <p>On Friday, 25 September 2026, Google Trends stacks in India, the United Kingdom, the United States and Russia all showed the same football cluster: <strong>Australia vs Brazil</strong>, often with the Russian-script twin <em>Австралия – Бразилия</em>. This is not a World Cup knockout. It is the first of two post-World Cup international friendlies on Australian soil — Townsville tonight, Brisbane on Tuesday 29 September — and the query spike is exactly what you expect when a five-time world champion plays a home series after a disappointing tournament exit.</p>
 <p><em>Verification note:</em> ABC News (25 September 2026) lists kick-off at <strong>8:00 p.m. AEST</strong> at Queensland Country Bank Stadium, Townsville, with the rematch at Lang Park, Brisbane, also at 8:00 p.m. AEST. Townsville’s free-to-air path in Australia is Network 10 plus Paramount+; Brisbane is Paramount+ only per the same ABC guide. ESPN and The Athletic list the fixture as a men’s international friendly on 25 September 2026. Live scoreboards move minute by minute — this page is not a ticker.</p>
-<p>Match hubs that keep IST conversion honest are the same pattern we ship for sports and media clients through <a href="/services/web-development">web development</a> and <a href="/services/digital-marketing">digital marketing</a>. No odds on this page.</p>
+<p>Match hubs that keep IST conversion honest are the same pattern we ship for sports and media clients through <a href="/services/website-development">web development</a> and <a href="/services/digital-marketing">digital marketing</a>. No odds on this page.</p>
 <h2>Match snapshot (as of match day)</h2>
 <ul>
 <li><strong>Competition:</strong> Men’s international friendly (Queensland Series)</li>
@@ -346,7 +349,7 @@ POSTS.append(
         """
 <p><strong>Mushtaq Khan</strong> climbed India’s Google Trends board in the 20K+ band on 24–25 September 2026 as entertainment desks circulated tributes and funeral notices for the veteran film and television actor. This page exists so searchers get a verification habit, not a rumour mill.</p>
 <p><em>Verification note:</em> Treat named entertainment desks and family statements as primary. Do not amplify unverified medical detail, graphic imagery, or scam “donation UPI” forwards that often follow celebrity death spikes. Ages, dates, and causes of death should be copied only from outlets that cite the family or hospital — if two reputable desks disagree, say so.</p>
-<p>TheTriFusion is a software company in Jaipur. We are not an entertainment wire. Soft product CTA only: calm public-information pages are what we build via <a href="/services/web-development">web development</a>.</p>
+<p>TheTriFusion is a software company in Jaipur. We are not an entertainment wire. Soft product CTA only: calm public-information pages are what we build via <a href="/services/website-development">web development</a>.</p>
 <h2>How to read a celebrity Trends spike</h2>
 <ol>
 <li>Open two named outlets before you share a WhatsApp card.</li>

@@ -10,7 +10,8 @@ import Breadcrumbs from "components/Breadcrumbs";
 import BrandTrustStrip from "components/BrandTrustStrip";
 import ServiceIcon from "components/ServiceIcon";
 import { getServiceBySlug, services } from "data/servicesData";
-import { getSolutionsForService } from "data/seoLandingPages";
+import { getSeoLandingBySlug, getSolutionsForService } from "data/seoLandingPages";
+import { canonicalSolutionHref, dedupeCanonicalSolutions } from "lib/internalLinks";
 import { accentAt, accentForSlug } from "lib/themeAccents";
 import NotFoundPage from "./NotFoundPage";
 import SEO from "components/common/SEO";
@@ -229,7 +230,10 @@ export default function ServiceDetailPage({
 }) {
   const { slug } = useParams();
   const service = getServiceBySlug(slug);
-  const relatedSolutions = getSolutionsForService(slug || "");
+  const relatedSolutions = dedupeCanonicalSolutions(
+    getSolutionsForService(slug || ""),
+    getSeoLandingBySlug
+  );
   const otherServices = services.filter((item) => item.slug !== slug).slice(0, 6);
   const primary = accentForSlug(service?.slug);
   const [openFaqs, setOpenFaqs] = useState([0]);
@@ -257,6 +261,7 @@ export default function ServiceDetailPage({
       <Header />
       <Breadcrumbs />
       {languageSwitcher}
+      <main>
 
       {/* Hero Section */}
       <section id="overview" className="relative pt-8 pb-14 overflow-hidden">
@@ -838,7 +843,7 @@ export default function ServiceDetailPage({
               return (
                 <Link
                   key={solution.slug}
-                  href={`/solutions/${solution.slug}`}
+                  href={canonicalSolutionHref(solution.slug)}
                   className={`p-6 rounded-2xl border hover:shadow-lg transition-all group ${accent.card}`}
                 >
                   <p className={`text-xs font-bold uppercase tracking-widest mb-2 ${accent.text}`}>
@@ -922,6 +927,7 @@ export default function ServiceDetailPage({
           </div>
         </div>
       </section>
+      </main>
 
       <Footer />
     </div>

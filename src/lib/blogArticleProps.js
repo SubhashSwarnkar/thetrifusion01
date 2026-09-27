@@ -6,6 +6,23 @@ import {
 import { getSeoLandingBySlug } from "data/seoLandingPages";
 import { getServiceBySlug } from "data/servicesData";
 
+/** Service URLs already anchored in the article body. */
+function serviceHrefsInHtml(html) {
+  const found = new Set();
+  const source = typeof html === "string" ? html : "";
+  const re = /href="(\/services\/[^"#?]+)/g;
+  let match;
+  while ((match = re.exec(source))) {
+    const href = match[1].replace(/\/$/, "");
+    found.add(
+      href === "/services/web-development"
+        ? "/services/website-development"
+        : href
+    );
+  }
+  return found;
+}
+
 const BLOG_SOLUTION_MAP = {
   webdev: [
     "web-development-company-india",
@@ -60,15 +77,21 @@ export function getBlogArticleView(post) {
       outcomeLine: solution.outcomeLine,
     }));
 
-  const relatedServices = (post.relatedServiceSlugs || [])
-    .map((serviceSlug) => getServiceBySlug(serviceSlug))
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((service) => ({
+  const linkedServiceHrefs = serviceHrefsInHtml(post.content);
+  const relatedServices = [];
+  for (const serviceSlug of post.relatedServiceSlugs || []) {
+    const service = getServiceBySlug(serviceSlug);
+    if (!service) continue;
+    const href = `/services/${service.slug}`;
+    if (linkedServiceHrefs.has(href)) continue;
+    linkedServiceHrefs.add(href);
+    relatedServices.push({
       slug: service.slug,
       title: service.title,
       shortDescription: service.shortDescription,
-    }));
+    });
+    if (relatedServices.length === 2) break;
+  }
 
   const relatedPosts = getPublishedBlogPosts()
     .filter(

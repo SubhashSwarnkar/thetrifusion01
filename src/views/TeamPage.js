@@ -24,9 +24,11 @@ export default class TeamPage extends Component {
       <>
         <Header />
         <Breadcrumbs />
+        <main>
         <HeroTeam />
         <BrandTrustStrip />
         <AllTeam data={TeamMembers} />
+        </main>
         <Footer />
       </>
     );

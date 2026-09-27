@@ -54,6 +54,16 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/services/web-development",
+        destination: "/services/website-development",
+        permanent: true,
+      },
+      {
+        source: "/discuss",
+        destination: "/discuss-project",
+        permanent: true,
+      },
+      {
         source: "/services/ecommerce-development",
         destination: "/ecommerce-development",
         permanent: true,

@@ -48,7 +48,7 @@ POSTS.append({
 </ol>
 <h2>Related pages</h2>
 <p>Tennis searchers on this site also land on <a href="/blog/andre-agassi-why-trending-explained">Andre Agassi’s trending explainer</a>, which is a career page, not a 2026 draw. Cricket in the same fortnight includes the <a href="/blog/india-vs-west-indies-t20i-series-october-2026-guide">India vs West Indies T20Is</a> and the <a href="/blog/india-vs-west-indies-1st-t20i-lucknow-6-oct-2026">Lucknow opener</a>. The <a href="/blog/f1-united-states-grand-prix-2026-austin-guide">US Grand Prix guide</a> is later in October. The Paris indoor Masters is a different city and a later start, covered separately so the two Masters are not one URL.</p>
-<p>Tournament hubs need a date range in schema and a sentence that says session times are unpublished. That pattern is part of how we build media sites in <a href="/services/web-development">web development</a> and <a href="/services/digital-marketing">digital marketing</a>.</p>
+<p>Tournament hubs need a date range in schema and a sentence that says session times are unpublished. That pattern is part of how we build media sites in <a href="/services/website-development">web development</a> and <a href="/services/digital-marketing">digital marketing</a>.</p>
 <h2>Checklist</h2>
 <ul>
 <li>Block 7–18 October, Shanghai, not a single kickoff.</li>
@@ -121,7 +121,7 @@ POSTS.append({
 </ol>
 <h2>Other pages in the same season</h2>
 <p>Shanghai is the outdoor Masters earlier in the month and should not share this URL. Agassi’s <a href="/blog/andre-agassi-why-trending-explained">career explainer</a> is why tennis sometimes trends for non-tournament reasons. The <a href="/blog/f1-united-states-grand-prix-2026-austin-guide">Austin Grand Prix</a> overlaps the opening days of this fortnight and is motorsport. India’s home T20Is are done by 17 October; the <a href="/blog/india-vs-west-indies-t20i-series-october-2026-guide">series schedule</a> is the cricket page if you still need those dates. The <a href="/blog/england-vs-sri-lanka-why-trending-explained">England vs Sri Lanka note</a> is a different sport entirely.</p>
-<p>Two tournaments, two canonicals, two startDates. That is the structure we use in <a href="/services/web-development">web development</a> for publishers and in <a href="/services/digital-marketing">digital marketing</a> so the pages do not compete with each other.</p>
+<p>Two tournaments, two canonicals, two startDates. That is the structure we use in <a href="/services/website-development">web development</a> for publishers and in <a href="/services/digital-marketing">digital marketing</a> so the pages do not compete with each other.</p>
 <h2>FAQ</h2>
 <h3>When does the Paris Masters start in 2026?</h3>
 <p>Saturday, 31 October 2026. It runs through Sunday, 8 November.</p>
@@ -187,7 +187,7 @@ POSTS.append({
 </ol>
 <h2>Nearby reading</h2>
 <p><a href="/blog/andre-agassi-why-trending-explained">Andre Agassi’s explainer</a> is the tennis history page already on this site. The Paris Masters is the men’s indoor event that overlaps the start of this week and needs its own guide. The <a href="/blog/f1-united-states-grand-prix-2026-austin-guide">US Grand Prix</a> is October, in Texas, not a tennis event. The <a href="/blog/lynx-vs-fever-wnba-why-trending">Lynx vs Fever note</a> is women’s sport in another league. The <a href="/blog/india-vs-west-indies-3rd-odi-chandigarh-3-oct-2026">New Chandigarh ODI</a> is cricket. Label the sport in the first sentence of anything you cross-post.</p>
-<p>Season finales are high-intent search pages. They deserve a real canonical and a refusal to invent the field. That is the editorial side of <a href="/services/digital-marketing">digital marketing</a> and the template side of <a href="/services/web-development">web development</a>.</p>
+<p>Season finales are high-intent search pages. They deserve a real canonical and a refusal to invent the field. That is the editorial side of <a href="/services/digital-marketing">digital marketing</a> and the template side of <a href="/services/website-development">web development</a>.</p>
 <h2>FAQ</h2>
 <h3>When are the 2026 WTA Finals?</h3>
 <p>8–15 November 2026, in Indian Wells, according to the WTA.</p>
@@ -254,7 +254,7 @@ POSTS.append({
 <p>No odds, no player props, no fantasy prices.</p>
 <h2>Related sport pages</h2>
 <p>American football searchers on this site have the <a href="/blog/colts-vs-chiefs-preview-what-fans-search">Colts vs Chiefs preview</a> and the <a href="/blog/caleb-williams-nfl-trending-update">Caleb Williams update</a>. Women’s basketball has the <a href="/blog/lynx-vs-fever-wnba-why-trending">Lynx vs Fever note</a>. Cricket the same week is still the <a href="/blog/india-vs-west-indies-t20i-series-october-2026-guide">West Indies T20I series</a>. None of those tips at 3:00 PM ET on 20 October.</p>
-<p>A tripleheader needs three records in a CMS or one very clear “first tip” label. We implement that in <a href="/services/web-development">web development</a> and keep the pages distinct in <a href="/services/digital-marketing">digital marketing</a>.</p>
+<p>A tripleheader needs three records in a CMS or one very clear “first tip” label. We implement that in <a href="/services/website-development">web development</a> and keep the pages distinct in <a href="/services/digital-marketing">digital marketing</a>.</p>
 <h2>FAQ</h2>
 <h3>What time is the NBA season opener in IST?</h3>
 <p>12:30 AM on Wednesday, 21 October 2026, for Celtics at Pistons. That is 3:00 PM Eastern on Tuesday 20 October.</p>
@@ -320,7 +320,7 @@ POSTS.append({
 <p>No point spreads, no props, no “lock”. TheTriFusion’s sports pages stay on the safe side of advertising rules by leaving gambling out.</p>
 <h2>Other sport pages from the same month</h2>
 <p>The <a href="/blog/colts-vs-chiefs-preview-what-fans-search">Colts vs Chiefs search piece</a> and the <a href="/blog/caleb-williams-nfl-trending-update">Caleb Williams update</a> are the NFL pages already on the site. They are not this kickoff. The NBA opener is two nights later and has its own clock. Cricket readers should use the <a href="/blog/india-vs-west-indies-t20i-series-october-2026-guide">West Indies T20I schedule</a> and the <a href="/blog/f1-united-states-grand-prix-2026-austin-guide">Austin F1 guide</a> for the other big October windows. Mixing an 8:20 PM ET kickoff with a 7:00 PM IST cricket start is a category error.</p>
-<p>If you publish a weekly TV guide, store network, kickoff zone and IST as separate fields. That is standard in our <a href="/services/web-development">web development</a> builds and in the <a href="/services/digital-marketing">digital marketing</a> pages that sit on top.</p>
+<p>If you publish a weekly TV guide, store network, kickoff zone and IST as separate fields. That is standard in our <a href="/services/website-development">web development</a> builds and in the <a href="/services/digital-marketing">digital marketing</a> pages that sit on top.</p>
 <h2>Monday morning checklist</h2>
 <ul>
 <li>Alarm: 5:40 AM IST, Monday 19 October.</li>
@@ -393,7 +393,7 @@ POSTS.append({
 <p>No odds. A pool match is not a gambling product, and injury detail does not need to be graphic to explain a card.</p>
 <h2>Do not confuse it with Asian Games cricket</h2>
 <p>The same Games have a cricket competition. The <a href="/blog/afghanistan-vs-japan-asian-games-cricket-explained">Afghanistan vs Japan cricket explainer</a> is about that sport, with morning starts in Japan that convert differently from a 7:00 PM local hockey match. The <a href="/blog/asian-games-men-why-trending-explained">Asian Games men’s trending page</a> is a broader explainer. India’s cricket quarter-final window is also on 28 September on the official cricket schedule, at a different time and a different venue. The <a href="/blog/india-vs-japan-why-trending-explained">India vs Japan trending note</a> may be about another fixture entirely. Read the sport in the headline before you reuse a sentence. The <a href="/blog/india-vs-west-indies-1st-t20i-lucknow-6-oct-2026">Lucknow T20I</a> is the following week and is cricket at home.</p>
-<p>Multi-sport Games are where sloppy hubs do the most damage. Separate schema, separate start times, separate stadiums. That is everyday <a href="/services/web-development">web development</a> for a publisher, and it is the information architecture our <a href="/services/digital-marketing">digital marketing</a> work expects.</p>
+<p>Multi-sport Games are where sloppy hubs do the most damage. Separate schema, separate start times, separate stadiums. That is everyday <a href="/services/website-development">web development</a> for a publisher, and it is the information architecture our <a href="/services/digital-marketing">digital marketing</a> work expects.</p>
 <h2>Monday checklist</h2>
 <ul>
 <li>3:30 PM IST, not 7:30 PM. The 7:00 PM figure is Japan local.</li>
@@ -470,7 +470,7 @@ POSTS.append({
 </ol>
 <p>No betting market belongs next to a marathon start list. Entry fees and charity minimums are on the official site and are not copied here, because they are price figures we have not re-verified from a fee table.</p>
 <h2>Related reading and the build note</h2>
-<p>Running is not the only sport that trends through a single athlete. The <a href="/blog/andre-agassi-why-trending-explained">Andre Agassi page</a> and the <a href="/blog/caleb-williams-nfl-trending-update">Caleb Williams page</a> show person-led search. A marathon page should stay on the start clock unless a named elite field has actually been announced. For publishers, the useful product is a wave table with a timezone toggle. We build those in <a href="/services/web-development">web development</a> and help them get found through <a href="/services/digital-marketing">digital marketing</a>. An event that also sells charity entries sometimes needs a simple storefront; that is <a href="/ecommerce-development">ecommerce development</a>, kept separate from the results page.</p>
+<p>Running is not the only sport that trends through a single athlete. The <a href="/blog/andre-agassi-why-trending-explained">Andre Agassi page</a> and the <a href="/blog/caleb-williams-nfl-trending-update">Caleb Williams page</a> show person-led search. A marathon page should stay on the start clock unless a named elite field has actually been announced. For publishers, the useful product is a wave table with a timezone toggle. We build those in <a href="/services/website-development">web development</a> and help them get found through <a href="/services/digital-marketing">digital marketing</a>. An event that also sells charity entries sometimes needs a simple storefront; that is <a href="/ecommerce-development">ecommerce development</a>, kept separate from the results page.</p>
 <h2>FAQ</h2>
 <h3>What date is the 2026 Chicago Marathon?</h3>
 <p>Sunday, 11 October 2026, on the organiser’s future-dates list and in NBC Chicago’s guide.</p>

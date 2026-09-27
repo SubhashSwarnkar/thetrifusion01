@@ -67,7 +67,7 @@ export const servicePageSeo = {
   "website-development": {
     metaTitle: "Website Development Company in Jaipur | React & Next.js",
     metaDescription:
-      "TheTriFusion in Jaipur builds custom websites and web apps — React/Next.js, SEO basics, hosting after launch. SME sites from ~₹50,000. Request a scoped quote.",
+      "TheTriFusion in Jaipur builds custom websites and web apps — React/Next.js, SEO basics, hosting after launch. SME sites from ₹15,000. Request a scoped quote.",
     keywords:
       "website development company Jaipur, web development Jaipur, React Next.js website Rajasthan, custom website India, business website Jaipur",
     bannerTitle: "Custom Website Development Company in Jaipur, India",
@@ -100,7 +100,7 @@ export const servicePageSeo = {
       {
         question: "What does a typical Jaipur website cost?",
         answer:
-          "SME sites often start around ₹50,000 and rise with ecommerce, payments, and admin. See Pricing for starting ranges and the ecommerce cost article for catalogs.",
+          "SME sites start from ₹15,000 and rise with ecommerce, payments, and admin. See Pricing for starting ranges and the ecommerce cost article for catalogs.",
       },
       {
         question: "Do you only design, or also host and SEO?",

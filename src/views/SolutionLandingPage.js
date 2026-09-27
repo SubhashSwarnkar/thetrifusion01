@@ -10,6 +10,7 @@ import BrandTrustStrip from "components/BrandTrustStrip";
 import WhatsAppButton from "components/WhatsAppButton";
 import { getSeoLandingBySlug } from "data/seoLandingPages";
 import { getServiceBySlug } from "data/servicesData";
+import { canonicalSolutionHref, dedupeCanonicalSolutions } from "lib/internalLinks";
 import { Portfolios } from "json/landingPageData";
 import { trackEvent, AnalyticsEvents } from "utils/analytics";
 import NotFoundPage from "./NotFoundPage";
@@ -31,9 +32,12 @@ export default function SolutionLandingPage({ relatedBlog = null }) {
     .map((serviceSlug) => getServiceBySlug(serviceSlug))
     .filter(Boolean);
 
-  const relatedSolutions = (page.relatedSolutionSlugs || [])
-    .map((s) => getSeoLandingBySlug(s))
-    .filter(Boolean);
+  const relatedSolutions = dedupeCanonicalSolutions(
+    (page.relatedSolutionSlugs || [])
+      .map((s) => getSeoLandingBySlug(s))
+      .filter(Boolean),
+    getSeoLandingBySlug
+  ).filter((solution) => solution.slug !== page.slug);
 
   const caseStudies = (page.relatedPortfolioIds || [])
     .map((id) => Portfolios.find((item) => item.id === id))
@@ -329,7 +333,7 @@ export default function SolutionLandingPage({ relatedBlog = null }) {
                     {relatedSolutions.map((solution) => (
                       <li key={solution.slug}>
                         <Link
-                          href={`/solutions/${solution.slug}`}
+                          href={canonicalSolutionHref(solution.slug)}
                           className="text-theme-purple font-semibold hover:underline underline-offset-2"
                         >
                           {solution.h1}

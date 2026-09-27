@@ -59,6 +59,7 @@ export default function BlogPage({
       />
       <Header />
       <Breadcrumbs />
+      <main>
       <section className="container mx-auto px-5 py-20">
           <h1 className="text-4xl sm:text-5xl text-theme-blue text-center font-bold mb-3">
             Insights from a Jaipur software company
@@ -270,6 +271,7 @@ export default function BlogPage({
             </div>
                   )}
       </section>
+      </main>
       <Footer />
     </>
   );

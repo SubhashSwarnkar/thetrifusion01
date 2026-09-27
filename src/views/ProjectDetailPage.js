@@ -33,7 +33,9 @@ const ProjectDetailPage = () => {
         />
       )}
       <Header />
+      <main>
       <PortfolioDetail data={detailData.length === 1 ? [detailData[0]] : null} />
+      </main>
       <Footer />
     </>
   );

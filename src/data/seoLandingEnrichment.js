@@ -284,9 +284,9 @@ const RELATED_BY_SLUG = {
   },
   "ecommerce-website-development": {
     relatedSolutionSlugs: [
-      "online-store-development",
       "digital-marketing-agency",
       "ui-ux-design-agency",
+      "web-development-company-india",
     ],
     relatedBlogSlug: "custom-website-vs-shopify-vs-woocommerce",
   },
