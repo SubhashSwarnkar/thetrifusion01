@@ -8,10 +8,10 @@ import {
 export const landingEnrichment = {
   "best-software-company-india": {
     title:
-      "How to Choose a Software Company in India | Buyer Guide | TheTriFusion",
+      "How to Choose a Software Company in India | TheTriFusion",
     h1: "How to Choose a Software Company in India",
     metaDescription:
-      "A practical buyer guide to evaluating software companies in India: portfolio, process, security, communication, post-launch support — plus how TheTriFusion works with startups and SMEs.",
+      "A buyer guide to software companies in India: portfolio, process, ownership, and support. See how TheTriFusion in Jaipur scopes work for startups and SMEs.",
     primaryKeyword: "software company in India",
     intro:
       "Searching for the “best software company in India” usually means you need a reliable partner — not a slogan. Use this guide to evaluate agencies on proof, process, and fit, then see how TheTriFusion approaches delivery for startups and growing businesses.",

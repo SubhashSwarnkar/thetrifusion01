@@ -80,7 +80,7 @@ export default function Footer({ hideNewsletter = false }) {
                   </li>
                   <li>
                     <Link
-                      href="/web-development"
+                      href="/services/website-development"
                       className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block font-light"
                     >
                       Web Development
@@ -88,7 +88,7 @@ export default function Footer({ hideNewsletter = false }) {
                   </li>
                   <li>
                     <Link
-                      href="/android-app-development"
+                      href="/services/android-app-development"
                       className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block font-light"
                     >
                       Android Apps
@@ -96,7 +96,7 @@ export default function Footer({ hideNewsletter = false }) {
                   </li>
                   <li>
                     <Link
-                      href="/ios-app-development"
+                      href="/services/ios-app-development"
                       className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block font-light"
                     >
                       iOS Apps

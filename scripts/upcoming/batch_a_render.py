@@ -131,7 +131,7 @@ def render_post(p: dict) -> str:
       <p>{p["opener"]}</p>
       <p><em>Verification note (TheTriFusion editorial):</em> {p["verify"]}</p>
 {middle}{more}
-      <p>Related reading already on TheTriFusion: {linkify(live)}. {p.get("sib_sentence", "")}{cap_service_anchors(middle + more, f' For a calendar product or club-site build, see <a href="/services/digital-marketing">digital marketing</a>, <a href="/services/website-development">web development</a>, and <a href="{p.get("hub", "/ecommerce-development")}">{p.get("hub_label", "ecommerce development")}</a>.')}</p>
+      <p>Related reading already on TheTriFusion: {linkify(live)}. {p.get("sib_sentence", "")}{cap_service_anchors(middle + more, f' For a calendar product or club-site build, see <a href="/services/digital-marketing">digital marketing</a>, <a href="/services/website-development">web development</a>, and <a href="{p.get("hub", "/solutions/ecommerce-website-development")}">{p.get("hub_label", "ecommerce development")}</a>.')}</p>
       <h2>FAQ</h2>
 {faqs}
       <p>{p["close"]}</p>

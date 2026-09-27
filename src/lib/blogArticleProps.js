@@ -65,13 +65,20 @@ export function toBlogCard(post) {
 
 /** Ecommerce-topic posts always surface the primary ecommerce solution page. */
 const ECOMMERCE_TOPIC_RE =
-  /ecommerce|e-commerce|online-store|shopify|woocommerce|\bd2c\b|ondc|multi-vendor|marketplace|quick-commerce/i;
+  /ecommerce|e-commerce|online-store|shopify|woocommerce|\bd2c\b|ondc|store|multi-vendor|marketplace|quick-commerce/i;
+const EV_TOPIC_RE = /\bev\b|charging|ocpp|ocpi|electric[- ]vehicles?/i;
 const PRIMARY_ECOMMERCE_SOLUTION = "ecommerce-website-development";
 
 export function isEcommerceTopicPost(post) {
   if (!post) return false;
   if (ECOMMERCE_TOPIC_RE.test(post.slug || "")) return true;
   return (post.tags || []).some((tag) => ECOMMERCE_TOPIC_RE.test(String(tag)));
+}
+
+export function isEvTopicPost(post) {
+  if (!post) return false;
+  const tags = (post.tags || []).join(" ");
+  return EV_TOPIC_RE.test(`${post.slug || ""} ${post.title || ""} ${tags}`);
 }
 
 export function getBlogArticleView(post) {
@@ -94,7 +101,23 @@ export function getBlogArticleView(post) {
       slug: solution.slug,
       h1: solution.h1,
       outcomeLine: solution.outcomeLine,
+      href: `/solutions/${solution.slug}`,
     }));
+
+  if (isEvTopicPost(post)) {
+    const evService = getServiceBySlug("ev-charging-app-development");
+    if (
+      evService &&
+      !relatedSolutions.some((item) => item.href === "/services/ev-charging-app-development")
+    ) {
+      relatedSolutions.push({
+        slug: evService.slug,
+        h1: evService.title,
+        outcomeLine: evService.shortDescription,
+        href: "/services/ev-charging-app-development",
+      });
+    }
+  }
 
   const linkedServiceHrefs = serviceHrefsInHtml(post.content);
   const relatedServices = [];

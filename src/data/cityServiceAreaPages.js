@@ -6,11 +6,11 @@
 
 const bhilwara = {
   slug: "website-development-company-bhilwara",
-  title: "Website Development for Bhilwara Businesses | TheTriFusion Jaipur",
+  title: "Website Development in Bhilwara | TheTriFusion",
   h1: "Website Development for Bhilwara — From Our Jaipur Office",
   navLabel: "Bhilwara websites (from Jaipur office)",
   metaDescription:
-    "Website development for Bhilwara textile, trading, and mill businesses from TheTriFusion in Jaipur. Remote delivery, GST invoices, Hindi/English, no Bhilwara storefront.",
+    "Website development for Bhilwara textile and trading firms from TheTriFusion in Jaipur. Remote delivery, GST invoices, and no Bhilwara storefront.",
   primaryKeyword: "website development company in Bhilwara",
   secondaryKeywords: [
     "web development Bhilwara from Jaipur",
@@ -132,7 +132,7 @@ const bhilwara = {
 
 const udaipur = {
   slug: "website-development-company-udaipur",
-  title: "Website Development for Udaipur Businesses | TheTriFusion Jaipur",
+  title: "Website Development in Udaipur | TheTriFusion",
   h1: "Website Development for Udaipur — From Our Jaipur Office",
   navLabel: "Udaipur websites (from Jaipur office)",
   metaDescription:
@@ -257,7 +257,7 @@ const udaipur = {
 
 const kota = {
   slug: "website-development-company-kota",
-  title: "Website Development for Kota Businesses | TheTriFusion Jaipur",
+  title: "Website Development in Kota | TheTriFusion",
   h1: "Website Development for Kota — From Our Jaipur Office",
   navLabel: "Kota websites (from Jaipur office)",
   metaDescription:
@@ -387,7 +387,7 @@ const kota = {
 
 const ajmer = {
   slug: "website-development-company-ajmer",
-  title: "Website Development for Ajmer Businesses | TheTriFusion Jaipur",
+  title: "Website Development in Ajmer | TheTriFusion",
   h1: "Website Development for Ajmer — From Our Jaipur Office",
   navLabel: "Ajmer websites (from Jaipur office)",
   metaDescription:

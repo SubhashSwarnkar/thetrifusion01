@@ -65,7 +65,7 @@ const nextConfig = {
       },
       {
         source: "/services/ecommerce-development",
-        destination: "/ecommerce-development",
+        destination: "/solutions/ecommerce-website-development",
         permanent: true,
       },
       // Retired 2024 archive posts → /blog (drop soft-200 noindex URLs)

@@ -172,7 +172,7 @@ export const servicePageSeo = {
     ],
   },
   "ui-ux-design": {
-    metaTitle: "UI/UX Design Agency in Jaipur | Product Design | TheTriFusion",
+    metaTitle: "UI/UX Design Agency in Jaipur | TheTriFusion",
     metaDescription:
       "TheTriFusion in Jaipur designs product UI/UX for Indian websites and apps — flows, design systems, and handoff to build. Book a scoped design review today.",
     keywords:
@@ -279,10 +279,9 @@ export const servicePageSeo = {
     ],
   },
   "digital-marketing": {
-    metaTitle:
-      "Digital Marketing & Performance Marketing Agency in Jaipur India | High ROAS Ads & SEO",
+    metaTitle: "Digital Marketing Agency in Jaipur | TheTriFusion",
     metaDescription:
-      "Top digital marketing & performance marketing agency in Jaipur India. We scale ROI with high-converting Google Ads, Meta Ads, Technical SEO, CRO & B2B lead funnels.",
+      "Digital marketing agency in Jaipur for Google Ads, Meta Ads, technical SEO, and landing-page CRO. TheTriFusion plans campaigns for Indian brands.",
     keywords:
       "digital marketing agency Jaipur, performance marketing company India, Google Ads agency Jaipur, Meta ads agency India, SEO company Jaipur, PPC management India, B2B lead generation agency, ecommerce performance marketing, conversion rate optimization Jaipur, social media marketing Rajasthan",
     bannerTitle:
@@ -331,7 +330,7 @@ export const servicePageSeo = {
     ],
   },
   branding: {
-    metaTitle: "Brand Identity Design in Jaipur | Logo & Voice | TheTriFusion",
+    metaTitle: "Brand Identity Design in Jaipur | TheTriFusion",
     metaDescription:
       "TheTriFusion in Jaipur builds brand identity for Indian companies — logo, voice, and a site that matches. Get a scoped branding + web package outline.",
     keywords:
@@ -651,8 +650,7 @@ export const servicePageSeo = {
       "Hi TriFusion, I want an MLM CRM / unilevel software quote from the Jaipur team.",
   },
   "fintech-app-development": {
-    metaTitle:
-      "Fintech App Development Company in Jaipur | BBPS, AEPS, DMT & XDMT Software",
+    metaTitle: "Fintech App Development in Jaipur | TheTriFusion",
     metaDescription:
       "TheTriFusion in Jaipur sells BBPS, AEPS, DMT and XDMT software — retailer apps, distributor panels, UPI, KYC and banking platforms. Get a scoped quote.",
     keywords:
@@ -721,9 +719,9 @@ export const servicePageSeo = {
       "Hi TriFusion, I want an iOS / App Store app quote from the Jaipur team.",
   },
   "android-app-development": {
-    metaTitle: "Android App Development Company in Jaipur | Kotlin & Play Store",
+    metaTitle: "Android App Development in Jaipur | TheTriFusion",
     metaDescription:
-      "Android app development company in Jaipur — TheTriFusion builds Kotlin/React Native apps with Play Store listing. Typical MVP 8–12 weeks. Scoped quote from our Jaipur team.",
+      "Android app development in Jaipur. TheTriFusion builds Kotlin and React Native apps with Play Store listing. Typical MVP is 8–12 weeks.",
     keywords:
       "Android app development company Jaipur, android app development company in jaipur, android app development services jaipur, android application development in jaipur, Kotlin app development India, Play Store app Jaipur, hire Android developers Rajasthan",
     locationLine:

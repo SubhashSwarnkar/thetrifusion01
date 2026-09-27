@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useParams } from "next/navigation";
@@ -236,7 +236,6 @@ export default function ServiceDetailPage({
   );
   const otherServices = services.filter((item) => item.slug !== slug).slice(0, 6);
   const primary = accentForSlug(service?.slug);
-  const [openFaqs, setOpenFaqs] = useState([0]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -779,39 +778,23 @@ export default function ServiceDetailPage({
               ))}
             </div>
           ) : (
-          <div className="max-w-3xl space-y-3">
-            {service.faqs.map((faq, index) => {
-              const open = openFaqs.includes(index);
-              return (
-                <div
-                  key={faq.question}
-                  className="rounded-2xl border border-gray-100 overflow-hidden shadow-xs"
-                >
-                  <button
-                    type="button"
-                    className="w-full text-left px-5 py-4 font-bold text-theme-blue flex items-center justify-between gap-4"
-                    onClick={() =>
-                      setOpenFaqs((prev) =>
-                        prev.includes(index)
-                          ? prev.filter((i) => i !== index)
-                          : [...prev, index]
-                      )
-                    }
-                    aria-expanded={open}
+          <div className="max-w-3xl divide-y divide-gray-100 border-y border-gray-100">
+            {service.faqs.map((faq) => (
+              <details key={faq.question} className="group">
+                <summary className="w-full cursor-pointer list-none py-5 flex justify-between items-start gap-4 font-semibold text-theme-blue [&::-webkit-details-marker]:hidden">
+                  <h3 className="text-base font-bold">{faq.question}</h3>
+                  <span
+                    aria-hidden="true"
+                    className="text-theme-purple text-xl leading-none flex-shrink-0 group-open:rotate-45 transition-transform"
                   >
-                    {faq.question}
-                    <span className="text-theme-purple text-xl leading-none">
-                      {open ? "−" : "+"}
-                    </span>
-                  </button>
-                  {open ? (
-                    <p className="px-5 pb-4 text-sm text-gray-600 font-light leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  ) : null}
-                </div>
-              );
-            })}
+                    +
+                  </span>
+                </summary>
+                <p className="pb-5 -mt-1 text-sm text-gray-600 font-light leading-relaxed pr-8">
+                  {faq.answer}
+                </p>
+              </details>
+            ))}
           </div>
           )}
         </section>
