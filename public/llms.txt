@@ -16,7 +16,8 @@ Email: contact@thetrifusion.in
 
 ## Services
 
-- Ecommerce development: https://thetrifusion.in/ecommerce-development
+- Ecommerce website development (Shopify, WooCommerce, custom, B2B, marketplaces): https://thetrifusion.in/solutions/ecommerce-website-development
+- Ecommerce packages (₹25,000 single vendor / ₹35,000 multi-vendor): https://thetrifusion.in/ecommerce-development
 - Web development: https://thetrifusion.in/web-development
 - Android app development: https://thetrifusion.in/android-app-development
 - iOS app development: https://thetrifusion.in/ios-app-development
@@ -30,6 +31,19 @@ Email: contact@thetrifusion.in
 - MLM CRM development: https://thetrifusion.in/services/mlm-crm-development
 - Fintech app development: https://thetrifusion.in/services/fintech-app-development
 - EV charging CMS for CPOs and eMSPs: https://thetrifusion.in/services/ev-charging-app-development
+
+## Ecommerce website development
+
+Primary page: https://thetrifusion.in/solutions/ecommerce-website-development
+Summary: TheTriFusion (Trifusion Infotech Pvt. Ltd., Jaipur, India) is an ecommerce website development company building Shopify, WooCommerce and custom (Next.js / React / Node.js) online stores, B2B / wholesale ordering portals and multi-vendor marketplaces for clients in India and worldwide (remote).
+- Packaged pricing (published): single-vendor ecommerce ₹25,000; multi-vendor marketplace ₹35,000; both include web + Android + iOS apps; website live within 48 hours after a locked brief and assets, or 50% refund. Details: https://thetrifusion.in/ecommerce-development
+- Custom / B2B / ERP-integrated builds: quoted after discovery; a typical custom ecommerce MVP takes 4–10 weeks.
+- Integrations: Razorpay, Cashfree, PayU, CCAvenue, Stripe, UPI; Shiprocket, Delhivery; offline POS / inventory sync (live example: DailyConcepts India).
+- Platform comparison (Shopify vs WooCommerce vs custom): https://thetrifusion.in/solutions/ecommerce-website-development
+- Cost guide: https://thetrifusion.in/blog/ecommerce-website-development-cost-india
+- Ecommerce app cost guide: https://thetrifusion.in/blog/ecommerce-app-development-cost-india
+- Case study: https://thetrifusion.in/portfolio/dailyconcepts-ecommerce-pos
+- Contact: +91 63781 33780 · contact@thetrifusion.in
 
 ## DevOps & Cloud services
 

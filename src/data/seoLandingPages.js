@@ -62,65 +62,232 @@ export const seoLandingPages = [
   {
     slug: "ecommerce-website-development",
     title:
-      "Ecommerce Website Development Company in India | Custom Online Stores & D2C Marketplaces",
-    h1: "Custom Ecommerce Website & Online Store Development Company in India",
+      "Ecommerce Website Development Company India & Jaipur | TheTriFusion",
+    h1: "Ecommerce Website Development Company in India — Shopify, WooCommerce & Custom Stores",
     navLabel: "Ecommerce website development",
     metaDescription:
-      "Leading ecommerce website development company in India & Jaipur. We engineer custom high-converting D2C stores, multi-vendor marketplaces, POS integration, Shopify/WooCommerce solutions, and secure payment checkout systems.",
-    primaryKeyword: "ecommerce website development",
+      "Shopify, WooCommerce & custom ecommerce website development from Jaipur, India — D2C stores, B2B portals & multi-vendor marketplaces. Packages from ₹25,000.",
+    primaryKeyword: "ecommerce website development company",
     secondaryKeywords: [
-      "ecommerce website development company India",
-      "custom ecommerce development Jaipur",
-      "D2C online store developers India",
+      "ecommerce website development company in India",
+      "ecommerce website development company in Jaipur",
+      "ecommerce website development cost in India",
+      "Shopify development company India",
+      "WooCommerce development company",
+      "custom ecommerce website development",
+      "B2B ecommerce website development",
       "multi vendor marketplace development",
-      "ecommerce web development agency",
-      "Shopify store setup and customization",
-      "WooCommerce website developers",
-      "headless ecommerce Next.js React",
-      "ecommerce POS integration India",
-      "online shopping website development Jaipur",
+      "online store development",
+      "ecommerce development services",
     ],
     intro:
-      "Research-focused guide to custom ecommerce website development in India — architecture, payments, POS, and SEO. For a fixed-price single/multi-vendor package with website live in 48 hours (or 50% refund), use our /ecommerce-development offer page. TheTriFusion also builds bespoke D2C stores, B2B portals, and marketplaces when you need a scoped custom build.",
+      "Ecommerce website development is the work of planning, designing, building and launching an online store: product catalog, cart, checkout, payments, shipping and an admin panel to run orders. TheTriFusion (Trifusion Infotech Pvt. Ltd.) is a software development company in Jaipur, India that builds Shopify, WooCommerce and custom ecommerce websites, B2B ordering portals and multi-vendor marketplaces for businesses in India and abroad.",
+    keyFacts: [
+      { label: "Company", value: "TheTriFusion — Trifusion Infotech Pvt. Ltd., Jaipur, Rajasthan, India" },
+      { label: "Platforms", value: "Shopify, WooCommerce, and custom builds (Next.js, React, Node.js)" },
+      { label: "Store types", value: "Single-vendor D2C stores, B2B / wholesale portals, multi-vendor marketplaces" },
+      { label: "Packages", value: "Single vendor ₹25,000 · Multi-vendor ₹35,000 (web + Android + iOS)" },
+      { label: "Custom builds", value: "Quoted after discovery; a typical ecommerce MVP takes 4–10 weeks" },
+      { label: "Clients", value: "Businesses across India and international clients, working remotely" },
+      { label: "Contact", value: "+91 63781 33780 · contact@thetrifusion.in" },
+    ],
     sections: [
       {
-        title: "Custom Headless & Modular Ecommerce Architecture",
-        body: "We build ultra-fast, modern ecommerce storefronts using Next.js, React, Node.js, or customized Shopify/WooCommerce platforms. Features include advanced product filters, SKU matrix variations, smart search autocomplete, abandoned cart recovery, dynamic coupon engines, and one-click UPI checkout.",
+        title: "What does an ecommerce website development company do?",
+        body: "An ecommerce website development company turns your products and business rules into a working online store. At TheTriFusion that means choosing the right platform, designing the storefront, building catalog, cart and checkout, connecting payment gateways and courier partners, setting up the admin for orders and inventory, and launching with technical SEO in place.",
+        bullets: [
+          "Storefront design for mobile and desktop shoppers",
+          "Product catalog with categories, variants (size, colour) and search",
+          "Cart, checkout, coupons and customer accounts",
+          "Payment gateway and shipping integrations",
+          "Admin panel for orders, inventory, customers and reports",
+          "Technical SEO: clean URLs, sitemaps and structured data",
+        ],
       },
       {
-        title: "Payment Gateways, Logistics & POS Synchronization",
-        body: "Flawless integration with Indian & global payment processors (Razorpay, Cashfree, PayU, Stripe, UPI AutoPay) paired with automated courier logistics APIs (Shiprocket, Delhivery, Bluedart). Seamless synchronization with offline retail POS systems (like our live case DailyConcepts India).",
+        title: "How much does ecommerce website development cost in India?",
+        body: "On this site, our packaged single-vendor ecommerce build starts at ₹25,000 and a multi-vendor marketplace package starts at ₹35,000, both including web plus Android and iOS apps. Custom work — B2B pricing tiers, multi-warehouse inventory or ERP integration — is quoted per module after discovery. Catalog size, integrations and design depth drive the final number.",
+        table: {
+          caption: "Ecommerce pricing published by TheTriFusion",
+          columns: ["Option", "Price", "What it covers"],
+          rows: [
+            ["Single-vendor package", "₹25,000", "Your own D2C or retail store: website plus Android and iOS apps, catalog, cart, checkout, admin. Website live in 48 hours after a locked brief, or 50% refund."],
+            ["Multi-vendor package", "₹35,000", "Marketplace for many sellers with vendor dashboards, plus the same web, Android and iOS apps for shoppers. Same 48-hour website guarantee."],
+            ["Custom / B2B / ERP build", "Quoted after discovery", "Bespoke checkout, tiered B2B pricing, multi-warehouse stock, POS or ERP sync — scoped per module."],
+          ],
+        },
+        links: [
+          { href: "/ecommerce-development", label: "See full package details and the 48-hour guarantee terms" },
+          { href: "/blog/ecommerce-website-development-cost-india", label: "Read: ecommerce website development cost in India" },
+        ],
       },
       {
-        title: "Conversion Rate Optimization (CRO) & Technical SEO",
-        body: "Structured Schema.org Product & AggregateOffer rich snippets, Core Web Vitals optimization (<1.5s LCP), clean URL hierarchies, faceted navigation indexing, and programmatic category landing pages to dominate Google search results for buying keywords.",
+        title: "Shopify vs WooCommerce vs custom ecommerce: which should you choose?",
+        body: "Choose Shopify when you want a hosted store live fast with a standard catalog and checkout. Choose WooCommerce when you already use WordPress or want content-heavy pages and full hosting control. Choose a custom build when you need B2B pricing, a marketplace, POS or ERP sync, or a checkout the platforms cannot handle.",
+        table: {
+          caption: "Shopify vs WooCommerce vs custom ecommerce development",
+          columns: ["", "Shopify", "WooCommerce", "Custom (Next.js / Node.js)"],
+          rows: [
+            ["What it is", "Hosted ecommerce platform (SaaS)", "Free ecommerce plugin for WordPress, self-hosted", "Store built from code for your business rules"],
+            ["Best for", "Standard D2C catalogs that need to launch quickly", "Content-led stores and WordPress sites", "B2B portals, marketplaces, POS/ERP sync, unique checkout"],
+            ["Running costs", "Monthly platform plan plus paid apps", "Hosting, premium plugins and updates", "Hosting and maintenance; no platform subscription"],
+            ["Flexibility", "Limited to themes, apps and plan features", "High, through plugins and custom code", "Highest — you control data, logic and UX"],
+            ["What we do", "Theme setup and customisation, apps, payments, launch", "Theme and plugin development, performance, integrations", "Full design and build, integrations, admin, apps"],
+          ],
+        },
+        links: [
+          { href: "/blog/custom-website-vs-shopify-vs-woocommerce", label: "Read: custom website vs Shopify vs WooCommerce" },
+        ],
+      },
+      {
+        title: "Do you build B2B ecommerce and multi-vendor marketplace websites?",
+        body: "Yes. For B2B and wholesale buyers we build ordering portals with customer-specific or tiered pricing, bulk and minimum-order rules and GST-ready invoices. For marketplaces we build multi-vendor platforms with separate vendor dashboards, commission splits, vendor payouts and admin moderation, so you can run many sellers from one store.",
+        bullets: [
+          "B2B: tiered / customer-group pricing, bulk ordering, credit and quote workflows",
+          "Marketplace: vendor onboarding, vendor dashboards, commissions and payout reports",
+          "Admin moderation for products, orders and vendors",
+          "Web plus Android and iOS apps for shoppers",
+        ],
+      },
+      {
+        title: "Which ecommerce features and integrations do you build?",
+        body: "We build the features that decide whether a store actually sells and is easy to run: fast catalog browsing, search and filters, a short checkout with local and international payments, courier integration with tracking, stock control, and an admin that your team can use daily without calling a developer.",
+        bullets: [
+          "Payments: Razorpay, Cashfree, PayU, CCAvenue, Stripe, UPI",
+          "Shipping: Shiprocket, Delhivery and other courier APIs with tracking",
+          "Inventory and offline POS sync (see our DailyConcepts India project)",
+          "Coupons, wishlists, reviews and abandoned-cart recovery",
+          "WhatsApp and email order updates",
+          "GA4 analytics, product structured data and XML sitemaps",
+        ],
+      },
+      {
+        title: "How long does it take to build an ecommerce website?",
+        body: "Our single-vendor and multi-vendor packages put the website live within 48 hours after you share a locked brief and the required assets. A custom ecommerce MVP typically takes 4–10 weeks when requirements and product content are ready. Marketplaces and heavy integrations take longer and are delivered in phases.",
+      },
+      {
+        title: "Do you build ecommerce websites for clients outside India?",
+        body: "Yes. TheTriFusion is based in Jaipur and works remotely with businesses across India and in other countries. We build English storefronts, connect international gateways such as Stripe, and run projects over email, video calls and WhatsApp with written scope and milestone demos, so location does not slow the build down.",
       },
     ],
+    deliverables: [
+      "Platform recommendation (Shopify, WooCommerce or custom)",
+      "Mobile-first storefront design",
+      "Catalog, variants, search and filters",
+      "Cart, checkout, payments and coupons",
+      "Shipping and courier integration",
+      "Admin panel for orders, stock and customers",
+      "Technical SEO, sitemap and structured data",
+      "Launch support and handover",
+    ],
+    processSteps: [
+      { title: "Discovery", description: "We understand your products, customers, pricing rules and the channels you sell on today." },
+      { title: "Platform and scope", description: "We recommend Shopify, WooCommerce or custom and write down scope, timeline and cost." },
+      { title: "Design", description: "Storefront, product page and checkout designs, mobile first." },
+      { title: "Build and integrations", description: "Catalog, checkout, payments, shipping, admin and any POS/ERP connections." },
+      { title: "QA and content", description: "Test orders, payment and shipping flows; product data upload and SEO checks." },
+      { title: "Launch and support", description: "Go live, monitor orders, then iterate with optional ongoing support." },
+    ],
+    costFactors: [
+      "Number of products, variants and categories",
+      "Platform: Shopify, WooCommerce or custom",
+      "Payment, shipping, POS or ERP integrations",
+      "B2B pricing rules or multi-vendor features",
+      "Custom design depth",
+      "Store migration and SEO redirects",
+      "Android and iOS apps",
+    ],
+    costNote:
+      "Package prices are published on our ecommerce packages page; custom builds are quoted after discovery.",
+    headings: {
+      deliverables: "What you get with an ecommerce build",
+      audiences: "Who we build ecommerce websites for",
+      process: "Our ecommerce development process",
+      timeline: "Ecommerce website timeline",
+      cost: "What affects ecommerce website cost",
+      faqs: "Ecommerce website development FAQs",
+      relatedLinks: "Ecommerce packages and guides",
+    },
+    showCompanyBlock: true,
+    schema: {
+      serviceType: "Ecommerce website development",
+      areaServed: [
+        { "@type": "City", name: "Jaipur" },
+        { "@type": "Country", name: "India" },
+        { "@type": "Place", name: "Worldwide" },
+      ],
+      offers: [
+        { title: "Shopify store development", description: "Shopify theme setup and customisation, apps, payments and launch." },
+        { title: "WooCommerce development", description: "WooCommerce theme and plugin development, performance and integrations." },
+        { title: "Custom ecommerce development", description: "Custom Next.js / Node.js ecommerce websites with admin and integrations." },
+        { title: "B2B ecommerce portal development", description: "Wholesale ordering portals with tiered pricing and bulk orders." },
+        { title: "Multi-vendor marketplace development", description: "Marketplaces with vendor dashboards, commissions and payouts." },
+      ],
+      pricedOffers: [
+        { name: "Single-vendor ecommerce package (web + Android + iOS)", description: "Website live in 48 hours after locked brief, or 50% refund.", price: 25000, url: "/ecommerce-development#single-vendor" },
+        { name: "Multi-vendor marketplace package (web + Android + iOS)", description: "Website live in 48 hours after locked brief, or 50% refund.", price: 35000, url: "/ecommerce-development#multi-vendor" },
+      ],
+    },
     faqs: [
       {
-        question: "Do you build custom ecommerce platforms or use Shopify / WooCommerce?",
+        question: "What is the best platform for an ecommerce website?",
         answer:
-          "We offer both tailored to your business model. For high-growth D2C brands requiring bespoke checkout, custom ledgers, or POS sync, we build headless Next.js/React stores. For quick catalog launches, we provide custom Shopify theme development and WooCommerce engineering.",
+          "There is no single best platform. Shopify suits standard catalogs that need to launch quickly on a hosted plan. WooCommerce suits WordPress users and content-led stores. A custom build suits B2B pricing, marketplaces, POS or ERP sync. We recommend one after understanding your products, budget and growth plans.",
+      },
+      {
+        question: "How much does an ecommerce website cost in India?",
+        answer:
+          "Our packaged single-vendor ecommerce build starts at ₹25,000 and the multi-vendor marketplace package at ₹35,000, both with web, Android and iOS apps. Custom builds with B2B pricing, multi-warehouse stock or ERP integration are quoted per module after discovery, because scope varies widely between businesses.",
+      },
+      {
+        question: "How long does it take to develop an ecommerce website?",
+        answer:
+          "Package websites go live within 48 hours after we receive a locked brief and the required assets (logo, product list, brand notes, payment details). A custom ecommerce MVP typically takes 4–10 weeks. Marketplaces and complex integrations are phased into a first launch and follow-up releases.",
+      },
+      {
+        question: "Do you build on Shopify and WooCommerce, or only custom?",
+        answer:
+          "Both. We set up and customise Shopify stores and build WooCommerce themes and plugins for quick catalog launches. For D2C brands that need bespoke checkout, custom ledgers or POS sync, we build headless or custom stores with Next.js, React and Node.js.",
+      },
+      {
+        question: "Can you build a multi-vendor marketplace like Amazon or Flipkart?",
+        answer:
+          "We build multi-vendor marketplace platforms with independent vendor portals, commission splits, vendor payout reports, product moderation and an admin console. Our multi-vendor package starts at ₹35,000; larger marketplace features are scoped and delivered in phases after the first launch.",
+      },
+      {
+        question: "Do you build B2B or wholesale ecommerce portals?",
+        answer:
+          "Yes. B2B portals can include customer-group or tiered pricing, bulk and minimum-order quantities, quote requests, GST-ready invoices and ERP or inventory sync. Because these rules differ for every distributor or manufacturer, B2B builds are quoted after a discovery call.",
       },
       {
         question: "Can you integrate our online store with offline POS systems and ERPs?",
         answer:
-          "Yes! We have extensive experience engineering synchronized POS and inventory solutions (as demonstrated in our live client project DailyConcepts India at dailyconceptsindia.com). We sync real-time stock, barcodes, orders, and customer profiles between offline stores and online storefronts.",
+          "Yes. We have built synchronised ecommerce and POS systems, as in our live client project DailyConcepts India (dailyconceptsindia.com). Stock, barcodes, orders and customer profiles can sync between offline stores and the online storefront so inventory stays accurate.",
       },
       {
-        question: "Which payment gateways and automated shipping aggregators are supported?",
+        question: "Which payment gateways and shipping partners do you integrate?",
         answer:
-          "We integrate all leading payment systems including Razorpay, Cashfree, PayU, CCAvenue, Stripe, and UPI QR/Collect, alongside automated shipping aggregators like Shiprocket, Delhivery, Shadowfax, and NimbusPost with live tracking webhooks.",
+          "Common integrations include Razorpay, Cashfree, PayU, CCAvenue, Stripe and UPI for payments, and Shiprocket, Delhivery and other courier APIs for shipping with live tracking. The right mix depends on your market, order volume and where your customers are.",
       },
       {
-        question: "How do you ensure our ecommerce store ranks on Google?",
+        question: "Do you work with ecommerce clients outside India?",
         answer:
-          "We implement comprehensive technical SEO: canonical tags, structured Product/Review JSON-LD markup, OpenGraph social cards, XML sitemaps, lightning-fast SSR rendering with Next.js, mobile responsiveness, and keyword-targeted category descriptions.",
+          "Yes. We are based in Jaipur, India and work remotely with clients in India and other countries. Projects run on written scope, milestone demos, email, video calls and WhatsApp. International payments can be handled through gateways such as Stripe.",
+      },
+      {
+        question: "How do you help an ecommerce store rank on Google?",
+        answer:
+          "We build technical SEO into the store: server-rendered pages, canonical tags, clean category and product URLs, Product structured data, XML sitemaps, mobile-friendly layouts and fast loading. Ongoing SEO content and ads are available through our digital marketing team.",
+      },
+      {
+        question: "Where is TheTriFusion located and how can I contact you?",
+        answer:
+          "TheTriFusion is the brand of Trifusion Infotech Pvt. Ltd., a software development company in Jaipur, Rajasthan, India. Call or WhatsApp +91 63781 33780 or email contact@thetrifusion.in to discuss your ecommerce website.",
       },
     ],
     relatedServiceSlugs: [
       "website-development",
-      "software-development",
+      "mobile-app-development",
       "digital-marketing",
       "ui-ux-design",
     ],
@@ -128,10 +295,30 @@ export const seoLandingPages = [
       {
         href: "/ecommerce-development",
         label:
-          "Priced packages: ecommerce live in 48 hours or 50% refund — from ₹25,000",
+          "Ecommerce packages: single vendor ₹25,000 · multi-vendor ₹35,000 — website live in 48 hours or 50% refund",
+      },
+      {
+        href: "/blog/ecommerce-website-development-cost-india",
+        label: "Ecommerce website development cost in India",
+      },
+      {
+        href: "/blog/ecommerce-app-development-cost-india",
+        label: "Ecommerce app development cost in India (web + Android + iOS)",
+      },
+      {
+        href: "/blog/how-to-build-ecommerce-website-india-2026",
+        label: "How to build an ecommerce website in India (2026 guide)",
+      },
+      {
+        href: "/blog/ecommerce-website-development-mumbai-vs-jaipur",
+        label: "Ecommerce website development: Mumbai vs Jaipur agencies",
+      },
+      {
+        href: "/portfolio/dailyconcepts-ecommerce-pos",
+        label: "Case study: DailyConcepts India ecommerce + POS",
       },
     ],
-    cta: "Compare custom ecommerce builds — or jump to the 48-hour package offer",
+    cta: "Planning an ecommerce website? Get a clear scope and quote",
   },
   {
     slug: "online-store-development",

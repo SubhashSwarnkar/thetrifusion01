@@ -49,9 +49,17 @@ const SERVICE_MENU_GROUPS = [
     ],
     extras: [
       {
+        href: "/solutions/ecommerce-website-development",
+        slug: "ecommerce-website-development",
+        icon: "ecommerce-development",
+        title: "Ecommerce Website Development",
+        shortDescription:
+          "Shopify, WooCommerce & custom stores, B2B and marketplaces.",
+      },
+      {
         href: "/ecommerce-development",
         slug: "ecommerce-development",
-        title: "Ecommerce Development",
+        title: "Ecommerce Packages",
         shortDescription:
           "Live in 48 hrs or 50% refund. From ₹25,000 — web + apps.",
       },
@@ -290,7 +298,7 @@ export default function Header() {
                               className="group/item flex items-start gap-3 rounded-xl px-2 py-2 hover:bg-gray-50 transition-colors"
                             >
                               <span className={`mt-0.5 w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${accent.iconWrap} group-hover/item:bg-theme-purple group-hover/item:text-white transition-colors`}>
-                                <ServiceIcon slug={extra.slug} className="w-4 h-4" />
+                                <ServiceIcon slug={extra.icon || extra.slug} className="w-4 h-4" />
                               </span>
                               <span className="min-w-0">
                                 <span className="block text-sm font-semibold text-theme-blue group-hover/item:text-theme-purple transition-colors">
@@ -387,14 +395,14 @@ export default function Header() {
                           {isMobileServicesOpen && (
                             <div className="grid grid-cols-1 gap-4 overflow-hidden pl-4">
                               <Link prefetch={false}
-                                href="/ecommerce-development"
+                                href="/solutions/ecommerce-website-development"
                                 onClick={handleLinkClick}
                                 className={`flex items-center gap-3 py-2.5 px-3 rounded-xl border ${accentAt(0).card}`}
                               >
                                 <span className={`w-9 h-9 flex-shrink-0 rounded-lg flex items-center justify-center ${accentAt(0).iconWrap}`}>
                                   <ServiceIcon slug="ecommerce-development" className="w-4 h-4" />
                                 </span>
-                                <span className="font-semibold text-theme-blue text-base">Ecommerce Development</span>
+                                <span className="font-semibold text-theme-blue text-base">Ecommerce Website Development</span>
                               </Link>
                               {servicesForMobileMenu(services).map((s, sIdx) => {
                                 const accent = accentAt(sIdx + 1);

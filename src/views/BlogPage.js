@@ -70,7 +70,7 @@ export default function BlogPage({
           </p>
           <div className="flex flex-wrap justify-center gap-3 mb-12 text-sm">
             <Link prefetch={false} href="/about" className="px-4 py-2 rounded-full border border-theme-purple/30 text-theme-purple font-semibold hover:bg-light-theme-purple">About TheTriFusion</Link>
-            <Link prefetch={false} href="/ecommerce-development" className="px-4 py-2 rounded-full border border-theme-purple/30 text-theme-purple font-semibold hover:bg-light-theme-purple">Ecommerce development</Link>
+            <Link prefetch={false} href="/solutions/ecommerce-website-development" className="px-4 py-2 rounded-full border border-theme-purple/30 text-theme-purple font-semibold hover:bg-light-theme-purple">Ecommerce website development</Link>
             <Link prefetch={false} href="/services/mobile-app-development" className="px-4 py-2 rounded-full border border-theme-purple/30 text-theme-purple font-semibold hover:bg-light-theme-purple">Mobile app development</Link>
             <Link prefetch={false} href="/ios-app-development" className="px-4 py-2 rounded-full border border-theme-purple/30 text-theme-purple font-semibold hover:bg-light-theme-purple">iOS apps</Link>
           </div>

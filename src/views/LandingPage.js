@@ -25,6 +25,16 @@ export default function LandingPage({ trending, below }) {
                 <p className="text-gray-600 font-light">
                   Single vendor from ₹25,000 · Multi-vendor from ₹35,000 · web + Android + iOS framing · Jaipur team.
                 </p>
+                <p className="mt-2 text-sm text-gray-600">
+                  Need Shopify, WooCommerce, B2B or a custom marketplace?{" "}
+                  <Link
+                    href="/solutions/ecommerce-website-development"
+                    prefetch={false}
+                    className="font-semibold text-theme-purple underline-offset-2 hover:underline"
+                  >
+                    Ecommerce website development
+                  </Link>
+                </p>
               </div>
               <Link
                 href="/ecommerce-development"
