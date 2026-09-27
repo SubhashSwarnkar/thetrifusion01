@@ -3,10 +3,13 @@
  * Extract Event / SportsEvent JSON-LD for every scheduled event post and
  * assert the fields Google Search Console flagged, plus status and location.
  *
+ * `offers` may be absent. If it is present it must include url, price,
+ * priceCurrency, availability and validFrom. A URL-only Offer fails.
+ *
  * Usage: node scripts/validate-event-schema.mjs
  */
 import { blogPosts } from "../src/data/blogData.js";
-import { eventSchema, isTrendsExplainer } from "../src/lib/schema.js";
+import { confirmedEventOffer, eventSchema, isTrendsExplainer } from "../src/lib/schema.js";
 
 const failures = [];
 
@@ -48,11 +51,13 @@ function isScheduledEvent(post) {
   );
 }
 
-function postHasPrice(post) {
-  const ev = post.event || {};
-  if (ev.price != null && ev.priceCurrency) return true;
-  if (ev.offers && ev.offers.price != null && ev.offers.priceCurrency) return true;
-  return false;
+const OFFER_FIELDS = ["url", "price", "priceCurrency", "availability", "validFrom"];
+const AVAILABILITY_RE =
+  /^https:\/\/schema\.org\/(?:BackOrder|Discontinued|InStock|InStoreOnly|LimitedAvailability|OnlineOnly|OutOfStock|PreOrder|PreSale|SoldOut)$/;
+
+function offerList(node) {
+  if (node.offers == null) return [];
+  return Array.isArray(node.offers) ? node.offers : [node.offers];
 }
 
 function assertEventNode(post, node) {
@@ -105,18 +110,42 @@ function assertEventNode(post, node) {
       fail(slug, `organizer url is not absolute (${node.organizer.url})`);
     }
   }
-  const offers = Array.isArray(node.offers) ? node.offers : node.offers ? [node.offers] : [];
-  if (offers.length === 0 || offers.some((offer) => !offer || !offer.url)) {
-    fail(slug, "missing offers.url");
-  } else if (offers.some((offer) => !/^https?:\/\//i.test(offer.url))) {
-    fail(slug, "offers.url is not absolute");
+  const offers = offerList(node);
+  const expected = confirmedEventOffer(post.event);
+  if (!expected && offers.length > 0) {
+    fail(slug, "offers emitted without confirmed ticket price, currency, availability, validFrom and url");
   }
-  if (!postHasPrice(post)) {
-    for (const offer of offers) {
-      if (!offer) continue;
-      if (offer.price != null) fail(slug, "offers.price was invented");
-      if (offer.availability) fail(slug, "offers.availability was invented");
-      if (offer.validFrom) fail(slug, "offers.validFrom was invented");
+  if (expected && offers.length === 0) {
+    fail(slug, "confirmed ticket fields did not emit offers");
+  }
+  for (const offer of offers) {
+    if (!offer || typeof offer !== "object") {
+      fail(slug, "offers entry is empty");
+      continue;
+    }
+    for (const field of OFFER_FIELDS) {
+      if (offer[field] == null || offer[field] === "") {
+        fail(slug, `offers missing ${field}`);
+      }
+    }
+    if (offer.url && !/^https?:\/\//i.test(String(offer.url))) {
+      fail(slug, "offers.url is not absolute");
+    }
+    if (offer.price != null && !/^\d+(\.\d+)?$/.test(String(offer.price))) {
+      fail(slug, `offers.price is not a plain number (${offer.price})`);
+    }
+    if (offer.availability && !AVAILABILITY_RE.test(String(offer.availability))) {
+      fail(slug, `offers.availability is not a schema.org ItemAvailability URL (${offer.availability})`);
+    }
+    if (offer.validFrom && !/^\d{4}-\d{2}-\d{2}/.test(String(offer.validFrom))) {
+      fail(slug, `offers.validFrom is not an ISO date (${offer.validFrom})`);
+    }
+  }
+  if (expected && offers.length === 1) {
+    for (const field of OFFER_FIELDS) {
+      if (String(offers[0][field]) !== String(expected[field])) {
+        fail(slug, `offers.${field} does not match confirmed ticket data`);
+      }
     }
   }
   if (!node.eventStatus) fail(slug, "missing eventStatus");
@@ -179,11 +208,89 @@ function hasPerformer(node) {
   return list.some((performer) => performer && performer.name);
 }
 
+function assertOfferFixtures() {
+  const base = {
+    slug: "offer-fixture",
+    excerpt: "Fixture",
+    event: {
+      type: "Event",
+      name: "Fixture event",
+      startDate: "2026-10-01T10:00:00+05:30",
+      location: { name: "Town hall", addressCountry: "IN" },
+    },
+  };
+  const urlOnly = eventSchema({
+    ...base,
+    event: { ...base.event, ticketUrl: "https://example.com/tickets" },
+  });
+  if (urlOnly && urlOnly.offers) {
+    fail("offer-fixture", "URL-only ticket data emitted offers");
+  }
+  const organizerOnly = eventSchema({
+    ...base,
+    event: { ...base.event, organizer: "Premier League" },
+  });
+  if (organizerOnly && organizerOnly.offers) {
+    fail("offer-fixture", "organizer site was emitted as offers");
+  }
+  const free = eventSchema({
+    ...base,
+    event: {
+      ...base.event,
+      ticketPrice: 0,
+      ticketCurrency: "INR",
+      ticketAvailability: "InStock",
+      ticketsOnSaleDate: "2026-09-01T10:00:00+05:30",
+      ticketUrl: "https://example.com/free-entry",
+    },
+  });
+  const freeOffer = free && free.offers;
+  if (
+    !freeOffer ||
+    freeOffer["@type"] !== "Offer" ||
+    freeOffer.price !== "0" ||
+    freeOffer.priceCurrency !== "INR" ||
+    freeOffer.availability !== "https://schema.org/InStock" ||
+    freeOffer.validFrom !== "2026-09-01T10:00:00+05:30" ||
+    freeOffer.url !== "https://example.com/free-entry"
+  ) {
+    fail("offer-fixture", `free event did not emit a full Offer (${JSON.stringify(freeOffer)})`);
+  }
+  const ranged = eventSchema({
+    ...base,
+    event: {
+      ...base.event,
+      lowPrice: "10",
+      highPrice: "40",
+      ticketCurrency: "USD",
+      ticketAvailability: "https://schema.org/PreOrder",
+      ticketsOnSaleDate: "2026-06-01",
+      ticketUrl: "https://example.com/range",
+    },
+  });
+  const rangeOffer = ranged && ranged.offers;
+  if (
+    !rangeOffer ||
+    rangeOffer.price !== "10" ||
+    rangeOffer.lowPrice !== "10" ||
+    rangeOffer.highPrice !== "40" ||
+    rangeOffer.priceCurrency !== "USD" ||
+    rangeOffer.availability !== "https://schema.org/PreOrder" ||
+    rangeOffer.validFrom !== "2026-06-01"
+  ) {
+    fail("offer-fixture", `price range did not emit a full Offer (${JSON.stringify(rangeOffer)})`);
+  }
+}
+
+assertOfferFixtures();
+
 const scheduled = [];
 const explainers = [];
 const nodesWithoutPerformer = [];
 let eventNodes = 0;
 let nodesWithPerformer = 0;
+let nodesWithFullOffer = 0;
+let nodesWithoutOffers = 0;
 
 for (const post of blogPosts) {
   const jsonLd = eventSchema(post);
@@ -197,6 +304,8 @@ for (const post of blogPosts) {
     for (const node of nodes) {
       eventNodes += 1;
       assertEventNode(post, node);
+      if (offerList(node).length > 0) nodesWithFullOffer += 1;
+      else nodesWithoutOffers += 1;
       if (hasPerformer(node)) nodesWithPerformer += 1;
       else nodesWithoutPerformer.push(`${post.slug} — ${node.name}`);
     }
@@ -212,6 +321,8 @@ for (const post of blogPosts) {
 
 console.log(`posts checked: ${scheduled.length}`);
 console.log(`event nodes: ${eventNodes}`);
+console.log(`event nodes with a full Offer: ${nodesWithFullOffer}`);
+console.log(`event nodes with no offers: ${nodesWithoutOffers}`);
 console.log(`event nodes with performer: ${nodesWithPerformer}`);
 console.log(`event nodes without performer: ${nodesWithoutPerformer.length}`);
 if (nodesWithoutPerformer.length) {

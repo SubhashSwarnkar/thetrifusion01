@@ -1,4 +1,17 @@
 #!/usr/bin/env python3
+"""Generate upcoming-event blog posts.
+
+Event JSON-LD offers: do not write ticket fields unless the topic already
+confirms every one of them. Optional, and only as a complete set:
+ticketPrice (or lowPrice and highPrice), ticketCurrency (ISO 4217),
+ticketAvailability (schema.org ItemAvailability, such as InStock),
+ticketsOnSaleDate (ISO 8601), ticketUrl (absolute https seller URL).
+Price 0 is allowed only when the article text already says the event is
+free to attend or watch, with the currency that text supports. If any
+field is missing, omit all of them. Never invent a price. A URL-only Offer
+is what Search Console flags as missing price, priceCurrency, availability
+and validFrom.
+"""
 from __future__ import annotations
 from pathlib import Path
 import json, re
@@ -103,7 +116,7 @@ def expand_article(t):
         "<p>This article is intentionally long-form so that FAQ, broadcast, and context sections can each stand alone in search snippets while still reading as one coherent guide to " + name + ". Thin pages that only repeat a date rarely earn lasting organic traffic.</p>",
         "<h2>Editorial standards we use on TheTriFusion event desks</h2>",
         "<p>Every upcoming-event post on this hub follows the same verification checklist: name the organising body, convert times to IST explicitly, separate confirmed facts from rumour, and link to related explainers already on thetrifusion.in. We also attach FAQ blocks so FAQPage schema can be generated automatically from H3 questions.</p>",
-        "<p>Where SportsEvent or Event schema is appropriate, we attach an optional structured event object with a real startDate and location. Posts without that object continue to render normally — the template fails soft so older articles are never broken by newer schema fields.</p>",
+        "<p>Where SportsEvent or Event schema is appropriate, we attach an optional structured event object with a real startDate and location. Offers are attached only when a ticket price (or a confirmed free admission), currency, availability, on-sale date and official ticket URL are all already in the article. A URL without those fields is left off the schema. Posts without an event object continue to render normally — the template fails soft so older articles are never broken by newer schema fields.</p>",
         "<p>Internal links are chosen from live slugs on the site (sports, ecommerce, elections, film) plus service hubs such as web development and digital marketing. Soft CTAs point to contact or appointment pages without interrupting the reader who only wants the clock and the broadcaster.</p>",
         "<h2>For publishers building their own event SEO engines</h2>",
         "<p>If your brand needs a repeatable pipeline — topic intake, IST normalisation, Open Graph cards, IndexNow pings, and sitemap inclusion — TheTriFusion builds that stack for media and ecommerce teams from Jaipur. The same patterns power our own blog: self-hosted OG images, canonical apex URLs on thetrifusion.in, and index/follow metadata.</p>",
@@ -115,6 +128,39 @@ def expand_article(t):
         if word_count(html) > 4000:
             break
     return html
+
+
+def complete_ticket_fields(ev):
+    """Return ticket fields only when they can build a full Offer.
+
+    Partial ticket data is dropped. The schema builder also omits `offers`
+    unless price, currency, availability, validFrom and url are all present.
+    """
+    if not isinstance(ev, dict):
+        return None
+    currency = ev.get("ticketCurrency") or ev.get("priceCurrency")
+    availability = ev.get("ticketAvailability")
+    on_sale = ev.get("ticketsOnSaleDate")
+    url = ev.get("ticketUrl")
+    price = ev.get("ticketPrice", ev.get("price", None))
+    low = ev.get("lowPrice")
+    high = ev.get("highPrice")
+    has_price = price is not None or (low is not None and high is not None)
+    if not (has_price and currency and availability and on_sale and url):
+        return None
+    if not isinstance(url, str) or not url.startswith(("http://", "https://")):
+        return None
+    fields = {}
+    if price is not None:
+        fields["ticketPrice"] = price
+    else:
+        fields["lowPrice"] = low
+        fields["highPrice"] = high
+    fields["ticketCurrency"] = currency
+    fields["ticketAvailability"] = availability
+    fields["ticketsOnSaleDate"] = on_sale
+    fields["ticketUrl"] = url
+    return fields
 
 
 def render_event(ev):
@@ -137,6 +183,27 @@ def render_event(ev):
         if loc.get(k):
             lines.append(f"        {k}: {json.dumps(loc[k])},")
     lines.append("      },")
+    tickets = complete_ticket_fields(ev)
+    partial_keys = (
+        "ticketPrice",
+        "price",
+        "lowPrice",
+        "highPrice",
+        "ticketCurrency",
+        "priceCurrency",
+        "ticketAvailability",
+        "ticketsOnSaleDate",
+        "ticketUrl",
+        "offerUrl",
+    )
+    if any(ev.get(key) not in (None, "") for key in partial_keys) and not tickets:
+        print(
+            f"WARN {ev.get('name')}: incomplete ticket fields omitted; "
+            "offers will not be emitted"
+        )
+    if tickets:
+        for key, value in tickets.items():
+            lines.append(f"      {key}: {json.dumps(value)},")
     lines.append("    }")
     return "\n".join(lines)
 
