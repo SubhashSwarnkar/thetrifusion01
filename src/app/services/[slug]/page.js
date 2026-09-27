@@ -1,7 +1,9 @@
 import Page from "views/ServiceDetailPage";
 import JsonLd from "components/JsonLd";
+import LanguageSwitcher from "components/LanguageSwitcher";
 import { getServiceBySlug, services } from "data/servicesData";
 import { getBlogBySlug } from "data/blogData";
+import { hreflangLanguagesForPath } from "data/i18n/routes";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "lib/schema";
 import { buildMetadata } from "lib/seoConfig";
 
@@ -35,12 +37,15 @@ export function generateMetadata({ params }) {
   }
 
   const { title, description, keywords } = serviceMeta(service);
+  const path = `/services/${service.slug}`;
+  const languages = hreflangLanguagesForPath(path);
 
   return buildMetadata({
     title,
     description,
     keywords,
-    path: `/services/${service.slug}`,
+    path,
+    ...(languages ? { languages } : {}),
   });
 }
 
@@ -81,6 +86,9 @@ export default function RoutePage({ params }) {
                 : service.services,
               areaServed: service.schemaAreaServed,
               provider: service.schemaProvider,
+              inLanguage: hreflangLanguagesForPath(`/services/${service.slug}`)
+                ? "en-IN"
+                : undefined,
             })}
           />
           <JsonLd
@@ -96,10 +104,27 @@ export default function RoutePage({ params }) {
               },
             ])}
           />
-          {service.faqs?.length ? <JsonLd data={faqSchema(service.faqs)} /> : null}
+          {service.faqs?.length ? (
+            <JsonLd
+              data={faqSchema(
+                service.faqs,
+                hreflangLanguagesForPath(`/services/${service.slug}`)
+                  ? "en-IN"
+                  : undefined
+              )}
+            />
+          ) : null}
         </>
       ) : null}
       <Page
+        languageSwitcher={
+          hreflangLanguagesForPath(`/services/${params.slug}`) ? (
+            <LanguageSwitcher
+              path={`/services/${params.slug}`}
+              current="en"
+            />
+          ) : null
+        }
         relatedBlog={
           service?.relatedBlogSlug
             ? (() => {

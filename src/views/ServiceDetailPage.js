@@ -223,7 +223,10 @@ const STANDARD_DELIVERABLES = [
   "30-day post-launch support & stability warranty",
 ];
 
-export default function ServiceDetailPage({ relatedBlog = null }) {
+export default function ServiceDetailPage({
+  relatedBlog = null,
+  languageSwitcher = null,
+}) {
   const { slug } = useParams();
   const service = getServiceBySlug(slug);
   const relatedSolutions = getSolutionsForService(slug || "");
@@ -253,6 +256,7 @@ export default function ServiceDetailPage({ relatedBlog = null }) {
       />
       <Header />
       <Breadcrumbs />
+      {languageSwitcher}
 
       {/* Hero Section */}
       <section id="overview" className="relative pt-8 pb-14 overflow-hidden">

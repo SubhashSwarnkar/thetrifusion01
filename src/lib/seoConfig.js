@@ -249,6 +249,8 @@ export function buildMetadata({
   authors,
   keywords,
   noIndex = false,
+  languages,
+  locale,
 }) {
   const url = absoluteUrl(path);
   const ogImage = image
@@ -265,7 +267,7 @@ export function buildMetadata({
     ...(keywords ? { keywords } : {}),
     alternates: {
       canonical: url,
-      languages: {
+      languages: languages || {
         "en-IN": url,
         "x-default": url,
       },
@@ -276,7 +278,7 @@ export function buildMetadata({
       url,
       siteName: SITE_NAME,
       type,
-      locale: siteConfig.locale,
+      locale: locale || siteConfig.locale,
       ...(publishedTime ? { publishedTime } : {}),
       ...(authors ? { authors } : {}),
       images: [

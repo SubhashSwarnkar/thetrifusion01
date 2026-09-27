@@ -1,9 +1,23 @@
 import { blogPosts, ARCHIVE_NOINDEX_SLUGS } from "data/blogData";
 import { services } from "data/servicesData";
+import { evChargingPageContent } from "data/evChargingPageContent";
 import { seoLandingPages, getSeoLandingBySlug } from "data/seoLandingPages";
+import {
+  hreflangLanguagesForPath,
+  LOCALE_CODES,
+  localizedPath,
+  TRANSLATED_BLOG_SLUGS,
+  TRANSLATED_SERVICE_PATH,
+} from "data/i18n/routes";
 import { Portfolios, isIndexablePortfolio } from "json/landingPageData";
 import { NOINDEX_PATHS, pages } from "lib/seoConfig";
 import { siteConfig } from "config/site";
+
+function withHreflang(entry, englishPath) {
+  const languages = hreflangLanguagesForPath(englishPath);
+  if (!languages) return entry;
+  return { ...entry, alternates: { languages } };
+}
 
 function safeDate(value, fallback) {
   try {
@@ -41,17 +55,22 @@ export default function sitemap() {
             : 0.7,
     }));
 
-  const serviceRoutes = services.map((service) => ({
-    url: `${siteConfig.url}/services/${service.slug}`,
-    lastModified: service.contentUpdatedAt
-      ? safeDate(service.contentUpdatedAt, siteContentUpdated)
-      : siteContentUpdated,
-    changeFrequency: "weekly",
-    priority:
-      typeof service.sitemapPriority === "number"
-        ? service.sitemapPriority
-        : 0.8,
-  }));
+  const serviceRoutes = services.map((service) =>
+    withHreflang(
+      {
+        url: `${siteConfig.url}/services/${service.slug}`,
+        lastModified: service.contentUpdatedAt
+          ? safeDate(service.contentUpdatedAt, siteContentUpdated)
+          : siteContentUpdated,
+        changeFrequency: "weekly",
+        priority:
+          typeof service.sitemapPriority === "number"
+            ? service.sitemapPriority
+            : 0.8,
+      },
+      `/services/${service.slug}`
+    )
+  );
 
   const solutionRoutes = seoLandingPages
     .filter((raw) => raw.slug !== "online-store-development")
@@ -69,15 +88,55 @@ export default function sitemap() {
 
   const blogRoutes = blogPosts
     .filter((post) => !ARCHIVE_NOINDEX_SLUGS.has(post.slug))
-    .map((post) => ({
-      url: `${siteConfig.url}/blog/${post.slug}`,
-      lastModified: safeDate(
-        post.updatedAt || post.date || "2026-09-12",
-        fallbackDate
-      ),
-      changeFrequency: post.featured ? "daily" : "weekly",
-      priority: post.featured ? 0.85 : 0.75,
-    }));
+    .map((post) =>
+      withHreflang(
+        {
+          url: `${siteConfig.url}/blog/${post.slug}`,
+          lastModified: safeDate(
+            post.updatedAt || post.date || "2026-09-12",
+            fallbackDate
+          ),
+          changeFrequency: post.featured ? "daily" : "weekly",
+          priority: post.featured ? 0.85 : 0.75,
+        },
+        `/blog/${post.slug}`
+      )
+    );
+
+  const translatedBlogBySlug = new Map(
+    blogPosts.map((post) => [post.slug, post])
+  );
+  const translatedRoutes = LOCALE_CODES.flatMap((lang) => {
+    const blogEntries = TRANSLATED_BLOG_SLUGS.map((slug) => {
+      const post = translatedBlogBySlug.get(slug);
+      const englishPath = `/blog/${slug}`;
+      return {
+        url: `${siteConfig.url}${localizedPath(lang, englishPath)}`,
+        lastModified: safeDate(
+          post?.updatedAt || post?.date || "2026-09-13",
+          fallbackDate
+        ),
+        changeFrequency: "monthly",
+        priority: 0.7,
+        alternates: { languages: hreflangLanguagesForPath(englishPath) },
+      };
+    });
+    return [
+      ...blogEntries,
+      {
+        url: `${siteConfig.url}${localizedPath(lang, TRANSLATED_SERVICE_PATH)}`,
+        lastModified: safeDate(
+          evChargingPageContent.contentUpdatedAt || "2026-09-25",
+          fallbackDate
+        ),
+        changeFrequency: "weekly",
+        priority: 0.8,
+        alternates: {
+          languages: hreflangLanguagesForPath(TRANSLATED_SERVICE_PATH),
+        },
+      },
+    ];
+  });
 
   const portfolioRoutes = Portfolios.filter(isIndexablePortfolio).map(
     (project) => ({
@@ -94,6 +153,7 @@ export default function sitemap() {
     ...solutionRoutes,
     ...blogRoutes,
     ...portfolioRoutes,
+    ...translatedRoutes,
   ];
 
   const seen = new Set();
