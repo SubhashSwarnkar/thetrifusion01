@@ -2,6 +2,17 @@
  * Daily organic batch — 27 September 2026.
  * Ids 331–340 only. Five Trends explainers, then five upcoming events.
  * Do not reuse these ids in other blog data files.
+ *
+ * Event JSON-LD offers: do not add ticket fields unless the post already
+ * confirms every one of them. Optional, and only as a complete set:
+ * ticketPrice (or lowPrice and highPrice), ticketCurrency (ISO 4217),
+ * ticketAvailability (schema.org ItemAvailability, such as InStock),
+ * ticketsOnSaleDate (ISO 8601), ticketUrl (absolute https seller URL).
+ * Price 0 is allowed only when this article already says the event is free
+ * to attend or watch, with the currency the article supports. If any field
+ * is missing, omit all of them. Never invent a price. A URL-only Offer is
+ * what Search Console flags as missing price, priceCurrency, availability
+ * and validFrom; the schema builder drops incomplete offers.
  */
 export const dailyOrganicBatch20260927Posts = [
   {

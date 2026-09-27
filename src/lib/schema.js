@@ -677,32 +677,124 @@ function resolvePerformer(post, ev, teams, organizer) {
   );
 }
 
-function resolveOffer(ev, post, organizer) {
-  const direct =
-    (ev.offers && typeof ev.offers === "object" && (ev.offers.url || ev.offers.href)) ||
-    ev.ticketUrl ||
-    ev.offerUrl;
-  let url = null;
-  if (typeof direct === "string" && direct.trim()) {
-    url = /^https?:\/\//i.test(direct) ? direct.trim() : absoluteSiteUrl(direct.trim());
-  } else if (organizer && organizer.offerUrl) {
-    url = organizer.offerUrl;
-  } else {
-    url = absoluteSiteUrl(`/blog/${post.slug}`);
+const ITEM_AVAILABILITY = new Set([
+  "BackOrder",
+  "Discontinued",
+  "InStock",
+  "InStoreOnly",
+  "LimitedAvailability",
+  "OnlineOnly",
+  "OutOfStock",
+  "PreOrder",
+  "PreSale",
+  "SoldOut",
+]);
+
+function nestedOffer(ev) {
+  return ev.offers && typeof ev.offers === "object" && !Array.isArray(ev.offers)
+    ? ev.offers
+    : {};
+}
+
+function priceString(value) {
+  if (typeof value === "number" && Number.isFinite(value) && value >= 0) {
+    return String(value);
+  }
+  if (typeof value === "string" && /^\d+(\.\d+)?$/.test(value.trim())) {
+    return value.trim();
+  }
+  return null;
+}
+
+function currencyCode(value) {
+  if (typeof value !== "string") return null;
+  const code = value.trim().toUpperCase();
+  return /^[A-Z]{3}$/.test(code) ? code : null;
+}
+
+function availabilityUrl(value) {
+  if (typeof value !== "string" || !value.trim()) return null;
+  const name = value.trim().replace(/^https:\/\/schema\.org\//i, "");
+  return ITEM_AVAILABILITY.has(name) ? `https://schema.org/${name}` : null;
+}
+
+function validFromValue(value) {
+  if (typeof value !== "string") return null;
+  const trimmed = value.trim();
+  return /^\d{4}-\d{2}-\d{2}(?:T\d{2}:\d{2}(?::\d{2})?(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})?)?$/.test(
+    trimmed
+  )
+    ? trimmed
+    : null;
+}
+
+function absoluteHttpUrl(value) {
+  if (typeof value !== "string") return null;
+  const trimmed = value.trim();
+  return /^https?:\/\//i.test(trimmed) ? trimmed : null;
+}
+
+/**
+ * Full Offer only when every Google-required offers field is already on the
+ * event. A URL alone is not an offer: that partial node is what Search
+ * Console reports as missing price, priceCurrency, availability and validFrom.
+ * Returns null when any of those fields is absent, so callers omit `offers`.
+ */
+function resolveOffer(ev) {
+  if (!ev || typeof ev !== "object") return null;
+  const nested = nestedOffer(ev);
+  const single = priceString(
+    ev.ticketPrice != null ? ev.ticketPrice : ev.price != null ? ev.price : nested.price
+  );
+  const low = priceString(ev.lowPrice != null ? ev.lowPrice : nested.lowPrice);
+  const high = priceString(ev.highPrice != null ? ev.highPrice : nested.highPrice);
+  const currency = currencyCode(
+    ev.ticketCurrency || ev.priceCurrency || nested.priceCurrency
+  );
+  const availability = availabilityUrl(ev.ticketAvailability || nested.availability);
+  const validFrom = validFromValue(
+    ev.ticketsOnSaleDate || ev.validFrom || nested.validFrom
+  );
+  const url = absoluteHttpUrl(ev.ticketUrl || ev.offerUrl || nested.url || nested.href);
+  if (!currency || !availability || !validFrom || !url) return null;
+
+  let price = single;
+  let ranged = false;
+  if (price == null) {
+    if (low == null || high == null || Number(high) < Number(low)) return null;
+    price = low;
+    ranged = true;
   }
 
-  const offer = { "@type": "Offer", url };
-  const priceSource =
-    ev.price != null
-      ? ev
-      : ev.offers && typeof ev.offers === "object" && ev.offers.price != null
-        ? ev.offers
-        : null;
-  if (priceSource && priceSource.priceCurrency) {
-    offer.price = String(priceSource.price);
-    offer.priceCurrency = String(priceSource.priceCurrency);
+  return {
+    "@type": ranged ? "AggregateOffer" : "Offer",
+    url,
+    price,
+    priceCurrency: currency,
+    availability,
+    validFrom,
+    ...(ranged ? { lowPrice: low, highPrice: high } : {}),
+  };
+}
+
+/** Offer node for a post event, or null when ticket data is incomplete. */
+export function confirmedEventOffer(ev) {
+  return resolveOffer(ev);
+}
+
+/**
+ * URL for a VirtualLocation. Not an Offer. Keeps the previous official-site
+ * fallback so online events still name where to watch.
+ */
+function virtualLocationUrl(ev, post, organizer) {
+  const nested = nestedOffer(ev);
+  const direct = ev.ticketUrl || ev.offerUrl || nested.url || nested.href;
+  if (typeof direct === "string" && direct.trim()) {
+    const trimmed = direct.trim();
+    return /^https?:\/\//i.test(trimmed) ? trimmed : absoluteSiteUrl(trimmed);
   }
-  return offer;
+  if (organizer && organizer.offerUrl) return organizer.offerUrl;
+  return absoluteSiteUrl(`/blog/${post.slug}`);
 }
 
 function locationNode(ev, attendanceMode, offerUrl) {
@@ -745,8 +837,15 @@ function locationNode(ev, attendanceMode, offerUrl) {
  *   organizer?: string,
  *   eventStatus?: string (default EventScheduled),
  *   eventAttendanceMode?: string (default OfflineEventAttendanceMode),
- *   homeTeam?, awayTeam?, performer?, price?, priceCurrency?
+ *   homeTeam?, awayTeam?, performer?,
+ *   ticketPrice? or lowPrice?+highPrice?, ticketCurrency?,
+ *   ticketAvailability? (schema.org ItemAvailability),
+ *   ticketsOnSaleDate? (ISO 8601), ticketUrl? (absolute http(s))
  * }
+ * `offers` is emitted only when ticketPrice (or both lowPrice and highPrice),
+ * ticketCurrency, ticketAvailability, ticketsOnSaleDate and ticketUrl are all
+ * present. Price 0 is valid when the post already says the event is free.
+ * Anything less is omitted — a URL-only Offer is worse than no offers.
  * Trends explainers without a scheduled event object emit nothing.
  * Missing/invalid event objects are ignored so other posts stay unchanged.
  */
@@ -779,8 +878,12 @@ export function eventSchema(post) {
           url: organizerRecord.url,
         }
       : null;
-  const offer = resolveOffer(ev, post, organizerRecord);
-  const location = locationNode(ev, attendanceMode, offer.url);
+  const offer = resolveOffer(ev);
+  const location = locationNode(
+    ev,
+    attendanceMode,
+    virtualLocationUrl(ev, post, organizerRecord)
+  );
   if (!location) return null;
 
   const endDate = resolveEndDate(post, ev);
@@ -801,7 +904,7 @@ export function eventSchema(post) {
     location,
     url: absoluteSiteUrl(`/blog/${post.slug}`),
     ...(organizer ? { organizer } : {}),
-    offers: offer,
+    ...(offer ? { offers: offer } : {}),
     ...(teams
       ? {
           homeTeam: { "@type": "SportsTeam", name: teams.home },
