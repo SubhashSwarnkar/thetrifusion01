@@ -84,6 +84,11 @@ EV charging CMS for CPOs and eMSPs, built in Jaipur for India and worldwide. One
 - Analytics: https://thetrifusion.in/services/ev-charging-app-development#analytics
 - India context (Bharat, UPI, GST): https://thetrifusion.in/services/ev-charging-app-development#india-context
 - Guide: https://thetrifusion.in/blog/ev-charging-app-ocpi-ocpp-guide
+- Guide: OCPP 1.6 vs 2.0.1 vs 2.1: https://thetrifusion.in/blog/ocpp-1-6-vs-2-0-1-vs-2-1-comparison
+- Guide: OCPI roaming for CPO and eMSP: https://thetrifusion.in/blog/ocpi-roaming-explained-cpo-emsp
+- Guide: EV charging CMS cost: https://thetrifusion.in/blog/ev-charging-cms-software-cost-guide
+- Guide: Build vs buy a CSMS: https://thetrifusion.in/blog/build-vs-buy-ev-charging-csms
+- Guide: EV charging software glossary: https://thetrifusion.in/blog/ev-charging-software-glossary
 
 ## Key hubs
 
