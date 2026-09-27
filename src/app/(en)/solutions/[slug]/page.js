@@ -51,6 +51,7 @@ export default function RoutePage({ params }) {
           name: page.h1,
           description: page.metaDescription,
           path: `/solutions/${page.slug}`,
+          ...(page.schema || {}),
         })}
       />
       <JsonLd data={faqSchema(page.faqs)} />

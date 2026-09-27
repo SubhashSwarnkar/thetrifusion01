@@ -64,10 +64,18 @@ export default function Footer({ hideNewsletter = false }) {
               <ul className="space-y-3">
                   <li>
                     <Link
+                      href="/solutions/ecommerce-website-development"
+                      className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block font-light"
+                    >
+                      Ecommerce Website Development
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
                       href="/ecommerce-development"
                       className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block font-light"
                     >
-                      Ecommerce Development
+                      Ecommerce Packages from ₹25,000
                     </Link>
                   </li>
                   <li>

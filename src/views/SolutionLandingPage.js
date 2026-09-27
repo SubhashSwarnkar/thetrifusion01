@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import Header from "parts/Header";
@@ -13,12 +13,12 @@ import { getServiceBySlug } from "data/servicesData";
 import { canonicalSolutionHref, dedupeCanonicalSolutions } from "lib/internalLinks";
 import { Portfolios } from "json/landingPageData";
 import { trackEvent, AnalyticsEvents } from "utils/analytics";
+import { siteConfig } from "config/site";
 import NotFoundPage from "./NotFoundPage";
 
 export default function SolutionLandingPage({ relatedBlog = null }) {
   const { slug } = useParams();
   const page = getSeoLandingBySlug(slug);
-  const [openFaqs, setOpenFaqs] = useState([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -43,11 +43,8 @@ export default function SolutionLandingPage({ relatedBlog = null }) {
     .map((id) => Portfolios.find((item) => item.id === id))
     .filter(Boolean);
 
-  const toggleFaq = (index) => {
-    setOpenFaqs((prev) =>
-      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
-    );
-  };
+  const headings = page.headings || {};
+  const telHref = `tel:${siteConfig.phoneE164}`;
 
   const primaryHref = page.primaryCtaHref || "/estimate";
   const trackPrimary = () => {
@@ -102,6 +99,28 @@ export default function SolutionLandingPage({ relatedBlog = null }) {
                 Send a brief
               </Link>
             </p>
+            {page.keyFacts?.length > 0 && (
+              <div className="mt-8 rounded-2xl border border-theme-purple/15 bg-white/80 p-5 sm:p-6">
+                <h2 className="text-base font-bold text-theme-blue mb-3">
+                  At a glance
+                </h2>
+                <dl className="grid grid-cols-1 gap-y-2 text-sm sm:text-base">
+                  {page.keyFacts.map((fact) => (
+                    <div key={fact.label} className="sm:flex sm:gap-3">
+                      <dt className="font-semibold text-theme-blue sm:w-32 sm:flex-shrink-0">
+                        {fact.label}
+                      </dt>
+                      <dd className="text-gray-600">{fact.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+                {page.showCompanyBlock && page.updatedAt && (
+                  <p className="mt-3 text-xs text-gray-400">
+                    Last updated: <time dateTime={page.updatedAt}>{page.updatedAt}</time>
+                  </p>
+                )}
+              </div>
+            )}
           </div>
         </section>
 
@@ -109,6 +128,19 @@ export default function SolutionLandingPage({ relatedBlog = null }) {
 
         {/* Sticky mobile CTA */}
         <div className="fixed bottom-0 inset-x-0 z-40 md:hidden bg-white/95 backdrop-blur border-t border-gray-100 p-3 flex gap-2 safe-area-pb">
+          {page.showCompanyBlock && (
+            <a
+              href={telHref}
+              onClick={() =>
+                trackEvent(AnalyticsEvents.CLICK_PHONE, {
+                  source: page.slug,
+                })
+              }
+              className="flex-none px-4 text-center py-3 rounded-full border border-theme-purple text-theme-purple font-bold text-sm"
+            >
+              Call
+            </a>
+          )}
           <Link
             href={primaryHref}
             onClick={trackPrimary}
@@ -165,6 +197,65 @@ export default function SolutionLandingPage({ relatedBlog = null }) {
                 <p className="text-gray-600 text-lg font-light leading-relaxed">
                   {section.body}
                 </p>
+                {section.bullets?.length > 0 && (
+                  <ul className="mt-4 space-y-2 text-gray-700">
+                    {section.bullets.map((item) => (
+                      <li key={item} className="flex gap-3">
+                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-theme-purple flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {section.table && (
+                  <div className="mt-5 overflow-x-auto rounded-xl border border-gray-200 bg-white">
+                    <table className="w-full min-w-[560px] text-left text-sm">
+                      {section.table.caption && (
+                        <caption className="sr-only">{section.table.caption}</caption>
+                      )}
+                      <thead className="bg-light-theme-purple/30 text-theme-blue">
+                        <tr>
+                          {section.table.columns.map((col, i) => (
+                            <th key={`${col}-${i}`} scope="col" className="px-4 py-3 font-bold">
+                              {col}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-100">
+                        {section.table.rows.map((row) => (
+                          <tr key={row[0]}>
+                            {row.map((cell, i) =>
+                              i === 0 ? (
+                                <th key={i} scope="row" className="px-4 py-3 font-semibold text-theme-blue align-top">
+                                  {cell}
+                                </th>
+                              ) : (
+                                <td key={i} className="px-4 py-3 text-gray-600 align-top">
+                                  {cell}
+                                </td>
+                              )
+                            )}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+                {section.links?.length > 0 && (
+                  <ul className="mt-4 space-y-2">
+                    {section.links.map((link) => (
+                      <li key={link.href}>
+                        <Link
+                          href={link.href}
+                          className="text-theme-purple font-semibold hover:underline underline-offset-2"
+                        >
+                          {link.label} →
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </article>
             ))}
           </div>
@@ -173,7 +264,7 @@ export default function SolutionLandingPage({ relatedBlog = null }) {
         <section className="!mb-0 py-14 md:py-16">
           <div className="container mx-auto px-5 max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-bold text-theme-blue mb-6">
-              What you get
+              {headings.deliverables || "What you get"}
             </h2>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
               {page.deliverables.map((item) => (
@@ -193,7 +284,7 @@ export default function SolutionLandingPage({ relatedBlog = null }) {
           <section className="!mb-0 py-14 md:py-16 border-t border-gray-100">
             <div className="container mx-auto px-5 max-w-3xl">
               <h2 className="text-2xl md:text-3xl font-bold text-theme-blue mb-2">
-                Who this is for
+                {headings.audiences || "Who this is for"}
               </h2>
               <p className="text-gray-500 font-light mb-6">
                 Built for the clients we actually work with.
@@ -215,7 +306,7 @@ export default function SolutionLandingPage({ relatedBlog = null }) {
         <section className="!mb-0 py-14 md:py-16 bg-gray-50/60">
           <div className="container mx-auto px-5 max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-bold text-theme-blue mb-8">
-              How we work
+              {headings.process || "How we work"}
             </h2>
             <ol className="relative space-y-0 border-l-2 border-theme-purple/20 ml-3 pl-8">
               {page.processSteps.map((step, index) => (
@@ -239,7 +330,7 @@ export default function SolutionLandingPage({ relatedBlog = null }) {
           <div className="container mx-auto px-5 max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
             <div>
               <h2 className="text-xl font-bold text-theme-blue mb-3">
-                Timeline
+                {headings.timeline || "Timeline"}
               </h2>
               <p className="text-gray-600 font-light leading-relaxed">
                 {page.timelineRange ||
@@ -248,7 +339,7 @@ export default function SolutionLandingPage({ relatedBlog = null }) {
             </div>
             <div>
               <h2 className="text-xl font-bold text-theme-blue mb-3">
-                What affects cost
+                {headings.cost || "What affects cost"}
               </h2>
               <ul className="space-y-2 text-gray-600 font-light">
                 {page.costFactors.map((factor) => (
@@ -259,7 +350,8 @@ export default function SolutionLandingPage({ relatedBlog = null }) {
                 ))}
               </ul>
               <p className="mt-3 text-sm text-gray-500">
-                No fake fixed prices — get a scoped quote after discovery.
+                {page.costNote ||
+                  "No fake fixed prices — get a scoped quote after discovery."}
               </p>
             </div>
           </div>
@@ -307,7 +399,7 @@ export default function SolutionLandingPage({ relatedBlog = null }) {
               {page.relatedLinks?.length > 0 && (
                 <div>
                   <h2 className="text-xl font-bold text-theme-blue mb-4">
-                    Ecommerce packages
+                    {headings.relatedLinks || "Ecommerce packages"}
                   </h2>
                   <ul className="space-y-3">
                     {page.relatedLinks.map((link) => (
@@ -389,35 +481,60 @@ export default function SolutionLandingPage({ relatedBlog = null }) {
         <section className="!mb-0 py-14 md:py-16">
           <div className="container mx-auto px-5 max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-bold text-theme-blue mb-6">
-              FAQs
+              {headings.faqs || "FAQs"}
             </h2>
             <div className="divide-y divide-gray-100 border-y border-gray-100">
-              {page.faqs.map((faq, index) => {
-                const open = openFaqs.includes(index);
-                return (
-                  <div key={faq.question}>
-                    <button
-                      type="button"
-                      onClick={() => toggleFaq(index)}
-                      className="w-full text-left py-5 flex justify-between items-start gap-4 font-semibold text-theme-blue"
-                      aria-expanded={open}
+              {page.faqs.map((faq) => (
+                <details key={faq.question} className="group">
+                  <summary className="w-full cursor-pointer list-none py-5 flex justify-between items-start gap-4 font-semibold text-theme-blue [&::-webkit-details-marker]:hidden">
+                    <h3 className="text-base font-semibold">{faq.question}</h3>
+                    <span
+                      aria-hidden="true"
+                      className="text-theme-purple text-xl leading-none flex-shrink-0 group-open:rotate-45 transition-transform"
                     >
-                      <span>{faq.question}</span>
-                      <span className="text-theme-purple text-xl leading-none flex-shrink-0">
-                        {open ? "−" : "+"}
-                      </span>
-                    </button>
-                    {open && (
-                      <div className="pb-5 -mt-1 text-gray-600 font-light leading-relaxed pr-8">
-                        {faq.answer}
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
+                      +
+                    </span>
+                  </summary>
+                  <p className="pb-5 -mt-1 text-gray-600 font-light leading-relaxed pr-8">
+                    {faq.answer}
+                  </p>
+                </details>
+              ))}
             </div>
           </div>
         </section>
+
+        {page.showCompanyBlock && (
+          <section className="!mb-0 pb-10">
+            <div className="container mx-auto px-5 max-w-3xl">
+              <div className="rounded-2xl border border-gray-100 bg-gray-50/60 p-6">
+                <h2 className="text-xl font-bold text-theme-blue mb-2">
+                  About {siteConfig.name}
+                </h2>
+                <p className="text-gray-600 font-light leading-relaxed">
+                  {siteConfig.name} is the brand of {siteConfig.legalNameShort}, a
+                  software development company in {siteConfig.city},{" "}
+                  {siteConfig.region}, India. We build websites, ecommerce
+                  stores, mobile apps and custom software for businesses in India
+                  and worldwide.
+                </p>
+                <p className="mt-3 text-gray-700">
+                  Phone / WhatsApp:{" "}
+                  <a href={telHref} className="font-semibold text-theme-purple hover:underline">
+                    {siteConfig.phone}
+                  </a>
+                  {" · "}Email:{" "}
+                  <a
+                    href={`mailto:${siteConfig.email}`}
+                    className="font-semibold text-theme-purple hover:underline"
+                  >
+                    {siteConfig.email}
+                  </a>
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
 
         <section className="!mb-0 pb-28 md:pb-24">
           <div className="container mx-auto px-5 max-w-3xl">

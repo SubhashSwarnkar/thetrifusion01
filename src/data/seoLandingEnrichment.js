@@ -95,17 +95,21 @@ export const landingEnrichment = {
     primaryCtaHref: "/estimate",
   },
   "ecommerce-website-development": {
+    updatedAt: "2026-09-27",
     outcomeLine:
-      "Go live with a store that handles catalog, checkout, and orders — then grow with SEO and ads.",
-    whatsappMessage: "Hi TriFusion, I need an ecommerce website consultation.",
+      "Packaged stores from ₹25,000, or a scoped custom build for complex catalogs, B2B pricing and marketplaces.",
+    whatsappMessage:
+      "Hi TriFusion, I want to discuss an ecommerce website (Shopify / WooCommerce / custom).",
     audiences: [
       "D2C brands",
       "Retailers going online",
-      "Wholesalers needing B2B catalogs",
+      "B2B distributors and wholesalers",
+      "Marketplace founders",
       "Founders replacing Instagram-only selling",
+      "International brands hiring an Indian team",
     ],
     timelineRange:
-      "Typical ecommerce MVP: 4–10 weeks. Complex catalogs/marketplaces: longer, delivered in phases.",
+      "Package websites: live within 48 hours after a locked brief and assets. Custom ecommerce MVP: typically 4–10 weeks. Marketplaces and heavy integrations: longer, delivered in phases.",
     relatedPortfolioIds: ["dailyconcepts-ecommerce-pos", "resto-restaurant-website"],
     primaryCtaLabel: "See ecommerce packages",
     primaryCtaHref: "/ecommerce-development",

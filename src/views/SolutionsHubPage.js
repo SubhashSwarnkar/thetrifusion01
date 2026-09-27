@@ -44,6 +44,12 @@ export default function SolutionsHubPage() {
                 Ecommerce from ₹25,000
               </Link>
               <Link
+                href="/solutions/ecommerce-website-development"
+                className="inline-flex items-center px-7 py-3.5 border-2 border-theme-blue/15 text-theme-blue rounded-full font-bold hover:border-theme-purple hover:text-theme-purple transition-colors"
+              >
+                Ecommerce website development
+              </Link>
+              <Link
                 href="/contact"
                 className="inline-flex items-center px-7 py-3.5 border-2 border-theme-blue/15 text-theme-blue rounded-full font-bold hover:border-theme-purple hover:text-theme-purple transition-colors"
               >

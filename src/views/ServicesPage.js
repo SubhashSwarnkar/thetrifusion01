@@ -78,6 +78,16 @@ export default function ServicesPage() {
                   </span>
                 </div>
               </Link>
+              <p className="mt-2 px-1 text-sm text-gray-500">
+                Custom, Shopify, WooCommerce, B2B or marketplace?{" "}
+                <Link
+                  href="/solutions/ecommerce-website-development"
+                  prefetch={false}
+                  className="font-semibold text-theme-purple underline-offset-2 hover:underline"
+                >
+                  Ecommerce website development
+                </Link>
+              </p>
             </div>
             {services.map((service, idx) => {
               const accent = accentAt(idx);

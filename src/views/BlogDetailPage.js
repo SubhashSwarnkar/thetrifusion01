@@ -52,6 +52,7 @@ export default function BlogDetailPage({
   relatedSolutions = [],
   relatedServices = [],
   relatedPosts = [],
+  isEcommerceTopic = false,
   languageSwitcher = null,
   worldTimes = null,
 }) {
@@ -154,6 +155,19 @@ export default function BlogDetailPage({
                   in 48h packages from ₹25,000, or a scoped custom website /
                   app / AI build.
                 </p>
+                {isEcommerceTopic && (
+                  <p className="mb-5 max-w-2xl text-gray-600">
+                    Planning an online store? Compare Shopify, WooCommerce and
+                    custom builds on our{" "}
+                    <Link
+                      href="/solutions/ecommerce-website-development"
+                      className="font-semibold text-theme-purple underline-offset-2 hover:underline"
+                    >
+                      ecommerce website development
+                    </Link>{" "}
+                    page.
+                  </p>
+                )}
                 <div className="flex flex-col gap-3 sm:flex-row">
                   <a
                     href={`https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(
