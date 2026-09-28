@@ -11,6 +11,7 @@ import { dailyOrganicTrends20260925pm2Posts } from "./dailyOrganicTrends20260925
 import { dailyOrganicBatch20260926Posts } from "./dailyOrganicBatch20260926";
 import { dailyOrganicBatch20260927Posts } from "./dailyOrganicBatch20260927";
 import { evChargingClusterPosts } from "./evChargingCluster20260927";
+import { dailyOrganicBatch20260928Posts } from "./dailyOrganicBatch20260928";
 
 /**
  * Blog editorial: ship 2 Jaipur / Rajasthan / India delivery posts each month.
@@ -66,6 +67,7 @@ export const HUB_TRENDING_SLUGS = [
 export const isArchivedPost = (slug) => ARCHIVE_NOINDEX_SLUGS.has(slug);
 
 export const blogPosts = [
+  ...dailyOrganicBatch20260928Posts,
   ...evChargingClusterPosts,
   ...dailyOrganicBatch20260927Posts,
   ...dailyOrganicBatch20260926Posts,
