@@ -12,6 +12,39 @@ import ServiceIcon from "components/ServiceIcon";
 import { accentAt } from "lib/themeAccents";
 import { siteConfig } from "config/site";
 
+const SERVICE_CHOOSER = [
+  {
+    href: "/services/website-development",
+    label: "Website development company in Jaipur",
+    text: "for business websites, lead-generation sites, and portals on React, Next.js, or WordPress, from ₹15,000.",
+  },
+  {
+    href: "/services/mobile-app-development",
+    label: "Mobile app development company in Jaipur",
+    text: "for one React Native or Flutter app on both iOS and Android, from ₹50,000.",
+  },
+  {
+    href: "/services/ios-app-development",
+    label: "iOS app development company in India",
+    text: "for App Store-only or iPhone-first apps in Swift or React Native, from ₹2,50,000.",
+  },
+  {
+    href: "/services/android-app-development",
+    label: "Android app development company in Jaipur",
+    text: "for Play Store-first apps in Kotlin or React Native, from ₹2,50,000.",
+  },
+  {
+    href: "/services/devops",
+    label: "DevOps services in Jaipur and India",
+    text: "for CI/CD, Kubernetes, infrastructure as code, and cloud migration on AWS, Azure, or GCP, starting with a free infrastructure audit.",
+  },
+  {
+    href: "/services/fintech-app-development",
+    label: "Fintech app development in Jaipur",
+    text: "for BBPS, AEPS, DMT, and XDMT retailer software, from ₹99,999.",
+  },
+];
+
 export default function ServicesPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -121,6 +154,29 @@ export default function ServicesPage() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      <section id="choose-a-service" className="container mx-auto px-5 pb-4">
+        <div className="max-w-4xl rounded-2xl border border-gray-100 bg-white p-6 md:p-8">
+          <h2 className="text-2xl md:text-3xl font-black text-theme-blue mb-4">
+            Which service page fits your project?
+          </h2>
+          <ul className="space-y-3 text-sm md:text-base text-gray-600 font-light leading-relaxed">
+            {SERVICE_CHOOSER.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  prefetch={false}
+                  className="font-semibold text-theme-purple hover:underline"
+                >
+                  {item.label}
+                </Link>
+                {" "}
+                {item.text}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

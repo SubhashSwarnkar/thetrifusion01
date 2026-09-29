@@ -172,7 +172,7 @@ function DetailBlock({ section }) {
                     </th>
                     {row.cells.map((cell, index) => (
                       <td key={`${row.label}-${index}`} className="px-4 py-3 text-gray-600 font-light align-top">
-                        {cell}
+                        <InlineText text={cell} />
                       </td>
                     ))}
                   </tr>
@@ -211,6 +211,38 @@ function DetailBlock({ section }) {
           ) : null}
         </div>
       ) : null}
+    </section>
+  );
+}
+
+function AnswerFirst({ block }) {
+  if (!block?.text) return null;
+  return (
+    <section
+      id={block.id || "quick-answer"}
+      aria-label={block.heading}
+      className="container mx-auto px-5 py-10 scroll-mt-28"
+    >
+      <div className="max-w-4xl rounded-2xl border border-theme-purple/20 bg-light-theme-purple/20 p-6 md:p-8">
+        <h2 className="text-2xl sm:text-3xl font-black text-theme-blue tracking-tight mb-3">
+          {block.heading}
+        </h2>
+        <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
+          <InlineText text={block.text} />
+        </p>
+        {block.facts?.length ? (
+          <dl className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {block.facts.map((fact) => (
+              <div key={fact.label} className="rounded-xl bg-white border border-gray-100 px-4 py-3">
+                <dt className="text-xs font-bold uppercase tracking-widest text-gray-500">{fact.label}</dt>
+                <dd className="mt-1 text-sm font-semibold text-theme-blue">
+                  <InlineText text={fact.value} />
+                </dd>
+              </div>
+            ))}
+          </dl>
+        ) : null}
+      </div>
     </section>
   );
 }
@@ -367,6 +399,8 @@ export default function ServiceDetailPage({
         </div>
       </section>
 
+      <AnswerFirst block={service.answerFirst} />
+
       {service.hideClientStrip ? null : <BrandTrustStrip />}
 
       {leadSections.map((section) => (
@@ -458,6 +492,10 @@ export default function ServiceDetailPage({
       </section>
 
       {bodySections.map((section) => (
+        <DetailBlock key={section.id} section={section} />
+      ))}
+
+      {service.extraSections?.map((section) => (
         <DetailBlock key={section.id} section={section} />
       ))}
 
@@ -672,10 +710,11 @@ export default function ServiceDetailPage({
                 Typical Delivery Timeline
               </span>
               <div className="text-3xl sm:text-4xl font-black text-theme-blue mb-2">
-                6 – 12 Weeks
+                {service.timelineLabel || "6 – 12 Weeks"}
               </div>
               <p className="text-sm text-gray-600 font-light mb-6">
-                Phased weekly sprints with continuous staging access. Focused MVPs launch in 6–8 weeks; complex workflows in 10–12 weeks.
+                {service.timelineNote ||
+                  "Phased weekly sprints with continuous staging access. Focused MVPs launch in 6–8 weeks; complex workflows in 10–12 weeks."}
               </p>
             </div>
             <Link

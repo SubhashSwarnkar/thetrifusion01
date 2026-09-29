@@ -4,6 +4,7 @@
  * metaDescription target: 150–160 characters.
  */
 import { devopsPageContent } from "./devopsPageContent";
+import { serviceRankingContent } from "./serviceRankingContent20260929";
 import { evChargingPageContent } from "./evChargingPageContent";
 
 export const servicePageSeo = {
@@ -877,3 +878,8 @@ export const servicePageSeo = {
     ],
   },
 };
+
+// 29 Sep 2026 ranking upgrade: merge page-specific overrides on top.
+for (const [slug, extra] of Object.entries(serviceRankingContent)) {
+  servicePageSeo[slug] = { ...(servicePageSeo[slug] || {}), ...extra };
+}
