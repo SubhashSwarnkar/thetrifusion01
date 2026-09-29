@@ -211,6 +211,7 @@ export const evChargingClusterPosts = [
 <li>Middle East and Southeast Asia: ask which connector families and which payment instruments the sites actually use. Do not copy an India GST invoice or a European calibration layout into a region that does not use them.</li>
 </ul>
 <p>None of those lines adds a price. They add or remove work. A glossary of the names in that list is the <a href="/blog/ev-charging-software-glossary">EV charging software glossary</a>. TheTriFusion writes the scope for a <a href="/services/ev-charging-app-development">CSMS for CPOs and eMSPs</a> from Jaipur and delivers remotely. Bring the charger models, the partner you have actually signed, and the payment method you already run. That is enough to say whether the published MVP label fits.</p>
+<p>Hosting, monitoring, and uptime for the OCPP backend are part of the running cost, not only the build. Our <a href="/services/devops">DevOps and cloud services</a> cover Kubernetes, monitoring, and cloud cost optimization on AWS, Azure, or GCP.</p>
 <h2>FAQ</h2>
 <h3>How much does an EV charging CMS cost?</h3>
 <p>The EV charging CMS page publishes a starting range of ₹4,50,000, ex-GST, after discovery, labelled as an eMSP or CPO MVP with live maps, charging sessions, and OCPP/OCPI. It is a starting range, not a fixed package. Wider scope is quoted in writing.</p>

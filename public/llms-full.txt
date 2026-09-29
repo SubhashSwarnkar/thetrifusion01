@@ -40,10 +40,10 @@ Contact: https://thetrifusion.in/contact
 Each line is the canonical URL. Paid landing pages are not listed here.
 
 - https://thetrifusion.in/services/software-development — Custom portals, CRM modules, and APIs for Indian SMEs. React, Node.js, Python, Java. From ₹1,00,000.
-- https://thetrifusion.in/services/website-development — Marketing sites and storefronts. React, Next.js, Node.js, WordPress. For Indian businesses. From ₹15,000.
-- https://thetrifusion.in/services/mobile-app-development — iOS and Android together. React Native, Flutter, Swift, Kotlin. Typical MVP 8–12 weeks. From ₹50,000.
-- https://thetrifusion.in/services/ios-app-development — App Store apps. Swift or React Native, TestFlight. Typical MVP 8–12 weeks. From ₹2,50,000.
-- https://thetrifusion.in/services/android-app-development — Play Store apps. Kotlin or React Native. Typical MVP 8–12 weeks. From ₹2,50,000.
+- https://thetrifusion.in/services/website-development — Website development company in Jaipur. Business websites, lead-generation sites, portals, and storefronts on React, Next.js, Node.js, WordPress. Plans from ₹15,000 (Basic, up to 5 pages), ₹35,000, ₹75,000. A focused marketing site is often 3–8 weeks.
+- https://thetrifusion.in/services/mobile-app-development — Mobile app development company in Jaipur for one cross-platform product on iOS and Android together (React Native or Flutter, with backend and web admin). Typical MVP 8–12 weeks after discovery. From ₹50,000. Single-store work is on the iOS and Android pages.
+- https://thetrifusion.in/services/ios-app-development — iOS app development company in India, based in Jaipur. App Store-only or iPhone-first apps in Swift or React Native, with TestFlight, App Store Connect listing, and review responses. Typical MVP 8–12 weeks of build plus Apple review. Plans from ₹2,50,000 / ₹5,00,000 / ₹9,00,000.
+- https://thetrifusion.in/services/android-app-development — Android app development company in Jaipur. Play Store-first apps in Kotlin, React Native, or Flutter, with signing, listing, testing tracks, and crash monitoring. Typical MVP 8–12 weeks after discovery. Plans from ₹2,50,000 / ₹5,00,000 / ₹9,00,000. Live apps: PlugOne, Connect Dairy.
 - https://thetrifusion.in/services/ui-ux-design — Product flows and screens for websites and apps. Figma. From ₹20,000.
 - https://thetrifusion.in/services/graphic-design — Campaign visuals that match a live site. Adobe Illustrator, Photoshop, InDesign. From ₹10,000.
 - https://thetrifusion.in/services/digital-marketing — SEO, Google Ads, Meta Ads, and landing pages for Indian brands. From ₹15,000.
@@ -52,7 +52,7 @@ Each line is the canonical URL. Paid landing pages are not listed here.
 - https://thetrifusion.in/services/business-modernization — Spreadsheet workflows replaced in phases. Web and mobile. Indian SMEs. From ₹1,50,000.
 - https://thetrifusion.in/services/salesforce — Objects, flows, and integrations in an existing org. Lightning, Apex. From ₹80,000.
 - https://thetrifusion.in/services/ai-development — Assistants, document ops, and search with a human step. Python and model APIs. From ₹2,00,000.
-- https://thetrifusion.in/services/devops — Pipelines, Terraform, Kubernetes, AWS/Azure/GCP. India and worldwide. Free infrastructure audit. No package price on the page.
+- https://thetrifusion.in/services/devops — DevOps services in Jaipur and India: CI/CD, infrastructure as code (Terraform, Ansible, Pulumi), Kubernetes management, DevSecOps readiness, cloud cost optimization, cloud migration, and managed DevOps on AWS, Azure, and GCP. Starts with a free infrastructure audit. No package price on the page.
 - https://thetrifusion.in/services/on-demand — Named React, Node, or mobile capacity. From ₹50,000.
 - https://thetrifusion.in/services/mlm-crm-development — Unilevel CRM, genealogy, KYC, web admin, iOS and Android. From ₹3,50,000.
 - https://thetrifusion.in/services/fintech-app-development — BBPS, AEPS, DMT, XDMT software for retailers and distributors. iOS, Android, web. From ₹99,999.

@@ -38,31 +38,43 @@ Price from: ₹1,00,000 for a starter MVP shown on the page.
 
 ### Website development
 URL: https://thetrifusion.in/services/website-development
-What: Marketing sites, lead funnels, and ecommerce storefronts with SEO basics and hosting after launch.
-Platforms: React, Next.js, Node.js, MongoDB, WordPress.
+Primary topic: website development company in Jaipur.
+Short answer: TheTriFusion is a website development company in Jaipur building business websites, lead-generation sites, portals, and ecommerce storefronts on React, Next.js, and WordPress for clients in Jaipur, India, and worldwide.
+What: Marketing sites, lead funnels, and ecommerce storefronts with titles, sitemap, Search Console setup, and hosting after launch.
+Platforms: React, Next.js, Node.js, MongoDB, PostgreSQL, WordPress.
 Who: Indian businesses that need a public site, not an internal operating system.
-Price from: ₹15,000.
+Price from: ₹15,000 (Basic, up to 5 pages). Published plans: ₹15,000 / ₹35,000 / ₹75,000. Ecommerce stores are on the ecommerce page from ₹25,000.
+Timeline: a focused marketing website is often 3–8 weeks.
 
 ### Mobile app development
 URL: https://thetrifusion.in/services/mobile-app-development
+Primary topic: mobile app development company in Jaipur (cross-platform, both stores).
+Short answer: TheTriFusion builds one product for both iOS and Android, usually on React Native or Flutter, with the backend and web admin behind it.
 What: One product on iOS and Android, with a shared data model and web admin.
 Platforms: React Native, Flutter, Swift, Kotlin, Firebase.
-Who: Teams shipping both stores. Typical MVP is 8–12 weeks.
+Who: Teams shipping both stores in the same release. Typical MVP is 8–12 weeks after discovery.
 Price from: ₹50,000.
+Not this page: App Store-only work is the iOS page; Play Store-first work is the Android page.
 
 ### iOS app development
 URL: https://thetrifusion.in/services/ios-app-development
-What: App Store apps with TestFlight and review support.
-Platforms: Swift or React Native, plus a web admin when scoped.
-Who: Businesses that need an iPhone app. Typical MVP is 8–12 weeks.
-Price from: ₹2,50,000.
+Primary topic: iOS app development company in India (team based in Jaipur, Rajasthan).
+Short answer: TheTriFusion builds iPhone apps in Swift, or React Native when Android will follow, and handles TestFlight, the App Store Connect listing, and review responses.
+What: App Store apps with TestFlight and review support, plus the API and web admin when scoped.
+Platforms: Swift or React Native, Firebase, Node.js, AWS.
+Who: Businesses that need an App Store-only or iPhone-first app. Typical MVP is 8–12 weeks of build plus Apple review time.
+Price from: ₹2,50,000 (focused iOS MVP). Published plans: ₹2,50,000 / ₹5,00,000 / ₹9,00,000.
+Live proof: PlugOne (https://plugone.in) includes an iOS driver experience.
 
 ### Android app development
 URL: https://thetrifusion.in/services/android-app-development
-What: Play Store apps with listing support.
-Platforms: Kotlin or React Native, plus a web admin when scoped.
-Who: Businesses that need an Android app. Typical MVP is 8–12 weeks.
-Price from: ₹2,50,000.
+Primary topic: Android app development company in Jaipur.
+Short answer: TheTriFusion builds Play Store apps in Kotlin, or React Native or Flutter when iOS should follow, and handles signing, the store listing, and the first production release. The Play Console account stays in the client's name.
+What: Play Store apps with listing support, testing tracks, crash monitoring, and the API and web admin when scoped.
+Platforms: Kotlin, React Native, Flutter, Firebase, Node.js, AWS.
+Who: Businesses that need a Play Store-first app. Typical MVP is 8–12 weeks after discovery.
+Price from: ₹2,50,000 (focused Android MVP). Published plans: ₹2,50,000 / ₹5,00,000 / ₹9,00,000.
+Live apps: PlugOne (https://plugone.in) and Connect Dairy (https://connectdairy.in).
 
 ### UI/UX design
 URL: https://thetrifusion.in/services/ui-ux-design
@@ -122,6 +134,8 @@ Price from: ₹2,00,000.
 
 ### DevOps and cloud
 URL: https://thetrifusion.in/services/devops
+Primary topic: DevOps services in Jaipur and India.
+Short answer: TheTriFusion provides CI/CD pipelines, infrastructure as code, Kubernetes management, DevSecOps readiness, cloud cost optimization, cloud migration, and managed DevOps on AWS, Azure, and Google Cloud, starting with a free infrastructure audit.
 What: Pipelines, infrastructure as code, Kubernetes where it earns its place, monitoring, and cloud migration on AWS, Azure, or GCP.
 Platforms: Jenkins, GitLab CI, Docker, Kubernetes, Terraform, AWS, Azure, Ansible.
 Who: Teams in India and elsewhere that need the operations layer under a product. The infrastructure audit is free. This page does not publish a package price.
