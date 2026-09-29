@@ -221,6 +221,7 @@ EV charging CMS for CPOs and eMSPs, built in Jaipur for India and worldwide. One
 - Guide: Build vs buy a CSMS: https://thetrifusion.in/blog/build-vs-buy-ev-charging-csms
 - Guide: EV charging software glossary: https://thetrifusion.in/blog/ev-charging-software-glossary
 - Guide: CSMS for UK and Europe CPOs: https://thetrifusion.in/blog/ev-charging-csms-uk-europe-cpo-guide
+- Guide: CSMS for UAE and Middle East CPOs: https://thetrifusion.in/blog/ev-charging-csms-uae-middle-east-cpo-guide
 
 ## Key hubs
 
