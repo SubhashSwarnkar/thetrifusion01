@@ -202,7 +202,6 @@ export function serviceSchema({
   const url = absoluteSiteUrl(path);
   const offerUrl = (value) => {
     if (!value) return undefined;
-    if (value.startsWith("http")) return value;
     return absoluteSiteUrl(value);
   };
   const exactOfferNodes =
@@ -369,14 +368,7 @@ function schemaOrgUrl(value, fallback) {
 }
 
 function apexImageUrl(pathOrUrl) {
-  const absolute =
-    typeof pathOrUrl === "string" && /^https?:\/\//i.test(pathOrUrl)
-      ? pathOrUrl
-      : absoluteSiteUrl(pathOrUrl || "/");
-  return absolute.replace(
-    /^https:\/\/www\.thetrifusion\.in/i,
-    "https://thetrifusion.in"
-  );
+  return absoluteSiteUrl(pathOrUrl || "/");
 }
 
 function eventImage(post) {
@@ -698,7 +690,8 @@ function validFromValue(value) {
 function absoluteHttpUrl(value) {
   if (typeof value !== "string") return null;
   const trimmed = value.trim();
-  return /^https?:\/\//i.test(trimmed) ? trimmed : null;
+  if (!/^https?:\/\//i.test(trimmed)) return null;
+  return absoluteSiteUrl(trimmed);
 }
 
 /**
@@ -758,7 +751,7 @@ function virtualLocationUrl(ev, post, organizer) {
   const direct = ev.ticketUrl || ev.offerUrl || nested.url || nested.href;
   if (typeof direct === "string" && direct.trim()) {
     const trimmed = direct.trim();
-    return /^https?:\/\//i.test(trimmed) ? trimmed : absoluteSiteUrl(trimmed);
+    return absoluteSiteUrl(trimmed);
   }
   if (organizer && organizer.offerUrl) return organizer.offerUrl;
   return absoluteSiteUrl(`/blog/${post.slug}`);
@@ -886,9 +879,7 @@ export function articleSchema(post, options = {}) {
   const path = options.path || `/blog/${post.slug}`;
   const canonical = absoluteSiteUrl(path);
   const imageUrl = post.imageUrl
-    ? post.imageUrl.startsWith("http")
-      ? post.imageUrl
-      : absoluteSiteUrl(post.imageUrl)
+    ? absoluteSiteUrl(post.imageUrl)
     : siteConfig.defaultOgImage;
 
   return {

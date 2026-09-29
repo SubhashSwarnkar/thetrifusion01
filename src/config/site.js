@@ -1,11 +1,40 @@
 /**
  * Single source of truth for NAP, domain, and brand defaults.
  * Public NAP may be overridden via NEXT_PUBLIC_* env vars.
+ * The public site origin is always the apex https://thetrifusion.in.
  */
+const APEX_ORIGIN = "https://thetrifusion.in";
+
 const env = (key, fallback) => {
   if (typeof process === "undefined" || !process.env) return fallback;
   return process.env[key] || fallback;
 };
+
+/**
+ * metadataBase, canonical, hreflang, sitemap, robots, og:url, and JSON-LD
+ * all read siteConfig.url. www and retired .com hosts are rewritten to the
+ * apex so a mis-set NEXT_PUBLIC_SITE_URL cannot emit them.
+ */
+function canonicalSiteOrigin(raw) {
+  const value = String(raw || "").trim();
+  if (!value) return APEX_ORIGIN;
+  try {
+    const parsed = new URL(value);
+    const host = parsed.hostname.replace(/\.$/, "").toLowerCase();
+    if (
+      host === "thetrifusion.in" ||
+      host === "www.thetrifusion.in" ||
+      host === "thetrifusion.com" ||
+      host === "www.thetrifusion.com"
+    ) {
+      return APEX_ORIGIN;
+    }
+    const port = parsed.port ? `:${parsed.port}` : "";
+    return `${parsed.protocol}//${parsed.hostname}${port}`;
+  } catch {
+    return APEX_ORIGIN;
+  }
+}
 
 export const siteConfig = {
   name: env("NEXT_PUBLIC_SITE_NAME", "TheTriFusion"),
@@ -18,9 +47,8 @@ export const siteConfig = {
     "Trifusion Infotech Pvt. Ltd."
   ),
   tagline: "IT Solutions, Websites & Mobile Apps",
-  url: env("NEXT_PUBLIC_SITE_URL", "https://thetrifusion.in").replace(
-    /\/$/,
-    ""
+  url: canonicalSiteOrigin(
+    env("NEXT_PUBLIC_SITE_URL", APEX_ORIGIN)
   ),
   email: env("NEXT_PUBLIC_COMPANY_EMAIL", "contact@thetrifusion.in"),
   phone: env("NEXT_PUBLIC_COMPANY_PHONE", "+91 63781 33780"),
@@ -76,5 +104,20 @@ export function absoluteSiteUrl(path = "/") {
   // Keep homepage canonical without trailing slash to match Next.js default
   // (trailingSlash: false) and avoid sitemap/canonical mismatch on "/".
   if (!path || path === "/") return siteConfig.url;
-  return `${siteConfig.url}${path.startsWith("/") ? path : `/${path}`}`;
+  const value = String(path).trim();
+  if (/^https?:\/\//i.test(value)) {
+    try {
+      const parsed = new URL(value);
+      const origin = canonicalSiteOrigin(
+        `${parsed.protocol}//${parsed.host}`
+      );
+      if (origin !== APEX_ORIGIN) return value;
+      const suffix = `${parsed.pathname}${parsed.search}${parsed.hash}`;
+      if (!suffix || suffix === "/") return APEX_ORIGIN;
+      return `${APEX_ORIGIN}${suffix}`;
+    } catch {
+      return siteConfig.url;
+    }
+  }
+  return `${siteConfig.url}${value.startsWith("/") ? value : `/${value}`}`;
 }

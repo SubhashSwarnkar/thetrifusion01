@@ -23,4 +23,4 @@ jobs:
       - name: Build and SEO audit
         run: npm run ci:seo
         env:
-          NEXT_PUBLIC_SITE_URL: https://www.thetrifusion.in
+          NEXT_PUBLIC_SITE_URL: https://thetrifusion.in
