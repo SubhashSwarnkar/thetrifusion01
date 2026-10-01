@@ -89,6 +89,11 @@ export default function LeadPopup() {
         setOpen(false);
         return;
       }
+      // WhatsApp chat owns the corner while it is open; this popup waits.
+      if (document.documentElement.classList.contains("tf-wa-open")) {
+        setOpen(false);
+        return;
+      }
       if (!canCountLeadPopupTime()) {
         setOpen(false);
         if (revealedRef.current) retiredRef.current = true;
@@ -106,15 +111,20 @@ export default function LeadPopup() {
         setOpen(false);
       }
     };
+    const onWhatsAppPanel = () => sync();
     window.addEventListener("storage", onStorage);
+    window.addEventListener("tf-whatsapp-panel", onWhatsAppPanel);
     return () => {
       window.clearInterval(id);
       window.removeEventListener("storage", onStorage);
+      window.removeEventListener("tf-whatsapp-panel", onWhatsAppPanel);
     };
   }, [pathname]);
 
   useEffect(() => {
-    document.documentElement.classList.toggle("tf-lead-open", open);
+    const show =
+      open && !document.documentElement.classList.contains("tf-wa-open");
+    document.documentElement.classList.toggle("tf-lead-open", show);
     return () => document.documentElement.classList.remove("tf-lead-open");
   }, [open]);
 
@@ -150,6 +160,7 @@ export default function LeadPopup() {
 
     const onKeyDown = (event) => {
       if (event.key === "Escape") {
+        if (document.documentElement.classList.contains("tf-wa-open")) return;
         event.preventDefault();
         closeRef.current();
         return;
