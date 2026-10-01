@@ -2,8 +2,13 @@
 
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
+import { useLeadPopupTrigger } from "components/leadPopupTrigger";
 
 const DeferredWidgets = dynamic(() => import("components/DeferredWidgets"), {
+  ssr: false,
+});
+
+const LeadPopup = dynamic(() => import("components/LeadPopup"), {
   ssr: false,
 });
 
@@ -26,6 +31,7 @@ function injectPoppins() {
 
 export default function Providers({ children }) {
   const [ready, setReady] = useState(false);
+  const showLeadPopup = useLeadPopupTrigger();
 
   useEffect(() => {
     let done = false;
@@ -54,6 +60,7 @@ export default function Providers({ children }) {
     <>
       {children}
       {ready ? <DeferredWidgets /> : null}
+      {showLeadPopup ? <LeadPopup /> : null}
     </>
   );
 }

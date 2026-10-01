@@ -380,6 +380,93 @@ html.tf-ads-on .tf-float-br.tf-float-above-bar {
   bottom: calc(6rem + 5.5rem + env(safe-area-inset-bottom, 0px));
 }
 
+/*
+ * Lead popup. Mobile sheet is at most 40vh and sits above the anchor ad.
+ * Desktop card sits above the WhatsApp button (bottom-right).
+ * While open, corner buttons move above the sheet so they are not covered.
+ */
+.tf-lead-root {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.tf-lead-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(21, 44, 91, 0.22);
+  pointer-events: auto;
+}
+
+.tf-lead-popup {
+  position: fixed;
+  z-index: 101;
+  pointer-events: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-height: 40vh;
+  max-height: 40dvh;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+html.tf-ads-on .tf-lead-popup {
+  bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
+  padding-bottom: 0;
+}
+
+@media (min-width: 640px) {
+  .tf-lead-popup {
+    left: auto;
+    right: 1.25rem;
+    bottom: calc(6.25rem + env(safe-area-inset-bottom, 0px));
+    width: 380px;
+    max-width: calc(100vw - 2.5rem);
+    max-height: min(32rem, calc(100vh - 8rem));
+    padding-bottom: 0;
+  }
+
+  html.tf-ads-on .tf-lead-popup {
+    bottom: calc(6.25rem + 5.5rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (max-width: 639px) {
+  html.tf-lead-open .tf-float-br,
+  html.tf-lead-open .tf-float-bl,
+  html.tf-lead-open .tf-float-br.tf-float-above-bar {
+    bottom: calc(var(--tf-lead-popup-height, 40dvh) + 0.75rem);
+  }
+
+  html.tf-ads-on.tf-lead-open .tf-float-br,
+  html.tf-ads-on.tf-lead-open .tf-float-bl,
+  html.tf-ads-on.tf-lead-open .tf-float-br.tf-float-above-bar {
+    bottom: calc(
+      var(--tf-lead-popup-height, 40dvh) + 5.5rem + 0.75rem +
+        env(safe-area-inset-bottom, 0px)
+    );
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tf-lead-popup {
+    animation: tf-lead-in 160ms ease-out;
+  }
+}
+
+@keyframes tf-lead-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @media (min-width: 640px) {
   html.tf-ads-on .tf-float-br.tf-float-above-bar {
     bottom: calc(1.5rem + 5.5rem + env(safe-area-inset-bottom, 0px));
