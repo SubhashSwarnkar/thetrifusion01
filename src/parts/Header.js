@@ -8,6 +8,7 @@ import ServiceIcon from "components/ServiceIcon";
 import { accentAt } from "lib/themeAccents";
 import { serviceNav as services } from "data/serviceNav";
 import { siteConfig } from "config/site";
+import { canonicalInternalHref } from "lib/internalLinks";
 
 const SERVICE_MENU_GROUPS = [
   {
@@ -294,7 +295,7 @@ export default function Header() {
                         return (
                           <li key={extra.slug}>
                             <Link prefetch={false}
-                              href={extra.href}
+                              href={canonicalInternalHref(extra.href)}
                               onClick={handleLinkClick}
                               className="group/item flex items-start gap-3 rounded-xl px-2 py-2 hover:bg-gray-50 transition-colors"
                             >

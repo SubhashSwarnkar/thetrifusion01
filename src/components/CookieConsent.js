@@ -57,7 +57,7 @@ export default function CookieConsent() {
     <div
       role="dialog"
       aria-label="Cookie consent"
-      className="fixed bottom-4 left-4 right-4 sm:right-auto sm:max-w-md z-[60] rounded-2xl bg-theme-blue text-white p-5 shadow-2xl border border-white/10"
+      className="tf-cookie-banner fixed left-4 right-4 sm:right-auto sm:max-w-md z-[60] rounded-2xl bg-theme-blue text-white p-5 shadow-2xl border border-white/10"
     >
       <p className="text-sm font-light leading-relaxed mb-4">
         We use cookies for Google Analytics and optional advertising

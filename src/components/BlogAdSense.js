@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import AdSenseAd from "components/AdSenseAd";
+import { shouldLoadAdSense } from "lib/adsensePaths";
 import {
   ADSENSE_BLOG_AUTO_ADS,
   ADSENSE_CLIENT_ID,
@@ -15,8 +17,12 @@ import {
  * Also renders optional manual units when slot IDs are configured.
  */
 export function BlogAdSenseAuto() {
+  const pathname = usePathname();
+
   useEffect(() => {
     if (!ADSENSE_CLIENT_ID || !ADSENSE_BLOG_AUTO_ADS) return;
+    if (!shouldLoadAdSense(pathname)) return;
+    if (document.documentElement.dataset.adsense === "off") return;
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({
         google_ad_client: ADSENSE_CLIENT_ID,
@@ -26,7 +32,7 @@ export function BlogAdSenseAuto() {
     } catch {
       /* ignore duplicate init */
     }
-  }, []);
+  }, [pathname]);
 
   return null;
 }

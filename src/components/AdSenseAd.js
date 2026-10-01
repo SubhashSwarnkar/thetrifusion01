@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
+import { shouldLoadAdSense } from "lib/adsensePaths";
 import { ADSENSE_CLIENT_ID } from "lib/trackingConfig";
 
 /**
@@ -14,19 +16,24 @@ export default function AdSenseAd({
   className = "",
   label = "Advertisement",
 }) {
+  const pathname = usePathname();
+  const allowed =
+    shouldLoadAdSense(pathname) &&
+    (typeof document === "undefined" ||
+      document.documentElement.dataset.adsense !== "off");
   const pushed = useRef(false);
 
   useEffect(() => {
-    if (!ADSENSE_CLIENT_ID || !slot || pushed.current) return;
+    if (!allowed || !ADSENSE_CLIENT_ID || !slot || pushed.current) return;
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
       pushed.current = true;
     } catch {
       /* AdSense may throw if already filled during soft navigations */
     }
-  }, [slot]);
+  }, [allowed, slot]);
 
-  if (!ADSENSE_CLIENT_ID || !slot) return null;
+  if (!allowed || !ADSENSE_CLIENT_ID || !slot) return null;
 
   return (
     <aside className={`adsense-unit ${className}`.trim()} aria-label={label}>

@@ -10,7 +10,11 @@ import BrandTrustStrip from "components/BrandTrustStrip";
 import WhatsAppButton from "components/WhatsAppButton";
 import { getSeoLandingBySlug } from "data/seoLandingPages";
 import { getServiceBySlug } from "data/servicesData";
-import { canonicalSolutionHref, dedupeCanonicalSolutions } from "lib/internalLinks";
+import {
+  canonicalInternalHref,
+  canonicalSolutionHref,
+  dedupeCanonicalSolutions,
+} from "lib/internalLinks";
 import { Portfolios } from "json/landingPageData";
 import { trackEvent, AnalyticsEvents } from "utils/analytics";
 import { siteConfig } from "config/site";
@@ -247,7 +251,7 @@ export default function SolutionLandingPage({ relatedBlog = null }) {
                     {section.links.map((link) => (
                       <li key={link.href}>
                         <Link
-                          href={link.href}
+                          href={canonicalInternalHref(link.href)}
                           className="text-theme-purple font-semibold hover:underline underline-offset-2"
                         >
                           {link.label} →
@@ -405,7 +409,7 @@ export default function SolutionLandingPage({ relatedBlog = null }) {
                     {page.relatedLinks.map((link) => (
                       <li key={link.href}>
                         <Link
-                          href={link.href}
+                          href={canonicalInternalHref(link.href)}
                           className="text-theme-purple font-semibold hover:underline underline-offset-2"
                         >
                           {link.label}

@@ -8,6 +8,7 @@ import { serviceNav } from "data/serviceNav";
 import { featuredSolutionNav } from "data/footerNav";
 import { LINKEDIN_URL, INSTAGRAM_URL, COMPANY_EMAIL } from "data/companyInfo";
 import { siteConfig } from "config/site";
+import { canonicalInternalHref } from "lib/internalLinks";
 import { trackEvent, AnalyticsEvents } from "utils/analytics";
 
 import Link from "next/link";
@@ -133,7 +134,7 @@ export default function Footer({ hideNewsletter = false }) {
                 {featuredSolutions.map((page) => (
                   <li key={page.slug}>
                     <Link
-                      href={page.href || `/solutions/${page.slug}`}
+                      href={canonicalInternalHref(page.href || `/solutions/${page.slug}`)}
                       className="text-white/60 hover:text-white hover:translate-x-1 transition-all inline-block font-light leading-snug"
                     >
                       {page.navLabel}

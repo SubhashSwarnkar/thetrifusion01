@@ -8,7 +8,7 @@ import { GOOGLE_ADS_ID, GTM_ID, META_PIXEL_ID } from "lib/trackingConfig";
  * GA4 and GTM start on the window load event, then requestIdleCallback,
  * so a full pageview is recorded without competing with LCP.
  * Meta Pixel stays on first interaction or an 8s fallback.
- * AdSense is scheduled from layout.js so every visitor gets it within a few seconds.
+ * AdSense loads from the standard head snippet in SiteDocument, after consent defaults.
  */
 const META_DELAY_MS = 8000;
 const IDLE_TIMEOUT_MS = 1500;

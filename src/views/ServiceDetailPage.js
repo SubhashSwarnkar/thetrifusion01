@@ -11,7 +11,11 @@ import BrandTrustStrip from "components/BrandTrustStrip";
 import ServiceIcon from "components/ServiceIcon";
 import { getServiceBySlug, services } from "data/servicesData";
 import { getSeoLandingBySlug, getSolutionsForService } from "data/seoLandingPages";
-import { canonicalSolutionHref, dedupeCanonicalSolutions } from "lib/internalLinks";
+import {
+  canonicalInternalHref,
+  canonicalSolutionHref,
+  dedupeCanonicalSolutions,
+} from "lib/internalLinks";
 import { accentAt, accentForSlug } from "lib/themeAccents";
 import NotFoundPage from "./NotFoundPage";
 import SEO from "components/common/SEO";
@@ -39,7 +43,7 @@ function InlineText({ text }) {
   let key = 0;
   while ((match = re.exec(text))) {
     if (match.index > last) nodes.push(text.slice(last, match.index));
-    const href = match[2];
+    const href = canonicalInternalHref(match[2]);
     nodes.push(
       <Link
         key={key++}
@@ -334,7 +338,7 @@ export default function ServiceDetailPage({
 
               <div className="flex flex-col sm:flex-row gap-3 mb-8">
                 <Link
-                  href={service.primaryCtaHref || "/contact"}
+                  href={canonicalInternalHref(service.primaryCtaHref || "/contact")}
                   className="inline-flex items-center justify-center px-7 py-3.5 bg-theme-purple text-white rounded-full font-bold shadow-lg shadow-theme-purple/25 hover:bg-dark-theme-purple hover:scale-[1.02] transition-all"
                 >
                   {service.primaryCtaLabel || "Get a free scoped estimate"}
@@ -344,7 +348,7 @@ export default function ServiceDetailPage({
                 </Link>
                 {service.secondaryCtaHref ? (
                   <Link
-                    href={service.secondaryCtaHref}
+                    href={canonicalInternalHref(service.secondaryCtaHref)}
                     className="inline-flex items-center justify-center px-7 py-3.5 bg-white text-theme-purple border-2 border-theme-purple/40 rounded-full font-bold hover:bg-light-theme-purple transition-colors"
                   >
                     {service.secondaryCtaLabel || "Learn more"}
@@ -412,7 +416,7 @@ export default function ServiceDetailPage({
         <div className="container mx-auto px-5 py-3 flex items-center gap-6 text-xs font-bold uppercase tracking-wider text-gray-500 overflow-x-auto">
           {service.quickNav?.length ? (
             service.quickNav.map((item) => (
-              <a key={item.href} href={item.href} className="hover:text-theme-purple whitespace-nowrap transition-colors">
+              <a key={item.href} href={canonicalInternalHref(item.href)} className="hover:text-theme-purple whitespace-nowrap transition-colors">
                 {item.label}
               </a>
             ))
@@ -432,7 +436,7 @@ export default function ServiceDetailPage({
               <a href="#related" className="hover:text-theme-purple whitespace-nowrap transition-colors">Related</a>
             </>
           )}
-          <Link href={service.primaryCtaHref || "/contact"} className="ml-auto text-theme-purple font-black hover:underline whitespace-nowrap">
+          <Link href={canonicalInternalHref(service.primaryCtaHref || "/contact")} className="ml-auto text-theme-purple font-black hover:underline whitespace-nowrap">
             {service.primaryCtaLabel || "Get a free scoped estimate"} →
           </Link>
         </div>
@@ -520,7 +524,7 @@ export default function ServiceDetailPage({
             <p className="mt-6 text-sm text-gray-600 font-light max-w-3xl">{service.starterPack.note}</p>
           ) : null}
           <Link
-            href={service.starterPack.ctaHref || "/contact"}
+            href={canonicalInternalHref(service.starterPack.ctaHref || "/contact")}
             className="mt-6 inline-flex items-center px-6 py-3 bg-theme-purple text-white rounded-full font-bold text-sm"
           >
             {service.starterPack.ctaLabel || "Request the free infrastructure audit"}
@@ -762,7 +766,7 @@ export default function ServiceDetailPage({
             <div className="flex flex-wrap gap-3">
               {service.caseStudy.href && (
                 <Link
-                  href={service.caseStudy.href}
+                  href={canonicalInternalHref(service.caseStudy.href)}
                   className="inline-flex items-center text-theme-purple font-bold hover:underline"
                 >
                   {service.caseStudy.hrefLabel || "Read more"} →
@@ -789,7 +793,7 @@ export default function ServiceDetailPage({
           <ul className="max-w-3xl divide-y divide-gray-100 rounded-2xl border border-gray-100">
             {service.softwareGuides.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="block px-5 py-4 hover:bg-light-theme-purple/30">
+                <Link href={canonicalInternalHref(item.href)} className="block px-5 py-4 hover:bg-light-theme-purple/30">
                   <span className="block font-semibold text-theme-blue">{item.title}</span>
                   <span className="mt-1 block text-sm font-light text-gray-600">{item.text}</span>
                 </Link>
@@ -883,7 +887,7 @@ export default function ServiceDetailPage({
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl">
             {service.relatedLinks.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="block h-full rounded-2xl border border-gray-100 p-5 hover:border-theme-purple/40">
+                <Link href={canonicalInternalHref(item.href)} className="block h-full rounded-2xl border border-gray-100 p-5 hover:border-theme-purple/40">
                   <h3 className="text-lg font-bold text-theme-blue mb-2">{item.title}</h3>
                   <p className="text-sm text-gray-600 font-light leading-relaxed">{item.text}</p>
                 </Link>
@@ -964,7 +968,7 @@ export default function ServiceDetailPage({
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href={service.primaryCtaHref || "/contact"}
+              href={canonicalInternalHref(service.primaryCtaHref || "/contact")}
               className="inline-flex items-center px-8 py-3.5 bg-white text-theme-purple rounded-full font-bold hover:bg-light-theme-purple transition-colors shadow-lg"
             >
               {service.primaryCtaLabel || "Get a free scoped estimate"}

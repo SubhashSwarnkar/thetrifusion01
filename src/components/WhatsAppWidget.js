@@ -200,8 +200,8 @@ export default function WhatsAppWidget({ defaultMessage }) {
     <div
       className={
         pathname.startsWith("/ecommerce-development")
-          ? "fixed bottom-24 right-4 z-50 font-sans sm:bottom-6 sm:right-6"
-          : "fixed bottom-6 right-6 z-50 font-sans"
+          ? "tf-float-br tf-float-above-bar fixed right-4 z-50 font-sans sm:right-6"
+          : "tf-float-br fixed right-6 z-50 font-sans"
       }
     >
       {/* Floating Toggle Button */}
