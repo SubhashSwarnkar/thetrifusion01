@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import Link from "next/link";
 import Header from "parts/Header";
 import Footer from "parts/Footer";
@@ -15,8 +15,25 @@ const SUGGESTED = [
 ];
 
 export default function NotFoundPage() {
+  useLayoutEffect(() => {
+    const root = document.documentElement;
+    root.dataset.adsense = "off";
+    root.classList.remove("tf-ads-on");
+    document
+      .querySelectorAll(
+        'script[src*="pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]'
+      )
+      .forEach((node) => node.remove());
+    document
+      .querySelectorAll("ins.adsbygoogle, .google-auto-placed")
+      .forEach((node) => node.remove());
+    return () => {
+      delete root.dataset.adsense;
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen bg-white flex flex-col" data-adsense-page="off">
       <Header />
       <main className="flex-1 container mx-auto px-5 pt-32 pb-20 text-center">
         <p className="text-theme-purple font-bold uppercase tracking-[0.2em] text-xs mb-4">

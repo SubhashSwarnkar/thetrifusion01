@@ -2755,10 +2755,34 @@ export const getFeaturedBlogPosts = (limit = 12) =>
 export const getLatestBlogPosts = (limit = 40) =>
   getPublishedBlogPosts().slice(0, limit);
 
-export const getHubTrendingPosts = () => {
-  const bySlug = new Map(getPublishedBlogPosts().map((p) => [p.slug, p]));
-  return HUB_TRENDING_SLUGS.map((slug) => bySlug.get(slug)).filter(Boolean);
-};
+/** Service and product categories. Trends & News (`news`) is not a guide. */
+const TECH_BUSINESS_GUIDE_CATEGORIES = new Set([
+  "webdev",
+  "mobile",
+  "fintech",
+  "ai",
+  "cloud",
+  "cybersecurity",
+  "casestudy",
+  "mlm",
+]);
+
+/**
+ * Lyrics, celebrity explainers, politics, and sports-match previews.
+ * Comparison guides ("vs" in a product name) stay. Post records are not edited.
+ */
+const NON_GUIDE_TOPIC =
+  /lyric|why-trending|why trending|celebrity|election|politic|premier-league|nations-league|world-cup|t20i|\bcricket\b|\bnfl\b|\bipl\b|olympic|match-preview|-preview(?:-|$)/i;
+
+export function isTechBusinessGuidePost(post) {
+  if (!post || !TECH_BUSINESS_GUIDE_CATEGORIES.has(post.category)) return false;
+  const blob = `${post.slug || ""} ${post.title || ""}`;
+  return !NON_GUIDE_TOPIC.test(blob);
+}
+
+/** Homepage and blog hub: newest tech and business guides only. */
+export const getHubTrendingPosts = (limit = 9) =>
+  getPublishedBlogPosts().filter(isTechBusinessGuidePost).slice(0, limit);
 
 export const getBlogBySlug = (slug) => {
   return blogPosts.find((post) => post.slug === slug);

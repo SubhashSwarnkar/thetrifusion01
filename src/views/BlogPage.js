@@ -83,7 +83,7 @@ export default function BlogPage({
                     Trending now
                   </p>
                   <h2 className="text-2xl sm:text-3xl font-bold text-theme-blue">
-                    High-volume explainers (23 Sep 2026)
+                    Tech and business guides
                   </h2>
                 </div>
                 <Link

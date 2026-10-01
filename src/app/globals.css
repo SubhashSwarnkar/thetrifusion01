@@ -338,6 +338,54 @@ h6 {
   contain-intrinsic-size: auto 1200px;
 }
 
+/*
+ * Clear a Google anchor ad (about 90px) plus the iOS home indicator.
+ * tf-ads-on is set only on pages that load the AdSense script.
+ */
+.tf-float-br {
+  bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
+}
+
+.tf-float-bl {
+  bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
+}
+
+.tf-cookie-banner {
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+}
+
+.tf-float-br.tf-float-above-bar {
+  bottom: calc(6rem + env(safe-area-inset-bottom, 0px));
+}
+
+@media (min-width: 640px) {
+  .tf-float-br.tf-float-above-bar {
+    bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+html.tf-ads-on .tf-float-br {
+  bottom: calc(1.5rem + 5.5rem + env(safe-area-inset-bottom, 0px));
+}
+
+html.tf-ads-on .tf-float-bl {
+  bottom: calc(2rem + 5.5rem + env(safe-area-inset-bottom, 0px));
+}
+
+html.tf-ads-on .tf-cookie-banner {
+  bottom: calc(1rem + 5.5rem + env(safe-area-inset-bottom, 0px));
+}
+
+html.tf-ads-on .tf-float-br.tf-float-above-bar {
+  bottom: calc(6rem + 5.5rem + env(safe-area-inset-bottom, 0px));
+}
+
+@media (min-width: 640px) {
+  html.tf-ads-on .tf-float-br.tf-float-above-bar {
+    bottom: calc(1.5rem + 5.5rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
 /* Metric-adjusted Arial so the first paint matches Poppins before the real files load. */
 @font-face {
   font-family: PoppinsFallback;
