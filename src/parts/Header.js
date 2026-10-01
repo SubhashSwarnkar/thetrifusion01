@@ -94,6 +94,7 @@ export default function Header() {
   const path = pathname;
   const timeoutRef = useRef(null);
   const menuScrollRef = useRef(null);
+  const headerRef = useRef(null);
 
   // Scroll handler
   useEffect(() => {
@@ -102,6 +103,23 @@ export default function Header() {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Publish a stable bar height so the WhatsApp sheet can clear the sticky header.
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return undefined;
+    const publish = () => {
+      const height = Math.ceil(el.getBoundingClientRect().height);
+      if (height > 0) {
+        document.documentElement.style.setProperty("--tf-header-h", `${height}px`);
+      }
+    };
+    publish();
+    if (typeof ResizeObserver === "undefined") return undefined;
+    const observer = new ResizeObserver(publish);
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
 
   // Close mobile menu when route changes
@@ -177,17 +195,17 @@ export default function Header() {
   };
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${
-      isScrolled 
-        ? "bg-white/80 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(31,38,135,0.08)] py-3" 
-        : "bg-transparent py-5"
-    }`}>
-      <div className="container mx-auto flex items-center gap-6 px-5">
-        <div className="flex flex-col justify-center flex-shrink-0">
+    <header
+      ref={headerRef}
+      className={`fixed top-0 left-0 w-full z-[100] transition-[background-color,box-shadow] duration-500 ${
+        isScrolled
+          ? "bg-white/80 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(31,38,135,0.08)]"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="container mx-auto flex h-16 items-center gap-6 px-5 lg:h-[4.5rem]">
+        <div className="flex shrink-0 items-center">
           <BrandIcon compact />
-          <address className="hidden lg:block max-w-[11rem] text-[10px] font-medium text-gray-500 leading-snug mt-0.5 not-italic">
-            {siteConfig.addressLine}
-          </address>
         </div>
 
         {/* Desktop Navigation */}
@@ -260,7 +278,7 @@ export default function Header() {
 
         {/* Mobile Toggle */}
         <button
-          className="lg:hidden w-10 h-10 flex flex-col justify-center items-center gap-1.5 focus:outline-none z-[110]"
+          className="lg:hidden ml-auto w-10 h-10 flex flex-col justify-center items-center gap-1.5 focus:outline-none z-[110]"
           onClick={() => setIsCollapse(!isCollapse)}
           aria-label="Toggle navigation menu"
           aria-expanded={isCollapse}

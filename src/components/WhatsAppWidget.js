@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef, useMemo } from "react";
+import React, { useState, useEffect, useLayoutEffect, useRef, useMemo } from "react";
 import { usePathname } from "next/navigation";
 import { WHATSAPP_NUMBER, COMPANY_PHONE_DISPLAY } from "data/companyInfo";
 import { getServiceBySlug } from "data/servicesData";
@@ -116,6 +116,16 @@ function getContextualChips(pathname) {
   ];
 }
 
+function setWhatsAppPanelOpen(next) {
+  if (typeof document === "undefined") return;
+  const root = document.documentElement;
+  if (next) root.classList.remove("tf-lead-open");
+  root.classList.toggle("tf-wa-open", next);
+  window.dispatchEvent(
+    new CustomEvent("tf-whatsapp-panel", { detail: { open: next } })
+  );
+}
+
 export default function WhatsAppWidget({ defaultMessage }) {
   const pathname = usePathname() || "/";
   const [isOpen, setIsOpen] = useState(false);
@@ -125,6 +135,11 @@ export default function WhatsAppWidget({ defaultMessage }) {
   const textareaRef = useRef(null);
 
   const chips = useMemo(() => getContextualChips(pathname), [pathname]);
+
+  const setPanelOpen = (next) => {
+    setWhatsAppPanelOpen(next);
+    setIsOpen(next);
+  };
 
   // Initialize or update default message based on route
   useEffect(() => {
@@ -141,10 +156,10 @@ export default function WhatsAppWidget({ defaultMessage }) {
         setMessage(customText);
         setActiveChipIndex(null);
       }
-      setIsOpen(true);
+      setPanelOpen(true);
       setTimeout(() => {
-        textareaRef.current?.focus();
-      }, 150);
+        textareaRef.current?.focus({ preventScroll: true });
+      }, 180);
     };
 
     window.addEventListener("open-whatsapp-modal", handleOpenModal);
@@ -155,7 +170,8 @@ export default function WhatsAppWidget({ defaultMessage }) {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape" && isOpen) {
-        setIsOpen(false);
+        e.preventDefault();
+        setPanelOpen(false);
       }
     };
     window.addEventListener("keydown", handleKeyDown);
@@ -166,14 +182,44 @@ export default function WhatsAppWidget({ defaultMessage }) {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (isOpen && modalRef.current && !modalRef.current.contains(event.target)) {
-        // Only close if not clicking the toggle button itself
         const toggleBtn = document.getElementById("floating-whatsapp-trigger");
         if (toggleBtn && toggleBtn.contains(event.target)) return;
-        setIsOpen(false);
+        setPanelOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isOpen]);
+
+  useEffect(() => {
+    return () => {
+      document.documentElement.classList.remove("tf-wa-open", "tf-wa-keyboard");
+      document.documentElement.style.removeProperty("--tf-wa-keyboard");
+    };
+  }, []);
+
+  // Keep the sheet above the mobile keyboard. dvh does not shrink for it.
+  useLayoutEffect(() => {
+    if (!isOpen) return undefined;
+    const vv = window.visualViewport;
+    const apply = () => {
+      const height = vv?.height ?? window.innerHeight;
+      const offset = vv?.offsetTop ?? 0;
+      const covered = Math.max(0, Math.round(window.innerHeight - offset - height));
+      document.documentElement.style.setProperty("--tf-wa-keyboard", `${covered}px`);
+      document.documentElement.classList.toggle("tf-wa-keyboard", covered > 0);
+    };
+    apply();
+    vv?.addEventListener("resize", apply);
+    vv?.addEventListener("scroll", apply);
+    window.addEventListener("resize", apply);
+    return () => {
+      vv?.removeEventListener("resize", apply);
+      vv?.removeEventListener("scroll", apply);
+      window.removeEventListener("resize", apply);
+      document.documentElement.style.removeProperty("--tf-wa-keyboard");
+      document.documentElement.classList.remove("tf-wa-keyboard");
+    };
   }, [isOpen]);
 
   const handleChipClick = (chipText, index) => {
@@ -193,28 +239,34 @@ export default function WhatsAppWidget({ defaultMessage }) {
     });
 
     window.open(url, "_blank", "noopener,noreferrer");
-    setIsOpen(false);
+    setPanelOpen(false);
   };
+
+  const aboveBar = pathname.startsWith("/ecommerce-development");
 
   return (
     <div
-      className={
-        pathname.startsWith("/ecommerce-development")
-          ? "tf-float-br tf-float-above-bar fixed right-4 z-50 font-sans sm:right-6"
-          : "tf-float-br fixed right-6 z-50 font-sans"
-      }
+      className={[
+        "tf-wa-dock tf-float-br fixed font-sans",
+        aboveBar ? "tf-float-above-bar right-4 sm:right-6" : "right-6",
+      ].join(" ")}
     >
-      {/* Floating Toggle Button */}
+      {/* Floating Toggle Button. Hidden on small screens while the sheet is open. */}
       <button
         id="floating-whatsapp-trigger"
         onClick={() => {
-          setIsOpen(!isOpen);
-          if (!isOpen) {
-            setTimeout(() => textareaRef.current?.focus(), 150);
+          const next = !isOpen;
+          setPanelOpen(next);
+          if (next) {
+            setTimeout(() => textareaRef.current?.focus({ preventScroll: true }), 180);
           }
         }}
-        aria-label="Chat with TheTriFusion on WhatsApp"
-        className="relative flex items-center justify-center w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full shadow-[0_8px_30px_rgb(16,185,129,0.4)] hover:scale-110 active:scale-95 transition-all duration-300 group"
+        aria-label={isOpen ? "Close WhatsApp chat" : "Chat with TheTriFusion on WhatsApp"}
+        aria-expanded={isOpen}
+        aria-controls="tf-wa-panel"
+        className={`tf-wa-fab relative items-center justify-center w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full shadow-[0_8px_30px_rgb(16,185,129,0.4)] hover:scale-110 active:scale-95 transition-all duration-300 group ${
+          isOpen ? "hidden md:flex" : "flex"
+        }`}
       >
         <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-green-400 rounded-full border-2 border-white animate-pulse" />
         
@@ -236,45 +288,46 @@ export default function WhatsAppWidget({ defaultMessage }) {
         )}
       </button>
 
-      {/* Interactive WhatsApp Popover Card (Opens Upwards above button) */}
       {isOpen && (
         <div
           ref={modalRef}
+          id="tf-wa-panel"
           role="dialog"
-          aria-label="WhatsApp Quick Chat"
-          className="absolute bottom-[68px] right-0 w-[92vw] sm:w-[390px] max-w-[420px] max-h-[calc(100vh-100px)] bg-white rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-emerald-500/25 overflow-hidden flex flex-col z-50 transition-all duration-200 origin-bottom-right"
+          aria-modal="true"
+          aria-labelledby="tf-wa-title"
+          className="tf-wa-panel"
         >
-          {/* Header */}
-          <div className="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 text-white p-4 sm:p-5 flex items-center justify-between shadow-md">
-            <div className="flex items-center gap-3">
-              <div className="relative">
+          <div className="tf-wa-header">
+            <div className="flex items-center gap-3 min-w-0">
+              <div className="relative shrink-0">
                 <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-lg font-black border border-white/30">
                   ⚡
                 </div>
                 <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 rounded-full border-2 border-emerald-700 animate-pulse" />
               </div>
-              <div>
-                <h3 className="font-bold text-base leading-tight">TheTriFusion Team</h3>
+              <div className="min-w-0">
+                <h3 id="tf-wa-title" className="font-bold text-base leading-tight">TheTriFusion Team</h3>
                 <p className="text-xs text-emerald-100 font-light flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-300" />
-                  Jaipur HQ · Typically replies in 15 mins
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-300 shrink-0" />
+                  <span className="truncate">Jaipur HQ · Typically replies in 15 mins</span>
                 </p>
               </div>
             </div>
             <button
-              onClick={() => setIsOpen(false)}
-              className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors text-sm"
+              type="button"
+              onClick={() => setPanelOpen(false)}
+              className="tf-wa-close"
               aria-label="Close"
             >
-              ✕
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+              </svg>
             </button>
           </div>
 
-          {/* Chat Body */}
-          <div className="p-4 sm:p-5 bg-gradient-to-b from-[#efeae2]/50 to-white max-h-[62vh] overflow-y-auto space-y-4">
-            {/* Greeting Bubble */}
+          <div className="tf-wa-body">
             <div className="flex items-start gap-2.5">
-              <div className="w-7 h-7 rounded-full bg-emerald-600 text-white text-xs font-bold flex items-center justify-center shrink-0 shadow-xs">
+              <div className="w-7 h-7 rounded-full bg-emerald-600 text-white text-xs font-bold flex items-center justify-center shrink-0">
                 TF
               </div>
               <div className="bg-white rounded-2xl rounded-tl-sm p-3.5 shadow-sm border border-gray-100 text-xs sm:text-sm text-slate-800 leading-relaxed max-w-[88%]">
@@ -285,7 +338,6 @@ export default function WhatsAppWidget({ defaultMessage }) {
               </div>
             </div>
 
-            {/* Quick Pre-filled Chips */}
             <div>
               <p className="text-[11px] font-bold uppercase tracking-wider text-gray-400 mb-2 px-1">
                 Quick Select Option
@@ -300,8 +352,8 @@ export default function WhatsAppWidget({ defaultMessage }) {
                       onClick={() => handleChipClick(chip.text, idx)}
                       className={`text-xs px-3 py-1.5 rounded-full border font-medium transition-all text-left ${
                         isSelected
-                          ? "bg-emerald-600 text-white border-emerald-600 shadow-sm scale-102"
-                          : "bg-white text-slate-700 border-gray-200 hover:border-emerald-500 hover:text-emerald-700 shadow-2xs"
+                          ? "bg-emerald-600 text-white border-emerald-600 shadow-sm"
+                          : "bg-white text-slate-700 border-gray-200 hover:border-emerald-500 hover:text-emerald-700"
                       }`}
                     >
                       {chip.label}
@@ -311,57 +363,45 @@ export default function WhatsAppWidget({ defaultMessage }) {
               </div>
             </div>
 
-            {/* Custom Editable Message Input Area */}
-            <div>
-              <div className="flex items-center justify-between mb-1.5 px-1">
-                <label htmlFor="wa-custom-msg" className="text-[11px] font-bold uppercase tracking-wider text-gray-500">
-                  Your Message to Send
-                </label>
-                <span className="text-[10px] text-gray-400">
-                  Editable · {message.length} chars
-                </span>
-              </div>
-              <div className="relative">
-                <textarea
-                  id="wa-custom-msg"
-                  ref={textareaRef}
-                  rows={3}
-                  value={message}
-                  onChange={(e) => {
-                    setMessage(e.target.value);
-                    setActiveChipIndex(null);
-                  }}
-                  placeholder="Type your custom requirement, budget, or question here..."
-                  className="w-full text-xs sm:text-sm p-3 rounded-2xl border border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 focus:outline-none text-slate-800 resize-none shadow-inner bg-white font-normal"
-                />
-              </div>
-            </div>
+            <p className="text-[11px] text-gray-500 font-light text-center">
+              Prefer a phone call?{" "}
+              <a
+                href={`tel:${WHATSAPP_NUMBER}`}
+                onClick={() => trackEvent(AnalyticsEvents.CLICK_PHONE, { source: "whatsapp_widget" })}
+                className="text-emerald-700 font-bold hover:underline"
+              >
+                Call {COMPANY_PHONE_DISPLAY}
+              </a>
+            </p>
+          </div>
 
-            {/* Direct WhatsApp CTA Button */}
-            <button
-              type="button"
-              onClick={handleSend}
-              className="w-full py-3.5 px-5 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white rounded-2xl font-bold text-sm shadow-lg shadow-emerald-600/30 hover:shadow-xl hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2"
-            >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <div className="tf-wa-footer">
+            <div className="flex items-center justify-between mb-1.5 px-0.5">
+              <label htmlFor="wa-custom-msg" className="text-[11px] font-bold uppercase tracking-wider text-gray-500">
+                Your message to send
+              </label>
+              <span className="text-[10px] text-gray-400">
+                Editable · {message.length} chars
+              </span>
+            </div>
+            <textarea
+              id="wa-custom-msg"
+              ref={textareaRef}
+              rows={2}
+              value={message}
+              onChange={(e) => {
+                setMessage(e.target.value);
+                setActiveChipIndex(null);
+              }}
+              placeholder="Type your custom requirement, budget, or question here..."
+              className="tf-wa-input"
+            />
+            <button type="button" onClick={handleSend} className="tf-wa-send">
+              <svg className="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
               </svg>
-              <span>Chat on WhatsApp Now</span>
+              <span>Send on WhatsApp</span>
             </button>
-
-            {/* Urgent Phone Link */}
-            <div className="pt-2 text-center">
-              <p className="text-[11px] text-gray-500 font-light">
-                Prefer a phone call?{" "}
-                <a
-                  href={`tel:${WHATSAPP_NUMBER}`}
-                  onClick={() => trackEvent(AnalyticsEvents.CLICK_PHONE, { source: "whatsapp_widget" })}
-                  className="text-emerald-700 font-bold hover:underline"
-                >
-                  Call {COMPANY_PHONE_DISPLAY}
-                </a>
-              </p>
-            </div>
           </div>
         </div>
       )}
