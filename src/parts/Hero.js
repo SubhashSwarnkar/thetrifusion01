@@ -3,39 +3,13 @@ import Link from "next/link";
 import Button from "../elements/Button";
 import HeroVideo from "components/HeroVideo";
 import { siteConfig } from "config/site";
-
-/** Homepage hero: only the four core services visitors should remember. */
-const HERO_CORE = [
-  {
-    label: "Website Development",
-    href: "/services/website-development",
-    highlight: true,
-  },
-  {
-    label: "Ecommerce from ₹25k",
-    href: "/ecommerce-development",
-    highlight: true,
-  },
-  {
-    label: "Mobile Apps",
-    href: "/services/mobile-app-development",
-    highlight: true,
-  },
-  {
-    label: "UI/UX",
-    href: "/services/ui-ux-design",
-  },
-  {
-    label: "Digital Marketing",
-    href: "/services/digital-marketing",
-  },
-];
+import { heroCoreGroups } from "data/heroCoreServices";
 
 const chipClassName =
-  "whitespace-nowrap shrink-0 px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple hover:bg-white transition-colors";
+  "whitespace-nowrap shrink-0 px-2.5 py-1 rounded-full bg-gray-50 text-xs text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple hover:bg-white transition-colors";
 
 const highlightChipClassName =
-  "whitespace-nowrap shrink-0 px-3 py-1.5 rounded-full bg-theme-purple text-white border border-theme-purple shadow-sm hover:bg-dark-theme-purple transition-colors font-semibold";
+  "whitespace-nowrap shrink-0 px-2.5 py-1 rounded-full bg-theme-purple text-white text-xs border border-theme-purple shadow-sm hover:bg-dark-theme-purple transition-colors font-semibold";
 
 export default function Hero() {
   return (
@@ -95,22 +69,35 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="mt-10">
+        <nav className="mt-8 lg:mt-10" aria-label="Core services">
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-gray-400 mb-3 text-center lg:text-left">
             Core services
           </p>
-          <div className="flex flex-wrap justify-center lg:justify-start gap-2.5">
-            {HERO_CORE.map((chip) => (
-              <Link prefetch={false}
-                key={chip.label}
-                href={chip.href}
-                className={chip.highlight ? highlightChipClassName : chipClassName}
-              >
-                {chip.label}
-              </Link>
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-x-6 gap-y-4">
+            {heroCoreGroups.map((group) => (
+              <div key={group.heading} className="min-w-0">
+                <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-gray-400 mb-2 text-center sm:text-left">
+                  {group.heading}
+                </p>
+                <ul className="flex flex-wrap justify-center sm:justify-start gap-1.5">
+                  {group.items.map((chip) => (
+                    <li key={chip.href}>
+                      <Link
+                        prefetch={false}
+                        href={chip.href}
+                        className={
+                          chip.highlight ? highlightChipClassName : chipClassName
+                        }
+                      >
+                        {chip.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
-        </div>
+        </nav>
 
         <div className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-gray-600">
           <div className="flex items-center">
