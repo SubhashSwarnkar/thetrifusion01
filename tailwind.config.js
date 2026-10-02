@@ -51,6 +51,8 @@ module.exports = {
         wave: "wave 10s linear infinite",
         "marquee-left": "marqueeLeft 40s linear infinite",
         "marquee-right": "marqueeRight 42s linear infinite",
+        "services-marquee-left": "marqueeLeft 48s linear infinite",
+        "services-marquee-right": "marqueeRight 56s linear infinite",
       },
       keyframes: {
         bouncex: {

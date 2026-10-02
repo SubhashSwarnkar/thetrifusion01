@@ -679,6 +679,12 @@ html.tf-wa-keyboard .tf-wa-send {
   }
 }
 
+/* Hero service ticker. Pause the whole strip so a chip can be read or clicked. */
+.tf-service-strip:hover .tf-services-marquee,
+.tf-service-strip:focus-within .tf-services-marquee {
+  animation-play-state: paused;
+}
+
 @keyframes tf-wa-in {
   from {
     opacity: 0;

@@ -6,10 +6,59 @@ import { siteConfig } from "config/site";
 import { heroCoreGroups } from "data/heroCoreServices";
 
 const chipClassName =
-  "inline-block max-w-full px-2.5 py-1 rounded-full bg-gray-50 text-xs leading-snug text-center text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple hover:bg-white transition-colors";
+  "inline-flex shrink-0 items-center whitespace-nowrap rounded-full border border-gray-100 bg-gray-50 px-3 py-1.5 text-xs text-gray-600 transition-colors hover:border-theme-purple/40 hover:bg-white hover:text-theme-purple focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-purple";
 
 const highlightChipClassName =
-  "inline-block max-w-full px-2.5 py-1 rounded-full bg-theme-purple text-white text-xs leading-snug text-center border border-theme-purple shadow-sm hover:bg-dark-theme-purple transition-colors font-semibold";
+  "inline-flex shrink-0 items-center whitespace-nowrap rounded-full border border-theme-purple bg-theme-purple px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition-colors hover:bg-dark-theme-purple focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-purple";
+
+const heroServices = heroCoreGroups.flatMap((group) => group.items);
+const rowSplit = Math.ceil(heroServices.length / 2);
+const serviceRows = [
+  { direction: "left", items: heroServices.slice(0, rowSplit) },
+  { direction: "right", items: heroServices.slice(rowSplit) },
+];
+
+function ServiceChipList({ items, hidden = false }) {
+  return (
+    <ul
+      className={`flex shrink-0 items-center gap-2.5 pr-2.5 ${
+        hidden
+          ? "motion-reduce:hidden"
+          : "motion-reduce:w-full motion-reduce:max-w-full motion-reduce:shrink motion-reduce:flex-wrap motion-reduce:justify-center motion-reduce:px-5 motion-reduce:pr-5"
+      }`}
+      aria-hidden={hidden ? "true" : undefined}
+    >
+      {items.map((chip) => (
+        <li key={hidden ? `${chip.href}-loop` : chip.href}>
+          <Link
+            prefetch={false}
+            href={chip.href}
+            tabIndex={hidden ? -1 : undefined}
+            className={chip.highlight ? highlightChipClassName : chipClassName}
+          >
+            {chip.label}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function ServiceMarquee({ items, direction }) {
+  const animation =
+    direction === "right"
+      ? "animate-services-marquee-right"
+      : "animate-services-marquee-left";
+
+  return (
+    <div
+      className={`tf-services-marquee flex w-max ${animation} motion-reduce:w-full motion-reduce:max-w-full motion-reduce:animate-none motion-reduce:flex-wrap motion-reduce:transform-none`}
+    >
+      <ServiceChipList items={items} />
+      <ServiceChipList items={items} hidden />
+    </div>
+  );
+}
 
 export default function Hero() {
   return (
@@ -68,38 +117,28 @@ export default function Hero() {
             <HeroVideo />
           </div>
         </div>
+      </div>
 
-        <nav className="mt-8 lg:mt-10 w-full min-w-0" aria-label="Core services">
+      <nav className="mt-8 lg:mt-10" aria-label="Core services">
+        <div className="container mx-auto px-5">
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-gray-400 mb-3 text-center lg:text-left">
             Core services
           </p>
-          <div className="grid w-full min-w-0 grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-x-6 gap-y-4">
-            {heroCoreGroups.map((group) => (
-              <div key={group.heading} className="min-w-0 max-w-full">
-                <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-gray-400 mb-2 text-center sm:text-left">
-                  {group.heading}
-                </p>
-                <ul className="flex w-full min-w-0 max-w-full flex-wrap justify-center sm:justify-start gap-1.5">
-                  {group.items.map((chip) => (
-                    <li key={chip.href} className="max-w-full">
-                      <Link
-                        prefetch={false}
-                        href={chip.href}
-                        className={
-                          chip.highlight ? highlightChipClassName : chipClassName
-                        }
-                      >
-                        {chip.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+        </div>
+        <div className="tf-service-strip relative space-y-2.5 overflow-x-clip">
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 bg-gradient-to-r from-white to-transparent motion-reduce:hidden sm:w-16" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-gradient-to-l from-white to-transparent motion-reduce:hidden sm:w-16" />
+            {serviceRows.map((row) => (
+              <ServiceMarquee
+                key={row.direction}
+                items={row.items}
+                direction={row.direction}
+              />
             ))}
           </div>
         </nav>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-gray-600">
+      <div className="container mx-auto mt-8 flex flex-wrap items-center justify-center gap-6 px-5 text-sm text-gray-600 lg:justify-start">
           <div className="flex items-center">
             <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -118,7 +157,6 @@ export default function Hero() {
             </svg>
             <span>Support after launch</span>
           </div>
-        </div>
       </div>
     </section>
   );
