@@ -6,10 +6,10 @@ import { siteConfig } from "config/site";
 import { heroCoreGroups } from "data/heroCoreServices";
 
 const chipClassName =
-  "whitespace-nowrap shrink-0 px-2.5 py-1 rounded-full bg-gray-50 text-xs text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple hover:bg-white transition-colors";
+  "inline-block max-w-full px-2.5 py-1 rounded-full bg-gray-50 text-xs leading-snug text-center text-gray-600 border border-gray-100 hover:border-theme-purple/40 hover:text-theme-purple hover:bg-white transition-colors";
 
 const highlightChipClassName =
-  "whitespace-nowrap shrink-0 px-2.5 py-1 rounded-full bg-theme-purple text-white text-xs border border-theme-purple shadow-sm hover:bg-dark-theme-purple transition-colors font-semibold";
+  "inline-block max-w-full px-2.5 py-1 rounded-full bg-theme-purple text-white text-xs leading-snug text-center border border-theme-purple shadow-sm hover:bg-dark-theme-purple transition-colors font-semibold";
 
 export default function Hero() {
   return (
@@ -69,19 +69,19 @@ export default function Hero() {
           </div>
         </div>
 
-        <nav className="mt-8 lg:mt-10" aria-label="Core services">
+        <nav className="mt-8 lg:mt-10 w-full min-w-0" aria-label="Core services">
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-gray-400 mb-3 text-center lg:text-left">
             Core services
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-x-6 gap-y-4">
+          <div className="grid w-full min-w-0 grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-x-6 gap-y-4">
             {heroCoreGroups.map((group) => (
-              <div key={group.heading} className="min-w-0">
+              <div key={group.heading} className="min-w-0 max-w-full">
                 <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-gray-400 mb-2 text-center sm:text-left">
                   {group.heading}
                 </p>
-                <ul className="flex flex-wrap justify-center sm:justify-start gap-1.5">
+                <ul className="flex w-full min-w-0 max-w-full flex-wrap justify-center sm:justify-start gap-1.5">
                   {group.items.map((chip) => (
-                    <li key={chip.href}>
+                    <li key={chip.href} className="max-w-full">
                       <Link
                         prefetch={false}
                         href={chip.href}
