@@ -9,6 +9,6 @@
   </defs>
   <rect width="1200" height="630" fill="url(#g)"/>
   <text x="64" y="72" fill="hsl(210,80%,74%)" font-family="system-ui,sans-serif" font-size="26" font-weight="600">TheTriFusion Blog</text>
-  <text x="64" y="250" fill="#f8fafc" font-family="system-ui,sans-serif" font-size="46" font-weight="800"><tspan x="64" dy="0">Patriots vs Lions, Munich</tspan><tspan x="64" dy="62">15 Nov 2026  3:30 p.m. CET</tspan></text>
+  <text x="64" y="250" fill="#f8fafc" font-family="system-ui,sans-serif" font-size="46" font-weight="800"><tspan x="64" dy="0">Patriots vs Lions, Munich</tspan><tspan x="64" dy="62">15 Nov 2026 &#8212; 3:30 p.m. CET</tspan></text>
   <text x="64" y="560" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="18">thetrifusion.in/blog/nfl-patriots-vs-lions-munich-15-nov-2026</text>
 </svg>
