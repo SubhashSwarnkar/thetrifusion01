@@ -48,6 +48,7 @@ export function generateMetadata({ params }) {
       ", "
     ),
     path: `/solutions/${page.slug}`,
+    image: `/solutions/${page.slug}/opengraph-image`,
   });
 }
 

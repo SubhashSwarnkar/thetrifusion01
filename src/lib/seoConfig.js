@@ -3,7 +3,9 @@ import { siteConfig, absoluteSiteUrl } from "config/site";
 export const SITE_URL = siteConfig.url;
 export const SITE_NAME = siteConfig.name;
 export const SITE_TAGLINE = siteConfig.tagline;
-export const DEFAULT_OG_IMAGE = siteConfig.defaultOgImage;
+// 1200×630 PNG from src/app/opengraph-image.jsx. JSON-LD keeps
+// siteConfig.defaultOgImage (/images/Web.png) for the organization image.
+export const DEFAULT_OG_IMAGE = absoluteSiteUrl("/opengraph-image");
 
 export const pages = {
   "/": {

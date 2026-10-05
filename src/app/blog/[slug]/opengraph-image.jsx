@@ -1,9 +1,11 @@
 import { ImageResponse } from "next/og";
 
+// This file must stay outside the (en) route group. Next.js appends a hash
+// to metadata image URLs whose path contains a route group, so
+// /blog/<slug>/opengraph-image would 404 while the meta tags still point there.
 export const alt = "TheTriFusion Blog";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const runtime = "edge";
 
 const PALETTES = [
   { from: "#0f172a", mid: "#1e1b4b", to: "#312e81", accent: "#a5b4fc" },
