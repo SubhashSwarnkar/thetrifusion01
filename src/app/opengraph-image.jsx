@@ -1,5 +1,7 @@
 import { ImageResponse } from "next/og";
 
+// Lives at the app root, not inside (en). A route group would suffix this
+// URL with a hash and make /opengraph-image 404.
 export const alt = "TheTriFusion — IT Solutions, Websites & Mobile Apps";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";

@@ -30,8 +30,8 @@ export function generateMetadata({ params }) {
     };
   }
 
-  // Prefer self-hosted unique PNG OG cards (edge opengraph-image). Hero still
-  // uses /images/blog-og/<slug>.svg. Avoids Unsplash stock URL clustering.
+  // Unique 1200×630 PNG from src/app/blog/[slug]/opengraph-image.jsx.
+  // Hero still uses /images/blog-og/<slug>.svg.
   const selfHostedOg = `/blog/${post.slug}/opengraph-image`;
   const path = `/blog/${post.slug}`;
   const languages = hreflangLanguagesForPath(path);

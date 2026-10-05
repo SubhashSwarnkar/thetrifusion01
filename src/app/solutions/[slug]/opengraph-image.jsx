@@ -1,6 +1,8 @@
 import { ImageResponse } from "next/og";
 import { getSeoLandingBySlug, seoLandingPages } from "data/seoLandingPages";
 
+// Outside the (en) route group so the public path is
+// /solutions/<slug>/opengraph-image (no hash suffix).
 export const alt = "TheTriFusion solution";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
