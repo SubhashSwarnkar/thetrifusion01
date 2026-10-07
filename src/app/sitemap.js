@@ -1,4 +1,8 @@
-import { blogPosts, ARCHIVE_NOINDEX_SLUGS } from "data/blogData";
+import {
+  blogPosts,
+  ARCHIVE_NOINDEX_SLUGS,
+  OFFTOPIC_NOINDEX_SLUGS,
+} from "data/blogData";
 import { services } from "data/servicesData";
 import { evChargingPageContent } from "data/evChargingPageContent";
 import { seoLandingPages, getSeoLandingBySlug } from "data/seoLandingPages";
@@ -92,7 +96,11 @@ export default function sitemap() {
     });
 
   const blogRoutes = blogPosts
-    .filter((post) => !ARCHIVE_NOINDEX_SLUGS.has(post.slug))
+    .filter(
+      (post) =>
+        !ARCHIVE_NOINDEX_SLUGS.has(post.slug) &&
+        !OFFTOPIC_NOINDEX_SLUGS.has(post.slug)
+    )
     .map((post) =>
       withHreflang(
         {
