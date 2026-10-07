@@ -1,3 +1,4 @@
+import { OFFTOPIC_NOINDEX_SLUGS } from "data/offtopicNoindexSlugs";
 import { LOCALE_CODES } from "data/i18n/routes";
 
 /**
@@ -45,10 +46,16 @@ export function isNotFoundPath(pathname) {
   return NOT_FOUND_PATHS.has(path) || NOT_FOUND_PATHS.has(pathWithoutLocale(pathname));
 }
 
+function isOfftopicNoindexBlogPath(path) {
+  const match = /^\/blog\/([^/]+)$/.exec(path);
+  return Boolean(match && OFFTOPIC_NOINDEX_SLUGS.has(match[1]));
+}
+
 export function isAdSenseExcludedPath(pathname) {
   if (pathname == null || pathname === "") return false;
   if (isNotFoundPath(pathname)) return true;
   const path = pathWithoutLocale(pathname);
+  if (isOfftopicNoindexBlogPath(path)) return true;
   return ADSENSE_EXCLUDED_PATHS.some(
     (excluded) => path === excluded || path.startsWith(`${excluded}/`)
   );

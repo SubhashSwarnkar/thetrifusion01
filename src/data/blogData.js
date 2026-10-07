@@ -21,11 +21,15 @@ import { dailyOrganicBatch20261001Posts } from "./dailyOrganicBatch20261001";
 import { dailyOrganicBatch20260930Posts } from "./dailyOrganicBatch20260930";
 import { dailyOrganicBatch20260929Posts } from "./dailyOrganicBatch20260929";
 import { dailyOrganicBatch20260928Posts } from "./dailyOrganicBatch20260928";
+import { OFFTOPIC_NOINDEX_SLUGS } from "./offtopicNoindexSlugs";
+
+export { OFFTOPIC_NOINDEX_SLUGS };
 
 /**
  * Blog editorial: ship 2 Jaipur / Rajasthan / India delivery posts each month.
  * Featured = local or product work. Off-topic 2024 posts are archived (noindex)
  * and hidden from /blog listing. Retired slugs 301 to /blog (see next.config).
+ * Later off-topic posts in OFFTOPIC_NOINDEX_SLUGS stay HTTP 200 with noindex, follow.
  */
 
 export const ARCHIVE_NOINDEX_SLUGS = new Set([
@@ -59,19 +63,11 @@ export const blogCategories = [
   { id: "webdev", name: "Web Development", icon: "💻" },
 ];
 
-/** High-volume Trends / hub picks (featured:true). */
-export const HUB_TRENDING_SLUGS = [
-  "australia-vs-brazil-friendly-why-trending",
-  "afghanistan-vs-nepal-asian-games-cricket-explained",
-  "portugal-vs-wales-nations-league-why-trending",
-  "netherlands-vs-germany-nations-league-why-trending",
-  "falcons-vs-packers-nfl-why-trending",
-  "norway-vs-denmark-nations-league-standings-explained",
-  "tata-aeris-price-launch-india-explained",
-  "cec-gyanesh-kumar-why-trending-explained",
-  "patient-zero-lyrics-why-trending",
-  "mark-carney-donald-trump-canada-why-trending",
-];
+/**
+ * Unused. The previous picks are off-topic posts in OFFTOPIC_NOINDEX_SLUGS.
+ * Hub cards come from getHubTrendingPosts().
+ */
+export const HUB_TRENDING_SLUGS = [];
 
 export const isArchivedPost = (slug) => ARCHIVE_NOINDEX_SLUGS.has(slug);
 
@@ -2740,7 +2736,11 @@ const sortNewestFirst = (posts) =>
 
 export const getPublishedBlogPosts = () =>
   sortNewestFirst(
-    blogPosts.filter((post) => !ARCHIVE_NOINDEX_SLUGS.has(post.slug))
+    blogPosts.filter(
+      (post) =>
+        !ARCHIVE_NOINDEX_SLUGS.has(post.slug) &&
+        !OFFTOPIC_NOINDEX_SLUGS.has(post.slug)
+    )
   );
 
 export const getBlogsByCategory = (category) => {

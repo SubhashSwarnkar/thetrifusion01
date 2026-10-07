@@ -2,7 +2,12 @@ import { notFound } from "next/navigation";
 import Page from "views/BlogDetailPage";
 import JsonLd from "components/JsonLd";
 import LanguageSwitcher from "components/LanguageSwitcher";
-import { blogPosts, getBlogBySlug, ARCHIVE_NOINDEX_SLUGS } from "data/blogData";
+import {
+  blogPosts,
+  getBlogBySlug,
+  ARCHIVE_NOINDEX_SLUGS,
+  OFFTOPIC_NOINDEX_SLUGS,
+} from "data/blogData";
 import { hreflangLanguagesForPath } from "data/i18n/routes";
 import { buildMetadata } from "lib/seoConfig";
 import { articleSchema, breadcrumbSchema, faqSchema, eventSchema } from "lib/schema";
@@ -14,7 +19,7 @@ import EventWorldTimes, {
 } from "components/blog/EventWorldTimes";
 
 export function generateStaticParams() {
-  // Exclude archived slugs (they 301 to /blog via next.config)
+  // Archived slugs 301 to /blog. Off-topic noindex slugs stay and are still built.
   return blogPosts
     .filter((post) => !ARCHIVE_NOINDEX_SLUGS.has(post.slug))
     .map((post) => ({ slug: post.slug }));
@@ -43,7 +48,7 @@ export function generateMetadata({ params }) {
     image: selfHostedOg,
     publishedTime: post.date,
     authors: post.author ? [post.author] : undefined,
-    noIndex: false,
+    noIndex: OFFTOPIC_NOINDEX_SLUGS.has(post.slug),
     ...(languages ? { languages } : {}),
   });
 }
