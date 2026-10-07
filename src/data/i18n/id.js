@@ -9,6 +9,8 @@ const ui = {
   services: "Layanan",
   contact: "Kontak",
   privacy: "Privasi",
+  about: "Tentang kami",
+  terms: "Ketentuan",
   siteNav: "Navigasi situs",
   breadcrumbsLabel: "Jejak",
   published: "Terbit",

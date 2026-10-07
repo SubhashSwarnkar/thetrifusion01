@@ -10,6 +10,8 @@ const ui = {
   services: "Servicios",
   contact: "Contacto",
   privacy: "Privacidad",
+  about: "Nosotros",
+  terms: "Términos",
   siteNav: "Navegación del sitio",
   breadcrumbsLabel: "Ruta de navegación",
   published: "Publicado",

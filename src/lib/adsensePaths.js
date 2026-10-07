@@ -14,6 +14,9 @@ export const ADSENSE_EXCLUDED_PATHS = [
   "/discuss-project",
   "/pricing/calculator",
   "/login",
+  // Thin pages (short portfolio case cards, team list): no ads on low-content screens.
+  "/portfolio",
+  "/team",
 ];
 
 const NOT_FOUND_PATHS = new Set([
