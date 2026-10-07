@@ -9,6 +9,8 @@ const ui = {
   services: "सेवाएँ",
   contact: "संपर्क",
   privacy: "गोपनीयता",
+  about: "हमारे बारे में",
+  terms: "नियम और शर्तें",
   siteNav: "साइट नेविगेशन",
   breadcrumbsLabel: "नेविगेशन पथ",
   published: "प्रकाशित",

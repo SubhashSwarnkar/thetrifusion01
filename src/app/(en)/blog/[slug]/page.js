@@ -8,6 +8,7 @@ import {
   ARCHIVE_NOINDEX_SLUGS,
   OFFTOPIC_NOINDEX_SLUGS,
 } from "data/blogData";
+import { cleanBlogHtml } from "lib/cleanBlogHtml";
 import { hreflangLanguagesForPath } from "data/i18n/routes";
 import { buildMetadata } from "lib/seoConfig";
 import { articleSchema, breadcrumbSchema, faqSchema, eventSchema } from "lib/schema";
@@ -54,11 +55,13 @@ export function generateMetadata({ params }) {
 }
 
 export default function RoutePage({ params }) {
-  const post = getBlogBySlug(params.slug);
+  const storedPost = getBlogBySlug(params.slug);
 
-  if (!post || ARCHIVE_NOINDEX_SLUGS.has(params.slug)) {
+  if (!storedPost || ARCHIVE_NOINDEX_SLUGS.has(params.slug)) {
     notFound();
   }
+
+  const post = { ...storedPost, content: cleanBlogHtml(storedPost.content) };
 
   const faqs = withEventWorldTimeFaq(post.event, extractBlogFaqs(post.content));
 

@@ -9,6 +9,8 @@ const ui = {
   services: "الخدمات",
   contact: "اتصل بنا",
   privacy: "الخصوصية",
+  about: "من نحن",
+  terms: "الشروط",
   siteNav: "تنقل الموقع",
   breadcrumbsLabel: "مسار التنقل",
   published: "تاريخ النشر",

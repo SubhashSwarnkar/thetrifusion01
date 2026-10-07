@@ -11,6 +11,7 @@ import {
 import { extractBlogFaqs } from "lib/blogFaqs";
 import { articleSchema, breadcrumbSchema, faqSchema } from "lib/schema";
 import { buildMetadata } from "lib/seoConfig";
+import { cleanBlogHtml } from "lib/cleanBlogHtml";
 
 export function generateStaticParams() {
   return TRANSLATED_BLOG_SLUGS.map((slug) => ({ slug }));
@@ -51,7 +52,8 @@ export default function TranslatedBlogPage({ params }) {
 
   const englishPath = `/blog/${params.slug}`;
   const path = localizedPath(locale.code, englishPath);
-  const faqs = extractBlogFaqs(translated.content);
+  const html = cleanBlogHtml(translated.content);
+  const faqs = extractBlogFaqs(html);
   const crumbs = [
     { name: locale.ui.home, path: "/" },
     { name: locale.ui.blog, path: "/blog" },
@@ -80,7 +82,7 @@ export default function TranslatedBlogPage({ params }) {
         updatedAt={source.updatedAt}
         readTime={source.readTime}
         categoryName={locale.ui.categories?.[source.category] || source.category}
-        html={translated.content}
+        html={html}
         breadcrumbs={crumbs}
       />
     </>
