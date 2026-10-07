@@ -132,8 +132,16 @@ export default function TranslatedDocument({
             <span className="block">{siteConfig.hoursLabel}</span>
           </address>
           <p className="mt-2">
+            <a href="/about" className="hover:underline">
+              {locale.ui.about || "About"}
+            </a>
+            {" · "}
             <a href="/privacy" className="hover:underline">
               {locale.ui.privacy}
+            </a>
+            {" · "}
+            <a href="/terms" className="hover:underline">
+              {locale.ui.terms || "Terms"}
             </a>
             {" · "}
             <a href="/contact" className="hover:underline">
