@@ -230,6 +230,14 @@ export const EVENT_ORGANIZERS = {
     url: "https://indiagdc.com",
     offerUrl: "https://indiagdc.com",
   },
+  MotoGP: {
+    url: "https://www.motogp.com",
+    offerUrl: "https://www.motogp.com/en/calendar/2026",
+  },
+  "New York Road Runners": {
+    url: "https://www.nyrr.org",
+    offerUrl: "https://www.nyrr.org/tcsnycmarathon",
+  },
 };
 
 export function lookupOrganizer(name) {
