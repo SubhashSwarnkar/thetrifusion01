@@ -875,6 +875,27 @@ export function eventSchema(post) {
   };
 }
 
+function blogPostingAuthor(name) {
+  const authorName = typeof name === "string" ? name.trim() : "";
+  const siteName = String(siteConfig.name || "").trim().toLowerCase();
+  const generic =
+    !authorName ||
+    authorName.toLowerCase() === "thetrifusion team" ||
+    authorName.toLowerCase() === siteName;
+  if (generic) {
+    return {
+      "@type": "Organization",
+      name: "TheTriFusion",
+      url: absoluteSiteUrl("/about"),
+    };
+  }
+  return {
+    "@type": "Person",
+    name: authorName,
+    url: siteConfig.url,
+  };
+}
+
 export function articleSchema(post, options = {}) {
   const path = options.path || `/blog/${post.slug}`;
   const canonical = absoluteSiteUrl(path);
@@ -892,11 +913,7 @@ export function articleSchema(post, options = {}) {
     datePublished: post.date,
     dateModified: post.updatedAt || post.date,
     inLanguage: options.inLanguage || "en-IN",
-    author: {
-      "@type": "Person",
-      name: options.author || post.author || siteConfig.name,
-      url: siteConfig.url,
-    },
+    author: blogPostingAuthor(options.author || post.author || ""),
     publisher: {
       "@type": "Organization",
       name: siteConfig.legalName,

@@ -1,5 +1,6 @@
 import { OFFTOPIC_NOINDEX_SLUGS } from "data/offtopicNoindexSlugs";
 import { LOCALE_CODES } from "data/i18n/routes";
+import { ADS_LANDING_PATHS } from "lib/seoConfig";
 
 /**
  * Paths where the AdSense script and ad units must not load.
@@ -18,6 +19,9 @@ export const ADSENSE_EXCLUDED_PATHS = [
   // Thin pages (short portfolio case cards, team list): no ads on low-content screens.
   "/portfolio",
   "/team",
+  // Paid-ads landings stay noindex, follow and must not load adsbygoogle.js.
+  // Same paths as ADS_LANDING_PATHS in lib/seoConfig.js.
+  ...ADS_LANDING_PATHS,
 ];
 
 const NOT_FOUND_PATHS = new Set([

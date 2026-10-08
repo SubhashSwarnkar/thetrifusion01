@@ -192,7 +192,7 @@ export const ADS_LANDING_PATHS = new Set([
   "/white-label-development",
 ]);
 
-/** Tool routes and paid landings that should stay out of the index. */
+/** Tool routes, the thin team page, and paid landings that should stay out of the index. */
 export const NOINDEX_PATHS = new Set([
   "/estimate",
   "/planner",
@@ -201,6 +201,7 @@ export const NOINDEX_PATHS = new Set([
   "/thank-you",
   "/appointment",
   "/discuss-project",
+  "/team",
   ...ADS_LANDING_PATHS,
 ]);
 

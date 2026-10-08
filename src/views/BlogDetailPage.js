@@ -116,7 +116,9 @@ export default function BlogDetailPage({
                     {post.author.charAt(0)}
                   </div>
                   <div>
-                    <p className="font-medium text-theme-blue">{post.author}</p>
+                    <p className="font-medium text-theme-blue">
+                      <Link href="/about">{post.author}</Link>
+                    </p>
                     <p className="text-sm text-gray-500">
                       Published on {formatDate(post.date)}
                     </p>

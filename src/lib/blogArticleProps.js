@@ -86,6 +86,7 @@ export function toBlogCard(post) {
     author: post.author,
     imageUrl: post.imageUrl,
     featured: Boolean(post.featured),
+    event: Boolean(post.event),
   };
 }
 
@@ -184,7 +185,7 @@ export function getBlogArticleView(post) {
       author: post.author,
       category: post.category,
     },
-    categoryName: category?.name || post.category,
+    categoryName: post.event ? "Events" : category?.name || post.category,
     relatedSolutions,
     relatedServices,
     relatedPosts,

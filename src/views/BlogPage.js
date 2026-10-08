@@ -17,6 +17,7 @@ export default function BlogPage({
   const [searchQuery, setSearchQuery] = useState("");
   const [displayedPosts, setDisplayedPosts] = useState(posts);
   const [visibleCount, setVisibleCount] = useState(18);
+  const [eventVisibleCount, setEventVisibleCount] = useState(18);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -37,6 +38,7 @@ export default function BlogPage({
     }
     setDisplayedPosts(filtered);
     setVisibleCount(18);
+    setEventVisibleCount(18);
   }, [selectedCategory, searchQuery, posts]);
 
   const formatDate = (dateString) => {
@@ -50,6 +52,55 @@ export default function BlogPage({
 
   const showDiscovery =
     !searchQuery.trim() && selectedCategory === "all";
+
+  const guidePosts = displayedPosts.filter((post) => !post.event);
+  const eventPosts = displayedPosts.filter((post) => post.event);
+
+  const categoryLabel = (post) =>
+    post.event
+      ? "Events"
+      : categories.find((cat) => cat.id === post.category)?.name || post.category;
+
+  const renderCard = (post) => (
+    <Link key={post.slug} href={`/blog/${post.slug}`} prefetch={false}>
+      <article className="bg-white rounded-2xl shadow-xl border border-light-theme-purple overflow-hidden transform transition duration-300 hover:scale-105 cursor-pointer h-full flex flex-col">
+        <div className="relative h-48 bg-gray-200 overflow-hidden">
+          <img
+            src={post.imageUrl}
+            alt={`${post.title} — TheTriFusion blog`}
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
+          {post.featured && (
+            <div className="absolute top-4 right-4 bg-theme-purple text-white px-3 py-1 rounded-full text-sm font-medium">
+              Featured
+            </div>
+          )}
+        </div>
+        <div className="p-6 flex-grow flex flex-col">
+          <div className="flex items-center gap-3 mb-3 text-sm text-gray-500">
+            <span>{formatDate(post.date)}</span>
+            <span>•</span>
+            <span>{post.readTime}</span>
+          </div>
+          <h2 className="text-xl sm:text-2xl text-theme-blue font-bold mb-3 line-clamp-2">
+            {post.title}
+          </h2>
+          <p className="text-gray-600 mb-4 line-clamp-3 flex-grow">
+            {post.excerpt}
+          </p>
+          <div className="flex items-center justify-between mt-auto">
+            <span className="px-3 py-1 bg-light-theme-purple text-theme-purple rounded-full text-sm font-medium">
+              {categoryLabel(post)}
+            </span>
+            <span className="text-theme-purple font-medium hover:underline">
+              Read More →
+            </span>
+          </div>
+        </div>
+      </article>
+    </Link>
+  );
 
   return (
     <>
@@ -202,58 +253,47 @@ export default function BlogPage({
         {/* Blog Posts Grid */}
         {displayedPosts.length > 0 ? (
           <>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {displayedPosts.slice(0, visibleCount).map((post) => (
-                <Link key={post.slug} href={`/blog/${post.slug}`} prefetch={false}>
-                  <article className="bg-white rounded-2xl shadow-xl border border-light-theme-purple overflow-hidden transform transition duration-300 hover:scale-105 cursor-pointer h-full flex flex-col">
-                    <div className="relative h-48 bg-gray-200 overflow-hidden">
-                      <img
-                        src={post.imageUrl}
-                        alt={`${post.title} — TheTriFusion blog`}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
-                      {post.featured && (
-                        <div className="absolute top-4 right-4 bg-theme-purple text-white px-3 py-1 rounded-full text-sm font-medium">
-                          Featured
-                        </div>
-                      )}
-                    </div>
-                    <div className="p-6 flex-grow flex flex-col">
-                      <div className="flex items-center gap-3 mb-3 text-sm text-gray-500">
-                        <span>{formatDate(post.date)}</span>
-                        <span>•</span>
-                        <span>{post.readTime}</span>
-                      </div>
-                      <h2 className="text-xl sm:text-2xl text-theme-blue font-bold mb-3 line-clamp-2">
-                        {post.title}
-                      </h2>
-                      <p className="text-gray-600 mb-4 line-clamp-3 flex-grow">
-                        {post.excerpt}
-                      </p>
-                      <div className="flex items-center justify-between mt-auto">
-                        <span className="px-3 py-1 bg-light-theme-purple text-theme-purple rounded-full text-sm font-medium">
-                          {categories.find((cat) => cat.id === post.category)?.name || post.category}
-                        </span>
-                        <span className="text-theme-purple font-medium hover:underline">
-                          Read More →
-                        </span>
-                      </div>
-                    </div>
-                  </article>
-                </Link>
-                          ))}
-          </div>
-          {visibleCount < displayedPosts.length ? (
-            <div className="flex justify-center mt-10">
-              <button
-                type="button"
-                onClick={() => setVisibleCount((count) => count + 18)}
-                className="px-8 py-3 bg-theme-purple text-white rounded-full font-bold hover:bg-dark-theme-purple transition duration-200"
-              >
-                Show more articles
-              </button>
-            </div>
+          {guidePosts.length > 0 ? (
+            <section className="mb-16">
+              <h2 className="text-2xl sm:text-3xl font-bold text-theme-blue mb-6">
+                Tech & business guides ({guidePosts.length})
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {guidePosts.slice(0, visibleCount).map(renderCard)}
+              </div>
+              {visibleCount < guidePosts.length ? (
+                <div className="flex justify-center mt-10">
+                  <button
+                    type="button"
+                    onClick={() => setVisibleCount((count) => count + 18)}
+                    className="px-8 py-3 bg-theme-purple text-white rounded-full font-bold hover:bg-dark-theme-purple transition duration-200"
+                  >
+                    Show more articles
+                  </button>
+                </div>
+              ) : null}
+            </section>
+          ) : null}
+          {eventPosts.length > 0 ? (
+            <section>
+              <h2 className="text-2xl sm:text-3xl font-bold text-theme-blue mb-6">
+                Events calendar ({eventPosts.length})
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {eventPosts.slice(0, eventVisibleCount).map(renderCard)}
+              </div>
+              {eventVisibleCount < eventPosts.length ? (
+                <div className="flex justify-center mt-10">
+                  <button
+                    type="button"
+                    onClick={() => setEventVisibleCount((count) => count + 18)}
+                    className="px-8 py-3 bg-theme-purple text-white rounded-full font-bold hover:bg-dark-theme-purple transition duration-200"
+                  >
+                    Show more events
+                  </button>
+                </div>
+              ) : null}
+            </section>
           ) : null}
           </>
         ) : (
