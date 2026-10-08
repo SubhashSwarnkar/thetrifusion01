@@ -1,4 +1,4 @@
-import { isAdSenseExcludedPath } from "lib/adsensePaths";
+import { isAdSenseExcludedPath, pathWithoutLocale } from "lib/adsensePaths";
 
 /** localStorage + cookie key. Values are "dismissed" or "submitted". */
 export const LEAD_POPUP_STORAGE_KEY = "tf_lead_popup";
@@ -90,11 +90,23 @@ export function isNotFoundView() {
 }
 
 /**
+ * Blog index, article, and locale copies (/es/blog, /hi/blog/slug, …).
+ * The lead popup stays off these paths. Other pages are unchanged.
+ */
+export function isLeadPopupEligiblePath(pathname) {
+  const path = pathWithoutLocale(pathname);
+  if (path === "/blog" || path.startsWith("/blog/")) return false;
+  return true;
+}
+
+/**
  * Content pages only. Excluded routes match the contact/quote funnel
- * (and localized copies). Cookie banner and the 404 view pause this.
+ * (and localized copies). Blog paths never arm the popup. Cookie banner
+ * and the 404 view pause this.
  */
 export function canCountLeadPopupTime() {
   if (typeof window === "undefined") return false;
+  if (!isLeadPopupEligiblePath(window.location.pathname)) return false;
   if (isAdSenseExcludedPath(window.location.pathname)) return false;
   if (isNotFoundView()) return false;
   if (isCookieBannerOpen()) return false;

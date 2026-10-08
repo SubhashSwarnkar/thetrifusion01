@@ -23,14 +23,17 @@ import { dailyOrganicBatch20260930Posts } from "./dailyOrganicBatch20260930";
 import { dailyOrganicBatch20260929Posts } from "./dailyOrganicBatch20260929";
 import { dailyOrganicBatch20260928Posts } from "./dailyOrganicBatch20260928";
 import { OFFTOPIC_NOINDEX_SLUGS } from "./offtopicNoindexSlugs";
+import { ADSENSE_RECOVERY_NOINDEX_SLUGS } from "./adsenseRecoveryNoindexSlugs";
 
-export { OFFTOPIC_NOINDEX_SLUGS };
+export { OFFTOPIC_NOINDEX_SLUGS, ADSENSE_RECOVERY_NOINDEX_SLUGS };
 
 /**
  * Blog editorial: ship 2 Jaipur / Rajasthan / India delivery posts each month.
  * Featured = local or product work. Off-topic 2024 posts are archived (noindex)
  * and hidden from /blog listing. Retired slugs 301 to /blog (see next.config).
  * Later off-topic posts in OFFTOPIC_NOINDEX_SLUGS stay HTTP 200 with noindex, follow.
+ * Event posts (`event` set) and ADSENSE_RECOVERY_NOINDEX_SLUGS use that same
+ * soft noindex. They are not archived and they are not redirected.
  */
 
 export const ARCHIVE_NOINDEX_SLUGS = new Set([
@@ -2736,14 +2739,60 @@ const sortNewestFirst = (posts) =>
     return dateB - dateA;
   });
 
-export const getPublishedBlogPosts = () =>
-  sortNewestFirst(
-    blogPosts.filter(
-      (post) =>
-        !ARCHIVE_NOINDEX_SLUGS.has(post.slug) &&
-        !OFFTOPIC_NOINDEX_SLUGS.has(post.slug)
-    )
+/**
+ * Scheduled event posts store an object on `event` (name, startDate, location).
+ * A truthy `event` is the noindex rule so later event posts are covered
+ * without editing a slug list. Stored article HTML is not changed.
+ */
+export function isEventPost(post) {
+  return Boolean(post && post.event);
+}
+
+/**
+ * HTTP 200, self-canonical, `noindex, follow`. Distinct from ARCHIVE_NOINDEX_SLUGS.
+ */
+export function isSoftNoindexBlogPost(post) {
+  if (!post) return false;
+  return (
+    OFFTOPIC_NOINDEX_SLUGS.has(post.slug) ||
+    ADSENSE_RECOVERY_NOINDEX_SLUGS.has(post.slug) ||
+    isEventPost(post)
   );
+}
+
+export function isIndexableBlogPost(post) {
+  return Boolean(
+    post &&
+      !ARCHIVE_NOINDEX_SLUGS.has(post.slug) &&
+      !isSoftNoindexBlogPost(post)
+  );
+}
+
+export function isIndexableBlogSlug(slug) {
+  const post = blogPosts.find((item) => item.slug === slug);
+  if (!post) {
+    return (
+      !ARCHIVE_NOINDEX_SLUGS.has(slug) &&
+      !OFFTOPIC_NOINDEX_SLUGS.has(slug) &&
+      !ADSENSE_RECOVERY_NOINDEX_SLUGS.has(slug)
+    );
+  }
+  return isIndexableBlogPost(post);
+}
+
+let cachedEventNoindexSlugs;
+/** Slugs whose `event` field is set. Recomputed from posts, not a hand list. */
+export function eventNoindexSlugList() {
+  if (!cachedEventNoindexSlugs) {
+    cachedEventNoindexSlugs = blogPosts
+      .filter(isEventPost)
+      .map((post) => post.slug);
+  }
+  return cachedEventNoindexSlugs;
+}
+
+export const getPublishedBlogPosts = () =>
+  sortNewestFirst(blogPosts.filter(isIndexableBlogPost));
 
 export const getBlogsByCategory = (category) => {
   const published = getPublishedBlogPosts();

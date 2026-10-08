@@ -6,7 +6,7 @@ import {
   blogPosts,
   getBlogBySlug,
   ARCHIVE_NOINDEX_SLUGS,
-  OFFTOPIC_NOINDEX_SLUGS,
+  isSoftNoindexBlogPost,
 } from "data/blogData";
 import { cleanBlogHtml } from "lib/cleanBlogHtml";
 import { hreflangLanguagesForPath } from "data/i18n/routes";
@@ -49,7 +49,7 @@ export function generateMetadata({ params }) {
     image: selfHostedOg,
     publishedTime: post.date,
     authors: post.author ? [post.author] : undefined,
-    noIndex: OFFTOPIC_NOINDEX_SLUGS.has(post.slug),
+    noIndex: isSoftNoindexBlogPost(post),
     ...(languages ? { languages } : {}),
   });
 }

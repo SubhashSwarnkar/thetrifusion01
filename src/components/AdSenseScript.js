@@ -2,8 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { shouldLoadAdSense } from "lib/adsensePaths";
+import {
+  registerEventNoindexSlugs,
+  shouldLoadAdSense,
+} from "lib/adsensePaths";
 import { ADSENSE_CLIENT_ID } from "lib/trackingConfig";
+
+const NO_EVENT_SLUGS = [];
 
 const ADSENSE_SRC = ADSENSE_CLIENT_ID
   ? `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`
@@ -30,7 +35,8 @@ function removeAdSense() {
  * Standard AdSense loader. Consent Mode defaults are rendered before this
  * component in SiteHead. Excluded paths and the 404 view omit the tag.
  */
-export default function AdSenseScript() {
+export default function AdSenseScript({ eventNoindexSlugs = NO_EVENT_SLUGS }) {
+  registerEventNoindexSlugs(eventNoindexSlugs);
   const pathname = usePathname();
   const pathAllows = Boolean(ADSENSE_SRC) && shouldLoadAdSense(pathname);
   const [pageBlocked, setPageBlocked] = useState(false);
