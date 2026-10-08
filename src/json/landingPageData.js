@@ -36,8 +36,32 @@ export const Services = [
 const DEMO_CREDIT_HOST =
   /\.pages\.dev(?:\/|$)|vercel\.app(?:\/|$)|netlify\.app(?:\/|$)/i;
 
+function caseStudyWordCount(project) {
+  const study = project && project.caseStudy;
+  const text =
+    typeof study === "string"
+      ? study
+      : study && typeof study === "object"
+        ? Object.values(study)
+            .flatMap((value) => (Array.isArray(value) ? value : [value]))
+            .filter((value) => typeof value === "string")
+            .join(" ")
+        : "";
+  const plain = text
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;/gi, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  return plain ? plain.split(" ").length : 0;
+}
+
+/**
+ * Index a portfolio URL only when it has a real case study (at least 300
+ * words) and is not a demo template. Short cards stay live and noindex.
+ */
 export function isIndexablePortfolio(project) {
   if (!project) return false;
+  if (caseStudyWordCount(project) < 300) return false;
   if (project.featured) return true;
   const credit = String(project.credit || "").trim();
   if (!credit) return false;

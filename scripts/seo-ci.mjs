@@ -36,6 +36,11 @@ async function waitForServer(url, attempts = 60) {
 }
 
 async function main() {
+  await run("node", [
+    "--import",
+    "./scripts/register-extensionless.mjs",
+    "scripts/test-clean-blog-html.mjs",
+  ]);
   await run("npm", ["run", "build"]);
 
   const server = spawn("npx", ["next", "start", "-p", PORT], {
