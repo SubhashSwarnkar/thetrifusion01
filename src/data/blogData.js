@@ -11,6 +11,7 @@ import { dailyOrganicTrends20260925pm2Posts } from "./dailyOrganicTrends20260925
 import { dailyOrganicBatch20260926Posts } from "./dailyOrganicBatch20260926";
 import { dailyOrganicBatch20260927Posts } from "./dailyOrganicBatch20260927";
 import { evChargingClusterPosts } from "./evChargingCluster20260927";
+import { dailyOrganicBatch20261008Posts } from "./dailyOrganicBatch20261008";
 import { dailyOrganicBatch20261007Posts } from "./dailyOrganicBatch20261007";
 import { dailyOrganicBatch20261006Posts } from "./dailyOrganicBatch20261006";
 import { dailyOrganicBatch20261005Posts } from "./dailyOrganicBatch20261005";
@@ -72,6 +73,7 @@ export const HUB_TRENDING_SLUGS = [];
 export const isArchivedPost = (slug) => ARCHIVE_NOINDEX_SLUGS.has(slug);
 
 export const blogPosts = [
+  ...dailyOrganicBatch20261008Posts,
   ...dailyOrganicBatch20261007Posts,
   ...dailyOrganicBatch20261006Posts,
   ...dailyOrganicBatch20261005Posts,
