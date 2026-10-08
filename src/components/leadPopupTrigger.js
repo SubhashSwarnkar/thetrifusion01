@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import {
   LEAD_POPUP_DELAY_MS,
   canCountLeadPopupTime,
   isLeadPopupBlocked,
+  isLeadPopupEligiblePath,
 } from "lib/leadPopupGate";
 
 /**
@@ -20,9 +22,15 @@ const clock = {
 };
 
 export function useLeadPopupTrigger() {
+  const pathname = usePathname();
   const [ready, setReady] = useState(false);
+  const eligible = isLeadPopupEligiblePath(pathname);
 
   useEffect(() => {
+    if (!eligible) {
+      setReady(false);
+      return undefined;
+    }
     if (blocked === null) blocked = isLeadPopupBlocked();
     if (blocked) return undefined;
     if (triggered) {
@@ -61,7 +69,7 @@ export function useLeadPopupTrigger() {
     tick();
     const id = window.setInterval(tick, 250);
     return () => window.clearInterval(id);
-  }, []);
+  }, [eligible]);
 
-  return ready;
+  return ready && eligible;
 }

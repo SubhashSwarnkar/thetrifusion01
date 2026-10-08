@@ -14,8 +14,6 @@ export const metadata = pageMetadata("/blog");
 
 export default function RoutePage() {
   const posts = getPublishedBlogPosts();
-  const guides = posts.filter((post) => !post.event);
-  const events = posts.filter((post) => Boolean(post.event));
 
   return (
     <>
@@ -26,33 +24,21 @@ export default function RoutePage() {
         ])}
       />
       <Page
-        posts={[...guides, ...events].map(toBlogCard)}
+        posts={posts.map(toBlogCard)}
         trendingPosts={getHubTrendingPosts().map(toBlogCard)}
-        latestPosts={guides.slice(0, 40).map(toBlogCard)}
+        latestPosts={posts.slice(0, 40).map(toBlogCard)}
         categories={blogCategories}
       />
-      {/* Plain server-rendered link list so Googlebot always sees every post URL */}
+      {/* Plain server-rendered link list so Googlebot always sees every indexable post URL */}
       <nav
         aria-label="All blog articles"
         className="container mx-auto px-5 pb-16"
       >
         <h2 className="text-lg font-bold text-theme-blue mb-4">
-          Tech & business guides ({guides.length})
+          Tech & business guides ({posts.length})
         </h2>
         <ul className="columns-1 sm:columns-2 lg:columns-3 gap-6 text-sm text-gray-700">
-          {guides.map((post) => (
-            <li key={post.slug} className="mb-2 break-inside-avoid">
-              <a href={`/blog/${post.slug}`} className="hover:text-theme-purple">
-                {post.title}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <h2 className="text-lg font-bold text-theme-blue mt-10 mb-4">
-          Events calendar ({events.length})
-        </h2>
-        <ul className="columns-1 sm:columns-2 lg:columns-3 gap-6 text-sm text-gray-700">
-          {events.map((post) => (
+          {posts.map((post) => (
             <li key={post.slug} className="mb-2 break-inside-avoid">
               <a href={`/blog/${post.slug}`} className="hover:text-theme-purple">
                 {post.title}

@@ -17,7 +17,6 @@ export default function BlogPage({
   const [searchQuery, setSearchQuery] = useState("");
   const [displayedPosts, setDisplayedPosts] = useState(posts);
   const [visibleCount, setVisibleCount] = useState(18);
-  const [eventVisibleCount, setEventVisibleCount] = useState(18);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -38,7 +37,6 @@ export default function BlogPage({
     }
     setDisplayedPosts(filtered);
     setVisibleCount(18);
-    setEventVisibleCount(18);
   }, [selectedCategory, searchQuery, posts]);
 
   const formatDate = (dateString) => {
@@ -54,7 +52,6 @@ export default function BlogPage({
     !searchQuery.trim() && selectedCategory === "all";
 
   const guidePosts = displayedPosts.filter((post) => !post.event);
-  const eventPosts = displayedPosts.filter((post) => post.event);
 
   const categoryLabel = (post) =>
     post.event
@@ -251,9 +248,7 @@ export default function BlogPage({
           </div>
         
         {/* Blog Posts Grid */}
-        {displayedPosts.length > 0 ? (
-          <>
-          {guidePosts.length > 0 ? (
+        {guidePosts.length > 0 ? (
             <section className="mb-16">
               <h2 className="text-2xl sm:text-3xl font-bold text-theme-blue mb-6">
                 Tech & business guides ({guidePosts.length})
@@ -273,29 +268,6 @@ export default function BlogPage({
                 </div>
               ) : null}
             </section>
-          ) : null}
-          {eventPosts.length > 0 ? (
-            <section>
-              <h2 className="text-2xl sm:text-3xl font-bold text-theme-blue mb-6">
-                Events calendar ({eventPosts.length})
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {eventPosts.slice(0, eventVisibleCount).map(renderCard)}
-              </div>
-              {eventVisibleCount < eventPosts.length ? (
-                <div className="flex justify-center mt-10">
-                  <button
-                    type="button"
-                    onClick={() => setEventVisibleCount((count) => count + 18)}
-                    className="px-8 py-3 bg-theme-purple text-white rounded-full font-bold hover:bg-dark-theme-purple transition duration-200"
-                  >
-                    Show more events
-                  </button>
-                </div>
-              ) : null}
-            </section>
-          ) : null}
-          </>
         ) : (
             <div className="text-center py-12">
               <p className="text-xl text-gray-500 mb-4">No blog posts found matching your criteria.</p>

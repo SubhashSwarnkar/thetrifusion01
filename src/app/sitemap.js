@@ -1,7 +1,7 @@
 import {
   blogPosts,
-  ARCHIVE_NOINDEX_SLUGS,
-  OFFTOPIC_NOINDEX_SLUGS,
+  isIndexableBlogPost,
+  isIndexableBlogSlug,
 } from "data/blogData";
 import { services } from "data/servicesData";
 import { evChargingPageContent } from "data/evChargingPageContent";
@@ -96,11 +96,7 @@ export default function sitemap() {
     });
 
   const blogRoutes = blogPosts
-    .filter(
-      (post) =>
-        !ARCHIVE_NOINDEX_SLUGS.has(post.slug) &&
-        !OFFTOPIC_NOINDEX_SLUGS.has(post.slug)
-    )
+    .filter(isIndexableBlogPost)
     .map((post) =>
       withHreflang(
         {
@@ -120,7 +116,8 @@ export default function sitemap() {
     blogPosts.map((post) => [post.slug, post])
   );
   const translatedRoutes = LOCALE_CODES.flatMap((lang) => {
-    const blogEntries = TRANSLATED_BLOG_SLUGS.map((slug) => {
+    const blogEntries = TRANSLATED_BLOG_SLUGS.filter(isIndexableBlogSlug).map(
+      (slug) => {
       const post = translatedBlogBySlug.get(slug);
       const englishPath = `/blog/${slug}`;
       return {

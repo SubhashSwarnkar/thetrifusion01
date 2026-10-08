@@ -1,4 +1,5 @@
 import { OFFTOPIC_NOINDEX_SLUGS } from "data/offtopicNoindexSlugs";
+import { ADSENSE_RECOVERY_NOINDEX_SLUGS } from "data/adsenseRecoveryNoindexSlugs";
 import { LOCALE_CODES } from "data/i18n/routes";
 import { ADS_LANDING_PATHS } from "lib/seoConfig";
 
@@ -53,16 +54,32 @@ export function isNotFoundPath(pathname) {
   return NOT_FOUND_PATHS.has(path) || NOT_FOUND_PATHS.has(pathWithoutLocale(pathname));
 }
 
-function isOfftopicNoindexBlogPath(path) {
+/**
+ * Event-post slugs, filled from posts whose `event` field is set.
+ * AdSenseScript registers the list so this module does not import blog HTML.
+ */
+let eventNoindexSlugs = new Set();
+
+export function registerEventNoindexSlugs(slugs) {
+  eventNoindexSlugs = new Set(slugs || []);
+}
+
+function isNoindexBlogPath(path) {
   const match = /^\/blog\/([^/]+)$/.exec(path);
-  return Boolean(match && OFFTOPIC_NOINDEX_SLUGS.has(match[1]));
+  if (!match) return false;
+  const slug = match[1];
+  return (
+    OFFTOPIC_NOINDEX_SLUGS.has(slug) ||
+    ADSENSE_RECOVERY_NOINDEX_SLUGS.has(slug) ||
+    eventNoindexSlugs.has(slug)
+  );
 }
 
 export function isAdSenseExcludedPath(pathname) {
   if (pathname == null || pathname === "") return false;
   if (isNotFoundPath(pathname)) return true;
   const path = pathWithoutLocale(pathname);
-  if (isOfftopicNoindexBlogPath(path)) return true;
+  if (isNoindexBlogPath(path)) return true;
   return ADSENSE_EXCLUDED_PATHS.some(
     (excluded) => path === excluded || path.startsWith(`${excluded}/`)
   );

@@ -39,6 +39,11 @@ async function main() {
   await run("node", [
     "--import",
     "./scripts/register-extensionless.mjs",
+    "scripts/test-adsense-recovery-noindex.mjs",
+  ]);
+  await run("node", [
+    "--import",
+    "./scripts/register-extensionless.mjs",
     "scripts/test-clean-blog-html.mjs",
   ]);
   await run("npm", ["run", "build"]);

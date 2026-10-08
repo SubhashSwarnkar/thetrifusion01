@@ -3,7 +3,7 @@
  * Render-time blog HTML cleanup checks.
  * Usage: node --import ./scripts/register-extensionless.mjs scripts/test-clean-blog-html.mjs
  */
-import { blogPosts, ARCHIVE_NOINDEX_SLUGS, OFFTOPIC_NOINDEX_SLUGS } from "../src/data/blogData.js";
+import { blogPosts, isIndexableBlogPost } from "../src/data/blogData.js";
 import { cleanBlogHtml } from "../src/lib/cleanBlogHtml.js";
 
 const BANNED = [
@@ -50,10 +50,7 @@ function tagCounts(html, tag) {
   return { open, close };
 }
 
-const indexable = blogPosts.filter(
-  (post) =>
-    !ARCHIVE_NOINDEX_SLUGS.has(post.slug) && !OFFTOPIC_NOINDEX_SLUGS.has(post.slug)
-);
+const indexable = blogPosts.filter(isIndexableBlogPost);
 
 const beforeWords = [];
 const afterWords = [];

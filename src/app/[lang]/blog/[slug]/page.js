@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import JsonLd from "components/JsonLd";
 import TranslatedDocument from "components/TranslatedDocument";
-import { getBlogBySlug } from "data/blogData";
+import { getBlogBySlug, isSoftNoindexBlogPost } from "data/blogData";
 import { getLocale } from "data/i18n";
 import {
   hreflangLanguagesForPath,
@@ -41,6 +41,7 @@ export function generateMetadata({ params }) {
     authors: [locale.ui.author],
     languages: hreflangLanguagesForPath(englishPath),
     locale: locale.ogLocale,
+    noIndex: isSoftNoindexBlogPost(source),
   });
 }
 
