@@ -332,6 +332,12 @@ export default function Footer({ hideNewsletter = false }) {
               <Link href="/privacy" className="hover:text-white transition-colors">
                 Privacy Policy
               </Link>
+              <Link
+                href="/editorial-policy"
+                className="hover:text-white transition-colors"
+              >
+                Editorial Policy
+              </Link>
           <button
             type="button"
             aria-label="Cookie settings"

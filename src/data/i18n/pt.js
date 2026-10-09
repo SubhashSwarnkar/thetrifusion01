@@ -9,6 +9,7 @@ const ui = {
   services: "Serviços",
   contact: "Contato",
   privacy: "Privacidade",
+  editorialPolicy: "Política editorial",
   about: "Sobre nós",
   terms: "Termos",
   siteNav: "Navegação do site",

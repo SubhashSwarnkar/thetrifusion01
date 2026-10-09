@@ -9,6 +9,7 @@ const ui = {
   services: "الخدمات",
   contact: "اتصل بنا",
   privacy: "الخصوصية",
+  editorialPolicy: "السياسة التحريرية",
   about: "من نحن",
   terms: "الشروط",
   siteNav: "تنقل الموقع",
