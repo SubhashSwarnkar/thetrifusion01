@@ -174,6 +174,7 @@ What: Custom sales CRM and operations modules for pipelines, inventory, and bill
 Platforms: Web admin, iOS, and Android.
 Who: Indian operators that need a system shaped to their process.
 Price from: ₹3,00,000.
+- Decision guide, custom CRM or Salesforce: https://thetrifusion.in/blog/custom-crm-vs-salesforce-mid-market-2026
 
 - All services: https://thetrifusion.in/services
 
@@ -236,6 +237,7 @@ EV charging CMS for CPOs and eMSPs, built in Jaipur for India and worldwide. One
 - Guide: EV charging software glossary: https://thetrifusion.in/blog/ev-charging-software-glossary
 - Guide: CSMS for India CPOs: https://thetrifusion.in/blog/ev-charging-csms-india-cpo-guide
 - Guide: CSMS for UK and Europe CPOs: https://thetrifusion.in/blog/ev-charging-csms-uk-europe-cpo-guide
+- Guide: CSMS RFP checklist for an OCPP platform: https://thetrifusion.in/blog/csms-rfp-checklist-ocpp-platform-evaluation
 
 ## Key hubs
 
