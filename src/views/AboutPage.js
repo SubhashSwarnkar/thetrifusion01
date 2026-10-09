@@ -43,7 +43,7 @@ export default function AboutPage() {
                 the Startup India certificate. The people who do the work are a
                 team of about ten developers and consultants. They take
                 software projects for clients in India and worldwide. A typical
-                project on this desk is between $200 and $10,000.
+                project at TheTriFusion is between $200 and $10,000.
               </p>
             </section>
 
@@ -57,8 +57,7 @@ export default function AboutPage() {
                 changed the legal form. It did not change the office, the
                 brand, or the kind of software the team builds. Startup India
                 recognition through DPIIT is a government recognition of that
-                company. This page does not attach a ranking or a headcount
-                beyond the team of about ten.
+                company.
               </p>
             </section>
 
@@ -102,7 +101,7 @@ export default function AboutPage() {
                 <Link href="/services/fintech-app-development" className={linkClass}>
                   Fintech apps
                 </Link>
-                , as the fintech service page states them, cover BBPS, AEPS,
+                {" "}cover BBPS, AEPS,
                 DMT, XDMT, UPI, and KYC software with retailer and admin panels.{" "}
                 <Link href="/services/crm-erp-development" className={linkClass}>
                   CRM and ERP
@@ -125,21 +124,20 @@ export default function AboutPage() {
                 <Link href="/services/ui-ux-design" className={linkClass}>
                   UI/UX
                 </Link>
-                . This page does not add a service the services section does
-                not already list.
+                .
               </p>
             </section>
 
             <section className="space-y-4">
               <h2 className="text-2xl font-bold text-theme-blue">
-                Work named in the portfolio
+                Selected work
               </h2>
               <p>
-                Four pieces of work are already described in the{" "}
+                Here are four projects from our{" "}
                 <Link href="/portfolio" className={linkClass}>
                   portfolio
                 </Link>
-                , and this page repeats only that description.
+                .
               </p>
               <p>
                 <Link
@@ -148,12 +146,11 @@ export default function AboutPage() {
                 >
                   PlugOne
                 </Link>{" "}
-                is the EV charging platform in the portfolio. The portfolio
-                text says it connects EV owners to nearby charging stations in
-                real time, with an interactive map, charging-status tracking, a
-                smart mobility dashboard, and session management across
-                charging networks. The portfolio card also notes OCPI and OCPP
-                roaming, and delivery on iOS, Android, and web.
+                is an EV charging platform that connects EV owners to nearby
+                charging stations in real time, with an interactive map,
+                charging-status tracking, a smart mobility dashboard, and
+                session management across charging networks. It supports OCPI
+                and OCPP roaming and runs on iOS, Android, and web.
               </p>
               <p>
                 <Link
@@ -162,8 +159,8 @@ export default function AboutPage() {
                 >
                   Connect Dairy
                 </Link>{" "}
-                is the supply-chain build. The portfolio calls it a live
-                agri-logistics platform for dairy and feed operations:
+                is a live agri-logistics platform for dairy and feed
+                operations:
                 milk-truck management, feed-truck distribution, feed business
                 workflows, live fleet tracking, role-based dashboards, and P&amp;L
                 variance analytics.
@@ -175,11 +172,11 @@ export default function AboutPage() {
                 >
                   Atharv Narayan
                 </Link>{" "}
-                is the website in the portfolio under that name. The repository
-                describes a live dairy solutions site for Bhilwara and Jaipur:
-                milk transportation, trained dairy manpower, cattle-feed
-                supply, and tender support, with service pages, inquiry flows,
-                and WhatsApp-ready contact.
+                is a live website for a dairy solutions business serving
+                Bhilwara and Jaipur. It presents milk transportation, trained
+                dairy manpower, cattle-feed supply, and tender support, with
+                dedicated service pages, inquiry flows, and WhatsApp-ready
+                contact.
               </p>
               <p>
                 <Link
@@ -188,16 +185,14 @@ export default function AboutPage() {
                 >
                   DailyConcepts
                 </Link>{" "}
-                is the ecommerce and point-of-sale build. The portfolio says
-                Daily Concepts India is an e-commerce platform with an
-                integrated point-of-sale system in the admin panel, UI and UX
-                work, order management, and checkout for online and offline
-                sales.
+                (Daily Concepts India) is an e-commerce platform with an
+                integrated point-of-sale system in the admin panel, along with
+                UI and UX work, order management, and checkout for online and
+                offline sales.
               </p>
               <p>
-                Those four are named because the repository already names them.
-                They are not a client count, and they are not a testimonial.
-                Other portfolio entries stay on the portfolio page.
+                More projects, with screenshots and details, are on the
+                portfolio page.
               </p>
             </section>
 
@@ -210,33 +205,44 @@ export default function AboutPage() {
                 down the goal, the user, the constraint, and what finished
                 means, before implementation starts. Design turns that note
                 into flows and screens the client can react to. Build is the
-                implementation in the stack the relevant service page already
-                names. QA checks the paths the scope listed, on the devices the
+                implementation in the stack chosen for the project. QA checks the paths the scope listed, on the devices the
                 scope listed. Launch puts the build on the environment the
                 client will operate. Support is the agreed work after launch:
                 fixes and changes that were in scope, not a second product
                 added in silence.
               </p>
+              <p>
+                If you have a project in mind, the simplest first step is a
+                short note that describes what you want to build, who will use
+                it, and any deadline or budget range you are working within.
+                The team reads it and replies with questions or a suggested
+                next step, and discovery begins once the goal is clear. For an
+                EV charging product, it helps to say whether you operate
+                chargers as a CPO, serve drivers as an eMSP, or plan to do
+                both, and which charger hardware you expect to support. For a
+                website, app, or business system, links to products you admire
+                and a list of the screens or reports you already know you need
+                make the first conversation faster and the estimate more
+                accurate.
+              </p>
             </section>
 
             <section className="space-y-4">
               <h2 className="text-2xl font-bold text-theme-blue">
-                Technology named on the service pages
+                Technologies we use
               </h2>
               <p>
-                The technology names below are copied from the service pages
-                already on this site. Websites: React, Next.js, Node.js,
+                These are the main technologies we work with, by service.
+                Websites: React, Next.js, Node.js,
                 MongoDB, and WordPress. Mobile apps: React Native, Flutter,
-                Swift, and Kotlin, with Firebase on the mobile service page.
+                Swift, and Kotlin, with Firebase.
                 Custom software: React, Node.js, Python, Java, AWS, Docker,
                 Kubernetes, MongoDB, and PostgreSQL. AI development: Python,
-                TensorFlow, PyTorch, and scikit-learn, which are on that
-                service’s technology list. DevOps: Jenkins, GitLab CI, Docker,
+                TensorFlow, PyTorch, and scikit-learn. DevOps: Jenkins, GitLab CI, Docker,
                 Kubernetes, Terraform, AWS, and Azure. UI and UX: Figma, Adobe
                 XD, and Sketch. EV charging uses the protocols and runtime
-                named earlier on this page. A proposal for one project names
-                the subset that project will use. This page does not claim a
-                tool the service pages do not list.
+                described above. Each project proposal names the specific
+                tools that project will use.
               </p>
             </section>
 
@@ -254,9 +260,8 @@ export default function AboutPage() {
                 <a className={linkClass} href={`mailto:${siteConfig.email}`}>
                   {siteConfig.email}
                 </a>
-                . The business has been operating since 2023. Incorporation as
-                a private limited company is a 2026 fact, separate from that
-                founding year.
+                . The business has been operating since 2023 and was
+                incorporated as a private limited company in 2026.
               </p>
               <address className="not-italic text-base text-gray-500">
                 <span className="block font-semibold text-theme-blue">

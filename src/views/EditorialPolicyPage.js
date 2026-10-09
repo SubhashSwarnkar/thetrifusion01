@@ -104,11 +104,9 @@ export default function EditorialPolicyPage() {
                 with the page address and the fact you believe is wrong. The
                 team checks that point against the primary source. When the
                 correction holds, the article is updated and the date of the
-                update is noted on the post. The reviewed line under each
-                article uses the post’s existing dateModified when one is
-                stored, and the publication date when a separate modified date
-                is not stored. The page is not edited so that the change is
-                hidden.
+                update is noted on the post. Each article shows the date it was
+                last reviewed or, if it has not been updated, the date it was
+                published. Changes are never made silently.
               </p>
             </section>
 
