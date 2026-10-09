@@ -17,11 +17,11 @@ export const pages = {
       "software company Jaipur, web development company Rajasthan, website development Jaipur, software development company India, ecommerce website development, TheTriFusion",
   },
   "/about": {
-    title: "About TheTriFusion | Software Agency in Jaipur, Rajasthan",
+    title: "About TheTriFusion | Software Company in Jaipur",
     description:
-      "About Trifusion Infotech Private Limited (TheTriFusion) — a software agency in Jaipur, Rajasthan delivering custom software, websites, mobile apps, ecommerce, and digital marketing across India.",
+      "Trifusion Infotech Private Limited (TheTriFusion) is a Jaipur software company operating since 2023, DPIIT-recognised under Startup India, building EV charging software, apps, and websites.",
     keywords:
-      "software company Jaipur, IT company Rajasthan, about TheTriFusion, software agency India, web development team Jaipur",
+      "software company Jaipur, IT company Rajasthan, about TheTriFusion, Startup India, EV charging software Jaipur",
   },
   "/services": {
     title: "IT Services in Jaipur | TheTriFusion",
@@ -145,6 +145,13 @@ export const pages = {
       "Estimate project milestones and delivery timelines based on project type and complexity.",
     keywords:
       "timeline calculator, project timeline, development duration, delivery estimate",
+  },
+  "/editorial-policy": {
+    title: "Editorial Policy | TheTriFusion",
+    description:
+      "How the TheTriFusion team writes, reviews, fact-checks, and corrects the blog. No paid posts. Google ads do not influence the content.",
+    keywords:
+      "editorial policy, TheTriFusion blog, corrections, advertising disclosure",
   },
   "/privacy": {
     title: "Privacy Policy | TheTriFusion",

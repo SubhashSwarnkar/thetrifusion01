@@ -181,6 +181,7 @@ export function getBlogArticleView(post) {
       excerpt: post.excerpt,
       content: post.content,
       date: post.date,
+      updatedAt: post.updatedAt || post.date,
       readTime: post.readTime,
       author: post.author,
       category: post.category,

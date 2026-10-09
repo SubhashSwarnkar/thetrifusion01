@@ -1,3 +1,4 @@
+import BlogAuthorBox from "components/BlogAuthorBox";
 import LanguageSwitcher from "components/LanguageSwitcher";
 import { siteConfig } from "config/site";
 import { localizeHrefs } from "data/i18n/routes";
@@ -96,6 +97,7 @@ export default function TranslatedDocument({
             dangerouslySetInnerHTML={{ __html: body }}
           />
         </article>
+        <BlogAuthorBox reviewDate={updatedAt || date} />
         <aside className="mt-12 rounded-2xl border border-theme-purple/20 bg-gradient-to-br from-light-theme-purple/40 to-white p-6">
           <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-theme-purple">
             {locale.ui.ctaKicker}
@@ -138,6 +140,10 @@ export default function TranslatedDocument({
             {" · "}
             <a href="/privacy" className="hover:underline">
               {locale.ui.privacy}
+            </a>
+            {" · "}
+            <a href="/editorial-policy" className="hover:underline">
+              {locale.ui.editorialPolicy || "Editorial policy"}
             </a>
             {" · "}
             <a href="/terms" className="hover:underline">

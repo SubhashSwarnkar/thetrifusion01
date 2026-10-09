@@ -15,6 +15,7 @@ import {
 import { SITE_URL } from "lib/seoConfig";
 import { WHATSAPP_NUMBER } from "data/companyInfo";
 import { trackEvent, AnalyticsEvents } from "utils/analytics";
+import BlogAuthorBox from "components/BlogAuthorBox";
 
 function splitAfterIntro(html) {
   const source = typeof html === "string" ? html : "";
@@ -140,6 +141,8 @@ export default function BlogDetailPage({
               </div>
             
             <BlogAdBottom />
+
+            <BlogAuthorBox reviewDate={post.updatedAt || post.date} />
 
             {/* Lead CTA — convert organic readers */}
               <div

@@ -9,6 +9,7 @@ const ui = {
   services: "Layanan",
   contact: "Kontak",
   privacy: "Privasi",
+  editorialPolicy: "Kebijakan editorial",
   about: "Tentang kami",
   terms: "Ketentuan",
   siteNav: "Navigasi situs",

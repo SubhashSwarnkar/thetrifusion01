@@ -5,216 +5,306 @@ import Link from "next/link";
 import Header from "parts/Header";
 import Footer from "parts/Footer";
 import Breadcrumbs from "components/Breadcrumbs";
-import BrandTrustStrip from "components/BrandTrustStrip";
-import { Fade } from "react-awesome-reveal";
-import SEO from "components/common/SEO";
 import { siteConfig } from "config/site";
+
+const linkClass = "text-theme-purple underline underline-offset-2";
 
 export default function AboutPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const stats = [
-    { number: "50+", label: "Live products you can open", icon: "🚀" },
-    { number: "24h", label: "Scoped estimate reply", icon: "⏱️" },
-    { number: "Weekly", label: "Demo updates", icon: "📅" },
-    { number: "Jaipur", label: "Pvt. Ltd. office", icon: "📍" },
-  ];
-
-  const values = [
-    {
-      title: "Innovation",
-      description: "We stay ahead of the curve with the latest technologies and future-forward trends.",
-      color: "purple"
-    },
-    {
-      title: "Quality",
-      description: "We deliver nothing but the best, ensuring pixel-perfect excellence in every line of code.",
-      color: "cyan"
-    },
-    {
-      title: "Transparency",
-      description: "We believe in radical honesty, clear communication, and unbreakable partnerships.",
-      color: "pink"
-    },
-    {
-      title: "Client Focus",
-      description: "Your success is the fuel for our passion. We are committed to your long-term growth.",
-      color: "blue"
-    }
-  ];
-
   return (
     <>
-      <SEO 
-        title="About Us" 
-        description="Learn about TheTriFusion, our story, values, and the team behind our success in software development and digital solutions."
-      />
       <Header />
-      
-      <main className="overflow-hidden">
-        {/* Breadcrumbs wrapper with background */}
-        <Breadcrumbs />
+      <Breadcrumbs />
+      <main className="bg-white">
+        <article className="container mx-auto max-w-3xl px-5 py-16">
+          <p className="mb-8 text-3xl font-bold leading-none text-theme-blue">
+            TheTri<span className="text-theme-purple">Fusion</span>
+          </p>
+          <h1 className="mb-6 text-4xl font-black tracking-tight text-theme-blue md:text-5xl">
+            About TheTriFusion
+          </h1>
+          <p className="mb-4 text-sm font-semibold text-theme-blue">
+            {siteConfig.legalName}
+          </p>
 
-        {/* Hero Section */}
-        <section className="relative pt-10 pb-20 bg-white">
-          <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-light-theme-purple/30 rounded-full blur-[120px] -z-10 animate-float"></div>
-          <div className="absolute bottom-0 left-0 w-[30rem] h-[30rem] bg-theme-cyan/10 rounded-full blur-[100px] -z-10 animate-float" style={{animationDelay: '2s'}}></div>
-          
-          <div className="container mx-auto px-5">
-            <div className="max-w-4xl mx-auto text-center mb-20">
-              <Fade direction="up" triggerOnce>
-                <span className="inline-block px-4 py-1.5 rounded-full bg-light-theme-purple/30 text-theme-purple font-bold text-xs uppercase tracking-[0.2em] mb-6">
-                  Our Story
+          <div className="space-y-6 text-lg font-light leading-relaxed text-gray-600">
+            <section className="space-y-4">
+              <h2 className="text-2xl font-bold text-theme-blue">Who we are</h2>
+              <p>
+                TheTriFusion is the public brand of Trifusion Infotech Private
+                Limited, a software company whose office is in Jaipur,
+                Rajasthan. The business has been running since 2023. In 2026 it
+                was incorporated as a private limited company. The Department
+                for Promotion of Industry and Internal Trade (DPIIT) has
+                recognised the company under Startup India. That recognition is
+                the Startup India certificate. The people who do the work are a
+                team of about ten developers and consultants. They take
+                software projects for clients in India and worldwide. A typical
+                project on this desk is between $200 and $10,000.
+              </p>
+            </section>
+
+            <section className="space-y-4">
+              <h2 className="text-2xl font-bold text-theme-blue">
+                How the company started
+              </h2>
+              <p>
+                The company started as an operating business in 2023, before
+                the private-limited incorporation in 2026. The incorporation
+                changed the legal form. It did not change the office, the
+                brand, or the kind of software the team builds. Startup India
+                recognition through DPIIT is a government recognition of that
+                company. This page does not attach a ranking or a headcount
+                beyond the team of about ten.
+              </p>
+            </section>
+
+            <section className="space-y-4">
+              <h2 className="text-2xl font-bold text-theme-blue">What we build</h2>
+              <p>
+                The flagship work is EV charging software. That means a driver
+                app and a charging station management system, the CSMS, for a
+                charge point operator, an e-mobility service provider (eMSP),
+                or both roles in one product. Charger communication on the
+                service page is OCPP 1.6J and OCPP 2.0.1. Roaming between
+                networks on that same page is OCPI 2.2.1. The technology list
+                published for that product also names React Native, Node.js,
+                PostgreSQL, Redis, WebSockets, MQTT, UPI, QR, and RFID. The
+                full scope, including what a CPO record is and what an eMSP
+                record is, is on the{" "}
+                <Link
+                  href="/services/ev-charging-app-development"
+                  className={linkClass}
+                >
+                  EV charging app development
+                </Link>{" "}
+                page.
+              </p>
+              <p>
+                The same team builds other software, and each line has its own
+                page under{" "}
+                <Link href="/services" className={linkClass}>
+                  services
+                </Link>
+                .{" "}
+                <Link href="/services/mobile-app-development" className={linkClass}>
+                  Mobile apps
+                </Link>{" "}
+                cover Android and iOS.{" "}
+                <Link href="/services/website-development" className={linkClass}>
+                  Websites
+                </Link>{" "}
+                cover marketing sites and web applications. Ecommerce covers
+                online stores.{" "}
+                <Link href="/services/fintech-app-development" className={linkClass}>
+                  Fintech apps
+                </Link>
+                , as the fintech service page states them, cover BBPS, AEPS,
+                DMT, XDMT, UPI, and KYC software with retailer and admin panels.{" "}
+                <Link href="/services/crm-erp-development" className={linkClass}>
+                  CRM and ERP
+                </Link>{" "}
+                work covers pipelines, inventory, billing, and role-based
+                admin.{" "}
+                <Link href="/services/software-development" className={linkClass}>
+                  Custom software
+                </Link>{" "}
+                is the broader build when the product is not one of those named
+                lines.{" "}
+                <Link href="/services/ai-development" className={linkClass}>
+                  AI development
+                </Link>{" "}
+                and{" "}
+                <Link href="/services/devops" className={linkClass}>
+                  DevOps
+                </Link>{" "}
+                are separate services, as is{" "}
+                <Link href="/services/ui-ux-design" className={linkClass}>
+                  UI/UX
+                </Link>
+                . This page does not add a service the services section does
+                not already list.
+              </p>
+            </section>
+
+            <section className="space-y-4">
+              <h2 className="text-2xl font-bold text-theme-blue">
+                Work named in the portfolio
+              </h2>
+              <p>
+                Four pieces of work are already described in the{" "}
+                <Link href="/portfolio" className={linkClass}>
+                  portfolio
+                </Link>
+                , and this page repeats only that description.
+              </p>
+              <p>
+                <Link
+                  href="/portfolio/plugone-ev-charging-platform"
+                  className={linkClass}
+                >
+                  PlugOne
+                </Link>{" "}
+                is the EV charging platform in the portfolio. The portfolio
+                text says it connects EV owners to nearby charging stations in
+                real time, with an interactive map, charging-status tracking, a
+                smart mobility dashboard, and session management across
+                charging networks. The portfolio card also notes OCPI and OCPP
+                roaming, and delivery on iOS, Android, and web.
+              </p>
+              <p>
+                <Link
+                  href="/portfolio/connect-dairy-supply-chain"
+                  className={linkClass}
+                >
+                  Connect Dairy
+                </Link>{" "}
+                is the supply-chain build. The portfolio calls it a live
+                agri-logistics platform for dairy and feed operations:
+                milk-truck management, feed-truck distribution, feed business
+                workflows, live fleet tracking, role-based dashboards, and P&amp;L
+                variance analytics.
+              </p>
+              <p>
+                <Link
+                  href="/portfolio/atharv-narayan-wellness-website"
+                  className={linkClass}
+                >
+                  Atharv Narayan
+                </Link>{" "}
+                is the website in the portfolio under that name. The repository
+                describes a live dairy solutions site for Bhilwara and Jaipur:
+                milk transportation, trained dairy manpower, cattle-feed
+                supply, and tender support, with service pages, inquiry flows,
+                and WhatsApp-ready contact.
+              </p>
+              <p>
+                <Link
+                  href="/portfolio/dailyconcepts-ecommerce-pos"
+                  className={linkClass}
+                >
+                  DailyConcepts
+                </Link>{" "}
+                is the ecommerce and point-of-sale build. The portfolio says
+                Daily Concepts India is an e-commerce platform with an
+                integrated point-of-sale system in the admin panel, UI and UX
+                work, order management, and checkout for online and offline
+                sales.
+              </p>
+              <p>
+                Those four are named because the repository already names them.
+                They are not a client count, and they are not a testimonial.
+                Other portfolio entries stay on the portfolio page.
+              </p>
+            </section>
+
+            <section className="space-y-4">
+              <h2 className="text-2xl font-bold text-theme-blue">
+                How a project runs
+              </h2>
+              <p>
+                A project follows six stages, in this order. Discovery writes
+                down the goal, the user, the constraint, and what finished
+                means, before implementation starts. Design turns that note
+                into flows and screens the client can react to. Build is the
+                implementation in the stack the relevant service page already
+                names. QA checks the paths the scope listed, on the devices the
+                scope listed. Launch puts the build on the environment the
+                client will operate. Support is the agreed work after launch:
+                fixes and changes that were in scope, not a second product
+                added in silence.
+              </p>
+            </section>
+
+            <section className="space-y-4">
+              <h2 className="text-2xl font-bold text-theme-blue">
+                Technology named on the service pages
+              </h2>
+              <p>
+                The technology names below are copied from the service pages
+                already on this site. Websites: React, Next.js, Node.js,
+                MongoDB, and WordPress. Mobile apps: React Native, Flutter,
+                Swift, and Kotlin, with Firebase on the mobile service page.
+                Custom software: React, Node.js, Python, Java, AWS, Docker,
+                Kubernetes, MongoDB, and PostgreSQL. AI development: Python,
+                TensorFlow, PyTorch, and scikit-learn, which are on that
+                service’s technology list. DevOps: Jenkins, GitLab CI, Docker,
+                Kubernetes, Terraform, AWS, and Azure. UI and UX: Figma, Adobe
+                XD, and Sketch. EV charging uses the protocols and runtime
+                named earlier on this page. A proposal for one project names
+                the subset that project will use. This page does not claim a
+                tool the service pages do not list.
+              </p>
+            </section>
+
+            <section className="space-y-4">
+              <h2 className="text-2xl font-bold text-theme-blue">
+                Office and contact
+              </h2>
+              <p>
+                The office is on the 5th Floor, Amoro Building, Patrakar
+                Colony, Jaipur, Rajasthan 302020, India. The phone is{" "}
+                <a className={linkClass} href={siteConfig.telHref}>
+                  {siteConfig.phone}
+                </a>
+                . Hours are Monday to Saturday, 10 AM to 7 PM. Email is{" "}
+                <a className={linkClass} href={`mailto:${siteConfig.email}`}>
+                  {siteConfig.email}
+                </a>
+                . The business has been operating since 2023. Incorporation as
+                a private limited company is a 2026 fact, separate from that
+                founding year.
+              </p>
+              <address className="not-italic text-base text-gray-500">
+                <span className="block font-semibold text-theme-blue">
+                  {siteConfig.legalName}
                 </span>
-                <h1 className="text-6xl md:text-8xl font-black text-theme-blue mb-8 tracking-tighter leading-none">
-                  About our team in <br />
-                  <span className="text-gradient">Jaipur, Rajasthan</span>
-                </h1>
-                <p className="text-xl md:text-2xl text-gray-500 font-light leading-relaxed">
-                  Trifusion Infotech Private Limited builds websites, apps, and
-                  custom software from Jaipur — for clients across Rajasthan and
-                  India.
-                </p>
-                <p className="mt-6 text-base md:text-lg font-semibold text-theme-blue">
-                  Trifusion Infotech Private Limited
-                </p>
-                <address className="not-italic text-sm text-gray-500 mt-2">
-                  <span className="block">{siteConfig.addressLine}</span>
-                  <a className="block mt-1 font-semibold text-theme-purple" href={siteConfig.telHref}>
-                    {siteConfig.phone}
-                  </a>
-                  <span className="block mt-1">{siteConfig.hoursLabel}</span>
-                </address>
-              </Fade>
-            </div>
+                <span className="block">{siteConfig.addressLine}</span>
+                <a className={`block ${linkClass}`} href={siteConfig.telHref}>
+                  {siteConfig.phone}
+                </a>
+                <span className="block">{siteConfig.hoursLabel}</span>
+                <a
+                  className={`block ${linkClass}`}
+                  href={`mailto:${siteConfig.email}`}
+                >
+                  {siteConfig.email}
+                </a>
+              </address>
+              <p>
+                To discuss a project, use the{" "}
+                <Link href="/contact" className={linkClass}>
+                  contact
+                </Link>{" "}
+                page, call the phone number above, or email{" "}
+                {siteConfig.email}. The service list is on the{" "}
+                <Link href="/services" className={linkClass}>
+                  services
+                </Link>{" "}
+                page. Published work is on the{" "}
+                <Link href="/portfolio" className={linkClass}>
+                  portfolio
+                </Link>{" "}
+                page. Articles on software, apps, EV charging, AI, and business
+                technology are on the{" "}
+                <Link href="/blog" className={linkClass}>
+                  blog
+                </Link>
+                . How those articles are written, checked, and corrected is on
+                the{" "}
+                <Link href="/editorial-policy" className={linkClass}>
+                  editorial policy
+                </Link>
+                .
+              </p>
+            </section>
           </div>
-        </section>
-
-        <BrandTrustStrip />
-
-        <section className="relative py-20 bg-white">
-          <div className="container mx-auto px-5">
-            {/* Stats Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 mb-32">
-              {stats.map((stat, index) => (
-                <Fade key={index} direction="up" delay={index * 100} triggerOnce>
-                  <div className="card-glass p-8 rounded-[2rem] text-center group hover:scale-105 transition-all duration-500">
-                    <div className="text-3xl mb-4 group-hover:scale-125 transition-transform duration-500">{stat.icon}</div>
-                    <div className="text-4xl sm:text-5xl font-black text-theme-purple mb-2">
-                      {stat.number}
-                    </div>
-                    <div className="text-xs sm:text-sm font-bold text-gray-400 uppercase tracking-widest leading-tight">{stat.label}</div>
-                  </div>
-                </Fade>
-              ))}
-            </div>
-
-            {/* Story Content */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32">
-              <Fade direction="left" triggerOnce>
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-theme-purple to-theme-cyan rounded-[3rem] rotate-3 -z-10 opacity-20"></div>
-                  <div className="bg-white p-2 rounded-[3.2rem] shadow-2xl">
-                    <img 
-                      src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1000" 
-                      alt="TheTriFusion team collaborating in Jaipur" 
-                      className="rounded-[3rem] w-full h-[500px] object-cover"
-                    />
-                  </div>
-                </div>
-              </Fade>
-              <Fade direction="right" triggerOnce>
-                <div className="space-y-8">
-                  <h2 className="text-4xl md:text-5xl font-black text-theme-blue tracking-tight leading-tight">
-                    Beyond Code: <br />
-                    We Craft <span className="text-theme-purple">Experiences</span>
-                  </h2>
-                  <div className="space-y-6 text-lg text-gray-600 font-light leading-relaxed">
-                    <p>
-                      At TheTriFusion (Trifusion Infotech Private Limited), we don't just build software. we architect success stories. Our approach is rooted in the belief that technology should be a multiplier for human potential.
-                    </p>
-                    <p>
-                      Our team of passionate developers, designers, and strategists work in a flat hierarchy, ensuring every bold idea gets the spotlight it deserves. We thrive on complexity and deliver elegance.
-                    </p>
-                    <div className="pt-4">
-                      <div className="flex items-center gap-4 p-4 rounded-2xl bg-gray-50 border-l-4 border-theme-purple italic text-theme-blue">
-                        "Technology is best when it brings people together and solves real-world friction."
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Fade>
-            </div>
-
-            {/* Values Section */}
-            <div className="mb-32 relative">
-              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03] pointer-events-none"></div>
-              <div className="text-center mb-16">
-                <Fade direction="up" triggerOnce>
-                  <h2 className="text-4xl md:text-6xl font-black text-theme-blue tracking-tight mb-4">
-                    Our Core DNA
-                  </h2>
-                  <p className="text-gray-500 max-w-2xl mx-auto font-light leading-relaxed">
-                    The fundamental principles that guide every decision we make and every line of code we write.
-                  </p>
-                </Fade>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {values.map((value, index) => (
-                  <Fade
-                    key={index}
-                    direction="up"
-                    delay={index * 100}
-                    triggerOnce
-                  >
-                    <div
-                      className="group relative bg-white rounded-[2.5rem] shadow-xl hover:shadow-2xl p-8 border border-gray-50 overflow-hidden transition-all duration-500 hover:-translate-y-2 h-full flex flex-col"
-                    >
-                      <div className={`absolute top-0 right-0 w-24 h-24 blur-3xl opacity-20 -mr-12 -mt-12 transition-all duration-500 group-hover:scale-150 bg-theme-${value.color}`}></div>
-                      <div className="relative z-10">
-                        <h3 className="text-2xl text-theme-blue font-black mb-4">
-                          {value.title}
-                        </h3>
-                        <p className="text-gray-500 font-light leading-relaxed">{value.description}</p>
-                      </div>
-                    </div>
-                  </Fade>
-                ))}
-              </div>
-            </div>
-
-            {/* Team Call to Action */}
-            <Fade direction="up" triggerOnce>
-              <div className="text-center bg-theme-blue rounded-[3rem] p-12 md:p-20 relative overflow-hidden shadow-2xl">
-                <div className="absolute top-0 right-0 w-[30rem] h-[30rem] bg-theme-purple/20 rounded-full blur-[100px] -mr-40 -mt-40"></div>
-                <div className="relative z-10">
-                  <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">
-                    The Humans Behind <br />
-                    the <span className="text-theme-cyan">Innovation</span>
-                  </h2>
-                  <p className="text-white/70 text-lg md:text-xl font-light mb-10 max-w-2xl mx-auto">
-                    We're a diverse collective of dreamers and doers. Ready to meet the people who will transform your business?
-                  </p>
-                  <Link
-                    href="/team"
-                    className="inline-flex items-center gap-3 px-10 py-5 bg-white text-theme-blue rounded-full text-lg font-black hover:scale-105 transition-all active:scale-95 shadow-xl shadow-black/20"
-                  >
-                    Meet the Team
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </Fade>
-          </div>
-        </section>
+        </article>
       </main>
-      
       <Footer />
     </>
   );
 }
-

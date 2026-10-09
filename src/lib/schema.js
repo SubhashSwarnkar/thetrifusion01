@@ -44,6 +44,7 @@ function organizationNode() {
     email: siteConfig.email,
     telephone: siteConfig.phoneSchema,
     address: postalAddress(),
+    foundingDate: "2023",
     areaServed: AREA_SERVED,
     sameAs: [siteConfig.instagram, siteConfig.linkedin],
   };
@@ -79,6 +80,7 @@ function localBusinessNode() {
     email: siteConfig.email,
     telephone: siteConfig.phoneSchema,
     address: postalAddress(),
+    foundingDate: "2023",
     openingHours: siteConfig.openingHours,
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
@@ -875,24 +877,13 @@ export function eventSchema(post) {
   };
 }
 
-function blogPostingAuthor(name) {
-  const authorName = typeof name === "string" ? name.trim() : "";
-  const siteName = String(siteConfig.name || "").trim().toLowerCase();
-  const generic =
-    !authorName ||
-    authorName.toLowerCase() === "thetrifusion team" ||
-    authorName.toLowerCase() === siteName;
-  if (generic) {
-    return {
-      "@type": "Organization",
-      name: "TheTriFusion",
-      url: absoluteSiteUrl("/about"),
-    };
-  }
+// Stored bylines ("TheTriFusion Team" and translated team labels) are the
+// company. BlogPosting author stays an Organization, never a named person.
+function blogPostingAuthor() {
   return {
-    "@type": "Person",
-    name: authorName,
-    url: siteConfig.url,
+    "@type": "Organization",
+    name: "TheTriFusion",
+    url: absoluteSiteUrl("/about"),
   };
 }
 
