@@ -205,6 +205,7 @@ Jaipur-based delivery for India and worldwide. The initial infrastructure audit 
 - Cloud migration (AWS, Azure, or GCP): https://thetrifusion.in/services/devops#cloud-migration
 - Managed DevOps: https://thetrifusion.in/services/devops#managed-devops
 - DevOps Starter Pack for startups: https://thetrifusion.in/services/devops#devops-starter-pack
+- Guide: CI/CD checklist for SME SaaS teams: https://thetrifusion.in/blog/devops-ci-cd-checklist-sme-saas-2026
 
 ## EV charging CMS for CPOs and eMSPs
 
@@ -238,6 +239,7 @@ EV charging CMS for CPOs and eMSPs, built in Jaipur for India and worldwide. One
 - Guide: CSMS for India CPOs: https://thetrifusion.in/blog/ev-charging-csms-india-cpo-guide
 - Guide: CSMS for UK and Europe CPOs: https://thetrifusion.in/blog/ev-charging-csms-uk-europe-cpo-guide
 - Guide: CSMS RFP checklist for an OCPP platform: https://thetrifusion.in/blog/csms-rfp-checklist-ocpp-platform-evaluation
+- Guide: EV depot smart charging and load management: https://thetrifusion.in/blog/ev-depot-smart-charging-load-management-guide
 
 ## Key hubs
 
