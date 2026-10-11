@@ -127,6 +127,11 @@ EV charging CMS for CPOs and eMSPs, built in Jaipur for India and worldwide. One
 - https://thetrifusion.in/blog/vivo-v80-specs-price-india-what-we-know
 - https://thetrifusion.in/blog/opus-5-5-ai-model-whats-known
 - https://thetrifusion.in/blog/beats-360-why-trending-explained
+## Blog — Daily organic batch (11 Oct 2026)
+
+- https://thetrifusion.in/blog/iso-15118-plug-and-charge-cpo-software-guide
+- https://thetrifusion.in/blog/erp-crm-api-integration-playbook-mid-market
+
 ## Blog — Daily organic batch (10 Oct 2026)
 
 - https://thetrifusion.in/blog/ev-depot-smart-charging-load-management-guide
