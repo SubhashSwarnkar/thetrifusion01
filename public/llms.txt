@@ -175,6 +175,7 @@ Platforms: Web admin, iOS, and Android.
 Who: Indian operators that need a system shaped to their process.
 Price from: ₹3,00,000.
 - Decision guide, custom CRM or Salesforce: https://thetrifusion.in/blog/custom-crm-vs-salesforce-mid-market-2026
+- Integration playbook, ERP and CRM for mid-market teams: https://thetrifusion.in/blog/erp-crm-api-integration-playbook-mid-market
 
 - All services: https://thetrifusion.in/services
 
@@ -240,6 +241,7 @@ EV charging CMS for CPOs and eMSPs, built in Jaipur for India and worldwide. One
 - Guide: CSMS for UK and Europe CPOs: https://thetrifusion.in/blog/ev-charging-csms-uk-europe-cpo-guide
 - Guide: CSMS RFP checklist for an OCPP platform: https://thetrifusion.in/blog/csms-rfp-checklist-ocpp-platform-evaluation
 - Guide: EV depot smart charging and load management: https://thetrifusion.in/blog/ev-depot-smart-charging-load-management-guide
+- Guide: ISO 15118 Plug and Charge for CPO software: https://thetrifusion.in/blog/iso-15118-plug-and-charge-cpo-software-guide
 
 ## Key hubs
 
