@@ -10,6 +10,7 @@ import iosAppDevelopment from "./ios-app-development.js";
 import androidAppDevelopment from "./android-app-development.js";
 import aiDevelopment from "./ai-development.js";
 import uiUxDesign from "./ui-ux-design.js";
+import graphicDesign from "./graphic-design.js";
 
 export const servicePlanContent = {
   "software-development": softwareDevelopment,
@@ -20,4 +21,5 @@ export const servicePlanContent = {
   "android-app-development": androidAppDevelopment,
   "ai-development": aiDevelopment,
   "ui-ux-design": uiUxDesign,
+  "graphic-design": graphicDesign,
 };
