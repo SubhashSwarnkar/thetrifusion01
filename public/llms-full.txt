@@ -32,7 +32,7 @@ Contact: https://thetrifusion.in/contact
 
 ## Ecommerce (canonical page)
 
-- https://thetrifusion.in/solutions/ecommerce-website-development — Ecommerce website development in India (Jaipur): Shopify, WooCommerce and custom stores, B2B portals, multi-vendor marketplaces. Packages from ₹25,000 (single vendor) / ₹35,000 (multi-vendor); custom builds quoted after discovery.
+- https://thetrifusion.in/solutions/ecommerce-website-development — Ecommerce website development company in Jaipur and India: Shopify, WooCommerce and custom stores, B2B portals, multi-vendor marketplaces. Packages from ₹25,000 (single vendor) / ₹35,000 (multi-vendor); custom builds quoted after discovery.
 - https://thetrifusion.in/blog/ecommerce-website-development-cost-india — Ecommerce website development cost in India.
 
 ## Service detail pages (canonical)
@@ -105,7 +105,6 @@ EV charging CMS for CPOs and eMSPs, built in Jaipur for India and worldwide. One
 - https://thetrifusion.in/solutions/ecommerce-website-development
 - https://thetrifusion.in/solutions/msp-managed-it-services
 - https://thetrifusion.in/solutions/software-company-rajasthan
-- https://thetrifusion.in/solutions/software-development-company-jaipur
 - https://thetrifusion.in/solutions/website-development-company-bhilwara
 - https://thetrifusion.in/solutions/website-development-company-udaipur
 - https://thetrifusion.in/solutions/website-development-company-kota
@@ -122,74 +121,33 @@ EV charging CMS for CPOs and eMSPs, built in Jaipur for India and worldwide. One
 - Live: https://dailyconceptsindia.com
 - Live: https://atharvnarayan.in
 
-## Blog — Trends explainers (23 Sep 2026)
+## Blog — indexable service and product guides
 
-- https://thetrifusion.in/blog/vivo-v80-specs-price-india-what-we-know
+Off-topic, machine-translated, redirected, and AdSense-recovery noindex URLs are omitted.
+
 - https://thetrifusion.in/blog/opus-5-5-ai-model-whats-known
-- https://thetrifusion.in/blog/beats-360-why-trending-explained
-## Blog — Daily organic batch (12 Oct 2026)
-
 - https://thetrifusion.in/blog/emsp-vs-cpo-software-stack-buyer-guide
 - https://thetrifusion.in/blog/webhook-reliability-idempotency-playbook-saas
-
-## Blog — Daily organic batch (11 Oct 2026)
-
 - https://thetrifusion.in/blog/iso-15118-plug-and-charge-cpo-software-guide
 - https://thetrifusion.in/blog/erp-crm-api-integration-playbook-mid-market
-
-## Blog — Daily organic batch (10 Oct 2026)
-
 - https://thetrifusion.in/blog/ev-depot-smart-charging-load-management-guide
 - https://thetrifusion.in/blog/devops-ci-cd-checklist-sme-saas-2026
-
-## Blog — Daily organic batch (9 Oct 2026)
-
 - https://thetrifusion.in/blog/csms-rfp-checklist-ocpp-platform-evaluation
 - https://thetrifusion.in/blog/custom-crm-vs-salesforce-mid-market-2026
-
-## Blog — Daily organic batch (8 Oct 2026)
-
 - https://thetrifusion.in/blog/iphone-duo-foldable-app-developer-guide
 - https://thetrifusion.in/blog/chatgpt-gpt-6-intelligent-ui-business-guide
 - https://thetrifusion.in/blog/pwn2own-ireland-2026-security-lessons-for-businesses
-- https://thetrifusion.in/blog/website-development-cost-guide-new-zealand-2026
-
-## Blog — Daily organic batch (7 Oct 2026)
-
 - https://thetrifusion.in/blog/claude-for-google-workspace-docs-sheets-slides-guide
 - https://thetrifusion.in/blog/reflection-beam-open-weight-ai-model-whats-known
-
-## Blog — Daily organic batch (6 Oct 2026)
-
-- https://thetrifusion.in/blog/claude-ai-for-uae-businesses-2026
-
-## Blog — Daily organic batch (5 Oct 2026)
-
-- https://thetrifusion.in/blog/chatgpt-ai-tools-for-australian-startups-2026
-
-## Blog — Daily organic batch (4 Oct 2026)
-
 - https://thetrifusion.in/blog/ev-charging-csms-india-cpo-guide
-
-## Blog — Daily organic batch (29 Sep 2026)
-
-- https://thetrifusion.in/blog/gemini-ai-for-philippine-bpo-businesses-2026
-- https://thetrifusion.in/blog/fintech-app-development-uae-gulf-2026
-- https://thetrifusion.in/blog/mobile-app-development-cost-guide-uae-gulf
-- https://thetrifusion.in/blog/ecommerce-website-for-nigerian-smes-2026
-
-## Blog — Daily organic batch (28 Sep 2026)
-
 - https://thetrifusion.in/blog/ios-27-siri-ai-business-apps-uk-australia
 - https://thetrifusion.in/blog/nextjs-app-router-saas-mvp-guide-2026
 - https://thetrifusion.in/blog/ev-charging-csms-uk-europe-cpo-guide
 - https://thetrifusion.in/blog/hire-dedicated-developers-cost-guide-uk-australia
 - https://thetrifusion.in/blog/shopify-plus-vs-custom-ecommerce-uk-canada
-
-## Blog — Daily organic batch (26 Sep 2026)
-
-- https://thetrifusion.in/blog/anthropic-pentagon-claude-ai-ban-explained
-- https://thetrifusion.in/blog/realme-16-pro-harry-potter-edition-india
+- https://thetrifusion.in/blog/ecommerce-website-development-cost-india
+- https://thetrifusion.in/blog/ecommerce-app-development-cost-india
+- https://thetrifusion.in/blog/ev-charging-app-ocpi-ocpp-guide
 
 ## AI / crawler notes
 

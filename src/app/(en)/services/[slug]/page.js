@@ -5,7 +5,12 @@ import LanguageSwitcher from "components/LanguageSwitcher";
 import { getServiceBySlug, services } from "data/servicesData";
 import { getBlogBySlug } from "data/blogData";
 import { hreflangLanguagesForPath } from "data/i18n/routes";
-import { breadcrumbSchema, faqSchema, serviceSchema } from "lib/schema";
+import {
+  breadcrumbSchema,
+  faqSchema,
+  serviceSchema,
+  softwareApplicationSchema,
+} from "lib/schema";
 import { buildMetadata } from "lib/seoConfig";
 
 export function generateStaticParams() {
@@ -67,6 +72,8 @@ export default function RoutePage({ params }) {
               price: service.omitSchemaPrice
                 ? undefined
                 : service.startingFrom || service.pricing?.basic,
+              pricedOffers: service.schemaPricedOffers,
+              additionalOffers: service.schemaAdditionalOffers,
               offers: service.detailSections?.length
                 ? service.detailSections.flatMap((section) => [
                     {
@@ -111,6 +118,19 @@ export default function RoutePage({ params }) {
                   ? "en-IN"
                   : undefined
               )}
+            />
+          ) : null}
+          {service.softwareApplication ? (
+            <JsonLd
+              data={softwareApplicationSchema({
+                ...service.softwareApplication,
+                path: `/services/${service.slug}`,
+                price:
+                  service.softwareApplication.price ??
+                  (service.omitSchemaPrice
+                    ? undefined
+                    : service.startingFrom || service.pricing?.basic),
+              })}
             />
           ) : null}
         </>

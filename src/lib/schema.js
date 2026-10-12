@@ -5,12 +5,32 @@ const HOME_DESCRIPTION =
   "Trifusion Infotech Private Limited (TheTriFusion) is a software development company in Jaipur, Rajasthan offering custom software, ecommerce websites, mobile apps, UI/UX, and digital marketing for businesses across India.";
 
 const ORGANIZATION_ID = `${siteConfig.url}/#organization`;
+const FOUNDER_ID = `${siteConfig.url}/#founder`;
 
 /** India and worldwide. No invented coordinates or city-level office pins. */
 const AREA_SERVED = [
   { "@type": "Country", name: "India" },
   { "@type": "Place", name: "Worldwide" },
 ];
+
+/**
+ * Founder Person from TeamMembers (Amardeep, CEO). No personal LinkedIn,
+ * years-of-experience, or certifications are stored in this repo.
+ * TODO OWNER: personal LinkedIn URL for founder.sameAs.
+ * TODO OWNER: CIN / company registration number.
+ * TODO OWNER: DPIIT Startup India certificate number before adding hasCredential.
+ * TODO OWNER: Google Business Profile URL, Clutch, GoodFirms, YouTube, X — add to sameAs only when live.
+ * TODO OWNER: aggregateRating — do not add until third-party reviews exist.
+ */
+function founderPerson() {
+  return {
+    "@type": "Person",
+    "@id": FOUNDER_ID,
+    name: "Amardeep",
+    jobTitle: "CEO",
+    worksFor: { "@id": ORGANIZATION_ID },
+  };
+}
 
 function postalAddress() {
   return {
@@ -45,7 +65,15 @@ function organizationNode() {
     telephone: siteConfig.phoneSchema,
     address: postalAddress(),
     foundingDate: "2023",
+    founder: founderPerson(),
+    // About page: "a team of about ten developers and consultants."
+    numberOfEmployees: {
+      "@type": "QuantitativeValue",
+      value: 10,
+    },
     areaServed: AREA_SERVED,
+    // sameAs: company profiles that already exist in siteConfig only.
+    // TODO OWNER: GBP, Clutch (fix HQ to Jaipur), GoodFirms, YouTube, X URLs.
     sameAs: [siteConfig.instagram, siteConfig.linkedin],
   };
 }
@@ -81,6 +109,12 @@ function localBusinessNode() {
     telephone: siteConfig.phoneSchema,
     address: postalAddress(),
     foundingDate: "2023",
+    founder: founderPerson(),
+    numberOfEmployees: {
+      "@type": "QuantitativeValue",
+      value: 10,
+    },
+    priceRange: "₹₹",
     openingHours: siteConfig.openingHours,
     // Hours match siteConfig.openingHours / hoursLabel (Mon–Sat 10:00–19:00 IST).
     openingHoursSpecification: {
@@ -125,6 +159,13 @@ function localBusinessNode() {
       "XDMT Software",
       "EV Charging App Development",
       "CRM and ERP Development",
+      "MLM Software",
+      "Hire Dedicated Developers",
+      "Branding Agency",
+      "Legacy Software Modernization",
+      "Large Language Models",
+      "Retrieval Augmented Generation",
+      "WhatsApp Business API",
     ],
     contactPoint: {
       "@type": "ContactPoint",
@@ -195,6 +236,42 @@ export function itemListSchema({ name, items = [] }) {
   };
 }
 
+export function softwareApplicationSchema({
+  name,
+  description,
+  path,
+  applicationCategory,
+  operatingSystem,
+  price,
+}) {
+  const url = absoluteSiteUrl(path);
+  const fromAmount = Number(price);
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name,
+    description,
+    url,
+    applicationCategory: applicationCategory || "BusinessApplication",
+    ...(operatingSystem ? { operatingSystem } : {}),
+    provider: { "@id": ORGANIZATION_ID },
+    ...(Number.isFinite(fromAmount) && fromAmount > 0
+      ? {
+          offers: {
+            "@type": "Offer",
+            priceCurrency: "INR",
+            url,
+            priceSpecification: {
+              "@type": "PriceSpecification",
+              priceCurrency: "INR",
+              minPrice: fromAmount,
+            },
+          },
+        }
+      : {}),
+  };
+}
+
 export function serviceSchema({
   name,
   description,
@@ -203,6 +280,7 @@ export function serviceSchema({
   price,
   offers = [],
   pricedOffers = [],
+  additionalOffers = [],
   areaServed,
   inLanguage,
 }) {
@@ -224,6 +302,15 @@ export function serviceSchema({
           url: offer.url ? absoluteSiteUrl(offer.url) : url,
         }))
       : [];
+  const extraOfferNodes = additionalOffers.map((offer) => ({
+    "@type": "Offer",
+    name: offer.name,
+    description: offer.description,
+    priceCurrency: "INR",
+    price: String(offer.price ?? 0),
+    availability: "https://schema.org/InStock",
+    url: offer.url ? absoluteSiteUrl(offer.url) : url,
+  }));
   const fromAmount = Number(price);
   const fromPriceOffer =
     exactOfferNodes.length === 0 && Number.isFinite(fromAmount) && fromAmount > 0
@@ -239,9 +326,11 @@ export function serviceSchema({
           },
         }
       : null;
-  const priceOfferNodes = fromPriceOffer
-    ? [fromPriceOffer]
-    : exactOfferNodes;
+  const priceOfferNodes = [
+    ...(fromPriceOffer ? [fromPriceOffer] : []),
+    ...exactOfferNodes,
+    ...extraOfferNodes,
+  ];
 
   return {
     "@context": "https://schema.org",

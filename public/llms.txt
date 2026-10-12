@@ -1,8 +1,15 @@
 # TheTriFusion (Trifusion Infotech Pvt. Ltd.)
 
+Last updated: 2026-10-12
+
 Canonical brand for citations: TheTriFusion
 Legal name: Trifusion Infotech Private Limited
 Also known as: Trifusion Infotech, Trifusion Infotech Pvt. Ltd.
+Founded: operating since 2023; incorporated as a private limited company in 2026
+Team: about ten developers and consultants (About page)
+Founder: Amardeep, CEO
+Company LinkedIn: https://linkedin.com/company/the-trifusion
+Instagram: https://instagram.com/thetrifusion
 
 ## Contact / Office
 
@@ -24,6 +31,8 @@ Canonical page for each service is the /services/* URL below. Ecommerce's canoni
 
 ### Ecommerce website development
 URL: https://thetrifusion.in/solutions/ecommerce-website-development
+Best for: Shopify, WooCommerce, or custom stores with Razorpay/UPI and Shiprocket, built in Jaipur.
+Not for: marketplace-only sellers who only need an Amazon/Flipkart account.
 What: Shopify, WooCommerce, and custom (Next.js / React / Node.js) online stores, B2B ordering portals, and multi-vendor marketplaces.
 Platforms: Shopify, WooCommerce, Next.js, React, Node.js; payments via Razorpay, Cashfree, PayU, CCAvenue, Stripe, UPI; shipping via Shiprocket, Delhivery.
 Who: D2C brands, wholesalers, and marketplace operators in India and remote clients elsewhere.
@@ -31,6 +40,8 @@ Price from: ₹25,000 single-vendor; ₹35,000 multi-vendor. Both include web + 
 
 ### Custom software development
 URL: https://thetrifusion.in/services/software-development
+Best for: Indian SMEs that need portals, CRM/ERP modules, APIs, or a SaaS MVP they will own.
+Not for: teams that only need a brochure website (see website development).
 What: Business portals, CRM/ERP modules, APIs, and admin tools scoped to a workflow.
 Platforms: React, Node.js, Python, Java, PostgreSQL, MongoDB.
 Who: Indian SMEs replacing spreadsheet operations.
@@ -40,6 +51,8 @@ Price from: ₹1,00,000 for a starter MVP shown on the page.
 ### Website development
 URL: https://thetrifusion.in/services/website-development
 Primary topic: website development company in Jaipur.
+Best for: business websites, WordPress or Next.js sites, and lead-generation sites.
+Not for: full ecommerce catalogues (see ecommerce website development).
 Short answer: TheTriFusion is a website development company in Jaipur building business websites, lead-generation sites, portals, and ecommerce storefronts on React, Next.js, and WordPress for clients in Jaipur, India, and worldwide.
 What: Marketing sites, lead funnels, and ecommerce storefronts with titles, sitemap, Search Console setup, and hosting after launch.
 Platforms: React, Next.js, Node.js, MongoDB, PostgreSQL, WordPress.
@@ -50,16 +63,19 @@ Timeline: a focused marketing website is often 3–8 weeks.
 ### Mobile app development
 URL: https://thetrifusion.in/services/mobile-app-development
 Primary topic: mobile app development company in Jaipur (cross-platform, both stores).
+Best for: one product shipping to both App Store and Google Play.
+Not for: App Store-only (iOS page) or Play Store-first (Android page) first releases.
 Short answer: TheTriFusion builds one product for both iOS and Android, usually on React Native or Flutter, with the backend and web admin behind it.
 What: One product on iOS and Android, with a shared data model and web admin.
 Platforms: React Native, Flutter, Swift, Kotlin, Firebase.
 Who: Teams shipping both stores in the same release. Typical MVP is 8–12 weeks after discovery.
 Price from: ₹50,000.
-Not this page: App Store-only work is the iOS page; Play Store-first work is the Android page.
 
 ### iOS app development
 URL: https://thetrifusion.in/services/ios-app-development
 Primary topic: iOS app development company in India (team based in Jaipur, Rajasthan).
+Best for: iPhone-first or App Store-only products.
+Not for: Play Store-only first releases (see Android).
 Short answer: TheTriFusion builds iPhone apps in Swift, or React Native when Android will follow, and handles TestFlight, the App Store Connect listing, and review responses.
 What: App Store apps with TestFlight and review support, plus the API and web admin when scoped.
 Platforms: Swift or React Native, Firebase, Node.js, AWS.
@@ -70,6 +86,8 @@ Live proof: PlugOne (https://plugone.in) includes an iOS driver experience.
 ### Android app development
 URL: https://thetrifusion.in/services/android-app-development
 Primary topic: Android app development company in Jaipur.
+Best for: Play Store-first apps, field apps, UPI-ready Android products.
+Not for: App Store-only first releases (see iOS).
 Short answer: TheTriFusion builds Play Store apps in Kotlin, or React Native or Flutter when iOS should follow, and handles signing, the store listing, and the first production release. The Play Console account stays in the client's name.
 What: Play Store apps with listing support, testing tracks, crash monitoring, and the API and web admin when scoped.
 Platforms: Kotlin, React Native, Flutter, Firebase, Node.js, AWS.
@@ -79,6 +97,8 @@ Live apps: PlugOne (https://plugone.in) and Connect Dairy (https://connectdairy.
 
 ### UI/UX design
 URL: https://thetrifusion.in/services/ui-ux-design
+Best for: Figma product UI, flows, and developer handoff for apps and websites.
+Not for: campaign posters or social kits (see graphic design).
 What: Product flows, screens, and a component set handed to engineering.
 Platforms: Figma, Adobe XD, Sketch.
 Who: Teams building a website or app, not a poster.
@@ -86,13 +106,17 @@ Price from: ₹20,000.
 
 ### Graphic design
 URL: https://thetrifusion.in/services/graphic-design
-What: Social kits, ad creatives, and campaign visuals that match a live website.
+Best for: social creatives, ads, brochures, catalogues, and packaging matched to a live site.
+Not for: product UI screens (see UI/UX) or full brand identity (see branding).
+What: Social kits, ad creatives, brochures, catalogues, packaging, and campaign visuals that match a live website.
 Platforms: Adobe Illustrator, Photoshop, InDesign.
 Who: Indian brands running a campaign next to an existing site.
 Price from: ₹10,000.
 
 ### Digital marketing
 URL: https://thetrifusion.in/services/digital-marketing
+Best for: SEO, Google Ads, Meta Ads, and landing-page CRO on a site that already exists.
+Not for: teams that still need a website or store before they buy ads.
 What: SEO, Google Ads, Meta Ads, and landing pages measured against leads.
 Platforms: Google Analytics, Google Ads, Meta Ads.
 Who: Indian brands that already have a site or store to send traffic to.
@@ -100,13 +124,17 @@ Price from: ₹15,000.
 
 ### Branding
 URL: https://thetrifusion.in/services/branding
-What: Logo, voice, colour, and type, then rules the website can use.
+Best for: logo, brand identity, and guidelines from a branding agency in Jaipur.
+Not for: one-off social posts without an identity (see graphic design).
+What: Brand strategy, naming, logo, colour, typography, and guidelines, then a website that uses them.
 Platforms: Adobe Creative Suite, Figma.
 Who: Companies that need the mark and the site to match.
 Price from: ₹30,000.
 
 ### RPA
 URL: https://thetrifusion.in/services/rpa
+Best for: invoice entry, Tally sync, report pulls, and CRM updates with a human exception path.
+Not for: unstructured "AI that decides" without a written process.
 What: Bots for repetitive office work, with a human handoff where a bot should not decide.
 Platforms: UiPath, Automation Anywhere, Python.
 Who: Indian SMEs with a written process list.
@@ -114,6 +142,8 @@ Price from: ₹50,000.
 
 ### Business modernization
 URL: https://thetrifusion.in/services/business-modernization
+Best for: legacy software modernization and replacing Excel/WhatsApp workflows with phased web apps.
+Not for: a full ERP RFP on day one (see CRM/ERP).
 What: Phased replacement of spreadsheet workflows with a web or mobile app.
 Platforms: Web apps, CRM, and mobile, scoped per workflow.
 Who: Indian SMEs that have outgrown Excel and are not buying a full ERP.
@@ -121,6 +151,8 @@ Price from: ₹1,50,000.
 
 ### Salesforce
 URL: https://thetrifusion.in/services/salesforce
+Best for: Flows, Apex, and integrations on an org you already pay for.
+Not for: teams that need a custom commissions CRM instead (see CRM/ERP and the Salesforce vs custom CRM guide).
 What: Objects, flows, and integrations in an existing Salesforce org.
 Platforms: Sales Cloud, Service Cloud, Lightning, Apex.
 Who: Indian sales teams that already pay for Salesforce.
@@ -128,6 +160,8 @@ Price from: ₹80,000.
 
 ### AI development
 URL: https://thetrifusion.in/services/ai-development
+Best for: WhatsApp AI chatbots, RAG search, document extraction, and AI agents with a human review step.
+Not for: research-lab model training.
 What: Assistants, document operations, and search, with a human step in the workflow.
 Platforms: Python, existing model APIs, AWS.
 Who: Product teams adding a practical AI feature, not a research lab.
@@ -136,41 +170,57 @@ Price from: ₹2,00,000.
 ### DevOps and cloud
 URL: https://thetrifusion.in/services/devops
 Primary topic: DevOps services in Jaipur and India.
+Best for: CI/CD, Kubernetes, Terraform, and a free infrastructure audit before a written plan.
+Not for: buying cloud credits or a 24/7 NOC claim this page does not make.
 Short answer: TheTriFusion provides CI/CD pipelines, infrastructure as code, Kubernetes management, DevSecOps readiness, cloud cost optimization, cloud migration, and managed DevOps on AWS, Azure, and Google Cloud, starting with a free infrastructure audit.
 What: Pipelines, infrastructure as code, Kubernetes where it earns its place, monitoring, and cloud migration on AWS, Azure, or GCP.
 Platforms: Jenkins, GitLab CI, Docker, Kubernetes, Terraform, AWS, Azure, Ansible.
-Who: Teams in India and elsewhere that need the operations layer under a product. The infrastructure audit is free. This page does not publish a package price.
+Who: Teams in India and elsewhere that need the operations layer under a product. The infrastructure audit is free. Published /pricing plans start at ₹1,00,000; retainers are scoped after the audit.
 
-### On-demand developers
+### On-demand / hire dedicated developers
 URL: https://thetrifusion.in/services/on-demand
+Best for: hiring dedicated React, Node, or mobile developers from Jaipur with a named lead.
+Not for: handing over an entire unscoped product (see software development).
 What: Extra React, Node, or mobile hours with a named lead.
 Platforms: React, Node.js, Python, Java, mobile.
 Who: Indian product teams that need capacity without handing over the whole project.
-Price from: ₹50,000.
+Price from: ₹50,000 (published starting project price; monthly role rates are scoped).
+- Cost guide: https://thetrifusion.in/blog/hire-dedicated-developers-cost-guide-uk-australia
 
-### MLM CRM development
+### MLM software
 URL: https://thetrifusion.in/services/mlm-crm-development
-What: Unilevel compensation software with genealogy, KYC, and lead tools.
+Best for: custom MLM software (binary, unilevel, matrix, hybrid) with genealogy, e-wallet, KYC, and payouts.
+Not for: a generic sales CRM without a compensation plan (see CRM/ERP).
+What: Compensation software with genealogy, KYC, e-wallet, and lead tools, plus iOS and Android field apps.
 Platforms: Web admin plus iOS and Android field apps.
 Who: Network-marketing operators with a written compensation plan.
 Price from: ₹3,50,000.
+Compliance: Consumer Protection (Direct Selling) Rules, 2021 — https://consumeraffairs.nic.in/
 
 ### Fintech app development
 URL: https://thetrifusion.in/services/fintech-app-development
+Best for: white-label BBPS, AEPS, DMT, recharge and UPI software. You bring the bank/API partner.
+Not for: obtaining NPCI or RBI licences — we build software only.
 What: BBPS, AEPS, DMT, and XDMT software with retailer, distributor, and admin panels, plus UPI and KYC.
 Platforms: iOS, Android, and web. The client brings bank or NPCI access.
 Who: Retailers, distributors, and fintech operators in India.
-Price from: ₹99,999.
+Price from: ₹99,999. Published plans: ₹99,999 / ₹1,99,999 / ₹3,99,999.
+Sources: NPCI https://www.npci.org.in/ · RBI https://www.rbi.org.in/
 
 ### EV charging app development
 URL: https://thetrifusion.in/services/ev-charging-app-development
+Best for: white-label EV charging CMS for Indian CPOs and eMSPs (OCPP 1.6J/2.0.1, OCPI 2.2.1, UPI, GST invoices).
+Not for: charger hardware manufacturing.
 What: One charging management system for a CPO, an eMSP, or both: OCPP 1.6J/2.0.1, OCPI 2.2.1 roaming, driver app, operator dashboard, and GST invoice fields.
 Platforms: iOS, Android, web admin. Charger connectivity is part of this engagement.
 Who: Charge point operators and e-mobility service providers.
 Price from: ₹4,50,000 ex-GST after discovery, as a starting range on the page, not a fixed package.
+Protocol: Open Charge Alliance OCPP — https://openchargealliance.org/protocols/ocpp/
 
 ### CRM and ERP development
 URL: https://thetrifusion.in/services/crm-erp-development
+Best for: custom CRM/ERP with leads, inventory, GST billing, Tally/WhatsApp integrations, and code you own.
+Not for: a Salesforce consulting-partner engagement (see Salesforce).
 What: Custom sales CRM and operations modules for pipelines, inventory, and billing.
 Platforms: Web admin, iOS, and Android.
 Who: Indian operators that need a system shaped to their process.
@@ -183,7 +233,7 @@ Price from: ₹3,00,000.
 ## Ecommerce website development
 
 Primary page: https://thetrifusion.in/solutions/ecommerce-website-development
-Summary: TheTriFusion (Trifusion Infotech Pvt. Ltd., Jaipur, India) is an ecommerce website development company building Shopify, WooCommerce and custom (Next.js / React / Node.js) online stores, B2B / wholesale ordering portals and multi-vendor marketplaces for clients in India and worldwide (remote).
+Summary: TheTriFusion (Trifusion Infotech Pvt. Ltd., Jaipur, India) is an ecommerce website development company building Shopify, WooCommerce and custom (Next.js / React / Node.js) online stores, B2B / wholesale ordering portals and multi-vendor marketplaces for clients in Jaipur, across India, and worldwide (remote).
 - Packaged pricing (published on the canonical page): single-vendor ecommerce ₹25,000; multi-vendor marketplace ₹35,000; both include web + Android + iOS apps; website live within 48 hours after a locked brief and assets, or 50% refund.
 - Custom / B2B / ERP-integrated builds: quoted after discovery; a typical custom ecommerce MVP takes 4–10 weeks.
 - Integrations: Razorpay, Cashfree, PayU, CCAvenue, Stripe, UPI; Shiprocket, Delhivery; offline POS / inventory sync (live example: DailyConcepts India).
@@ -255,13 +305,14 @@ EV charging CMS for CPOs and eMSPs, built in Jaipur for India and worldwide. One
 - Solutions: https://thetrifusion.in/solutions
 - Pricing: https://thetrifusion.in/pricing
 - FAQ: https://thetrifusion.in/faq
+- Team: https://thetrifusion.in/team
 
 ## Live case studies (verifiable)
 
 - PlugOne (EV charging): https://plugone.in — https://thetrifusion.in/portfolio/plugone-ev-charging-platform
-- Connect Dairy: https://connectdairy.in — https://thetrifusion.in/portfolio
-- DailyConcepts India: https://dailyconceptsindia.com — https://thetrifusion.in/portfolio
-- Atharv Narayan: https://atharvnarayan.in — https://thetrifusion.in/portfolio
+- Connect Dairy: https://connectdairy.in — https://thetrifusion.in/portfolio/connect-dairy-supply-chain
+- DailyConcepts India: https://dailyconceptsindia.com — https://thetrifusion.in/portfolio/dailyconcepts-ecommerce-pos
+- Atharv Narayan: https://atharvnarayan.in — https://thetrifusion.in/portfolio/atharv-narayan-wellness-website
 
 ## Full inventory for AI/search crawlers
 
@@ -273,69 +324,36 @@ https://thetrifusion.in/sitemap.xml
 
 ## Other languages
 
-Evergreen guides and the EV charging CMS page are also published in Spanish (es), Portuguese (pt), Arabic (ar), Indonesian (id), and Hindi (hi). English URLs stay unprefixed. Each translated URL is self-canonical and lists hreflang alternates for en, es, pt, ar, id, hi, and x-default (English).
+Indexable translations only (self-canonical, with hreflang). Machine-translated copies of other blog posts are noindex and are not listed.
+
+Evergreen indexable guides and the EV charging CMS page are published in Spanish (es), Portuguese (pt), Arabic (ar), Indonesian (id), and Hindi (hi). English URLs stay unprefixed.
 
 ### Spanish (es)
 - EV charging CMS: https://thetrifusion.in/es/services/ev-charging-app-development
 - https://thetrifusion.in/es/blog/ev-charging-app-ocpi-ocpp-guide
 - https://thetrifusion.in/es/blog/ecommerce-website-development-cost-india
 - https://thetrifusion.in/es/blog/ecommerce-app-development-cost-india
-- https://thetrifusion.in/es/blog/custom-website-vs-shopify-vs-woocommerce
-- https://thetrifusion.in/es/blog/flutter-vs-react-native-2024
-- https://thetrifusion.in/es/blog/how-to-build-ecommerce-website-india-2026
-- https://thetrifusion.in/es/blog/chatgpt-1980s-ai-photo-prompt-guide
-- https://thetrifusion.in/es/blog/google-gemini-vs-chatgpt-india-business
-- https://thetrifusion.in/es/blog/ai-app-development-cost-india-2026
-- https://thetrifusion.in/es/blog/ui-ux-for-ai-products-india
 
 ### Portuguese (pt)
 - EV charging CMS: https://thetrifusion.in/pt/services/ev-charging-app-development
 - https://thetrifusion.in/pt/blog/ev-charging-app-ocpi-ocpp-guide
 - https://thetrifusion.in/pt/blog/ecommerce-website-development-cost-india
 - https://thetrifusion.in/pt/blog/ecommerce-app-development-cost-india
-- https://thetrifusion.in/pt/blog/custom-website-vs-shopify-vs-woocommerce
-- https://thetrifusion.in/pt/blog/flutter-vs-react-native-2024
-- https://thetrifusion.in/pt/blog/how-to-build-ecommerce-website-india-2026
-- https://thetrifusion.in/pt/blog/chatgpt-1980s-ai-photo-prompt-guide
-- https://thetrifusion.in/pt/blog/google-gemini-vs-chatgpt-india-business
-- https://thetrifusion.in/pt/blog/ai-app-development-cost-india-2026
-- https://thetrifusion.in/pt/blog/ui-ux-for-ai-products-india
 
 ### Arabic (ar)
 - EV charging CMS: https://thetrifusion.in/ar/services/ev-charging-app-development
 - https://thetrifusion.in/ar/blog/ev-charging-app-ocpi-ocpp-guide
 - https://thetrifusion.in/ar/blog/ecommerce-website-development-cost-india
 - https://thetrifusion.in/ar/blog/ecommerce-app-development-cost-india
-- https://thetrifusion.in/ar/blog/custom-website-vs-shopify-vs-woocommerce
-- https://thetrifusion.in/ar/blog/flutter-vs-react-native-2024
-- https://thetrifusion.in/ar/blog/how-to-build-ecommerce-website-india-2026
-- https://thetrifusion.in/ar/blog/chatgpt-1980s-ai-photo-prompt-guide
-- https://thetrifusion.in/ar/blog/google-gemini-vs-chatgpt-india-business
-- https://thetrifusion.in/ar/blog/ai-app-development-cost-india-2026
-- https://thetrifusion.in/ar/blog/ui-ux-for-ai-products-india
 
 ### Indonesian (id)
 - EV charging CMS: https://thetrifusion.in/id/services/ev-charging-app-development
 - https://thetrifusion.in/id/blog/ev-charging-app-ocpi-ocpp-guide
 - https://thetrifusion.in/id/blog/ecommerce-website-development-cost-india
 - https://thetrifusion.in/id/blog/ecommerce-app-development-cost-india
-- https://thetrifusion.in/id/blog/custom-website-vs-shopify-vs-woocommerce
-- https://thetrifusion.in/id/blog/flutter-vs-react-native-2024
-- https://thetrifusion.in/id/blog/how-to-build-ecommerce-website-india-2026
-- https://thetrifusion.in/id/blog/chatgpt-1980s-ai-photo-prompt-guide
-- https://thetrifusion.in/id/blog/google-gemini-vs-chatgpt-india-business
-- https://thetrifusion.in/id/blog/ai-app-development-cost-india-2026
-- https://thetrifusion.in/id/blog/ui-ux-for-ai-products-india
 
 ### Hindi (hi)
 - EV charging CMS: https://thetrifusion.in/hi/services/ev-charging-app-development
 - https://thetrifusion.in/hi/blog/ev-charging-app-ocpi-ocpp-guide
 - https://thetrifusion.in/hi/blog/ecommerce-website-development-cost-india
 - https://thetrifusion.in/hi/blog/ecommerce-app-development-cost-india
-- https://thetrifusion.in/hi/blog/custom-website-vs-shopify-vs-woocommerce
-- https://thetrifusion.in/hi/blog/flutter-vs-react-native-2024
-- https://thetrifusion.in/hi/blog/how-to-build-ecommerce-website-india-2026
-- https://thetrifusion.in/hi/blog/chatgpt-1980s-ai-photo-prompt-guide
-- https://thetrifusion.in/hi/blog/google-gemini-vs-chatgpt-india-business
-- https://thetrifusion.in/hi/blog/ai-app-development-cost-india-2026
-- https://thetrifusion.in/hi/blog/ui-ux-for-ai-products-india

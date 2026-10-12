@@ -6,6 +6,7 @@
 import { devopsPageContent } from "./devopsPageContent";
 import { serviceRankingContent } from "./serviceRankingContent20260929";
 import { evChargingPageContent } from "./evChargingPageContent";
+import { servicePlanContent } from "./servicePlan/index";
 
 export const servicePageSeo = {
   "software-development": {
@@ -893,5 +894,10 @@ export const servicePageSeo = {
 
 // 29 Sep 2026 ranking upgrade: merge page-specific overrides on top.
 for (const [slug, extra] of Object.entries(serviceRankingContent)) {
+  servicePageSeo[slug] = { ...(servicePageSeo[slug] || {}), ...extra };
+}
+
+// 12 Oct 2026 competitive SEO plan: last merge wins for title/H1/meta/FAQs/short answer.
+for (const [slug, extra] of Object.entries(servicePlanContent)) {
   servicePageSeo[slug] = { ...(servicePageSeo[slug] || {}), ...extra };
 }
