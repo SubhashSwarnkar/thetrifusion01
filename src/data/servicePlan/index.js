@@ -15,6 +15,7 @@ import branding from "./branding.js";
 import digitalMarketing from "./digital-marketing.js";
 import rpa from "./rpa.js";
 import salesforce from "./salesforce.js";
+import businessModernization from "./business-modernization.js";
 
 export const servicePlanContent = {
   "software-development": softwareDevelopment,
@@ -30,4 +31,5 @@ export const servicePlanContent = {
   "digital-marketing": digitalMarketing,
   "rpa": rpa,
   "salesforce": salesforce,
+  "business-modernization": businessModernization,
 };
