@@ -142,7 +142,7 @@ export const serviceRankingContent = {
             },
             {
               label: "Ecommerce store",
-              cells: ["From ₹25,000 single-vendor, ₹35,000 multi-vendor", "See ecommerce website development for store packages"],
+              cells: ["₹25,000 website · ₹35,000 + Android · ₹45,000 + Android + iOS · ₹99,000 high-end logistics", "See ecommerce website development for store packages"],
             },
           ],
         },
@@ -185,7 +185,7 @@ export const serviceRankingContent = {
       {
         question: "Do you build ecommerce websites as well?",
         answer:
-          "Yes. Store builds on Shopify, WooCommerce, or custom Next.js are covered on the ecommerce website development page, with packages from ₹25,000 single-vendor and ₹35,000 multi-vendor.",
+          "Yes. Store builds on Shopify, WooCommerce, or custom Next.js are covered on the ecommerce website development page, with packages from ₹25,000 (website) to ₹99,000 (high-end logistics + Android + iOS).",
       },
       {
         question: "Where is your Jaipur office?",

@@ -10,16 +10,21 @@ import BrandTrustStrip from "components/BrandTrustStrip";
 import ShortLeadForm from "components/ShortLeadForm";
 import WhatsAppButton from "components/WhatsAppButton";
 import { ADS_PROCESS } from "data/adsLandingPages";
+import DiwaliOfferCountdown, {
+  DiwaliRefundLabel,
+} from "components/DiwaliOfferCountdown";
 import {
   ecommercePage as page,
   ecommercePackages,
   ecommerceStoreTypes,
-  vendorComparison,
+  packageComparison,
+  packageComparisonHeaders,
   includedItems,
   notIncludedItems,
   clientMustProvide,
   ecommerceFaqs,
   launchGuarantee,
+  PACKAGE_PRICE_SUMMARY,
 } from "data/ecommerceDevelopmentData";
 import { Portfolios } from "json/landingPageData";
 import { COMPANY_PHONE_DISPLAY, WHATSAPP_NUMBER } from "data/companyInfo";
@@ -73,7 +78,7 @@ export default function EcommerceDevelopmentPage() {
               <span className="inline-block px-3 py-1.5 rounded-full bg-light-theme-purple text-theme-purple text-xs font-bold uppercase tracking-[0.16em] mb-5">
                 {page.kicker}
               </span>
-              <div className="mb-5 p-4 sm:p-5 rounded-2xl border-2 border-theme-purple/30 bg-gradient-to-r from-light-theme-purple via-white to-cyan-50 shadow-sm">
+              <DiwaliOfferCountdown className="mb-5 p-4 sm:p-5 rounded-2xl border-2 border-theme-purple/30 bg-gradient-to-r from-light-theme-purple via-white to-cyan-50 shadow-sm">
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-theme-purple mb-2">
                   {launchGuarantee.badge}
                 </p>
@@ -97,7 +102,7 @@ export default function EcommerceDevelopmentPage() {
                     See guarantee terms →
                   </a>
                 </div>
-              </div>
+              </DiwaliOfferCountdown>
               <h1 className="text-4xl sm:text-5xl font-black text-theme-blue tracking-tight leading-[1.12] mb-4">
                 {page.h1}
               </h1>
@@ -183,11 +188,11 @@ export default function EcommerceDevelopmentPage() {
 
             <div className="space-y-4">
               <ShortLeadForm
-                defaultProjectType="Single vendor ecommerce"
+                defaultProjectType="Ecommerce Website"
                 defaultBudgetRange="₹25,000"
                 leadSource={page.leadSource}
                 heading="Claim 48-hour live offer"
-                note="48h / 50% refund covers website go-live after a locked brief — not App Store / Play Store review time."
+                note="48h / 50% refund covers website go-live after a locked brief — not App Store / Play Store review time. Four packages from ₹25,000 to ₹99,000."
               />
               {proofs.length > 0 ? (
                 <div className="rounded-2xl border border-theme-purple/15 bg-white/80 p-4 shadow-sm">
@@ -231,12 +236,14 @@ export default function EcommerceDevelopmentPage() {
         id="guarantee"
         className="container mx-auto px-5 py-16 scroll-mt-28"
       >
+        <DiwaliOfferCountdown timerFirst>
         <SectionHeading kicker="USP · Ads guarantee">
           Live in 48 hours — or 50% refund
         </SectionHeading>
         <p className="text-gray-600 font-light leading-relaxed max-w-3xl mb-8 -mt-2">
-          Built for Google and Meta ads: a clear promise on single vendor and
-          multi-vendor ecommerce websites. Same guarantee on both packages.
+            Built for Google and Meta ads: a clear promise on the ecommerce
+            website go-live. Same 48-hour / 50% refund clock on all four
+            packages until Diwali.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
           {launchGuarantee.points.map((point, idx) => {
@@ -279,7 +286,7 @@ export default function EcommerceDevelopmentPage() {
             href="#packages"
             className="inline-flex items-center justify-center px-7 py-3.5 bg-theme-purple text-white rounded-full font-bold"
           >
-            Pick single or multi-vendor
+            See the four packages
           </a>
           <a
             href="#lead-form"
@@ -288,23 +295,25 @@ export default function EcommerceDevelopmentPage() {
             Start the 48-hour clock
           </a>
         </div>
+        </DiwaliOfferCountdown>
       </section>
 
       <section id="packages" className="container mx-auto px-5 py-16 scroll-mt-28">
         <SectionHeading kicker="Packages">
-          Two packages — both with 48-hour live guarantee
+          Four packages — website live in 48 hours
         </SectionHeading>
         <p className="text-gray-600 font-light leading-relaxed max-w-3xl mb-6 -mt-2">
-          We build the website, Android app, and iOS app. The 48-hour / 50%
-          refund USP applies to website go-live for both single vendor and
-          multi-vendor. Play Store and App Store accounts are yours to create.
+          Start with a website, then add Android, iOS, or courier logistics.
+          The 48-hour / 50% refund USP applies to website go-live on every
+          package. Play Store and App Store accounts are yours to create when
+          the package includes apps.
         </p>
         <div className="mb-10 p-5 sm:p-6 rounded-2xl border border-amber-200 bg-amber-50">
           <p className="text-xs font-bold uppercase tracking-widest text-amber-800 mb-2">
             You must arrange
           </p>
           <h3 className="text-lg font-bold text-theme-blue mb-4">
-            Google Play and Apple Developer accounts are the customer’s
+            Google Play and Apple Developer accounts (for packages with apps)
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {clientMustProvide.map((item) => (
@@ -319,7 +328,7 @@ export default function EcommerceDevelopmentPage() {
             ))}
           </div>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch">
           {ecommercePackages.map((pkg, idx) => {
             const accent = accentAt(idx);
             return (
@@ -337,7 +346,7 @@ export default function EcommerceDevelopmentPage() {
                     src={pkg.image}
                     alt={pkg.imageAlt}
                     fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
                     className="object-cover"
                   />
                   {pkg.popular ? (
@@ -346,7 +355,10 @@ export default function EcommerceDevelopmentPage() {
                     </span>
                   ) : (
                     <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-theme-blue text-white text-xs font-bold uppercase tracking-widest">
-                      48 hrs or 50% refund
+                      <DiwaliRefundLabel
+                        before="48 hrs or 50% refund"
+                        after="Live in 48 hrs"
+                      />
                     </span>
                   )}
                 </div>
@@ -426,8 +438,7 @@ export default function EcommerceDevelopmentPage() {
             Grocery, clothing, and every store we build
           </SectionHeading>
           <p className="text-gray-600 font-light leading-relaxed max-w-3xl mb-10 -mt-2">
-            Same packages, catalog tuned to your category. Available as single
-            vendor or multi-vendor.
+            Same four packages, catalog tuned to your category.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {ecommerceStoreTypes.map((store, idx) => {
@@ -455,7 +466,7 @@ export default function EcommerceDevelopmentPage() {
                       {store.description}
                     </p>
                     <p className={`text-xs font-bold uppercase tracking-widest ${accent.text}`}>
-                      Single or multi-vendor
+                      From ₹25,000
                     </p>
                   </div>
                 </article>
@@ -467,23 +478,22 @@ export default function EcommerceDevelopmentPage() {
 
       <section id="compare" className="container mx-auto px-5 py-16">
         <SectionHeading kicker="Compare">
-          Single vendor vs multi-vendor
+          Four ecommerce packages
         </SectionHeading>
         <div className="overflow-x-auto rounded-2xl border border-gray-200">
-          <table className="w-full min-w-[640px] text-left">
+          <table className="w-full min-w-[960px] text-left">
             <thead>
               <tr className="bg-theme-blue text-white">
                 <th className="px-5 py-4 text-sm font-bold">Feature</th>
-                <th className="px-5 py-4 text-sm font-bold">
-                  Single vendor · ₹25,000
-                </th>
-                <th className="px-5 py-4 text-sm font-bold">
-                  Multi-vendor · ₹35,000
-                </th>
+                {packageComparisonHeaders.map((header) => (
+                  <th key={header} className="px-5 py-4 text-sm font-bold">
+                    {header}
+                  </th>
+                ))}
               </tr>
             </thead>
             <tbody>
-              {vendorComparison.map((row, idx) => (
+              {packageComparison.map((row, idx) => (
                 <tr
                   key={row.feature}
                   className={idx % 2 === 0 ? "bg-white" : "bg-gray-50"}
@@ -491,12 +501,14 @@ export default function EcommerceDevelopmentPage() {
                   <th className="px-5 py-4 text-sm font-semibold text-theme-blue">
                     {row.feature}
                   </th>
-                  <td className="px-5 py-4 text-sm text-gray-600 font-light">
-                    {row.single}
-                  </td>
-                  <td className="px-5 py-4 text-sm text-gray-600 font-light">
-                    {row.multi}
-                  </td>
+                  {row.values.map((value, colIdx) => (
+                    <td
+                      key={`${row.feature}-${colIdx}`}
+                      className="px-5 py-4 text-sm text-gray-600 font-light"
+                    >
+                      {value}
+                    </td>
+                  ))}
                 </tr>
               ))}
             </tbody>
@@ -513,7 +525,7 @@ export default function EcommerceDevelopmentPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div className="p-7 rounded-2xl border border-theme-purple/25 bg-white">
               <h3 className="text-xl font-bold text-theme-blue mb-4">
-                Included in both packages
+                Included in every package (apps and logistics as listed)
               </h3>
               <ul className="space-y-2">
                 {includedItems.map((item) => (
@@ -687,12 +699,17 @@ export default function EcommerceDevelopmentPage() {
       <section className="container mx-auto px-5 pb-20">
         <div className="bg-gradient-to-r from-theme-blue via-theme-purple to-theme-cyan rounded-[2rem] p-10 md:p-14 text-center text-white">
           <h2 className="text-3xl md:text-4xl font-black mb-4">
-            Ready for grocery, fashion, or a marketplace — live in 48 hours?
+            Ready for grocery, fashion, or a store with apps — live in 48 hours?
           </h2>
           <p className="text-white/80 mb-8 max-w-xl mx-auto font-light">
-            ₹25,000 single vendor or ₹35,000 multi-vendor. Website live in 48
-            hours after locked brief — or 50% refund. We also build Android and
-            iOS; you create the store accounts.
+            {PACKAGE_PRICE_SUMMARY}. Website live in 48 hours after locked
+            brief
+            <DiwaliRefundLabel
+              before=" — or 50% refund until Diwali."
+              after="."
+            />{" "}
+            You create Play Store and App Store accounts when the package
+            includes apps.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
@@ -720,9 +737,11 @@ export default function EcommerceDevelopmentPage() {
 
       {/* Mobile sticky — primary WA for ads traffic; floats above home-indicator */}
       <div className="lg:hidden fixed bottom-0 left-0 right-0 z-[90] bg-white/95 backdrop-blur border-t border-gray-100 p-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))] shadow-[0_-8px_24px_rgba(15,23,42,0.08)]">
-        <p className="text-[11px] text-center text-theme-blue/70 font-medium mb-1.5">
-          Single ₹25k · Multi ₹35k · live in 48h or 50% refund
-        </p>
+        <DiwaliOfferCountdown compact showLabel={false} className="mb-1.5">
+          <p className="text-[11px] text-center text-theme-blue/70 font-medium">
+            From ₹25k · 48h live or 50% refund · Diwali
+          </p>
+        </DiwaliOfferCountdown>
         <div className="flex gap-2">
           <a
             href={phoneHref}
@@ -757,9 +776,11 @@ export default function EcommerceDevelopmentPage() {
 
       {/* Desktop sticky — keep WA visible after scroll on paid traffic */}
       <div className="hidden lg:flex fixed bottom-4 left-1/2 -translate-x-1/2 z-[90] items-center gap-3 rounded-full border border-theme-purple/15 bg-white/95 backdrop-blur px-3 py-2 shadow-xl shadow-theme-blue/10">
-        <span className="text-xs font-semibold text-theme-blue pl-2 whitespace-nowrap">
-          ₹25k / ₹35k · 48h live or 50% refund
-        </span>
+        <DiwaliOfferCountdown compact showLabel={false} className="pl-2">
+          <span className="text-xs font-semibold text-theme-blue whitespace-nowrap">
+            From ₹25k · 48h live or 50% refund
+          </span>
+        </DiwaliOfferCountdown>
         <a
           href={defaultWa}
           target="_blank"

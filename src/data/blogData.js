@@ -549,10 +549,11 @@ export const blogPosts = [
 
       <h3>A rough pricing map for Indian ecommerce builds</h3>
       <ul>
-        <li><strong>Single-vendor store, simple catalog (under 200 SKUs), standard checkout:</strong> starts around ₹25,000 with our packaged builds — website live in 48 hours after a locked brief.</li>
-        <li><strong>Multi-vendor marketplace</strong> (multiple sellers, commission splits, vendor KYC, settlement reports): starts around ₹35,000 for the packaged build.</li>
-        <li><strong>Custom catalog with B2B pricing tiers, multi-warehouse inventory, or ERP integration:</strong> quoted per module after discovery, typically a larger scoped project since it is genuinely bespoke work rather than a configurable package.</li>
-        <li><strong>Add-on mobile apps (Android + iOS)</strong> wrapping the same storefront and checkout: scoped alongside the web build so catalog and order data stay in sync from day one.</li>
+        <li><strong>Ecommerce Website</strong> (simple catalog, standard checkout): ₹25,000 — website live in 48 hours after a locked brief.</li>
+        <li><strong>Ecommerce Website + Android App:</strong> ₹35,000.</li>
+        <li><strong>Ecommerce Website + Android + iOS App:</strong> ₹45,000.</li>
+        <li><strong>High-End Ecommerce with Logistics + Android + iOS App:</strong> ₹99,000 (courier integration and tracking; does not include building a delivery fleet).</li>
+        <li><strong>Custom catalog with B2B pricing, multi-vendor marketplace, multi-warehouse inventory, or ERP integration:</strong> quoted per module after discovery.</li>
       </ul>
 
       <h3>Cost factors that matter most</h3>
@@ -569,13 +570,13 @@ export const blogPosts = [
 
       <h2>FAQ: Ecommerce website development cost in India</h2>
       <h3>What is the minimum realistic budget for an ecommerce website in India?</h3>
-      <p>Our packaged single-vendor build starts at ₹25,000 for a simple catalog with standard checkout, live within 48 hours of a locked brief.</p>
+      <p>Our packaged Ecommerce Website starts at ₹25,000 for a simple catalog with standard checkout, live within 48 hours of a locked brief. Android, iOS, and logistics are listed on the higher packages.</p>
       <h3>Does the price include mobile apps?</h3>
-      <p>Web + Android + iOS framing is available across our ecommerce packages — confirm exact app scope during your brief since app-store review timelines run separately from the website launch.</p>
+      <p>Android is included at ₹35,000 and Android + iOS at ₹45,000. The ₹25,000 package is website only. App-store review timelines run separately from the website launch.</p>
       <h3>Why do multi-vendor marketplaces cost more than single-vendor stores?</h3>
       <p>Multi-vendor builds need vendor onboarding/KYC, a commission engine, and settlement reporting — none of which exist in a single-seller store, so the added logic genuinely costs more to build correctly.</p>
       <h3>What's the next step?</h3>
-      <p>Use our <a href="/ecommerce-development">ecommerce packages</a> for single-vendor (₹25,000) or multi-vendor (₹35,000) with a website live in 48 hours — or 50% refund — or <a href="/appointment">book a discovery call</a> for a written custom scope. Complex catalogs still need a brief — packages cover the listed platforms and features, not unlimited custom work.</p>
+      <p>Use our <a href="/ecommerce-development">ecommerce packages</a> (Website ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · High-End logistics ₹99,000) with a website live in 48 hours — or 50% refund until Diwali — or <a href="/appointment">book a discovery call</a> for a written custom scope. Complex catalogs still need a brief — packages cover the listed platforms and features, not unlimited custom work.</p>
     `,
     category: "webdev",
     image: "/assets/images/blog/ecommerce-cost.jpg",
@@ -616,7 +617,7 @@ export const blogPosts = [
         <li>Need unusual workflows, multi-role admin, or deep integration with an existing ERP/CRM/inventory system? Custom typically pays off within 6-12 months of avoided platform friction.</li>
         <li>Comfortable with recurring platform fees in exchange for zero server maintenance? Shopify.</li>
         <li>Want full hosting control and no recurring platform fee, and have (or can budget for) ongoing WordPress maintenance? WooCommerce.</li>
-        <li>Planning a multi-vendor marketplace with commission splits? A custom or purpose-built marketplace platform (see our <a href="/ecommerce-development">multi-vendor packages from ₹35,000</a>) usually fits better than retrofitting Shopify/WooCommerce for multi-seller logic.</li>
+        <li>Planning a multi-vendor marketplace with commission splits? A custom marketplace (quoted after discovery; see <a href="/ecommerce-development">ecommerce packages</a> for published website and app prices from ₹25,000) usually fits better than retrofitting Shopify/WooCommerce for multi-seller logic.</li>
       </ul>
 
       <h2>FAQ: Custom website vs Shopify vs WooCommerce</h2>
@@ -673,7 +674,7 @@ export const blogPosts = [
       <p>Map admin workflows as carefully as customer flows — the admin is where staff live every day, and a confusing admin quietly costs hours every week. Checkout edge cases (failed payments, address errors, inventory mismatches) deserve explicit QA, not "we'll fix it if someone complains." If POS and ecommerce share inventory, define the single source of truth early — retrofitting this after launch is far more expensive than designing for it up front. Finally, ship the admin to the actual staff who will use it during a pilot week before calling the project "live" — UI decisions that seem obvious to a developer are often not obvious to a store manager.</p>
 
       <h3>Why this matters if you are scoping an ecommerce + POS build</h3>
-      <p>If your business sells both online and at a counter, or across multiple channels (website, Instagram DMs, WhatsApp orders), the DailyConcepts pattern — one inventory ledger, one order status system, an admin built for non-developers — applies directly to you. This is the same architecture we now offer as a standard build inside our <a href="/ecommerce-development">ecommerce development packages</a> (single-vendor from ₹25,000, multi-vendor from ₹35,000, live in 48 hours after a locked brief).</p>
+      <p>If your business sells both online and at a counter, or across multiple channels (website, Instagram DMs, WhatsApp orders), the DailyConcepts pattern — one inventory ledger, one order status system, an admin built for non-developers — applies directly to you. This is the same architecture we now offer as a standard build inside our <a href="/ecommerce-development">ecommerce development packages</a> (from ₹25,000 website to ₹99,000 high-end logistics + Android + iOS, live in 48 hours after a locked brief).</p>
 
       <h2>FAQ: DailyConcepts ecommerce and POS build</h2>
       <h3>Can you replicate this admin + POS pattern for a different type of store?</h3>
@@ -726,7 +727,7 @@ export const blogPosts = [
       <p>Unique title tags and meta descriptions per page (not one template copy-pasted across the site), a crawlable XML sitemap, a correct robots.txt, fast-loading mobile pages, and structured data (schema markup) describing the business type and service area. Critically, we keep NAP (Name, Address, Phone) consistent with the real office — Jaipur — across the website footer, Google Business Profile, and any directory listing, because inconsistent addresses confuse Google's local ranking systems and can suppress visibility even when the content is good.</p>
 
       <h3>Pricing you should expect</h3>
-      <p>A credibility/catalog website for a Bhilwara textile or trading business typically starts from ₹25,000 for a single-vendor ecommerce build, or a scoped custom website quote after a 24-hour written estimate. Multi-vendor marketplace builds (useful if you aggregate multiple Bhilwara suppliers under one storefront) start from ₹35,000. Both include mobile-first design, WhatsApp lead capture, and a live-in-48-hours path once the brief is locked — see the current terms on our <a href="/ecommerce-development">ecommerce development page</a>.</p>
+      <p>A credibility/catalog website for a Bhilwara textile or trading business typically starts from ₹25,000 for an Ecommerce Website package, or a scoped custom website quote after a 24-hour written estimate. Add Android (₹35,000), Android + iOS (₹45,000), or high-end logistics + both apps (₹99,000). Multi-vendor marketplace builds (useful if you aggregate multiple Bhilwara suppliers) are quoted after discovery. Packages include mobile-first design, WhatsApp lead capture, and a live-in-48-hours path once the brief is locked — see the current terms on our <a href="/ecommerce-development">ecommerce development page</a>.</p>
 
       <h2>FAQ: Hiring a website partner in Bhilwara</h2>
       <h3>Do you have an office in Bhilwara?</h3>
@@ -950,7 +951,7 @@ export const blogPosts = [
 
       <h2>Three product types (and three price realities)</h2>
       <h3>1) Packaged multi-vendor storefront (fast launch)</h3>
-      <p>You need one public shopper site, vendor signup/KYC, vendor dashboard, commission rules, admin settlements, catalog split by seller, plus customer Android/iOS apps. Scope is locked. This is what our <a href="/ecommerce-development">₹35,000 multi-vendor package</a> is built for — website live in 48 hours after a locked brief, or 50% refund on the package fee. Play Store / App Store accounts stay in your name; store review time is outside the 48-hour clock.</p>
+      <p>You need one public shopper site, vendor signup/KYC, vendor dashboard, commission rules, admin settlements, catalog split by seller, plus customer Android/iOS apps. Multi-vendor marketplaces are quoted after discovery — they are not one of the four published packages (Website ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · High-End logistics ₹99,000). Website live in 48 hours after a locked brief, or 50% refund on the package fee until Diwali. Play Store / App Store accounts stay in your name; store review time is outside the 48-hour clock.</p>
       <h3>2) Mid custom marketplace (growth)</h3>
       <p>Industry guides for India in 2026 often place growth builds roughly in the <strong>₹3L–₹15L</strong> band when you add deeper payouts, logistics rules, dispute flows, and heavier catalog ops. Timeline stretches into months because payout edge cases dominate — not the homepage design.</p>
       <h3>3) Enterprise / app-heavy marketplace</h3>
@@ -968,16 +969,16 @@ export const blogPosts = [
       <h2>Honest comparison: package vs “₹8L marketplace app” articles</h2>
       <p>Many 2026 cost blogs describe Urban Company / Meesho-class platforms. That is useful for budgeting a long game. It is the wrong brief if you need a <strong>city marketplace or multi-brand mall live this month</strong>. Match the quote to the product:</p>
       <ul>
-        <li>Need speed + clear price → <a href="/ecommerce-development#multi-vendor">multi-vendor package</a></li>
+        <li>Need speed + clear price → <a href="/ecommerce-development">ecommerce packages from ₹25,000</a></li>
         <li>Need custom settlement or ERP sync → ask for a written scope on <a href="/contact">contact</a> or <a href="/appointment">appointment</a></li>
         <li>Still researching architecture → read our <a href="/solutions/ecommerce-website-development">ecommerce website development</a> guide and the <a href="/blog/ecommerce-website-development-cost-india">general ecommerce cost breakdown</a></li>
       </ul>
 
       <h2>What “live in 48 hours” means (and does not)</h2>
-      <p>For the packaged offer, the clock starts after logo, store name, sample SKUs, brand notes, and payment details are locked in writing. “Live” means your ecommerce website is on a public URL with catalog, cart, checkout, and admin working. Android/iOS builds are included; Google/Apple review times are not part of the refund clock.</p>
+      <p>For the packaged offer, the clock starts after logo, store name, sample SKUs, brand notes, and payment details are locked in writing. “Live” means your ecommerce website is on a public URL with catalog, cart, checkout, and admin working. Android/iOS builds are included on the packages that list them; Google/Apple review times are not part of the refund clock.</p>
 
       <h2>Next step</h2>
-      <p>If multi-vendor is the goal, start on <a href="/ecommerce-development">ecommerce development packages</a> (₹35,000 multi-vendor / ₹25,000 single vendor) or WhatsApp us from that page with your category (grocery, fashion, electronics, artisan mall). Bring sample vendors and a commission rule — that alone cuts quote chaos.</p>
+      <p>If multi-vendor is the goal, start on <a href="/ecommerce-development">ecommerce development packages</a> (from ₹25,000) or WhatsApp us from that page with your category (grocery, fashion, electronics, artisan mall) for a written marketplace quote. Bring sample vendors and a commission rule — that alone cuts quote chaos.</p>
     `,
     category: "webdev",
     image: "/assets/images/blog/ecommerce-cost.jpg",
@@ -1010,14 +1011,15 @@ export const blogPosts = [
       <h3>Checkout that trusts UPI + COD</h3>
       <p>Razorpay / UPI is table stakes. Many kirana buyers still want cash on delivery for first orders. Your checkout should not assume every buyer has a saved card.</p>
       <h3>Apps for repeat purchase</h3>
-      <p>Grocery is a reopen category. A customer website plus Android and iOS apps reduces friction for weekly carts. Our <a href="/ecommerce-development">ecommerce packages</a> include web + Android + iOS for both single-vendor and multi-vendor — useful if you run one store or a multi-seller grocery mall.</p>
+      <p>Grocery is a reopen category. A customer website plus Android and iOS apps reduces friction for weekly carts. Our <a href="/ecommerce-development">ecommerce packages</a> add Android at ₹35,000 and Android + iOS at ₹45,000; high-end logistics is ₹99,000. Multi-seller grocery malls are quoted after discovery.</p>
 
       <h2>Single shop vs multi-vendor grocery mall</h2>
       <ul>
-        <li><strong>Single vendor (₹25,000 package)</strong> — one brand or one kirana/supermarket catalog, your admin, your payouts.</li>
-        <li><strong>Multi-vendor (₹35,000 package)</strong> — many sellers under one marketplace, vendor KYC, commission engine, settlement reports.</li>
+        <li><strong>Ecommerce Website ₹25,000</strong> — one brand or one kirana/supermarket catalog, your admin, your payouts.</li>
+        <li><strong>Add Android ₹35,000 / Android + iOS ₹45,000 / High-End logistics ₹99,000</strong> — same storefront, extra platforms and courier tracking.</li>
+        <li><strong>Multi-vendor grocery mall</strong> — many sellers under one marketplace; quoted after discovery.</li>
       </ul>
-      <p>Both packages target website live in 48 hours after a locked brief — or 50% refund on the package fee. See full terms on <a href="/ecommerce-development#guarantee">the guarantee section</a>.</p>
+      <p>Published packages target website live in 48 hours after a locked brief — or 50% refund on the package fee until Diwali. See full terms on <a href="/ecommerce-development#guarantee">the guarantee section</a>.</p>
 
       <h2>Scope traps that inflate grocery builds</h2>
       <ul>
@@ -1035,10 +1037,11 @@ export const blogPosts = [
 
       <h2>Single shop vs multi-vendor grocery mall</h2>
       <ul>
-        <li><strong>Single vendor (₹25,000 package)</strong> — one brand or one kirana/supermarket catalog, your admin, your payouts.</li>
-        <li><strong>Multi-vendor (₹35,000 package)</strong> — many sellers under one marketplace, vendor KYC, commission engine, settlement reports.</li>
+        <li><strong>Ecommerce Website ₹25,000</strong> — one brand or one kirana/supermarket catalog, your admin, your payouts.</li>
+        <li><strong>Add Android ₹35,000 / Android + iOS ₹45,000 / High-End logistics ₹99,000</strong> — same storefront, extra platforms and courier tracking.</li>
+        <li><strong>Multi-vendor grocery mall</strong> — many sellers under one marketplace; quoted after discovery.</li>
       </ul>
-      <p>Both packages target website live in 48 hours after a locked brief — or 50% refund on the package fee. See full terms on <a href="/ecommerce-development#guarantee">the guarantee section</a>.</p>
+      <p>Published packages target website live in 48 hours after a locked brief — or 50% refund on the package fee until Diwali. See full terms on <a href="/ecommerce-development#guarantee">the guarantee section</a>.</p>
 
       <h2>Scope traps that inflate grocery builds</h2>
       <ul>
@@ -1098,7 +1101,7 @@ export const blogPosts = [
       <h3>Custom ecommerce app builds</h3>
       <p>Public India guides in 2026 often quote roughly <strong>₹4L–₹30L+</strong> for app-heavy ecommerce, and far more for multi-sided marketplaces. That can be fair when you need custom matching, live tracking, multi-city ops, or deep ERP sync.</p>
       <h3>Fixed storefront package (web + Android + iOS)</h3>
-      <p>If you need a <strong>customer website plus Android and iOS shopping apps</strong> with catalog, cart, checkout, and admin — not a logistics unicorn — our <a href="/ecommerce-development">ecommerce packages</a> are scoped at <strong>₹25,000 single vendor</strong> and <strong>₹35,000 multi-vendor</strong>. Website live in 48 hours after a locked brief, or 50% refund on the package fee. Apps are included in the build; Google Play and Apple Developer accounts stay in your business name.</p>
+      <p>If you need a <strong>customer website plus Android and iOS shopping apps</strong> with catalog, cart, checkout, and admin — not a logistics unicorn — our <a href="/ecommerce-development">ecommerce packages</a> list <strong>Website + Android + iOS at ₹45,000</strong> (website only ₹25,000; + Android ₹35,000; high-end logistics ₹99,000). Website live in 48 hours after a locked brief, or 50% refund on the package fee until Diwali. Apps are included on the packages that list them; Google Play and Apple Developer accounts stay in your business name.</p>
 
       <h2>Must-have India features (apps included)</h2>
       <ul>
@@ -1114,12 +1117,13 @@ export const blogPosts = [
       <p>Related mobile pages: <a href="/android-app-development">Android app development</a> and <a href="/ios-app-development">iOS app development</a>.</p>
 
       <h2>Timeline: 48-hour website clock vs store review</h2>
-      <p>The 48-hour / 50% refund USP applies to <strong>website go-live</strong> after logo, store name, sample SKUs, brand notes, and payment details are locked in writing. Android/iOS builds are included; <strong>Play Store and App Store review time is outside the clock</strong> — Google and Apple control that queue.</p>
+      <p>The 48-hour / 50% refund USP applies to <strong>website go-live</strong> after logo, store name, sample SKUs, brand notes, and payment details are locked in writing. Android/iOS builds are included on the packages that list them; <strong>Play Store and App Store review time is outside the clock</strong> — Google and Apple control that queue.</p>
 
       <h2>Single vendor vs multi-vendor when apps are included</h2>
       <ul>
-        <li><strong>₹25,000 single vendor</strong> — one brand/catalog, your admin, shopper web+apps.</li>
-        <li><strong>₹35,000 multi-vendor</strong> — many sellers, vendor KYC/dashboard, commissions, same shopper apps.</li>
+        <li><strong>₹25,000 Ecommerce Website</strong> — one brand/catalog, your admin, shopper website.</li>
+        <li><strong>₹35,000 / ₹45,000</strong> — add Android, or Android + iOS, for shoppers.</li>
+        <li><strong>₹99,000 High-End with logistics</strong> — both apps plus courier tracking. Multi-vendor marketplaces are quoted after discovery.</li>
       </ul>
       <p>Deeper marketplace cost context: <a href="/blog/multi-vendor-marketplace-website-cost-india-2026">multi-vendor marketplace cost in India (2026)</a>. Grocery-specific notes: <a href="/blog/grocery-ecommerce-website-app-development-india">grocery ecommerce website &amp; app guide</a>.</p>
 
@@ -1136,15 +1140,15 @@ export const blogPosts = [
 
       <p>Launching on one store first? See <a href="/services/android-app-development">Android app development company in Jaipur</a> for a Play Store-first app, or <a href="/services/ios-app-development">iOS app development</a> for an App Store-only release.</p>
       <h2>FAQ</h2>
-      <h3>Is a ₹25k–₹35k package the same as a ₹15L marketplace app?</h3>
-      <p>No. Packages cover scoped single/multi-vendor storefronts with shopper apps. Enterprise logistics marketplaces need custom quotes.</p>
-      <h3>Do I get Android and iOS in both packages?</h3>
-      <p>Yes — both packages include customer website + Android + iOS builds. You create the store accounts.</p>
+      <h3>Is a ₹25k–₹45k package the same as a ₹15L marketplace app?</h3>
+      <p>No. Packages cover scoped storefronts (website, optional Android/iOS, optional courier logistics). Enterprise logistics marketplaces need custom quotes.</p>
+      <h3>Do I get Android and iOS in every package?</h3>
+      <p>No. Website-only is ₹25,000. Android is added at ₹35,000. Android and iOS together are ₹45,000. You create the store accounts.</p>
       <h3>When should I budget lakhs instead?</h3>
       <p>When you need rider apps, complex matching, multi-city routing, heavy ERP, or unique checkout logic beyond the package list — start with a written scope via <a href="/contact">contact</a> or <a href="/appointment">appointment</a>.</p>
 
       <h2>Next step</h2>
-      <p>If your brief is “sell products online with web + apps,” open <a href="/ecommerce-development">ecommerce development</a>, pick single or multi-vendor, and claim the 48-hour live offer — or WhatsApp from that page for a same-day reply from Jaipur.</p>
+      <p>If your brief is “sell products online with web + apps,” open <a href="/ecommerce-development">ecommerce development</a>, pick one of the four packages, and claim the 48-hour live offer — or WhatsApp from that page for a same-day reply from Jaipur.</p>
     `,
     category: "mobile",
     image: "/assets/images/blog/ecommerce-cost.jpg",
@@ -1178,7 +1182,7 @@ export const blogPosts = [
 
       <h2>Three fashion store products (three price realities)</h2>
       <h3>1) Packaged single-brand fashion storefront (fast launch)</h3>
-      <p>One brand catalog, variants (size/colour), cart, Razorpay/UPI (+ COD if you need it), admin, plus customer Android/iOS apps. Scope is locked. This is our <a href="/ecommerce-development">₹25,000 single-vendor package</a> — website live in 48 hours after a locked brief, or 50% refund on the package fee. Multi-seller fashion malls use the <a href="/ecommerce-development#multi-vendor">₹35,000 multi-vendor package</a> instead.</p>
+      <p>One brand catalog, variants (size/colour), cart, Razorpay/UPI (+ COD if you need it), and admin. Website-only is our <a href="/ecommerce-development#ecommerce-website">₹25,000 Ecommerce Website</a>; add Android and iOS at ₹45,000. Website live in 48 hours after a locked brief, or 50% refund on the package fee until Diwali. Multi-seller fashion malls are quoted after discovery.</p>
       <h3>2) Polished Shopify / WooCommerce D2C brand site</h3>
       <p>India guides in 2026 commonly place a professionally customized fashion Shopify store roughly in the <strong>₹80,000–₹3 lakh</strong> band (theme + apps + content), with monthly platform/app running costs on top. Strong when you want the app ecosystem fast; weaker when you need unusual size/pricing rules or full code ownership.</p>
       <h3>3) Custom / headless fashion platform</h3>
@@ -1252,7 +1256,7 @@ export const blogPosts = [
       </ul>
 
       <h3>When a normal web + app store is still the right first step</h3>
-      <p>Most Indian D2C and marketplace sellers do not need a bespoke "agentic commerce" build in 2026 — they need a fast, reliable, mobile-first storefront with correct UPI checkout and clean product data. That foundation is exactly what makes a store ready to plug into agentic shopping surfaces later, without a rebuild. See our <a href="/ecommerce-development">ecommerce development packages</a> for the practical first step (single-vendor from ₹25,000, multi-vendor from ₹35,000).</p>
+      <p>Most Indian D2C and marketplace sellers do not need a bespoke "agentic commerce" build in 2026 — they need a fast, reliable, mobile-first storefront with correct UPI checkout and clean product data. That foundation is exactly what makes a store ready to plug into agentic shopping surfaces later, without a rebuild. See our <a href="/ecommerce-development">ecommerce development packages</a> for the practical first step (from ₹25,000 website to ₹99,000 high-end logistics + Android + iOS).</p>
 
       <h3>What "ready for agentic shopping" looks like in practice</h3>
       <p>Concretely: your product feed uses consistent, structured attributes (size, colour, material, stock count) rather than free-text descriptions; your pricing is accurate in real time, not updated manually once a week; and your checkout API can confirm a transaction without a human in the loop. Stores built this way today are simply well-run ecommerce operations — they also happen to be the ones best positioned when agentic shopping surfaces (from Google, from AI assistants, or from marketplace apps) start driving real order volume.</p>
@@ -1431,7 +1435,7 @@ export const blogPosts = [
       <p>Catalog organized the way Indians shop (categories like atta, dairy, snacks; weight/unit variants), UPI + cash-on-delivery checkout since many kirana buyers still prefer COD for first orders, and a simple reorder flow since grocery is fundamentally a repeat-purchase category — a "reorder last basket" button drives more repeat revenue than almost any other single feature. See our full <a href="/blog/grocery-ecommerce-website-app-development-india">grocery / kirana ecommerce guide</a> for the complete build breakdown, catalog structure, and single-vendor vs multi-vendor grocery mall options.</p>
 
       <h3>Cost and timeline reality check</h3>
-      <p>A single-vendor grocery storefront starts at ₹25,000 with web + Android + iOS framing through our <a href="/ecommerce-development">ecommerce packages</a>, live in 48 hours after a locked brief. A multi-vendor grocery mall (aggregating multiple local suppliers) starts at ₹35,000. Neither package includes building a delivery fleet — that operational piece stays yours to arrange, whether through your own riders or a local courier partner.</p>
+      <p>A grocery storefront starts at ₹25,000 for the website through our <a href="/ecommerce-development">ecommerce packages</a>, live in 48 hours after a locked brief. Add Android at ₹35,000, Android + iOS at ₹45,000, or high-end logistics + both apps at ₹99,000. A multi-vendor grocery mall is quoted after discovery. Packages do not include building a delivery fleet — that operational piece stays yours to arrange, whether through your own riders or a local courier partner. High-End adds courier integration and tracking.</p>
 
       <p>If your customers are mostly on one platform, start there: <a href="/services/android-app-development">Android app development in Jaipur</a> for a Play Store-first grocery app, or <a href="/services/ios-app-development">iOS app development</a> for iPhone-first shoppers.</p>
       <h2>FAQ: Quick commerce vs own grocery app in India</h2>
@@ -1536,7 +1540,7 @@ export const blogPosts = [
       <p>The most expensive ecommerce mistake happens before development even starts: building a beautiful store for a product with margins too thin to survive payment gateway fees, shipping costs, and returns. Run the math on landed cost, gateway fee (roughly 2%), shipping cost per order, and expected return rate before locking your catalog. If the math is tight on paper, it will be worse in practice.</p>
 
       <h2>Step 2: Choose single-vendor vs multi-vendor structure</h2>
-      <p>A single-vendor store (your own catalog, your own admin) is simpler and faster to launch — our packaged builds start at ₹25,000 for this. A multi-vendor marketplace (multiple sellers under one storefront, with commission splits and vendor KYC) is more complex and starts at ₹35,000, because it needs a genuinely different data model, not just a UI toggle. Decide this before design starts, since it changes the database structure significantly.</p>
+      <p>A single-brand store (your own catalog, your own admin) is simpler and faster to launch — our packaged Ecommerce Website starts at ₹25,000. A multi-vendor marketplace (multiple sellers under one storefront, with commission splits and vendor KYC) is more complex and is quoted after discovery, because it needs a genuinely different data model, not just a UI toggle. Decide this before design starts, since it changes the database structure significantly.</p>
 
       <h2>Step 3: Lock UPI payments and shipping partners early</h2>
       <p>UPI is now the default payment method for most Indian ecommerce buyers, alongside cards and cash-on-delivery for first-time buyers who are not yet confident in a new store. Decide your payment gateway (Razorpay, Cashfree, or similar) and your shipping/courier partner before development, since checkout logic and shipping-rate calculation both depend on these choices — retrofitting them after the storefront is built causes avoidable rework.</p>
@@ -1551,7 +1555,7 @@ export const blogPosts = [
       <p>Launch to a small audience first — your own network, an email list, or organic social — to catch bugs and gather your first reviews before scaling paid traffic. A store with zero reviews and a broken coupon code loses far more from paid ads than it gains.</p>
 
       <h2>DIY builders vs scoped agency packages: an honest comparison</h2>
-      <p>Templates and DIY builders (Shopify's own onboarding flow, WooCommerce starter themes) are genuinely fine for learning the ropes on a low-stakes catalog. Once you are buying paid traffic or need multi-vendor rules, a scoped team usually wins on speed-to-stable, because the cost of a broken checkout during a paid campaign is higher than the cost of hiring it out correctly the first time. TheTriFusion offers a website live in 48 hours after a locked brief — or 50% refund — on <a href="/ecommerce-development">ecommerce development</a> (from ₹25,000 single-vendor / ₹35,000 multi-vendor).</p>
+      <p>Templates and DIY builders (Shopify's own onboarding flow, WooCommerce starter themes) are genuinely fine for learning the ropes on a low-stakes catalog. Once you are buying paid traffic or need multi-vendor rules, a scoped team usually wins on speed-to-stable, because the cost of a broken checkout during a paid campaign is higher than the cost of hiring it out correctly the first time. TheTriFusion offers a website live in 48 hours after a locked brief — or 50% refund until Diwali — on <a href="/ecommerce-development">ecommerce development</a> (from ₹25,000 website to ₹99,000 high-end logistics + Android + iOS).</p>
 
       <h2>SEO and conversion basics to get right on day one</h2>
       <ul>
@@ -1619,7 +1623,7 @@ export const blogPosts = [
       <p>Some businesses use an AI builder to quickly test a niche idea's copy and layout, then bring that direction to a proper scoped build once they are confident in the concept — this is a legitimate way to move fast without wasting engineering time on an idea that has not been validated yet. Once you are ready to accept real payments and real orders, that is when correctly-implemented UPI, logistics, and SEO stop being optional.</p>
 
       <h3>What we offer as the "real build" step</h3>
-      <p>Our <a href="/ecommerce-development">ecommerce packages</a> (single-vendor from ₹25,000, multi-vendor from ₹35,000) include correctly implemented UPI + COD checkout, mobile-first design, WhatsApp lead capture, and SEO fundamentals from day one — the pieces an AI builder draft typically leaves unfinished. Website live in 48 hours after a locked brief, or 50% refund.</p>
+      <p>Our <a href="/ecommerce-development">ecommerce packages</a> (Website ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · High-End logistics ₹99,000) include correctly implemented UPI + COD checkout, mobile-first design, WhatsApp lead capture, and SEO fundamentals from day one — the pieces an AI builder draft typically leaves unfinished. Website live in 48 hours after a locked brief, or 50% refund until Diwali.</p>
 
       <h3>A quick checklist before you trust an AI-built store with real traffic</h3>
       <ul>
@@ -1669,7 +1673,7 @@ export const blogPosts = [
       <p>Mumbai has the most ecommerce agencies in India by sheer count, and it is where a lot of D2C brands themselves are based — so it feels like the default choice. But ecommerce development is remote-friendly work: catalog setup, checkout logic, payment integration, and app builds happen the same way whether the developer sits in Mumbai or Jaipur. The real question is not city prestige, it is process, portfolio, and price — and this guide compares those three honestly.</p>
 
       <h3>Cost: why Jaipur teams price differently, not just cheaper</h3>
-      <p>Mumbai agency rates carry Mumbai's office rent, salary bands, and client-acquisition cost (a lot of Mumbai agencies spend heavily on brand marketing, which shows up in your invoice). A Jaipur-based team with the same technical output structurally operates on a lower cost base, which is why our single-vendor ecommerce package starts at ₹25,000 and multi-vendor at ₹35,000 — pricing that would be difficult for a comparable Mumbai studio to sustain at similar margins. This is not "cheap because lower quality" — it is a genuine cost-of-operations difference that Indian SMEs can use to their advantage, the same way global companies use India itself for cost-efficient delivery.</p>
+      <p>Mumbai agency rates carry Mumbai's office rent, salary bands, and client-acquisition cost (a lot of Mumbai agencies spend heavily on brand marketing, which shows up in your invoice). A Jaipur-based team with the same technical output structurally operates on a lower cost base, which is why our ecommerce packages start at ₹25,000 for a website and go to ₹99,000 for high-end logistics plus Android and iOS — pricing that would be difficult for a comparable Mumbai studio to sustain at similar margins. This is not "cheap because lower quality" — it is a genuine cost-of-operations difference that Indian SMEs can use to their advantage, the same way global companies use India itself for cost-efficient delivery.</p>
 
       <h3>Communication: what actually changes between cities, and what doesn't</h3>
       <p>In-person meetings are rare in ecommerce projects even when the agency is in your own city — most communication happens over WhatsApp, video calls, and shared documents regardless of location. What should not change between a Mumbai and a Jaipur vendor: response time commitments, a written scope before payment, weekly progress demos, and Hindi + English support. Ask any vendor, in any city, to commit to these in writing before you sign.</p>
@@ -1703,7 +1707,7 @@ export const blogPosts = [
       <h3>Is a Jaipur-based ecommerce team really as capable as a Mumbai agency?</h3>
       <p>Technically, yes — ecommerce development (catalog, checkout, payments, apps) is remote-deliverable work. What differs is cost structure and, sometimes, in-person availability for offline creative work.</p>
       <h3>How much cheaper is a Jaipur team typically?</h3>
-      <p>Package pricing varies by scope, but our ecommerce packages start at ₹25,000 single-vendor / ₹35,000 multi-vendor — compare this against quotes you receive from Mumbai studios for the same scope.</p>
+      <p>Package pricing varies by scope, but our ecommerce packages start at ₹25,000 (website) and go to ₹99,000 (high-end logistics + Android + iOS) — compare this against quotes you receive from Mumbai studios for the same scope.</p>
       <h3>Can I verify the quality before committing?</h3>
       <p>Yes — always ask for live URLs, not mockups. Our <a href="/portfolio">portfolio</a> lists real, working sites and apps you can open right now.</p>
       <h3>What's the next step?</h3>
@@ -2626,7 +2630,7 @@ export const blogPosts = [
       <p>Most Jaipur and Rajasthan SMEs start with a lead-generating website or an ecommerce store, then add Android/iOS apps once the core web product proves demand. Trying to build web + Android + iOS simultaneously on day one usually stretches budget and timeline without validating whether customers actually want the product yet. If you need a store fast, see our <a href="/ecommerce-development">48-hour ecommerce packages from ₹25,000</a> — a pragmatic way to test demand before committing to a larger custom build.</p>
 
       <h2>How pricing typically breaks down for a Jaipur software project</h2>
-      <p>A scoped custom website generally starts in a different band from a full software product with logins, roles, and a database-backed workflow. Ecommerce sits in between — a single-vendor store from ₹25,000, multi-vendor marketplaces from ₹35,000. Custom software (CRM, ERP, MLM platforms, fintech retailer apps) is quoted per module after a discovery call, because the genealogy/commission engine, integrations, and admin complexity vary enormously between businesses even when the pitch sounds similar. Ask any vendor — Jaipur or otherwise — to break down what specifically drives their number, rather than accepting one flat figure.</p>
+      <p>A scoped custom website generally starts in a different band from a full software product with logins, roles, and a database-backed workflow. Ecommerce sits in between — a website from ₹25,000, website + Android + iOS at ₹45,000, high-end logistics at ₹99,000; multi-vendor marketplaces are quoted after discovery. Custom software (CRM, ERP, MLM platforms, fintech retailer apps) is quoted per module after a discovery call, because the genealogy/commission engine, integrations, and admin complexity vary enormously between businesses even when the pitch sounds similar. Ask any vendor — Jaipur or otherwise — to break down what specifically drives their number, rather than accepting one flat figure.</p>
 
       <h2>Why Jaipur-based teams fit Rajasthan SMEs well</h2>
       <p>Time zone, language, and occasional in-person visit options matter more than people expect once a project is underway. We are based in Jaipur and serve Bhilwara, Udaipur, Kota, and Ajmer remotely with the same WhatsApp/video cadence — see <a href="/services/software-development">custom software development</a> and <a href="/services/website-development">website development in Jaipur</a> for how those engagements are scoped.</p>

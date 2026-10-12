@@ -11,6 +11,9 @@ import SEO from "components/common/SEO";
 import ServiceIcon from "components/ServiceIcon";
 import { accentAt } from "lib/themeAccents";
 import { siteConfig } from "config/site";
+import DiwaliOfferCountdown, {
+  DiwaliRefundLabel,
+} from "components/DiwaliOfferCountdown";
 
 const SERVICE_CHOOSER = [
   {
@@ -95,14 +98,17 @@ export default function ServicesPage() {
                   <div className={`w-11 h-11 mb-5 rounded-xl flex items-center justify-center ${accentAt(0).iconWrap} group-hover:bg-theme-purple group-hover:text-white transition-colors`}>
                     <ServiceIcon slug="ecommerce-development" className="w-5 h-5" />
                   </div>
-                  <p className="text-xs font-bold uppercase tracking-widest text-theme-purple mb-2">
-                    Live in 48 hrs · or 50% refund
-                  </p>
+                  <DiwaliOfferCountdown compact showLabel={false} className="mb-2">
+                    <p className="text-xs font-bold uppercase tracking-widest text-theme-purple">
+                      Live in 48 hrs · or 50% refund
+                    </p>
+                  </DiwaliOfferCountdown>
                   <h2 className="text-xl text-theme-blue font-bold mb-2 group-hover:text-theme-purple transition-colors">
                     Ecommerce Development
                   </h2>
                   <p className="font-light text-gray-500 mb-6 line-clamp-3 leading-relaxed text-sm">
-                    Single & multi-vendor website live in 48 hours after locked brief — or 50% refund. Web + Android + iOS from ₹25,000 / ₹35,000.
+                    Four packages from ₹25,000 to ₹99,000. Website live in 48 hours after locked brief
+                    <DiwaliRefundLabel before=" — or 50% refund." after="." />
                   </p>
                   <span className={`inline-flex items-center font-semibold text-sm ${accentAt(0).text}`}>
                     See packages

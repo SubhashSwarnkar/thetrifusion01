@@ -107,7 +107,7 @@ const posts = {
       <h3>¿Por qué un marketplace multi-vendedor cuesta más que una tienda de un solo vendedor?</h3>
       <p>Hace falta alta y KYC de vendedores, un motor de comisiones y reportes de liquidación. Nada de eso existe en una tienda de un solo vendedor, así que la lógica adicional cuesta más si se construye bien.</p>
       <h3>¿Cuál es el siguiente paso?</h3>
-      <p>Los <a href="/ecommerce-development">paquetes de ecommerce</a> cubren un solo vendedor (₹25,000) o varios (₹35,000), con el sitio en línea en 48 horas o la devolución del 50%. Para un alcance a medida, <a href="/appointment">reserve una llamada de descubrimiento</a>. Los catálogos complejos siguen necesitando un brief: el paquete cubre las plataformas y funciones listadas, no trabajo a medida ilimitado.</p>
+      <p>Los <a href="/ecommerce-development">paquetes de ecommerce</a> cubren sitio ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · logística ₹99,000, con el sitio en línea en 48 horas o la devolución del 50%. Para un alcance a medida, <a href="/appointment">reserve una llamada de descubrimiento</a>. Los catálogos complejos siguen necesitando un brief: el paquete cubre las plataformas y funciones listadas, no trabajo a medida ilimitado.</p>
     `,
   },
   ...esPostsRest,

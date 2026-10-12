@@ -85,9 +85,9 @@ export const pages = {
   "/ecommerce-development": {
     title: "Ecommerce from ₹25,000 | 48-Hour Launch | TheTriFusion",
     description:
-      "Single vendor ₹25,000 and multi-vendor ₹35,000. Website live in 48 hours after a locked brief, or 50% refund. Web, Android, and iOS.",
+      "Ecommerce Website ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · High-End logistics ₹99,000. Live in 48 hours or 50% refund.",
     keywords:
-      "ecommerce website live in 48 hours, ecommerce 50% refund guarantee, single vendor ecommerce website India, multi vendor marketplace website 48 hours, ecommerce development company India, grocery ecommerce website, clothing ecommerce app, ecommerce web android ios package, online store live fast India, D2C ecommerce Jaipur",
+      "ecommerce website live in 48 hours, ecommerce 50% refund guarantee, ecommerce website Android app India, ecommerce web android ios package, high-end ecommerce logistics, ecommerce development company India, grocery ecommerce website, clothing ecommerce app, online store live fast India, D2C ecommerce Jaipur",
   },
   "/contact": {
     title: "Contact TheTriFusion in Jaipur | Software Company Rajasthan",
