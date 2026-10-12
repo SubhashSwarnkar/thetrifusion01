@@ -1,6 +1,7 @@
 import Page from "views/SolutionsHubPage";
 import JsonLd from "components/JsonLd";
 import { seoLandingPages } from "data/seoLandingPages";
+import { REDIRECTED_SOLUTION_SLUGS } from "lib/solutionRedirects";
 import { SITE_URL, breadcrumbJsonLd, pageMetadata } from "lib/seoConfig";
 
 export const metadata = pageMetadata("/solutions");
@@ -10,7 +11,11 @@ const itemListJsonLd = {
   "@type": "ItemList",
   name: "TheTriFusion Digital Solutions",
   itemListElement: seoLandingPages
-    .filter((page) => page.slug !== "online-store-development")
+    .filter(
+      (page) =>
+        page.slug !== "online-store-development" &&
+        !REDIRECTED_SOLUTION_SLUGS.has(page.slug)
+    )
     .map((page, index) => ({
     "@type": "ListItem",
     position: index + 1,

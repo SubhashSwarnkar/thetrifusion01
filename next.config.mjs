@@ -13,7 +13,9 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // Apex .in is the ONLY canonical host — permanent single-hop redirects
+      // Apex .in is the ONLY canonical host. permanent:true is 308 in Next.js.
+      // If www still returns 307 in production, change the Vercel Domains
+      // "Redirect www to apex" setting — that hop runs before this config.
       {
         source: "/:path*",
         has: [{ type: "host", value: "www.thetrifusion.in" }],
@@ -70,7 +72,7 @@ const nextConfig = {
       },
       // Same service and intent as the /services twin. Keep in sync with
       // src/lib/solutionRedirects.js. City pages, ecommerce, MSP, the buyer
-      // guide, Rajasthan, and the general Jaipur company page are not here.
+      // guide, and software-company-rajasthan stay as distinct landings.
       {
         source: "/solutions/android-app-development-company-jaipur",
         destination: "/services/android-app-development",
@@ -109,6 +111,11 @@ const nextConfig = {
       {
         source: "/solutions/mobile-app-development-company",
         destination: "/services/mobile-app-development",
+        permanent: true,
+      },
+      {
+        source: "/solutions/software-development-company-jaipur",
+        destination: "/services/software-development",
         permanent: true,
       },
       // Retired 2024 archive posts → /blog (drop soft-200 noindex URLs)

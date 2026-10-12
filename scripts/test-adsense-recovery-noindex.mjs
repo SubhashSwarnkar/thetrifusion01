@@ -168,8 +168,8 @@ for (const [family, rows] of byFamily) {
   if (family === "ev-charging-csms-X-cpo-guide" && kept.length !== 2) {
     fail(`${family} should keep 2 posts`);
   }
-  if (family !== "ev-charging-csms-X-cpo-guide" && kept.length !== 1) {
-    fail(`${family} should keep 1 post`);
+  if (family !== "ev-charging-csms-X-cpo-guide" && kept.length !== 0) {
+    fail(`${family} should keep 0 posts (geo/UPI templates are noindex)`);
   }
 }
 
@@ -248,7 +248,7 @@ const samples = [
   ["/pt/blog/chatgpt-ai-tools-for-us-startups-2026", true],
   ["/blog/ev-charging-csms-india-cpo-guide", false],
   ["/blog/ev-charging-csms-uk-europe-cpo-guide", false],
-  ["/blog/upi-charges-in-india-2026-complete-guide", false],
+  ["/blog/upi-charges-in-india-2026-complete-guide", true],
   ["/es/blog/ev-charging-app-ocpi-ocpp-guide", false],
   ["/services/ev-charging-app-development", false],
   ["/es/services/ev-charging-app-development", false],

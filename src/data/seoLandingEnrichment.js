@@ -281,7 +281,7 @@ export const landingEnrichment = {
 const RELATED_BY_SLUG = {
   "best-software-company-india": {
     relatedSolutionSlugs: [
-      "software-development-company-jaipur",
+      "msp-managed-it-services",
       "software-company-rajasthan",
       "ecommerce-website-development",
     ],
@@ -289,7 +289,7 @@ const RELATED_BY_SLUG = {
   },
   "ecommerce-website-development": {
     relatedSolutionSlugs: [
-      "software-development-company-jaipur",
+      "best-software-company-india",
       "msp-managed-it-services",
       "software-company-rajasthan",
     ],
@@ -321,7 +321,7 @@ const RELATED_BY_SLUG = {
   },
   "msp-managed-it-services": {
     relatedSolutionSlugs: [
-      "software-development-company-jaipur",
+      "best-software-company-india",
       "software-company-rajasthan",
       "ecommerce-website-development",
     ],
@@ -362,7 +362,7 @@ const RELATED_BY_SLUG = {
   "website-development-company-bhilwara": {
     relatedSolutionSlugs: [
       "software-company-rajasthan",
-      "software-development-company-jaipur",
+      "msp-managed-it-services",
       "ecommerce-website-development",
     ],
     relatedBlogSlug: "website-development-company-bhilwara",
@@ -370,7 +370,7 @@ const RELATED_BY_SLUG = {
   "software-company-rajasthan": {
     relatedSolutionSlugs: [
       "website-development-company-bhilwara",
-      "software-development-company-jaipur",
+      "msp-managed-it-services",
       "ecommerce-website-development",
     ],
     relatedBlogSlug: "website-development-company-bhilwara",

@@ -143,4 +143,14 @@ export const OFFTOPIC_NOINDEX_SLUGS = new Set([
   "sbi-po-mains-result-2026-how-to-check",
   "production-calendar-2027-russia-explained",
   "permanent-daylight-savings-time-debate-explained",
+  // Phone launches, gadgets, and off-topic tech news
+  "vivo-v80-specs-price-india-what-we-know",
+  "realme-16-pro-harry-potter-edition-india",
+  "motorola-signature-27-india-whats-known",
+  "iqoo-16-india-android-apps-business",
+  "beats-360-why-trending-explained",
+  "anthropic-pentagon-claude-ai-ban-explained",
+  "meta-vr-glasses-2026-whats-known",
+  "chatgpt-1980s-ai-photo-prompt-guide",
+  "social-security-in-india-2026-epfo-esic-employer-guide",
 ]);

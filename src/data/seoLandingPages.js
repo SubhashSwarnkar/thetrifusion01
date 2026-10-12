@@ -1110,7 +1110,7 @@ export const getSolutionsForService = (serviceSlug) =>
 export const featuredSolutionSlugs = [
   "software-company-rajasthan",
   "ecommerce-website-development",
-  "software-development-company-jaipur",
+  "msp-managed-it-services",
   "website-development-company-bhilwara",
   "website-development-company-udaipur",
   "website-development-company-kota",
@@ -1119,5 +1119,6 @@ export const featuredSolutionSlugs = [
 
 export const getFeaturedSolutions = () =>
   featuredSolutionSlugs
+    .filter((slug) => !REDIRECTED_SOLUTION_SLUGS.has(slug))
     .map((slug) => getSeoLandingBySlug(slug))
     .filter(Boolean);
