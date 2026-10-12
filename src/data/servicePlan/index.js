@@ -12,6 +12,7 @@ import aiDevelopment from "./ai-development.js";
 import uiUxDesign from "./ui-ux-design.js";
 import graphicDesign from "./graphic-design.js";
 import branding from "./branding.js";
+import digitalMarketing from "./digital-marketing.js";
 
 export const servicePlanContent = {
   "software-development": softwareDevelopment,
@@ -24,4 +25,5 @@ export const servicePlanContent = {
   "ui-ux-design": uiUxDesign,
   "graphic-design": graphicDesign,
   "branding": branding,
+  "digital-marketing": digitalMarketing,
 };
