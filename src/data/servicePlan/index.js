@@ -7,6 +7,7 @@ import devops from "./devops.js";
 import websiteDevelopment from "./website-development.js";
 import mobileAppDevelopment from "./mobile-app-development.js";
 import iosAppDevelopment from "./ios-app-development.js";
+import androidAppDevelopment from "./android-app-development.js";
 
 export const servicePlanContent = {
   "software-development": softwareDevelopment,
@@ -14,4 +15,5 @@ export const servicePlanContent = {
   "website-development": websiteDevelopment,
   "mobile-app-development": mobileAppDevelopment,
   "ios-app-development": iosAppDevelopment,
+  "android-app-development": androidAppDevelopment,
 };
