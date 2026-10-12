@@ -73,7 +73,7 @@ export const ptPosts = {
       <h3>Por que um marketplace de vários vendedores custa mais do que uma loja de um único vendedor?</h3>
       <p>Entram cadastro e KYC de vendedores, um motor de comissões e relatórios de liquidação. Nada disso existe numa loja de um único vendedor, então a lógica extra custa mais quando é bem feita.</p>
       <h3>Qual é o próximo passo?</h3>
-      <p>Os <a href="/ecommerce-development">pacotes de e-commerce</a> cobrem um único vendedor (₹25,000) ou vários (₹35,000), com o site no ar em 48 horas ou a devolução de 50%. Para um escopo sob medida, <a href="/appointment">marque uma conversa de descoberta</a>. Catálogos complexos ainda pedem briefing: o pacote cobre as plataformas e as funções listadas, não trabalho sob medida sem limite.</p>
+      <p>Os <a href="/ecommerce-development">pacotes de e-commerce</a> cobrem site ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · logística ₹99,000, com o site no ar em 48 horas ou a devolução de 50%. Para um escopo sob medida, <a href="/appointment">marque uma conversa de descoberta</a>. Catálogos complexos ainda pedem briefing: o pacote cobre as plataformas e as funções listadas, não trabalho sob medida sem limite.</p>
     `,
   },
   "ecommerce-app-development-cost-india": {
@@ -82,7 +82,7 @@ export const ptPosts = {
     metaTitle:
       "Custo de aplicativo de e-commerce na Índia 2026 | Web + Android + iOS | TheTriFusion",
     description:
-      "Na Índia aparecem orçamentos de aplicativos de e-commerce entre ₹4 lakh e ₹30 lakh. Quando esse valor faz falta e quando um pacote de loja web + Android + iOS (₹25,000 / ₹35,000) é o primeiro envio mais sensato.",
+      "Na Índia aparecem orçamentos de aplicativos de e-commerce entre ₹4 lakh e ₹30 lakh. Quando esse valor faz falta e quando um pacote de loja web + Android + iOS (₹25,000 website · ₹35,000 + Android · ₹45,000 + Android + iOS · ₹99,000 high-end logistics) é o primeiro envio mais sensato.",
     content: `
       <h2>O que “desenvolvimento de aplicativo de e-commerce” costuma significar na Índia</h2>
       <p>Quem busca <strong>desenvolvimento de aplicativo de e-commerce</strong> mistura três produtos diferentes:</p>
@@ -96,7 +96,7 @@ export const ptPosts = {
       <h3>Desenvolvimento de aplicativo de e-commerce sob medida</h3>
       <p>Guias públicos da Índia em 2026 costumam citar cerca de <strong>₹4 lakh a ₹30 lakh ou mais</strong> para e-commerce centrado no aplicativo, e bem mais para marketplaces de vários lados. Pode ser um preço justo se você precisa de pareamento sob medida, rastreio ao vivo, operação em várias cidades ou uma sincronização funda com um ERP.</p>
       <h3>Pacote de loja fechado (web + Android + iOS)</h3>
-      <p>Se o que você precisa é um <strong>site para o cliente mais aplicativos de compra em Android e iOS</strong>, com catálogo, carrinho, checkout e administração — e não uma operação logística de unicórnio — nossos <a href="/ecommerce-development">pacotes de e-commerce</a> ficam em <strong>₹25,000 para um único vendedor</strong> e <strong>₹35,000 para vários vendedores</strong>. O site entra no ar 48 horas depois de um briefing fechado, ou devolvemos 50% da taxa do pacote. Os aplicativos vão no mesmo trabalho. As contas do Google Play e do Apple Developer ficam no nome da sua empresa.</p>
+      <p>Se o que você precisa é um <strong>site para o cliente mais aplicativos de compra em Android e iOS</strong>, com catálogo, carrinho, checkout e administração — e não uma operação logística de unicórnio — nossos <a href="/ecommerce-development">pacotes de e-commerce</a> ficam em <strong>₹25,000 site</strong>, <strong>₹35,000 + Android</strong>, <strong>₹45,000 + Android + iOS</strong> e <strong>₹99,000 logística</strong>. O site entra no ar 48 horas depois de um briefing fechado, ou devolvemos 50% da taxa do pacote. Os aplicativos vão no mesmo trabalho. As contas do Google Play e do Apple Developer ficam no nome da sua empresa.</p>
       <h2>O que não pode faltar na Índia (aplicativos incluídos)</h2>
       <ul>
         <li>Checkout com Razorpay / UPI, e pagamento na entrega quando a categoria pede</li>
@@ -112,8 +112,8 @@ export const ptPosts = {
       <p>A promessa de 48 horas ou devolução de 50% vale para a <strong>entrada do site no ar</strong> quando logo, nome da loja, SKUs de amostra, notas de marca e dados de pagamento estão fechados por escrito. As versões de Android e iOS entram nesse trabalho. <strong>O tempo de revisão da Play Store e da App Store fica fora desse relógio</strong>: quem controla são Google e Apple.</p>
       <h2>Um vendedor ou vários, com aplicativos incluídos</h2>
       <ul>
-        <li><strong>₹25,000, um vendedor</strong>: uma marca, um catálogo, a sua administração, web e aplicativos para quem compra.</li>
-        <li><strong>₹35,000, vários vendedores</strong>: muitos vendedores, KYC e painel do vendedor, comissões, e os mesmos aplicativos de compra.</li>
+        <li><strong>₹25,000, site</strong>: uma marca, um catálogo, a sua administração, o site para quem compra.</li>
+        <li><strong>₹45,000, site + Android + iOS</strong>: os mesmos aplicativos de compra. Marketplaces de vários vendedores são orçados depois da descoberta.</li>
       </ul>
       <p>Mais contexto de marketplace: <a href="/blog/multi-vendor-marketplace-website-cost-india-2026">custo de um marketplace de vários vendedores na Índia (2026)</a>. Notas de mercearia: <a href="/blog/grocery-ecommerce-website-app-development-india">guia de e-commerce de mercearia</a>.</p>
       <h2>Custos que passam batido</h2>
@@ -157,7 +157,7 @@ export const ptPosts = {
         <li>Há fluxo fora do comum, administração com vários papéis ou integração funda com ERP, CRM ou estoque? O sob medida costuma se pagar em 6 a 12 meses de atrito de plataforma que você deixa de ter.</li>
         <li>Uma taxa recorrente em troca de não mexer no servidor está boa para você? Shopify.</li>
         <li>Quer controle da hospedagem, sem taxa de plataforma, e consegue pagar a manutenção do WordPress? WooCommerce.</li>
-        <li>O plano é um marketplace de vários vendedores com divisão de comissão? Uma plataforma sob medida, ou feita para isso (veja os <a href="/ecommerce-development">pacotes de vários vendedores a partir de ₹35,000</a>), costuma caber melhor do que forçar Shopify ou WooCommerce.</li>
+        <li>O plano é um marketplace de vários vendedores com divisão de comissão? Uma plataforma sob medida, ou feita para isso (veja os <a href="/ecommerce-development">pacotes de e-commerce a partir de ₹25,000</a>), costuma caber melhor do que forçar Shopify ou WooCommerce.</li>
       </ul>
       <h2>FAQ: site sob medida, Shopify ou WooCommerce</h2>
       <h3>Com qual fica mais barato começar?</h3>
@@ -215,7 +215,7 @@ export const ptPosts = {
       <h2>Passo 1: valide o nicho e a margem antes de escrever uma linha de código</h2>
       <p>O erro mais caro do e-commerce acontece antes do desenvolvimento: uma loja bonita para um produto cuja margem não sobrevive à comissão do gateway, ao frete e à devolução. Faça a conta do custo posto no destino, da comissão do gateway (cerca de 2%), do frete por pedido e da taxa de devolução esperada antes de fechar o catálogo. Se no papel já está apertado, na prática fica pior.</p>
       <h2>Passo 2: escolha um vendedor ou vários</h2>
-      <p>Uma loja de um único vendedor (o seu catálogo, a sua administração) é mais simples e sai antes. Nossos pacotes começam em ₹25,000 nesse caso. Um marketplace de vários vendedores (vários vendedores sob a mesma vitrine, com comissão e KYC) é mais complexo e começa em ₹35,000, porque pede outro modelo de dados, não um interruptor na interface. Decida isso antes do design: o banco de dados muda de forma clara.</p>
+      <p>Uma loja de um único vendedor (o seu catálogo, a sua administração) é mais simples e sai antes. Nossos pacotes começam em ₹25,000 para o site. Um marketplace de vários vendedores é orçado depois da descoberta, porque pede outro modelo de dados, não um interruptor na interface. Decida isso antes do design: o banco de dados muda de forma clara.</p>
       <h2>Passo 3: feche UPI e os parceiros de frete cedo</h2>
       <p>O UPI já é o meio de pagamento padrão da maioria dos compradores de e-commerce na Índia, junto com cartão e pagamento na entrega para quem compra pela primeira vez e ainda não confia numa loja nova. Escolha o gateway (Razorpay, Cashfree ou outro parecido) e a transportadora antes do desenvolvimento. A lógica do checkout e o cálculo da tarifa de frete dependem dessas escolhas. Encaixar isso depois obriga a refazer trabalho.</p>
       <h2>Passo 4: catálogo e checkout pensados primeiro para o celular</h2>
@@ -225,7 +225,7 @@ export const ptPosts = {
       <h2>Passo 6: uma saída pequena e só depois o anúncio</h2>
       <p>Publique primeiro para um público pequeno — a sua própria rede, uma lista de e-mail ou alcance orgânico — para caçar falha e juntar as primeiras avaliações antes de escalar o tráfego pago. Uma loja sem avaliação e com cupom quebrado perde em anúncio mais do que ganha.</p>
       <h2>Construtor caseiro ou pacote com escopo</h2>
-      <p>Template e construtor (o cadastro do Shopify, o tema inicial do WooCommerce) servem de verdade para aprender com um catálogo de baixo risco. Quando você já compra tráfego pago, ou precisa de regra de vários vendedores, uma equipe com escopo costuma ganhar em tempo até uma loja estável, porque um checkout quebrado no meio de uma campanha paga custa mais do que encomendar certo na primeira vez. TheTriFusion coloca o site no ar 48 horas depois de um briefing fechado, ou devolve 50%, em <a href="/ecommerce-development">desenvolvimento de e-commerce</a> (a partir de ₹25,000 um vendedor / ₹35,000 vários vendedores).</p>
+      <p>Template e construtor (o cadastro do Shopify, o tema inicial do WooCommerce) servem de verdade para aprender com um catálogo de baixo risco. Quando você já compra tráfego pago, ou precisa de regra de vários vendedores, uma equipe com escopo costuma ganhar em tempo até uma loja estável, porque um checkout quebrado no meio de uma campanha paga custa mais do que encomendar certo na primeira vez. TheTriFusion coloca o site no ar 48 horas depois de um briefing fechado, ou devolve 50%, em <a href="/ecommerce-development">desenvolvimento de e-commerce</a> (a partir de ₹25,000 (site) até ₹99,000 (logística + Android + iOS)).</p>
       <h2>SEO e conversão que precisam nascer certos</h2>
       <ul>
         <li>Título e H1 únicos em cada página de categoria importante, não um título de template copiado em todas</li>

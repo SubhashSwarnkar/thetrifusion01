@@ -1,14 +1,17 @@
 export const ECOMMERCE_PATH = "/ecommerce-development";
 
+export const PACKAGE_PRICE_SUMMARY =
+  "Ecommerce Website ₹25,000 · Website + Android ₹35,000 · Website + Android + iOS ₹45,000 · High-End with Logistics + Android + iOS ₹99,000";
+
 export const launchGuarantee = {
   id: "guarantee",
   headline: "Website live in 48 hours — or 50% refund",
   subheadline:
-    "Single vendor and multi-vendor ecommerce websites go live within 48 hours after we receive your locked brief and required assets. If we miss that clock, you get 50% of the package amount refunded.",
-  badge: "Ads guarantee",
+    "Ecommerce websites go live within 48 hours after we receive your locked brief and required assets. If we miss that clock, you get 50% of the package amount refunded. Diwali offer ends 8 November 2026, 11:59 PM IST.",
+  badge: "Diwali offer · Ads guarantee",
   clockLabel: "48 hours",
   refundLabel: "50% refund",
-  appliesTo: "Website go-live (single vendor & multi-vendor)",
+  appliesTo: "Website go-live (all four packages)",
   points: [
     {
       title: "Clock starts when inputs are ready",
@@ -16,11 +19,11 @@ export const launchGuarantee = {
     },
     {
       title: "What “live” means",
-      body: "Your ecommerce website is online on a public URL with catalog, cart, checkout, and admin access working. Single vendor and multi-vendor both covered.",
+      body: "Your ecommerce website is online on a public URL with catalog, cart, checkout, and admin access working. The same website clock applies to every package.",
     },
     {
       title: "If we miss 48 hours",
-      body: "You receive a 50% refund of the package development fee you paid us. Written claim within 7 days of the missed deadline.",
+      body: "You receive a 50% refund of the package development fee you paid us. Written claim within 7 days of the missed deadline. This refund offer ends at Diwali: 8 November 2026, 11:59 PM IST.",
     },
     {
       title: "What the clock does not wait on",
@@ -40,30 +43,29 @@ export const ecommercePage = {
   serviceName: "Ecommerce Development",
   navTitle: "Ecommerce Development",
   shortDescription:
-    "Single & multi-vendor ecommerce live in 48 hours or 50% refund. Web + Android + iOS from ₹25,000 / ₹35,000.",
-  kicker: "Ecommerce · Jaipur · Ads offer",
-  h1: "Single vendor & multi-vendor ecommerce website live in 48 hours — or 50% refund",
+    "Four ecommerce packages from ₹25,000. Website live in 48 hours or 50% refund until Diwali.",
+  kicker: "Ecommerce · Jaipur · Diwali offer",
+  h1: "Ecommerce website live in 48 hours — or 50% refund",
   outcome:
-    "₹25,000 single vendor · ₹35,000 multi-vendor · Website live in 48 hours after locked brief, or we refund 50%. Web + Android + iOS apps included in both packages.",
+    "₹25,000 website · ₹35,000 website + Android · ₹45,000 website + Android + iOS · ₹99,000 high-end with logistics + Android + iOS. Website live in 48 hours after locked brief, or we refund 50% (until Diwali, 8 Nov 2026).",
   intro:
-    "TheTriFusion in Jaipur builds complete ecommerce products for Indian sellers: grocery, fashion, electronics, and every store type. You get a customer website that we guarantee live in 48 hours once your brief and assets are ready — plus Android and iOS apps, admin, catalog, checkout, and Razorpay/UPI. Play Store and Apple Developer accounts stay in your name.",
-  metaTitle:
-    "Ecommerce from ₹25,000 | 48-Hour Launch | TheTriFusion",
+    "TheTriFusion in Jaipur builds ecommerce products for Indian sellers: grocery, fashion, electronics, and every store type. Pick the platforms you need — website only, website plus Android, or website plus Android and iOS. High-end adds courier logistics on top of both apps. Play Store and Apple Developer accounts stay in your name.",
+  metaTitle: "Ecommerce from ₹25,000 | 48-Hour Launch | TheTriFusion",
   metaDescription:
-    "Single vendor ₹25,000 and multi-vendor ₹35,000. Website live in 48 hours after a locked brief, or 50% refund. Web, Android, and iOS.",
+    "Ecommerce Website ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · High-End logistics ₹99,000. Live in 48 hours or 50% refund.",
   keywords:
-    "ecommerce website live in 48 hours, ecommerce 50% refund guarantee, single vendor ecommerce website India, multi vendor marketplace website 48 hours, ecommerce development company India, grocery ecommerce website, clothing ecommerce app, ecommerce web android ios package, online store live fast India, D2C ecommerce Jaipur, white label ecommerce website",
+    "ecommerce website live in 48 hours, ecommerce 50% refund guarantee, ecommerce website development India, ecommerce website Android app India, ecommerce web android ios package, high-end ecommerce logistics app, grocery ecommerce website, clothing ecommerce app, online store live fast India, D2C ecommerce Jaipur",
   whatsappMessage:
-    "Hi TriFusion, I want the ecommerce package — website live in 48 hours or 50% refund (web + Android + iOS).",
+    "Hi TriFusion, I want an ecommerce package — website live in 48 hours or 50% refund. Packages: Website ₹25,000 / + Android ₹35,000 / + Android + iOS ₹45,000 / High-End logistics ₹99,000.",
   projectType: "Ecommerce",
   leadSource: "ecommerce-development",
   heroImage: "/images/ecommerce/hero-storefront.png",
   heroImageAlt:
-    "Ecommerce website live in 48 hours with Android and iOS shopping apps by TheTriFusion",
+    "Ecommerce website live in 48 hours with optional Android and iOS shopping apps by TheTriFusion",
   trust: [
     "Website live in 48 hours or 50% refund",
-    "Single vendor ₹25,000 · Multi-vendor ₹35,000",
-    "Web + Android + iOS in both packages",
+    PACKAGE_PRICE_SUMMARY,
+    "Add Android, iOS, or logistics when you need them",
     "Razorpay / UPI checkout",
   ],
   stack: [
@@ -84,17 +86,68 @@ export const ecommercePage = {
 
 export const ecommercePackages = [
   {
-    id: "single-vendor",
-    name: "Single vendor",
+    id: "ecommerce-website",
+    name: "Ecommerce Website",
     price: 25000,
     priceLabel: "₹25,000",
-    badge: "Live in 48 hrs · or 50% refund",
+    badge: "Website only",
     popular: false,
     image: "/images/ecommerce/package-single-vendor.png",
-    imageAlt:
-      "Single vendor ecommerce storefront live fast on web and mobile — one shop, one catalog",
+    imageAlt: "Ecommerce website storefront with catalog, cart, and checkout",
     summary:
-      "Your own D2C or retail store. Website live in 48 hours after locked brief — or 50% refund. Customers also get Android and iOS apps.",
+      "Customer website with catalog, cart, checkout, and admin. Website live in 48 hours after locked brief — or 50% refund.",
+    includes: [
+      "Website live in 48 hours (or 50% refund)",
+      "Customer website (responsive)",
+      "Admin panel",
+      "Product catalog, categories, variants",
+      "Cart, checkout, Razorpay / UPI",
+      "Order management",
+      "Customer accounts",
+      "Banners and coupon codes",
+      "Basic on-page SEO",
+    ],
+    whatsappMessage:
+      "Hi TriFusion, I want Ecommerce Website at ₹25,000 — website live in 48 hours or 50% refund.",
+  },
+  {
+    id: "website-android",
+    name: "Ecommerce Website + Android App",
+    price: 35000,
+    priceLabel: "₹35,000",
+    badge: "Website + Android",
+    popular: false,
+    image: "/images/ecommerce/grocery.png",
+    imageAlt: "Ecommerce website with an Android shopping app",
+    summary:
+      "Everything in Ecommerce Website, plus a customer Android app. Website live in 48 hours after locked brief — or 50% refund.",
+    includes: [
+      "Website live in 48 hours (or 50% refund)",
+      "Customer website (responsive)",
+      "Android app",
+      "Admin panel",
+      "Product catalog, categories, variants",
+      "Cart, checkout, Razorpay / UPI",
+      "Order management",
+      "Customer accounts",
+      "Banners and coupon codes",
+      "Basic on-page SEO",
+      "Listing assets — we submit using your Play Store account",
+    ],
+    whatsappMessage:
+      "Hi TriFusion, I want Ecommerce Website + Android App at ₹35,000 — website live in 48 hours or 50% refund.",
+  },
+  {
+    id: "website-android-ios",
+    name: "Ecommerce Website + Android + iOS App",
+    price: 45000,
+    priceLabel: "₹45,000",
+    badge: "Most requested",
+    popular: true,
+    image: "/images/ecommerce/package-multi-vendor.png",
+    imageAlt: "Ecommerce website with Android and iOS shopping apps",
+    summary:
+      "Website plus customer Android and iOS apps. Website live in 48 hours after locked brief — or 50% refund.",
     includes: [
       "Website live in 48 hours (or 50% refund)",
       "Customer website (responsive)",
@@ -110,32 +163,38 @@ export const ecommercePackages = [
       "Listing assets — we submit using your store accounts",
     ],
     whatsappMessage:
-      "Hi TriFusion, I want Single Vendor ecommerce at ₹25,000 — website live in 48 hours or 50% refund (web + Android + iOS).",
+      "Hi TriFusion, I want Ecommerce Website + Android + iOS App at ₹45,000 — website live in 48 hours or 50% refund.",
   },
   {
-    id: "multi-vendor",
-    name: "Multi-vendor",
-    price: 35000,
-    priceLabel: "₹35,000",
-    badge: "Live in 48 hrs · or 50% refund",
-    popular: true,
-    image: "/images/ecommerce/package-multi-vendor.png",
+    id: "high-end-logistics",
+    name: "High-End Ecommerce with Logistics + Android + iOS App",
+    price: 99000,
+    priceLabel: "₹99,000",
+    badge: "Logistics + both apps",
+    popular: false,
+    image: "/images/ecommerce/auto.png",
     imageAlt:
-      "Multi-vendor marketplace website live in 48 hours with seller dashboards",
+      "High-end ecommerce with courier logistics plus Android and iOS apps",
     summary:
-      "Marketplace for many sellers. Website live in 48 hours after locked brief — or 50% refund. Same web + Android + iOS for shoppers, plus vendor tools.",
+      "Website, Android app, iOS app, and courier logistics (Shiprocket / Delhivery, tracking). Website live in 48 hours after locked brief — or 50% refund.",
     includes: [
       "Website live in 48 hours (or 50% refund)",
-      "Everything in Single vendor",
-      "Vendor registration and KYC",
-      "Vendor dashboard (orders, catalog, payouts)",
-      "Commission engine",
-      "Split catalog by seller",
-      "Admin commission and settlement reports",
-      "Web + Android + iOS for shoppers",
+      "Customer website (responsive)",
+      "Android app",
+      "iOS app",
+      "Courier / logistics integration (Shiprocket / Delhivery)",
+      "Shipment tracking",
+      "Admin panel",
+      "Product catalog, categories, variants",
+      "Cart, checkout, Razorpay / UPI",
+      "Order management",
+      "Customer accounts",
+      "Banners and coupon codes",
+      "Basic on-page SEO",
+      "Listing assets — we submit using your store accounts",
     ],
     whatsappMessage:
-      "Hi TriFusion, I want Multi-Vendor ecommerce at ₹35,000 — website live in 48 hours or 50% refund (web + Android + iOS marketplace).",
+      "Hi TriFusion, I want High-End Ecommerce with Logistics + Android + iOS App at ₹99,000 — website live in 48 hours or 50% refund.",
   },
 ];
 
@@ -232,86 +291,90 @@ export const ecommerceStoreTypes = [
     id: "handmade",
     name: "Handmade & local brands",
     description:
-      "Craft, ethnic wear, and regional makers — single shop or a multi-vendor artisan marketplace.",
+      "Craft, ethnic wear, and regional makers — your shop catalog or a marketplace scoped after discovery.",
     image: "/images/ecommerce/handmade.png",
     imageAlt: "Handmade and local brand ecommerce marketplace",
   },
 ];
 
-export const vendorComparison = [
+export const packageComparison = [
   {
-    feature: "Who sells",
-    single: "You — one brand, one catalog",
-    multi: "Many sellers under your marketplace",
+    feature: "Customer website",
+    values: ["Yes", "Yes", "Yes", "Yes"],
   },
   {
     feature: "48-hour live guarantee",
-    single: "Website live in 48 hrs or 50% refund",
-    multi: "Website live in 48 hrs or 50% refund",
+    values: [
+      "Website live in 48 hrs or 50% refund",
+      "Website live in 48 hrs or 50% refund",
+      "Website live in 48 hrs or 50% refund",
+      "Website live in 48 hrs or 50% refund",
+    ],
   },
   {
-    feature: "Customer apps",
-    single: "Web + Android + iOS",
-    multi: "Web + Android + iOS",
+    feature: "Android app",
+    values: ["—", "Included", "Included", "Included"],
   },
   {
-    feature: "Admin",
-    single: "Your store admin",
-    multi: "Super-admin plus vendor dashboards",
+    feature: "iOS app",
+    values: ["—", "—", "Included", "Included"],
   },
   {
-    feature: "Vendor KYC & signup",
-    single: "Not needed",
-    multi: "Included",
+    feature: "Courier / logistics",
+    values: ["—", "—", "—", "Shiprocket / Delhivery + tracking"],
   },
   {
-    feature: "Commissions & payouts",
-    single: "You keep 100% of sales (minus gateway fees)",
-    multi: "Commission engine and settlement reports",
-  },
-  {
-    feature: "Best for",
-    single: "D2C, kirana, boutique, clinic store",
-    multi: "City marketplace, multi-brand mall, artisan hub",
+    feature: "Admin, catalog, checkout",
+    values: ["Included", "Included", "Included", "Included"],
   },
   {
     feature: "Play Store / App Store accounts",
-    single: "You create — not in the package",
-    multi: "You create — not in the package",
+    values: [
+      "Not needed",
+      "You create Play Store",
+      "You create Play Store and App Store",
+      "You create Play Store and App Store",
+    ],
   },
   {
     feature: "Package",
-    single: "₹25,000",
-    multi: "₹35,000",
+    values: ["₹25,000", "₹35,000", "₹45,000", "₹99,000"],
   },
+];
+
+export const packageComparisonHeaders = [
+  "Ecommerce Website · ₹25,000",
+  "Website + Android · ₹35,000",
+  "Website + Android + iOS · ₹45,000",
+  "High-End + logistics · ₹99,000",
 ];
 
 export const includedItems = [
   "Website live in 48 hours after locked brief — or 50% refund",
   "UI/UX for storefront and admin",
   "Customer website",
-  "Android app (we build it)",
-  "iOS app (we build it)",
   "Product catalog, cart, and checkout",
   "Razorpay / UPI payment integration",
   "Order management",
-  "Listing assets and submission help — on your Play Store and App Store accounts",
+  "Android and iOS apps — on the packages that list them",
+  "Courier logistics — on the High-End package",
+  "Listing assets and submission help — on your Play Store and App Store accounts when apps are in the package",
 ];
 
 export const clientMustProvide = [
   {
     title: "Google Play (Android) developer account",
-    body: "You must create this in your company name and pay Google’s one-time fee (~$25). We cannot publish the Android app from our account. We guide you and then upload using access you give us.",
+    body: "Required when your package includes an Android app. You must create this in your company name and pay Google’s one-time fee (~$25). We cannot publish the Android app from our account. We guide you and then upload using access you give us.",
   },
   {
     title: "Apple Developer (iOS) account",
-    body: "You must enrol in the Apple Developer Program in your company name (~$99 / year, paid to Apple). We cannot publish the iOS app from our account. We guide you and then submit using access you give us.",
+    body: "Required when your package includes an iOS app. You must enrol in the Apple Developer Program in your company name (~$99 / year, paid to Apple). We cannot publish the iOS app from our account. We guide you and then submit using access you give us.",
   },
 ];
 
 export const notIncludedItems = [
-  "Google Play Developer account — you create and pay Google (~$25, one time)",
-  "Apple Developer account — you create and pay Apple (~$99 / year)",
+  "Google Play Developer account — you create and pay Google (~$25, one time) when the package includes Android",
+  "Apple Developer account — you create and pay Apple (~$99 / year) when the package includes iOS",
   "Domain name (you register, or we buy in your name)",
   "Hosting if you use your own cloud account",
   "Razorpay KYC — account stays in your business name",
@@ -323,27 +386,32 @@ export const ecommerceFaqs = [
   {
     question: "Is the website really live in 48 hours?",
     answer:
-      "Yes — for both single vendor and multi-vendor packages. The 48-hour clock starts after you provide the locked brief and required assets (logo, store name, product list or sample SKUs, brand notes, payment details) and we confirm in writing. “Live” means your ecommerce website is on a public URL with catalog, cart, checkout, and admin working.",
+      "Yes — on all four packages. The 48-hour clock starts after you provide the locked brief and required assets (logo, store name, product list or sample SKUs, brand notes, payment details) and we confirm in writing. “Live” means your ecommerce website is on a public URL with catalog, cart, checkout, and admin working.",
   },
   {
     question: "What if you miss the 48-hour deadline?",
     answer:
-      "You get a 50% refund of the package development fee paid to TheTriFusion. Claim in writing within 7 days of the missed deadline. Delays caused by missing assets, unpaid invoices, domain/DNS not ready, Razorpay KYC on your side, or third-party outages pause the clock.",
+      "You get a 50% refund of the package development fee paid to TheTriFusion. Claim in writing within 7 days of the missed deadline. This 50% refund offer runs until Diwali, 8 November 2026, 11:59 PM IST. Delays caused by missing assets, unpaid invoices, domain/DNS not ready, Razorpay KYC on your side, or third-party outages pause the clock.",
   },
   {
     question: "Does the 48-hour guarantee include Android and iOS apps?",
     answer:
-      "The 48-hour guarantee is for the ecommerce website go-live. We still build Android and iOS apps in both packages, but Play Store and App Store review times are controlled by Google and Apple and are not part of the 48-hour clock.",
+      "The 48-hour guarantee is for the ecommerce website go-live. Android and iOS apps are included only on the packages that list them. Play Store and App Store review times are controlled by Google and Apple and are not part of the 48-hour clock.",
   },
   {
-    question: "What is included in ₹25,000 and ₹35,000?",
+    question: "What are the four ecommerce packages?",
     answer:
-      "Both packages include the customer website (with 48-hour live guarantee), Android app, and iOS app, plus admin, catalog, cart, checkout, Razorpay/UPI, and launch support. ₹25,000 is single vendor. ₹35,000 is multi-vendor. Play Store and App Store developer accounts are not included — you create those yourself.",
+      "Ecommerce Website ₹25,000 (website only). Ecommerce Website + Android App ₹35,000. Ecommerce Website + Android + iOS App ₹45,000. High-End Ecommerce with Logistics + Android + iOS App ₹99,000 (courier integration and tracking plus both apps). Play Store and App Store developer accounts are not included — you create those yourself when the package includes apps.",
   },
   {
     question: "Do I pay extra for the Android or iOS app?",
     answer:
-      "No extra development fee to TheTriFusion for the three platforms. You do pay Google and Apple separately for developer accounts: Google Play (~$25 one time) and Apple Developer (~$99 / year). Those accounts must be in your name.",
+      "No extra development fee to TheTriFusion when the app is listed in the package you buy. Website-only is ₹25,000; add Android for ₹35,000; add Android and iOS for ₹45,000. You still pay Google and Apple separately for developer accounts: Google Play (~$25 one time) and Apple Developer (~$99 / year). Those accounts must be in your name.",
+  },
+  {
+    question: "What does the High-End logistics package include?",
+    answer:
+      "₹99,000 covers the customer website, Android app, iOS app, and courier logistics (Shiprocket / Delhivery with shipment tracking), plus admin, catalog, cart, checkout, and Razorpay/UPI. It does not include building your own delivery fleet.",
   },
   {
     question: "Can you build grocery, clothing, and other store types?",
@@ -351,14 +419,14 @@ export const ecommerceFaqs = [
       "Yes. The same packages cover grocery, clothing/fashion, electronics, food, pharmacy, furniture, jewelry, beauty, sports, books, auto parts, and handmade/local brands. Category trees and product fields are set to the store type you pick.",
   },
   {
-    question: "Single vendor or multi-vendor — which should I choose?",
+    question: "Do you still build multi-vendor marketplaces?",
     answer:
-      "Choose single vendor if you are the only seller. Choose multi-vendor if other shops will list on your platform and you take a commission. Both include the 48-hour website guarantee and web + Android + iOS.",
+      "Yes. Multi-vendor marketplaces (vendor KYC, commission engine, settlements) are scoped after discovery — they are not one of the four published packages. Start from the High-End logistics package if you need courier tracking plus both apps, or ask for a written marketplace quote.",
   },
   {
     question: "Who creates the Play Store and App Store accounts?",
     answer:
-      "You do. Google Play and Apple Developer accounts must be opened by the customer in their company name. We help you set them up, then publish using the access you grant.",
+      "You do, when your package includes apps. Google Play and Apple Developer accounts must be opened by the customer in their company name. We help you set them up, then publish using the access you grant.",
   },
   {
     question: "Is anything extra after I pay the package?",
@@ -371,6 +439,5 @@ export const ecommerceMenuItem = {
   href: ECOMMERCE_PATH,
   slug: "ecommerce-development",
   title: "Ecommerce Development",
-  shortDescription:
-    "Live in 48 hrs or 50% refund. Web + Android + iOS from ₹25,000.",
+  shortDescription: "Live in 48 hrs or 50% refund. Four packages from ₹25,000.",
 };

@@ -298,7 +298,11 @@ export function serviceSchema({
           priceCurrency: "INR",
           price: String(offer.price),
           availability: "https://schema.org/InStock",
-          validFrom: "2026-01-01",
+          validFrom: offer.validFrom || "2026-01-01",
+          ...(offer.validThrough ? { validThrough: offer.validThrough } : {}),
+          ...(offer.priceValidUntil
+            ? { priceValidUntil: offer.priceValidUntil }
+            : {}),
           url: offer.url ? absoluteSiteUrl(offer.url) : url,
         }))
       : [];
@@ -326,9 +330,26 @@ export function serviceSchema({
           },
         }
       : null;
+  const pricedBlock =
+    exactOfferNodes.length > 1
+      ? [
+          {
+            "@type": "AggregateOffer",
+            priceCurrency: "INR",
+            lowPrice: String(
+              Math.min(...pricedOffers.map((offer) => Number(offer.price)))
+            ),
+            highPrice: String(
+              Math.max(...pricedOffers.map((offer) => Number(offer.price)))
+            ),
+            offerCount: exactOfferNodes.length,
+            offers: exactOfferNodes,
+          },
+        ]
+      : exactOfferNodes;
   const priceOfferNodes = [
     ...(fromPriceOffer ? [fromPriceOffer] : []),
-    ...exactOfferNodes,
+    ...pricedBlock,
     ...extraOfferNodes,
   ];
 

@@ -55,7 +55,7 @@ export const SERVICE_MENU_GROUPS = [
         slug: "ecommerce-development",
         title: "Ecommerce Packages",
         shortDescription:
-          "Live in 48 hrs or 50% refund. From ₹25,000 — web + apps.",
+          "Live in 48 hrs or 50% refund. Four packages from ₹25,000.",
       },
     ],
   },

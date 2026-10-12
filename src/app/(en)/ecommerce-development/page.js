@@ -8,6 +8,7 @@ import {
 } from "lib/schema";
 import { buildMetadata } from "lib/seoConfig";
 import { absoluteSiteUrl } from "config/site";
+import { DIWALI_OFFER_DEADLINE_ISO } from "lib/diwaliOffer";
 import {
   ecommerceFaqs,
   ecommercePackages,
@@ -46,10 +47,12 @@ export default function RoutePage() {
           description: ecommercePage.metaDescription,
           path: PATH,
           pricedOffers: ecommercePackages.map((pkg) => ({
-            name: `${pkg.name} ecommerce — live in 48 hours or 50% refund`,
+            name: `${pkg.name} — live in 48 hours or 50% refund`,
             description: pkg.summary,
             price: pkg.price,
             url: `${PATH}#${pkg.id}`,
+            validThrough: DIWALI_OFFER_DEADLINE_ISO,
+            priceValidUntil: "2026-11-08",
           })),
           offers: ecommercePackages.map((pkg) => ({
             title: `${pkg.name} (${pkg.priceLabel})`,
@@ -76,6 +79,8 @@ export default function RoutePage() {
           url: absoluteSiteUrl(`${PATH}#guarantee`),
           priceCurrency: "INR",
           price: "25000",
+          priceValidUntil: "2026-11-08",
+          validThrough: DIWALI_OFFER_DEADLINE_ISO,
           availability: "https://schema.org/InStock",
           seller: {
             "@type": "Organization",

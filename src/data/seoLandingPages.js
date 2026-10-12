@@ -70,7 +70,7 @@ export const seoLandingPages = [
     h1: "Ecommerce Website Development Company in Jaipur, India",
     navLabel: "Ecommerce website development",
     metaDescription:
-      "Shopify, WooCommerce and custom ecommerce stores with Razorpay/UPI, Shiprocket and GST invoices. Built in Jaipur from ₹25,000; app add-on available.",
+      "Shopify, WooCommerce and custom ecommerce stores with Razorpay/UPI, Shiprocket and GST invoices. Built in Jaipur from ₹25,000; Android, iOS and logistics packages available.",
     primaryKeyword: "ecommerce website development company",
     secondaryKeywords: [
       "ecommerce website development company in India",
@@ -90,7 +90,7 @@ export const seoLandingPages = [
       { label: "Company", value: `TheTriFusion — Trifusion Infotech Pvt. Ltd., ${siteConfig.addressLine}` },
       { label: "Platforms", value: "Shopify, WooCommerce, and custom builds (Next.js, React, Node.js)" },
       { label: "Store types", value: "Single-vendor D2C stores, B2B / wholesale portals, multi-vendor marketplaces" },
-      { label: "Packages", value: "Single vendor ₹25,000 · Multi-vendor ₹35,000 (web + Android + iOS)" },
+      { label: "Packages", value: "Website ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · High-End logistics ₹99,000" },
       { label: "Custom builds", value: "Quoted after discovery; a typical ecommerce MVP takes 4–10 weeks" },
       { label: "Based in", value: "Jaipur, Rajasthan — remote delivery across India and worldwide" },
       { label: "Live store", value: "DailyConcepts India (dailyconceptsindia.com)" },
@@ -112,14 +112,16 @@ export const seoLandingPages = [
       },
       {
         title: "How much does ecommerce website development cost in India?",
-        body: "On this site, our packaged single-vendor ecommerce build starts at ₹25,000 and a multi-vendor marketplace package starts at ₹35,000, both including web plus Android and iOS apps. Custom work — B2B pricing tiers, multi-warehouse inventory or ERP integration — is quoted per module after discovery. Catalog size, integrations and design depth drive the final number.",
+        body: "On this site, packaged ecommerce starts at ₹25,000 for a customer website. Add Android for ₹35,000, Android and iOS for ₹45,000, or high-end courier logistics plus both apps for ₹99,000. Custom work — B2B pricing tiers, multi-vendor marketplaces, multi-warehouse inventory or ERP integration — is quoted per module after discovery. Catalog size, integrations and design depth drive the final number.",
         table: {
           caption: "Ecommerce pricing published by TheTriFusion",
           columns: ["Option", "Price", "What it covers"],
           rows: [
-            ["Single-vendor package", "₹25,000", "Your own D2C or retail store: website plus Android and iOS apps, catalog, cart, checkout, admin. Website live in 48 hours after a locked brief, or 50% refund."],
-            ["Multi-vendor package", "₹35,000", "Marketplace for many sellers with vendor dashboards, plus the same web, Android and iOS apps for shoppers. Same 48-hour website guarantee."],
-            ["Custom / B2B / ERP build", "Quoted after discovery", "Bespoke checkout, tiered B2B pricing, multi-warehouse stock, POS or ERP sync — scoped per module."],
+            ["Ecommerce Website", "₹25,000", "Customer website with catalog, cart, checkout and admin. Website live in 48 hours after a locked brief, or 50% refund (until Diwali, 8 Nov 2026)."],
+            ["Ecommerce Website + Android App", "₹35,000", "Website plus a customer Android app. Same 48-hour website guarantee."],
+            ["Ecommerce Website + Android + iOS App", "₹45,000", "Website plus customer Android and iOS apps. Same 48-hour website guarantee."],
+            ["High-End Ecommerce with Logistics + Android + iOS App", "₹99,000", "Website, both apps, and courier logistics (Shiprocket / Delhivery with tracking). Same 48-hour website guarantee."],
+            ["Custom / B2B / marketplace / ERP build", "Quoted after discovery", "Bespoke checkout, tiered B2B pricing, multi-vendor marketplaces, multi-warehouse stock, POS or ERP sync — scoped per module."],
           ],
         },
         links: [
@@ -154,7 +156,7 @@ export const seoLandingPages = [
           rows: [
             ["What it is", "A store on your domain, built in Jaipur", "A listing on someone else's marketplace", "You (or a freelancer) using Shopify's theme"],
             ["Payments & shipping", "Razorpay, Cashfree, PayU, CCAvenue, Stripe, UPI; Shiprocket, Delhivery", "The marketplace's checkout", "Shopify Payments / apps you install"],
-            ["Starting price we publish", "₹25,000 single-vendor; ₹35,000 multi-vendor (web + Android + iOS)", "Marketplace fees — not our product", "Shopify's plan plus apps"],
+            ["Starting price we publish", "₹25,000 website; ₹35,000 + Android; ₹45,000 + Android + iOS; ₹99,000 high-end logistics + both apps", "Marketplace fees — not our product", "Shopify's plan plus apps"],
             ["You own", "The store, the code we agreed, the domain", "The listing, not the marketplace", "The Shopify account"],
           ],
         },
@@ -184,7 +186,7 @@ export const seoLandingPages = [
       },
       {
         title: "How long does it take to build an ecommerce website?",
-        body: "Our single-vendor and multi-vendor packages put the website live within 48 hours after you share a locked brief and the required assets. A custom ecommerce MVP typically takes 4–10 weeks when requirements and product content are ready. Marketplaces and heavy integrations take longer and are delivered in phases.",
+        body: "Our four published packages put the website live within 48 hours after you share a locked brief and the required assets. A custom ecommerce MVP typically takes 4–10 weeks when requirements and product content are ready. Marketplaces and heavy integrations take longer and are delivered in phases.",
       },
       {
         title: "Do you build ecommerce websites for clients outside India?",
@@ -245,8 +247,10 @@ export const seoLandingPages = [
         { title: "Multi-vendor marketplace development", description: "Marketplaces with vendor dashboards, commissions and payouts." },
       ],
       pricedOffers: [
-        { name: "Single-vendor ecommerce package (web + Android + iOS)", description: "Website live in 48 hours after locked brief, or 50% refund.", price: 25000, url: "/ecommerce-development#single-vendor" },
-        { name: "Multi-vendor marketplace package (web + Android + iOS)", description: "Website live in 48 hours after locked brief, or 50% refund.", price: 35000, url: "/ecommerce-development#multi-vendor" },
+        { name: "Ecommerce Website", description: "Customer website. Live in 48 hours after locked brief, or 50% refund.", price: 25000, url: "/ecommerce-development#ecommerce-website", validThrough: "2026-11-08T23:59:59+05:30", priceValidUntil: "2026-11-08" },
+        { name: "Ecommerce Website + Android App", description: "Website plus Android app. Live in 48 hours after locked brief, or 50% refund.", price: 35000, url: "/ecommerce-development#website-android", validThrough: "2026-11-08T23:59:59+05:30", priceValidUntil: "2026-11-08" },
+        { name: "Ecommerce Website + Android + iOS App", description: "Website plus Android and iOS apps. Live in 48 hours after locked brief, or 50% refund.", price: 45000, url: "/ecommerce-development#website-android-ios", validThrough: "2026-11-08T23:59:59+05:30", priceValidUntil: "2026-11-08" },
+        { name: "High-End Ecommerce with Logistics + Android + iOS App", description: "Website, both apps, and courier logistics. Live in 48 hours after locked brief, or 50% refund.", price: 99000, url: "/ecommerce-development#high-end-logistics", validThrough: "2026-11-08T23:59:59+05:30", priceValidUntil: "2026-11-08" },
       ],
     },
     faqs: [
@@ -258,7 +262,7 @@ export const seoLandingPages = [
       {
         question: "How much does an ecommerce website cost in India?",
         answer:
-          "Our packaged single-vendor ecommerce build starts at ₹25,000 and the multi-vendor marketplace package at ₹35,000, both with web, Android and iOS apps. Custom builds with B2B pricing, multi-warehouse stock or ERP integration are quoted per module after discovery, because scope varies widely between businesses.",
+          "Packaged ecommerce starts at ₹25,000 for a website, ₹35,000 with Android, ₹45,000 with Android and iOS, and ₹99,000 for high-end logistics plus both apps. Custom builds with B2B pricing, multi-vendor marketplaces, multi-warehouse stock or ERP integration are quoted per module after discovery, because scope varies widely between businesses.",
       },
       {
         question: "How long does it take to develop an ecommerce website?",
@@ -288,7 +292,7 @@ export const seoLandingPages = [
       {
         question: "Can you build a multi-vendor marketplace like Amazon or Flipkart?",
         answer:
-          "We build multi-vendor marketplace platforms with independent vendor portals, commission splits, vendor payout reports, product moderation and an admin console. Our multi-vendor package starts at ₹35,000; larger marketplace features are scoped and delivered in phases after the first launch.",
+          "We build multi-vendor marketplace platforms with independent vendor portals, commission splits, vendor payout reports, product moderation and an admin console. Multi-vendor marketplaces are quoted after discovery; published packages start at ₹25,000 for a website and go to ₹99,000 for high-end logistics plus Android and iOS. Larger marketplace features are delivered in phases after the first launch.",
       },
       {
         question: "Can I sell on ONDC?",
@@ -336,7 +340,7 @@ export const seoLandingPages = [
       {
         href: "/ecommerce-development",
         label:
-          "Ecommerce packages: single vendor ₹25,000 · multi-vendor ₹35,000 — website live in 48 hours or 50% refund",
+          "Ecommerce packages: Website ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · High-End logistics ₹99,000 — website live in 48 hours or 50% refund",
       },
       {
         href: "/blog/ecommerce-website-development-cost-india",
@@ -1030,7 +1034,7 @@ export const seoLandingPages = [
       },
       {
         title: "Ecommerce and lead engines",
-        body: "Need a store fast? Our ecommerce packages start at ₹25,000 (single vendor) / ₹35,000 (multi-vendor) with website live in 48 hours after a locked brief — or 50% refund. For custom software roadmaps, we scope features around leads, ops, and measurable outcomes.",
+        body: "Need a store fast? Our ecommerce packages start at ₹25,000 (website) and go to ₹99,000 (high-end logistics + Android + iOS), with website live in 48 hours after a locked brief — or 50% refund until Diwali. For custom software roadmaps, we scope features around leads, ops, and measurable outcomes.",
       },
       {
         title: "Why Jaipur SMEs hire us",

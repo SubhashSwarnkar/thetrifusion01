@@ -2,6 +2,8 @@ import Header from "parts/Header";
 import Hero from "parts/Hero";
 import Footer from "parts/Footer";
 import BrandTrustStrip from "components/BrandTrustStrip";
+import DiwaliOfferCountdown from "components/DiwaliOfferCountdown";
+import { PACKAGE_PRICE_SUMMARY } from "data/ecommerceDevelopmentData";
 import Link from "next/link";
 
 export default function LandingPage({ trending, below }) {
@@ -13,38 +15,43 @@ export default function LandingPage({ trending, below }) {
           <Hero />
           <BrandTrustStrip />
 
-          <section id="home-ecommerce-offer" className="container mx-auto px-5 py-10">
-            <div className="rounded-2xl border border-theme-purple/20 bg-gradient-to-br from-light-theme-purple/50 to-white p-6 sm:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-5 shadow-sm">
-              <div className="max-w-2xl">
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-theme-purple mb-2">
-                  Ecommerce offer
-                </p>
-                <h2 className="text-2xl sm:text-3xl font-bold text-theme-blue mb-2">
-                  Ecommerce website live in 48 hours — or 50% refund
-                </h2>
-                <p className="text-gray-600 font-light">
-                  Single vendor from ₹25,000 · Multi-vendor from ₹35,000 · web + Android + iOS framing · Jaipur team.
-                </p>
-                <p className="mt-2 text-sm text-gray-600">
-                  Need Shopify, WooCommerce, B2B or a custom marketplace?{" "}
-                  <Link
-                    href="/solutions/ecommerce-website-development"
-                    prefetch={false}
-                    className="font-semibold text-theme-purple underline-offset-2 hover:underline"
-                  >
-                    Ecommerce website development
-                  </Link>
-                </p>
+            <DiwaliOfferCountdown
+              id="home-ecommerce-offer"
+              className="container mx-auto px-5 py-10"
+            >
+            <div className="rounded-2xl border border-theme-purple/20 bg-gradient-to-br from-light-theme-purple/50 to-white p-6 sm:p-8 shadow-sm">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+                <div className="max-w-2xl">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-theme-purple mb-2">
+                    Ecommerce offer
+                  </p>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-theme-blue mb-2">
+                    Ecommerce website live in 48 hours — or 50% refund
+                  </h2>
+                  <p className="text-gray-600 font-light">
+                    {PACKAGE_PRICE_SUMMARY} · Jaipur team.
+                  </p>
+                  <p className="mt-2 text-sm text-gray-600">
+                    Need Shopify, WooCommerce, B2B or a custom marketplace?{" "}
+                    <Link
+                      href="/solutions/ecommerce-website-development"
+                      prefetch={false}
+                      className="font-semibold text-theme-purple underline-offset-2 hover:underline"
+                    >
+                      Ecommerce website development
+                    </Link>
+                  </p>
+                </div>
+                <Link
+                  href="/ecommerce-development"
+                  prefetch={false}
+                  className="inline-flex items-center justify-center shrink-0 px-7 py-3.5 bg-theme-purple text-white rounded-full font-bold shadow-lg shadow-theme-purple/25 hover:scale-[1.02] transition-transform"
+                >
+                  See ecommerce packages
+                </Link>
               </div>
-              <Link
-                href="/ecommerce-development"
-                prefetch={false}
-                className="inline-flex items-center justify-center shrink-0 px-7 py-3.5 bg-theme-purple text-white rounded-full font-bold shadow-lg shadow-theme-purple/25 hover:scale-[1.02] transition-transform"
-              >
-                See ecommerce packages
-              </Link>
             </div>
-          </section>
+            </DiwaliOfferCountdown>
 
           <section id="home-explore-hubs" className="container mx-auto px-5 pb-6">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">

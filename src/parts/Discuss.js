@@ -27,7 +27,7 @@ export default function Discuss() {
             href="/ecommerce-development"
             className="underline font-semibold text-yellow-200 hover:text-white"
           >
-            ecommerce live in 48 hours from ₹25,000
+            ecommerce packages from ₹25,000 (website live in 48 hours)
           </a>
           .
         </p>

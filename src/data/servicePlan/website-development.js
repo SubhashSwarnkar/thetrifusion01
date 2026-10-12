@@ -60,7 +60,7 @@ export default {
           },
           {
             label: "Ecommerce store",
-            cells: ["From ₹25,000 single-vendor, ₹35,000 multi-vendor", "See ecommerce website development"],
+            cells: ["₹25,000 website · ₹35,000 + Android · ₹45,000 + Android + iOS · ₹99,000 high-end logistics", "See ecommerce website development"],
           },
         ],
       },

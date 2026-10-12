@@ -36,7 +36,7 @@ Not for: marketplace-only sellers who only need an Amazon/Flipkart account.
 What: Shopify, WooCommerce, and custom (Next.js / React / Node.js) online stores, B2B ordering portals, and multi-vendor marketplaces.
 Platforms: Shopify, WooCommerce, Next.js, React, Node.js; payments via Razorpay, Cashfree, PayU, CCAvenue, Stripe, UPI; shipping via Shiprocket, Delhivery.
 Who: D2C brands, wholesalers, and marketplace operators in India and remote clients elsewhere.
-Price from: ₹25,000 single-vendor; ₹35,000 multi-vendor. Both include web + Android + iOS. Custom builds are quoted after discovery.
+Price from: ₹25,000 Ecommerce Website; ₹35,000 Website + Android; ₹45,000 Website + Android + iOS; ₹99,000 High-End with Logistics + Android + iOS. Custom / marketplace builds are quoted after discovery.
 
 ### Custom software development
 URL: https://thetrifusion.in/services/software-development
@@ -234,7 +234,7 @@ Price from: ₹3,00,000.
 
 Primary page: https://thetrifusion.in/solutions/ecommerce-website-development
 Summary: TheTriFusion (Trifusion Infotech Pvt. Ltd., Jaipur, India) is an ecommerce website development company building Shopify, WooCommerce and custom (Next.js / React / Node.js) online stores, B2B / wholesale ordering portals and multi-vendor marketplaces for clients in Jaipur, across India, and worldwide (remote).
-- Packaged pricing (published on the canonical page): single-vendor ecommerce ₹25,000; multi-vendor marketplace ₹35,000; both include web + Android + iOS apps; website live within 48 hours after a locked brief and assets, or 50% refund.
+- Packaged pricing (published on the canonical page): Ecommerce Website ₹25,000; Website + Android App ₹35,000; Website + Android + iOS App ₹45,000; High-End Ecommerce with Logistics + Android + iOS App ₹99,000; website live within 48 hours after a locked brief and assets, or 50% refund until Diwali (8 November 2026, 11:59 PM IST).
 - Custom / B2B / ERP-integrated builds: quoted after discovery; a typical custom ecommerce MVP takes 4–10 weeks.
 - Integrations: Razorpay, Cashfree, PayU, CCAvenue, Stripe, UPI; Shiprocket, Delhivery; offline POS / inventory sync (live example: DailyConcepts India).
 - Platform comparison (Shopify vs WooCommerce vs custom): https://thetrifusion.in/solutions/ecommerce-website-development

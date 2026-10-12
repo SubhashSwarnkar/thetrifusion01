@@ -46,7 +46,7 @@ export default function SolutionsHubPage() {
                 href="/ecommerce-development"
                 className="inline-flex items-center px-7 py-3.5 bg-theme-purple text-white rounded-full font-bold shadow-lg shadow-theme-purple/20 hover:scale-[1.02] transition-transform"
               >
-                Ecommerce from ₹25,000
+                Ecommerce from ₹25,000 to ₹99,000
               </Link>
               <Link
                 href="/solutions/ecommerce-website-development"
