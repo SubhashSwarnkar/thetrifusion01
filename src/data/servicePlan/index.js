@@ -4,8 +4,10 @@
  */
 import softwareDevelopment from "./software-development.js";
 import devops from "./devops.js";
+import websiteDevelopment from "./website-development.js";
 
 export const servicePlanContent = {
   "software-development": softwareDevelopment,
   "devops": devops,
+  "website-development": websiteDevelopment,
 };
