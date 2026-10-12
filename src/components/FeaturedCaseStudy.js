@@ -44,6 +44,8 @@ export default function FeaturedCaseStudy() {
             <Image
               src={PlugOneImg}
               alt="PlugOne EV charging platform live product"
+              width={800}
+              height={520}
               className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
               sizes="(max-width: 1024px) 100vw, 50vw"
               priority={false}

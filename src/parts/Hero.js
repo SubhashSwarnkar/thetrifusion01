@@ -5,12 +5,6 @@ import HeroVideo from "components/HeroVideo";
 import { siteConfig } from "config/site";
 import { heroCoreGroups } from "data/heroCoreServices";
 
-const chipClassName =
-  "inline-flex shrink-0 items-center whitespace-nowrap rounded-full border border-gray-100 bg-gray-50 px-3 py-1.5 text-xs text-gray-600 transition-colors hover:border-theme-purple/40 hover:bg-white hover:text-theme-purple focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-purple";
-
-const highlightChipClassName =
-  "inline-flex shrink-0 items-center whitespace-nowrap rounded-full border border-theme-purple bg-theme-purple px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition-colors hover:bg-dark-theme-purple focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-purple";
-
 const heroServices = heroCoreGroups.flatMap((group) => group.items);
 const rowSplit = Math.ceil(heroServices.length / 2);
 const serviceRows = [
@@ -34,7 +28,7 @@ function ServiceChipList({ items, hidden = false }) {
             prefetch={false}
             href={chip.href}
             tabIndex={hidden ? -1 : undefined}
-            className={chip.highlight ? highlightChipClassName : chipClassName}
+            className="tf-service-chip"
           >
             {chip.label}
           </Link>

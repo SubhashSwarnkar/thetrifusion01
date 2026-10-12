@@ -315,10 +315,10 @@ export default function LeadPopup() {
         aria-modal="true"
         aria-labelledby="tf-lead-title"
         tabIndex={-1}
-        className="tf-lead-popup flex flex-col overflow-hidden bg-white text-left shadow-2xl border border-gray-100 rounded-t-2xl sm:rounded-3xl focus:outline-none focus-visible:ring-2 focus-visible:ring-theme-purple"
+        className="tf-lead-popup flex min-h-0 flex-col overflow-hidden bg-white text-left shadow-2xl border border-gray-100 rounded-t-2xl sm:rounded-3xl focus:outline-none focus-visible:ring-2 focus-visible:ring-theme-purple"
       >
         <div className="h-1 w-full shrink-0 bg-gradient-to-r from-theme-purple via-theme-cyan to-theme-pink" />
-        <div className="flex items-start gap-2 px-4 pt-3 pb-2 shrink-0">
+        <div className="flex items-start gap-2 px-4 pt-3 pb-2 shrink-0 border-b border-gray-100">
           <h2
             id="tf-lead-title"
             className="flex-1 text-sm sm:text-base font-black text-theme-blue leading-snug"
@@ -344,137 +344,141 @@ export default function LeadPopup() {
           <form
             onSubmit={onSubmit}
             noValidate
-            className="overflow-y-auto px-4 pb-3 space-y-2"
+            className="flex min-h-0 flex-1 flex-col"
           >
-            <div aria-hidden="true" className="sr-only">
-              <label htmlFor="tf-lead-website">Website</label>
-              <input
-                id="tf-lead-website"
-                name="website"
-                type="text"
-                tabIndex={-1}
-                autoComplete="off"
-                value={fields.website}
-                onChange={onChange}
-              />
+            <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 pb-2 space-y-2.5">
+              <div aria-hidden="true" className="sr-only">
+                <label htmlFor="tf-lead-website">Website</label>
+                <input
+                  id="tf-lead-website"
+                  name="website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={fields.website}
+                  onChange={onChange}
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="tf-lead-name"
+                  className="block text-[11px] font-semibold text-gray-500 mb-1"
+                >
+                  Name
+                </label>
+                <input
+                  id="tf-lead-name"
+                  name="name"
+                  type="text"
+                  autoComplete="name"
+                  required
+                  aria-required="true"
+                  value={fields.name}
+                  onChange={onChange}
+                  disabled={submitting}
+                  className="w-full px-3 py-2.5 rounded-xl border border-gray-200 bg-white text-base sm:text-sm text-theme-blue font-medium focus:outline-none focus:ring-2 focus:ring-theme-purple/40"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="tf-lead-contact"
+                  className="block text-[11px] font-semibold text-gray-500 mb-1"
+                >
+                  Phone or Email
+                </label>
+                <input
+                  id="tf-lead-contact"
+                  name="contact"
+                  type="text"
+                  autoComplete="on"
+                  required
+                  aria-required="true"
+                  aria-invalid={error.startsWith("Enter a valid") ? true : undefined}
+                  value={fields.contact}
+                  onChange={onChange}
+                  disabled={submitting}
+                  className="w-full px-3 py-2.5 rounded-xl border border-gray-200 bg-white text-base sm:text-sm text-theme-blue font-medium focus:outline-none focus:ring-2 focus:ring-theme-purple/40"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="tf-lead-need"
+                  className="block text-[11px] font-semibold text-gray-500 mb-1"
+                >
+                  What do you need?
+                </label>
+                <select
+                  id="tf-lead-need"
+                  name="need"
+                  required
+                  aria-required="true"
+                  value={fields.need}
+                  onChange={onChange}
+                  disabled={submitting}
+                  className="w-full px-3 py-2.5 rounded-xl border border-gray-200 bg-white text-base sm:text-sm text-theme-blue font-medium focus:outline-none focus:ring-2 focus:ring-theme-purple/40"
+                >
+                  <option value="">Select one</option>
+                  {NEED_OPTIONS.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {error ? (
+                <p
+                  ref={errorRef}
+                  tabIndex={-1}
+                  role="alert"
+                  className="text-xs text-red-600 focus:outline-none"
+                >
+                  {error}
+                </p>
+              ) : null}
             </div>
 
-            <div>
-              <label
-                htmlFor="tf-lead-name"
-                className="block text-[11px] font-semibold text-gray-500 mb-1"
-              >
-                Name
-              </label>
-              <input
-                id="tf-lead-name"
-                name="name"
-                type="text"
-                autoComplete="name"
-                required
-                aria-required="true"
-                value={fields.name}
-                onChange={onChange}
+            <div className="shrink-0 border-t border-gray-100 bg-white px-4 pt-2.5 pb-3">
+              <button
+                type="submit"
                 disabled={submitting}
-                className="w-full px-3 py-2 rounded-xl border border-gray-200 bg-white text-base sm:text-sm text-theme-blue font-medium focus:outline-none focus:ring-2 focus:ring-theme-purple/40"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="tf-lead-contact"
-                className="block text-[11px] font-semibold text-gray-500 mb-1"
+                className="w-full py-3 rounded-full bg-theme-purple text-white text-sm font-bold shadow-lg shadow-theme-purple/25 hover:bg-dark-theme-purple disabled:opacity-60 transition-colors"
               >
-                Phone or Email
-              </label>
-              <input
-                id="tf-lead-contact"
-                name="contact"
-                type="text"
-                autoComplete="on"
-                required
-                aria-required="true"
-                aria-invalid={error.startsWith("Enter a valid") ? true : undefined}
-                value={fields.contact}
-                onChange={onChange}
-                disabled={submitting}
-                className="w-full px-3 py-2 rounded-xl border border-gray-200 bg-white text-base sm:text-sm text-theme-blue font-medium focus:outline-none focus:ring-2 focus:ring-theme-purple/40"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="tf-lead-need"
-                className="block text-[11px] font-semibold text-gray-500 mb-1"
+                {submitting ? "Sending..." : "Get a free quote"}
+              </button>
+              <button
+                type="button"
+                onClick={closePopup}
+                className="w-full py-1.5 text-sm text-gray-500 hover:text-theme-blue"
               >
-                What do you need?
-              </label>
-              <select
-                id="tf-lead-need"
-                name="need"
-                required
-                aria-required="true"
-                value={fields.need}
-                onChange={onChange}
-                disabled={submitting}
-                className="w-full px-3 py-2 rounded-xl border border-gray-200 bg-white text-base sm:text-sm text-theme-blue font-medium focus:outline-none focus:ring-2 focus:ring-theme-purple/40"
-              >
-                <option value="">Select one</option>
-                {NEED_OPTIONS.map((option) => (
-                  <option key={option} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {error ? (
-              <p
-                ref={errorRef}
-                tabIndex={-1}
-                role="alert"
-                className="text-xs text-red-600 focus:outline-none"
-              >
-                {error}
+                No thanks
+              </button>
+              <p className="text-[11px] leading-snug text-gray-500 text-center">
+                We use this only to reply to your quote.{" "}
+                <Link
+                  href="/privacy"
+                  onClick={(event) => {
+                    if (
+                      event.metaKey ||
+                      event.ctrlKey ||
+                      event.shiftKey ||
+                      event.altKey ||
+                      event.button !== 0
+                    ) {
+                      return;
+                    }
+                    retiredRef.current = true;
+                    setOpen(false);
+                  }}
+                  className="underline text-theme-purple"
+                >
+                  Privacy
+                </Link>
               </p>
-            ) : null}
-
-            <button
-              type="submit"
-              disabled={submitting}
-              className="w-full py-2.5 rounded-full bg-theme-purple text-white text-sm font-bold shadow-lg shadow-theme-purple/25 hover:bg-dark-theme-purple disabled:opacity-60 transition-colors"
-            >
-              {submitting ? "Sending..." : "Get a free quote"}
-            </button>
-            <button
-              type="button"
-              onClick={closePopup}
-              className="w-full py-1.5 text-sm text-gray-500 hover:text-theme-blue"
-            >
-              No thanks
-            </button>
-            <p className="text-[11px] leading-snug text-gray-500 text-center">
-              We use this only to reply to your quote.{" "}
-              <Link
-                href="/privacy"
-                onClick={(event) => {
-                  if (
-                    event.metaKey ||
-                    event.ctrlKey ||
-                    event.shiftKey ||
-                    event.altKey ||
-                    event.button !== 0
-                  ) {
-                    return;
-                  }
-                  retiredRef.current = true;
-                  setOpen(false);
-                }}
-                className="underline text-theme-purple"
-              >
-                Privacy
-              </Link>
-            </p>
+            </div>
           </form>
         )}
       </div>

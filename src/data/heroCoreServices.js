@@ -23,14 +23,6 @@ const ADDITIONAL_OFFERS = {
   ],
 };
 
-/** Commercial anchors already emphasized on the homepage. */
-const HIGHLIGHT_SLUGS = new Set([
-  "website-development",
-  "mobile-app-development",
-  "ecommerce-website-development",
-  "ecommerce-development",
-]);
-
 function offersFromMenu() {
   const bySlug = new Map(serviceNav.map((item) => [item.slug, item]));
 
@@ -42,7 +34,6 @@ function offersFromMenu() {
         slug: extra.slug,
         label: extra.title,
         href: extra.href,
-        highlight: HIGHLIGHT_SLUGS.has(extra.slug),
       });
     }
 
@@ -53,15 +44,11 @@ function offersFromMenu() {
         slug: service.slug,
         label: service.title,
         href: `/services/${service.slug}`,
-        highlight: HIGHLIGHT_SLUGS.has(service.slug),
       });
     }
 
     for (const extra of ADDITIONAL_OFFERS[group.heading] || []) {
-      items.push({
-        ...extra,
-        highlight: HIGHLIGHT_SLUGS.has(extra.slug),
-      });
+      items.push({ ...extra });
     }
 
     return { heading: group.heading, items };

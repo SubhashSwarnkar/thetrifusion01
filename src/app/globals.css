@@ -381,40 +381,38 @@ html.tf-ads-on .tf-float-br.tf-float-above-bar {
 }
 
 /*
- * Lead popup. Mobile sheet is at most 40vh and sits above the anchor ad.
- * Desktop card sits above the WhatsApp button (bottom-right).
- * While open, corner buttons move above the sheet so they are not covered.
+ * Lead popup. Mobile is a full bottom sheet so Name, contact, need, and
+ * submit all fit. Overlay sits above WhatsApp. Desktop stays a corner card.
  */
 .tf-lead-root {
   position: fixed;
   inset: 0;
-  z-index: 100;
+  z-index: 130;
   pointer-events: none;
 }
 
 .tf-lead-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(21, 44, 91, 0.22);
+  background: rgba(21, 44, 91, 0.45);
   pointer-events: auto;
 }
 
 .tf-lead-popup {
   position: fixed;
-  z-index: 101;
+  z-index: 131;
   pointer-events: auto;
   left: 0;
   right: 0;
   bottom: 0;
   width: 100%;
-  max-height: 40vh;
-  max-height: 40dvh;
+  display: flex;
+  flex-direction: column;
+  max-height: min(
+    92dvh,
+    calc(100dvh - env(safe-area-inset-top, 0px) - 0.5rem)
+  );
   padding-bottom: env(safe-area-inset-bottom, 0px);
-}
-
-html.tf-ads-on .tf-lead-popup {
-  bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
-  padding-bottom: 0;
 }
 
 @media (min-width: 640px) {
@@ -434,19 +432,18 @@ html.tf-ads-on .tf-lead-popup {
 }
 
 @media (max-width: 639px) {
+  html.tf-lead-open,
+  html.tf-lead-open body {
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
+  html.tf-lead-open .tf-wa-dock,
   html.tf-lead-open .tf-float-br,
   html.tf-lead-open .tf-float-bl,
   html.tf-lead-open .tf-float-br.tf-float-above-bar {
-    bottom: calc(var(--tf-lead-popup-height, 40dvh) + 0.75rem);
-  }
-
-  html.tf-ads-on.tf-lead-open .tf-float-br,
-  html.tf-ads-on.tf-lead-open .tf-float-bl,
-  html.tf-ads-on.tf-lead-open .tf-float-br.tf-float-above-bar {
-    bottom: calc(
-      var(--tf-lead-popup-height, 40dvh) + 5.5rem + 0.75rem +
-        env(safe-area-inset-bottom, 0px)
-    );
+    visibility: hidden;
+    pointer-events: none;
   }
 }
 
@@ -683,6 +680,120 @@ html.tf-wa-keyboard .tf-wa-send {
 .tf-service-strip:hover .tf-services-marquee,
 .tf-service-strip:focus-within .tf-services-marquee {
   animation-play-state: paused;
+}
+
+.tf-service-chip {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+  border-radius: 999px;
+  border: 1px solid rgba(102, 16, 242, 0.18);
+  background: #fff;
+  padding: 0.5rem 0.95rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  color: #152c5b;
+  box-shadow: 0 1px 2px rgba(21, 44, 91, 0.06);
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.tf-service-chip:link,
+.tf-service-chip:visited {
+  color: #152c5b;
+  text-decoration: none;
+}
+
+.tf-service-chip::before {
+  content: "";
+  width: 0.4rem;
+  height: 0.4rem;
+  flex-shrink: 0;
+  border-radius: 999px;
+  background: #6610f2;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.tf-service-chip::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    110deg,
+    transparent 28%,
+    rgba(255, 255, 255, 0.5) 48%,
+    transparent 68%
+  );
+  transform: translateX(-130%);
+}
+
+.tf-service-chip:hover,
+.tf-service-chip:focus-visible {
+  color: #fff;
+  background: #6610f2;
+  border-color: #6610f2;
+  transform: translateY(-2px) scale(1.045);
+  box-shadow: 0 10px 22px rgba(102, 16, 242, 0.28);
+  outline: none;
+}
+
+.tf-service-chip:hover:visited,
+.tf-service-chip:focus-visible:visited {
+  color: #fff;
+}
+
+.tf-service-chip:hover::before,
+.tf-service-chip:focus-visible::before {
+  background: #fff;
+  transform: scale(1.15);
+}
+
+.tf-service-chip:hover::after,
+.tf-service-chip:focus-visible::after {
+  animation: tf-chip-shine 0.65s ease-out;
+}
+
+.tf-service-chip:focus-visible {
+  outline: 2px solid #6610f2;
+  outline-offset: 3px;
+}
+
+.tf-service-chip:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 4px 10px rgba(102, 16, 242, 0.2);
+}
+
+@keyframes tf-chip-shine {
+  to {
+    transform: translateX(130%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tf-service-chip,
+  .tf-service-chip::before,
+  .tf-service-chip::after {
+    transition: none;
+    animation: none !important;
+  }
+
+  .tf-service-chip:hover,
+  .tf-service-chip:focus-visible,
+  .tf-service-chip:active {
+    transform: none;
+  }
 }
 
 @keyframes tf-wa-in {
