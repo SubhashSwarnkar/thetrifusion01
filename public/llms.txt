@@ -35,6 +35,7 @@ What: Business portals, CRM/ERP modules, APIs, and admin tools scoped to a workf
 Platforms: React, Node.js, Python, Java, PostgreSQL, MongoDB.
 Who: Indian SMEs replacing spreadsheet operations.
 Price from: ₹1,00,000 for a starter MVP shown on the page.
+- Playbook: webhook reliability and idempotency for SaaS: https://thetrifusion.in/blog/webhook-reliability-idempotency-playbook-saas
 
 ### Website development
 URL: https://thetrifusion.in/services/website-development
@@ -242,6 +243,7 @@ EV charging CMS for CPOs and eMSPs, built in Jaipur for India and worldwide. One
 - Guide: CSMS RFP checklist for an OCPP platform: https://thetrifusion.in/blog/csms-rfp-checklist-ocpp-platform-evaluation
 - Guide: EV depot smart charging and load management: https://thetrifusion.in/blog/ev-depot-smart-charging-load-management-guide
 - Guide: ISO 15118 Plug and Charge for CPO software: https://thetrifusion.in/blog/iso-15118-plug-and-charge-cpo-software-guide
+- Guide: eMSP vs CPO software, what buyers need: https://thetrifusion.in/blog/emsp-vs-cpo-software-stack-buyer-guide
 
 ## Key hubs
 
