@@ -11,6 +11,7 @@ import androidAppDevelopment from "./android-app-development.js";
 import aiDevelopment from "./ai-development.js";
 import uiUxDesign from "./ui-ux-design.js";
 import graphicDesign from "./graphic-design.js";
+import branding from "./branding.js";
 
 export const servicePlanContent = {
   "software-development": softwareDevelopment,
@@ -22,4 +23,5 @@ export const servicePlanContent = {
   "ai-development": aiDevelopment,
   "ui-ux-design": uiUxDesign,
   "graphic-design": graphicDesign,
+  "branding": branding,
 };
