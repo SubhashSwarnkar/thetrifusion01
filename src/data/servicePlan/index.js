@@ -18,6 +18,7 @@ import salesforce from "./salesforce.js";
 import businessModernization from "./business-modernization.js";
 import onDemand from "./on-demand.js";
 import mlmCrmDevelopment from "./mlm-crm-development.js";
+import fintechAppDevelopment from "./fintech-app-development.js";
 
 export const servicePlanContent = {
   "software-development": softwareDevelopment,
@@ -36,4 +37,5 @@ export const servicePlanContent = {
   "business-modernization": businessModernization,
   "on-demand": onDemand,
   "mlm-crm-development": mlmCrmDevelopment,
+  "fintech-app-development": fintechAppDevelopment,
 };
