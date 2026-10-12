@@ -832,7 +832,7 @@ export default function ServiceDetailPage({
                     key={paragraph}
                     className="text-gray-600 font-light leading-relaxed mb-4 last:mb-0"
                   >
-                    {paragraph}
+                    <InlineText text={paragraph} />
                   </p>
                 ))}
               </div>
@@ -854,7 +854,9 @@ export default function ServiceDetailPage({
               {service.faqs.map((faq) => (
                 <article key={faq.question}>
                   <h3 className="text-lg font-bold text-theme-blue mb-2">{faq.question}</h3>
-                  <p className="text-sm text-gray-600 font-light leading-relaxed">{faq.answer}</p>
+                  <p className="text-sm text-gray-600 font-light leading-relaxed">
+                    <InlineText text={faq.answer} />
+                  </p>
                 </article>
               ))}
             </div>
@@ -872,7 +874,7 @@ export default function ServiceDetailPage({
                   </span>
                 </summary>
                 <p className="pb-5 -mt-1 text-sm text-gray-600 font-light leading-relaxed pr-8">
-                  {faq.answer}
+                  <InlineText text={faq.answer} />
                 </p>
               </details>
             ))}
