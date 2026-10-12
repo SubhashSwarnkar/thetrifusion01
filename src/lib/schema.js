@@ -82,6 +82,7 @@ function localBusinessNode() {
     address: postalAddress(),
     foundingDate: "2023",
     openingHours: siteConfig.openingHours,
+    // Hours match siteConfig.openingHours / hoursLabel (Mon–Sat 10:00–19:00 IST).
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: [
@@ -95,6 +96,10 @@ function localBusinessNode() {
       opens: "10:00",
       closes: "19:00",
     },
+    hasMap: siteConfig.mapsUrl,
+    // geo: { "@type": "GeoCoordinates", latitude, longitude }
+    // TODO: add only after verifying a GPS pin from Google Business Profile.
+    // No coordinates are stored in this repo today — do not invent them.
     currenciesAccepted: "INR",
     paymentAccepted: "UPI, Bank Transfer, Cards",
     areaServed: AREA_SERVED,

@@ -16,6 +16,21 @@ export const TRANSLATED_BLOG_SLUGS = [
   "ui-ux-for-ai-products-india",
 ];
 
+/**
+ * Translated blog slugs that should remain indexable because they target
+ * a distinct audience with unique search intent. Other translated copies
+ * are machine-translated and should be noindex to avoid topical dilution.
+ */
+export const INDEXABLE_TRANSLATED_BLOG_SLUGS = new Set([
+  "ev-charging-app-ocpi-ocpp-guide",
+  "ecommerce-website-development-cost-india",
+  "ecommerce-app-development-cost-india",
+]);
+
+export function isIndexableTranslatedBlogSlug(slug) {
+  return INDEXABLE_TRANSLATED_BLOG_SLUGS.has(slug);
+}
+
 export const TRANSLATED_SERVICE_SLUG = "ev-charging-app-development";
 
 export const TRANSLATED_SERVICE_PATH = `/services/${TRANSLATED_SERVICE_SLUG}`;

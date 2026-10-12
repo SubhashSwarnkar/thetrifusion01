@@ -2,6 +2,7 @@ import { absoluteSiteUrl } from "config/site";
 import {
   isTranslatedBlogSlug,
   isTranslatedEnglishPath,
+  isIndexableTranslatedBlogSlug,
   TRANSLATED_BLOG_SLUGS,
   TRANSLATED_SERVICE_PATH,
   TRANSLATED_SERVICE_SLUG,
@@ -10,6 +11,7 @@ import {
 export {
   isTranslatedBlogSlug,
   isTranslatedEnglishPath,
+  isIndexableTranslatedBlogSlug,
   TRANSLATED_BLOG_SLUGS,
   TRANSLATED_SERVICE_PATH,
   TRANSLATED_SERVICE_SLUG,
@@ -38,6 +40,11 @@ export function localizedPath(lang, englishPath) {
 /** Absolute hreflang map. Null when this English URL has no translation. */
 export function hreflangLanguagesForPath(englishPath) {
   if (!isTranslatedEnglishPath(englishPath)) return null;
+  const blogMatch = englishPath.match(/^\/blog\/([a-z0-9-]+)$/);
+  if (blogMatch && !isIndexableTranslatedBlogSlug(blogMatch[1])) {
+    // Machine-translated copies are noindex; do not advertise them as alternates.
+    return null;
+  }
   const languages = {};
   for (const code of LOCALE_ORDER) {
     languages[code] = absoluteSiteUrl(localizedPath(code, englishPath));

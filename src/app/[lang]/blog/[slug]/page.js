@@ -5,6 +5,7 @@ import { getBlogBySlug, isSoftNoindexBlogPost } from "data/blogData";
 import { getLocale } from "data/i18n";
 import {
   hreflangLanguagesForPath,
+  isIndexableTranslatedBlogSlug,
   localizedPath,
   TRANSLATED_BLOG_SLUGS,
 } from "data/i18n/routes";
@@ -41,7 +42,7 @@ export function generateMetadata({ params }) {
     authors: [locale.ui.author],
     languages: hreflangLanguagesForPath(englishPath),
     locale: locale.ogLocale,
-    noIndex: isSoftNoindexBlogPost(source),
+    noIndex: isSoftNoindexBlogPost(source) || !isIndexableTranslatedBlogSlug(params.slug),
   });
 }
 

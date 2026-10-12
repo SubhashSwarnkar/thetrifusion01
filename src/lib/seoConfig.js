@@ -10,11 +10,11 @@ export const DEFAULT_OG_IMAGE = absoluteSiteUrl("/opengraph-image");
 export const pages = {
   "/": {
     title:
-      "Software Company in Jaipur, Rajasthan | Web, Apps & Digital Marketing | TheTriFusion",
+      "TheTriFusion | Jaipur Studio for Websites, Apps & Digital Marketing",
     description:
-      "Trifusion Infotech Private Limited (TheTriFusion) is a software company in Jaipur, Rajasthan offering websites, ecommerce, mobile apps, UI/UX, and digital marketing for businesses across India.",
+      "Trifusion Infotech Private Limited (TheTriFusion) is a Jaipur studio for websites, ecommerce, mobile apps, UI/UX, and digital marketing. Custom software lives on the services pages.",
     keywords:
-      "software company Jaipur, web development company Rajasthan, website development Jaipur, software development company India, ecommerce website development, TheTriFusion",
+      "TheTriFusion Jaipur, website studio Rajasthan, mobile apps Jaipur, digital marketing Jaipur, ecommerce from Jaipur",
   },
   "/about": {
     title: "About TheTriFusion | Software Company in Jaipur",
@@ -190,6 +190,13 @@ function robotsFor(noIndex) {
 /**
  * Paid landing URLs stay HTTP 200 for live campaigns. They are noindex, follow
  * so organic results use the matching /services or ecommerce solution page.
+ *
+ * /ecommerce-development (menu: Ecommerce Packages) stays noindex on purpose:
+ * it is a conversion/package URL with a 48-hour guarantee, while
+ * /solutions/ecommerce-website-development is the organic ranking page.
+ * Indexing both would recannibalize ecommerce queries. Do not flip until
+ * the packages page is rewritten as a distinct, crawlable offer (and the
+ * solution page stops repeating the same SKUs).
  */
 export const ADS_LANDING_PATHS = new Set([
   "/web-development",

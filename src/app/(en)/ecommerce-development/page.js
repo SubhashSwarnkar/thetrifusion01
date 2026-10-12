@@ -24,6 +24,7 @@ export const metadata = buildMetadata({
   keywords: ecommercePage.keywords,
   path: PATH,
   image: ecommercePage.heroImage,
+  // Paid packages URL. Organic target is /solutions/ecommerce-website-development.
   noIndex: true,
   languages: null,
 });
