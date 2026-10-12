@@ -96,9 +96,9 @@ export const landingEnrichment = {
     primaryCtaHref: "/estimate",
   },
   "ecommerce-website-development": {
-    updatedAt: "2026-09-27",
+    updatedAt: "2026-10-12",
     outcomeLine:
-      "Packaged stores from ₹25,000, or a scoped custom build for complex catalogs, B2B pricing and marketplaces.",
+      "Ecommerce website development in Jaipur from ₹25,000, or a scoped custom build for complex catalogs, B2B pricing and marketplaces.",
     whatsappMessage:
       "Hi TriFusion, I want to discuss an ecommerce website (Shopify / WooCommerce / custom).",
     audiences: [

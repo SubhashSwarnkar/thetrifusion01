@@ -63,12 +63,14 @@ export const seoLandingPages = [
   },
   {
     slug: "ecommerce-website-development",
+    // TODO OWNER: live store links + GMV/conversion outcomes beyond DailyConcepts.
+    // TODO OWNER: client quotes (Google/Clutch-verifiable).
     title:
-      "Ecommerce Website Development in India | TheTriFusion",
-    h1: "Ecommerce Website Development Company in India — Shopify, WooCommerce & Custom Stores",
+      "Ecommerce Website Development Company in Jaipur & India | From ₹25,000",
+    h1: "Ecommerce Website Development Company in Jaipur, India",
     navLabel: "Ecommerce website development",
     metaDescription:
-      "Shopify, WooCommerce & custom ecommerce website development from Jaipur, India — D2C stores, B2B portals & multi-vendor marketplaces. Packages from ₹25,000.",
+      "Shopify, WooCommerce and custom ecommerce stores with Razorpay/UPI, Shiprocket and GST invoices. Built in Jaipur from ₹25,000; app add-on available.",
     primaryKeyword: "ecommerce website development company",
     secondaryKeywords: [
       "ecommerce website development company in India",
@@ -83,13 +85,15 @@ export const seoLandingPages = [
       "ecommerce development services",
     ],
     intro:
-      "Ecommerce website development is the work of planning, designing, building and launching an online store: product catalog, cart, checkout, payments, shipping and an admin panel to run orders. TheTriFusion (Trifusion Infotech Pvt. Ltd.) is a software development company in Jaipur, India that builds Shopify, WooCommerce and custom ecommerce websites, B2B ordering portals and multi-vendor marketplaces for businesses in India and abroad.",
+      "Ecommerce website development is the work of planning, designing, building and launching an online store: product catalog, cart, checkout, payments, shipping and an admin panel to run orders. TheTriFusion (Trifusion Infotech Pvt. Ltd.) is an ecommerce website development company in Jaipur, Rajasthan that builds Shopify, WooCommerce and custom ecommerce websites, B2B ordering portals and multi-vendor marketplaces for businesses in Jaipur, across India, and abroad.",
     keyFacts: [
       { label: "Company", value: `TheTriFusion — Trifusion Infotech Pvt. Ltd., ${siteConfig.addressLine}` },
       { label: "Platforms", value: "Shopify, WooCommerce, and custom builds (Next.js, React, Node.js)" },
       { label: "Store types", value: "Single-vendor D2C stores, B2B / wholesale portals, multi-vendor marketplaces" },
       { label: "Packages", value: "Single vendor ₹25,000 · Multi-vendor ₹35,000 (web + Android + iOS)" },
       { label: "Custom builds", value: "Quoted after discovery; a typical ecommerce MVP takes 4–10 weeks" },
+      { label: "Based in", value: "Jaipur, Rajasthan — remote delivery across India and worldwide" },
+      { label: "Live store", value: "DailyConcepts India (dailyconceptsindia.com)" },
       { label: "Clients", value: "Businesses across India and international clients, working remotely" },
       { label: "Contact", value: `${siteConfig.phone} · ${siteConfig.email}` },
     ],
@@ -142,6 +146,20 @@ export const seoLandingPages = [
         ],
       },
       {
+        title: "Agency store vs Amazon/Flipkart/ONDC vs Shopify DIY",
+        body: "A marketplace account (Amazon, Flipkart, or an ONDC seller app) is a channel. A Shopify DIY theme is a store you run yourself. This page is an agency build: a store on your domain, with Razorpay/UPI, Shiprocket/Delhivery and GST invoices, plus optional Android and iOS apps. We do not claim an ONDC badge. ONDC onboarding is a network decision — we can talk about a store that talks to a seller app you already have.",
+        table: {
+          caption: "Where you sell versus who builds the store",
+          columns: ["", "TheTriFusion store", "Amazon / Flipkart / ONDC", "Shopify DIY"],
+          rows: [
+            ["What it is", "A store on your domain, built in Jaipur", "A listing on someone else's marketplace", "You (or a freelancer) using Shopify's theme"],
+            ["Payments & shipping", "Razorpay, Cashfree, PayU, CCAvenue, Stripe, UPI; Shiprocket, Delhivery", "The marketplace's checkout", "Shopify Payments / apps you install"],
+            ["Starting price we publish", "₹25,000 single-vendor; ₹35,000 multi-vendor (web + Android + iOS)", "Marketplace fees — not our product", "Shopify's plan plus apps"],
+            ["You own", "The store, the code we agreed, the domain", "The listing, not the marketplace", "The Shopify account"],
+          ],
+        },
+      },
+      {
         title: "Do you build B2B ecommerce and multi-vendor marketplace websites?",
         body: "Yes. For B2B and wholesale buyers we build ordering portals with customer-specific or tiered pricing, bulk and minimum-order rules and GST-ready invoices. For marketplaces we build multi-vendor platforms with separate vendor dashboards, commission splits, vendor payouts and admin moderation, so you can run many sellers from one store.",
         bullets: [
@@ -157,6 +175,7 @@ export const seoLandingPages = [
         bullets: [
           "Payments: Razorpay, Cashfree, PayU, CCAvenue, Stripe, UPI",
           "Shipping: Shiprocket, Delhivery and other courier APIs with tracking",
+          "GST-ready invoices; Tally sync when the B2B/ERP scope says so",
           "Inventory and offline POS sync (see our DailyConcepts India project)",
           "Coupons, wishlists, reviews and abandoned-cart recovery",
           "WhatsApp and email order updates",
@@ -252,9 +271,29 @@ export const seoLandingPages = [
           "Both. We set up and customise Shopify stores and build WooCommerce themes and plugins for quick catalog launches. For D2C brands that need bespoke checkout, custom ledgers or POS sync, we build headless or custom stores with Next.js, React and Node.js.",
       },
       {
+        question: "Can you integrate Razorpay, UPI and COD?",
+        answer:
+          "Yes. Common payment integrations include Razorpay, Cashfree, PayU, CCAvenue, Stripe and UPI. Cash on delivery is a checkout rule we can enable when the courier and the risk policy say so.",
+      },
+      {
+        question: "Can you connect Shiprocket/Delhivery?",
+        answer:
+          "Yes. Shiprocket, Delhivery and other courier APIs with tracking are a normal part of an India store build.",
+      },
+      {
+        question: "Shopify or WooCommerce — which is better in India?",
+        answer:
+          "Shopify when you want a hosted catalogue live fast. WooCommerce when you already use WordPress or want hosting control. Custom Next.js when B2B pricing, a marketplace, or POS/ERP sync will not fit a theme. We recommend one after seeing the catalogue.",
+      },
+      {
         question: "Can you build a multi-vendor marketplace like Amazon or Flipkart?",
         answer:
           "We build multi-vendor marketplace platforms with independent vendor portals, commission splits, vendor payout reports, product moderation and an admin console. Our multi-vendor package starts at ₹35,000; larger marketplace features are scoped and delivered in phases after the first launch.",
+      },
+      {
+        question: "Can I sell on ONDC?",
+        answer:
+          "ONDC onboarding is a network and partner decision, not a plugin we can invent. If you already have an ONDC seller-app partner, we can discuss how your store talks to it. We do not claim an ONDC badge on this page.",
       },
       {
         question: "Do you build B2B or wholesale ecommerce portals?",
