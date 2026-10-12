@@ -3,7 +3,9 @@
  * Each slug is a separate module so git history stays one commit per page.
  */
 import softwareDevelopment from "./software-development.js";
+import devops from "./devops.js";
 
 export const servicePlanContent = {
   "software-development": softwareDevelopment,
+  "devops": devops,
 };
