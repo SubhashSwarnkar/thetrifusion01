@@ -897,7 +897,42 @@ for (const [slug, extra] of Object.entries(serviceRankingContent)) {
   servicePageSeo[slug] = { ...(servicePageSeo[slug] || {}), ...extra };
 }
 
-// 12 Oct 2026 competitive SEO plan: last merge wins for title/H1/meta/FAQs/short answer.
+// 12 Oct 2026 competitive SEO plan: title/H1/meta/answerFirst from the plan;
+// extraSections, FAQs and relatedLinks are unioned so existing page copy stays.
 for (const [slug, extra] of Object.entries(servicePlanContent)) {
-  servicePageSeo[slug] = { ...(servicePageSeo[slug] || {}), ...extra };
+  const current = servicePageSeo[slug] || {};
+  const extraSections = extra.extraSections
+    ? [
+        ...extra.extraSections,
+        ...(current.extraSections || []).filter(
+          (section) => !extra.extraSections.some((item) => item.id === section.id)
+        ),
+      ]
+    : current.extraSections;
+  const faqs = extra.faqs
+    ? [
+        ...extra.faqs,
+        ...(current.faqs || []).filter(
+          (faq) =>
+            !extra.faqs.some(
+              (item) => item.question.toLowerCase() === faq.question.toLowerCase()
+            )
+        ),
+      ]
+    : current.faqs;
+  const relatedLinks = extra.relatedLinks
+    ? [
+        ...extra.relatedLinks,
+        ...(current.relatedLinks || []).filter(
+          (link) => !extra.relatedLinks.some((item) => item.href === link.href)
+        ),
+      ]
+    : current.relatedLinks;
+  servicePageSeo[slug] = {
+    ...current,
+    ...extra,
+    extraSections,
+    faqs,
+    relatedLinks,
+  };
 }
