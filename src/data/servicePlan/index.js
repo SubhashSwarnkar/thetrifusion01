@@ -20,6 +20,7 @@ import onDemand from "./on-demand.js";
 import mlmCrmDevelopment from "./mlm-crm-development.js";
 import fintechAppDevelopment from "./fintech-app-development.js";
 import evChargingAppDevelopment from "./ev-charging-app-development.js";
+import crmErpDevelopment from "./crm-erp-development.js";
 
 export const servicePlanContent = {
   "software-development": softwareDevelopment,
@@ -40,4 +41,5 @@ export const servicePlanContent = {
   "mlm-crm-development": mlmCrmDevelopment,
   "fintech-app-development": fintechAppDevelopment,
   "ev-charging-app-development": evChargingAppDevelopment,
+  "crm-erp-development": crmErpDevelopment,
 };
