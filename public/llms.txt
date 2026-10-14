@@ -1,6 +1,6 @@
 # TheTriFusion (Trifusion Infotech Pvt. Ltd.)
 
-Last updated: 2026-10-12
+Last updated: 2026-10-14
 
 Canonical brand for citations: TheTriFusion
 Legal name: Trifusion Infotech Private Limited
@@ -185,7 +185,7 @@ What: Extra React, Node, or mobile hours with a named lead.
 Platforms: React, Node.js, Python, Java, mobile.
 Who: Indian product teams that need capacity without handing over the whole project.
 Price from: ₹50,000 (published starting project price; monthly role rates are scoped).
-- Cost guide: https://thetrifusion.in/blog/hire-dedicated-developers-cost-guide-uk-australia
+- Cost guide: https://thetrifusion.in/services/on-demand
 
 ### MLM software
 URL: https://thetrifusion.in/services/mlm-crm-development
@@ -206,6 +206,10 @@ Platforms: iOS, Android, and web. The client brings bank or NPCI access.
 Who: Retailers, distributors, and fintech operators in India.
 Price from: ₹99,999. Published plans: ₹99,999 / ₹1,99,999 / ₹3,99,999.
 Sources: NPCI https://www.npci.org.in/ · RBI https://www.rbi.org.in/
+- BBPS software: https://thetrifusion.in/services/fintech-app-development/bbps-software
+- AEPS software: https://thetrifusion.in/services/fintech-app-development/aeps-software
+- DMT software: https://thetrifusion.in/services/fintech-app-development/dmt-software
+- Recharge software: https://thetrifusion.in/services/fintech-app-development/recharge-software
 
 ### EV charging app development
 URL: https://thetrifusion.in/services/ev-charging-app-development
@@ -289,7 +293,6 @@ EV charging CMS for CPOs and eMSPs, built in Jaipur for India and worldwide. One
 - Guide: Build vs buy a CSMS: https://thetrifusion.in/blog/build-vs-buy-ev-charging-csms
 - Guide: EV charging software glossary: https://thetrifusion.in/blog/ev-charging-software-glossary
 - Guide: CSMS for India CPOs: https://thetrifusion.in/blog/ev-charging-csms-india-cpo-guide
-- Guide: CSMS for UK and Europe CPOs: https://thetrifusion.in/blog/ev-charging-csms-uk-europe-cpo-guide
 - Guide: CSMS RFP checklist for an OCPP platform: https://thetrifusion.in/blog/csms-rfp-checklist-ocpp-platform-evaluation
 - Guide: EV depot smart charging and load management: https://thetrifusion.in/blog/ev-depot-smart-charging-load-management-guide
 - Guide: ISO 15118 Plug and Charge for CPO software: https://thetrifusion.in/blog/iso-15118-plug-and-charge-cpo-software-guide
@@ -305,6 +308,7 @@ EV charging CMS for CPOs and eMSPs, built in Jaipur for India and worldwide. One
 - Solutions: https://thetrifusion.in/solutions
 - Pricing: https://thetrifusion.in/pricing
 - FAQ: https://thetrifusion.in/faq
+- HTML sitemap: https://thetrifusion.in/sitemap
 - Team: https://thetrifusion.in/team
 
 ## Live case studies (verifiable)
@@ -320,40 +324,8 @@ https://thetrifusion.in/llms-full.txt
 
 ## Sitemap
 
-https://thetrifusion.in/sitemap.xml
+https://thetrifusion.in/sitemap.xml (index: sitemap-pages.xml, sitemap-services.xml, sitemap-solutions.xml, sitemap-blog.xml)
 
 ## Other languages
 
-Indexable translations only (self-canonical, with hreflang). Machine-translated copies of other blog posts are noindex and are not listed.
-
-Evergreen indexable guides and the EV charging CMS page are published in Spanish (es), Portuguese (pt), Arabic (ar), Indonesian (id), and Hindi (hi). English URLs stay unprefixed.
-
-### Spanish (es)
-- EV charging CMS: https://thetrifusion.in/es/services/ev-charging-app-development
-- https://thetrifusion.in/es/blog/ev-charging-app-ocpi-ocpp-guide
-- https://thetrifusion.in/es/blog/ecommerce-website-development-cost-india
-- https://thetrifusion.in/es/blog/ecommerce-app-development-cost-india
-
-### Portuguese (pt)
-- EV charging CMS: https://thetrifusion.in/pt/services/ev-charging-app-development
-- https://thetrifusion.in/pt/blog/ev-charging-app-ocpi-ocpp-guide
-- https://thetrifusion.in/pt/blog/ecommerce-website-development-cost-india
-- https://thetrifusion.in/pt/blog/ecommerce-app-development-cost-india
-
-### Arabic (ar)
-- EV charging CMS: https://thetrifusion.in/ar/services/ev-charging-app-development
-- https://thetrifusion.in/ar/blog/ev-charging-app-ocpi-ocpp-guide
-- https://thetrifusion.in/ar/blog/ecommerce-website-development-cost-india
-- https://thetrifusion.in/ar/blog/ecommerce-app-development-cost-india
-
-### Indonesian (id)
-- EV charging CMS: https://thetrifusion.in/id/services/ev-charging-app-development
-- https://thetrifusion.in/id/blog/ev-charging-app-ocpi-ocpp-guide
-- https://thetrifusion.in/id/blog/ecommerce-website-development-cost-india
-- https://thetrifusion.in/id/blog/ecommerce-app-development-cost-india
-
-### Hindi (hi)
-- EV charging CMS: https://thetrifusion.in/hi/services/ev-charging-app-development
-- https://thetrifusion.in/hi/blog/ev-charging-app-ocpi-ocpp-guide
-- https://thetrifusion.in/hi/blog/ecommerce-website-development-cost-india
-- https://thetrifusion.in/hi/blog/ecommerce-app-development-cost-india
+Locale copies under /es, /pt, /ar, /id, and /hi are noindex. Cite the English / en-IN URLs above.

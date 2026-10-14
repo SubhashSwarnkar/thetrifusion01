@@ -3,6 +3,7 @@ import {
   SOLUTION_SERVICE_REDIRECTS,
   solutionRedirectDestination,
 } from "lib/solutionRedirects";
+import { BLOG_CANONICAL_REDIRECTS } from "data/blogCanonicalRedirects";
 
 /** Canonical paths for URLs that permanently redirect. */
 const SOLUTION_ALIAS = {
@@ -36,6 +37,7 @@ const EXACT_REDIRECTS = {
   "/discuss": "/discuss-project",
   "/services/ecommerce-development":
     "/solutions/ecommerce-website-development",
+  "/ecommerce-development": "/solutions/ecommerce-website-development",
 };
 
 for (const item of SOLUTION_SERVICE_REDIRECTS) {
@@ -80,6 +82,9 @@ function rewritePath(pathname) {
   if (path.startsWith("/blog/")) {
     const slug = path.slice("/blog/".length).split("/")[0];
     if (RETIRED_BLOG_SLUGS.has(slug)) return "/blog";
+    if (BLOG_CANONICAL_REDIRECTS[slug]) {
+      return `/blog/${BLOG_CANONICAL_REDIRECTS[slug]}`;
+    }
   }
   return path;
 }

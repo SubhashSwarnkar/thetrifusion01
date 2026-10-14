@@ -48,14 +48,7 @@ export const SERVICE_MENU_GROUPS = [
         icon: "ecommerce-development",
         title: "Ecommerce Website Development",
         shortDescription:
-          "Shopify, WooCommerce & custom stores, B2B and marketplaces.",
-      },
-      {
-        href: "/ecommerce-development",
-        slug: "ecommerce-development",
-        title: "Ecommerce Packages",
-        shortDescription:
-          "Live in 48 hrs or 50% refund. Four packages from ₹25,000.",
+          "Shopify, WooCommerce & custom stores. Packages from ₹25,000.",
       },
     ],
   },

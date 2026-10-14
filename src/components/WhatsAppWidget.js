@@ -87,7 +87,10 @@ function getContextualChips(pathname) {
     ];
   }
 
-  if (pathname.startsWith("/ecommerce-development")) {
+  if (
+    pathname.startsWith("/ecommerce-development") ||
+    pathname.startsWith("/solutions/ecommerce-website-development")
+  ) {
     return [
       { label: "⚡ Live in 48 hrs / 50% refund", text: "Hi TriFusion, I want an ecommerce package — website live in 48 hours or 50% refund." },
       { label: "🛒 Website ₹25k", text: "Hi TriFusion, I want Ecommerce Website at ₹25,000 — website live in 48 hours or 50% refund." },
@@ -242,7 +245,9 @@ export default function WhatsAppWidget({ defaultMessage }) {
     setPanelOpen(false);
   };
 
-  const aboveBar = pathname.startsWith("/ecommerce-development");
+  const aboveBar =
+    pathname.startsWith("/ecommerce-development") ||
+    pathname.startsWith("/solutions/ecommerce-website-development");
 
   return (
     <div

@@ -43,7 +43,7 @@ export default function SolutionsHubPage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                href="/ecommerce-development"
+                href="/solutions/ecommerce-website-development"
                 className="inline-flex items-center px-7 py-3.5 bg-theme-purple text-white rounded-full font-bold shadow-lg shadow-theme-purple/20 hover:scale-[1.02] transition-transform"
               >
                 Ecommerce from ₹25,000 to ₹99,000

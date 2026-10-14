@@ -197,7 +197,7 @@ export default function BlogDetailPage({
                   </Link>
                   {isEcommerceTopic ? (
                     <Link
-                      href="/ecommerce-development"
+                      href="/solutions/ecommerce-website-development"
                       className="inline-flex items-center justify-center rounded-full border border-theme-purple px-6 py-3.5 font-bold text-theme-purple"
                     >
                       Ecommerce ₹25k offer

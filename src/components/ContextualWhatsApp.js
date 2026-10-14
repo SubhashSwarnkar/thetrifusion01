@@ -11,7 +11,10 @@ export default function ContextualWhatsApp() {
 
   if (pathname.startsWith("/web-development")) {
     message = "Hi TriFusion, I want a website development quote from the Jaipur team.";
-  } else if (pathname.startsWith("/ecommerce-development")) {
+  } else if (
+    pathname.startsWith("/ecommerce-development") ||
+    pathname.startsWith("/solutions/ecommerce-website-development")
+  ) {
     message =
       "Hi TriFusion, I want an ecommerce package — website live in 48 hours or 50% refund. Packages: Website ₹25,000 / + Android ₹35,000 / + Android + iOS ₹45,000 / High-End logistics ₹99,000.";
   } else if (pathname.startsWith("/android-app-development")) {

@@ -17,15 +17,11 @@ export const TRANSLATED_BLOG_SLUGS = [
 ];
 
 /**
- * Translated blog slugs that should remain indexable because they target
- * a distinct audience with unique search intent. Other translated copies
- * are machine-translated and should be noindex to avoid topical dilution.
+ * India-only indexing: no foreign-locale copies stay in the sitemap.
+ * Hindi translations are of the English EV/ecommerce guides, not original
+ * Hindi India content, so they are noindex too.
  */
-export const INDEXABLE_TRANSLATED_BLOG_SLUGS = new Set([
-  "ev-charging-app-ocpi-ocpp-guide",
-  "ecommerce-website-development-cost-india",
-  "ecommerce-app-development-cost-india",
-]);
+export const INDEXABLE_TRANSLATED_BLOG_SLUGS = new Set();
 
 export function isIndexableTranslatedBlogSlug(slug) {
   return INDEXABLE_TRANSLATED_BLOG_SLUGS.has(slug);

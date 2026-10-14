@@ -28,6 +28,13 @@ import { dailyOrganicBatch20260929Posts } from "./dailyOrganicBatch20260929";
 import { dailyOrganicBatch20260928Posts } from "./dailyOrganicBatch20260928";
 import { OFFTOPIC_NOINDEX_SLUGS } from "./offtopicNoindexSlugs";
 import { ADSENSE_RECOVERY_NOINDEX_SLUGS } from "./adsenseRecoveryNoindexSlugs";
+import { BLOG_CANONICAL_REDIRECTS } from "./blogCanonicalRedirects";
+import {
+  HOMEPAGE_INDIA_BLOG_SLUGS,
+  INDIA_INDEXABLE_BLOG_SLUGS,
+} from "./indiaIndexableBlogSlugs";
+
+export { BLOG_CANONICAL_REDIRECTS, INDIA_INDEXABLE_BLOG_SLUGS, HOMEPAGE_INDIA_BLOG_SLUGS };
 
 export { OFFTOPIC_NOINDEX_SLUGS, ADSENSE_RECOVERY_NOINDEX_SLUGS };
 
@@ -78,6 +85,9 @@ export const blogCategories = [
 export const HUB_TRENDING_SLUGS = [];
 
 export const isArchivedPost = (slug) => ARCHIVE_NOINDEX_SLUGS.has(slug);
+
+export const isRedirectedBlogSlug = (slug) =>
+  Boolean(slug && BLOG_CANONICAL_REDIRECTS[slug]);
 
 export const blogPosts = [
   ...dailyOrganicBatch20261012Posts,
@@ -408,7 +418,7 @@ export const blogPosts = [
       <p>We do not default every client to the same framework. During discovery, we look at your existing team's skills (if you have any in-house developers), your budget and timeline, and how much custom UI polish the product genuinely needs — then recommend the framework that reduces total cost and risk for your specific case, not the one we personally prefer to code in.</p>
 
       <h3>Typical timeline for a first mobile release</h3>
-      <p>A business app — logins, a core workflow, push notifications, and an admin backend — usually lands in an 8-12 week band after discovery and design approval, in either framework. If you already have a live website with the same catalog/data (for example, an ecommerce store), wrapping that into a mobile app is faster than starting from zero — see our <a href="/ecommerce-development">ecommerce packages</a> which include web + Android + iOS framing together.</p>
+      <p>A business app — logins, a core workflow, push notifications, and an admin backend — usually lands in an 8-12 week band after discovery and design approval, in either framework. If you already have a live website with the same catalog/data (for example, an ecommerce store), wrapping that into a mobile app is faster than starting from zero — see our <a href="/solutions/ecommerce-website-development">ecommerce packages</a> which include web + Android + iOS framing together.</p>
 
       <h2>FAQ: Flutter vs React Native for Indian businesses</h2>
       <h3>Which one is cheaper to build?</h3>
@@ -576,7 +586,7 @@ export const blogPosts = [
       <h3>Why do multi-vendor marketplaces cost more than single-vendor stores?</h3>
       <p>Multi-vendor builds need vendor onboarding/KYC, a commission engine, and settlement reporting — none of which exist in a single-seller store, so the added logic genuinely costs more to build correctly.</p>
       <h3>What's the next step?</h3>
-      <p>Use our <a href="/ecommerce-development">ecommerce packages</a> (Website ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · High-End logistics ₹99,000) with a website live in 48 hours — or 50% refund until Diwali — or <a href="/appointment">book a discovery call</a> for a written custom scope. Complex catalogs still need a brief — packages cover the listed platforms and features, not unlimited custom work.</p>
+      <p>Use our <a href="/solutions/ecommerce-website-development">ecommerce packages</a> (Website ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · High-End logistics ₹99,000) with a website live in 48 hours — or 50% refund until Diwali — or <a href="/appointment">book a discovery call</a> for a written custom scope. Complex catalogs still need a brief — packages cover the listed platforms and features, not unlimited custom work.</p>
     `,
     category: "webdev",
     image: "/assets/images/blog/ecommerce-cost.jpg",
@@ -617,7 +627,7 @@ export const blogPosts = [
         <li>Need unusual workflows, multi-role admin, or deep integration with an existing ERP/CRM/inventory system? Custom typically pays off within 6-12 months of avoided platform friction.</li>
         <li>Comfortable with recurring platform fees in exchange for zero server maintenance? Shopify.</li>
         <li>Want full hosting control and no recurring platform fee, and have (or can budget for) ongoing WordPress maintenance? WooCommerce.</li>
-        <li>Planning a multi-vendor marketplace with commission splits? A custom marketplace (quoted after discovery; see <a href="/ecommerce-development">ecommerce packages</a> for published website and app prices from ₹25,000) usually fits better than retrofitting Shopify/WooCommerce for multi-seller logic.</li>
+        <li>Planning a multi-vendor marketplace with commission splits? A custom marketplace (quoted after discovery; see <a href="/solutions/ecommerce-website-development">ecommerce packages</a> for published website and app prices from ₹25,000) usually fits better than retrofitting Shopify/WooCommerce for multi-seller logic.</li>
       </ul>
 
       <h2>FAQ: Custom website vs Shopify vs WooCommerce</h2>
@@ -674,7 +684,7 @@ export const blogPosts = [
       <p>Map admin workflows as carefully as customer flows — the admin is where staff live every day, and a confusing admin quietly costs hours every week. Checkout edge cases (failed payments, address errors, inventory mismatches) deserve explicit QA, not "we'll fix it if someone complains." If POS and ecommerce share inventory, define the single source of truth early — retrofitting this after launch is far more expensive than designing for it up front. Finally, ship the admin to the actual staff who will use it during a pilot week before calling the project "live" — UI decisions that seem obvious to a developer are often not obvious to a store manager.</p>
 
       <h3>Why this matters if you are scoping an ecommerce + POS build</h3>
-      <p>If your business sells both online and at a counter, or across multiple channels (website, Instagram DMs, WhatsApp orders), the DailyConcepts pattern — one inventory ledger, one order status system, an admin built for non-developers — applies directly to you. This is the same architecture we now offer as a standard build inside our <a href="/ecommerce-development">ecommerce development packages</a> (from ₹25,000 website to ₹99,000 high-end logistics + Android + iOS, live in 48 hours after a locked brief).</p>
+      <p>If your business sells both online and at a counter, or across multiple channels (website, Instagram DMs, WhatsApp orders), the DailyConcepts pattern — one inventory ledger, one order status system, an admin built for non-developers — applies directly to you. This is the same architecture we now offer as a standard build inside our <a href="/solutions/ecommerce-website-development">ecommerce development packages</a> (from ₹25,000 website to ₹99,000 high-end logistics + Android + iOS, live in 48 hours after a locked brief).</p>
 
       <h2>FAQ: DailyConcepts ecommerce and POS build</h2>
       <h3>Can you replicate this admin + POS pattern for a different type of store?</h3>
@@ -727,7 +737,7 @@ export const blogPosts = [
       <p>Unique title tags and meta descriptions per page (not one template copy-pasted across the site), a crawlable XML sitemap, a correct robots.txt, fast-loading mobile pages, and structured data (schema markup) describing the business type and service area. Critically, we keep NAP (Name, Address, Phone) consistent with the real office — Jaipur — across the website footer, Google Business Profile, and any directory listing, because inconsistent addresses confuse Google's local ranking systems and can suppress visibility even when the content is good.</p>
 
       <h3>Pricing you should expect</h3>
-      <p>A credibility/catalog website for a Bhilwara textile or trading business typically starts from ₹25,000 for an Ecommerce Website package, or a scoped custom website quote after a 24-hour written estimate. Add Android (₹35,000), Android + iOS (₹45,000), or high-end logistics + both apps (₹99,000). Multi-vendor marketplace builds (useful if you aggregate multiple Bhilwara suppliers) are quoted after discovery. Packages include mobile-first design, WhatsApp lead capture, and a live-in-48-hours path once the brief is locked — see the current terms on our <a href="/ecommerce-development">ecommerce development page</a>.</p>
+      <p>A credibility/catalog website for a Bhilwara textile or trading business typically starts from ₹25,000 for an Ecommerce Website package, or a scoped custom website quote after a 24-hour written estimate. Add Android (₹35,000), Android + iOS (₹45,000), or high-end logistics + both apps (₹99,000). Multi-vendor marketplace builds (useful if you aggregate multiple Bhilwara suppliers) are quoted after discovery. Packages include mobile-first design, WhatsApp lead capture, and a live-in-48-hours path once the brief is locked — see the current terms on our <a href="/solutions/ecommerce-website-development">ecommerce development page</a>.</p>
 
       <h2>FAQ: Hiring a website partner in Bhilwara</h2>
       <h3>Do you have an office in Bhilwara?</h3>
@@ -969,7 +979,7 @@ export const blogPosts = [
       <h2>Honest comparison: package vs “₹8L marketplace app” articles</h2>
       <p>Many 2026 cost blogs describe Urban Company / Meesho-class platforms. That is useful for budgeting a long game. It is the wrong brief if you need a <strong>city marketplace or multi-brand mall live this month</strong>. Match the quote to the product:</p>
       <ul>
-        <li>Need speed + clear price → <a href="/ecommerce-development">ecommerce packages from ₹25,000</a></li>
+        <li>Need speed + clear price → <a href="/solutions/ecommerce-website-development">ecommerce packages from ₹25,000</a></li>
         <li>Need custom settlement or ERP sync → ask for a written scope on <a href="/contact">contact</a> or <a href="/appointment">appointment</a></li>
         <li>Still researching architecture → read our <a href="/solutions/ecommerce-website-development">ecommerce website development</a> guide and the <a href="/blog/ecommerce-website-development-cost-india">general ecommerce cost breakdown</a></li>
       </ul>
@@ -978,7 +988,7 @@ export const blogPosts = [
       <p>For the packaged offer, the clock starts after logo, store name, sample SKUs, brand notes, and payment details are locked in writing. “Live” means your ecommerce website is on a public URL with catalog, cart, checkout, and admin working. Android/iOS builds are included on the packages that list them; Google/Apple review times are not part of the refund clock.</p>
 
       <h2>Next step</h2>
-      <p>If multi-vendor is the goal, start on <a href="/ecommerce-development">ecommerce development packages</a> (from ₹25,000) or WhatsApp us from that page with your category (grocery, fashion, electronics, artisan mall) for a written marketplace quote. Bring sample vendors and a commission rule — that alone cuts quote chaos.</p>
+      <p>If multi-vendor is the goal, start on <a href="/solutions/ecommerce-website-development">ecommerce development packages</a> (from ₹25,000) or WhatsApp us from that page with your category (grocery, fashion, electronics, artisan mall) for a written marketplace quote. Bring sample vendors and a commission rule — that alone cuts quote chaos.</p>
     `,
     category: "webdev",
     image: "/assets/images/blog/ecommerce-cost.jpg",
@@ -1011,7 +1021,7 @@ export const blogPosts = [
       <h3>Checkout that trusts UPI + COD</h3>
       <p>Razorpay / UPI is table stakes. Many kirana buyers still want cash on delivery for first orders. Your checkout should not assume every buyer has a saved card.</p>
       <h3>Apps for repeat purchase</h3>
-      <p>Grocery is a reopen category. A customer website plus Android and iOS apps reduces friction for weekly carts. Our <a href="/ecommerce-development">ecommerce packages</a> add Android at ₹35,000 and Android + iOS at ₹45,000; high-end logistics is ₹99,000. Multi-seller grocery malls are quoted after discovery.</p>
+      <p>Grocery is a reopen category. A customer website plus Android and iOS apps reduces friction for weekly carts. Our <a href="/solutions/ecommerce-website-development">ecommerce packages</a> add Android at ₹35,000 and Android + iOS at ₹45,000; high-end logistics is ₹99,000. Multi-seller grocery malls are quoted after discovery.</p>
 
       <h2>Single shop vs multi-vendor grocery mall</h2>
       <ul>
@@ -1019,7 +1029,7 @@ export const blogPosts = [
         <li><strong>Add Android ₹35,000 / Android + iOS ₹45,000 / High-End logistics ₹99,000</strong> — same storefront, extra platforms and courier tracking.</li>
         <li><strong>Multi-vendor grocery mall</strong> — many sellers under one marketplace; quoted after discovery.</li>
       </ul>
-      <p>Published packages target website live in 48 hours after a locked brief — or 50% refund on the package fee until Diwali. See full terms on <a href="/ecommerce-development#guarantee">the guarantee section</a>.</p>
+      <p>Published packages target website live in 48 hours after a locked brief — or 50% refund on the package fee until Diwali. See full terms on <a href="/solutions/ecommerce-website-development#guarantee">the guarantee section</a>.</p>
 
       <h2>Scope traps that inflate grocery builds</h2>
       <ul>
@@ -1041,7 +1051,7 @@ export const blogPosts = [
         <li><strong>Add Android ₹35,000 / Android + iOS ₹45,000 / High-End logistics ₹99,000</strong> — same storefront, extra platforms and courier tracking.</li>
         <li><strong>Multi-vendor grocery mall</strong> — many sellers under one marketplace; quoted after discovery.</li>
       </ul>
-      <p>Published packages target website live in 48 hours after a locked brief — or 50% refund on the package fee until Diwali. See full terms on <a href="/ecommerce-development#guarantee">the guarantee section</a>.</p>
+      <p>Published packages target website live in 48 hours after a locked brief — or 50% refund on the package fee until Diwali. See full terms on <a href="/solutions/ecommerce-website-development#guarantee">the guarantee section</a>.</p>
 
       <h2>Scope traps that inflate grocery builds</h2>
       <ul>
@@ -1056,7 +1066,7 @@ export const blogPosts = [
       <p>Compare platform choices in <a href="/blog/custom-website-vs-shopify-vs-woocommerce">Custom vs Shopify vs WooCommerce</a>, scan overall cost drivers in <a href="/blog/ecommerce-website-development-cost-india">ecommerce website cost in India</a>, weigh marketplace vs owned app in <a href="/blog/quick-commerce-vs-own-grocery-app-india">quick commerce vs your own grocery app</a>, and see a live ecommerce+POS style build in our <a href="/portfolio/dailyconcepts-ecommerce-pos">DailyConcepts case</a>.</p>
 
       <h2>Launch path</h2>
-      <p>Have logo, store name, a sample product list (even 20 SKUs), brand colours, and Razorpay details ready. Then open <a href="/ecommerce-development">ecommerce development</a>, pick grocery under store types, and claim the 48-hour live offer — or WhatsApp from that page for a same-day reply from Jaipur.</p>
+      <p>Have logo, store name, a sample product list (even 20 SKUs), brand colours, and Razorpay details ready. Then open <a href="/solutions/ecommerce-website-development">ecommerce development</a>, pick grocery under store types, and claim the 48-hour live offer — or WhatsApp from that page for a same-day reply from Jaipur.</p>
 
       <h2>FAQ: Grocery ecommerce website and app development in India</h2>
       <h3>Can the same inventory serve my physical shop and the website?</h3>
@@ -1101,7 +1111,7 @@ export const blogPosts = [
       <h3>Custom ecommerce app builds</h3>
       <p>Public India guides in 2026 often quote roughly <strong>₹4L–₹30L+</strong> for app-heavy ecommerce, and far more for multi-sided marketplaces. That can be fair when you need custom matching, live tracking, multi-city ops, or deep ERP sync.</p>
       <h3>Fixed storefront package (web + Android + iOS)</h3>
-      <p>If you need a <strong>customer website plus Android and iOS shopping apps</strong> with catalog, cart, checkout, and admin — not a logistics unicorn — our <a href="/ecommerce-development">ecommerce packages</a> list <strong>Website + Android + iOS at ₹45,000</strong> (website only ₹25,000; + Android ₹35,000; high-end logistics ₹99,000). Website live in 48 hours after a locked brief, or 50% refund on the package fee until Diwali. Apps are included on the packages that list them; Google Play and Apple Developer accounts stay in your business name.</p>
+      <p>If you need a <strong>customer website plus Android and iOS shopping apps</strong> with catalog, cart, checkout, and admin — not a logistics unicorn — our <a href="/solutions/ecommerce-website-development">ecommerce packages</a> list <strong>Website + Android + iOS at ₹45,000</strong> (website only ₹25,000; + Android ₹35,000; high-end logistics ₹99,000). Website live in 48 hours after a locked brief, or 50% refund on the package fee until Diwali. Apps are included on the packages that list them; Google Play and Apple Developer accounts stay in your business name.</p>
 
       <h2>Must-have India features (apps included)</h2>
       <ul>
@@ -1148,7 +1158,7 @@ export const blogPosts = [
       <p>When you need rider apps, complex matching, multi-city routing, heavy ERP, or unique checkout logic beyond the package list — start with a written scope via <a href="/contact">contact</a> or <a href="/appointment">appointment</a>.</p>
 
       <h2>Next step</h2>
-      <p>If your brief is “sell products online with web + apps,” open <a href="/ecommerce-development">ecommerce development</a>, pick one of the four packages, and claim the 48-hour live offer — or WhatsApp from that page for a same-day reply from Jaipur.</p>
+      <p>If your brief is “sell products online with web + apps,” open <a href="/solutions/ecommerce-website-development">ecommerce development</a>, pick one of the four packages, and claim the 48-hour live offer — or WhatsApp from that page for a same-day reply from Jaipur.</p>
     `,
     category: "mobile",
     image: "/assets/images/blog/ecommerce-cost.jpg",
@@ -1182,7 +1192,7 @@ export const blogPosts = [
 
       <h2>Three fashion store products (three price realities)</h2>
       <h3>1) Packaged single-brand fashion storefront (fast launch)</h3>
-      <p>One brand catalog, variants (size/colour), cart, Razorpay/UPI (+ COD if you need it), and admin. Website-only is our <a href="/ecommerce-development#ecommerce-website">₹25,000 Ecommerce Website</a>; add Android and iOS at ₹45,000. Website live in 48 hours after a locked brief, or 50% refund on the package fee until Diwali. Multi-seller fashion malls are quoted after discovery.</p>
+      <p>One brand catalog, variants (size/colour), cart, Razorpay/UPI (+ COD if you need it), and admin. Website-only is our <a href="/solutions/ecommerce-website-development#ecommerce-website">₹25,000 Ecommerce Website</a>; add Android and iOS at ₹45,000. Website live in 48 hours after a locked brief, or 50% refund on the package fee until Diwali. Multi-seller fashion malls are quoted after discovery.</p>
       <h3>2) Polished Shopify / WooCommerce D2C brand site</h3>
       <p>India guides in 2026 commonly place a professionally customized fashion Shopify store roughly in the <strong>₹80,000–₹3 lakh</strong> band (theme + apps + content), with monthly platform/app running costs on top. Strong when you want the app ecosystem fast; weaker when you need unusual size/pricing rules or full code ownership.</p>
       <h3>3) Custom / headless fashion platform</h3>
@@ -1198,7 +1208,7 @@ export const blogPosts = [
       </ul>
 
       <h2>Honest ranges vs our fixed packages</h2>
-      <p>If your brief is “sell my clothing brand online with catalog, checkout, and shopper apps,” start on <a href="/ecommerce-development">ecommerce development</a> (₹25k single / ₹35k multi-vendor). If your brief is “rebuild our 5,000-SKU fashion ERP with custom returns,” you need a written custom scope via <a href="/contact">contact</a> — not a one-week package.</p>
+      <p>If your brief is “sell my clothing brand online with catalog, checkout, and shopper apps,” start on <a href="/solutions/ecommerce-website-development">ecommerce development</a> (₹25k single / ₹35k multi-vendor). If your brief is “rebuild our 5,000-SKU fashion ERP with custom returns,” you need a written custom scope via <a href="/contact">contact</a> — not a one-week package.</p>
       <p>Related reading: <a href="/blog/ecommerce-website-development-cost-india">ecommerce website cost in India</a>, <a href="/blog/custom-website-vs-shopify-vs-woocommerce">Custom vs Shopify vs WooCommerce</a>, and <a href="/blog/ecommerce-app-development-cost-india">ecommerce app cost (web + Android + iOS)</a>.</p>
 
       <h2>What “live in 48 hours” covers for fashion</h2>
@@ -1213,7 +1223,7 @@ export const blogPosts = [
       <p>Category (ethnic, western, kids), approx SKU count, whether you need COD, sample size chart, and whether you sell from one brand or many sellers.</p>
 
       <h2>Next step</h2>
-      <p>Open <a href="/ecommerce-development">ecommerce development</a>, pick fashion under store types, and claim the 48-hour live offer — or WhatsApp from that page for a same-day reply from Jaipur. See also our <a href="/solutions/ecommerce-website-development">ecommerce website development</a> page and the <a href="/portfolio/dailyconcepts-ecommerce-pos">DailyConcepts</a> case for ecommerce + ops lessons.</p>
+      <p>Open <a href="/solutions/ecommerce-website-development">ecommerce development</a>, pick fashion under store types, and claim the 48-hour live offer — or WhatsApp from that page for a same-day reply from Jaipur. See also our <a href="/solutions/ecommerce-website-development">ecommerce website development</a> page and the <a href="/portfolio/dailyconcepts-ecommerce-pos">DailyConcepts</a> case for ecommerce + ops lessons.</p>
     `,
     category: "webdev",
     image: "/assets/images/blog/ecommerce-cost.jpg",
@@ -1256,7 +1266,7 @@ export const blogPosts = [
       </ul>
 
       <h3>When a normal web + app store is still the right first step</h3>
-      <p>Most Indian D2C and marketplace sellers do not need a bespoke "agentic commerce" build in 2026 — they need a fast, reliable, mobile-first storefront with correct UPI checkout and clean product data. That foundation is exactly what makes a store ready to plug into agentic shopping surfaces later, without a rebuild. See our <a href="/ecommerce-development">ecommerce development packages</a> for the practical first step (from ₹25,000 website to ₹99,000 high-end logistics + Android + iOS).</p>
+      <p>Most Indian D2C and marketplace sellers do not need a bespoke "agentic commerce" build in 2026 — they need a fast, reliable, mobile-first storefront with correct UPI checkout and clean product data. That foundation is exactly what makes a store ready to plug into agentic shopping surfaces later, without a rebuild. See our <a href="/solutions/ecommerce-website-development">ecommerce development packages</a> for the practical first step (from ₹25,000 website to ₹99,000 high-end logistics + Android + iOS).</p>
 
       <h3>What "ready for agentic shopping" looks like in practice</h3>
       <p>Concretely: your product feed uses consistent, structured attributes (size, colour, material, stock count) rather than free-text descriptions; your pricing is accurate in real time, not updated manually once a week; and your checkout API can confirm a transaction without a human in the loop. Stores built this way today are simply well-run ecommerce operations — they also happen to be the ones best positioned when agentic shopping surfaces (from Google, from AI assistants, or from marketplace apps) start driving real order volume.</p>
@@ -1269,7 +1279,7 @@ export const blogPosts = [
       <h3>Can TheTriFusion add an AI shopping assistant to my existing store?</h3>
       <p>Yes — see <a href="/services/ai-development">AI development</a> for scoping a product-aware chatbot on top of your existing catalog.</p>
       <h3>What's the next step?</h3>
-      <p>Start with a solid storefront on <a href="/ecommerce-development">ecommerce development</a>, or <a href="/contact">contact us</a> to discuss adding AI features to an existing store.</p>
+      <p>Start with a solid storefront on <a href="/solutions/ecommerce-website-development">ecommerce development</a>, or <a href="/contact">contact us</a> to discuss adding AI features to an existing store.</p>
     `,
     category: "webdev",
     image: "/assets/images/blog/ecommerce-cost.jpg",
@@ -1321,7 +1331,7 @@ export const blogPosts = [
       </ul>
 
       <h2>A practical path: own store first, ONDC as an add-on</h2>
-      <p>We generally recommend building a solid owned storefront first — even a lean single-vendor build from our <a href="/ecommerce-development">ecommerce packages (from ₹25,000)</a> — because it gives you a clean, structured catalog and a real order-management workflow. Once that foundation exists, adding an ONDC seller-app listing is a lighter lift, since your product data and fulfillment process are already proven.</p>
+      <p>We generally recommend building a solid owned storefront first — even a lean single-vendor build from our <a href="/solutions/ecommerce-website-development">ecommerce packages (from ₹25,000)</a> — because it gives you a clean, structured catalog and a real order-management workflow. Once that foundation exists, adding an ONDC seller-app listing is a lighter lift, since your product data and fulfillment process are already proven.</p>
 
       <h2>FAQ: ONDC ecommerce for SME sellers in India</h2>
       <h3>Do I need to build a custom ONDC integration myself?</h3>
@@ -1331,7 +1341,7 @@ export const blogPosts = [
       <h3>Does TheTriFusion help with ONDC listings directly?</h3>
       <p>We help you build the clean, structured catalog and inventory system that makes joining an ONDC seller app straightforward — <a href="/contact">contact us</a> to discuss your specific setup.</p>
       <h3>What's the next step?</h3>
-      <p>Start with a scoped storefront on <a href="/ecommerce-development">ecommerce development</a>, or <a href="/discuss-project">discuss your project</a> if you already sell and want to add ONDC as a channel.</p>
+      <p>Start with a scoped storefront on <a href="/solutions/ecommerce-website-development">ecommerce development</a>, or <a href="/discuss-project">discuss your project</a> if you already sell and want to add ONDC as a channel.</p>
     `,
     category: "webdev",
     image: "/assets/images/blog/ecommerce-cost.jpg",
@@ -1435,7 +1445,7 @@ export const blogPosts = [
       <p>Catalog organized the way Indians shop (categories like atta, dairy, snacks; weight/unit variants), UPI + cash-on-delivery checkout since many kirana buyers still prefer COD for first orders, and a simple reorder flow since grocery is fundamentally a repeat-purchase category — a "reorder last basket" button drives more repeat revenue than almost any other single feature. See our full <a href="/blog/grocery-ecommerce-website-app-development-india">grocery / kirana ecommerce guide</a> for the complete build breakdown, catalog structure, and single-vendor vs multi-vendor grocery mall options.</p>
 
       <h3>Cost and timeline reality check</h3>
-      <p>A grocery storefront starts at ₹25,000 for the website through our <a href="/ecommerce-development">ecommerce packages</a>, live in 48 hours after a locked brief. Add Android at ₹35,000, Android + iOS at ₹45,000, or high-end logistics + both apps at ₹99,000. A multi-vendor grocery mall is quoted after discovery. Packages do not include building a delivery fleet — that operational piece stays yours to arrange, whether through your own riders or a local courier partner. High-End adds courier integration and tracking.</p>
+      <p>A grocery storefront starts at ₹25,000 for the website through our <a href="/solutions/ecommerce-website-development">ecommerce packages</a>, live in 48 hours after a locked brief. Add Android at ₹35,000, Android + iOS at ₹45,000, or high-end logistics + both apps at ₹99,000. A multi-vendor grocery mall is quoted after discovery. Packages do not include building a delivery fleet — that operational piece stays yours to arrange, whether through your own riders or a local courier partner. High-End adds courier integration and tracking.</p>
 
       <p>If your customers are mostly on one platform, start there: <a href="/services/android-app-development">Android app development in Jaipur</a> for a Play Store-first grocery app, or <a href="/services/ios-app-development">iOS app development</a> for iPhone-first shoppers.</p>
       <h2>FAQ: Quick commerce vs own grocery app in India</h2>
@@ -1446,7 +1456,7 @@ export const blogPosts = [
       <h3>How fast can I get my own grocery app live?</h3>
       <p>Our packaged builds target website live in 48 hours after a locked brief; mobile app store review adds separate time on top of that.</p>
       <h3>What's the next step?</h3>
-      <p>Read the full <a href="/blog/grocery-ecommerce-website-app-development-india">grocery ecommerce guide</a>, or start directly on <a href="/ecommerce-development">ecommerce development</a> for pricing and packages.</p>
+      <p>Read the full <a href="/blog/grocery-ecommerce-website-app-development-india">grocery ecommerce guide</a>, or start directly on <a href="/solutions/ecommerce-website-development">ecommerce development</a> for pricing and packages.</p>
     `,
     category: "webdev",
     image: "/assets/images/blog/ecommerce-cost.jpg",
@@ -1555,7 +1565,7 @@ export const blogPosts = [
       <p>Launch to a small audience first — your own network, an email list, or organic social — to catch bugs and gather your first reviews before scaling paid traffic. A store with zero reviews and a broken coupon code loses far more from paid ads than it gains.</p>
 
       <h2>DIY builders vs scoped agency packages: an honest comparison</h2>
-      <p>Templates and DIY builders (Shopify's own onboarding flow, WooCommerce starter themes) are genuinely fine for learning the ropes on a low-stakes catalog. Once you are buying paid traffic or need multi-vendor rules, a scoped team usually wins on speed-to-stable, because the cost of a broken checkout during a paid campaign is higher than the cost of hiring it out correctly the first time. TheTriFusion offers a website live in 48 hours after a locked brief — or 50% refund until Diwali — on <a href="/ecommerce-development">ecommerce development</a> (from ₹25,000 website to ₹99,000 high-end logistics + Android + iOS).</p>
+      <p>Templates and DIY builders (Shopify's own onboarding flow, WooCommerce starter themes) are genuinely fine for learning the ropes on a low-stakes catalog. Once you are buying paid traffic or need multi-vendor rules, a scoped team usually wins on speed-to-stable, because the cost of a broken checkout during a paid campaign is higher than the cost of hiring it out correctly the first time. TheTriFusion offers a website live in 48 hours after a locked brief — or 50% refund until Diwali — on <a href="/solutions/ecommerce-website-development">ecommerce development</a> (from ₹25,000 website to ₹99,000 high-end logistics + Android + iOS).</p>
 
       <h2>SEO and conversion basics to get right on day one</h2>
       <ul>
@@ -1623,7 +1633,7 @@ export const blogPosts = [
       <p>Some businesses use an AI builder to quickly test a niche idea's copy and layout, then bring that direction to a proper scoped build once they are confident in the concept — this is a legitimate way to move fast without wasting engineering time on an idea that has not been validated yet. Once you are ready to accept real payments and real orders, that is when correctly-implemented UPI, logistics, and SEO stop being optional.</p>
 
       <h3>What we offer as the "real build" step</h3>
-      <p>Our <a href="/ecommerce-development">ecommerce packages</a> (Website ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · High-End logistics ₹99,000) include correctly implemented UPI + COD checkout, mobile-first design, WhatsApp lead capture, and SEO fundamentals from day one — the pieces an AI builder draft typically leaves unfinished. Website live in 48 hours after a locked brief, or 50% refund until Diwali.</p>
+      <p>Our <a href="/solutions/ecommerce-website-development">ecommerce packages</a> (Website ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · High-End logistics ₹99,000) include correctly implemented UPI + COD checkout, mobile-first design, WhatsApp lead capture, and SEO fundamentals from day one — the pieces an AI builder draft typically leaves unfinished. Website live in 48 hours after a locked brief, or 50% refund until Diwali.</p>
 
       <h3>A quick checklist before you trust an AI-built store with real traffic</h3>
       <ul>
@@ -1642,7 +1652,7 @@ export const blogPosts = [
       <h3>Is a fully custom build always better than an AI builder?</h3>
       <p>Not for early idea validation — AI builders are fine for testing concepts quickly. Once you are accepting real payments at volume, a properly engineered store pays for itself in fewer lost orders and better search visibility.</p>
       <h3>What's the next step?</h3>
-      <p>See <a href="/ecommerce-development">ecommerce development packages</a> or <a href="/discuss-project">discuss your project</a> for a scoped estimate.</p>
+      <p>See <a href="/solutions/ecommerce-website-development">ecommerce development packages</a> or <a href="/discuss-project">discuss your project</a> for a scoped estimate.</p>
     `,
     category: "webdev",
     image: "/assets/images/blog/ecommerce-cost.jpg",
@@ -1711,7 +1721,7 @@ export const blogPosts = [
       <h3>Can I verify the quality before committing?</h3>
       <p>Yes — always ask for live URLs, not mockups. Our <a href="/portfolio">portfolio</a> lists real, working sites and apps you can open right now.</p>
       <h3>What's the next step?</h3>
-      <p>Start on <a href="/ecommerce-development">ecommerce development</a> for the 48-hour live packages, or <a href="/contact">contact us</a> for a scoped custom quote.</p>
+      <p>Start on <a href="/solutions/ecommerce-website-development">ecommerce development</a> for the 48-hour live packages, or <a href="/contact">contact us</a> for a scoped custom quote.</p>
     `,
     category: "webdev",
     image: "/assets/images/blog/ecommerce-cost.jpg",
@@ -1856,7 +1866,7 @@ export const blogPosts = [
       </ol>
       <p>Related Trends content: <a href="/blog/chatgpt-1980s-ai-photo-prompt-guide">1980s AI photo prompt ChatGPT</a>, <a href="/blog/google-gemini-vs-chatgpt-india-business">Gemini vs ChatGPT</a>, <a href="/blog/ai-app-development-cost-india-2026">AI app development cost India</a>.</p>
       <h2>Internal links and next reads</h2>
-      <p><a href="/services/ai-development">AI development</a> · <a href="/services/digital-marketing">digital marketing</a> · <a href="/ecommerce-development">ecommerce packages</a></p>
+      <p><a href="/services/ai-development">AI development</a> · <a href="/services/digital-marketing">digital marketing</a> · <a href="/solutions/ecommerce-website-development">ecommerce packages</a></p>
       <h2>Work with TheTriFusion</h2>
       <p>Trifusion Infotech Private Limited builds websites, mobile apps, AI features, and ecommerce systems with Hindi + English support and GST invoicing. Start on <a href="/contact">contact</a>, <a href="/discuss-project">discuss project</a>, or <a href="/appointment">book 15 minutes</a>.</p>
       <h2>FAQ: ChatGPT for Indian businesses 2026</h2>
@@ -1969,7 +1979,7 @@ export const blogPosts = [
         <li>Intent detection: pricing question, demo request, or support issue</li>
         <li>Three qualifying questions maximum — long question chains lose customers before they reach a real answer</li>
         <li>A summary automatically sent to your sales team's WhatsApp or CRM, with full context so no one has to ask the customer to repeat themselves</li>
-        <li>An optional link to a relevant offer (like our <a href="/ecommerce-development">ecommerce packages</a>) or a booking calendar to keep momentum while interest is high</li>
+        <li>An optional link to a relevant offer (like our <a href="/solutions/ecommerce-website-development">ecommerce packages</a>) or a booking calendar to keep momentum while interest is high</li>
       </ol>
       <p>Pair this with sticky WhatsApp CTA buttons on your actual website so both paid and organic traffic can start this exact conversation in one tap, rather than hunting for a contact form.</p>
 
@@ -1977,7 +1987,7 @@ export const blogPosts = [
       <p>The most common failure is trying to make the bot handle everything on day one — pricing, complex support, and sales in one launch. We recommend piloting one narrow flow (usually lead qualification) for two weeks, measuring real conversation data, then expanding scope based on what customers actually ask rather than what you assumed they would ask.</p>
 
       <h3>Cost and timeline for a first WhatsApp AI bot</h3>
-      <p>A lead-qualification bot with CRM webhook integration typically ships faster than a full support-deflection system, since it has a narrower, well-defined job. We scope this during a discovery call based on your existing FAQ content, CRM/sheet setup, and desired handoff process — see <a href="/services/ai-development">AI development</a> for the full scoping conversation, or pair it with our <a href="/ecommerce-development">ecommerce packages</a> if the bot needs to handle order-related queries alongside a storefront.</p>
+      <p>A lead-qualification bot with CRM webhook integration typically ships faster than a full support-deflection system, since it has a narrower, well-defined job. We scope this during a discovery call based on your existing FAQ content, CRM/sheet setup, and desired handoff process — see <a href="/services/ai-development">AI development</a> for the full scoping conversation, or pair it with our <a href="/solutions/ecommerce-website-development">ecommerce packages</a> if the bot needs to handle order-related queries alongside a storefront.</p>
 
       <h2>FAQ: WhatsApp AI chatbot for Indian businesses</h2>
       <h3>Is a personal WhatsApp number enough to start?</h3>
@@ -2627,7 +2637,7 @@ export const blogPosts = [
       </ul>
 
       <h2>Website, app, or ecommerce first? How to sequence your build</h2>
-      <p>Most Jaipur and Rajasthan SMEs start with a lead-generating website or an ecommerce store, then add Android/iOS apps once the core web product proves demand. Trying to build web + Android + iOS simultaneously on day one usually stretches budget and timeline without validating whether customers actually want the product yet. If you need a store fast, see our <a href="/ecommerce-development">48-hour ecommerce packages from ₹25,000</a> — a pragmatic way to test demand before committing to a larger custom build.</p>
+      <p>Most Jaipur and Rajasthan SMEs start with a lead-generating website or an ecommerce store, then add Android/iOS apps once the core web product proves demand. Trying to build web + Android + iOS simultaneously on day one usually stretches budget and timeline without validating whether customers actually want the product yet. If you need a store fast, see our <a href="/solutions/ecommerce-website-development">48-hour ecommerce packages from ₹25,000</a> — a pragmatic way to test demand before committing to a larger custom build.</p>
 
       <h2>How pricing typically breaks down for a Jaipur software project</h2>
       <p>A scoped custom website generally starts in a different band from a full software product with logins, roles, and a database-backed workflow. Ecommerce sits in between — a website from ₹25,000, website + Android + iOS at ₹45,000, high-end logistics at ₹99,000; multi-vendor marketplaces are quoted after discovery. Custom software (CRM, ERP, MLM platforms, fintech retailer apps) is quoted per module after a discovery call, because the genealogy/commission engine, integrations, and admin complexity vary enormously between businesses even when the pitch sounds similar. Ask any vendor — Jaipur or otherwise — to break down what specifically drives their number, rather than accepting one flat figure.</p>
@@ -2705,7 +2715,7 @@ export const blogPosts = [
       <p>Choose <strong>Kotlin native</strong> when your app is Android-only for the foreseeable future and needs the tightest possible performance and access to Android-specific hardware features (NFC, background services, deep OS integration). Choose <strong>React Native or Flutter</strong> when iOS is likely to follow within a year or two — building one codebase for both platforms from the start avoids a near-total rebuild later. There is no universally "better" choice; the right one depends on your device mix, your budget, and how soon iOS matters to your business. We advise after seeing your actual users and budget, not before — see <a href="/services/android-app-development">Android app development in Jaipur</a> for how we scope this decision.</p>
 
       <h2>What actually goes into an Android MVP timeline</h2>
-      <p>A typical business Android app — logins, a core workflow (bookings, orders, catalog, or field data capture), push notifications, and an admin backend — lands in an 8-12 week band after discovery is complete and designs are approved. That timeline assumes API/backend requirements are settled early; apps that depend on an existing but undocumented legacy system usually need an extra discovery week to map integration points before development starts. Ecommerce-heavy apps may pair with our <a href="/ecommerce-development">ecommerce packages</a> for the storefront and checkout layer, with the Android app wrapping that same catalog and order data.</p>
+      <p>A typical business Android app — logins, a core workflow (bookings, orders, catalog, or field data capture), push notifications, and an admin backend — lands in an 8-12 week band after discovery is complete and designs are approved. That timeline assumes API/backend requirements are settled early; apps that depend on an existing but undocumented legacy system usually need an extra discovery week to map integration points before development starts. Ecommerce-heavy apps may pair with our <a href="/solutions/ecommerce-website-development">ecommerce packages</a> for the storefront and checkout layer, with the Android app wrapping that same catalog and order data.</p>
 
       <h2>Play Store submission — what founders usually get wrong</h2>
       <p>The Play Store developer account must be created in your business's own name, not the agency's — this matters for ownership and future app updates if you ever change vendors. Budget 1-3 days for Google's review after submission, longer if your app touches sensitive permissions (location, contacts, SMS) that trigger additional policy review. A staged rollout (releasing to a small percentage of users first) catches crash-inducing bugs before they hit your entire user base — ask your vendor if this is part of their release process by default.</p>
@@ -2766,10 +2776,13 @@ export function isEventPost(post) {
  */
 export function isSoftNoindexBlogPost(post) {
   if (!post) return false;
+  if (ARCHIVE_NOINDEX_SLUGS.has(post.slug)) return false;
+  if (isRedirectedBlogSlug(post.slug)) return false;
   return (
     OFFTOPIC_NOINDEX_SLUGS.has(post.slug) ||
     ADSENSE_RECOVERY_NOINDEX_SLUGS.has(post.slug) ||
-    isEventPost(post)
+    isEventPost(post) ||
+    !INDIA_INDEXABLE_BLOG_SLUGS.has(post.slug)
   );
 }
 
@@ -2777,7 +2790,9 @@ export function isIndexableBlogPost(post) {
   return Boolean(
     post &&
       !ARCHIVE_NOINDEX_SLUGS.has(post.slug) &&
-      !isSoftNoindexBlogPost(post)
+      !isRedirectedBlogSlug(post.slug) &&
+      !isSoftNoindexBlogPost(post) &&
+      INDIA_INDEXABLE_BLOG_SLUGS.has(post.slug)
   );
 }
 
@@ -2785,7 +2800,9 @@ export function isIndexableBlogSlug(slug) {
   const post = blogPosts.find((item) => item.slug === slug);
   if (!post) {
     return (
+      INDIA_INDEXABLE_BLOG_SLUGS.has(slug) &&
       !ARCHIVE_NOINDEX_SLUGS.has(slug) &&
+      !isRedirectedBlogSlug(slug) &&
       !OFFTOPIC_NOINDEX_SLUGS.has(slug) &&
       !ADSENSE_RECOVERY_NOINDEX_SLUGS.has(slug)
     );
@@ -2856,7 +2873,15 @@ export function isTechBusinessGuidePost(post) {
   return !NON_GUIDE_TOPIC.test(blob);
 }
 
-/** Homepage and blog hub: newest tech and business guides only. */
+/** Homepage: pinned India money posts. Blog hub still uses newest guides. */
+export const getHomepageIndiaPosts = (limit = 9) => {
+  const bySlug = new Map(getPublishedBlogPosts().map((post) => [post.slug, post]));
+  return HOMEPAGE_INDIA_BLOG_SLUGS.map((slug) => bySlug.get(slug))
+    .filter(Boolean)
+    .slice(0, limit);
+};
+
+/** Blog listing hub: newest tech and business guides only. */
 export const getHubTrendingPosts = (limit = 9) =>
   getPublishedBlogPosts().filter(isTechBusinessGuidePost).slice(0, limit);
 

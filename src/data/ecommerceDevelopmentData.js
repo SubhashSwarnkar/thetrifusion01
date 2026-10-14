@@ -1,4 +1,4 @@
-export const ECOMMERCE_PATH = "/ecommerce-development";
+export const ECOMMERCE_PATH = "/solutions/ecommerce-website-development";
 
 export const PACKAGE_PRICE_SUMMARY =
   "Ecommerce Website ₹25,000 · Website + Android ₹35,000 · Website + Android + iOS ₹45,000 · High-End with Logistics + Android + iOS ₹99,000";

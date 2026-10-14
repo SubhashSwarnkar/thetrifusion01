@@ -74,14 +74,6 @@ export default function Footer({ hideNewsletter = false }) {
                   </li>
                   <li>
                     <Link
-                      href="/ecommerce-development"
-                      className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block font-light"
-                    >
-                      Ecommerce Packages from ₹25,000 to ₹99,000
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
                       href="/services/website-development"
                       className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block font-light"
                     >
@@ -217,6 +209,14 @@ export default function Footer({ hideNewsletter = false }) {
                     className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block"
                   >
                     FAQ
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/sitemap"
+                    className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block"
+                  >
+                    Sitemap
                   </Link>
                 </li>
               </ul>

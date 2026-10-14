@@ -225,7 +225,7 @@ export const devopsPageContent = {
         "Migration onto AWS, Azure, or Google Cloud planned for minimal downtime, with a rehearsal and a rollback before cutover.",
       paragraphs: [
         "Cloud migration moves an application, its data, and its operators onto AWS, Azure, or Google Cloud. The order is inventory, a target design, a rehearsal, and a cutover window you have agreed. Minimal downtime means we shrink the cutover. We do not promise a silent switch. Databases are usually the long pole: a replica, measured lag, and a moment to stop writes.",
-        "The provider follows a contract, a data-residency note, or the cloud your team can run later. Lift-and-shift is fine when you are leaving an ageing host. [Business modernization](/services/business-modernization) fits a replacement. [Ecommerce development](/ecommerce-development) covers the store if that is the workload.",
+        "The provider follows a contract, a data-residency note, or the cloud your team can run later. Lift-and-shift is fine when you are leaving an ageing host. [Business modernization](/services/business-modernization) fits a replacement. [Ecommerce development](/solutions/ecommerce-website-development) covers the store if that is the workload.",
       ],
       included: [
         "Inventory of hosts, data stores, and dependencies",
