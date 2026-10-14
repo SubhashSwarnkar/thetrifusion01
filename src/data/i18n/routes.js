@@ -37,20 +37,15 @@ export function localizedPath(lang, englishPath) {
   return `/${lang}${englishPath}`;
 }
 
-/** Absolute hreflang map. Null when this English URL has no translation. */
+/** Absolute hreflang map. Null — locale copies are noindex (India-only). */
 export function hreflangLanguagesForPath(englishPath) {
   if (!isTranslatedEnglishPath(englishPath)) return null;
   const blogMatch = englishPath.match(/^\/blog\/([a-z0-9-]+)$/);
   if (blogMatch && !isIndexableTranslatedBlogSlug(blogMatch[1])) {
-    // Machine-translated copies are noindex; do not advertise them as alternates.
     return null;
   }
-  const languages = {};
-  for (const code of LOCALE_ORDER) {
-    languages[code] = absoluteSiteUrl(localizedPath(code, englishPath));
-  }
-  languages["x-default"] = absoluteSiteUrl(englishPath);
-  return languages;
+  // Translated service pages are noindex under the India-only crawl policy.
+  return null;
 }
 
 /**

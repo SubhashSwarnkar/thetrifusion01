@@ -70,6 +70,44 @@ const nextConfig = {
         destination: "/solutions/ecommerce-website-development",
         permanent: true,
       },
+      {
+        source: "/ecommerce-development",
+        destination: "/solutions/ecommerce-website-development",
+        permanent: true,
+      },
+      // Near-duplicate blog posts → one canonical each
+      {
+        source: "/blog/iphone-18-india-features-apps-businesses",
+        destination: "/blog/iphone-18-india-price-launch-ios-apps-business",
+        permanent: true,
+      },
+      {
+        source: "/blog/iphone-18-apple-intelligence-business-apps-india",
+        destination: "/blog/iphone-18-india-price-launch-ios-apps-business",
+        permanent: true,
+      },
+      {
+        source: "/blog/salesforce-koa-crm-reasoning-model-nvidia-nemotron-explained",
+        destination:
+          "/blog/salesforce-agentforce-koa-ai-push-what-investors-and-teams-watch",
+        permanent: true,
+      },
+      {
+        source: "/blog/salesforce-nvidia-koa-vs-frontier-ai-labs",
+        destination:
+          "/blog/salesforce-agentforce-koa-ai-push-what-investors-and-teams-watch",
+        permanent: true,
+      },
+      {
+        source: "/blog/nse-ipo-digital-presence-india-companies",
+        destination: "/blog/ipo-ready-website-digital-presence-india",
+        permanent: true,
+      },
+      {
+        source: "/blog/fashion-d2c-ecommerce-website-cost-india",
+        destination: "/blog/ecommerce-website-development-cost-india",
+        permanent: true,
+      },
       // Same service and intent as the /services twin. Keep in sync with
       // src/lib/solutionRedirects.js. City pages, ecommerce, MSP, the buyer
       // guide, and software-company-rajasthan stay as distinct landings.

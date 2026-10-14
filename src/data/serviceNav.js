@@ -58,7 +58,7 @@ export const serviceNav = [
     "id": "branding",
     "slug": "branding",
     "title": "Branding",
-    "shortDescription": "Complete brand identity and positioning strategies."
+    "shortDescription": "TheTriFusion in Jaipur builds brand identity for Indian companies — logo, colour, type, and guidelines the website can use. From ₹30,000."
   },
   {
     "id": "digital-marketing",
@@ -70,13 +70,13 @@ export const serviceNav = [
     "id": "rpa",
     "slug": "rpa",
     "title": "RPA",
-    "shortDescription": "Automate repetitive tasks and streamline workflows."
+    "shortDescription": "TheTriFusion in Jaipur automates invoice entry, Tally sync, and CRM updates with a human exception path. From ₹50,000."
   },
   {
     "id": "salesforce",
     "slug": "salesforce",
     "title": "Salesforce",
-    "shortDescription": "Expert Salesforce implementation, customization, and optimization services."
+    "shortDescription": "TheTriFusion in Jaipur implements Salesforce Flows, Apex, and integrations on an org you already pay for. From ₹80,000."
   },
   {
     "id": "business-modernization",

@@ -39,7 +39,7 @@ export default {
           SOURCES.npciBbps +
           ") (Bharat BillPay) and [AePS](" +
           SOURCES.npciAeps +
-          ") are NPCI products. DMT/XDMT and recharge sits on the partner you contract. UPI is also NPCI. We implement the panels; we do not onboard you to NPCI.",
+          ") are NPCI products. DMT/XDMT and recharge sits on the partner you contract. UPI is also NPCI. We implement the panels; we do not onboard you to NPCI. Dedicated pages: [BBPS software](/services/fintech-app-development/bbps-software), [AEPS software](/services/fintech-app-development/aeps-software), [DMT software](/services/fintech-app-development/dmt-software), [recharge software](/services/fintech-app-development/recharge-software).",
       ],
       comparison: {
         heading: "What each module is",
@@ -150,6 +150,26 @@ export default {
     },
   ],
   relatedLinks: [
+    {
+      href: "/services/fintech-app-development/bbps-software",
+      title: "BBPS software",
+      text: "Bharat BillPay retailer and distributor panels.",
+    },
+    {
+      href: "/services/fintech-app-development/aeps-software",
+      title: "AEPS software",
+      text: "Aadhaar-enabled payments on certified devices.",
+    },
+    {
+      href: "/services/fintech-app-development/dmt-software",
+      title: "DMT software",
+      text: "Domestic money transfer for the retailer network.",
+    },
+    {
+      href: "/services/fintech-app-development/recharge-software",
+      title: "Recharge software",
+      text: "Mobile and DTH top-ups on the partner you contract.",
+    },
     {
       href: "/services/software-development",
       title: "Custom software development",

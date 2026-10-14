@@ -6,6 +6,7 @@ import {
   blogPosts,
   getBlogBySlug,
   ARCHIVE_NOINDEX_SLUGS,
+  isRedirectedBlogSlug,
   isSoftNoindexBlogPost,
 } from "data/blogData";
 import { cleanBlogHtml } from "lib/cleanBlogHtml";
@@ -22,14 +23,22 @@ import EventWorldTimes, {
 export function generateStaticParams() {
   // Archived slugs 301 to /blog. Off-topic noindex slugs stay and are still built.
   return blogPosts
-    .filter((post) => !ARCHIVE_NOINDEX_SLUGS.has(post.slug))
+    .filter(
+      (post) =>
+        !ARCHIVE_NOINDEX_SLUGS.has(post.slug) &&
+        !isRedirectedBlogSlug(post.slug)
+    )
     .map((post) => ({ slug: post.slug }));
 }
 
 export function generateMetadata({ params }) {
   const post = getBlogBySlug(params.slug);
 
-  if (!post || ARCHIVE_NOINDEX_SLUGS.has(params.slug)) {
+  if (
+    !post ||
+    ARCHIVE_NOINDEX_SLUGS.has(params.slug) ||
+    isRedirectedBlogSlug(params.slug)
+  ) {
     return {
       title: "Article Not Found | TheTriFusion Blog",
       robots: { index: false, follow: true },
@@ -57,7 +66,11 @@ export function generateMetadata({ params }) {
 export default function RoutePage({ params }) {
   const storedPost = getBlogBySlug(params.slug);
 
-  if (!storedPost || ARCHIVE_NOINDEX_SLUGS.has(params.slug)) {
+  if (
+    !storedPost ||
+    ARCHIVE_NOINDEX_SLUGS.has(params.slug) ||
+    isRedirectedBlogSlug(params.slug)
+  ) {
     notFound();
   }
 

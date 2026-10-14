@@ -24,7 +24,7 @@ export default function Discuss() {
           written next step — usually the same day on WhatsApp. Need a store
           fast? See{" "}
           <a
-            href="/ecommerce-development"
+            href="/solutions/ecommerce-website-development"
             className="underline font-semibold text-yellow-200 hover:text-white"
           >
             ecommerce packages from ₹25,000 (website live in 48 hours)

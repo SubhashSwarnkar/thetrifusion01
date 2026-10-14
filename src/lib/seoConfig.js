@@ -82,13 +82,6 @@ export const pages = {
     keywords:
       "white label development India, software development partner Jaipur, AWS partner development, agency white label apps",
   },
-  "/ecommerce-development": {
-    title: "Ecommerce from ₹25,000 | 48-Hour Launch | TheTriFusion",
-    description:
-      "Ecommerce Website ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · High-End logistics ₹99,000. Live in 48 hours or 50% refund.",
-    keywords:
-      "ecommerce website live in 48 hours, ecommerce 50% refund guarantee, ecommerce website Android app India, ecommerce web android ios package, high-end ecommerce logistics, ecommerce development company India, grocery ecommerce website, clothing ecommerce app, online store live fast India, D2C ecommerce Jaipur",
-  },
   "/contact": {
     title: "Contact TheTriFusion in Jaipur | Software Company Rajasthan",
     description:
@@ -107,6 +100,12 @@ export const pages = {
     title: "Blog | Jaipur Software Company Insights | TheTriFusion",
     description:
       "Jaipur delivery notes from TheTriFusion: ecommerce, MLM CRM, EV charging (OCPI/OCPP), and fintech — at least two India-relevant posts each month.",
+  },
+  "/sitemap": {
+    title: "HTML Sitemap | TheTriFusion",
+    description:
+      "HTML sitemap of TheTriFusion pages: services in Jaipur, ecommerce solutions, India guides, and contact.",
+    keywords: "TheTriFusion sitemap, IT services Jaipur pages",
   },
   "/faq": {
     title: "FAQ | Software Company in Jaipur | TheTriFusion",
@@ -191,18 +190,13 @@ function robotsFor(noIndex) {
  * Paid landing URLs stay HTTP 200 for live campaigns. They are noindex, follow
  * so organic results use the matching /services or ecommerce solution page.
  *
- * /ecommerce-development (menu: Ecommerce Packages) stays noindex on purpose:
- * it is a conversion/package URL with a 48-hour guarantee, while
- * /solutions/ecommerce-website-development is the organic ranking page.
- * Indexing both would recannibalize ecommerce queries. Do not flip until
- * the packages page is rewritten as a distinct, crawlable offer (and the
- * solution page stops repeating the same SKUs).
+ * /ecommerce-development 301s to /solutions/ecommerce-website-development
+ * (the canonical ecommerce page). Paid landings below stay noindex.
  */
 export const ADS_LANDING_PATHS = new Set([
   "/web-development",
   "/android-app-development",
   "/ios-app-development",
-  "/ecommerce-development",
   "/white-label-development",
 ]);
 

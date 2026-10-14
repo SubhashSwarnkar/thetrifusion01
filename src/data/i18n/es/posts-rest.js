@@ -19,7 +19,7 @@ export const esPostsRest = {
       <h3>Desarrollos de app de ecommerce a medida</h3>
       <p>Las guías públicas de India en 2026 suelen citar unos <strong>₹4 lakh a ₹30 lakh o más</strong> para ecommerce centrado en la app, y bastante más para marketplaces de varios lados. Puede ser un precio justo si necesita emparejamiento a medida, seguimiento en vivo, operación en varias ciudades o una sincronización profunda con un ERP.</p>
       <h3>Paquete de tienda cerrado (web + Android + iOS)</h3>
-      <p>Si necesita un <strong>sitio para el cliente más apps de compra en Android e iOS</strong> con catálogo, carrito, checkout y administración —no una empresa de logística de unicornio— nuestros <a href="/ecommerce-development">paquetes de ecommerce</a> están en <strong>₹25,000 sitio</strong>, <strong>₹35,000 + Android</strong>, <strong>₹45,000 + Android + iOS</strong> y <strong>₹99,000 logística</strong>. El sitio queda en línea 48 horas después de un brief cerrado, o se devuelve el 50% de la tarifa del paquete. Las apps van en el mismo trabajo. Las cuentas de Google Play y de Apple Developer quedan a nombre de su empresa.</p>
+      <p>Si necesita un <strong>sitio para el cliente más apps de compra en Android e iOS</strong> con catálogo, carrito, checkout y administración —no una empresa de logística de unicornio— nuestros <a href="/solutions/ecommerce-website-development">paquetes de ecommerce</a> están en <strong>₹25,000 sitio</strong>, <strong>₹35,000 + Android</strong>, <strong>₹45,000 + Android + iOS</strong> y <strong>₹99,000 logística</strong>. El sitio queda en línea 48 horas después de un brief cerrado, o se devuelve el 50% de la tarifa del paquete. Las apps van en el mismo trabajo. Las cuentas de Google Play y de Apple Developer quedan a nombre de su empresa.</p>
       <h2>Lo que no puede faltar en India (apps incluidas)</h2>
       <ul>
         <li>Checkout con Razorpay / UPI, y contra reembolso cuando la categoría lo pide</li>
@@ -56,7 +56,7 @@ export const esPostsRest = {
       <h3>¿Cuándo conviene presupuestar en lakhs?</h3>
       <p>Cuando hacen falta apps de repartidor, emparejamiento complejo, rutas entre ciudades, un ERP pesado o un checkout que no está en la lista del paquete. Empiece con un alcance escrito por <a href="/contact">contacto</a> o <a href="/appointment">una cita</a>.</p>
       <h2>Siguiente paso</h2>
-      <p>Si el brief es “vender productos en línea con web y apps”, abra <a href="/ecommerce-development">desarrollo de ecommerce</a>, elija uno o varios vendedores y tome la oferta de salida en 48 horas, o escriba por WhatsApp desde esa página para una respuesta el mismo día desde Jaipur.</p>
+      <p>Si el brief es “vender productos en línea con web y apps”, abra <a href="/solutions/ecommerce-website-development">desarrollo de ecommerce</a>, elija uno o varios vendedores y tome la oferta de salida en 48 horas, o escriba por WhatsApp desde esa página para una respuesta el mismo día desde Jaipur.</p>
     `,
   },
   "custom-website-vs-shopify-vs-woocommerce": {
@@ -81,7 +81,7 @@ export const esPostsRest = {
         <li>¿Hay flujos raros, administración con varios roles o una integración profunda con un ERP, CRM o inventario? Lo a medida suele pagarse en 6 a 12 meses de fricción de plataforma que se evita.</li>
         <li>¿Le parece bien una cuota recurrente a cambio de no tocar el servidor? Shopify.</li>
         <li>¿Quiere control del hosting, sin cuota de plataforma, y puede pagar el mantenimiento de WordPress? WooCommerce.</li>
-        <li>¿Planea un marketplace de varios vendedores con reparto de comisiones? Una plataforma a medida o pensada para eso (vea los <a href="/ecommerce-development">paquetes de ecommerce desde ₹25,000</a>) suele encajar mejor que forzar Shopify o WooCommerce.</li>
+        <li>¿Planea un marketplace de varios vendedores con reparto de comisiones? Una plataforma a medida o pensada para eso (vea los <a href="/solutions/ecommerce-website-development">paquetes de ecommerce desde ₹25,000</a>) suele encajar mejor que forzar Shopify o WooCommerce.</li>
       </ul>
       <h2>FAQ: sitio a medida, Shopify o WooCommerce</h2>
       <h3>¿Con cuál es más barato empezar?</h3>
@@ -116,7 +116,7 @@ export const esPostsRest = {
       <h3>Qué recomendamos de verdad en las llamadas de alcance</h3>
       <p>No ponemos a todos los clientes en el mismo marco. En el descubrimiento miramos las habilidades del equipo interno, si las hay, el presupuesto, el plazo y cuánto pulido visual necesita el producto de verdad. Después recomendamos el marco que baja el costo y el riesgo de ese caso, no el que a nosotros nos gusta más escribir.</p>
       <h3>Plazo típico de una primera versión móvil</h3>
-      <p>Una app de negocio —ingresos, un flujo central, notificaciones push y un backend de administración— suele caer en una banda de 8 a 12 semanas después del descubrimiento y de la aprobación del diseño, en cualquiera de los dos marcos. Si ya hay un sitio en vivo con el mismo catálogo o los mismos datos, por ejemplo una tienda, envolver eso en una app es más rápido que empezar de cero. Vea los <a href="/ecommerce-development">paquetes de ecommerce</a>, que encuadran web + Android + iOS juntos.</p>
+      <p>Una app de negocio —ingresos, un flujo central, notificaciones push y un backend de administración— suele caer en una banda de 8 a 12 semanas después del descubrimiento y de la aprobación del diseño, en cualquiera de los dos marcos. Si ya hay un sitio en vivo con el mismo catálogo o los mismos datos, por ejemplo una tienda, envolver eso en una app es más rápido que empezar de cero. Vea los <a href="/solutions/ecommerce-website-development">paquetes de ecommerce</a>, que encuadran web + Android + iOS juntos.</p>
       <h2>FAQ: Flutter o React Native para negocios en India</h2>
       <h3>¿Cuál sale más barato de construir?</h3>
       <p>La diferencia de costo entre los dos suele ser pequeña si el alcance es comparable. Lo que mueve el precio es la complejidad de la app, no la elección del marco.</p>
@@ -148,7 +148,7 @@ export const esPostsRest = {
       <h2>Paso 6: salida suave y después anuncios</h2>
       <p>Lance primero a un público pequeño —su propia red, una lista de correo o redes orgánicas— para cazar fallos y juntar las primeras reseñas antes de escalar el tráfico de pago. Una tienda sin reseñas y con un cupón roto pierde en anuncios más de lo que gana.</p>
       <h2>Constructores caseros frente a un paquete con alcance</h2>
-      <p>Las plantillas y los constructores (el alta de Shopify, los temas iniciales de WooCommerce) sirven de verdad para aprender con un catálogo de poco riesgo. Cuando ya compra tráfico de pago o necesita reglas de varios vendedores, un equipo con alcance suele ganar en tiempo hasta una tienda estable, porque un checkout roto durante una campaña pagada cuesta más que encargarlo bien la primera vez. TheTriFusion ofrece el sitio en línea 48 horas después de un brief cerrado, o la devolución del 50%, en <a href="/ecommerce-development">desarrollo de ecommerce</a> (desde ₹25,000 (sitio) hasta ₹99,000 (logística + Android + iOS)).</p>
+      <p>Las plantillas y los constructores (el alta de Shopify, los temas iniciales de WooCommerce) sirven de verdad para aprender con un catálogo de poco riesgo. Cuando ya compra tráfico de pago o necesita reglas de varios vendedores, un equipo con alcance suele ganar en tiempo hasta una tienda estable, porque un checkout roto durante una campaña pagada cuesta más que encargarlo bien la primera vez. TheTriFusion ofrece el sitio en línea 48 horas después de un brief cerrado, o la devolución del 50%, en <a href="/solutions/ecommerce-website-development">desarrollo de ecommerce</a> (desde ₹25,000 (sitio) hasta ₹99,000 (logística + Android + iOS)).</p>
       <h2>SEO y conversión que hay que dejar bien el primer día</h2>
       <ul>
         <li>Títulos y H1 únicos en cada página de categoría importante, no un título de plantilla copiado en todas</li>

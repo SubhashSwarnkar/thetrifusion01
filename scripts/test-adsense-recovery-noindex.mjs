@@ -29,7 +29,8 @@ import {
 } from "../src/lib/adsensePaths.js";
 import { isLeadPopupEligiblePath } from "../src/lib/leadPopupGate.js";
 import { TRANSLATED_BLOG_SLUGS } from "../src/data/i18n/catalog.js";
-import sitemap from "../src/app/sitemap.js";
+import { allSitemapEntries } from "../src/lib/sitemaps.js";
+import { BLOG_CANONICAL_REDIRECTS, INDIA_INDEXABLE_BLOG_SLUGS } from "../src/data/blogData.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const failures = [];
@@ -67,7 +68,7 @@ const families = readFamilies("scripts/fixtures/B3-template-families.tsv");
 const publishedSlugs = new Set(getPublishedBlogPosts().map((post) => post.slug));
 registerEventNoindexSlugs(eventNoindexSlugList());
 
-const sitemapUrls = sitemap().map((entry) => entry.url);
+const sitemapUrls = allSitemapEntries().map((entry) => entry.url);
 const sitemapBlogSlugs = new Set();
 for (const url of sitemapUrls) {
   const match = url.match(/\/blog\/([a-z0-9-]+)\/?$/);
@@ -165,8 +166,8 @@ for (const [family, rows] of byFamily) {
   for (const slug of noindex) computedNoindex.add(slug);
   familyReport.push({ family, kept, noindex });
 
-  if (family === "ev-charging-csms-X-cpo-guide" && kept.length !== 2) {
-    fail(`${family} should keep 2 posts`);
+  if (family === "ev-charging-csms-X-cpo-guide" && kept.length !== 1) {
+    fail(`${family} should keep 1 post (India CPO guide)`);
   }
   if (family !== "ev-charging-csms-X-cpo-guide" && kept.length !== 0) {
     fail(`${family} should keep 0 posts (geo/UPI templates are noindex)`);
@@ -229,6 +230,8 @@ for (const post of blogPosts) {
   if (eventSlugs.has(post.slug)) continue;
   if (OFFTOPIC_NOINDEX_SLUGS.has(post.slug)) continue;
   if (ARCHIVE_NOINDEX_SLUGS.has(post.slug)) continue;
+  if (BLOG_CANONICAL_REDIRECTS[post.slug]) continue;
+  if (!INDIA_INDEXABLE_BLOG_SLUGS.has(post.slug)) continue;
   if (isSoftNoindexBlogPost(post)) {
     fail(`post outside B1/B3 was noindexed: ${post.slug}`);
   }
@@ -247,7 +250,7 @@ const samples = [
   ["/blog/ev-charging-csms-ireland-cpo-guide", true],
   ["/pt/blog/chatgpt-ai-tools-for-us-startups-2026", true],
   ["/blog/ev-charging-csms-india-cpo-guide", false],
-  ["/blog/ev-charging-csms-uk-europe-cpo-guide", false],
+  ["/blog/ev-charging-csms-uk-europe-cpo-guide", true],
   ["/blog/upi-charges-in-india-2026-complete-guide", true],
   ["/es/blog/ev-charging-app-ocpi-ocpp-guide", false],
   ["/services/ev-charging-app-development", false],

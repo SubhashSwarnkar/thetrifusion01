@@ -43,7 +43,7 @@ export default function LandingPage({ trending, below }) {
                   </p>
                 </div>
                 <Link
-                  href="/ecommerce-development"
+                  href="/solutions/ecommerce-website-development"
                   prefetch={false}
                   className="inline-flex items-center justify-center shrink-0 px-7 py-3.5 bg-theme-purple text-white rounded-full font-bold shadow-lg shadow-theme-purple/25 hover:scale-[1.02] transition-transform"
                 >

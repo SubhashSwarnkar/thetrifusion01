@@ -270,7 +270,25 @@ export default function ServiceDetailPage({
     getSolutionsForService(slug || ""),
     getSeoLandingBySlug
   );
-  const otherServices = services.filter((item) => item.slug !== slug).slice(0, 6);
+  const siblingFromLinks = (service?.relatedLinks || [])
+    .map((item) => {
+      const href = canonicalInternalHref(item.href || "");
+      const match = href.match(/^\/services\/([a-z0-9-]+)(?:\/|$)/);
+      return match ? services.find((entry) => entry.slug === match[1]) : null;
+    })
+    .filter((item) => item && item.slug !== slug);
+  const seenSiblings = new Set();
+  const relatedSiblings = [];
+  for (const item of siblingFromLinks) {
+    if (seenSiblings.has(item.slug)) continue;
+    seenSiblings.add(item.slug);
+    relatedSiblings.push(item);
+  }
+  const otherServices = (
+    relatedSiblings.length
+      ? relatedSiblings
+      : services.filter((item) => item.slug !== slug)
+  ).slice(0, 5);
   const primary = accentForSlug(service?.slug);
 
   useEffect(() => {
@@ -931,7 +949,7 @@ export default function ServiceDetailPage({
         <section className="relative py-16 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-light-theme-purple/40 to-white" />
           <div className="container mx-auto px-5 relative">
-            <SectionHeading kicker="Directory">Explore Other Capabilities</SectionHeading>
+            <SectionHeading kicker="Related">Related services</SectionHeading>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {otherServices.map((item, idx) => {
                 const accent = accentAt(idx);

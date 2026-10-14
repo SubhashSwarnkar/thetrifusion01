@@ -164,14 +164,74 @@ async function main() {
   }
 
   const parser = new XMLParser();
-  const urls = parser.extractLocs(text).slice(0, MAX_PAGES);
+  let pageLocs = [];
+  if (/<sitemapindex/i.test(text)) {
+    const childLocs = parser.extractLocs(text);
+    if (!childLocs.length) {
+      fail("sitemap.xml index had no child <loc> entries");
+      process.exit(1);
+    }
+    ok(`sitemap.xml is a sitemap index (${childLocs.length} children)`);
+    for (const child of childLocs) {
+      let childUrl = child;
+      try {
+        const parsed = new URL(child);
+        childUrl = `${BASE_URL}${parsed.pathname}${parsed.search}`;
+      } catch {
+        // keep
+      }
+      const childRes = await fetchText(childUrl);
+      if (childRes.res.status !== 200) {
+        fail(`${childUrl} returned ${childRes.res.status}`);
+        continue;
+      }
+      if (!/<urlset/i.test(childRes.text)) {
+        fail(`${childUrl} is not a urlset`);
+      }
+      pageLocs.push(...parser.extractLocs(childRes.text));
+    }
+  } else {
+    pageLocs = parser.extractLocs(text);
+  }
 
-  if (!urls.length) {
+  const unique = [...new Set(pageLocs)];
+  if (!unique.length) {
     fail("No URLs found in sitemap");
     process.exit(1);
   }
+  if (unique.length > 75) {
+    fail(`sitemap has ${unique.length} URLs; target is ~60`);
+  } else if (unique.length < 40) {
+    fail(`sitemap has ${unique.length} URLs; expected at least 40`);
+  } else {
+    ok(`Found ${unique.length} sitemap page URLs`);
+  }
 
-  ok(`Found ${urls.length} sitemap URLs (capped at ${MAX_PAGES})`);
+  const localeHit = unique.find((u) =>
+    /\/(es|pt|ar|id|hi)(\/|$)/.test(new URL(u, BASE_URL).pathname)
+  );
+  if (localeHit) fail(`locale URL still in sitemap: ${localeHit}`);
+
+  const paidEcommerce = unique.find((u) =>
+    /\/ecommerce-development(\/|$)/.test(new URL(u, BASE_URL).pathname)
+  );
+  if (paidEcommerce) fail(`paid ecommerce URL still in sitemap: ${paidEcommerce}`);
+
+  const required = [
+    "/solutions/ecommerce-website-development",
+    "/services/fintech-app-development/bbps-software",
+    "/services/fintech-app-development/aeps-software",
+    "/services/fintech-app-development/dmt-software",
+    "/services/fintech-app-development/recharge-software",
+    "/sitemap",
+  ];
+  for (const path of required) {
+    if (!unique.some((u) => new URL(u, BASE_URL).pathname === path)) {
+      fail(`sitemap missing ${path}`);
+    }
+  }
+
+  const urls = unique.slice(0, MAX_PAGES);
 
   // Rewrite production hosts to local base for CI
   const localUrls = urls.map((u) => {

@@ -72,7 +72,7 @@ export const idPosts = {
       <h3>Mengapa marketplace banyak penjual lebih mahal daripada toko satu penjual?</h3>
       <p>Dibutuhkan pendaftaran dan KYC penjual, mesin komisi, serta laporan penyelesaian. Semua itu tidak ada di toko satu penjual, jadi logika tambahan itu lebih mahal jika dikerjakan dengan benar.</p>
       <h3>Apa langkah berikutnya?</h3>
-      <p><a href="/ecommerce-development">Paket toko daring</a> mencakup situs ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · logistik ₹99,000, dengan situs tayang dalam 48 jam atau pengembalian dana 50%. Untuk cakupan khusus, <a href="/appointment">jadwalkan panggilan penggalian kebutuhan</a>. Katalog yang rumit tetap membutuhkan brief: paket mencakup platform dan fitur yang tercantum, bukan pekerjaan khusus tanpa batas.</p>
+      <p><a href="/solutions/ecommerce-website-development">Paket toko daring</a> mencakup situs ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · logistik ₹99,000, dengan situs tayang dalam 48 jam atau pengembalian dana 50%. Untuk cakupan khusus, <a href="/appointment">jadwalkan panggilan penggalian kebutuhan</a>. Katalog yang rumit tetap membutuhkan brief: paket mencakup platform dan fitur yang tercantum, bukan pekerjaan khusus tanpa batas.</p>
     `,
   },
   "ecommerce-app-development-cost-india": {
@@ -95,7 +95,7 @@ export const idPosts = {
       <h3>Pengembangan aplikasi toko daring yang dibuat khusus</h3>
       <p>Panduan publik India pada 2026 biasanya menyebut sekitar <strong>₹4 lakh sampai ₹30 lakh atau lebih</strong> untuk toko daring yang berpusat pada aplikasi. Satu lakh sama dengan 100.000 rupee. Angkanya jauh lebih tinggi untuk marketplace banyak sisi. Harga itu bisa adil jika Anda membutuhkan pencocokan khusus, pelacakan langsung, operasi di beberapa kota, atau sinkronisasi yang dalam dengan ERP.</p>
       <h3>Paket toko yang sudah tertutup (web + Android + iOS)</h3>
-      <p>Jika yang Anda butuhkan adalah <strong>situs untuk pelanggan plus aplikasi belanja di Android dan iOS</strong> dengan katalog, keranjang, checkout, dan administrasi — bukan bisnis logistik skala unicorn — <a href="/ecommerce-development">paket toko daring</a> kami berada di <strong>₹25,000 situs</strong>, <strong>₹35,000 + Android</strong>, <strong>₹45,000 + Android + iOS</strong>, dan <strong>₹99,000 logistik</strong>. Situs tayang 48 jam setelah brief dikunci, atau 50% dari biaya paket dikembalikan. Aplikasi masuk dalam pekerjaan yang sama. Akun Google Play dan Apple Developer tercatat atas nama perusahaan Anda.</p>
+      <p>Jika yang Anda butuhkan adalah <strong>situs untuk pelanggan plus aplikasi belanja di Android dan iOS</strong> dengan katalog, keranjang, checkout, dan administrasi — bukan bisnis logistik skala unicorn — <a href="/solutions/ecommerce-website-development">paket toko daring</a> kami berada di <strong>₹25,000 situs</strong>, <strong>₹35,000 + Android</strong>, <strong>₹45,000 + Android + iOS</strong>, dan <strong>₹99,000 logistik</strong>. Situs tayang 48 jam setelah brief dikunci, atau 50% dari biaya paket dikembalikan. Aplikasi masuk dalam pekerjaan yang sama. Akun Google Play dan Apple Developer tercatat atas nama perusahaan Anda.</p>
       <h2>Yang wajib ada di India (aplikasi termasuk)</h2>
       <ul>
         <li>Checkout dengan Razorpay / UPI, dan bayar di tempat ketika kategori memintanya</li>
@@ -132,7 +132,7 @@ export const idPosts = {
       <h3>Kapan masuk akal menganggarkan dalam satuan lakh?</h3>
       <p>Ketika dibutuhkan aplikasi kurir, pencocokan yang rumit, rute antarkota, ERP yang berat, atau checkout yang tidak ada di daftar paket. Mulailah dengan cakupan tertulis lewat <a href="/contact">kontak</a> atau <a href="/appointment">janji temu</a>.</p>
       <h2>Langkah berikutnya</h2>
-      <p>Jika brief-nya “menjual produk daring dengan situs dan aplikasi”, buka <a href="/ecommerce-development">pengembangan toko daring</a>, pilih satu atau banyak penjual, dan ambil tawaran tayang dalam 48 jam, atau tulis lewat WhatsApp dari halaman itu untuk balasan di hari yang sama dari Jaipur.</p>
+      <p>Jika brief-nya “menjual produk daring dengan situs dan aplikasi”, buka <a href="/solutions/ecommerce-website-development">pengembangan toko daring</a>, pilih satu atau banyak penjual, dan ambil tawaran tayang dalam 48 jam, atau tulis lewat WhatsApp dari halaman itu untuk balasan di hari yang sama dari Jaipur.</p>
     `,
   },
   "custom-website-vs-shopify-vs-woocommerce": {
@@ -156,7 +156,7 @@ export const idPosts = {
         <li>Ada alur yang tidak umum, administrasi dengan beberapa peran, atau integrasi yang dalam dengan ERP, CRM, atau persediaan? Pilihan khusus biasanya terbayar oleh 6–12 bulan gesekan platform yang terhindar.</li>
         <li>Anda menerima biaya berulang agar tidak mengurus server? Shopify.</li>
         <li>Anda ingin kendali hosting, tanpa biaya platform, dan bisa membayar pemeliharaan WordPress? WooCommerce.</li>
-        <li>Anda merencanakan marketplace banyak penjual dengan pembagian komisi? Platform khusus atau yang memang dirancang untuk itu (lihat <a href="/ecommerce-development">paket toko daring mulai ₹25,000</a>) biasanya lebih cocok daripada memaksa Shopify atau WooCommerce.</li>
+        <li>Anda merencanakan marketplace banyak penjual dengan pembagian komisi? Platform khusus atau yang memang dirancang untuk itu (lihat <a href="/solutions/ecommerce-website-development">paket toko daring mulai ₹25,000</a>) biasanya lebih cocok daripada memaksa Shopify atau WooCommerce.</li>
       </ul>
       <h2>FAQ: situs khusus, Shopify, atau WooCommerce</h2>
       <h3>Mana yang lebih murah untuk memulai?</h3>
@@ -191,7 +191,7 @@ export const idPosts = {
       <h3>Apa yang benar-benar kami rekomendasikan di panggilan cakupan</h3>
       <p>Kami tidak menaruh semua klien pada kerangka yang sama. Dalam penggalian kebutuhan kami melihat kemampuan tim internal, jika ada, anggaran, jangka waktu, dan seberapa banyak polesan visual yang benar-benar dibutuhkan produk. Lalu kami merekomendasikan kerangka yang menurunkan biaya dan risiko kasus itu, bukan yang paling kami suka tulis.</p>
       <h3>Jangka waktu khas versi pertama seluler</h3>
-      <p>Aplikasi bisnis — pemasukan, satu alur inti, notifikasi push, dan backend administrasi — biasanya jatuh pada kisaran 8–12 minggu setelah penggalian kebutuhan dan persetujuan desain, di kedua kerangka. Jika sudah ada situs yang hidup dengan katalog atau data yang sama, misalnya sebuah toko, membungkusnya menjadi aplikasi lebih cepat daripada mulai dari nol. Lihat <a href="/ecommerce-development">paket toko daring</a>, yang merangkai web + Android + iOS bersama-sama.</p>
+      <p>Aplikasi bisnis — pemasukan, satu alur inti, notifikasi push, dan backend administrasi — biasanya jatuh pada kisaran 8–12 minggu setelah penggalian kebutuhan dan persetujuan desain, di kedua kerangka. Jika sudah ada situs yang hidup dengan katalog atau data yang sama, misalnya sebuah toko, membungkusnya menjadi aplikasi lebih cepat daripada mulai dari nol. Lihat <a href="/solutions/ecommerce-website-development">paket toko daring</a>, yang merangkai web + Android + iOS bersama-sama.</p>
       <h2>FAQ: Flutter atau React Native untuk bisnis di India</h2>
       <h3>Mana yang lebih murah dibangun?</h3>
       <p>Perbedaan biaya di antara keduanya biasanya kecil jika cakupannya sebanding. Yang menggerakkan harga adalah kerumitan aplikasi, bukan pilihan kerangka.</p>
@@ -223,7 +223,7 @@ export const idPosts = {
       <h2>Langkah 6: peluncuran terbatas, baru kemudian iklan</h2>
       <p>Luncurkan dulu ke khalayak kecil — jaringan Anda sendiri, daftar surel, atau kanal organik — untuk menangkap kesalahan dan mengumpulkan ulasan pertama sebelum menaikkan lalu lintas berbayar. Toko tanpa ulasan dan dengan kupon yang rusak lebih banyak rugi di iklan daripada untung.</p>
       <h2>Alat pembuat mandiri dibanding paket dengan cakupan</h2>
-      <p>Templat dan alat pembuat (pendaftaran Shopify, tema awal WooCommerce) benar-benar berguna untuk belajar dengan katalog berisiko rendah. Ketika Anda sudah membeli lalu lintas berbayar atau membutuhkan aturan banyak penjual, tim dengan cakupan biasanya lebih unggul dalam waktu sampai toko stabil, karena checkout yang rusak selama kampanye berbayar biayanya lebih besar daripada mengerjakannya dengan benar sejak awal. TheTriFusion menawarkan situs tayang 48 jam setelah brief dikunci, atau pengembalian dana 50%, di <a href="/ecommerce-development">pengembangan toko daring</a> (mulai ₹25,000 (situs) hingga ₹99,000 (logistik + Android + iOS)).</p>
+      <p>Templat dan alat pembuat (pendaftaran Shopify, tema awal WooCommerce) benar-benar berguna untuk belajar dengan katalog berisiko rendah. Ketika Anda sudah membeli lalu lintas berbayar atau membutuhkan aturan banyak penjual, tim dengan cakupan biasanya lebih unggul dalam waktu sampai toko stabil, karena checkout yang rusak selama kampanye berbayar biayanya lebih besar daripada mengerjakannya dengan benar sejak awal. TheTriFusion menawarkan situs tayang 48 jam setelah brief dikunci, atau pengembalian dana 50%, di <a href="/solutions/ecommerce-website-development">pengembangan toko daring</a> (mulai ₹25,000 (situs) hingga ₹99,000 (logistik + Android + iOS)).</p>
       <h2>SEO dan konversi yang harus benar pada hari pertama</h2>
       <ul>
         <li>Judul dan H1 yang unik di setiap halaman kategori penting, bukan judul templat yang disalin ke semua halaman</li>

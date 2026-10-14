@@ -52,6 +52,7 @@ export function generateMetadata({ params }) {
     path: localizedPath(locale.code, TRANSLATED_SERVICE_PATH),
     languages: hreflangLanguagesForPath(TRANSLATED_SERVICE_PATH),
     locale: locale.ogLocale,
+    noIndex: true,
   });
 }
 

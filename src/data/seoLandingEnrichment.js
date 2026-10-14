@@ -113,7 +113,7 @@ export const landingEnrichment = {
       "Package websites: live within 48 hours after a locked brief and assets. Custom ecommerce MVP: typically 4–10 weeks. Marketplaces and heavy integrations: longer, delivered in phases.",
     relatedPortfolioIds: ["dailyconcepts-ecommerce-pos", "resto-restaurant-website"],
     primaryCtaLabel: "See ecommerce packages",
-    primaryCtaHref: "/ecommerce-development",
+    primaryCtaHref: "/solutions/ecommerce-website-development#ecommerce-website",
   },
   "online-store-development": {
     outcomeLine:

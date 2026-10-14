@@ -1,31 +1,23 @@
 import {
   blogPosts,
   isIndexableBlogPost,
-  isIndexableBlogSlug,
 } from "data/blogData";
 import { services } from "data/servicesData";
-import { evChargingPageContent } from "data/evChargingPageContent";
 import { seoLandingPages, getSeoLandingBySlug } from "data/seoLandingPages";
-import {
-  hreflangLanguagesForPath,
-  isIndexableTranslatedBlogSlug,
-  LOCALE_CODES,
-  localizedPath,
-  TRANSLATED_BLOG_SLUGS,
-  TRANSLATED_SERVICE_PATH,
-} from "data/i18n/routes";
+import { fintechProductPages } from "data/fintechProductPages";
 import { Portfolios, isIndexablePortfolio } from "json/landingPageData";
 import { NOINDEX_PATHS, pages } from "lib/seoConfig";
 import { REDIRECTED_SOLUTION_SLUGS } from "lib/solutionRedirects";
 import { siteConfig } from "config/site";
 
-export const SITEMAP_IDS = ["pages", "services", "blog", "locales"];
+export const SITEMAP_IDS = ["pages", "services", "solutions", "blog"];
 
-function withHreflang(entry, englishPath) {
-  const languages = hreflangLanguagesForPath(englishPath);
-  if (!languages) return entry;
-  return { ...entry, alternates: { languages } };
-}
+export const CHILD_SITEMAP_PATHS = {
+  pages: "/sitemap-pages.xml",
+  services: "/sitemap-services.xml",
+  solutions: "/sitemap-solutions.xml",
+  blog: "/sitemap-blog.xml",
+};
 
 function safeDate(value, fallback) {
   try {
@@ -48,12 +40,13 @@ function latestDate(values, fallback) {
 }
 
 export function buildSitemapParts() {
-  // Fallback only when a URL has no stored date. Do not stamp every URL
-  // with this value — that was the 2026-09-24 lastmod collapse.
   const fallbackDate = new Date("2026-09-24");
 
   const newestServiceDate = latestDate(
-    services.map((service) => service.contentUpdatedAt),
+    [
+      ...services.map((service) => service.contentUpdatedAt),
+      ...fintechProductPages.map((page) => page.contentUpdatedAt),
+    ],
     fallbackDate
   );
   const newestBlogDate = latestDate(
@@ -64,7 +57,7 @@ export function buildSitemapParts() {
   );
 
   const staticLastmod = {
-    "/": new Date("2026-10-12"),
+    "/": new Date("2026-10-14"),
     "/about": fallbackDate,
     "/services": newestServiceDate,
     "/solutions": new Date("2026-10-12"),
@@ -76,6 +69,7 @@ export function buildSitemapParts() {
     "/editorial-policy": fallbackDate,
     "/privacy": fallbackDate,
     "/terms": fallbackDate,
+    "/sitemap": new Date("2026-10-14"),
   };
 
   const staticRoutes = Object.keys(pages)
@@ -94,22 +88,24 @@ export function buildSitemapParts() {
             : 0.7,
     }));
 
-  const serviceRoutes = services.map((service) =>
-    withHreflang(
-      {
-        url: `${siteConfig.url}/services/${service.slug}`,
-        lastModified: service.contentUpdatedAt
-          ? safeDate(service.contentUpdatedAt, fallbackDate)
-          : fallbackDate,
-        changeFrequency: "weekly",
-        priority:
-          typeof service.sitemapPriority === "number"
-            ? service.sitemapPriority
-            : 0.8,
-      },
-      `/services/${service.slug}`
-    )
-  );
+  const serviceRoutes = services.map((service) => ({
+    url: `${siteConfig.url}/services/${service.slug}`,
+    lastModified: service.contentUpdatedAt
+      ? safeDate(service.contentUpdatedAt, fallbackDate)
+      : fallbackDate,
+    changeFrequency: "weekly",
+    priority:
+      typeof service.sitemapPriority === "number"
+        ? service.sitemapPriority
+        : 0.8,
+  }));
+
+  const fintechRoutes = fintechProductPages.map((page) => ({
+    url: `${siteConfig.url}${page.path}`,
+    lastModified: safeDate(page.contentUpdatedAt || "2026-10-14", fallbackDate),
+    changeFrequency: "weekly",
+    priority: 0.78,
+  }));
 
   const solutionRoutes = seoLandingPages
     .filter(
@@ -125,61 +121,19 @@ export function buildSitemapParts() {
           ? safeDate(page.updatedAt, fallbackDate)
           : fallbackDate,
         changeFrequency: "weekly",
-        priority: 0.85,
+        priority: raw.slug === "ecommerce-website-development" ? 0.9 : 0.85,
       };
     });
 
-  const blogRoutes = blogPosts.filter(isIndexableBlogPost).map((post) =>
-    withHreflang(
-      {
-        url: `${siteConfig.url}/blog/${post.slug}`,
-        lastModified: safeDate(
-          post.updatedAt || post.date || "2026-09-12",
-          fallbackDate
-        ),
-        changeFrequency: post.featured ? "daily" : "weekly",
-        priority: post.featured ? 0.85 : 0.75,
-      },
-      `/blog/${post.slug}`
-    )
-  );
-
-  const translatedBlogBySlug = new Map(
-    blogPosts.map((post) => [post.slug, post])
-  );
-  const translatedRoutes = LOCALE_CODES.flatMap((lang) => {
-    const blogEntries = TRANSLATED_BLOG_SLUGS.filter(
-      (slug) => isIndexableBlogSlug(slug) && isIndexableTranslatedBlogSlug(slug)
-    ).map((slug) => {
-      const post = translatedBlogBySlug.get(slug);
-      const englishPath = `/blog/${slug}`;
-      return {
-        url: `${siteConfig.url}${localizedPath(lang, englishPath)}`,
-        lastModified: safeDate(
-          post?.updatedAt || post?.date || "2026-09-13",
-          fallbackDate
-        ),
-        changeFrequency: "monthly",
-        priority: 0.7,
-        alternates: { languages: hreflangLanguagesForPath(englishPath) },
-      };
-    });
-    return [
-      ...blogEntries,
-      {
-        url: `${siteConfig.url}${localizedPath(lang, TRANSLATED_SERVICE_PATH)}`,
-        lastModified: safeDate(
-          evChargingPageContent.contentUpdatedAt || "2026-09-25",
-          fallbackDate
-        ),
-        changeFrequency: "weekly",
-        priority: 0.8,
-        alternates: {
-          languages: hreflangLanguagesForPath(TRANSLATED_SERVICE_PATH),
-        },
-      },
-    ];
-  });
+  const blogRoutes = blogPosts.filter(isIndexableBlogPost).map((post) => ({
+    url: `${siteConfig.url}/blog/${post.slug}`,
+    lastModified: safeDate(
+      post.updatedAt || post.date || "2026-09-12",
+      fallbackDate
+    ),
+    changeFrequency: post.featured ? "daily" : "weekly",
+    priority: post.featured ? 0.85 : 0.75,
+  }));
 
   const portfolioRoutes = Portfolios.filter(isIndexablePortfolio).map(
     (project) => ({
@@ -191,10 +145,10 @@ export function buildSitemapParts() {
   );
 
   return {
-    pages: [...staticRoutes, ...solutionRoutes, ...portfolioRoutes],
-    services: serviceRoutes,
+    pages: [...staticRoutes, ...portfolioRoutes],
+    services: [...serviceRoutes, ...fintechRoutes],
+    solutions: solutionRoutes,
     blog: blogRoutes,
-    locales: translatedRoutes,
   };
 }
 
@@ -203,8 +157,8 @@ export function allSitemapEntries() {
   const all = [
     ...parts.pages,
     ...parts.services,
+    ...parts.solutions,
     ...parts.blog,
-    ...parts.locales,
   ];
   const seen = new Set();
   return all.filter((entry) => {
@@ -212,4 +166,10 @@ export function allSitemapEntries() {
     seen.add(entry.url);
     return true;
   });
+}
+
+export function childSitemapLocs() {
+  return SITEMAP_IDS.map(
+    (id) => `${siteConfig.url}${CHILD_SITEMAP_PATHS[id]}`
+  );
 }

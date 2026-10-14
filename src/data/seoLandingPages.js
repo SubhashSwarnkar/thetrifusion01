@@ -125,7 +125,7 @@ export const seoLandingPages = [
           ],
         },
         links: [
-          { href: "/ecommerce-development", label: "See full package details and the 48-hour guarantee terms" },
+          { href: "/solutions/ecommerce-website-development#ecommerce-website", label: "See full package details and the 48-hour guarantee terms" },
           { href: "/blog/ecommerce-website-development-cost-india", label: "Read: ecommerce website development cost in India" },
         ],
       },
@@ -247,10 +247,10 @@ export const seoLandingPages = [
         { title: "Multi-vendor marketplace development", description: "Marketplaces with vendor dashboards, commissions and payouts." },
       ],
       pricedOffers: [
-        { name: "Ecommerce Website", description: "Customer website. Live in 48 hours after locked brief, or 50% refund.", price: 25000, url: "/ecommerce-development#ecommerce-website", validThrough: "2026-11-08T23:59:59+05:30", priceValidUntil: "2026-11-08" },
-        { name: "Ecommerce Website + Android App", description: "Website plus Android app. Live in 48 hours after locked brief, or 50% refund.", price: 35000, url: "/ecommerce-development#website-android", validThrough: "2026-11-08T23:59:59+05:30", priceValidUntil: "2026-11-08" },
-        { name: "Ecommerce Website + Android + iOS App", description: "Website plus Android and iOS apps. Live in 48 hours after locked brief, or 50% refund.", price: 45000, url: "/ecommerce-development#website-android-ios", validThrough: "2026-11-08T23:59:59+05:30", priceValidUntil: "2026-11-08" },
-        { name: "High-End Ecommerce with Logistics + Android + iOS App", description: "Website, both apps, and courier logistics. Live in 48 hours after locked brief, or 50% refund.", price: 99000, url: "/ecommerce-development#high-end-logistics", validThrough: "2026-11-08T23:59:59+05:30", priceValidUntil: "2026-11-08" },
+        { name: "Ecommerce Website", description: "Customer website. Live in 48 hours after locked brief, or 50% refund.", price: 25000, url: "/solutions/ecommerce-website-development#ecommerce-website", validThrough: "2026-11-08T23:59:59+05:30", priceValidUntil: "2026-11-08" },
+        { name: "Ecommerce Website + Android App", description: "Website plus Android app. Live in 48 hours after locked brief, or 50% refund.", price: 35000, url: "/solutions/ecommerce-website-development#website-android", validThrough: "2026-11-08T23:59:59+05:30", priceValidUntil: "2026-11-08" },
+        { name: "Ecommerce Website + Android + iOS App", description: "Website plus Android and iOS apps. Live in 48 hours after locked brief, or 50% refund.", price: 45000, url: "/solutions/ecommerce-website-development#website-android-ios", validThrough: "2026-11-08T23:59:59+05:30", priceValidUntil: "2026-11-08" },
+        { name: "High-End Ecommerce with Logistics + Android + iOS App", description: "Website, both apps, and courier logistics. Live in 48 hours after locked brief, or 50% refund.", price: 99000, url: "/solutions/ecommerce-website-development#high-end-logistics", validThrough: "2026-11-08T23:59:59+05:30", priceValidUntil: "2026-11-08" },
       ],
     },
     faqs: [
@@ -338,7 +338,7 @@ export const seoLandingPages = [
     ],
     relatedLinks: [
       {
-        href: "/ecommerce-development",
+        href: "/solutions/ecommerce-website-development#ecommerce-website",
         label:
           "Ecommerce packages: Website ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · High-End logistics ₹99,000 — website live in 48 hours or 50% refund",
       },

@@ -19,6 +19,14 @@ import { Portfolios } from "json/landingPageData";
 import { trackEvent, AnalyticsEvents } from "utils/analytics";
 import { siteConfig } from "config/site";
 import NotFoundPage from "./NotFoundPage";
+import DiwaliOfferCountdown, {
+  DiwaliRefundLabel,
+} from "components/DiwaliOfferCountdown";
+import {
+  ecommercePackages,
+  launchGuarantee,
+  PACKAGE_PRICE_SUMMARY,
+} from "data/ecommerceDevelopmentData";
 
 export default function SolutionLandingPage({ relatedBlog = null }) {
   const { slug } = useParams();
@@ -129,6 +137,51 @@ export default function SolutionLandingPage({ relatedBlog = null }) {
         </section>
 
         <BrandTrustStrip />
+
+        {page.slug === "ecommerce-website-development" ? (
+          <section
+            id="packages"
+            className="!mb-0 py-14 md:py-16 border-t border-gray-100"
+          >
+            <div className="container mx-auto px-5 max-w-4xl">
+              <DiwaliOfferCountdown className="mb-6">
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-theme-purple mb-2">
+                  {PACKAGE_PRICE_SUMMARY}
+                </p>
+                <h2 className="text-2xl md:text-3xl font-black text-theme-blue mb-2">
+                  {launchGuarantee.headline}
+                </h2>
+                <p className="text-gray-600 font-light">
+                  Four published packages. Website live in 48 hours after a
+                  locked brief
+                  <DiwaliRefundLabel before=" — or 50% refund." after="." />
+                </p>
+              </DiwaliOfferCountdown>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {ecommercePackages.map((pkg) => (
+                  <article
+                    key={pkg.id}
+                    id={pkg.id}
+                    className="rounded-2xl border border-gray-100 p-5 bg-white"
+                  >
+                    <p className="text-xs font-bold uppercase tracking-widest text-theme-purple mb-1">
+                      {pkg.priceLabel}
+                    </p>
+                    <h3 className="text-lg font-bold text-theme-blue mb-2">
+                      {pkg.name}
+                    </h3>
+                    <p className="text-sm text-gray-600 font-light leading-relaxed">
+                      {pkg.summary}
+                    </p>
+                  </article>
+                ))}
+              </div>
+              <p id="guarantee" className="mt-6 text-sm text-gray-500 font-light">
+                {launchGuarantee.subheadline}
+              </p>
+            </div>
+          </section>
+        ) : null}
 
         {/* Sticky mobile CTA */}
         <div className="fixed bottom-0 inset-x-0 z-40 md:hidden bg-white/95 backdrop-blur border-t border-gray-100 p-3 flex gap-2 safe-area-pb">

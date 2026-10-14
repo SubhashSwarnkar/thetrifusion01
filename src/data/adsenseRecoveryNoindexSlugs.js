@@ -6,9 +6,8 @@
  * Do not add these to ARCHIVE_NOINDEX_SLUGS (that set 404s and 301s to /blog).
  * Do not add posts that are outside these eight families.
  *
- * EV charging keeps two indexable posts (India + UK/Europe). Every other
- * template family is noindex: NZ/UAE/Nigeria/Philippines/cost-guide variants
- * and the UPI-charges cluster dilute the Jaipur software topical focus.
+ * EV charging keeps the India CPO guide. The UK/Europe twin is noindex
+ * (India-only crawl budget). Every other template family is noindex.
  * Rank is still used if a family keep-count is raised later:
  * India-focused, then a broad/regional variant, then highest clean_words.
  * Broad/regional tokens: north-america, apac, southeast-asia, middle-east,
@@ -17,11 +16,9 @@
  *
  * Kept indexable:
  * - ev-charging-csms-india-cpo-guide
- * - ev-charging-csms-uk-europe-cpo-guide
  */
 export const ADSENSE_RECOVERY_KEPT_SLUGS = new Set([
   "ev-charging-csms-india-cpo-guide",
-  "ev-charging-csms-uk-europe-cpo-guide",
 ]);
 
 export const ADSENSE_RECOVERY_NOINDEX_SLUGS = new Set([
@@ -36,6 +33,7 @@ export const ADSENSE_RECOVERY_NOINDEX_SLUGS = new Set([
   "claude-ai-agents-for-canadian-businesses-2026",
   "claude-ai-for-irish-smes-2026",
   "claude-ai-for-uae-businesses-2026",
+  "ev-charging-csms-uk-europe-cpo-guide",
   "ev-charging-csms-canada-north-america-cpo-guide",
   "ev-charging-csms-france-benelux-cpo-guide",
   "ev-charging-csms-ireland-cpo-guide",
@@ -105,7 +103,7 @@ export function templateVariantTier(slug) {
 }
 
 export function templateFamilyKeepCount(family) {
-  return family === "ev-charging-csms-X-cpo-guide" ? 2 : 0;
+  return family === "ev-charging-csms-X-cpo-guide" ? 1 : 0;
 }
 
 /**

@@ -354,7 +354,7 @@ export const dailyOrganicTrends20260925pmPosts = [
     excerpt: "Tata Aeris launched 25 Sep 2026 from \u20b95.29 lakh ex-showroom. Variants, petrol/CNG, deliveries from 11 Oct, and how it replaces the Tigor.",
     content: `<p>Google Trends India also spiked on the misspelt cluster <strong>tata aeries</strong> — searchers meant <strong>Tata Aeris</strong>, the rebadged and updated compact sedan Tata Motors launched on Friday, 25 September 2026, as the personal-buyer successor to the Tigor.</p>
 <p><em>Verification note:</em> Autocar India, HT Auto, Times of India Auto and CNBC-TV18 all report an introductory ex-showroom start of <strong>₹5.29 lakh</strong>, topping out at <strong>₹9.19 lakh</strong> on the Accomplished CNG manual in Autocar’s published matrix. Bookings are open; deliveries begin <strong>11 October 2026</strong> (Navratri start in several reports). Five trims: Smart, Pure, Pure+, Creative, Accomplished. Petrol ~86 hp and CNG ~76 hp on the carried-over 1.2-litre three-cylinder; AMT pricing was still “to be announced” in Autocar’s launch copy.</p>
-<p>Car launch pages that refuse grey-market Telegram pricing are the ecommerce discipline we use on client PDPs — see <a href="/ecommerce-development">ecommerce development</a>.</p>
+<p>Car launch pages that refuse grey-market Telegram pricing are the ecommerce discipline we use on client PDPs — see <a href="/solutions/ecommerce-website-development">ecommerce development</a>.</p>
 <h2>What buyers should confirm in writing</h2>
 <ul>
 <li>Introductory vs regular ex-showroom once the intro window ends</li>

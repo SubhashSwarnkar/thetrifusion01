@@ -29,6 +29,7 @@ Contact: https://thetrifusion.in/contact
 - https://thetrifusion.in/team
 - https://thetrifusion.in/privacy
 - https://thetrifusion.in/terms
+- https://thetrifusion.in/sitemap
 
 ## Ecommerce (canonical page)
 
@@ -56,6 +57,10 @@ Each line is the canonical URL. Paid landing pages are not listed here.
 - https://thetrifusion.in/services/on-demand — Named React, Node, or mobile capacity. From ₹50,000.
 - https://thetrifusion.in/services/mlm-crm-development — Unilevel CRM, genealogy, KYC, web admin, iOS and Android. From ₹3,50,000.
 - https://thetrifusion.in/services/fintech-app-development — BBPS, AEPS, DMT, XDMT software for retailers and distributors. iOS, Android, web. From ₹99,999.
+- https://thetrifusion.in/services/fintech-app-development/bbps-software — White-label BBPS (Bharat BillPay) software. From ₹99,999. You bring BBPOU access.
+- https://thetrifusion.in/services/fintech-app-development/aeps-software — White-label AEPS software. From ₹99,999. You bring sponsor-bank / NPCI AePS access.
+- https://thetrifusion.in/services/fintech-app-development/dmt-software — White-label DMT / XDMT software. From ₹99,999. You bring the bank or aggregator contract.
+- https://thetrifusion.in/services/fintech-app-development/recharge-software — White-label recharge software. From ₹99,999. You bring the recharge API partner.
 - https://thetrifusion.in/services/ev-charging-app-development — CMS for CPOs and eMSPs. OCPP 1.6J/2.0.1, OCPI 2.2.1, driver app. Starting range ₹4,50,000 ex-GST, not a fixed package.
 - https://thetrifusion.in/services/crm-erp-development — Custom CRM/ERP for pipelines, inventory, and billing. Web, iOS, Android. From ₹3,00,000.
 
@@ -121,36 +126,30 @@ EV charging CMS for CPOs and eMSPs, built in Jaipur for India and worldwide. One
 - Live: https://dailyconceptsindia.com
 - Live: https://atharvnarayan.in
 
-## Blog — indexable service and product guides
+## Blog — indexable India money pages
 
-Off-topic, machine-translated, redirected, and AdSense-recovery noindex URLs are omitted.
+Off-topic, locale, redirected, and crawl-budget noindex URLs are omitted.
 
-- https://thetrifusion.in/blog/opus-5-5-ai-model-whats-known
-- https://thetrifusion.in/blog/emsp-vs-cpo-software-stack-buyer-guide
-- https://thetrifusion.in/blog/webhook-reliability-idempotency-playbook-saas
-- https://thetrifusion.in/blog/iso-15118-plug-and-charge-cpo-software-guide
-- https://thetrifusion.in/blog/erp-crm-api-integration-playbook-mid-market
-- https://thetrifusion.in/blog/ev-depot-smart-charging-load-management-guide
-- https://thetrifusion.in/blog/devops-ci-cd-checklist-sme-saas-2026
-- https://thetrifusion.in/blog/csms-rfp-checklist-ocpp-platform-evaluation
-- https://thetrifusion.in/blog/custom-crm-vs-salesforce-mid-market-2026
-- https://thetrifusion.in/blog/iphone-duo-foldable-app-developer-guide
-- https://thetrifusion.in/blog/chatgpt-gpt-6-intelligent-ui-business-guide
-- https://thetrifusion.in/blog/pwn2own-ireland-2026-security-lessons-for-businesses
-- https://thetrifusion.in/blog/claude-for-google-workspace-docs-sheets-slides-guide
-- https://thetrifusion.in/blog/reflection-beam-open-weight-ai-model-whats-known
-- https://thetrifusion.in/blog/ev-charging-csms-india-cpo-guide
-- https://thetrifusion.in/blog/ios-27-siri-ai-business-apps-uk-australia
-- https://thetrifusion.in/blog/nextjs-app-router-saas-mvp-guide-2026
-- https://thetrifusion.in/blog/ev-charging-csms-uk-europe-cpo-guide
-- https://thetrifusion.in/blog/hire-dedicated-developers-cost-guide-uk-australia
-- https://thetrifusion.in/blog/shopify-plus-vs-custom-ecommerce-uk-canada
 - https://thetrifusion.in/blog/ecommerce-website-development-cost-india
 - https://thetrifusion.in/blog/ecommerce-app-development-cost-india
+- https://thetrifusion.in/blog/how-to-build-ecommerce-website-india-2026
+- https://thetrifusion.in/blog/custom-website-vs-shopify-vs-woocommerce
+- https://thetrifusion.in/blog/software-development-company-jaipur-guide
+- https://thetrifusion.in/blog/fintech-app-development-india
+- https://thetrifusion.in/blog/whatsapp-ai-chatbot-india-business
 - https://thetrifusion.in/blog/ev-charging-app-ocpi-ocpp-guide
+- https://thetrifusion.in/blog/ev-charging-csms-india-cpo-guide
+- https://thetrifusion.in/blog/ai-app-development-cost-india-2026
+- https://thetrifusion.in/blog/android-app-development-company-jaipur
+- https://thetrifusion.in/blog/ondc-ecommerce-for-sme-sellers-india
+- https://thetrifusion.in/blog/dailyconcepts-ecommerce-case-notes
+- https://thetrifusion.in/blog/ipo-ready-website-digital-presence-india
+- https://thetrifusion.in/blog/iphone-18-india-price-launch-ios-apps-business
+- https://thetrifusion.in/blog/salesforce-agentforce-koa-ai-push-what-investors-and-teams-watch
 
 ## AI / crawler notes
 
 - Short summary: https://thetrifusion.in/llms.txt
-- Sitemap: https://thetrifusion.in/sitemap.xml
+- Sitemap index: https://thetrifusion.in/sitemap.xml
+- HTML sitemap: https://thetrifusion.in/sitemap
 - Robots: https://thetrifusion.in/robots.txt

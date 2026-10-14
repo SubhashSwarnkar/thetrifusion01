@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { getHubTrendingPosts } from "data/blogData";
+import { getHomepageIndiaPosts } from "data/blogData";
 
 /** Server-rendered so the homepage client bundle does not include blog HTML. */
 export default function HomeTrendingPosts() {
-  const posts = getHubTrendingPosts().slice(0, 9);
+  const posts = getHomepageIndiaPosts().slice(0, 9);
 
   return (
     <section id="home-trending-blog" className="container mx-auto px-5 pb-10">
@@ -14,7 +14,7 @@ export default function HomeTrendingPosts() {
               Trending now
             </p>
             <h2 className="text-xl sm:text-2xl font-bold text-theme-blue">
-              Fresh explainers from the blog
+              India guides from the blog
             </h2>
           </div>
           <Link href="/blog" className="text-sm font-semibold text-theme-purple hover:underline">
