@@ -263,7 +263,7 @@ async function main() {
       }
     })
     .filter((p) => p.startsWith("/blog/"));
-  if (blogPaths.length < 40) {
+  if (blogPaths.length < 50) {
     fail(
       `sitemap-blog has ${blogPaths.length} URLs; published posts should be indexed by default`
     );
@@ -298,6 +298,16 @@ async function main() {
     "/services/fintech-app-development/dmt-software",
     "/services/fintech-app-development/recharge-software",
     "/sitemap",
+    "/blog/dpdp-consent-manager-software-india-2026",
+    "/blog/gst-einvoice-custom-software-india-2026",
+    "/blog/google-ai-overviews-indian-business-websites-2026",
+    "/blog/dpdp-privacy-notice-indian-website-2026",
+    "/blog/whatsapp-business-ai-vs-custom-chatbot-india",
+    "/blog/hindi-indic-ui-ux-design-india-2026",
+    "/blog/d2c-branding-trademark-india-festive-2026",
+    "/blog/hire-dedicated-developers-india-cost-2026",
+    "/blog/google-ai-overviews-seo-india-2026",
+    "/blog/festive-ecommerce-website-india-ondc-2026",
   ];
   for (const path of required) {
     if (!unique.some((u) => new URL(u, BASE_URL).pathname === path)) {
@@ -319,6 +329,14 @@ async function main() {
 
   for (const url of localUrls) {
     await auditPage(url);
+  }
+
+  const extraBlogPaths = required.filter((path) => path.startsWith("/blog/"));
+  for (const path of extraBlogPaths) {
+    const url = `${BASE_URL}${path}`;
+    if (!localUrls.includes(url)) {
+      await auditPage(url);
+    }
   }
 
   // Spot-check tool noindex pages even if omitted from sitemap

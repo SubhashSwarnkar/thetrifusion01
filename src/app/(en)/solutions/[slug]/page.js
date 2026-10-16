@@ -5,7 +5,10 @@ import {
   getSeoLandingBySlug,
   seoLandingPages,
 } from "data/seoLandingPages";
-import { getBlogBySlug } from "data/blogData";
+import {
+  getBlogBySlug,
+  getRelatedGuidesForSolution,
+} from "data/blogData";
 import { buildMetadata } from "lib/seoConfig";
 import {
   breadcrumbSchema,
@@ -88,6 +91,7 @@ export default function RoutePage({ params }) {
         ])}
       />
       <Page
+        relatedGuides={getRelatedGuidesForSolution(page.slug, 6)}
         relatedBlog={
           page.relatedBlogSlug
             ? (() => {

@@ -27,8 +27,12 @@ import {
   launchGuarantee,
   PACKAGE_PRICE_SUMMARY,
 } from "data/ecommerceDevelopmentData";
+import RelatedGuides from "components/RelatedGuides";
 
-export default function SolutionLandingPage({ relatedBlog = null }) {
+export default function SolutionLandingPage({
+  relatedBlog = null,
+  relatedGuides = [],
+}) {
   const { slug } = useParams();
   const page = getSeoLandingBySlug(slug);
 
@@ -446,6 +450,10 @@ export default function SolutionLandingPage({ relatedBlog = null }) {
             </div>
           </section>
         )}
+
+        {relatedGuides.length > 0 ? (
+          <RelatedGuides guides={relatedGuides} />
+        ) : null}
 
         {(relatedSolutions.length > 0 ||
           relatedServices.length > 0 ||

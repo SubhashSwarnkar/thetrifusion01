@@ -11,6 +11,7 @@ import { dailyOrganicTrends20260925pm2Posts } from "./dailyOrganicTrends20260925
 import { dailyOrganicBatch20260926Posts } from "./dailyOrganicBatch20260926";
 import { dailyOrganicBatch20260927Posts } from "./dailyOrganicBatch20260927";
 import { evChargingClusterPosts } from "./evChargingCluster20260927";
+import { dailyOrganicBatch20261016Posts } from "./dailyOrganicBatch20261016";
 import { dailyOrganicBatch20261012Posts } from "./dailyOrganicBatch20261012";
 import { dailyOrganicBatch20261011Posts } from "./dailyOrganicBatch20261011";
 import { dailyOrganicBatch20261010Posts } from "./dailyOrganicBatch20261010";
@@ -87,6 +88,7 @@ export const isRedirectedBlogSlug = (slug) =>
   Boolean(slug && BLOG_CANONICAL_REDIRECTS[slug]);
 
 export const blogPosts = [
+  ...dailyOrganicBatch20261016Posts,
   ...dailyOrganicBatch20261012Posts,
   ...dailyOrganicBatch20261011Posts,
   ...dailyOrganicBatch20261010Posts,
@@ -2885,3 +2887,30 @@ export const getHubTrendingPosts = (limit = 9) =>
 export const getBlogBySlug = (slug) => {
   return blogPosts.find((post) => post.slug === slug);
 };
+
+function toGuideCard(post) {
+  return {
+    slug: post.slug,
+    href: `/blog/${post.slug}`,
+    title: post.title,
+    excerpt: post.excerpt,
+  };
+}
+
+/** Indexable posts that name this service in relatedServiceSlugs (newest first). */
+export function getRelatedGuidesForService(serviceSlug, limit = 6) {
+  if (!serviceSlug) return [];
+  return getPublishedBlogPosts()
+    .filter((post) => (post.relatedServiceSlugs || []).includes(serviceSlug))
+    .slice(0, limit)
+    .map(toGuideCard);
+}
+
+/** Indexable posts that name this solutions slug in relatedSolutionSlugs. */
+export function getRelatedGuidesForSolution(solutionSlug, limit = 6) {
+  if (!solutionSlug) return [];
+  return getPublishedBlogPosts()
+    .filter((post) => (post.relatedSolutionSlugs || []).includes(solutionSlug))
+    .slice(0, limit)
+    .map(toGuideCard);
+}

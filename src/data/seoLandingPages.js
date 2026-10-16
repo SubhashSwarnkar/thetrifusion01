@@ -127,6 +127,7 @@ export const seoLandingPages = [
         links: [
           { href: "/solutions/ecommerce-website-development#ecommerce-website", label: "See full package details and the 48-hour guarantee terms" },
           { href: "/blog/ecommerce-website-development-cost-india", label: "Read: ecommerce website development cost in India" },
+          { href: "/blog/festive-ecommerce-website-india-ondc-2026", label: "Read: festive 2026 ecommerce, ONDC, and the first Diwali week" },
         ],
       },
       {
@@ -345,6 +346,10 @@ export const seoLandingPages = [
       {
         href: "/blog/ecommerce-website-development-cost-india",
         label: "Ecommerce website development cost in India",
+      },
+      {
+        href: "/blog/festive-ecommerce-website-india-ondc-2026",
+        label: "Festive 2026 ecommerce: own store, ONDC, and the first Diwali week",
       },
       {
         href: "/blog/ecommerce-app-development-cost-india",
