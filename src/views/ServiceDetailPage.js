@@ -19,6 +19,7 @@ import {
 import { accentAt, accentForSlug } from "lib/themeAccents";
 import NotFoundPage from "./NotFoundPage";
 import SEO from "components/common/SEO";
+import RelatedGuides from "components/RelatedGuides";
 
 function SectionHeading({ children, kicker, id }) {
   return (
@@ -262,6 +263,7 @@ const STANDARD_DELIVERABLES = [
 
 export default function ServiceDetailPage({
   relatedBlog = null,
+  relatedGuides = [],
   languageSwitcher = null,
 }) {
   const { slug } = useParams();
@@ -451,7 +453,11 @@ export default function ServiceDetailPage({
                 <a href="#products" className="hover:text-theme-purple whitespace-nowrap transition-colors">Products</a>
               ) : null}
               <a href="#faq" className="hover:text-theme-purple whitespace-nowrap transition-colors">FAQs</a>
-              <a href="#related" className="hover:text-theme-purple whitespace-nowrap transition-colors">Related</a>
+              {relatedGuides.length ? (
+                <a href="#related-guides" className="hover:text-theme-purple whitespace-nowrap transition-colors">Related guides</a>
+              ) : (
+                <a href="#related" className="hover:text-theme-purple whitespace-nowrap transition-colors">Related</a>
+              )}
             </>
           )}
           <Link href={canonicalInternalHref(service.primaryCtaHref || "/contact")} className="ml-auto text-theme-purple font-black hover:underline whitespace-nowrap">
@@ -821,8 +827,9 @@ export default function ServiceDetailPage({
         </section>
       ) : null}
 
-      {/* Related Blog Article */}
-      {relatedBlog && (
+      {relatedGuides.length > 0 ? (
+        <RelatedGuides guides={relatedGuides} />
+      ) : relatedBlog ? (
         <section className="container mx-auto px-5 pb-8">
           <SectionHeading kicker="Insights">Technical Guides & Insights</SectionHeading>
           <Link
@@ -835,7 +842,7 @@ export default function ServiceDetailPage({
             <p className="text-sm text-gray-500 line-clamp-2">{relatedBlog.excerpt}</p>
           </Link>
         </section>
-      )}
+      ) : null}
 
       {service.coverageSections?.length ? (
         <section id="coverage" className="container mx-auto px-5 py-16 border-t border-gray-100">

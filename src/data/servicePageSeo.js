@@ -36,7 +36,7 @@ export const servicePageSeo = {
       "Hi TriFusion, I want a custom software development quote from the Jaipur team.",
     imageAlt:
       "Custom software development team in Jaipur building web and API products for TheTriFusion clients",
-    relatedBlogSlug: "fintech-app-development-india",
+    relatedBlogSlug: "dpdp-consent-manager-software-india-2026",
     faqs: [
       {
         question: "What custom software do you build in Jaipur?",
@@ -113,7 +113,7 @@ export const servicePageSeo = {
       "Hi TriFusion, I want a website development quote from the Jaipur team.",
     imageAlt:
       "Custom website development in Jaipur — business site screens by TheTriFusion",
-    relatedBlogSlug: "ecommerce-website-development-cost-india",
+    relatedBlogSlug: "google-ai-overviews-indian-business-websites-2026",
     faqs: [
       {
         question: "Is this different from /web-development?",
@@ -273,7 +273,7 @@ export const servicePageSeo = {
       "Hi TriFusion, I want a UI/UX design quote from the Jaipur team.",
     imageAlt:
       "UI/UX design mockups for web and mobile products by TheTriFusion Jaipur",
-    relatedBlogSlug: "dailyconcepts-ecommerce-case-notes",
+    relatedBlogSlug: "hindi-indic-ui-ux-design-india-2026",
     faqs: [
       {
         question: "Do you only design, or also develop?",
@@ -397,7 +397,7 @@ export const servicePageSeo = {
       "Hi TriFusion, I want a digital marketing & performance marketing (SEO/Ads) growth plan from the Jaipur team.",
     imageAlt:
       "Digital marketing and performance advertising campaigns by TheTriFusion Jaipur",
-    relatedBlogSlug: "website-development-company-bhilwara",
+    relatedBlogSlug: "google-ai-overviews-seo-india-2026",
     faqs: [
       {
         question: "What separates performance marketing from standard digital marketing?",
@@ -463,7 +463,7 @@ export const servicePageSeo = {
       "Hi TriFusion, I want a branding and identity quote from the Jaipur team.",
     imageAlt:
       "Brand identity and logo system designed by TheTriFusion in Jaipur",
-    relatedBlogSlug: "custom-website-vs-shopify-vs-woocommerce",
+    relatedBlogSlug: "d2c-branding-trademark-india-festive-2026",
     faqs: [
       {
         question: "Is branding separate from the website?",
@@ -667,7 +667,7 @@ export const servicePageSeo = {
       "Hi TriFusion, I want a practical AI feature / pilot quote from the Jaipur team.",
     imageAlt:
       "AI software development for Indian businesses by TheTriFusion in Jaipur",
-    relatedBlogSlug: "react-server-components",
+    relatedBlogSlug: "whatsapp-business-ai-vs-custom-chatbot-india",
     faqs: [
       {
         question: "Do you train foundation models?",
@@ -719,7 +719,7 @@ export const servicePageSeo = {
       "Hi TriFusion, I want on-demand developer availability from the Jaipur team.",
     imageAlt:
       "On-demand software developers in Jaipur from TheTriFusion",
-    relatedBlogSlug: "website-development-company-bhilwara",
+    relatedBlogSlug: "hire-dedicated-developers-india-cost-2026",
     faqs: [
       {
         question: "Is this staffing or a project?",
