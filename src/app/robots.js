@@ -15,6 +15,7 @@ const DISALLOW = [
   "/pricing/calculator",
   "/appointment",
   "/discuss-project",
+  "/internal-blog-sitemap/",
 ];
 
 /** AI / classic search crawlers — explicit Allow so public content is crawlable. */

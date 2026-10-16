@@ -153,7 +153,7 @@ export const OFFTOPIC_NOINDEX_SLUGS = new Set([
   "meta-vr-glasses-2026-whats-known",
   "chatgpt-1980s-ai-photo-prompt-guide",
   "social-security-in-india-2026-epfo-esic-employer-guide",
-  // Non-India / rumour / stale posts (India SEO crawl-budget cleanup)
+  // Named non-India / rumour / stale posts (keep noindex; indexing is a blocklist)
   "ecommerce-website-for-nigerian-smes-2026",
   "ios-27-siri-ai-business-apps-uk-australia",
   "hire-dedicated-developers-cost-guide-uk-australia",

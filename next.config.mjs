@@ -11,6 +11,15 @@ const nextConfig = {
       { protocol: "https", hostname: "assets.calendly.com" },
     ],
   },
+  async rewrites() {
+    return [
+      // Extra blog urlsets when sitemap-blog.xml exceeds 1000 URLs.
+      {
+        source: "/sitemap-blog-:chunk(\\d+).xml",
+        destination: "/internal-blog-sitemap/:chunk",
+      },
+    ];
+  },
   async redirects() {
     return [
       // Apex .in is the ONLY canonical host. permanent:true is 308 in Next.js.

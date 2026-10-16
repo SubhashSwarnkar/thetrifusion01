@@ -68,7 +68,7 @@ export default function RoutePage() {
     { title: "Company", items: core },
     { title: "Services", items: serviceItems },
     { title: "Solutions", items: solutionItems },
-    { title: "India guides", items: blogItems },
+    { title: "Blog", items: blogItems },
   ];
 
   return (
