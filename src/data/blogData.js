@@ -29,12 +29,9 @@ import { dailyOrganicBatch20260928Posts } from "./dailyOrganicBatch20260928";
 import { OFFTOPIC_NOINDEX_SLUGS } from "./offtopicNoindexSlugs";
 import { ADSENSE_RECOVERY_NOINDEX_SLUGS } from "./adsenseRecoveryNoindexSlugs";
 import { BLOG_CANONICAL_REDIRECTS } from "./blogCanonicalRedirects";
-import {
-  HOMEPAGE_INDIA_BLOG_SLUGS,
-  INDIA_INDEXABLE_BLOG_SLUGS,
-} from "./indiaIndexableBlogSlugs";
+import { HOMEPAGE_INDIA_BLOG_SLUGS } from "./indiaIndexableBlogSlugs";
 
-export { BLOG_CANONICAL_REDIRECTS, INDIA_INDEXABLE_BLOG_SLUGS, HOMEPAGE_INDIA_BLOG_SLUGS };
+export { BLOG_CANONICAL_REDIRECTS, HOMEPAGE_INDIA_BLOG_SLUGS };
 
 export { OFFTOPIC_NOINDEX_SLUGS, ADSENSE_RECOVERY_NOINDEX_SLUGS };
 
@@ -2773,6 +2770,9 @@ export function isEventPost(post) {
 
 /**
  * HTTP 200, self-canonical, `noindex, follow`. Distinct from ARCHIVE_NOINDEX_SLUGS.
+ * Blocklist only: offtopic (PR #54 news set + named non-India slugs), AdSense
+ * recovery templates, and event posts. New published posts are indexable
+ * unless they land on one of those lists.
  */
 export function isSoftNoindexBlogPost(post) {
   if (!post) return false;
@@ -2781,8 +2781,7 @@ export function isSoftNoindexBlogPost(post) {
   return (
     OFFTOPIC_NOINDEX_SLUGS.has(post.slug) ||
     ADSENSE_RECOVERY_NOINDEX_SLUGS.has(post.slug) ||
-    isEventPost(post) ||
-    !INDIA_INDEXABLE_BLOG_SLUGS.has(post.slug)
+    isEventPost(post)
   );
 }
 
@@ -2791,8 +2790,7 @@ export function isIndexableBlogPost(post) {
     post &&
       !ARCHIVE_NOINDEX_SLUGS.has(post.slug) &&
       !isRedirectedBlogSlug(post.slug) &&
-      !isSoftNoindexBlogPost(post) &&
-      INDIA_INDEXABLE_BLOG_SLUGS.has(post.slug)
+      !isSoftNoindexBlogPost(post)
   );
 }
 
@@ -2800,7 +2798,6 @@ export function isIndexableBlogSlug(slug) {
   const post = blogPosts.find((item) => item.slug === slug);
   if (!post) {
     return (
-      INDIA_INDEXABLE_BLOG_SLUGS.has(slug) &&
       !ARCHIVE_NOINDEX_SLUGS.has(slug) &&
       !isRedirectedBlogSlug(slug) &&
       !OFFTOPIC_NOINDEX_SLUGS.has(slug) &&

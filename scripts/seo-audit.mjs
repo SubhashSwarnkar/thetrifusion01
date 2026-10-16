@@ -165,6 +165,21 @@ async function main() {
 
   const parser = new XMLParser();
   let pageLocs = [];
+  const BLOCKLIST_BLOGS = [
+    "/blog/ecommerce-website-for-nigerian-smes-2026",
+    "/blog/ios-27-siri-ai-business-apps-uk-australia",
+    "/blog/hire-dedicated-developers-cost-guide-uk-australia",
+    "/blog/shopify-plus-vs-custom-ecommerce-uk-canada",
+    "/blog/ev-charging-csms-uk-europe-cpo-guide",
+    "/blog/pwn2own-ireland-2026-security-lessons-for-businesses",
+    "/blog/opus-5-5-ai-model-whats-known",
+    "/blog/gpt-6-astra-whats-known-vs-rumor",
+    "/blog/reflection-beam-open-weight-ai-model-whats-known",
+    "/blog/flutter-vs-react-native-2024",
+  ];
+  // Published post that PR #57's allowlist dropped from the sitemap.
+  const MUST_INDEX_BLOG = "/blog/emsp-vs-cpo-software-stack-buyer-guide";
+
   if (/<sitemapindex/i.test(text)) {
     const childLocs = parser.extractLocs(text);
     if (!childLocs.length) {
@@ -172,11 +187,32 @@ async function main() {
       process.exit(1);
     }
     ok(`sitemap.xml is a sitemap index (${childLocs.length} children)`);
+    const childPaths = childLocs.map((child) => {
+      try {
+        return new URL(child, BASE_URL).pathname;
+      } catch {
+        return child;
+      }
+    });
+    if (!childPaths.some((p) => p === "/sitemap-pages.xml")) {
+      fail("sitemap index missing /sitemap-pages.xml");
+    }
+    if (!childPaths.some((p) => p === "/sitemap-services.xml")) {
+      fail("sitemap index missing /sitemap-services.xml");
+    }
+    if (!childPaths.some((p) => p === "/sitemap-solutions.xml")) {
+      fail("sitemap index missing /sitemap-solutions.xml");
+    }
+    if (!childPaths.some((p) => /^\/sitemap-blog(\-\d+)?\.xml$/.test(p))) {
+      fail("sitemap index missing sitemap-blog.xml");
+    }
     for (const child of childLocs) {
       let childUrl = child;
+      let childPath = child;
       try {
         const parsed = new URL(child);
         childUrl = `${BASE_URL}${parsed.pathname}${parsed.search}`;
+        childPath = parsed.pathname;
       } catch {
         // keep
       }
@@ -188,7 +224,18 @@ async function main() {
       if (!/<urlset/i.test(childRes.text)) {
         fail(`${childUrl} is not a urlset`);
       }
-      pageLocs.push(...parser.extractLocs(childRes.text));
+      const locs = parser.extractLocs(childRes.text);
+      if (locs.length > 1000) {
+        fail(`${childPath} has ${locs.length} URLs; split at 1000`);
+      }
+      if (/^\/sitemap-blog(\-\d+)?\.xml$/.test(childPath)) {
+        const urlBlocks = childRes.text.match(/<url>[\s\S]*?<\/url>/gi) || [];
+        const missingLastmod = urlBlocks.find((block) => !/<lastmod>/i.test(block));
+        if (missingLastmod) {
+          fail(`${childPath} blog entry is missing <lastmod>`);
+        }
+      }
+      pageLocs.push(...locs);
     }
   } else {
     pageLocs = parser.extractLocs(text);
@@ -199,12 +246,29 @@ async function main() {
     fail("No URLs found in sitemap");
     process.exit(1);
   }
-  if (unique.length > 75) {
-    fail(`sitemap has ${unique.length} URLs; target is ~60`);
-  } else if (unique.length < 40) {
+  if (unique.length < 40) {
     fail(`sitemap has ${unique.length} URLs; expected at least 40`);
+  } else if (unique.length > 50000) {
+    fail(`sitemap has ${unique.length} URLs; over the 50,000 cap`);
   } else {
     ok(`Found ${unique.length} sitemap page URLs`);
+  }
+
+  const blogPaths = unique
+    .map((u) => {
+      try {
+        return new URL(u, BASE_URL).pathname;
+      } catch {
+        return "";
+      }
+    })
+    .filter((p) => p.startsWith("/blog/"));
+  if (blogPaths.length < 40) {
+    fail(
+      `sitemap-blog has ${blogPaths.length} URLs; published posts should be indexed by default`
+    );
+  } else {
+    ok(`Found ${blogPaths.length} indexable blog URLs`);
   }
 
   const localeHit = unique.find((u) =>
@@ -216,6 +280,16 @@ async function main() {
     /\/ecommerce-development(\/|$)/.test(new URL(u, BASE_URL).pathname)
   );
   if (paidEcommerce) fail(`paid ecommerce URL still in sitemap: ${paidEcommerce}`);
+
+  if (!unique.some((u) => new URL(u, BASE_URL).pathname === MUST_INDEX_BLOG)) {
+    fail(`sitemap missing previously indexable post ${MUST_INDEX_BLOG}`);
+  }
+
+  for (const path of BLOCKLIST_BLOGS) {
+    if (unique.some((u) => new URL(u, BASE_URL).pathname === path)) {
+      fail(`blocklisted blog still in sitemap: ${path}`);
+    }
+  }
 
   const required = [
     "/solutions/ecommerce-website-development",

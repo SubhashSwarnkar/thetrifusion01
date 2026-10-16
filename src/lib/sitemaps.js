@@ -19,6 +19,35 @@ export const CHILD_SITEMAP_PATHS = {
   blog: "/sitemap-blog.xml",
 };
 
+/** Google allows 50k URLs per file; split blog urlsets well before that. */
+export const BLOG_SITEMAP_CHUNK_SIZE = 1000;
+
+export function chunkEntries(entries, size = BLOG_SITEMAP_CHUNK_SIZE) {
+  const list = Array.isArray(entries) ? entries : [];
+  if (!list.length) return [[]];
+  const chunks = [];
+  for (let i = 0; i < list.length; i += size) {
+    chunks.push(list.slice(i, i + size));
+  }
+  return chunks;
+}
+
+export function blogSitemapPath(chunkIndex) {
+  return chunkIndex === 0
+    ? "/sitemap-blog.xml"
+    : `/sitemap-blog-${chunkIndex + 1}.xml`;
+}
+
+export function getBlogSitemapChunks() {
+  return chunkEntries(buildSitemapParts().blog);
+}
+
+export function getBlogSitemapChunk(chunkIndex) {
+  const chunks = getBlogSitemapChunks();
+  if (chunkIndex < 0 || chunkIndex >= chunks.length) return null;
+  return chunks[chunkIndex];
+}
+
 function safeDate(value, fallback) {
   try {
     const d = value instanceof Date ? value : new Date(value);
@@ -169,7 +198,11 @@ export function allSitemapEntries() {
 }
 
 export function childSitemapLocs() {
-  return SITEMAP_IDS.map(
-    (id) => `${siteConfig.url}${CHILD_SITEMAP_PATHS[id]}`
-  );
+  const blogChunks = getBlogSitemapChunks();
+  return [
+    `${siteConfig.url}${CHILD_SITEMAP_PATHS.pages}`,
+    `${siteConfig.url}${CHILD_SITEMAP_PATHS.services}`,
+    `${siteConfig.url}${CHILD_SITEMAP_PATHS.solutions}`,
+    ...blogChunks.map((_, index) => `${siteConfig.url}${blogSitemapPath(index)}`),
+  ];
 }

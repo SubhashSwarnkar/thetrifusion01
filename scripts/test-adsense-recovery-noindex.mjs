@@ -30,7 +30,7 @@ import {
 import { isLeadPopupEligiblePath } from "../src/lib/leadPopupGate.js";
 import { TRANSLATED_BLOG_SLUGS } from "../src/data/i18n/catalog.js";
 import { allSitemapEntries } from "../src/lib/sitemaps.js";
-import { BLOG_CANONICAL_REDIRECTS, INDIA_INDEXABLE_BLOG_SLUGS } from "../src/data/blogData.js";
+import { BLOG_CANONICAL_REDIRECTS } from "../src/data/blogData.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const failures = [];
@@ -231,9 +231,14 @@ for (const post of blogPosts) {
   if (OFFTOPIC_NOINDEX_SLUGS.has(post.slug)) continue;
   if (ARCHIVE_NOINDEX_SLUGS.has(post.slug)) continue;
   if (BLOG_CANONICAL_REDIRECTS[post.slug]) continue;
-  if (!INDIA_INDEXABLE_BLOG_SLUGS.has(post.slug)) continue;
   if (isSoftNoindexBlogPost(post)) {
     fail(`post outside B1/B3 was noindexed: ${post.slug}`);
+  }
+  if (!isIndexableBlogPost(post)) {
+    fail(`published post is not indexable: ${post.slug}`);
+  }
+  if (!sitemapBlogSlugs.has(post.slug)) {
+    fail(`published post missing from sitemap: ${post.slug}`);
   }
 }
 

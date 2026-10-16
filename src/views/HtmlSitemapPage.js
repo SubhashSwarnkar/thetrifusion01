@@ -39,8 +39,8 @@ export default function HtmlSitemapPage({ groups }) {
           HTML sitemap
         </h1>
         <p className="text-gray-600 font-light mb-10 max-w-2xl">
-          Indexable pages on thetrifusion.in — services, solutions, and India
-          guides. XML sitemaps live at{" "}
+          Indexable pages on thetrifusion.in — services, solutions, and blog
+          posts. XML sitemaps live at{" "}
           <a href="/sitemap.xml" className="font-semibold text-theme-purple hover:underline">
             /sitemap.xml
           </a>
