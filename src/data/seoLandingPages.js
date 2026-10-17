@@ -1,6 +1,7 @@
 import { siteConfig } from "config/site";
 import { enrichLandingPage } from "./seoLandingEnrichment";
 import { cityServiceAreaPages } from "./cityServiceAreaPages";
+import { cityServiceLandings } from "./cityLandings";
 import { REDIRECTED_SOLUTION_SLUGS } from "lib/solutionRedirects";
 
 export const seoLandingPages = [
@@ -337,6 +338,13 @@ export const seoLandingPages = [
       "mobile-app-development",
       "digital-marketing",
       "ui-ux-design",
+    ],
+    relatedSolutionSlugs: [
+      "ecommerce-website-development-jaipur",
+      "ecommerce-website-development-delhi",
+      "ecommerce-website-development-mumbai",
+      "ecommerce-website-development-bangalore",
+      "ecommerce-website-development-jodhpur",
     ],
     relatedLinks: [
       {
@@ -840,66 +848,8 @@ export const seoLandingPages = [
     ],
     cta: "Modernize your CRM or ERP",
   },
-  {
-    slug: "website-development-company-bhilwara",
-    title:
-      "Website Development in Bhilwara | TheTriFusion",
-    h1: "Website Development for Bhilwara — From Our Jaipur Office",
-    navLabel: "Bhilwara websites (from Jaipur office)",
-    metaDescription:
-      "Website development for Bhilwara businesses from TheTriFusion in Jaipur. Remote delivery for textile, retail, and local firms. No Bhilwara office.",
-    primaryKeyword: "website development company in Bhilwara",
-    outcomeLine:
-      "Website development for Bhilwara is the design and build of a business site — catalogue, lead form, or store — for mills, traders, and local firms that sell suiting, yarn, or retail goods. TheTriFusion does this from its Jaipur office by video and WhatsApp, with no Bhilwara storefront.",
-    secondaryKeywords: [
-      "web development Bhilwara from Jaipur",
-      "website designer for Bhilwara businesses",
-      "ecommerce website Bhilwara",
-      "software company serving Bhilwara",
-      "IT services Bhilwara Rajasthan",
-    ],
-    intro:
-      "TheTriFusion (Trifusion Infotech Private Limited) is based in Jaipur and serves Bhilwara businesses remotely — websites, ecommerce stores, and mobile apps for textile, retail, education, and growing brands. We are a service-area partner, not a Bhilwara storefront.",
-    sections: [
-      {
-        title: "Jaipur office, Bhilwara clients",
-        body: `Our office is at ${siteConfig.addressLine}. Phone ${siteConfig.phone}. Hours: ${siteConfig.hoursLabel}. Bhilwara projects run on video calls, WhatsApp, and weekly demos. Hindi/English communication, GST invoicing, and UPI/Razorpay checkouts are standard. We can travel for kickoff when the project needs it.`,
-      },
-      {
-        title: "What we build for Bhilwara businesses",
-        body: "Company websites, catalogue and wholesale portals, ecommerce for retail brands, school/college sites, booking systems, and custom software. We also handle on-page SEO, Google Business guidance, and lead forms that notify you on WhatsApp.",
-      },
-      {
-        title: "How a project typically runs",
-        body: "Discovery (video or in person) → written scope and estimate → design approval → development with weekly demos → QA → launch on your domain. Most marketing websites ship in 3–8 weeks depending on pages and integrations.",
-      },
-    ],
-    faqs: [
-      {
-        question: "Do you have an office in Bhilwara?",
-        answer:
-          `No. Our office is at ${siteConfig.addressLine}. Phone ${siteConfig.phone}. Hours: ${siteConfig.hoursLabel}. We serve Bhilwara as a service area — remote delivery with optional travel for discovery or launch.`,
-      },
-      {
-        question: "Can Bhilwara clients still work with you?",
-        answer:
-          "Yes. Most of our Rajasthan work is remote: shared boards, weekly demos, and WhatsApp. That is how we work with Bhilwara, Kota, Udaipur, and Jodhpur teams.",
-      },
-      {
-        question: "Do you do local SEO for Bhilwara searches?",
-        answer:
-          "Yes. We can set up on-page SEO, sitemap, and Google Business guidance for a Bhilwara business. Rankings still depend on reviews, content, and competition.",
-      },
-    ],
-    relatedServiceSlugs: [
-      "website-development",
-      "software-development",
-      "digital-marketing",
-      "ui-ux-design",
-    ],
-    cta: "Get a free scoped estimate for a Bhilwara project",
-  },
   ...cityServiceAreaPages,
+  ...cityServiceLandings,
   {
     slug: "software-company-rajasthan",
     title: "Software Company in Rajasthan | TheTriFusion",
@@ -1155,6 +1105,7 @@ export const getSolutionsForService = (serviceSlug) =>
   seoLandingPages
     .filter(
       (page) =>
+        Array.isArray(page.relatedServiceSlugs) &&
         page.relatedServiceSlugs.includes(serviceSlug) &&
         !REDIRECTED_SOLUTION_SLUGS.has(page.slug)
     )
@@ -1164,10 +1115,16 @@ export const featuredSolutionSlugs = [
   "software-company-rajasthan",
   "ecommerce-website-development",
   "msp-managed-it-services",
+  "website-development-company-jaipur",
   "website-development-company-bhilwara",
   "website-development-company-udaipur",
   "website-development-company-kota",
   "website-development-company-ajmer",
+  "custom-software-development-jaipur",
+  "mobile-app-development-company-jaipur",
+  "ecommerce-website-development-jaipur",
+  "digital-marketing-company-jaipur",
+  "fintech-app-development-jaipur",
 ];
 
 export const getFeaturedSolutions = () =>

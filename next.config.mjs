@@ -25,6 +25,20 @@ const nextConfig = {
       // Apex .in is the ONLY canonical host. permanent:true is 308 in Next.js.
       // If www still returns 307 in production, change the Vercel Domains
       // "Redirect www to apex" setting — that hop runs before this config.
+      // Explicit GSC-flagged money URLs first so www cannot self-canonicalize.
+      {
+        source: "/solutions/ecommerce-website-development",
+        has: [{ type: "host", value: "www.thetrifusion.in" }],
+        destination:
+          "https://thetrifusion.in/solutions/ecommerce-website-development",
+        permanent: true,
+      },
+      {
+        source: "/services/digital-marketing",
+        has: [{ type: "host", value: "www.thetrifusion.in" }],
+        destination: "https://thetrifusion.in/services/digital-marketing",
+        permanent: true,
+      },
       {
         source: "/:path*",
         has: [{ type: "host", value: "www.thetrifusion.in" }],

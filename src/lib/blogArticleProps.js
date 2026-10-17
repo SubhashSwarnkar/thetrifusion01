@@ -5,6 +5,7 @@ import {
 } from "data/blogData";
 import { getSeoLandingBySlug } from "data/seoLandingPages";
 import { getServiceBySlug } from "data/servicesData";
+import { withTrafficServiceCta } from "data/trafficServiceLinks";
 
 /** Service URLs already anchored in the article body. */
 function serviceHrefsInHtml(html) {
@@ -179,7 +180,7 @@ export function getBlogArticleView(post) {
       slug: post.slug,
       title: post.title,
       excerpt: post.excerpt,
-      content: post.content,
+      content: withTrafficServiceCta(post.slug, post.content),
       date: post.date,
       updatedAt: post.updatedAt || post.date,
       readTime: post.readTime,

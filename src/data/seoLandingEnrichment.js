@@ -412,6 +412,7 @@ export function enrichLandingPage(page) {
     ...extra,
     relatedSolutionSlugs:
       extra.relatedSolutionSlugs ||
+      page.relatedSolutionSlugs ||
       related.relatedSolutionSlugs ||
       [],
     relatedBlogSlug:

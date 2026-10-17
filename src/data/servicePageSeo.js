@@ -7,6 +7,7 @@ import { devopsPageContent } from "./devopsPageContent";
 import { serviceRankingContent } from "./serviceRankingContent20260929";
 import { evChargingPageContent } from "./evChargingPageContent";
 import { servicePlanContent } from "./servicePlan/index";
+import { serviceIndiaOnpage } from "./serviceIndiaOnpage";
 
 export const servicePageSeo = {
   "software-development": {
@@ -933,6 +934,33 @@ for (const [slug, extra] of Object.entries(servicePlanContent)) {
     ...extra,
     extraSections,
     faqs,
+    relatedLinks,
+  };
+}
+
+// 17 Oct 2026 India ranking: titles/H1, city clusters, areaServed India.
+for (const [slug, extra] of Object.entries(serviceIndiaOnpage)) {
+  const current = servicePageSeo[slug] || {};
+  const extraSections = extra.extraSections
+    ? [
+        ...extra.extraSections,
+        ...(current.extraSections || []).filter(
+          (section) => !extra.extraSections.some((item) => item.id === section.id)
+        ),
+      ]
+    : current.extraSections;
+  const relatedLinks = extra.relatedLinks
+    ? [
+        ...extra.relatedLinks,
+        ...(current.relatedLinks || []).filter(
+          (link) => !extra.relatedLinks.some((item) => item.href === link.href)
+        ),
+      ]
+    : current.relatedLinks;
+  servicePageSeo[slug] = {
+    ...current,
+    ...extra,
+    extraSections,
     relatedLinks,
   };
 }

@@ -318,6 +318,24 @@ async function main() {
     "/blog/ecommerce-amendment-rules-india-2027",
     "/blog/google-ads-automated-promotions-india-2026",
     "/blog/gstn-rcm-einvoice-software-india-2026",
+    "/blog/chatgpt-1980s-ai-photo-prompt-guide",
+    "/blog/neet-pg-result-2026-how-to-check",
+    "/blog/motorola-signature-27-india-whats-known",
+    "/blog/portugal-vs-wales-nations-league-why-trending",
+    "/blog/sbi-po-mains-result-2026-how-to-check",
+    "/blog/afghanistan-vs-japan-asian-games-cricket-explained",
+    "/blog/23-september-2026-why-trending-india",
+    "/blog/nse-listing-date-how-ipo-listing-works-india",
+    "/blog/ocpi-roaming-explained-cpo-emsp",
+    "/solutions/website-development-company-jaipur",
+    "/solutions/custom-software-development-jaipur",
+    "/solutions/mobile-app-development-company-jaipur",
+    "/solutions/ecommerce-website-development-jaipur",
+    "/solutions/digital-marketing-company-jaipur",
+    "/solutions/fintech-app-development-jaipur",
+    "/services/website-development",
+    "/services/software-development",
+    "/services/digital-marketing",
   ];
   for (const path of required) {
     if (!unique.some((u) => new URL(u, BASE_URL).pathname === path)) {
@@ -341,17 +359,35 @@ async function main() {
     await auditPage(url);
   }
 
-  const extraBlogPaths = required.filter((path) => path.startsWith("/blog/"));
-  for (const path of extraBlogPaths) {
-    const url = `${BASE_URL}${path}`;
-    if (!localUrls.includes(url)) {
-      await auditPage(url);
-    }
+  const extraRequiredPaths = required.filter(
+    (path) => !localUrls.includes(`${BASE_URL}${path}`)
+  );
+  for (const path of extraRequiredPaths) {
+    await auditPage(`${BASE_URL}${path}`);
   }
 
   // Spot-check tool noindex pages even if omitted from sitemap
   for (const path of ["/estimate", "/planner", "/timeline", "/pricing/calculator"]) {
     await auditPage(`${BASE_URL}${path}`);
+  }
+
+  // GSC picked www as canonical for these money URLs — fail if we emit www.
+  for (const path of [
+    "/solutions/ecommerce-website-development",
+    "/services/digital-marketing",
+  ]) {
+    const url = `${BASE_URL}${path}`;
+    const { text } = await fetchText(url);
+    const canonical = extractCanonical(text);
+    if (!canonical) {
+      fail(`${path} missing canonical`);
+    } else if (!canonical.startsWith("https://thetrifusion.in/")) {
+      fail(`${path} canonical is ${canonical}, expected https://thetrifusion.in/...`);
+    } else if (canonical.includes("www.thetrifusion")) {
+      fail(`${path} canonical still uses www: ${canonical}`);
+    } else {
+      ok(`${path} canonical is apex ${canonical}`);
+    }
   }
 
   console.log(

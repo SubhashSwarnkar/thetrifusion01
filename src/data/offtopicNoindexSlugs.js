@@ -2,9 +2,18 @@
  * Off-topic posts that stay HTTP 200 with a self-canonical and
  * `noindex, follow`. Do not add these to ARCHIVE_NOINDEX_SLUGS:
  * that set 404s the page and 301s the slug to /blog.
+ *
+ * GSC India winners stay INDEXABLE (do not re-add):
+ * chatgpt-1980s-ai-photo-prompt-guide, neet-pg-result-2026-how-to-check,
+ * motorola-signature-27-india-whats-known,
+ * portugal-vs-wales-nations-league-why-trending,
+ * sbi-po-mains-result-2026-how-to-check,
+ * afghanistan-vs-japan-asian-games-cricket-explained,
+ * 23-september-2026-why-trending-india,
+ * nse-listing-date-how-ipo-listing-works-india,
+ * ocpi-roaming-explained-cpo-emsp.
  */
 export const OFFTOPIC_NOINDEX_SLUGS = new Set([
-  "nse-listing-date-how-ipo-listing-works-india",
   "epf-employee-provident-fund-india-guide",
   "hero-motors-share-price-why-trending",
   "pm-awas-yojana-pmay-guide-india",
@@ -34,7 +43,6 @@ export const OFFTOPIC_NOINDEX_SLUGS = new Set([
   "lynx-vs-fever-wnba-why-trending",
   "padres-vs-dodgers-why-trending",
   "zelenskyy-why-trending-explained",
-  "23-september-2026-why-trending-india",
   "richard-hammond-why-trending-explained",
   "nigella-lawson-why-trending-explained",
   "migrant-boat-isle-of-wight-why-trending",
@@ -52,7 +60,6 @@ export const OFFTOPIC_NOINDEX_SLUGS = new Set([
   "chagos-islands-why-trending-explained",
   "john-goodman-why-trending-explained",
   "angry-anderson-why-trending-explained",
-  "afghanistan-vs-japan-asian-games-cricket-explained",
   "paradise-movie-nani-review-why-trending",
   "ibps-po-prelims-result-2026-guide",
   "meesaya-murukku-2-review-why-trending",
@@ -128,9 +135,7 @@ export const OFFTOPIC_NOINDEX_SLUGS = new Set([
   "pink-clouding-lyrics-why-trending",
   "kelly-clarkson-short-haircut-why-trending",
   "dengue-fever-why-trending-symptoms-facts",
-  "neet-pg-result-2026-how-to-check",
   "south-africa-vs-australia-cricket-why-trending",
-  "portugal-vs-wales-nations-league-why-trending",
   "cec-gyanesh-kumar-why-trending-explained",
   "falcons-vs-packers-nfl-why-trending",
   "us-supreme-court-save-voter-database-explained",
@@ -140,18 +145,15 @@ export const OFFTOPIC_NOINDEX_SLUGS = new Set([
   "nepal-floods-indians-missing-mea-update",
   "uk-eu-entry-exit-system-ees-guide",
   "winter-2026-27-snowfall-predictions-us",
-  "sbi-po-mains-result-2026-how-to-check",
   "production-calendar-2027-russia-explained",
   "permanent-daylight-savings-time-debate-explained",
   // Phone launches, gadgets, and off-topic tech news
   "vivo-v80-specs-price-india-what-we-know",
   "realme-16-pro-harry-potter-edition-india",
-  "motorola-signature-27-india-whats-known",
   "iqoo-16-india-android-apps-business",
   "beats-360-why-trending-explained",
   "anthropic-pentagon-claude-ai-ban-explained",
   "meta-vr-glasses-2026-whats-known",
-  "chatgpt-1980s-ai-photo-prompt-guide",
   "social-security-in-india-2026-epfo-esic-employer-guide",
   // Named non-India / rumour / stale posts (keep noindex; indexing is a blocklist)
   "ecommerce-website-for-nigerian-smes-2026",
