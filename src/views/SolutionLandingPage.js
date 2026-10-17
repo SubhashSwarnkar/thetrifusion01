@@ -44,7 +44,7 @@ export default function SolutionLandingPage({
     return <NotFoundPage />;
   }
 
-  const relatedServices = page.relatedServiceSlugs
+  const relatedServices = (page.relatedServiceSlugs || [])
     .map((serviceSlug) => getServiceBySlug(serviceSlug))
     .filter(Boolean);
 

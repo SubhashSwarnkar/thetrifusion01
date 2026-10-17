@@ -927,9 +927,9 @@ export default function ServiceDetailPage({
       {/* Related Solutions Cross-Linking */}
       {relatedSolutions.length > 0 && (
         <section id="related" className="container mx-auto px-5 py-16 border-t border-gray-100">
-          <SectionHeading kicker="Next">Related Solutions & Use Cases</SectionHeading>
+          <SectionHeading kicker="Next">City pages and related solutions</SectionHeading>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {relatedSolutions.slice(0, 4).map((solution, idx) => {
+            {relatedSolutions.slice(0, 12).map((solution, idx) => {
               const accent = accentAt(idx);
               return (
                 <Link

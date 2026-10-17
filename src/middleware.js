@@ -22,6 +22,12 @@ export function middleware(request) {
       "Cache-Control",
       "public, s-maxage=86400, stale-while-revalidate=604800"
     );
+    const canonicalPath =
+      request.nextUrl.pathname === "/" ? "" : request.nextUrl.pathname;
+    response.headers.set(
+      "Link",
+      `<https://${APEX}${canonicalPath}>; rel="canonical"`
+    );
   }
   return response;
 }

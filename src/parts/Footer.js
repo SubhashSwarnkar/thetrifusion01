@@ -64,47 +64,15 @@ export default function Footer({ hideNewsletter = false }) {
             <div className="min-w-0">
               <h4 className="text-xl font-black mb-6 text-theme-cyan">Services</h4>
               <ul className="space-y-3">
-                  <li>
-                    <Link
-                      href="/solutions/ecommerce-website-development"
-                      className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block font-light"
-                    >
-                      Ecommerce Website Development
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/services/website-development"
-                      className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block font-light"
-                    >
-                      Web Development
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/services/android-app-development"
-                      className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block font-light"
-                    >
-                      Android Apps
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/services/ios-app-development"
-                      className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block font-light"
-                    >
-                      iOS Apps
-                    </Link>
-                  </li>
-                {[
-                  "devops",
-                  "mlm-crm-development",
-                  "fintech-app-development",
-                  "ev-charging-app-development",
-                ].map((slug) => {
-                  const s = serviceNav.find((item) => item.slug === slug);
-                  if (!s) return null;
-                  return (
+                <li>
+                  <Link
+                    href="/solutions/ecommerce-website-development"
+                    className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block font-light"
+                  >
+                    Ecommerce Website Development
+                  </Link>
+                </li>
+                {serviceNav.map((s) => (
                   <li key={s.id}>
                     <Link
                       href={`/services/${s.slug}`}
@@ -113,8 +81,7 @@ export default function Footer({ hideNewsletter = false }) {
                       {s.title}
                     </Link>
                   </li>
-                  );
-                })}
+                ))}
               </ul>
             </div>
 

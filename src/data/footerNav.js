@@ -38,5 +38,29 @@ export const featuredSolutionNav = [
   {
     "slug": "website-development-company-ajmer",
     "navLabel": "Ajmer websites (from Jaipur office)"
+  },
+  {
+    "slug": "website-development-company-jaipur",
+    "navLabel": "Jaipur websites (HQ)"
+  },
+  {
+    "slug": "custom-software-development-jaipur",
+    "navLabel": "Jaipur custom software (HQ)"
+  },
+  {
+    "slug": "mobile-app-development-company-jaipur",
+    "navLabel": "Jaipur mobile apps (HQ)"
+  },
+  {
+    "slug": "digital-marketing-company-jaipur",
+    "navLabel": "Jaipur digital marketing (HQ)"
+  },
+  {
+    "slug": "fintech-app-development-jaipur",
+    "navLabel": "Jaipur fintech (HQ)"
+  },
+  {
+    "slug": "ecommerce-website-development-jaipur",
+    "navLabel": "Jaipur ecommerce (HQ)"
   }
 ];

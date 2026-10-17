@@ -8,6 +8,8 @@ import { siteConfig } from "config/site";
 
 const bhilwara = {
   slug: "website-development-company-bhilwara",
+  serviceAreaCity: "Bhilwara",
+  serviceAreaRegion: "Rajasthan",
   title: "Website Development in Bhilwara | TheTriFusion",
   h1: "Website Development for Bhilwara — From Our Jaipur Office",
   navLabel: "Bhilwara websites (from Jaipur office)",
@@ -128,12 +130,24 @@ const bhilwara = {
     "digital-marketing",
     "ui-ux-design",
   ],
+  relatedSolutionSlugs: [
+    "website-development-company-jaipur",
+    "website-development-company-delhi",
+    "website-development-company-mumbai",
+    "website-development-company-bangalore",
+    "website-development-company-jodhpur",
+    "website-development-company-udaipur",
+    "website-development-company-kota",
+    "website-development-company-ajmer",
+  ],
   cta: "Get a free scoped estimate for a Bhilwara project",
   updatedAt: "2026-09-27",
 };
 
 const udaipur = {
   slug: "website-development-company-udaipur",
+  serviceAreaCity: "Udaipur",
+  serviceAreaRegion: "Rajasthan",
   title: "Website Development in Udaipur | TheTriFusion",
   h1: "Website Development for Udaipur — From Our Jaipur Office",
   navLabel: "Udaipur websites (from Jaipur office)",
@@ -259,6 +273,8 @@ const udaipur = {
 
 const kota = {
   slug: "website-development-company-kota",
+  serviceAreaCity: "Kota",
+  serviceAreaRegion: "Rajasthan",
   title: "Website Development in Kota | TheTriFusion",
   h1: "Website Development for Kota — From Our Jaipur Office",
   navLabel: "Kota websites (from Jaipur office)",
@@ -389,6 +405,8 @@ const kota = {
 
 const ajmer = {
   slug: "website-development-company-ajmer",
+  serviceAreaCity: "Ajmer",
+  serviceAreaRegion: "Rajasthan",
   title: "Website Development in Ajmer | TheTriFusion",
   h1: "Website Development for Ajmer — From Our Jaipur Office",
   navLabel: "Ajmer websites (from Jaipur office)",

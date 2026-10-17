@@ -13,20 +13,30 @@ import { buildMetadata } from "lib/seoConfig";
 import {
   breadcrumbSchema,
   faqSchema,
+  localBusinessSchema,
   serviceSchema,
 } from "lib/schema";
 
 const CITY_BY_SLUG_SUFFIX = {
-  ajmer: "Ajmer",
-  bhilwara: "Bhilwara",
-  jaipur: "Jaipur",
-  jodhpur: "Jodhpur",
-  kota: "Kota",
-  udaipur: "Udaipur",
+  ajmer: { city: "Ajmer", region: "Rajasthan" },
+  bhilwara: { city: "Bhilwara", region: "Rajasthan" },
+  jaipur: { city: "Jaipur", region: "Rajasthan" },
+  jodhpur: { city: "Jodhpur", region: "Rajasthan" },
+  kota: { city: "Kota", region: "Rajasthan" },
+  udaipur: { city: "Udaipur", region: "Rajasthan" },
+  delhi: { city: "Delhi", region: "Delhi" },
+  mumbai: { city: "Mumbai", region: "Maharashtra" },
+  bangalore: { city: "Bengaluru", region: "Karnataka" },
 };
 
-function solutionCity(slug) {
-  const suffix = String(slug || "").split("-").pop();
+function solutionCity(page) {
+  if (page?.serviceAreaCity) {
+    return {
+      city: page.serviceAreaCity,
+      region: page.serviceAreaRegion || "Rajasthan",
+    };
+  }
+  const suffix = String(page?.slug || "").split("-").pop();
   return CITY_BY_SLUG_SUFFIX[suffix] || null;
 }
 
@@ -62,6 +72,8 @@ export default function RoutePage({ params }) {
     notFound();
   }
 
+  const city = solutionCity(page);
+
   return (
     <>
       <JsonLd
@@ -71,17 +83,18 @@ export default function RoutePage({ params }) {
           path: `/solutions/${page.slug}`,
           ...(page.schema || {}),
           serviceType: page.schema?.serviceType || page.h1,
-          ...(solutionCity(page.slug)
+          ...(city
             ? {
                 areaServed: [
-                  { "@type": "City", name: solutionCity(page.slug) },
-                  { "@type": "AdministrativeArea", name: "Rajasthan" },
+                  { "@type": "City", name: city.city },
+                  { "@type": "AdministrativeArea", name: city.region },
                   { "@type": "Country", name: "India" },
                 ],
               }
             : {}),
         })}
       />
+      {city ? <JsonLd data={localBusinessSchema()} /> : null}
       <JsonLd data={faqSchema(page.faqs)} />
       <JsonLd
         data={breadcrumbSchema([

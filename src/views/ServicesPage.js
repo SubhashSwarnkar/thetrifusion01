@@ -22,6 +22,11 @@ import {
 
 const SERVICE_CHOOSER = [
   {
+    href: "/services/software-development",
+    label: "Custom software development company in India",
+    text: "for portals, CRM modules and APIs from Jaipur, from ₹1,00,000.",
+  },
+  {
     href: "/services/website-development",
     label: "Website development company in Jaipur",
     text: "for business websites, lead-generation sites, and portals on React, Next.js, or WordPress, from ₹15,000.",
@@ -48,8 +53,68 @@ const SERVICE_CHOOSER = [
   },
   {
     href: "/services/fintech-app-development",
-    label: "Fintech app development in Jaipur",
+    label: "Fintech app development company in India",
     text: "for BBPS, AEPS, DMT, and recharge software, from ₹99,999.",
+  },
+  {
+    href: "/services/ai-development",
+    label: "AI development company in Jaipur, India",
+    text: "for WhatsApp bots, RAG and agents with a human review step, from ₹2,00,000.",
+  },
+  {
+    href: "/services/digital-marketing",
+    label: "Digital marketing agency in Jaipur, India",
+    text: "for SEO, Google Ads and Meta Ads, from ₹15,000 (ad spend separate).",
+  },
+  {
+    href: "/services/crm-erp-development",
+    label: "Custom CRM and ERP development in Jaipur",
+    text: "for pipelines, inventory and GST billing, from ₹3,00,000.",
+  },
+  {
+    href: "/services/ui-ux-design",
+    label: "UI/UX design company in Jaipur, India",
+    text: "for Figma product UI and Hindi/Indic flows, from ₹20,000.",
+  },
+  {
+    href: "/services/branding",
+    label: "Branding agency in Jaipur, India",
+    text: "for logo, identity and guidelines a website can use, from ₹30,000.",
+  },
+  {
+    href: "/services/rpa",
+    label: "RPA services company in India",
+    text: "for invoice, Tally and CRM bots from Jaipur, from ₹50,000.",
+  },
+  {
+    href: "/services/salesforce",
+    label: "Salesforce implementation company in India",
+    text: "for Flows, Apex and integrations on an org you already pay for, from ₹80,000.",
+  },
+  {
+    href: "/services/mlm-crm-development",
+    label: "MLM software development company in India",
+    text: "for binary, unilevel and matrix plans from Jaipur, from ₹3,50,000.",
+  },
+  {
+    href: "/services/ev-charging-app-development",
+    label: "EV charging app development in India",
+    text: "for OCPP/OCPI CSMS from Jaipur, from ₹4,50,000.",
+  },
+  {
+    href: "/services/business-modernization",
+    label: "Business modernization in Jaipur, India",
+    text: "for spreadsheet-to-software cutovers, from ₹1,50,000.",
+  },
+  {
+    href: "/services/graphic-design",
+    label: "Graphic design company in Jaipur, India",
+    text: "for social, ads and catalogues that match the live site, from ₹10,000.",
+  },
+  {
+    href: "/services/on-demand",
+    label: "Hire dedicated developers in India",
+    text: "for named React, Node and mobile seats from Jaipur. Project work from ₹50,000.",
   },
 ];
 
