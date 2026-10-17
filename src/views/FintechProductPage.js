@@ -6,6 +6,7 @@ import Header from "parts/Header";
 import Footer from "parts/Footer";
 import Breadcrumbs from "components/Breadcrumbs";
 import BrandTrustStrip from "components/BrandTrustStrip";
+import RelatedGuides from "components/RelatedGuides";
 import { getFintechProductBySlug } from "data/fintechProductPages";
 import { canonicalInternalHref } from "lib/internalLinks";
 import NotFoundPage from "./NotFoundPage";
@@ -34,7 +35,7 @@ function InlineText({ text }) {
   return nodes;
 }
 
-export default function FintechProductPage({ slug }) {
+export default function FintechProductPage({ slug, relatedGuides = [] }) {
   const page = getFintechProductBySlug(slug);
 
   useEffect(() => {
@@ -147,6 +148,10 @@ export default function FintechProductPage({ slug }) {
             ))}
           </ul>
         </section>
+
+        {relatedGuides.length > 0 ? (
+          <RelatedGuides guides={relatedGuides} />
+        ) : null}
       </main>
       <Footer />
     </div>

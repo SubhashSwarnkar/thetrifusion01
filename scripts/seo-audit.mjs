@@ -308,6 +308,16 @@ async function main() {
     "/blog/hire-dedicated-developers-india-cost-2026",
     "/blog/google-ai-overviews-seo-india-2026",
     "/blog/festive-ecommerce-website-india-ondc-2026",
+    "/blog/uipath-agentic-rpa-india-sme-2026",
+    "/blog/salesforce-india-innovation-series-delhi-2026",
+    "/blog/gstn-rcm-self-invoice-modernize-india-2026",
+    "/blog/direct-selling-crm-india-adsei-2026",
+    "/blog/odisha-pm-edrive-cpo-csms-india-2026",
+    "/blog/upi-mdr-recharge-software-india-2026",
+    "/blog/hire-developers-gstn-sandbox-india-2026",
+    "/blog/ecommerce-amendment-rules-india-2027",
+    "/blog/google-ads-automated-promotions-india-2026",
+    "/blog/gstn-rcm-einvoice-software-india-2026",
   ];
   for (const path of required) {
     if (!unique.some((u) => new URL(u, BASE_URL).pathname === path)) {

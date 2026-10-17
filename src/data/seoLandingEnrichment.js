@@ -293,7 +293,7 @@ const RELATED_BY_SLUG = {
       "msp-managed-it-services",
       "software-company-rajasthan",
     ],
-    relatedBlogSlug: "custom-website-vs-shopify-vs-woocommerce",
+    relatedBlogSlug: "ecommerce-amendment-rules-india-2027",
   },
   "online-store-development": {
     relatedSolutionSlugs: [
