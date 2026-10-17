@@ -59,6 +59,12 @@ function caseStudyWordCount(project) {
  * Index a portfolio URL only when it has a real case study (at least 300
  * words) and is not a demo template. Short cards stay live and noindex.
  */
+export function portfolioImageAlt(project) {
+  if (!project) return "Portfolio project by TheTriFusion";
+  if (project.imageAlt) return project.imageAlt;
+  return `${project.title} — ${project.type} project by TheTriFusion`;
+}
+
 export function isIndexablePortfolio(project) {
   if (!project) return false;
   if (caseStudyWordCount(project) < 300) return false;
@@ -109,20 +115,33 @@ export const Portfolios = [
     credit: "https://www.connectdairy.in/",
   },
   {
-    id: "atharv-narayan-wellness-website",
-    title: "Atharv Narayan",
+    id: "atharv-narayan-dairy-logistics-website",
+    title: "Atharv Narayan Dairy Solutions",
     imageUrl: AtharvNarayanImg,
     type: "Website",
     featured: true,
+    tags: [
+      "dairy logistics",
+      "milk transportation",
+      "manpower",
+      "cattle feed",
+      "tenders",
+      "bilingual",
+      "Bhilwara",
+      "Jaipur",
+    ],
+    imageAlt:
+      "Atharv Narayan Dairy Solutions website on laptop and phone — bilingual dairy logistics site for milk transport, manpower, cattle feed, and tenders in Bhilwara and Jaipur",
     cardDescription:
-      "Dairy services website — Jaipur/Bhilwara leads, inquiry and WhatsApp flows",
+      "Bilingual dairy logistics website — Bhilwara & Jaipur milk transport, manpower, cattle feed, tenders",
+    relatedServiceSlug: "website-development",
     description:
-      "Atharv Narayan is a live dairy solutions website for Bhilwara and Jaipur: milk transportation, trained dairy manpower, cattle-feed supply, and tender support — with service pages, inquiry flows, and WhatsApp-ready contact.",
+      "Atharv Narayan Dairy Solutions is a live bilingual (English/Hindi) website for a dairy logistics and manpower partner in Bhilwara and Jaipur, Rajasthan. The site presents hygienic temperature-controlled milk transportation, trained dairy manpower, cattle-feed supply, and tender documentation support, with service pages, enquiry forms, and WhatsApp-ready contact. Group verticals on the live site include Manvender Singh Enterprises, Atharv Narayan Cattle Feed, and Atharv Narayan Tenders.",
     responsibility: [
       "Web Development",
       "UI/UX Design",
-      "Lead & Inquiry Flows",
-      "Content Management",
+      "Bilingual English / Hindi",
+      "Lead, enquiry & WhatsApp flows",
     ],
     credit: "https://www.atharvnarayan.in/",
   },
@@ -471,10 +490,10 @@ export const Testimonials = [
   },
   {
     id: 4,
-    name: "Atharv Narayan",
-    company: "Case: dairy solutions site",
+    name: "Atharv Narayan Dairy Solutions",
+    company: "Case: dairy logistics website",
     testimoni:
-      "Lead-gen site for dairy logistics and manpower across Bhilwara and Jaipur — transport, feed, tenders, and inquiry forms live at atharvnarayan.in.",
+      "Bilingual lead-gen site for dairy logistics and manpower across Bhilwara and Jaipur — milk transport, trained staff, cattle feed, tenders, and enquiry forms live at atharvnarayan.in.",
     imageUrl: AtharvNarayanImg,
     url: "https://www.atharvnarayan.in/",
     linkLabel: "Open live case → atharvnarayan.in",

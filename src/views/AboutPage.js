@@ -167,16 +167,17 @@ export default function AboutPage() {
               </p>
               <p>
                 <Link
-                  href="/portfolio/atharv-narayan-wellness-website"
+                  href="/portfolio/atharv-narayan-dairy-logistics-website"
                   className={linkClass}
                 >
-                  Atharv Narayan
+                  Atharv Narayan Dairy Solutions
                 </Link>{" "}
-                is a live website for a dairy solutions business serving
-                Bhilwara and Jaipur. It presents milk transportation, trained
-                dairy manpower, cattle-feed supply, and tender support, with
-                dedicated service pages, inquiry flows, and WhatsApp-ready
-                contact.
+                is a live bilingual (English/Hindi) website for a dairy logistics
+                and manpower partner serving Bhilwara and Jaipur. It presents
+                hygienic temperature-controlled milk transportation, trained
+                dairy manpower, cattle-feed supply, and tender documentation
+                support, with dedicated service pages, inquiry flows, and
+                WhatsApp-ready contact.
               </p>
               <p>
                 <Link

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Fade } from "react-awesome-reveal";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Button from "elements/Button";
+import { portfolioImageAlt } from "json/landingPageData";
 
 export default function AllPortfolioEnhanced({ data }) {
   const [searchQuery, setSearchQuery] = useState("");
@@ -22,7 +23,11 @@ export default function AllPortfolioEnhanced({ data }) {
       filtered = filtered.filter(
         (item) =>
           item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          (item.description && item.description.toLowerCase().includes(searchQuery.toLowerCase()))
+          (item.description &&
+            item.description.toLowerCase().includes(searchQuery.toLowerCase())) ||
+          (item.tags || []).some((tag) =>
+            String(tag).toLowerCase().includes(searchQuery.toLowerCase())
+          )
       );
     }
 
@@ -62,7 +67,7 @@ export default function AllPortfolioEnhanced({ data }) {
                 <div className="relative">
                   <img
                     src={item.imageUrl}
-                    alt={`${item.title} — ${item.type} project by TheTriFusion`}
+                    alt={portfolioImageAlt(item)}
                     className="rounded-t-2xl z-0 w-full h-auto"
                   />
                   <div className="absolute flex w-full h-full top-0 opacity-0 bg-black justify-center rounded-t-2xl rounded-b img-hover transition-opacity duration-300">

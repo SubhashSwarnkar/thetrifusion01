@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Button from "../elements/Button";
+import { portfolioImageAlt } from "json/landingPageData";
 
 export default function Portfolio({ data }) {
   return (
@@ -18,7 +19,7 @@ export default function Portfolio({ data }) {
                 <div className="relative">
                   <Image
                     src={item.imageUrl}
-                    alt={`${item.title} — ${item.type} project by TheTriFusion`}
+                    alt={portfolioImageAlt(item)}
                     width={600}
                     height={400}
                     className="rounded-t-2xl z-0 w-full h-auto"

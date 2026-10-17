@@ -36,7 +36,7 @@ const bhilwara = {
     },
     {
       title: "A real Bhilwara reference we can show",
-      body: "We do not publish unnamed case studies. One build that is already public is Atharv Narayan, a dairy-services website covering Bhilwara and Jaipur: milk transportation, trained dairy manpower, cattle-feed supply, and tender support, with service pages and an enquiry path. The live site is atharvnarayan.in and the portfolio note is on this website under Atharv Narayan. Connect Dairy, the related agri-logistics product, is a separate public URL (connectdairy.in) for fleet and operations workflows. Those pages are examples of work you can open. They are not a claim that we run textile mills, and they do not come with traffic or revenue numbers we have not published.",
+      body: "We do not publish unnamed case studies. One build that is already public is Atharv Narayan Dairy Solutions, a bilingual dairy-logistics website covering Bhilwara and Jaipur: hygienic milk transportation, trained dairy manpower, cattle-feed supply, and tender documentation support, with service pages and an enquiry path. The live site is atharvnarayan.in and the portfolio note is on this website under Atharv Narayan Dairy Solutions. Connect Dairy, the related agri-logistics product, is a separate public URL (connectdairy.in) for fleet and operations workflows. Those pages are examples of work you can open. They are not a claim that we run textile mills, and they do not come with traffic or revenue numbers we have not published.",
     },
     {
       title: "How Jaipur delivery works for a Bhilwara brief",
@@ -61,7 +61,7 @@ const bhilwara = {
     {
       question: "Is Atharv Narayan a Bhilwara project?",
       answer:
-        "Atharv Narayan is a live dairy-services website for Bhilwara and Jaipur that you can open at atharvnarayan.in. It is a public portfolio reference for service pages and enquiries, not a textile-mill case study and not a set of performance statistics.",
+        "Atharv Narayan Dairy Solutions is a live bilingual dairy-logistics website for Bhilwara and Jaipur that you can open at atharvnarayan.in. It is a public portfolio reference for service pages and enquiries, not a textile-mill case study and not a set of performance statistics.",
     },
     {
       question: "Will the site support Hindi and GST invoices?",
@@ -121,7 +121,7 @@ const bhilwara = {
     "A Bhilwara catalogue or company site is often a few weeks after photos and an approver are ready. Dealer portals and ecommerce are phased.",
   whatsappMessage:
     "Hi TriFusion, I run a business in Bhilwara and want a website scoped from your Jaipur team.",
-  relatedPortfolioIds: ["atharv-narayan-wellness-website"],
+  relatedPortfolioIds: ["atharv-narayan-dairy-logistics-website"],
   relatedServiceSlugs: [
     "website-development",
     "software-development",

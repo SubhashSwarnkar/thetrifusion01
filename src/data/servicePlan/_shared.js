@@ -44,5 +44,5 @@ export const LIVE = {
   plugone: "[PlugOne](https://plugone.in)",
   dairy: "[Connect Dairy](https://connectdairy.in)",
   daily: "[DailyConcepts India](https://dailyconceptsindia.com)",
-  atharv: "[Atharv Narayan](https://atharvnarayan.in)",
+  atharv: "[Atharv Narayan Dairy Solutions](https://atharvnarayan.in)",
 };
