@@ -29,7 +29,7 @@ export default function Testimonial({ data }) {
                 <div className="w-16 h-16 rounded-full p-1 bg-gradient-to-br from-theme-purple to-theme-blue">
                   <img
                     src={item.imageUrl}
-                    alt={`${item.name} project screenshot`}
+                    alt={`${item.name} — live project screenshot`}
                     className="w-full h-full rounded-full object-cover border-2 border-white"
                     width={64}
                     height={64}

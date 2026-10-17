@@ -7,6 +7,7 @@ import { Fade } from "react-awesome-reveal";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 import Button from "elements/Button";
+import { portfolioImageAlt } from "json/landingPageData";
 
 export default function AllPortfolio({ data }) {
   const mobile = data.filter((item) => item.type === "Mobile Apps");
@@ -46,7 +47,7 @@ export default function AllPortfolio({ data }) {
                       <div className="relative">
                         <img
                           src={item.imageUrl}
-                      alt={`${item.title} — ${item.type} project by TheTriFusion`}
+                      alt={portfolioImageAlt(item)}
                           className="rounded-t-2xl z-0"
                         />
                         <div className="absolute flex w-full h-full top-0 opacity-0 bg-black justify-center rounded-t-2xl rounded-b img-hover">
@@ -97,7 +98,7 @@ export default function AllPortfolio({ data }) {
                       <div className="relative">
                         <img
                           src={item.imageUrl}
-                      alt={`${item.title} — ${item.type} project by TheTriFusion`}
+                      alt={portfolioImageAlt(item)}
                           className="rounded-t-2xl z-0"
                         />
                         <div className="absolute flex w-full h-full top-0 opacity-0 bg-black justify-center rounded-t-2xl rounded-b img-hover">

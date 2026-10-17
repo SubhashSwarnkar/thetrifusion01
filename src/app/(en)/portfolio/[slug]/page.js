@@ -24,7 +24,14 @@ export function generateMetadata({ params }) {
     description:
       project.description ||
       `View ${project.title} — a ${project.type} project by TheTriFusion.`,
-    keywords: `${project.title}, portfolio, ${project.type}, case study, TheTriFusion`,
+    keywords: [
+      project.title,
+      "portfolio",
+      project.type,
+      "case study",
+      "TheTriFusion",
+      ...(project.tags || []),
+    ].join(", "),
     path: `/portfolio/${project.id}`,
     noIndex: !isIndexablePortfolio(project),
   });

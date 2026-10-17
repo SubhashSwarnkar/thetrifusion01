@@ -55,6 +55,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/portfolio/atharv-narayan-wellness-website",
+        destination: "/portfolio/atharv-narayan-dairy-logistics-website",
+        permanent: true,
+      },
+      {
         source: "/case-studies",
         destination: "/portfolio",
         permanent: true,

@@ -7,6 +7,7 @@ import { Fade } from "react-awesome-reveal";
 import NotFound from "assets/images/NotFound.png";
 
 import Button from "elements/Button";
+import { portfolioImageAlt } from "json/landingPageData";
 
 function isLiveProjectUrl(credit) {
   return typeof credit === "string" && /^https?:\/\//i.test(credit);
@@ -85,7 +86,7 @@ export default function PortfolioDetail({ data }) {
             <div className="flex justify-center xl:mb-6">
               <img
                 src={item.imageUrl}
-                alt={`${item.title} — ${item.type} project by TheTriFusion`}
+                alt={portfolioImageAlt(item)}
                 className="flex w-4/5 sm:w-4/6"
               />
             </div>

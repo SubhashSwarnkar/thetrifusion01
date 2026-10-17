@@ -53,7 +53,7 @@ export const adsLandingPages = [
     },
     proofIds: [
       "plugone-ev-charging-platform",
-      "atharv-narayan-wellness-website",
+      "atharv-narayan-dairy-logistics-website",
       "dailyconcepts-ecommerce-pos",
     ],
     faqs: [
@@ -210,7 +210,7 @@ export const adsLandingPages = [
     proofIds: [
       "plugone-ev-charging-platform",
       "connect-dairy-supply-chain",
-      "atharv-narayan-wellness-website",
+      "atharv-narayan-dairy-logistics-website",
     ],
     faqs: [
       {
