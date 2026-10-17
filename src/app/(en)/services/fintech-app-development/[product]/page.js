@@ -7,6 +7,7 @@ import {
 } from "data/fintechProductPages";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "lib/schema";
 import { buildMetadata } from "lib/seoConfig";
+import { getRelatedGuidesForFintechProduct } from "data/blogData";
 
 export function generateStaticParams() {
   return FINTECH_PRODUCT_SLUGS.map((product) => ({ product }));
@@ -51,7 +52,10 @@ export default function RoutePage({ params }) {
         ])}
       />
       <JsonLd data={faqSchema(page.faqs)} />
-      <FintechProductPage slug={params.product} />
+      <FintechProductPage
+        slug={params.product}
+        relatedGuides={getRelatedGuidesForFintechProduct(params.product, 6)}
+      />
     </>
   );
 }

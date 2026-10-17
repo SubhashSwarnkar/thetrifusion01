@@ -36,7 +36,7 @@ export const servicePageSeo = {
       "Hi TriFusion, I want a custom software development quote from the Jaipur team.",
     imageAlt:
       "Custom software development team in Jaipur building web and API products for TheTriFusion clients",
-    relatedBlogSlug: "dpdp-consent-manager-software-india-2026",
+    relatedBlogSlug: "gstn-rcm-einvoice-software-india-2026",
     faqs: [
       {
         question: "What custom software do you build in Jaipur?",
@@ -397,7 +397,7 @@ export const servicePageSeo = {
       "Hi TriFusion, I want a digital marketing & performance marketing (SEO/Ads) growth plan from the Jaipur team.",
     imageAlt:
       "Digital marketing and performance advertising campaigns by TheTriFusion Jaipur",
-    relatedBlogSlug: "google-ai-overviews-seo-india-2026",
+    relatedBlogSlug: "google-ads-automated-promotions-india-2026",
     faqs: [
       {
         question: "What separates performance marketing from standard digital marketing?",
@@ -514,7 +514,7 @@ export const servicePageSeo = {
       "Hi TriFusion, I want an RPA automation quote from the Jaipur team.",
     imageAlt:
       "RPA automation workflow diagram delivered by TheTriFusion Jaipur",
-    relatedBlogSlug: "fintech-app-development-india",
+    relatedBlogSlug: "uipath-agentic-rpa-india-sme-2026",
     faqs: [
       {
         question: "What processes fit RPA?",
@@ -565,7 +565,7 @@ export const servicePageSeo = {
       "Hi TriFusion, I want a business modernization / spreadsheet-replacement plan from Jaipur.",
     imageAlt:
       "Business modernization — replacing spreadsheets with custom software by TheTriFusion",
-    relatedBlogSlug: "mlm-crm-unilevel-compensation-plan",
+    relatedBlogSlug: "gstn-rcm-self-invoice-modernize-india-2026",
     faqs: [
       {
         question: "What does business modernization mean here?",
@@ -616,7 +616,7 @@ export const servicePageSeo = {
       "Hi TriFusion, I want Salesforce customization help from the Jaipur team.",
     imageAlt:
       "Salesforce customization and CRM flows implemented by TheTriFusion Jaipur",
-    relatedBlogSlug: "mlm-crm-unilevel-compensation-plan",
+    relatedBlogSlug: "salesforce-india-innovation-series-delhi-2026",
     faqs: [
       {
         question: "Salesforce implementation or custom code?",
@@ -719,7 +719,7 @@ export const servicePageSeo = {
       "Hi TriFusion, I want on-demand developer availability from the Jaipur team.",
     imageAlt:
       "On-demand software developers in Jaipur from TheTriFusion",
-    relatedBlogSlug: "hire-dedicated-developers-india-cost-2026",
+    relatedBlogSlug: "hire-developers-gstn-sandbox-india-2026",
     faqs: [
       {
         question: "Is this staffing or a project?",

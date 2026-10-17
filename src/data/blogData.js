@@ -11,6 +11,7 @@ import { dailyOrganicTrends20260925pm2Posts } from "./dailyOrganicTrends20260925
 import { dailyOrganicBatch20260926Posts } from "./dailyOrganicBatch20260926";
 import { dailyOrganicBatch20260927Posts } from "./dailyOrganicBatch20260927";
 import { evChargingClusterPosts } from "./evChargingCluster20260927";
+import { dailyOrganicBatch20261017Posts } from "./dailyOrganicBatch20261017";
 import { dailyOrganicBatch20261016Posts } from "./dailyOrganicBatch20261016";
 import { dailyOrganicBatch20261012Posts } from "./dailyOrganicBatch20261012";
 import { dailyOrganicBatch20261011Posts } from "./dailyOrganicBatch20261011";
@@ -88,6 +89,7 @@ export const isRedirectedBlogSlug = (slug) =>
   Boolean(slug && BLOG_CANONICAL_REDIRECTS[slug]);
 
 export const blogPosts = [
+  ...dailyOrganicBatch20261017Posts,
   ...dailyOrganicBatch20261016Posts,
   ...dailyOrganicBatch20261012Posts,
   ...dailyOrganicBatch20261011Posts,
@@ -2911,6 +2913,17 @@ export function getRelatedGuidesForSolution(solutionSlug, limit = 6) {
   if (!solutionSlug) return [];
   return getPublishedBlogPosts()
     .filter((post) => (post.relatedSolutionSlugs || []).includes(solutionSlug))
+    .slice(0, limit)
+    .map(toGuideCard);
+}
+
+/** Indexable posts that name a nested fintech product (e.g. recharge-software). */
+export function getRelatedGuidesForFintechProduct(productSlug, limit = 6) {
+  if (!productSlug) return [];
+  return getPublishedBlogPosts()
+    .filter((post) =>
+      (post.relatedFintechProductSlugs || []).includes(productSlug)
+    )
     .slice(0, limit)
     .map(toGuideCard);
 }

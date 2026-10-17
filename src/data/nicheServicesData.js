@@ -50,7 +50,7 @@ export const nicheServices = [
     imageAlt:
       "MLM CRM software dashboard mockup for unilevel compensation and lead management by TheTriFusion",
     platforms,
-    relatedBlogSlug: "mlm-crm-unilevel-compensation-plan",
+    relatedBlogSlug: "direct-selling-crm-india-adsei-2026",
     startingFrom: 350000,
     startingFromNote: "Unilevel CRM MVP with web admin + one mobile app",
     caseStudy: {
@@ -328,7 +328,7 @@ export const nicheServices = [
     imageAlt:
       "EV charging app development company in Jaipur India — PlugOne live map, OCPP station management, and mobile app by TheTriFusion",
     platforms,
-    relatedBlogSlug: "ev-charging-app-ocpi-ocpp-guide",
+    relatedBlogSlug: "odisha-pm-edrive-cpo-csms-india-2026",
     startingFrom: 450000,
     startingFromNote: "eMSP / CPO MVP with live maps + charging sessions + OCPP/OCPI",
     caseStudy: {

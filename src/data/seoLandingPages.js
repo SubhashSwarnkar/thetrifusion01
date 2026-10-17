@@ -128,6 +128,7 @@ export const seoLandingPages = [
           { href: "/solutions/ecommerce-website-development#ecommerce-website", label: "See full package details and the 48-hour guarantee terms" },
           { href: "/blog/ecommerce-website-development-cost-india", label: "Read: ecommerce website development cost in India" },
           { href: "/blog/festive-ecommerce-website-india-ondc-2026", label: "Read: festive 2026 ecommerce, ONDC, and the first Diwali week" },
+          { href: "/blog/ecommerce-amendment-rules-india-2027", label: "Read: e-commerce Amendment Rules 2026 — dark patterns, ranking, seller IDs from 1 Jan 2027" },
         ],
       },
       {
@@ -350,6 +351,10 @@ export const seoLandingPages = [
       {
         href: "/blog/festive-ecommerce-website-india-ondc-2026",
         label: "Festive 2026 ecommerce: own store, ONDC, and the first Diwali week",
+      },
+      {
+        href: "/blog/ecommerce-amendment-rules-india-2027",
+        label: "E-commerce Amendment Rules: dark patterns, ranking, seller IDs from 1 Jan 2027",
       },
       {
         href: "/blog/ecommerce-app-development-cost-india",
