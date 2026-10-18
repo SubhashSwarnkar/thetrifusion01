@@ -130,6 +130,7 @@ export const seoLandingPages = [
           { href: "/blog/ecommerce-website-development-cost-india", label: "Read: ecommerce website development cost in India" },
           { href: "/blog/festive-ecommerce-website-india-ondc-2026", label: "Read: festive 2026 ecommerce, ONDC, and the first Diwali week" },
           { href: "/blog/ecommerce-amendment-rules-india-2027", label: "Read: e-commerce Amendment Rules 2026 — dark patterns, ranking, seller IDs from 1 Jan 2027" },
+          { href: "/blog/d2c-own-store-festive-shipments-india-2026", label: "Read: D2C own-store festive shipments — ClickPost and Unicommerce, 18 Oct 2026" },
         ],
       },
       {
@@ -363,6 +364,10 @@ export const seoLandingPages = [
       {
         href: "/blog/ecommerce-amendment-rules-india-2027",
         label: "E-commerce Amendment Rules: dark patterns, ranking, seller IDs from 1 Jan 2027",
+      },
+      {
+        href: "/blog/d2c-own-store-festive-shipments-india-2026",
+        label: "D2C own-store festive shipments: ClickPost +31.4% and Unicommerce brand sites",
       },
       {
         href: "/blog/ecommerce-app-development-cost-india",

@@ -114,7 +114,7 @@ export const servicePageSeo = {
       "Hi TriFusion, I want a website development quote from the Jaipur team.",
     imageAlt:
       "Custom website development in Jaipur — business site screens by TheTriFusion",
-    relatedBlogSlug: "google-ai-overviews-indian-business-websites-2026",
+    relatedBlogSlug: "google-official-site-indian-business-website-2026",
     faqs: [
       {
         question: "Is this different from /web-development?",
@@ -398,7 +398,7 @@ export const servicePageSeo = {
       "Hi TriFusion, I want a digital marketing & performance marketing (SEO/Ads) growth plan from the Jaipur team.",
     imageAlt:
       "Digital marketing and performance advertising campaigns by TheTriFusion Jaipur",
-    relatedBlogSlug: "google-ads-automated-promotions-india-2026",
+    relatedBlogSlug: "google-ai-overviews-ads-festive-india-2026",
     faqs: [
       {
         question: "What separates performance marketing from standard digital marketing?",
@@ -515,7 +515,7 @@ export const servicePageSeo = {
       "Hi TriFusion, I want an RPA automation quote from the Jaipur team.",
     imageAlt:
       "RPA automation workflow diagram delivered by TheTriFusion Jaipur",
-    relatedBlogSlug: "uipath-agentic-rpa-india-sme-2026",
+    relatedBlogSlug: "automation-anywhere-bengaluru-rpa-india-2026",
     faqs: [
       {
         question: "What processes fit RPA?",
@@ -566,7 +566,7 @@ export const servicePageSeo = {
       "Hi TriFusion, I want a business modernization / spreadsheet-replacement plan from Jaipur.",
     imageAlt:
       "Business modernization — replacing spreadsheets with custom software by TheTriFusion",
-    relatedBlogSlug: "gstn-rcm-self-invoice-modernize-india-2026",
+    relatedBlogSlug: "gst-council-57-ims-modernize-india-2026",
     faqs: [
       {
         question: "What does business modernization mean here?",
@@ -617,7 +617,7 @@ export const servicePageSeo = {
       "Hi TriFusion, I want Salesforce customization help from the Jaipur team.",
     imageAlt:
       "Salesforce customization and CRM flows implemented by TheTriFusion Jaipur",
-    relatedBlogSlug: "salesforce-india-innovation-series-delhi-2026",
+    relatedBlogSlug: "salesforce-india-md-agentforce-sme-2026",
     faqs: [
       {
         question: "Salesforce implementation or custom code?",
@@ -668,7 +668,7 @@ export const servicePageSeo = {
       "Hi TriFusion, I want a practical AI feature / pilot quote from the Jaipur team.",
     imageAlt:
       "AI software development for Indian businesses by TheTriFusion in Jaipur",
-    relatedBlogSlug: "whatsapp-business-ai-vs-custom-chatbot-india",
+    relatedBlogSlug: "meity-ai-consultation-custom-ai-india-2026",
     faqs: [
       {
         question: "Do you train foundation models?",

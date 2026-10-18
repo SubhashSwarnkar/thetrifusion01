@@ -65,7 +65,7 @@ export const serviceIndiaOnpage = {
       "City pages: Jaipur HQ, Delhi, Mumbai, Bangalore, Jodhpur",
       [
         "This India page is the capability write-up: stack, WordPress vs Next.js, published plans (₹15,000 / ₹35,000 / ₹75,000) and FAQs. Local landings with unique industry copy sit on the city URLs — [website development company in Jaipur](/solutions/website-development-company-jaipur) (Patrakar Colony studio), [Delhi NCR](/solutions/website-development-company-delhi), [Mumbai](/solutions/website-development-company-mumbai), [Bangalore](/solutions/website-development-company-bangalore) and [Jodhpur](/solutions/website-development-company-jodhpur). Existing Rajasthan pages remain for [Bhilwara](/solutions/website-development-company-bhilwara), [Udaipur](/solutions/website-development-company-udaipur), [Kota](/solutions/website-development-company-kota) and [Ajmer](/solutions/website-development-company-ajmer). Each city page uses the Jaipur NAP; we do not print fake local offices.",
-        "Related guides: [Google AI Overviews on Indian business websites](/blog/google-ai-overviews-indian-business-websites-2026) and [DPDP privacy notices](/blog/dpdp-privacy-notice-indian-website-2026). Stores belong on [ecommerce website development](/solutions/ecommerce-website-development).",
+        "Related guides: [Google’s official-site box in AI Search](/blog/google-official-site-indian-business-website-2026) and [DPDP privacy notices](/blog/dpdp-privacy-notice-indian-website-2026). Stores belong on [ecommerce website development](/solutions/ecommerce-website-development).",
       ],
       CITY_LINKS_WEBSITE
     ),
@@ -132,7 +132,7 @@ export const serviceIndiaOnpage = {
       "City pages for SEO and ads",
       [
         "India-wide SEO, Google Ads and Meta Ads live here (from ₹15,000; ad spend separate; no ranking guarantee). City copy: [Jaipur](/solutions/digital-marketing-company-jaipur), [Delhi](/solutions/digital-marketing-company-delhi), [Mumbai](/solutions/digital-marketing-company-mumbai), [Bangalore](/solutions/digital-marketing-company-bangalore) and [Jodhpur](/solutions/digital-marketing-company-jodhpur). The old slug digital-marketing-agency still 308s here.",
-        "Related guides: [Google Ads automated promotions](/blog/google-ads-automated-promotions-india-2026) and [Google AI Overviews SEO in India](/blog/google-ai-overviews-seo-india-2026).",
+        "Related guides: [Ads inside AI Overviews this festive season](/blog/google-ai-overviews-ads-festive-india-2026) and [Google AI Overviews SEO in India](/blog/google-ai-overviews-seo-india-2026).",
       ],
       [
         {
@@ -141,9 +141,9 @@ export const serviceIndiaOnpage = {
           text: "Local SEO and ads for jewellers, hotels and exporters.",
         },
         {
-          href: "/blog/google-ads-automated-promotions-india-2026",
-          title: "Google Ads automated promotions (India)",
-          text: "What we will print vs what Google decides.",
+        href: "/blog/google-ai-overviews-ads-festive-india-2026",
+        title: "Ads inside AI Overviews (India, festive 2026)",
+        text: "What we will print vs what Google decides.",
         },
       ]
     ),
@@ -157,7 +157,7 @@ export const serviceIndiaOnpage = {
       "City pages for BBPS, AEPS, DMT and recharge",
       [
         "Modules and product URLs live here (from ₹99,999). You bring the bank or API partner. City copy: [Jaipur](/solutions/fintech-app-development-jaipur), [Delhi NCR](/solutions/fintech-app-development-delhi), [Mumbai](/solutions/fintech-app-development-mumbai), [Bangalore](/solutions/fintech-app-development-bangalore) and [Jodhpur](/solutions/fintech-app-development-jodhpur).",
-        "Related: [UPI MDR recharge software](/blog/upi-mdr-recharge-software-india-2026) and [NSE listing dates (educational, not a trading app)](/blog/nse-listing-date-how-ipo-listing-works-india).",
+        "Related: [BBPS NEFT on recharge panels](/blog/bbps-neft-corporate-recharge-panel-india-2026) and [UPI MDR recharge software](/blog/upi-mdr-recharge-software-india-2026).",
       ],
       [
         {
@@ -182,15 +182,15 @@ export const serviceIndiaOnpage = {
         id: "india-city-pages",
         heading: "India delivery from Jaipur",
         paragraphs: [
-          "AI features ship from the same Patrakar Colony studio as [website development](/services/website-development) and [custom software](/services/software-development). Published pilots from ₹2,00,000. Related guide: [1980s AI photo prompts — what a branded product actually needs](/blog/chatgpt-1980s-ai-photo-prompt-guide) and [WhatsApp AI vs a custom chatbot](/blog/whatsapp-business-ai-vs-custom-chatbot-india).",
+          "AI features ship from the same Patrakar Colony studio as [website development](/services/website-development) and [custom software](/services/software-development). Published pilots from ₹2,00,000. Related guide: [MeitY’s AI consultation — ship a reviewable product](/blog/meity-ai-consultation-custom-ai-india-2026) and [WhatsApp AI vs a custom chatbot](/blog/whatsapp-business-ai-vs-custom-chatbot-india).",
         ],
       },
     ],
     relatedLinks: [
       {
-        href: "/blog/chatgpt-1980s-ai-photo-prompt-guide",
-        title: "1980s AI photo prompt guide",
-        text: "Trend vs a branded AI photo product.",
+        href: "/blog/meity-ai-consultation-custom-ai-india-2026",
+        title: "MeitY AI consultation for Indian buyers",
+        text: "Reviewable product vs a deepfake demo.",
       },
     ],
     schemaAreaServed: INDIA_AREA_SERVED,
@@ -249,15 +249,15 @@ export const serviceIndiaOnpage = {
         id: "india-city-pages",
         heading: "RPA for Indian SMEs, from Jaipur",
         paragraphs: [
-          "Invoice, Tally and CRM bots from Jaipur, from ₹50,000. Related: [UiPath Agent Builders in Delhi — what SMEs should automate first](/blog/uipath-agentic-rpa-india-sme-2026). If the spreadsheet is the product, see [business modernization](/services/business-modernization).",
+          "Invoice, Tally and CRM bots from Jaipur, from ₹50,000. Related: [Automation Anywhere in Bengaluru — record the process first](/blog/automation-anywhere-bengaluru-rpa-india-2026). If the spreadsheet is the product, see [business modernization](/services/business-modernization).",
           "The first process we usually record is the one accounts already do twice: GST invoice PDF to Tally, or a portal report into a sheet. A bot that copies a validated row and stops on a mismatch is RPA. A model that “decides” an exception is [AI development](/services/ai-development). We do not invent hours-saved percentages. Published plans: ₹50,000 / ₹1,00,000 / ₹2,00,000. UiPath, Power Automate or Python is a stack choice in the written scope. We are not listed as a UiPath partner on this page.",
         ],
       },
     ],
     relatedLinks: [
       {
-        href: "/blog/uipath-agentic-rpa-india-sme-2026",
-        title: "RPA vs agentic UiPath for Indian SMEs",
+        href: "/blog/automation-anywhere-bengaluru-rpa-india-2026",
+        title: "RPA vs agentic meetups for Indian SMEs",
         text: "Record the process before you buy a platform.",
       },
     ],
@@ -274,7 +274,7 @@ export const serviceIndiaOnpage = {
         id: "india-city-pages",
         heading: "Salesforce work from Jaipur for Indian orgs",
         paragraphs: [
-          "Flows, Apex and integrations on an org you already pay for, from ₹80,000. Related: [Salesforce Innovation Series Delhi](/blog/salesforce-india-innovation-series-delhi-2026). If a commissions CRM will not fit, see [custom CRM/ERP](/services/crm-erp-development).",
+          "Flows, Apex and integrations on an org you already pay for, from ₹80,000. Related: [Salesforce India’s MD — AI-ready first](/blog/salesforce-india-md-agentforce-sme-2026). If a commissions CRM will not fit, see [custom CRM/ERP](/services/crm-erp-development).",
           "Indian mid-market teams often already pay for Sales Cloud and then ask for a commissions tree, Tally invoice sync, or a WhatsApp note on the lead. We implement what Fits Flows first. Apex and LWC when Flows are not enough. We do not claim Summit-partner status. Published work starts from ₹80,000. If the cheaper long-term answer is a custom CRM, we say so before you buy more licences.",
           "Kickoff is a video review of your org with the access you grant. Delivery is from Jaipur. Hindi field labels are ordinary when your sales team works in Hindi. Website or ERP connections are scoped after we read the other system’s docs.",
           "A typical first slice is one Flow that replaces a spreadsheet of follow-ups, or an Apex class that writes GST invoice numbers back from Tally. Delhi NCR distributors often want IndiaMART leads in a queue a sales manager can close on the phone. Mumbai trading desks want a custom object that does not fight Sales Cloud’s opportunity stages. We implement on the org you already pay for. If you do not have Salesforce yet, we will not sell you licences — we will say whether a custom CRM is cheaper over two years.",
@@ -284,8 +284,8 @@ export const serviceIndiaOnpage = {
     ],
     relatedLinks: [
       {
-        href: "/blog/salesforce-india-innovation-series-delhi-2026",
-        title: "Salesforce Innovation Day Delhi",
+        href: "/blog/salesforce-india-md-agentforce-sme-2026",
+        title: "Salesforce India: AI-ready, one working Flow",
         text: "Implement, don’t collect keynotes.",
       },
     ],
@@ -301,7 +301,7 @@ export const serviceIndiaOnpage = {
         id: "india-city-pages",
         heading: "CRM/ERP for Indian SMEs",
         paragraphs: [
-          "Pipelines, inventory, GST billing and Tally from Jaipur. A CRM module MVP starts from ₹3,00,000. Related: [direct-selling CRM in India](/blog/direct-selling-crm-india-adsei-2026) and [custom software](/services/software-development).",
+          "Pipelines, inventory, GST billing and Tally from Jaipur. A CRM module MVP starts from ₹3,00,000. Related: [MLM CRM and GST IMS payouts](/blog/mlm-crm-gst-ims-payouts-india-2026) and [custom software](/services/software-development).",
           "Jaipur exporters and NCR vendors usually need leads from a website form, a WhatsApp note, and a GST invoice that matches Tally — not a 40-module ERP poster. We ship one CRM module first: pipeline, accounts, follow-ups. Inventory and GST billing are the second slice when the first is in use. You own the code after payment. Salesforce stays the right buy when Sales Cloud already fits; we will say so.",
           "IndiaMART-style lead capture is in scope when you have the mailbox or API. We do not scrape portals. Mobile companions sit on [mobile app development](/services/mobile-app-development). Network-marketing trees belong on [MLM software](/services/mlm-crm-development).",
           "Published CRM module MVPs start at ₹3,00,000; broader ERP-lite is phased (₹6,00,000 / ₹11,00,000 bands on [pricing](/pricing) where listed). Discovery is a video call from Jaipur. You get weekly demos and the source after payment. We do not host your customer data on a mystery SaaS we control.",
@@ -311,8 +311,8 @@ export const serviceIndiaOnpage = {
     ],
     relatedLinks: [
       {
-        href: "/blog/direct-selling-crm-india-adsei-2026",
-        title: "Direct-selling CRM in India",
+        href: "/blog/mlm-crm-gst-ims-payouts-india-2026",
+        title: "MLM CRM and GST IMS payouts",
         text: "When a commissions tree will not fit Salesforce.",
       },
     ],
@@ -325,7 +325,7 @@ export const serviceIndiaOnpage = {
         id: "india-city-pages",
         heading: "MLM software from Jaipur, India",
         paragraphs: [
-          "Binary, unilevel and matrix plans from Jaipur, published from ₹3,50,000. Related: [direct-selling CRM](/blog/direct-selling-crm-india-adsei-2026). We do not give legal advice on the Direct Selling Rules.",
+          "Binary, unilevel and matrix plans from Jaipur, published from ₹3,50,000. Related: [GST IMS payout invoices for direct selling](/blog/mlm-crm-gst-ims-payouts-india-2026). We do not give legal advice on the Direct Selling Rules.",
           "The software is genealogy, e-wallet, KYC, e-pin and payouts as scoped — not a licence to sell. Direct selling in India sits under the Consumer Protection (Direct Selling) Rules, 2021. We will not print a compensation plan you did not approve, and we will not promise a “SEBI-approved MLM”. Wallet payouts that sit on a bank rail belong next to [fintech app development](/services/fintech-app-development) when you already have the partner.",
           "Published plans: ₹3,50,000 / ₹6,50,000 / ₹12,00,000 on [pricing](/pricing). Distributor apps are iOS, Android and web when the scope says so. Delivery is from Jaipur with weekly demos. You own the code after completion and payment.",
           "A first release is usually one compensation plan, KYC, a wallet ledger, and a distributor login — not every binary/matrix variant on day one. We write the plan maths down before we code. Payout files go to the bank process you already run; we are not a payment aggregator. Hindi distributor UI is ordinary. Related reading stays on the ADSEI/direct-selling guide; this page is the software.",
@@ -342,7 +342,7 @@ export const serviceIndiaOnpage = {
         id: "india-city-pages",
         heading: "EV charging CMS from Jaipur, India",
         paragraphs: [
-          "OCPP and OCPI software for Indian CPOs and eMSPs, from ₹4,50,000. Related: [OCPI roaming explained](/blog/ocpi-roaming-explained-cpo-emsp) and [Odisha PM e-DRIVE CPO/CSMS](/blog/odisha-pm-edrive-cpo-csms-india-2026).",
+          "OCPP and OCPI software for Indian CPOs and eMSPs, from ₹4,50,000. Related: [OCPI roaming explained](/blog/ocpi-roaming-explained-cpo-emsp) and [PM E-DRIVE 8,147 chargers — CPOs still need CSMS](/blog/pm-edrive-8147-chargers-csms-india-2026).",
         ],
       },
     ],
@@ -366,7 +366,7 @@ export const serviceIndiaOnpage = {
         id: "india-city-pages",
         heading: "Spreadsheet-to-software for Indian SMEs",
         paragraphs: [
-          "Phased web apps from Jaipur, from ₹1,50,000. Related: [GSTN RCM self-invoice modernization](/blog/gstn-rcm-self-invoice-modernize-india-2026). Greenfield products belong on [custom software](/services/software-development).",
+          "Phased web apps from Jaipur, from ₹1,50,000. Related: [57th GST Council IMS modernization](/blog/gst-council-57-ims-modernize-india-2026). Greenfield products belong on [custom software](/services/software-development).",
           "The first slice is almost always the spreadsheet everyone is afraid to break: dispatch, dealer rates, or month-end GST. We keep the old file running until the new module takes that job. Bots that sit on the old process without replacing it are [RPA](/services/rpa). A boxed CRM you already pay for is [Salesforce](/services/salesforce) when it fits.",
           "Published work from ₹1,50,000. Desktop tools that only run on one Windows box, WhatsApp-as-workflow, and Tally macros that break every rate change are the usual brief. We do not invent a “digital transformation” percentage. Hindi staff UIs are ordinary. Delivery is remote from Jaipur with optional travel.",
           "Cutover is a date you pick after the new module has run in parallel. We do not switch off the spreadsheet on a Friday night. GSTIN, Tally company name and the NAP on the invoice stay yours. If the job is really a greenfield SaaS, use the [software development](/services/software-development) page instead of this one.",
