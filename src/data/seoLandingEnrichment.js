@@ -293,7 +293,7 @@ const RELATED_BY_SLUG = {
       "msp-managed-it-services",
       "software-company-rajasthan",
     ],
-    relatedBlogSlug: "ecommerce-amendment-rules-india-2027",
+    relatedBlogSlug: "d2c-own-store-festive-shipments-india-2026",
   },
   "online-store-development": {
     relatedSolutionSlugs: [
