@@ -10,6 +10,10 @@ import Breadcrumbs from "components/Breadcrumbs";
 import BrandTrustStrip from "components/BrandTrustStrip";
 import ServiceIcon from "components/ServiceIcon";
 import { getServiceBySlug, services } from "data/servicesData";
+import {
+  SERVICE_KEYWORD_BY_SLUG,
+  SERVICE_SIBLINGS,
+} from "data/serviceIndexLinks";
 import { getSeoLandingBySlug, getSolutionsForService } from "data/seoLandingPages";
 import {
   canonicalInternalHref,
@@ -279,10 +283,14 @@ export default function ServiceDetailPage({
       return match ? services.find((entry) => entry.slug === match[1]) : null;
     })
     .filter((item) => item && item.slug !== slug);
+  const meshSlugs = SERVICE_SIBLINGS[slug] || [];
+  const siblingFromMesh = meshSlugs
+    .map((meshSlug) => services.find((entry) => entry.slug === meshSlug))
+    .filter(Boolean);
   const seenSiblings = new Set();
   const relatedSiblings = [];
-  for (const item of siblingFromLinks) {
-    if (seenSiblings.has(item.slug)) continue;
+  for (const item of [...siblingFromMesh, ...siblingFromLinks]) {
+    if (seenSiblings.has(item.slug) || item.slug === slug) continue;
     seenSiblings.add(item.slug);
     relatedSiblings.push(item);
   }
@@ -971,7 +979,7 @@ export default function ServiceDetailPage({
                     </span>
                     <span>
                       <span className="block font-bold text-theme-blue group-hover:text-theme-purple transition-colors">
-                        {item.title}
+                        {SERVICE_KEYWORD_BY_SLUG[item.slug] || item.title}
                       </span>
                       <span className={`text-xs font-semibold ${accent.text}`}>Explore Service →</span>
                     </span>

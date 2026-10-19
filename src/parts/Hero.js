@@ -70,8 +70,23 @@ export default function Hero() {
                 Growing your business is our calling.
               </p>
               <p className="text-base sm:text-lg text-gray-500 font-light leading-relaxed mb-8 max-w-md mx-auto lg:mx-0">
-                Websites, mobile apps, UI/UX and digital marketing from a
-                software company in Jaipur.
+                A{" "}
+                <Link href="/services/website-development" prefetch={false} className="font-semibold text-theme-purple hover:underline">
+                  website development company in Jaipur
+                </Link>
+                ,{" "}
+                <Link href="/services/ios-app-development" prefetch={false} className="font-semibold text-theme-purple hover:underline">
+                  iOS app development
+                </Link>
+                ,{" "}
+                <Link href="/services/android-app-development" prefetch={false} className="font-semibold text-theme-purple hover:underline">
+                  Android app development
+                </Link>
+                , and{" "}
+                <Link href="/services/ai-development" prefetch={false} className="font-semibold text-theme-purple hover:underline">
+                  AI development
+                </Link>{" "}
+                from the same studio.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button
