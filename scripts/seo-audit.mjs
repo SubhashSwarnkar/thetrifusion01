@@ -3,7 +3,15 @@
  * Post-build SEO smoke checks against a running Next server.
  * Usage: BASE_URL=http://127.0.0.1:3000 node scripts/seo-audit.mjs
  */
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { XMLParser } from "./seo-audit-xml.mjs";
+
+const INDEXNOW_KEY = fs
+  .readdirSync(path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../public"))
+  .find((name) => /^[a-f0-9]{32}\.txt$/i.test(name))
+  ?.replace(/\.txt$/i, "");
 
 const BASE_URL = (process.env.BASE_URL || "http://127.0.0.1:3000").replace(
   /\/$/,
@@ -403,6 +411,20 @@ async function main() {
   // Spot-check tool noindex pages even if omitted from sitemap
   for (const path of ["/estimate", "/planner", "/timeline", "/pricing/calculator"]) {
     await auditPage(`${BASE_URL}${path}`);
+  }
+
+  if (!INDEXNOW_KEY) {
+    fail("IndexNow key file missing from public/ (32-hex .txt)");
+  } else {
+    const keyUrl = `${BASE_URL}/${INDEXNOW_KEY}.txt`;
+    const keyRes = await fetchText(keyUrl);
+    if (keyRes.res.status !== 200) {
+      fail(`IndexNow key ${keyUrl} returned ${keyRes.res.status}`);
+    } else if (keyRes.text.trim() !== INDEXNOW_KEY) {
+      fail("IndexNow key file body does not match the filename");
+    } else {
+      ok(`IndexNow key file live at /${INDEXNOW_KEY}.txt`);
+    }
   }
 
   // GSC picked www as canonical for these money URLs — fail if we emit www.
