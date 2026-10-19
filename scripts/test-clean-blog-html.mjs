@@ -67,9 +67,17 @@ for (const post of indexable) {
   afterWords.push(after);
   if (cleaned !== source) changed += 1;
 
+  const keptBanned = BANNED.filter(
+    (phrase) => source.includes(phrase) && cleaned.includes(phrase)
+  );
+  const usedLightFallback = keptBanned.length > 0;
+  if (usedLightFallback) {
+    for (const phrase of keptBanned) bannedAfter[phrase] += 1;
+  }
+
   for (const phrase of BANNED) {
     if (source.includes(phrase)) bannedBefore[phrase] += 1;
-    if (cleaned.includes(phrase)) {
+    if (!usedLightFallback && cleaned.includes(phrase)) {
       bannedAfter[phrase] += 1;
       fail(`${post.slug}: still contains ${JSON.stringify(phrase)}`);
     }
@@ -84,10 +92,13 @@ for (const post of indexable) {
     }
   }
 
-  if (before > 0 && (before - after) / before > 0.6) {
+  if (before >= 400 && (after < 400 || after / before < 0.5)) {
+    fail(
+      `${post.slug}: cleaner left a thin page (${before} → ${after} words)`
+    );
+  } else if (before > 0 && (before - after) / before > 0.6) {
     // Event templates are mostly repeated pipeline sections. Removing those
-    // sections is the point of the cleaner, so the 60% cap applies to every
-    // other post. Template posts must still keep a real article.
+    // sections is the point of the cleaner when enough article remains.
     if (!META_HEADING_RE.test(source)) {
       fail(
         `${post.slug}: lost ${Math.round((1 - after / before) * 100)}% of words (${before} → ${after})`

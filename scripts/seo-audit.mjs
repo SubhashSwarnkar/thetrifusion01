@@ -165,7 +165,9 @@ async function main() {
 
   const parser = new XMLParser();
   let pageLocs = [];
-  const BLOCKLIST_BLOGS = [
+  // Former blocklist / offtopic / geo-template URLs must be in the sitemap
+  // again. Only 308 duplicates and archive 301s stay out.
+  const RESTORED_BLOGS = [
     "/blog/ecommerce-website-for-nigerian-smes-2026",
     "/blog/ios-27-siri-ai-business-apps-uk-australia",
     "/blog/hire-dedicated-developers-cost-guide-uk-australia",
@@ -176,6 +178,13 @@ async function main() {
     "/blog/gpt-6-astra-whats-known-vs-rumor",
     "/blog/reflection-beam-open-weight-ai-model-whats-known",
     "/blog/flutter-vs-react-native-2024",
+    "/blog/f1-singapore-grand-prix-2026-race-day-guide",
+    "/blog/india-vs-west-indies-2nd-t20i-ranchi-9-oct-2026",
+    "/blog/thanksgiving-2026-date-us-ist-guide",
+  ];
+  const STAY_OUT_BLOGS = [
+    "/blog/iphone-18-india-features-apps-businesses",
+    "/blog/generative-ai-revolution",
   ];
   // Published post that PR #57's allowlist dropped from the sitemap.
   const MUST_INDEX_BLOG = "/blog/emsp-vs-cpo-software-stack-buyer-guide";
@@ -263,9 +272,9 @@ async function main() {
       }
     })
     .filter((p) => p.startsWith("/blog/"));
-  if (blogPaths.length < 50) {
+  if (blogPaths.length < 400) {
     fail(
-      `sitemap-blog has ${blogPaths.length} URLs; published posts should be indexed by default`
+      `sitemap-blog has ${blogPaths.length} URLs; restored posts should be indexed by default`
     );
   } else {
     ok(`Found ${blogPaths.length} indexable blog URLs`);
@@ -285,9 +294,14 @@ async function main() {
     fail(`sitemap missing previously indexable post ${MUST_INDEX_BLOG}`);
   }
 
-  for (const path of BLOCKLIST_BLOGS) {
+  for (const path of RESTORED_BLOGS) {
+    if (!unique.some((u) => new URL(u, BASE_URL).pathname === path)) {
+      fail(`restored blog missing from sitemap: ${path}`);
+    }
+  }
+  for (const path of STAY_OUT_BLOGS) {
     if (unique.some((u) => new URL(u, BASE_URL).pathname === path)) {
-      fail(`blocklisted blog still in sitemap: ${path}`);
+      fail(`redirected or archived blog still in sitemap: ${path}`);
     }
   }
 
