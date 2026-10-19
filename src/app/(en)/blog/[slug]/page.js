@@ -21,7 +21,7 @@ import EventWorldTimes, {
 } from "components/blog/EventWorldTimes";
 
 export function generateStaticParams() {
-  // Archived slugs 301 to /blog. Off-topic noindex slugs stay and are still built.
+  // Archived slugs 301 to /blog. 308 duplicates are omitted. Live posts stay 200.
   return blogPosts
     .filter(
       (post) =>

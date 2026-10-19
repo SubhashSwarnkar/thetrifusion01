@@ -41,11 +41,18 @@ export { OFFTOPIC_NOINDEX_SLUGS, ADSENSE_RECOVERY_NOINDEX_SLUGS };
 
 /**
  * Blog editorial: ship 2 Jaipur / Rajasthan / India delivery posts each month.
- * Featured = local or product work. Off-topic 2024 posts are archived (noindex)
- * and hidden from /blog listing. Retired slugs 301 to /blog (see next.config).
- * Later off-topic posts in OFFTOPIC_NOINDEX_SLUGS stay HTTP 200 with noindex, follow.
- * Event posts (`event` set) and ADSENSE_RECOVERY_NOINDEX_SLUGS use that same
- * soft noindex. They are not archived and they are not redirected.
+ * Featured = local or product work.
+ *
+ * Indexing is a narrow blocklist. New daily posts of any topic default to
+ * index,follow, sitemap-blog.xml (with lastmod), /blog listing, and llms-full.
+ * Only these stay out:
+ * - ARCHIVE_NOINDEX_SLUGS: empty/broken 2024 posts, 301 to /blog.
+ * - BLOG_CANONICAL_REDIRECTS: true duplicates, 308 to the canonical twin.
+ *
+ * OFFTOPIC_NOINDEX_SLUGS and ADSENSE_RECOVERY_NOINDEX_SLUGS are empty. A
+ * truthy `event` field is metadata for Event schema, not a robots rule.
+ * Re-adding topic slugs to those sets is how GSC impressions collapsed
+ * after PR #44 (7 Oct 2026).
  */
 
 export const ARCHIVE_NOINDEX_SLUGS = new Set([
@@ -80,8 +87,7 @@ export const blogCategories = [
 ];
 
 /**
- * Unused. The previous picks are off-topic posts in OFFTOPIC_NOINDEX_SLUGS.
- * Hub cards come from getHubTrendingPosts().
+ * Unused. Hub cards come from getHubTrendingPosts().
  */
 export const HUB_TRENDING_SLUGS = [];
 
@@ -2769,8 +2775,7 @@ const sortNewestFirst = (posts) =>
 
 /**
  * Scheduled event posts store an object on `event` (name, startDate, location).
- * A truthy `event` is the noindex rule so later event posts are covered
- * without editing a slug list. Stored article HTML is not changed.
+ * Used for Event JSON-LD and world-clock UI. Not a robots / sitemap rule.
  */
 export function isEventPost(post) {
   return Boolean(post && post.event);
@@ -2778,9 +2783,8 @@ export function isEventPost(post) {
 
 /**
  * HTTP 200, self-canonical, `noindex, follow`. Distinct from ARCHIVE_NOINDEX_SLUGS.
- * Blocklist only: offtopic (PR #54 news set + named non-India slugs), AdSense
- * recovery templates, and event posts. New published posts are indexable
- * unless they land on one of those lists.
+ * Always false: topic/event/template lists no longer noindex live posts.
+ * Keep the helper so generateMetadata can stay on one flag.
  */
 export function isSoftNoindexBlogPost(post) {
   if (!post) return false;
@@ -2788,8 +2792,7 @@ export function isSoftNoindexBlogPost(post) {
   if (isRedirectedBlogSlug(post.slug)) return false;
   return (
     OFFTOPIC_NOINDEX_SLUGS.has(post.slug) ||
-    ADSENSE_RECOVERY_NOINDEX_SLUGS.has(post.slug) ||
-    isEventPost(post)
+    ADSENSE_RECOVERY_NOINDEX_SLUGS.has(post.slug)
   );
 }
 
@@ -2805,25 +2808,14 @@ export function isIndexableBlogPost(post) {
 export function isIndexableBlogSlug(slug) {
   const post = blogPosts.find((item) => item.slug === slug);
   if (!post) {
-    return (
-      !ARCHIVE_NOINDEX_SLUGS.has(slug) &&
-      !isRedirectedBlogSlug(slug) &&
-      !OFFTOPIC_NOINDEX_SLUGS.has(slug) &&
-      !ADSENSE_RECOVERY_NOINDEX_SLUGS.has(slug)
-    );
+    return !ARCHIVE_NOINDEX_SLUGS.has(slug) && !isRedirectedBlogSlug(slug);
   }
   return isIndexableBlogPost(post);
 }
 
-let cachedEventNoindexSlugs;
-/** Slugs whose `event` field is set. Recomputed from posts, not a hand list. */
+/** AdSense used to skip event URLs. Empty so restored pages load ads again. */
 export function eventNoindexSlugList() {
-  if (!cachedEventNoindexSlugs) {
-    cachedEventNoindexSlugs = blogPosts
-      .filter(isEventPost)
-      .map((post) => post.slug);
-  }
-  return cachedEventNoindexSlugs;
+  return [];
 }
 
 export const getPublishedBlogPosts = () =>

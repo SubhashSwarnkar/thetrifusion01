@@ -1,9 +1,9 @@
 /**
- * In-body service CTAs for the highest-click India URLs (GSC last 28 days)
- * plus six recent India-buyer guides so every money service is linked from
- * a live traffic page. Injected at the end of article HTML.
- *
- * Exact-match Indian buyer anchors. Do not noindex these slugs.
+ * In-body "Built by TheTriFusion" service CTAs. Custom copy for the
+ * highest-click India URLs (GSC last 28 days) plus recent India-buyer
+ * guides. Every other post gets a default block for the closest service
+ * (website, software, EV, fintech, mobile, AI, ecommerce, and so on).
+ * Injected at the end of article HTML if the stored copy lacks the heading.
  */
 export const TRAFFIC_SERVICE_CTA_SLUGS = [
   "chatgpt-1980s-ai-photo-prompt-guide",
@@ -86,8 +86,107 @@ const BLOCKS = {
 `,
 };
 
+const DEFAULT_BLOCKS = {
+  ev: `
+<h2>Built by TheTriFusion</h2>
+<p>Charging software is a product, not a brochure: OCPP, OCPI, tariffs, and a driver app that can start a session. TheTriFusion is an <a href="/services/ev-charging-app-development">EV charging app development company in India</a> in Jaipur (published CMS from ₹4,50,000). Related: <a href="/services/software-development">custom software development company in India</a> and <a href="/services/mobile-app-development">mobile app development company in India</a>. We do not operate a public network.</p>
+`,
+  fintech: `
+<h2>Built by TheTriFusion</h2>
+<p>Retailer panels, UPI checkout, BBPS, AEPS and DMT are software with a live settlement path — not a blog explainer. TheTriFusion is a <a href="/services/fintech-app-development">fintech app development company in India</a> in Jaipur (from ₹99,999). Broader ops software is <a href="/services/software-development">custom software development company in India</a>. A public explainer site is <a href="/services/website-development">website development company in India</a>. We do not hold settlement or tip stocks.</p>
+`,
+  ecommerce: `
+<h2>Built by TheTriFusion</h2>
+<p>A catalogue that can check out is <a href="/solutions/ecommerce-website-development">ecommerce website development company in India</a> work (stores from ₹25,000) and a <a href="/services/website-development">website development company in Jaipur</a> when the job is still a company site. Ads after the store is eligible: <a href="/services/digital-marketing">digital marketing agency in Jaipur</a>.</p>
+`,
+  mobile: `
+<h2>Built by TheTriFusion</h2>
+<p>Store listings, signing, and a backend the app can call are <a href="/services/mobile-app-development">mobile app development company in India</a> work from Jaipur (from ₹50,000). Play Store-first is <a href="/services/android-app-development">Android app development company in Jaipur</a>; App Store-first is <a href="/services/ios-app-development">iOS app development company in India</a>.</p>
+`,
+  ai: `
+<h2>Built by TheTriFusion</h2>
+<p>A prompt is a test. A product with rate limits, a Hindi/English UI, and a lead path is <a href="/services/ai-development">AI development company in India</a> work from Jaipur (from ₹2,00,000). Related: <a href="/services/software-development">custom software development company in India</a> and <a href="/services/website-development">website development company in Jaipur</a>.</p>
+`,
+  crm: `
+<h2>Built by TheTriFusion</h2>
+<p>Pipeline, inventory, and payouts that staff can finish in a browser are <a href="/services/crm-erp-development">custom CRM and ERP development in Jaipur</a> (from ₹3,00,000) or <a href="/services/software-development">custom software development company in India</a>. Direct-selling trees sit on <a href="/services/mlm-crm-development">MLM CRM development</a>.</p>
+`,
+  uiux: `
+<h2>Built by TheTriFusion</h2>
+<p>Hindi, Indic, and task-first screens are <a href="/services/ui-ux-design">UI/UX design company in Jaipur</a> work (from ₹20,000), then a <a href="/services/website-development">website development company in India</a> or <a href="/services/mobile-app-development">mobile app development company in India</a> build.</p>
+`,
+  branding: `
+<h2>Built by TheTriFusion</h2>
+<p>A label still needs a mark the website can use: <a href="/services/branding">branding agency in Jaipur</a> (from ₹30,000), then <a href="/services/website-development">website development company in Jaipur</a>. We are not a trademark attorney.</p>
+`,
+  software: `
+<h2>Built by TheTriFusion</h2>
+<p>GST-aware admin, applicant logins, and internal tools are <a href="/services/software-development">custom software development company in India</a> work from Jaipur (MVPs from ₹1,00,000). A public page that must stay accurate is <a href="/services/website-development">website development company in Jaipur</a>. Discovery after the URL is crawlable is <a href="/services/digital-marketing">digital marketing company in India</a>.</p>
+`,
+  marketing: `
+<h2>Built by TheTriFusion</h2>
+<p>Traffic after a URL is snippet-eligible is <a href="/services/digital-marketing">digital marketing company in India</a> (plans from ₹15,000; ad spend separate). The page those ads hit is <a href="/services/website-development">website development company in Jaipur</a> work. We do not guarantee rankings or ROAS.</p>
+`,
+  website: `
+<h2>Built by TheTriFusion</h2>
+<p>Date, fixture, exam, and news spikes punish a slow or thin official page. Publishers and institutes in India still need a <a href="/services/website-development">website development company in Jaipur</a> (from ₹15,000) and, once the URL can snippet, a <a href="/services/digital-marketing">digital marketing company in India</a>. Match-day or result apps are <a href="/services/mobile-app-development">mobile app development company in India</a>. TheTriFusion does not run the event, the board, or a scoreboard.</p>
+`,
+};
+
+function defaultCtaCluster(slug) {
+  const hay = String(slug || "").toLowerCase();
+  if (/\bev\b|charging|ocpp|ocpi|electric-vehicle|csms|emsp|cpo/.test(hay)) {
+    return "ev";
+  }
+  if (
+    /fintech|upi|bbps|aeps|dmt|ipo|nse-listing|nse-stock|payment-gateway|recharge/.test(
+      hay
+    )
+  ) {
+    return "fintech";
+  }
+  if (
+    /ecommerce|e-commerce|shopify|woocommerce|ondc|\bd2c\b|marketplace|online-store/.test(
+      hay
+    )
+  ) {
+    return "ecommerce";
+  }
+  if (
+    /ios-|android-|mobile-app|iphone|flutter|react-native|play-store|app-store/.test(
+      hay
+    )
+  ) {
+    return "mobile";
+  }
+  if (
+    /ai-|chatgpt|claude|gemini|gpt-|openai|llm|anthropic|perplexity|agentforce/.test(
+      hay
+    )
+  ) {
+    return "ai";
+  }
+  if (/crm|erp|mlm|salesforce|direct-selling/.test(hay)) return "crm";
+  if (/ui-ux|ux-design|hindi-indic/.test(hay)) return "uiux";
+  if (/branding|trademark|logo/.test(hay)) return "branding";
+  if (
+    /seo|google-ads|digital-marketing|ai-overviews|search-console/.test(hay)
+  ) {
+    return "marketing";
+  }
+  if (
+    /software|gst|einvoice|dpdp|consent-manager|webhook|saas|nextjs|devops/.test(
+      hay
+    )
+  ) {
+    return "software";
+  }
+  return "website";
+}
+
 export function trafficServiceCtaHtml(slug) {
-  return BLOCKS[slug] || "";
+  if (BLOCKS[slug]) return BLOCKS[slug];
+  return DEFAULT_BLOCKS[defaultCtaCluster(slug)] || DEFAULT_BLOCKS.website;
 }
 
 export function withTrafficServiceCta(slug, html) {

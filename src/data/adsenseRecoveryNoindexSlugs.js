@@ -1,94 +1,19 @@
 /**
- * Country/variant template duplicates that stay HTTP 200 with a self-canonical
- * and `noindex, follow`. Same treatment as OFFTOPIC_NOINDEX_SLUGS: out of the
- * sitemap, out of getPublishedBlogPosts, and AdSense-excluded.
+ * Geo / UPI template slug set used by the former AdSense-recovery noindex
+ * pass. Empty on purpose: those posts are index,follow again, with a
+ * self-canonical, sitemap lastmod, /blog listing, and llms-full line.
  *
- * Do not add these to ARCHIVE_NOINDEX_SLUGS (that set 404s and 301s to /blog).
- * Do not add posts that are outside these eight families.
+ * Ranking helpers stay so a later audit can still name an India-first
+ * variant inside a family. They no longer drive robots or the sitemap.
  *
- * EV charging keeps the India CPO guide. The UK/Europe twin is noindex
- * (India-only crawl budget). Every other template family is noindex.
- * Rank is still used if a family keep-count is raised later:
- * India-focused, then a broad/regional variant, then highest clean_words.
- * Broad/regional tokens: north-america, apac, southeast-asia, middle-east,
- * europe, anz, benelux, gulf, south-africa-africa, global, worldwide,
- * international.
- *
- * Kept indexable:
- * - ev-charging-csms-india-cpo-guide
+ * Do not add new daily posts here. Blocklist is only ARCHIVE_NOINDEX_SLUGS
+ * (301) and BLOG_CANONICAL_REDIRECTS (308).
  */
 export const ADSENSE_RECOVERY_KEPT_SLUGS = new Set([
   "ev-charging-csms-india-cpo-guide",
 ]);
 
-export const ADSENSE_RECOVERY_NOINDEX_SLUGS = new Set([
-  "chatgpt-ai-tools-for-australian-startups-2026",
-  "chatgpt-ai-tools-for-brazilian-startups-2026",
-  "chatgpt-ai-tools-for-indonesian-startups-2026",
-  "chatgpt-ai-tools-for-kenyan-startups-2026",
-  "chatgpt-ai-tools-for-nigerian-startups-2026",
-  "chatgpt-ai-tools-for-pakistan-startups-2026",
-  "chatgpt-ai-tools-for-philippine-startups-2026",
-  "chatgpt-ai-tools-for-us-startups-2026",
-  "claude-ai-agents-for-canadian-businesses-2026",
-  "claude-ai-for-irish-smes-2026",
-  "claude-ai-for-uae-businesses-2026",
-  "ev-charging-csms-uk-europe-cpo-guide",
-  "ev-charging-csms-canada-north-america-cpo-guide",
-  "ev-charging-csms-france-benelux-cpo-guide",
-  "ev-charging-csms-ireland-cpo-guide",
-  "ev-charging-csms-japan-apac-cpo-guide",
-  "ev-charging-csms-new-zealand-anz-cpo-guide",
-  "ev-charging-csms-philippines-southeast-asia-cpo-guide",
-  "ev-charging-csms-singapore-malaysia-cpo-guide",
-  "ev-charging-csms-south-africa-africa-cpo-guide",
-  "ev-charging-csms-uae-middle-east-cpo-guide",
-  "fintech-app-development-uae-gulf-2026",
-  "fintech-app-development-canada-2026",
-  "fintech-app-development-france-2026",
-  "fintech-app-development-japan-2026",
-  "fintech-app-development-kenya-2026",
-  "fintech-app-development-new-zealand-2026",
-  "fintech-app-development-nigeria-2026",
-  "fintech-app-development-pakistan-2026",
-  "fintech-app-development-saudi-arabia-2026",
-  "fintech-app-development-singapore-malaysia-2026",
-  "gemini-ai-for-philippine-bpo-businesses-2026",
-  "gemini-ai-for-german-smes-2026",
-  "gemini-ai-for-mexican-smes-2026",
-  "gemini-ai-for-saudi-smes-2026",
-  "gemini-ai-for-south-african-smes-2026",
-  "gemini-ai-for-uk-smes-2026",
-  "mobile-app-development-cost-guide-uae-gulf",
-  "mobile-app-development-cost-guide-brazil-2026",
-  "mobile-app-development-cost-guide-indonesia-2026",
-  "mobile-app-development-cost-guide-kenya-2026",
-  "mobile-app-development-cost-guide-nigeria-2026",
-  "mobile-app-development-cost-guide-pakistan-2026",
-  "mobile-app-development-cost-guide-singapore-malaysia-2026",
-  "mobile-app-development-cost-guide-uk-2026",
-  "mobile-app-development-cost-guide-united-states-2026",
-  "upi-charges-in-india-2026-complete-guide",
-  "ai-agentic-ecommerce-upi-india-2026",
-  "free-upi-transactions-india-what-businesses-still-pay",
-  "hidden-upi-charges-settlement-fees-indian-sme",
-  "upi-autopay-mandate-charges-india-explained",
-  "upi-charges-impact-ecommerce-checkout-cost-india",
-  "upi-mdr-charges-for-merchants-india",
-  "upi-p2m-charges-person-to-merchant-india",
-  "upi-payment-gateway-charges-comparison-india",
-  "upi-qr-code-payment-charges-offline-shops-india",
-  "upi-vs-card-vs-netbanking-charges-ecommerce-india",
-  "website-development-cost-guide-new-zealand-2026",
-  "website-development-cost-guide-australia-2026",
-  "website-development-cost-guide-germany-2026",
-  "website-development-cost-guide-ireland-2026",
-  "website-development-cost-guide-mexico-2026",
-  "website-development-cost-guide-saudi-arabia-2026",
-  "website-development-cost-guide-singapore-malaysia",
-  "website-development-cost-guide-south-africa-2026",
-  "website-development-cost-guide-uae-dubai-2026",
-]);
+export const ADSENSE_RECOVERY_NOINDEX_SLUGS = new Set();
 
 const INDIA_VARIANT_RE = /(?:^|-)india(?:n)?(?:-|$)/;
 const BROAD_VARIANT_RE =
@@ -102,8 +27,9 @@ export function templateVariantTier(slug) {
   return 2;
 }
 
-export function templateFamilyKeepCount(family) {
-  return family === "ev-charging-csms-X-cpo-guide" ? 1 : 0;
+/** Keep every variant. Indexing is no longer a family keep-count. */
+export function templateFamilyKeepCount(family, rowCount = 0) {
+  return rowCount;
 }
 
 /**
@@ -121,6 +47,6 @@ export function keptSlugsForFamily(family, rows) {
     return 0;
   });
   return ranked
-    .slice(0, templateFamilyKeepCount(family))
+    .slice(0, templateFamilyKeepCount(family, ranked.length))
     .map((row) => row.slug);
 }

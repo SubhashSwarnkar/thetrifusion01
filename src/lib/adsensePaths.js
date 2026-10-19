@@ -55,8 +55,9 @@ export function isNotFoundPath(pathname) {
 }
 
 /**
- * Event-post slugs, filled from posts whose `event` field is set.
- * AdSenseScript registers the list so this module does not import blog HTML.
+ * Optional extra AdSense skip list. Event posts used to register here when
+ * they were noindex. The list is empty so restored pages load ads again.
+ * AdSenseScript still calls registerEventNoindexSlugs.
  */
 let eventNoindexSlugs = new Set();
 

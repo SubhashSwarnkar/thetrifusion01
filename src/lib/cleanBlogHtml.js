@@ -246,9 +246,7 @@ function collapseBlankRuns(html) {
   return html.replace(/(?:[ \t]*\n){3,}/g, "\n\n");
 }
 
-export function cleanBlogHtml(html) {
-  if (typeof html !== "string" || !html) return html;
-
+function aggressiveCleanBlogHtml(html) {
   const parts = parseBlocks(html);
   applyDuplicateAndPolicyRules(parts);
   dropMetaSections(parts);
@@ -261,6 +259,43 @@ export function cleanBlogHtml(html) {
       .map((part) => part.raw)
       .join("")
   );
+}
+
+/**
+ * AdSense policy notes only. Used when the aggressive pass would leave a
+ * previously substantial article thin (why-trending templates repeat the
+ * same blocks, which PR #43 then deleted).
+ */
+function lightCleanBlogHtml(html) {
+  const parts = parseBlocks(html);
+  for (const part of parts) {
+    if (part.gap) continue;
+    if (part.tag === "p" && INTERNAL_NOTE_RE.test(part.text)) {
+      part.drop = true;
+    }
+  }
+  return collapseBlankRuns(
+    parts
+      .filter((part) => !part.drop)
+      .map((part) => part.raw)
+      .join("")
+  );
+}
+
+const MIN_KEPT_WORDS = 400;
+const MIN_KEPT_RATIO = 0.5;
+
+export function cleanBlogHtml(html) {
+  if (typeof html !== "string" || !html) return html;
+
+  const originalWords = wordCount(html);
+  const aggressive = aggressiveCleanBlogHtml(html);
+  const keptWords = wordCount(aggressive);
+  const thinned =
+    originalWords >= MIN_KEPT_WORDS &&
+    (keptWords < MIN_KEPT_WORDS || keptWords / originalWords < MIN_KEPT_RATIO);
+
+  return thinned ? lightCleanBlogHtml(html) : aggressive;
 }
 
 export default cleanBlogHtml;
