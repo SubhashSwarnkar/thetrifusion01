@@ -16,6 +16,7 @@ import { SITE_URL } from "lib/seoConfig";
 import { WHATSAPP_NUMBER } from "data/companyInfo";
 import { trackEvent, AnalyticsEvents } from "utils/analytics";
 import BlogAuthorBox from "components/BlogAuthorBox";
+import FounderByline from "components/FounderByline";
 
 function splitAfterIntro(html) {
   const source = typeof html === "string" ? html : "";
@@ -112,19 +113,10 @@ export default function BlogDetailPage({
                   {post.title}
                 </h1>
                 <p className="mb-6 text-lg text-gray-600">{post.excerpt}</p>
-                <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-theme-purple text-lg font-bold text-white">
-                    {post.author.charAt(0)}
-                  </div>
-                  <div>
-                    <p className="font-medium text-theme-blue">
-                      <Link href="/about">{post.author}</Link>
-                    </p>
-                    <p className="text-sm text-gray-500">
-                      Published on {formatDate(post.date)}
-                    </p>
-                  </div>
-                </div>
+                <FounderByline
+                  compact
+                  publishedLabel={`Published on ${formatDate(post.date)}`}
+                />
               </div>
             
             <BlogAdTop />

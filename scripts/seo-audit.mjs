@@ -419,6 +419,35 @@ async function main() {
     await auditPage(`${BASE_URL}${path}`);
   }
 
+  const homeHtml = (await fetchText(`${BASE_URL}/`)).text;
+  if (!/"@type":\s*"Person"/i.test(homeHtml) || !/Amardeep/.test(homeHtml)) {
+    fail("homepage JSON-LD missing Person schema for Amardeep");
+  } else {
+    ok("homepage JSON-LD includes Person Amardeep");
+  }
+  if (!/wa\.me\/916378133780/.test(homeHtml)) {
+    fail("homepage JSON-LD missing WhatsApp contactPoint");
+  } else {
+    ok("homepage JSON-LD includes WhatsApp contactPoint");
+  }
+  if (
+    !/linkedin\.com\/company\/the-trifusion/.test(homeHtml) ||
+    !/instagram\.com\/thetrifusion/.test(homeHtml)
+  ) {
+    fail("homepage JSON-LD missing Organization sameAs social profiles");
+  } else {
+    ok("homepage JSON-LD includes LinkedIn and Instagram sameAs");
+  }
+
+  const blogHtml = (
+    await fetchText(`${BASE_URL}/blog/website-development-cost-india-2026`)
+  ).text;
+  if (!/"@type":\s*"Person"/i.test(blogHtml) || !/Amardeep/.test(blogHtml)) {
+    fail("cost guide missing Person author schema for Amardeep");
+  } else {
+    ok("cost guide BlogPosting author is Person Amardeep");
+  }
+
   if (!INDEXNOW_KEY) {
     fail("IndexNow key file missing from public/ (32-hex .txt)");
   } else {

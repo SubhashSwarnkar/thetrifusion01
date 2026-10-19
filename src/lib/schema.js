@@ -1,11 +1,17 @@
 import { siteConfig, absoluteSiteUrl } from "../config/site.js";
+import {
+  FOUNDER,
+  founderImageUrl,
+  founderProfileUrl,
+  whatsappMeUrl,
+} from "../data/founder.js";
 import { lookupOrganizer } from "./eventOrganizers.js";
 
 const HOME_DESCRIPTION =
   "Trifusion Infotech Private Limited (TheTriFusion) is a software development company in Jaipur, Rajasthan offering custom software, ecommerce websites, mobile apps, UI/UX, and digital marketing for businesses across India.";
 
 const ORGANIZATION_ID = `${siteConfig.url}/#organization`;
-const FOUNDER_ID = `${siteConfig.url}/#founder`;
+export const FOUNDER_ID = `${siteConfig.url}/#founder`;
 
 /** India and worldwide. No invented coordinates or city-level office pins. */
 const AREA_SERVED = [
@@ -22,14 +28,50 @@ const AREA_SERVED = [
  * TODO OWNER: Google Business Profile URL, Clutch, GoodFirms, YouTube, X — add to sameAs only when live.
  * TODO OWNER: aggregateRating — do not add until third-party reviews exist.
  */
-function founderPerson() {
+export function founderPerson() {
   return {
     "@type": "Person",
     "@id": FOUNDER_ID,
-    name: "Amardeep",
-    jobTitle: "CEO",
+    name: FOUNDER.name,
+    jobTitle: FOUNDER.jobTitle,
+    description: FOUNDER.bio,
+    url: founderProfileUrl(),
+    image: founderImageUrl(),
     worksFor: { "@id": ORGANIZATION_ID },
+    telephone: siteConfig.phoneSchema,
+    address: postalAddress(),
   };
+}
+
+function founderRef() {
+  return { "@id": FOUNDER_ID };
+}
+
+function contactPoints() {
+  const points = [
+    {
+      "@type": "ContactPoint",
+      contactType: "customer service",
+      email: siteConfig.email,
+      telephone: siteConfig.phoneSchema,
+      url: absoluteSiteUrl("/contact"),
+      availableLanguage: ["English", "Hindi"],
+      areaServed: "IN",
+    },
+  ];
+  const wa = whatsappMeUrl();
+  if (wa) {
+    points.push({
+      "@type": "ContactPoint",
+      contactType: "customer service",
+      name: "WhatsApp",
+      telephone: siteConfig.phoneSchema,
+      url: wa,
+      availableLanguage: ["English", "Hindi"],
+      areaServed: "IN",
+    });
+  }
+  return points;
 }
 
 function postalAddress() {
@@ -65,13 +107,14 @@ function organizationNode() {
     telephone: siteConfig.phoneSchema,
     address: postalAddress(),
     foundingDate: "2023",
-    founder: founderPerson(),
+    founder: founderRef(),
     // About page: "a team of about ten developers and consultants."
     numberOfEmployees: {
       "@type": "QuantitativeValue",
       value: 10,
     },
     areaServed: AREA_SERVED,
+    contactPoint: contactPoints(),
     // sameAs: company profiles that already exist in siteConfig only.
     // TODO OWNER: GBP, Clutch (fix HQ to Jaipur), GoodFirms, YouTube, X URLs.
     sameAs: [siteConfig.instagram, siteConfig.linkedin],
@@ -109,7 +152,7 @@ function localBusinessNode() {
     telephone: siteConfig.phoneSchema,
     address: postalAddress(),
     foundingDate: "2023",
-    founder: founderPerson(),
+    founder: founderRef(),
     numberOfEmployees: {
       "@type": "QuantitativeValue",
       value: 10,
@@ -167,15 +210,7 @@ function localBusinessNode() {
       "Retrieval Augmented Generation",
       "WhatsApp Business API",
     ],
-    contactPoint: {
-      "@type": "ContactPoint",
-      contactType: "customer service",
-      email: siteConfig.email,
-      telephone: siteConfig.phoneSchema,
-      url: absoluteSiteUrl("/contact"),
-      availableLanguage: ["English", "Hindi"],
-      areaServed: "IN",
-    },
+    contactPoint: contactPoints(),
     sameAs: [siteConfig.instagram, siteConfig.linkedin],
   };
 }
@@ -204,7 +239,12 @@ export function websiteSchema() {
 export function siteGraphSchema() {
   return {
     "@context": "https://schema.org",
-    "@graph": [organizationNode(), localBusinessNode(), websiteNode()],
+    "@graph": [
+      organizationNode(),
+      localBusinessNode(),
+      websiteNode(),
+      founderPerson(),
+    ],
   };
 }
 
@@ -365,6 +405,7 @@ export function serviceSchema({
     category: "Information Technology Services",
     provider: { "@id": `${siteConfig.url}/#organization` },
     brand: { "@id": `${siteConfig.url}/#organization` },
+    author: founderRef(),
     areaServed: areaServed || [
       { "@type": "City", name: "Jaipur" },
       { "@type": "AdministrativeArea", name: siteConfig.region },
@@ -992,14 +1033,10 @@ export function eventSchema(post) {
   };
 }
 
-// Stored bylines ("TheTriFusion Team" and translated team labels) are the
-// company. BlogPosting author stays an Organization, never a named person.
+// Named CEO from /team. Stored bylines still show on the page; JSON-LD
+// author is the Person entity Google and AI crawlers can cite.
 function blogPostingAuthor() {
-  return {
-    "@type": "Organization",
-    name: "TheTriFusion",
-    url: absoluteSiteUrl("/about"),
-  };
+  return founderPerson();
 }
 
 export function articleSchema(post, options = {}) {

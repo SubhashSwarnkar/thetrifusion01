@@ -24,6 +24,8 @@ import { accentAt, accentForSlug } from "lib/themeAccents";
 import NotFoundPage from "./NotFoundPage";
 import SEO from "components/common/SEO";
 import RelatedGuides from "components/RelatedGuides";
+import FounderByline from "components/FounderByline";
+import { FOUNDER } from "data/founder";
 
 function SectionHeading({ children, kicker, id }) {
   return (
@@ -432,6 +434,19 @@ export default function ServiceDetailPage({
       </section>
 
       <AnswerFirst block={service.answerFirst} />
+
+      <section
+        aria-label={`${FOUNDER.name}, ${FOUNDER.jobTitle}`}
+        className="container mx-auto px-5 pb-6"
+      >
+        <div className="max-w-4xl rounded-2xl border border-gray-200 bg-gray-50 px-5 py-4">
+          <FounderByline compact />
+          <p className="mt-3 text-sm leading-relaxed text-gray-600">
+            {FOUNDER.bio} This {service.title.toLowerCase()} page is reviewed
+            by {FOUNDER.name}.
+          </p>
+        </div>
+      </section>
 
       {service.hideClientStrip ? null : <BrandTrustStrip />}
 
