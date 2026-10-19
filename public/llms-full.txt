@@ -131,6 +131,12 @@ EV charging CMS for CPOs and eMSPs, built in Jaipur for India and worldwide. One
 Every live English post except 308 canonical duplicates and archive 301s.
 Self-canonical, index,follow, sitemap-blog.xml lastmod, /blog listing.
 
+- https://thetrifusion.in/blog/website-development-cost-india-2026 — Website Development Cost in India 2026: Jaipur Plans from ₹15,000
+- https://thetrifusion.in/blog/mobile-app-development-cost-india-2026 — Mobile App Development Cost in India 2026: From ₹50,000 in Jaipur
+- https://thetrifusion.in/blog/ecommerce-website-packages-cost-india-2026 — Ecommerce Website Cost in India 2026: ₹25,000 / ₹35,000 / ₹45,000 / ₹99,000
+- https://thetrifusion.in/blog/software-development-cost-india-2026 — Custom Software Development Cost in India 2026: MVPs from ₹1,00,000
+- https://thetrifusion.in/blog/bbps-aeps-recharge-software-cost-india-2026 — BBPS, AEPS and Recharge Software Cost in India 2026: From ₹99,999
+- https://thetrifusion.in/blog/how-to-choose-website-software-company-jaipur-india-2026 — How to Choose a Website or Software Company in Jaipur or India (2026 Checklist)
 - https://thetrifusion.in/blog/uipath-ai-trust-layer-audit-off-rpa-india-2026 — UiPath Turned Off LLM Audit Logging by Default on 16 Oct: Indian SMEs Still Start With a Recorded Process
 - https://thetrifusion.in/blog/salesforce-hunter-piper-agents-sme-india-2026 — Salesforce Named Hunter and Piper in Bengaluru: Indian SMEs Still Need One Working Flow
 - https://thetrifusion.in/blog/gst-1-nov-inverted-duty-modernize-india-2026 — 1 November Inverted-Duty ITC Is 13 Days Out: Stop Running Refunds on a Spreadsheet
