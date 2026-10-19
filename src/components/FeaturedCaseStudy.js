@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import PlugOneImg from "assets/images/Portfolio/PlugOne.jpg";
 
 const HIGHLIGHTS = [
   {
@@ -42,8 +41,8 @@ export default function FeaturedCaseStudy() {
             className="group relative block overflow-hidden rounded-3xl border border-gray-100 shadow-lg"
           >
             <Image
-              src={PlugOneImg}
-              alt="PlugOne EV charging platform live product"
+              src="/images/portfolio/plugone-ev-charging-platform.jpg"
+              alt="PlugOne EV charging platform live website screenshot"
               width={800}
               height={520}
               className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"

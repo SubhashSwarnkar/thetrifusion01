@@ -1,7 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import Button from "../elements/Button";
-import { portfolioImageAlt } from "json/landingPageData";
+import { portfolioImageAlt, portfolioKind } from "json/landingPageData";
+import PortfolioKindBadge from "components/PortfolioKindBadge";
 
 export default function Portfolio({ data }) {
   return (
@@ -26,6 +27,9 @@ export default function Portfolio({ data }) {
                     loading="lazy"
                     unoptimized
                   />
+                  <div className="absolute top-2 left-2 z-10">
+                    <PortfolioKindBadge kind={portfolioKind(item)} />
+                  </div>
                   <div className="absolute flex w-full h-full top-0 opacity-0 bg-black justify-center rounded-t-2xl rounded-b img-hover">
                     <button className="focus:outline-none">
                       <svg
