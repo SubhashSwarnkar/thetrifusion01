@@ -47,7 +47,7 @@ export default function FeaturedCaseStudy() {
               height={520}
               className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
               sizes="(max-width: 1024px) 100vw, 50vw"
-              priority={false}
+              loading="lazy"
             />
             <span className="absolute bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:w-auto inline-flex justify-center px-4 py-2 rounded-full bg-white/95 text-theme-purple text-sm font-bold shadow-md">
               Verify live → plugone.in

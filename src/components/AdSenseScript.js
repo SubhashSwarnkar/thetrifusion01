@@ -60,24 +60,27 @@ export default function AdSenseScript({ eventNoindexSlugs = NO_EVENT_SLUGS }) {
       return undefined;
     }
     if (adsenseScriptNodes().length > 0) return undefined;
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = ADSENSE_SRC;
-    script.crossOrigin = "anonymous";
-    document.head.appendChild(script);
-    return undefined;
+
+    let idleId = 0;
+    const insert = () => {
+      if (adsenseScriptNodes().length > 0) return;
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = ADSENSE_SRC;
+      script.crossOrigin = "anonymous";
+      document.head.appendChild(script);
+    };
+    const timer = window.setTimeout(insert, 3500);
+    if ("requestIdleCallback" in window) {
+      idleId = window.requestIdleCallback(insert, { timeout: 3500 });
+    }
+    return () => {
+      window.clearTimeout(timer);
+      if (idleId && "cancelIdleCallback" in window) {
+        window.cancelIdleCallback(idleId);
+      }
+    };
   }, [allow]);
 
-  if (!allow) return null;
-
-  return (
-    <script
-      async
-      src={ADSENSE_SRC}
-      crossOrigin="anonymous"
-      // A load handler keeps React from hoisting this tag above the
-      // consent-default inline script. The handler itself is a no-op.
-      onLoad={() => {}}
-    />
-  );
+  return null;
 }

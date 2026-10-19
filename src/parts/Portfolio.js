@@ -23,9 +23,9 @@ export default function Portfolio({ data }) {
                     alt={portfolioImageAlt(item)}
                     width={600}
                     height={400}
-                    className="rounded-t-2xl z-0 w-full h-auto"
+                    className="rounded-t-2xl z-0 h-auto w-full"
                     loading="lazy"
-                    unoptimized
+                    sizes="(max-width: 640px) 50vw, 33vw"
                   />
                   <div className="absolute top-2 left-2 z-10">
                     <PortfolioKindBadge kind={portfolioKind(item)} />

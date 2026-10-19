@@ -13,7 +13,8 @@ export default function FounderByline({ compact = false, publishedLabel }) {
           alt={`${FOUNDER.name}, ${FOUNDER.jobTitle} of TheTriFusion in Jaipur`}
           width={size}
           height={size}
-          className="rounded-full object-cover"
+          sizes={`${size}px`}
+          className="aspect-square rounded-full object-cover"
         />
       </Link>
       <div>

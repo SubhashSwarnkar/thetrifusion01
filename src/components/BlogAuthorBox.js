@@ -38,7 +38,8 @@ export default function BlogAuthorBox({ reviewDate }) {
             alt={`${FOUNDER.name}, ${FOUNDER.jobTitle} of TheTriFusion in Jaipur`}
             width={72}
             height={72}
-            className="rounded-full object-cover"
+            sizes="72px"
+            className="aspect-square rounded-full object-cover"
           />
         </Link>
         <div>

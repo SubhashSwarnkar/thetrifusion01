@@ -8,7 +8,7 @@ import { siteConfig, absoluteSiteUrl } from "../config/site.js";
 export const FOUNDER = {
   name: "Amardeep",
   jobTitle: "CEO",
-  imagePath: "/images/team/amardeep.png",
+  imagePath: "/images/team/amardeep.webp",
   profilePath: "/team",
   bio: "Amardeep is CEO of Trifusion Infotech Private Limited (TheTriFusion), a software development company in Jaipur, Rajasthan. The studio has operated since 2023 with a team of about ten developers and consultants.",
 };

@@ -87,8 +87,8 @@ export default function HeroVideo() {
         <img
           src={HERO_POSTER}
           alt="TheTriFusion software development work in Jaipur, Rajasthan"
-          width={500}
-          height={500}
+          width={1280}
+          height={800}
           fetchPriority="high"
           className={mediaClass}
         />
