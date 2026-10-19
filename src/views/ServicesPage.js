@@ -116,6 +116,26 @@ const SERVICE_CHOOSER = [
     label: "Hire dedicated developers in India",
     text: "for named React, Node and mobile seats from Jaipur. Project work from ₹50,000.",
   },
+  {
+    href: "/services/fintech-app-development/bbps-software",
+    label: "BBPS software development",
+    text: "for white-label Bharat BillPay retailer and distributor panels. You bring BBPOU access. From ₹99,999.",
+  },
+  {
+    href: "/services/fintech-app-development/aeps-software",
+    label: "AEPS software development",
+    text: "for Aadhaar-enabled payment panels. You bring sponsor-bank access. From ₹99,999.",
+  },
+  {
+    href: "/services/fintech-app-development/dmt-software",
+    label: "DMT software development",
+    text: "for domestic money transfer retailer software. You bring the bank or aggregator contract. From ₹99,999.",
+  },
+  {
+    href: "/services/fintech-app-development/recharge-software",
+    label: "Recharge software development",
+    text: "for mobile and DTH top-up panels. You bring the recharge API partner. From ₹99,999.",
+  },
 ];
 
 function ServiceCard({ service, accent }) {
@@ -290,28 +310,28 @@ export default function ServicesPage() {
                       href="/services/fintech-app-development/bbps-software"
                       className="font-semibold text-theme-purple hover:underline"
                     >
-                      BBPS
+                      BBPS software development
                     </Link>
                     {", "}
                     <Link
                       href="/services/fintech-app-development/aeps-software"
                       className="font-semibold text-theme-purple hover:underline"
                     >
-                      AEPS
+                      AEPS software development
                     </Link>
                     {", "}
                     <Link
                       href="/services/fintech-app-development/dmt-software"
                       className="font-semibold text-theme-purple hover:underline"
                     >
-                      DMT
+                      DMT software development
                     </Link>
                     {", and "}
                     <Link
                       href="/services/fintech-app-development/recharge-software"
                       className="font-semibold text-theme-purple hover:underline"
                     >
-                      recharge software
+                      recharge software development
                     </Link>
                     .
                   </p>

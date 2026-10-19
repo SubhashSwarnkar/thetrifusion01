@@ -12,6 +12,7 @@ import { dailyOrganicBatch20260926Posts } from "./dailyOrganicBatch20260926";
 import { dailyOrganicBatch20260927Posts } from "./dailyOrganicBatch20260927";
 import { evChargingClusterPosts } from "./evChargingCluster20260927";
 import { dailyOrganicBatch20261019Posts } from "./dailyOrganicBatch20261019";
+import { aiCitableGuides20261019Posts } from "./aiCitableGuides20261019";
 import { dailyOrganicBatch20261018Posts } from "./dailyOrganicBatch20261018";
 import { dailyOrganicBatch20261017Posts } from "./dailyOrganicBatch20261017";
 import { dailyOrganicBatch20261016Posts } from "./dailyOrganicBatch20261016";
@@ -97,6 +98,7 @@ export const isRedirectedBlogSlug = (slug) =>
   Boolean(slug && BLOG_CANONICAL_REDIRECTS[slug]);
 
 export const blogPosts = [
+  ...aiCitableGuides20261019Posts,
   ...dailyOrganicBatch20261019Posts,
   ...dailyOrganicBatch20261018Posts,
   ...dailyOrganicBatch20261017Posts,

@@ -3,28 +3,28 @@ import Link from "next/link";
 
 const SPECIALIZED = [
   {
-    title: "Fintech — BBPS / AEPS / DMT",
+    title: "BBPS software development",
     description:
-      "Bill-pay, Aadhaar banking, and remittance software for operators — not a generic banking brochure site.",
-    href: "/services/fintech-app-development",
+      "White-label Bharat BillPay retailer and distributor panels. You bring BBPOU access. From ₹99,999.",
+    href: "/services/fintech-app-development/bbps-software",
   },
   {
-    title: "EV charging (OCPI / OCPP)",
+    title: "AEPS software development",
     description:
-      "Maps, sessions, and roaming-ready stacks. See PlugOne live before you brief us.",
+      "Aadhaar-enabled payment software for retailer networks. You bring sponsor-bank access.",
+    href: "/services/fintech-app-development/aeps-software",
+  },
+  {
+    title: "EV charging app development in India",
+    description:
+      "OCPP/OCPI charging CMS. See PlugOne live before you brief us. From ₹4,50,000.",
     href: "/services/ev-charging-app-development",
   },
   {
-    title: "MLM CRM",
+    title: "MLM software development company in India",
     description:
-      "Compensation plans, genealogy, wallets, and payouts scoped for network businesses.",
+      "Unilevel CRM, genealogy, wallets, and payouts. We do not build pyramids. From ₹3,50,000.",
     href: "/services/mlm-crm-development",
-  },
-  {
-    title: "CRM & ERP tools",
-    description:
-      "Ops panels, inventory, and field workflows tailored to how your team actually works.",
-    href: "/services/crm-erp-development",
   },
 ];
 

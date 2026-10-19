@@ -5,6 +5,10 @@
  * (website, software, EV, fintech, mobile, AI, ecommerce, and so on).
  * Injected at the end of article HTML if the stored copy lacks the heading.
  */
+import {
+  rotatedUnindexedLinks,
+  UNINDEXED_SERVICE_LINKS,
+} from "./serviceIndexLinks";
 export const TRAFFIC_SERVICE_CTA_SLUGS = [
   "chatgpt-1980s-ai-photo-prompt-guide",
   "neet-pg-result-2026-how-to-check",
@@ -127,11 +131,22 @@ const DEFAULT_BLOCKS = {
 <h2>Built by TheTriFusion</h2>
 <p>Traffic after a URL is snippet-eligible is <a href="/services/digital-marketing">digital marketing company in India</a> (plans from ₹15,000; ad spend separate). The page those ads hit is <a href="/services/website-development">website development company in Jaipur</a> work. We do not guarantee rankings or ROAS.</p>
 `,
-  website: `
-<h2>Built by TheTriFusion</h2>
-<p>Date, fixture, exam, and news spikes punish a slow or thin official page. Publishers and institutes in India still need a <a href="/services/website-development">website development company in Jaipur</a> (from ₹15,000) and, once the URL can snippet, a <a href="/services/digital-marketing">digital marketing company in India</a>. Match-day or result apps are <a href="/services/mobile-app-development">mobile app development company in India</a>. TheTriFusion does not run the event, the board, or a scoreboard.</p>
-`,
 };
+
+function websiteDefaultBlock(slug) {
+  const skip = new Set([
+    "/services/website-development",
+    "/services/digital-marketing",
+    "/services/mobile-app-development",
+  ]);
+  const extra =
+    rotatedUnindexedLinks(slug, 8).find((item) => !skip.has(item.href)) ||
+    UNINDEXED_SERVICE_LINKS[0];
+  return `
+<h2>Built by TheTriFusion</h2>
+<p>Date, fixture, exam, and news spikes punish a slow or thin official page. Publishers and institutes in India still need a <a href="/services/website-development">website development company in Jaipur</a> (from ₹15,000) and, once the URL can snippet, a <a href="/services/digital-marketing">digital marketing company in India</a>. Related work from the same studio: <a href="${extra.href}">${extra.anchor}</a>. TheTriFusion does not run the event, the board, or a scoreboard.</p>
+`;
+}
 
 function defaultCtaCluster(slug) {
   const hay = String(slug || "").toLowerCase();
@@ -186,7 +201,9 @@ function defaultCtaCluster(slug) {
 
 export function trafficServiceCtaHtml(slug) {
   if (BLOCKS[slug]) return BLOCKS[slug];
-  return DEFAULT_BLOCKS[defaultCtaCluster(slug)] || DEFAULT_BLOCKS.website;
+  const cluster = defaultCtaCluster(slug);
+  if (cluster === "website") return websiteDefaultBlock(slug);
+  return DEFAULT_BLOCKS[cluster] || websiteDefaultBlock(slug);
 }
 
 export function withTrafficServiceCta(slug, html) {

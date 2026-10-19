@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import { FOUNDER } from "data/founder";
 
 function formatReviewDate(value) {
   if (!value) return "";
@@ -26,19 +28,37 @@ export default function BlogAuthorBox({ reviewDate }) {
 
   return (
     <aside
-      aria-label="About TheTriFusion"
+      aria-label={`About ${FOUNDER.name}, ${FOUNDER.jobTitle}`}
       className="mt-12 rounded-2xl border border-gray-200 bg-gray-50 p-6 sm:p-8"
     >
-      <h2 className="mb-3 text-2xl font-bold text-theme-blue">
-        About TheTriFusion
-      </h2>
-      <p className="mb-4 leading-relaxed text-gray-600">
-        TheTriFusion is a software company in Jaipur that has been operating
-        since 2023. The team builds EV charging software, mobile apps, websites,
-        and AI software. Trifusion Infotech Private Limited works with clients
-        in India and worldwide.
-      </p>
+      <div className="mb-4 flex items-start gap-4">
+        <Link href={FOUNDER.profilePath} className="shrink-0">
+          <Image
+            src={FOUNDER.imagePath}
+            alt={`${FOUNDER.name}, ${FOUNDER.jobTitle} of TheTriFusion in Jaipur`}
+            width={72}
+            height={72}
+            sizes="72px"
+            className="aspect-square rounded-full object-cover"
+          />
+        </Link>
+        <div>
+          <h2 className="text-2xl font-bold text-theme-blue">
+            {FOUNDER.name}, {FOUNDER.jobTitle}
+          </h2>
+          <p className="text-sm font-semibold text-theme-purple">
+            TheTriFusion · Jaipur
+          </p>
+        </div>
+      </div>
+      <p className="mb-4 leading-relaxed text-gray-600">{FOUNDER.bio}</p>
       <p className="mb-4 flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold">
+        <Link
+          href={FOUNDER.profilePath}
+          className="text-theme-purple underline underline-offset-2"
+        >
+          Team
+        </Link>
         <Link
           href="/about"
           className="text-theme-purple underline underline-offset-2"
@@ -53,7 +73,7 @@ export default function BlogAuthorBox({ reviewDate }) {
         </Link>
       </p>
       <p className="text-sm text-gray-500">
-        Reviewed by the TheTriFusion editorial team
+        Reviewed by {FOUNDER.name}, {FOUNDER.jobTitle}
         {formatted ? (
           <>
             {" "}

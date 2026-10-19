@@ -7,7 +7,8 @@ import { Fade } from "react-awesome-reveal";
 import NotFound from "assets/images/NotFound.png";
 
 import Button from "elements/Button";
-import { portfolioImageAlt } from "json/landingPageData";
+import { portfolioImageAlt, portfolioKind } from "json/landingPageData";
+import PortfolioKindBadge from "components/PortfolioKindBadge";
 
 function isLiveProjectUrl(credit) {
   return typeof credit === "string" && /^https?:\/\//i.test(credit);
@@ -77,9 +78,18 @@ export default function PortfolioDetail({ data }) {
               {item.title}
             </h1>
 
-            <p className="font-light text-xl text-gray-400 text-center mb-10">
+            <p className="font-light text-xl text-gray-400 text-center mb-4">
               {item.type}
             </p>
+            <p className="mb-10 text-center">
+              <PortfolioKindBadge kind={portfolioKind(item)} />
+            </p>
+            {portfolioKind(item) === "concept" ? (
+              <p className="mx-auto mb-6 max-w-2xl text-center text-sm text-gray-500">
+                This is a concept / demo project. It is not a live client
+                website.
+              </p>
+            ) : null}
           </Fade>
 
           <Fade bottom delay={300 * 1} triggerOnce>
@@ -214,7 +224,9 @@ export default function PortfolioDetail({ data }) {
                   className="px-8 py-3 bg-theme-purple text-white rounded-full hover:bg-dark-theme-purple transition-colors duration-200 shadow-lg text-center"
                   isExternal
                 >
-                  🌐 View Live Project
+                  {portfolioKind(item) === "demo"
+                    ? "View hosted demo"
+                    : "View live project"}
                 </Button>
               )}
               {item.relatedServiceSlug && (

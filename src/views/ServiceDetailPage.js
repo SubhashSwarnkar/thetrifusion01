@@ -10,6 +10,10 @@ import Breadcrumbs from "components/Breadcrumbs";
 import BrandTrustStrip from "components/BrandTrustStrip";
 import ServiceIcon from "components/ServiceIcon";
 import { getServiceBySlug, services } from "data/servicesData";
+import {
+  SERVICE_KEYWORD_BY_SLUG,
+  SERVICE_SIBLINGS,
+} from "data/serviceIndexLinks";
 import { getSeoLandingBySlug, getSolutionsForService } from "data/seoLandingPages";
 import {
   canonicalInternalHref,
@@ -20,6 +24,8 @@ import { accentAt, accentForSlug } from "lib/themeAccents";
 import NotFoundPage from "./NotFoundPage";
 import SEO from "components/common/SEO";
 import RelatedGuides from "components/RelatedGuides";
+import FounderByline from "components/FounderByline";
+import { FOUNDER } from "data/founder";
 
 function SectionHeading({ children, kicker, id }) {
   return (
@@ -279,10 +285,14 @@ export default function ServiceDetailPage({
       return match ? services.find((entry) => entry.slug === match[1]) : null;
     })
     .filter((item) => item && item.slug !== slug);
+  const meshSlugs = SERVICE_SIBLINGS[slug] || [];
+  const siblingFromMesh = meshSlugs
+    .map((meshSlug) => services.find((entry) => entry.slug === meshSlug))
+    .filter(Boolean);
   const seenSiblings = new Set();
   const relatedSiblings = [];
-  for (const item of siblingFromLinks) {
-    if (seenSiblings.has(item.slug)) continue;
+  for (const item of [...siblingFromMesh, ...siblingFromLinks]) {
+    if (seenSiblings.has(item.slug) || item.slug === slug) continue;
     seenSiblings.add(item.slug);
     relatedSiblings.push(item);
   }
@@ -412,6 +422,7 @@ export default function ServiceDetailPage({
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
+                  quality={70}
                   priority
                 />
               </div>
@@ -424,6 +435,19 @@ export default function ServiceDetailPage({
       </section>
 
       <AnswerFirst block={service.answerFirst} />
+
+      <section
+        aria-label={`${FOUNDER.name}, ${FOUNDER.jobTitle}`}
+        className="container mx-auto px-5 pb-6"
+      >
+        <div className="max-w-4xl rounded-2xl border border-gray-200 bg-gray-50 px-5 py-4">
+          <FounderByline compact />
+          <p className="mt-3 text-sm leading-relaxed text-gray-600">
+            {FOUNDER.bio} This {service.title.toLowerCase()} page is reviewed
+            by {FOUNDER.name}.
+          </p>
+        </div>
+      </section>
 
       {service.hideClientStrip ? null : <BrandTrustStrip />}
 
@@ -971,7 +995,7 @@ export default function ServiceDetailPage({
                     </span>
                     <span>
                       <span className="block font-bold text-theme-blue group-hover:text-theme-purple transition-colors">
-                        {item.title}
+                        {SERVICE_KEYWORD_BY_SLUG[item.slug] || item.title}
                       </span>
                       <span className={`text-xs font-semibold ${accent.text}`}>Explore Service →</span>
                     </span>

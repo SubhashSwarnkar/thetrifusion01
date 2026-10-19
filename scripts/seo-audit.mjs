@@ -3,7 +3,15 @@
  * Post-build SEO smoke checks against a running Next server.
  * Usage: BASE_URL=http://127.0.0.1:3000 node scripts/seo-audit.mjs
  */
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { XMLParser } from "./seo-audit-xml.mjs";
+
+const INDEXNOW_KEY = fs
+  .readdirSync(path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../public"))
+  .find((name) => /^[a-f0-9]{32}\.txt$/i.test(name))
+  ?.replace(/\.txt$/i, "");
 
 const BASE_URL = (process.env.BASE_URL || "http://127.0.0.1:3000").replace(
   /\/$/,
@@ -361,6 +369,12 @@ async function main() {
     "/blog/23-september-2026-why-trending-india",
     "/blog/nse-listing-date-how-ipo-listing-works-india",
     "/blog/ocpi-roaming-explained-cpo-emsp",
+    "/blog/website-development-cost-india-2026",
+    "/blog/mobile-app-development-cost-india-2026",
+    "/blog/ecommerce-website-packages-cost-india-2026",
+    "/blog/software-development-cost-india-2026",
+    "/blog/bbps-aeps-recharge-software-cost-india-2026",
+    "/blog/how-to-choose-website-software-company-jaipur-india-2026",
     "/solutions/website-development-company-jaipur",
     "/solutions/custom-software-development-jaipur",
     "/solutions/mobile-app-development-company-jaipur",
@@ -403,6 +417,49 @@ async function main() {
   // Spot-check tool noindex pages even if omitted from sitemap
   for (const path of ["/estimate", "/planner", "/timeline", "/pricing/calculator"]) {
     await auditPage(`${BASE_URL}${path}`);
+  }
+
+  const homeHtml = (await fetchText(`${BASE_URL}/`)).text;
+  if (!/"@type":\s*"Person"/i.test(homeHtml) || !/Amardeep/.test(homeHtml)) {
+    fail("homepage JSON-LD missing Person schema for Amardeep");
+  } else {
+    ok("homepage JSON-LD includes Person Amardeep");
+  }
+  if (!/wa\.me\/916378133780/.test(homeHtml)) {
+    fail("homepage JSON-LD missing WhatsApp contactPoint");
+  } else {
+    ok("homepage JSON-LD includes WhatsApp contactPoint");
+  }
+  if (
+    !/linkedin\.com\/company\/the-trifusion/.test(homeHtml) ||
+    !/instagram\.com\/thetrifusion/.test(homeHtml)
+  ) {
+    fail("homepage JSON-LD missing Organization sameAs social profiles");
+  } else {
+    ok("homepage JSON-LD includes LinkedIn and Instagram sameAs");
+  }
+
+  const blogHtml = (
+    await fetchText(`${BASE_URL}/blog/website-development-cost-india-2026`)
+  ).text;
+  if (!/"@type":\s*"Person"/i.test(blogHtml) || !/Amardeep/.test(blogHtml)) {
+    fail("cost guide missing Person author schema for Amardeep");
+  } else {
+    ok("cost guide BlogPosting author is Person Amardeep");
+  }
+
+  if (!INDEXNOW_KEY) {
+    fail("IndexNow key file missing from public/ (32-hex .txt)");
+  } else {
+    const keyUrl = `${BASE_URL}/${INDEXNOW_KEY}.txt`;
+    const keyRes = await fetchText(keyUrl);
+    if (keyRes.res.status !== 200) {
+      fail(`IndexNow key ${keyUrl} returned ${keyRes.res.status}`);
+    } else if (keyRes.text.trim() !== INDEXNOW_KEY) {
+      fail("IndexNow key file body does not match the filename");
+    } else {
+      ok(`IndexNow key file live at /${INDEXNOW_KEY}.txt`);
+    }
   }
 
   // GSC picked www as canonical for these money URLs — fail if we emit www.

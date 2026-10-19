@@ -7,19 +7,19 @@ const clients = [
   {
     name: "Shanav Technologies",
     href: "https://shanav.com/",
-    logo: "/client-logos/shanav.png",
+    logo: "/client-logos/shanav.webp",
     subtitle: "CLOUD & TECHNOLOGY",
   },
   {
     name: "Anax Mobility Solutions",
     href: "https://anaxmobility.com/",
-    logo: "/client-logos/anax-mobility.png",
+    logo: "/client-logos/anax-mobility.webp",
     subtitle: "EV MOBILITY SOLUTIONS",
   },
   {
     name: "PlugOne",
     href: "https://plugone.in/",
-    logo: "/client-logos/plugone.png",
+    logo: "/client-logos/plugone.webp",
     subtitle: "EV CHARGING PLATFORM",
   },
   {

@@ -1,0 +1,29 @@
+name: IndexNow
+
+on:
+  push:
+    branches: [main, master]
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Submit changed (or all) sitemap URLs to IndexNow
+        run: node --import ./scripts/register-extensionless.mjs scripts/indexnow.mjs --changed
+        env:
+          GITHUB_EVENT_BEFORE: ${{ github.event.before }}
+          GITHUB_SHA: ${{ github.sha }}
+          NEXT_PUBLIC_SITE_URL: https://thetrifusion.in

@@ -5,13 +5,8 @@ import Freelance from "../assets/images/Portfolio/Freelance.png";
 import Aura from "../assets/images/Portfolio/Aura.png";
 import Surtido from "../assets/images/Portfolio/Surtido.png";
 import ManagementApp from "../assets/images/Portfolio/ManagementApp.png";
-import PlugOneImg from "../assets/images/Portfolio/PlugOne.jpg";
-import ConnectDairyImg from "../assets/images/Portfolio/ConnectDairy.jpg";
-import AtharvNarayanImg from "../assets/images/Portfolio/AtharvNarayan.jpg";
 import ShopNovaImg from "../assets/images/Portfolio/ShopNova.jpg";
 import PaySwiftImg from "../assets/images/Portfolio/PaySwift.jpg";
-
-// Advantage art is served from /public and lazy-loaded so it is not preloaded.
 
 // TeamMembers - Shared imports for testimonials and team
 import CEO from "../assets/images/TeamMembers/CEO.png";
@@ -24,6 +19,8 @@ import Backend2 from "../assets/images/TeamMembers/Backend2.png";
 import Mobile1 from "../assets/images/TeamMembers/Mobile1.jpg";
 import Mobile2 from "../assets/images/TeamMembers/Mobile2.png";
 import UIUX1 from "../assets/images/TeamMembers/UIUX1.png";
+
+const liveShot = (id) => `/images/portfolio/${id}.jpg`;
 
 export const Services = [
   { title: "Website Development", slug: "website-development" },
@@ -59,10 +56,31 @@ function caseStudyWordCount(project) {
  * Index a portfolio URL only when it has a real case study (at least 300
  * words) and is not a demo template. Short cards stay live and noindex.
  */
+export function portfolioKind(project) {
+  const credit = String(project?.credit || "").trim();
+  if (!credit) return "concept";
+  if (DEMO_CREDIT_HOST.test(credit)) return "demo";
+  return "live";
+}
+
+export function portfolioKindLabel(project) {
+  const kind = portfolioKind(project);
+  if (kind === "concept") return "Concept / demo";
+  if (kind === "demo") return "Hosted demo";
+  return "Live client site";
+}
+
 export function portfolioImageAlt(project) {
   if (!project) return "Portfolio project by TheTriFusion";
   if (project.imageAlt) return project.imageAlt;
-  return `${project.title} — ${project.type} project by TheTriFusion`;
+  const kind = portfolioKind(project);
+  const suffix =
+    kind === "live"
+      ? "live website screenshot"
+      : kind === "demo"
+        ? "hosted demo screenshot"
+        : "concept preview";
+  return `${project.title} — ${suffix} by TheTriFusion`;
 }
 
 export function isIndexablePortfolio(project) {
@@ -79,7 +97,7 @@ export const Portfolios = [
   {
     id: "plugone-ev-charging-platform",
     title: "PlugOne",
-    imageUrl: PlugOneImg,
+    imageUrl: liveShot("plugone-ev-charging-platform"),
     type: "Mobile Apps",
     featured: true,
     cardDescription:
@@ -98,7 +116,7 @@ export const Portfolios = [
   {
     id: "connect-dairy-supply-chain",
     title: "Connect Dairy",
-    imageUrl: ConnectDairyImg,
+    imageUrl: liveShot("connect-dairy-supply-chain"),
     type: "Mobile Apps",
     featured: true,
     cardDescription:
@@ -117,7 +135,7 @@ export const Portfolios = [
   {
     id: "atharv-narayan-dairy-logistics-website",
     title: "Atharv Narayan Dairy Solutions",
-    imageUrl: AtharvNarayanImg,
+    imageUrl: liveShot("atharv-narayan-dairy-logistics-website"),
     type: "Website",
     featured: true,
     tags: [
@@ -166,7 +184,7 @@ export const Portfolios = [
   {
     id: "meditative-yoga-platform",
     title: "Meditative",
-    imageUrl: Stream,
+    imageUrl: liveShot("meditative-yoga-platform"),
     type: "Website",
     cardDescription: "Yoga/wellness marketing site — class pages, mobile-first layout",
     responsibility: ["Web Development", "UI/UX Design"],
@@ -175,7 +193,7 @@ export const Portfolios = [
   {
     id: "pet-sitting-services-website",
     title: "Pet Sitting",
-    imageUrl: Freelance,
+    imageUrl: liveShot("pet-sitting-services-website"),
     type: "Website",
     cardDescription: "Pet care services website — bookings, service pages, mobile layout",
     responsibility: ["Web Development", "UI/UX Design"],
@@ -184,7 +202,7 @@ export const Portfolios = [
   {
     id: "podcast-landing-page",
     title: "Podcast.",
-    imageUrl: Aura,
+    imageUrl: liveShot("podcast-landing-page"),
     type: "Website",
     cardDescription: "Podcast landing page — episode list, brand site, responsive web",
     responsibility: ["Web Development", "UI/UX Design"],
@@ -193,7 +211,7 @@ export const Portfolios = [
   {
     id: "resto-restaurant-website",
     title: "Resto",
-    imageUrl: Surtido,
+    imageUrl: liveShot("resto-restaurant-website"),
     type: "Website",
     cardDescription: "Restaurant website — menu, reservation CTA, mobile-first design",
     responsibility: ["Web Development", "UI/UX Design"],
@@ -202,7 +220,7 @@ export const Portfolios = [
   {
     id: "alime-photography-website",
     title: "Alime",
-    imageUrl: Freelance,
+    imageUrl: liveShot("alime-photography-website"),
     type: "Website",
     cardDescription: "Photography portfolio site — gallery, booking inquiry, visual CMS",
     responsibility: ["Web Development", "UI/UX Design"],
@@ -211,7 +229,7 @@ export const Portfolios = [
   {
     id: "applab-mobile-app",
     title: "AppLab",
-    imageUrl: ManagementApp,
+    imageUrl: liveShot("applab-mobile-app"),
     type: "Mobile Apps",
     cardDescription: "App marketing site + product UI — iOS/Android showcase pages",
     responsibility: ["Web Development", "UI/UX Design"],
@@ -220,7 +238,7 @@ export const Portfolios = [
   {
     id: "dentista-dental-clinic",
     title: "Dentista",
-    imageUrl: Surtido,
+    imageUrl: liveShot("dentista-dental-clinic"),
     type: "Website",
     cardDescription: "Dental clinic website — services, appointment lead form, local SEO",
     responsibility: ["Web Development", "UI/UX Design"],
@@ -229,7 +247,7 @@ export const Portfolios = [
   {
     id: "travelix-travel-booking-website",
     title: "Travelix",
-    imageUrl: Recruiting,
+    imageUrl: liveShot("travelix-travel-booking-website"),
     type: "Website",
     cardDescription: "Travel booking website — packages, inquiry flow, destination pages",
     responsibility: ["Web Development", "UI/UX Design"],
@@ -238,7 +256,7 @@ export const Portfolios = [
   {
     id: "dentacare-dental-clinic",
     title: "DentaCare",
-    imageUrl: Freelance,
+    imageUrl: liveShot("dentacare-dental-clinic"),
     type: "Website",
     cardDescription: "Dental clinic web app — treatments, contact, mobile-friendly site",
     responsibility: ["Web Development", "UI/UX Design"],
@@ -247,7 +265,7 @@ export const Portfolios = [
   {
     id: "macro-photography-website",
     title: "Macro",
-    imageUrl: ManagementApp,
+    imageUrl: liveShot("macro-photography-website"),
     type: "Website",
     cardDescription: "Photography studio site — portfolio grid, visual storytelling pages",
     responsibility: ["Web Development", "UI/UX Design"],
@@ -464,7 +482,7 @@ export const Testimonials = [
     company: "Case: EV charging platform",
     testimoni:
       "Built a production EV charging product with station maps, session tracking, and an operator dashboard — live at plugone.in so you can verify the stack yourself.",
-    imageUrl: PlugOneImg,
+    imageUrl: liveShot("plugone-ev-charging-platform"),
     url: "https://plugone.in/",
     linkLabel: "Open live case → plugone.in",
   },
@@ -474,7 +492,7 @@ export const Testimonials = [
     company: "Case: dairy & feed logistics",
     testimoni:
       "Shipped agri-logistics for milk trucks, feed distribution, and ops dashboards — public URL at connectdairy.in, not a mockup slide.",
-    imageUrl: ConnectDairyImg,
+    imageUrl: liveShot("connect-dairy-supply-chain"),
     url: "https://www.connectdairy.in/",
     linkLabel: "Open live case → connectdairy.in",
   },
@@ -494,7 +512,7 @@ export const Testimonials = [
     company: "Case: dairy logistics website",
     testimoni:
       "Bilingual lead-gen site for dairy logistics and manpower across Bhilwara and Jaipur — milk transport, trained staff, cattle feed, tenders, and enquiry forms live at atharvnarayan.in.",
-    imageUrl: AtharvNarayanImg,
+    imageUrl: liveShot("atharv-narayan-dairy-logistics-website"),
     url: "https://www.atharvnarayan.in/",
     linkLabel: "Open live case → atharvnarayan.in",
   },
@@ -504,7 +522,7 @@ export const Testimonials = [
     company: "Case: yoga platform demo",
     testimoni:
       "Public yoga-platform build (design + front-end) hosted for review — open the URL to inspect layout and interactions; this is not a star rating.",
-    imageUrl: Stream,
+    imageUrl: liveShot("meditative-yoga-platform"),
     url: "https://yoga-80f.pages.dev/",
     linkLabel: "Open demo → yoga-80f.pages.dev",
   },

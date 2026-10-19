@@ -11,6 +11,7 @@
     "seo:events": "node --import ./scripts/register-extensionless.mjs scripts/validate-event-schema.mjs",
     "seo:clean-html": "node --import ./scripts/register-extensionless.mjs scripts/test-clean-blog-html.mjs",
     "seo:recovery": "node --import ./scripts/register-extensionless.mjs scripts/test-adsense-recovery-noindex.mjs",
+    "indexnow": "node --import ./scripts/register-extensionless.mjs scripts/indexnow.mjs",
     "ci:seo": "node scripts/seo-ci.mjs"
   },
   "dependencies": {

@@ -13,6 +13,13 @@ export function SiteHead() {
   registerEventNoindexSlugs(eventNoindexSlugList());
   return (
     <>
+      <link
+        rel="preload"
+        href="/fonts/poppins-400.woff2"
+        as="font"
+        type="font/woff2"
+        crossOrigin="anonymous"
+      />
       <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
       <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
       <link rel="dns-prefetch" href="https://connect.facebook.net" />

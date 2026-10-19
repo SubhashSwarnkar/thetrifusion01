@@ -92,6 +92,33 @@ export default function PricingPage() {
               They are not Basic/Standard/Premium SKUs — every brief still gets
               a written scope. Illustrative tiers below show how effort scales.
             </p>
+            <p className="text-base text-gray-600 mb-8 max-w-2xl mx-auto">
+              Cost notes with the same INR figures:{" "}
+              <Link href="/blog/website-development-cost-india-2026" className="font-semibold text-theme-purple hover:underline">
+                website development cost in India 2026
+              </Link>
+              {", "}
+              <Link href="/blog/mobile-app-development-cost-india-2026" className="font-semibold text-theme-purple hover:underline">
+                mobile app development cost
+              </Link>
+              {", "}
+              <Link href="/blog/ecommerce-website-packages-cost-india-2026" className="font-semibold text-theme-purple hover:underline">
+                ecommerce packages
+              </Link>
+              {", "}
+              <Link href="/blog/software-development-cost-india-2026" className="font-semibold text-theme-purple hover:underline">
+                custom software
+              </Link>
+              {", "}
+              <Link href="/blog/bbps-aeps-recharge-software-cost-india-2026" className="font-semibold text-theme-purple hover:underline">
+                BBPS / AEPS / recharge
+              </Link>
+              {", and "}
+              <Link href="/blog/how-to-choose-website-software-company-jaipur-india-2026" className="font-semibold text-theme-purple hover:underline">
+                how to choose a company in Jaipur
+              </Link>
+              .
+            </p>
             <address className="not-italic text-sm text-gray-500 mb-12">
               <span className="block">{siteConfig.addressLine}</span>
               <a className="text-theme-purple font-semibold" href={siteConfig.telHref}>
