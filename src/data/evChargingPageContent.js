@@ -50,7 +50,7 @@ export const evChargingPageContent = {
     { "@type": "Place", name: "Worldwide" },
   ],
   schemaProvider: { "@id": `${siteConfig.url}/#organization` },
-  relatedBlogSlug: "pm-edrive-8147-chargers-csms-india-2026",
+  relatedBlogSlug: "jiobp-kia-roaming-csms-india-2026",
   softwareGuides: [
     {
       href: "/blog/ocpp-1-6-vs-2-0-1-vs-2-1-comparison",
