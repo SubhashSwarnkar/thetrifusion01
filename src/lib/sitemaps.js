@@ -6,7 +6,7 @@ import { services } from "data/servicesData";
 import { seoLandingPages, getSeoLandingBySlug } from "data/seoLandingPages";
 import { fintechProductPages } from "data/fintechProductPages";
 import { Portfolios, isIndexablePortfolio } from "json/landingPageData";
-import { NOINDEX_PATHS, pages } from "lib/seoConfig";
+import { NOINDEX_PATHS, REDIRECTED_STATIC_PATHS, pages } from "lib/seoConfig";
 import { REDIRECTED_SOLUTION_SLUGS } from "lib/solutionRedirects";
 import { isNoindexCitySolutionSlug } from "data/cityLandingRobots";
 import { siteConfig } from "config/site";
@@ -121,7 +121,9 @@ export function buildSitemapParts() {
   };
 
   const staticRoutes = Object.keys(pages)
-    .filter((path) => !NOINDEX_PATHS.has(path))
+    .filter(
+      (path) => !NOINDEX_PATHS.has(path) && !REDIRECTED_STATIC_PATHS.has(path)
+    )
     .map((path) => ({
       url: apexSitemapUrl(path),
       lastModified: staticLastmod[path] || fallbackDate,

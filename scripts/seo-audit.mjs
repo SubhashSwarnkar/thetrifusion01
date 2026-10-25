@@ -322,6 +322,18 @@ async function main() {
     }
   }
 
+  const REDIRECTED_STATIC = [
+    "/web-development",
+    "/android-app-development",
+    "/ios-app-development",
+    "/ecommerce-development",
+  ];
+  for (const path of REDIRECTED_STATIC) {
+    if (unique.some((u) => new URL(u, BASE_URL).pathname === path)) {
+      fail(`redirected static path still in sitemap: ${path}`);
+    }
+  }
+
   const required = [
     "/solutions/ecommerce-website-development",
     "/services/fintech-app-development/bbps-software",
@@ -468,6 +480,7 @@ async function main() {
   for (const path of [
     "/solutions/ecommerce-website-development",
     "/services/digital-marketing",
+    "/services/website-development",
   ]) {
     const url = `${BASE_URL}${path}`;
     const { text } = await fetchText(url);
@@ -480,6 +493,33 @@ async function main() {
       fail(`${path} canonical still uses www: ${canonical}`);
     } else {
       ok(`${path} canonical is apex ${canonical}`);
+    }
+  }
+
+  // Legacy ads landings must 301/308 to /services (not 200 + noindex).
+  const legacyRedirects = [
+    ["/web-development", "/services/website-development"],
+    ["/android-app-development", "/services/android-app-development"],
+    ["/ios-app-development", "/services/ios-app-development"],
+    ["/blog-1", "/blog"],
+  ];
+  for (const [from, to] of legacyRedirects) {
+    const { res } = await fetchText(`${BASE_URL}${from}`);
+    const location = res.headers.get("location") || "";
+    const okStatus = res.status === 301 || res.status === 308;
+    const destPath = (() => {
+      try {
+        return new URL(location, BASE_URL).pathname;
+      } catch {
+        return location;
+      }
+    })();
+    if (!okStatus) {
+      fail(`${from} should permanently redirect, got ${res.status}`);
+    } else if (destPath !== to) {
+      fail(`${from} redirects to ${destPath || location}, expected ${to}`);
+    } else {
+      ok(`${from} → ${to} (${res.status})`);
     }
   }
 

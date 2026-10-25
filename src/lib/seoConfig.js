@@ -187,13 +187,21 @@ function robotsFor(noIndex) {
 }
 
 /**
- * Paid / legacy paths. /web-development, /android-app-development and
- * /ios-app-development permanently redirect to /services/* (see next.config).
- * /white-label-development stays HTTP 200 noindex for campaigns.
- *
- * /ecommerce-development 301s to /solutions/ecommerce-website-development.
+ * Paid / legacy paths. /white-label-development stays HTTP 200 noindex
+ * for campaigns. /ecommerce-development 301s to the ecommerce solution.
  */
 export const ADS_LANDING_PATHS = new Set(["/white-label-development"]);
+
+/**
+ * Former ads landings that permanently redirect to /services/* (next.config).
+ * Keep out of sitemaps; do not treat as indexable static pages.
+ */
+export const REDIRECTED_STATIC_PATHS = new Set([
+  "/web-development",
+  "/android-app-development",
+  "/ios-app-development",
+  "/ecommerce-development",
+]);
 
 /** Tool routes, thin team page, and remaining paid landings (noindex). */
 export const NOINDEX_PATHS = new Set([
