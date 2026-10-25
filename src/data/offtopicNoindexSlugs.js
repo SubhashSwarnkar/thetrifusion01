@@ -8,7 +8,7 @@
  * ecommerce / digital-marketing posts stay indexable.
  *
  * Generated 2026-10-25 from prior #44/#47 lists plus sports/event/celeb/exam
- * classifiers. Count: 287.
+ * classifiers. Count: 284.
  */
 export const OFFTOPIC_NOINDEX_SLUGS = new Set([
   "23-september-2026-why-trending-india",
@@ -217,7 +217,7 @@ export const OFFTOPIC_NOINDEX_SLUGS = new Set([
   "nottingham-forest-vs-man-city-7-nov-2026",
   "nse-listing-date-how-ipo-listing-works-india",
   "nse-stock-price-why-trending-india",
-  "opus-5-5-ai-model-whats-known",
+
   "otoplenie-heating-russia-why-trending",
   "ozon-russia-why-trending",
   "padres-vs-dodgers-why-trending",
@@ -235,7 +235,7 @@ export const OFFTOPIC_NOINDEX_SLUGS = new Set([
   "prix-arc-de-triomphe-4-oct-2026-longchamp",
   "production-calendar-2027-russia-explained",
   "psg-vs-barcelona-ucl-20-oct-2026",
-  "pwn2own-ireland-2026-security-lessons-for-businesses",
+
   "raf-chinook-bird-strike-pewsham-explained",
   "ramayana-part-1-india-release-diwali-8-nov-2026",
   "ranabaali-vijay-deverakonda-release-16-oct-2026",
@@ -245,7 +245,7 @@ export const OFFTOPIC_NOINDEX_SLUGS = new Set([
   "rbi-mpc-meeting-5-7-october-2026",
   "real-madrid-vs-leipzig-ucl-21-oct-2026",
   "realme-16-pro-harry-potter-edition-india",
-  "reflection-beam-open-weight-ai-model-whats-known",
+
   "reform-uk-why-trending-explained",
   "richard-hammond-why-trending-explained",
   "rolex-paris-masters-2026-start-guide",

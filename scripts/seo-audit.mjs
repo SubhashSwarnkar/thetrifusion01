@@ -173,9 +173,9 @@ async function main() {
 
   const parser = new XMLParser();
   let pageLocs = [];
-  // Former blocklist / offtopic / geo-template URLs must be in the sitemap
-  // again. Only 308 duplicates and archive 301s stay out.
-  const RESTORED_BLOGS = [
+  // Business / software posts must stay in sitemap-blog. Off-topic
+  // sports/celeb/exam/event posts are soft-noindex and stay out.
+  const MUST_STAY_INDEXED_BLOGS = [
     "/blog/ecommerce-website-for-nigerian-smes-2026",
     "/blog/ios-27-siri-ai-business-apps-uk-australia",
     "/blog/hire-dedicated-developers-cost-guide-uk-australia",
@@ -186,13 +186,21 @@ async function main() {
     "/blog/gpt-6-astra-whats-known-vs-rumor",
     "/blog/reflection-beam-open-weight-ai-model-whats-known",
     "/blog/flutter-vs-react-native-2024",
-    "/blog/f1-singapore-grand-prix-2026-race-day-guide",
-    "/blog/india-vs-west-indies-2nd-t20i-ranchi-9-oct-2026",
-    "/blog/thanksgiving-2026-date-us-ist-guide",
   ];
   const STAY_OUT_BLOGS = [
     "/blog/iphone-18-india-features-apps-businesses",
     "/blog/generative-ai-revolution",
+    // Off-topic trend/event posts (soft-noindex, not deleted).
+    "/blog/f1-singapore-grand-prix-2026-race-day-guide",
+    "/blog/india-vs-west-indies-2nd-t20i-ranchi-9-oct-2026",
+    "/blog/thanksgiving-2026-date-us-ist-guide",
+    "/blog/neet-pg-result-2026-how-to-check",
+    "/blog/portugal-vs-wales-nations-league-why-trending",
+    "/blog/sbi-po-mains-result-2026-how-to-check",
+    "/blog/afghanistan-vs-japan-asian-games-cricket-explained",
+    "/blog/23-september-2026-why-trending-india",
+    "/blog/nse-listing-date-how-ipo-listing-works-india",
+    "/blog/motorola-signature-27-india-whats-known",
   ];
   // Published post that PR #57's allowlist dropped from the sitemap.
   const MUST_INDEX_BLOG = "/blog/emsp-vs-cpo-software-stack-buyer-guide";
@@ -280,9 +288,10 @@ async function main() {
       }
     })
     .filter((p) => p.startsWith("/blog/"));
-  if (blogPaths.length < 400) {
+  // ~176 business posts stay indexed; ~280 offtopic posts are noindex.
+  if (blogPaths.length < 150 || blogPaths.length > 250) {
     fail(
-      `sitemap-blog has ${blogPaths.length} URLs; restored posts should be indexed by default`
+      `sitemap-blog has ${blogPaths.length} URLs; expected ~150–250 business posts after offtopic noindex`
     );
   } else {
     ok(`Found ${blogPaths.length} indexable blog URLs`);
@@ -302,9 +311,9 @@ async function main() {
     fail(`sitemap missing previously indexable post ${MUST_INDEX_BLOG}`);
   }
 
-  for (const path of RESTORED_BLOGS) {
+  for (const path of MUST_STAY_INDEXED_BLOGS) {
     if (!unique.some((u) => new URL(u, BASE_URL).pathname === path)) {
-      fail(`restored blog missing from sitemap: ${path}`);
+      fail(`business blog missing from sitemap: ${path}`);
     }
   }
   for (const path of STAY_OUT_BLOGS) {
@@ -361,13 +370,6 @@ async function main() {
     "/blog/cert-in-payment-api-recharge-panel-india-2026",
     "/blog/tcs-manageengine-sovereign-cloud-software-india-2026",
     "/blog/chatgpt-1980s-ai-photo-prompt-guide",
-    "/blog/neet-pg-result-2026-how-to-check",
-    "/blog/motorola-signature-27-india-whats-known",
-    "/blog/portugal-vs-wales-nations-league-why-trending",
-    "/blog/sbi-po-mains-result-2026-how-to-check",
-    "/blog/afghanistan-vs-japan-asian-games-cricket-explained",
-    "/blog/23-september-2026-why-trending-india",
-    "/blog/nse-listing-date-how-ipo-listing-works-india",
     "/blog/ocpi-roaming-explained-cpo-emsp",
     "/blog/website-development-cost-india-2026",
     "/blog/mobile-app-development-cost-india-2026",
