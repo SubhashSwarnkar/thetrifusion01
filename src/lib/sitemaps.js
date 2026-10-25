@@ -8,6 +8,7 @@ import { fintechProductPages } from "data/fintechProductPages";
 import { Portfolios, isIndexablePortfolio } from "json/landingPageData";
 import { NOINDEX_PATHS, pages } from "lib/seoConfig";
 import { REDIRECTED_SOLUTION_SLUGS } from "lib/solutionRedirects";
+import { isNoindexCitySolutionSlug } from "data/cityLandingRobots";
 import { siteConfig } from "config/site";
 
 export const SITEMAP_IDS = ["pages", "services", "solutions", "blog"];
@@ -68,6 +69,24 @@ function latestDate(values, fallback) {
   return latest;
 }
 
+function apexSitemapUrl(path) {
+  // Hard rule: sitemaps never emit www or non-apex hosts.
+  if (!path || path === "/") return siteConfig.url;
+  const value = String(path);
+  if (/^https?:\/\//i.test(value)) {
+    try {
+      const parsed = new URL(value);
+      const suffix = `${parsed.pathname}${parsed.search}` || "/";
+      return suffix === "/"
+        ? siteConfig.url
+        : `${siteConfig.url}${suffix}`;
+    } catch {
+      return siteConfig.url;
+    }
+  }
+  return `${siteConfig.url}${value.startsWith("/") ? value : `/${value}`}`;
+}
+
 export function buildSitemapParts() {
   const fallbackDate = new Date("2026-09-24");
 
@@ -104,7 +123,7 @@ export function buildSitemapParts() {
   const staticRoutes = Object.keys(pages)
     .filter((path) => !NOINDEX_PATHS.has(path))
     .map((path) => ({
-      url: path === "/" ? siteConfig.url : `${siteConfig.url}${path}`,
+      url: apexSitemapUrl(path),
       lastModified: staticLastmod[path] || fallbackDate,
       changeFrequency: path === "/" || path === "/blog" ? "weekly" : "monthly",
       priority:
@@ -118,7 +137,7 @@ export function buildSitemapParts() {
     }));
 
   const serviceRoutes = services.map((service) => ({
-    url: `${siteConfig.url}/services/${service.slug}`,
+    url: apexSitemapUrl(`/services/${service.slug}`),
     lastModified: service.contentUpdatedAt
       ? safeDate(service.contentUpdatedAt, fallbackDate)
       : fallbackDate,
@@ -130,8 +149,8 @@ export function buildSitemapParts() {
   }));
 
   const fintechRoutes = fintechProductPages.map((page) => ({
-    url: `${siteConfig.url}${page.path}`,
-    lastModified: safeDate(page.contentUpdatedAt || "2026-10-14", fallbackDate),
+    url: apexSitemapUrl(page.path),
+    lastModified: safeDate(page.contentUpdatedAt || page.updatedAt, fallbackDate),
     changeFrequency: "weekly",
     priority: 0.78,
   }));
@@ -140,12 +159,13 @@ export function buildSitemapParts() {
     .filter(
       (raw) =>
         raw.slug !== "online-store-development" &&
-        !REDIRECTED_SOLUTION_SLUGS.has(raw.slug)
+        !REDIRECTED_SOLUTION_SLUGS.has(raw.slug) &&
+        !isNoindexCitySolutionSlug(raw.slug)
     )
     .map((raw) => {
       const page = getSeoLandingBySlug(raw.slug);
       return {
-        url: `${siteConfig.url}/solutions/${raw.slug}`,
+        url: apexSitemapUrl(`/solutions/${raw.slug}`),
         lastModified: page?.updatedAt
           ? safeDate(page.updatedAt, fallbackDate)
           : fallbackDate,
@@ -155,7 +175,7 @@ export function buildSitemapParts() {
     });
 
   const blogRoutes = blogPosts.filter(isIndexableBlogPost).map((post) => ({
-    url: `${siteConfig.url}/blog/${post.slug}`,
+    url: apexSitemapUrl(`/blog/${post.slug}`),
     lastModified: safeDate(
       post.updatedAt || post.date || "2026-09-12",
       fallbackDate
@@ -166,7 +186,7 @@ export function buildSitemapParts() {
 
   const portfolioRoutes = Portfolios.filter(isIndexablePortfolio).map(
     (project) => ({
-      url: `${siteConfig.url}/portfolio/${project.id}`,
+      url: apexSitemapUrl(`/portfolio/${project.id}`),
       lastModified: fallbackDate,
       changeFrequency: "monthly",
       priority: project.featured ? 0.75 : 0.6,

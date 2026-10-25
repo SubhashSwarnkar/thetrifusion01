@@ -1120,11 +1120,8 @@ export const featuredSolutionSlugs = [
   "software-company-rajasthan",
   "ecommerce-website-development",
   "msp-managed-it-services",
+  // Jaipur HQ only — non-Jaipur city landings are noindex and stay out of nav.
   "website-development-company-jaipur",
-  "website-development-company-bhilwara",
-  "website-development-company-udaipur",
-  "website-development-company-kota",
-  "website-development-company-ajmer",
   "custom-software-development-jaipur",
   "mobile-app-development-company-jaipur",
   "ecommerce-website-development-jaipur",

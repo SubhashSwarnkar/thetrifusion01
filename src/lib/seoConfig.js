@@ -187,20 +187,15 @@ function robotsFor(noIndex) {
 }
 
 /**
- * Paid landing URLs stay HTTP 200 for live campaigns. They are noindex, follow
- * so organic results use the matching /services or ecommerce solution page.
+ * Paid / legacy paths. /web-development, /android-app-development and
+ * /ios-app-development permanently redirect to /services/* (see next.config).
+ * /white-label-development stays HTTP 200 noindex for campaigns.
  *
- * /ecommerce-development 301s to /solutions/ecommerce-website-development
- * (the canonical ecommerce page). Paid landings below stay noindex.
+ * /ecommerce-development 301s to /solutions/ecommerce-website-development.
  */
-export const ADS_LANDING_PATHS = new Set([
-  "/web-development",
-  "/android-app-development",
-  "/ios-app-development",
-  "/white-label-development",
-]);
+export const ADS_LANDING_PATHS = new Set(["/white-label-development"]);
 
-/** Tool routes, the thin team page, and paid landings that should stay out of the index. */
+/** Tool routes, thin team page, and remaining paid landings (noindex). */
 export const NOINDEX_PATHS = new Set([
   "/estimate",
   "/planner",

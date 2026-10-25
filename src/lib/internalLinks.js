@@ -34,6 +34,10 @@ const EXACT_REDIRECTS = {
   "/solutions/online-store-development":
     "/solutions/ecommerce-website-development",
   "/services/web-development": "/services/website-development",
+  "/web-development": "/services/website-development",
+  "/android-app-development": "/services/android-app-development",
+  "/ios-app-development": "/services/ios-app-development",
+  "/blog-1": "/blog",
   "/discuss": "/discuss-project",
   "/services/ecommerce-development":
     "/solutions/ecommerce-website-development",

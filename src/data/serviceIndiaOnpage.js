@@ -52,7 +52,6 @@ function citySection(heading, paragraphs, links) {
     ],
     relatedLinks: links,
     schemaAreaServed: INDIA_AREA_SERVED,
-    contentUpdatedAt: "2026-10-17",
   };
 }
 
@@ -194,7 +193,6 @@ export const serviceIndiaOnpage = {
       },
     ],
     schemaAreaServed: INDIA_AREA_SERVED,
-    contentUpdatedAt: "2026-10-17",
   },
   "ui-ux-design": {
     metaTitle: "UI/UX Design Agency in Jaipur, India | Figma Product Design",
@@ -216,7 +214,6 @@ export const serviceIndiaOnpage = {
       },
     ],
     schemaAreaServed: INDIA_AREA_SERVED,
-    contentUpdatedAt: "2026-10-17",
   },
   branding: {
     metaTitle:
@@ -241,7 +238,6 @@ export const serviceIndiaOnpage = {
       },
     ],
     schemaAreaServed: INDIA_AREA_SERVED,
-    contentUpdatedAt: "2026-10-17",
   },
   rpa: {
     extraSections: [
@@ -262,7 +258,6 @@ export const serviceIndiaOnpage = {
       },
     ],
     schemaAreaServed: INDIA_AREA_SERVED,
-    contentUpdatedAt: "2026-10-17",
   },
   salesforce: {
     metaTitle:
@@ -290,7 +285,6 @@ export const serviceIndiaOnpage = {
       },
     ],
     schemaAreaServed: INDIA_AREA_SERVED,
-    contentUpdatedAt: "2026-10-17",
   },
   "crm-erp-development": {
     metaTitle:
@@ -317,7 +311,6 @@ export const serviceIndiaOnpage = {
       },
     ],
     schemaAreaServed: INDIA_AREA_SERVED,
-    contentUpdatedAt: "2026-10-17",
   },
   "mlm-crm-development": {
     extraSections: [
@@ -334,7 +327,6 @@ export const serviceIndiaOnpage = {
       },
     ],
     schemaAreaServed: INDIA_AREA_SERVED,
-    contentUpdatedAt: "2026-10-17",
   },
   "ev-charging-app-development": {
     extraSections: [
@@ -354,7 +346,6 @@ export const serviceIndiaOnpage = {
       },
     ],
     schemaAreaServed: INDIA_AREA_SERVED,
-    contentUpdatedAt: "2026-10-17",
   },
   "business-modernization": {
     metaTitle:
@@ -374,7 +365,6 @@ export const serviceIndiaOnpage = {
       },
     ],
     schemaAreaServed: INDIA_AREA_SERVED,
-    contentUpdatedAt: "2026-10-17",
   },
   "on-demand": {
     extraSections: [
@@ -391,7 +381,6 @@ export const serviceIndiaOnpage = {
       },
     ],
     schemaAreaServed: INDIA_AREA_SERVED,
-    contentUpdatedAt: "2026-10-17",
   },
   "graphic-design": {
     metaTitle:
@@ -410,7 +399,6 @@ export const serviceIndiaOnpage = {
       },
     ],
     schemaAreaServed: INDIA_AREA_SERVED,
-    contentUpdatedAt: "2026-10-17",
   },
   devops: {
     extraSections: [
@@ -423,7 +411,6 @@ export const serviceIndiaOnpage = {
       },
     ],
     schemaAreaServed: INDIA_AREA_SERVED,
-    contentUpdatedAt: "2026-10-17",
   },
   "ios-app-development": {
     extraSections: [
@@ -436,7 +423,6 @@ export const serviceIndiaOnpage = {
       },
     ],
     schemaAreaServed: INDIA_AREA_SERVED,
-    contentUpdatedAt: "2026-10-17",
   },
   "android-app-development": {
     metaTitle:
@@ -452,6 +438,5 @@ export const serviceIndiaOnpage = {
       },
     ],
     schemaAreaServed: INDIA_AREA_SERVED,
-    contentUpdatedAt: "2026-10-17",
   },
 };

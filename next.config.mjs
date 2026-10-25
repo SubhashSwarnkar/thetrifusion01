@@ -30,6 +30,7 @@ const nextConfig = {
       // If www still returns 307 in production, change the Vercel Domains
       // "Redirect www to apex" setting — that hop runs before this config.
       // Explicit GSC-flagged money URLs first so www cannot self-canonicalize.
+      // One-hop www → apex+canonical path avoids GSC "Redirect error" chains.
       {
         source: "/solutions/ecommerce-website-development",
         has: [{ type: "host", value: "www.thetrifusion.in" }],
@@ -41,6 +42,25 @@ const nextConfig = {
         source: "/services/digital-marketing",
         has: [{ type: "host", value: "www.thetrifusion.in" }],
         destination: "https://thetrifusion.in/services/digital-marketing",
+        permanent: true,
+      },
+      {
+        source: "/services/website-development",
+        has: [{ type: "host", value: "www.thetrifusion.in" }],
+        destination: "https://thetrifusion.in/services/website-development",
+        permanent: true,
+      },
+      {
+        source: "/services/mlm-crm-development",
+        has: [{ type: "host", value: "www.thetrifusion.in" }],
+        destination: "https://thetrifusion.in/services/mlm-crm-development",
+        permanent: true,
+      },
+      {
+        // GSC Redirect error: www hop + path hop. Land on the services URL.
+        source: "/solutions/web-development-company-jaipur",
+        has: [{ type: "host", value: "www.thetrifusion.in" }],
+        destination: "https://thetrifusion.in/services/website-development",
         permanent: true,
       },
       {
@@ -90,6 +110,39 @@ const nextConfig = {
       {
         source: "/services/web-development",
         destination: "/services/website-development",
+        permanent: true,
+      },
+      // Legacy ads landings → indexed /services twins (was 200 + noindex).
+      {
+        source: "/web-development",
+        destination: "/services/website-development",
+        permanent: true,
+      },
+      {
+        source: "/android-app-development",
+        destination: "/services/android-app-development",
+        permanent: true,
+      },
+      {
+        source: "/ios-app-development",
+        destination: "/services/ios-app-development",
+        permanent: true,
+      },
+      // GSC 404: old pagination / mistyped hub.
+      {
+        source: "/blog-1",
+        destination: "/blog",
+        permanent: true,
+      },
+      // Legacy hashed OG image URLs (route-group hash) → stable opengraph-image.
+      {
+        source: "/blog/:slug/opengraph-image-:hash",
+        destination: "/blog/:slug/opengraph-image",
+        permanent: true,
+      },
+      {
+        source: "/solutions/:slug/opengraph-image-:hash",
+        destination: "/solutions/:slug/opengraph-image",
         permanent: true,
       },
       {

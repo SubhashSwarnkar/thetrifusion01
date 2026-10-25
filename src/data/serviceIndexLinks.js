@@ -123,11 +123,17 @@ export const SERVICE_SIBLINGS = {
     "graphic-design",
     "software-development",
   ],
+  // Indexed hub (GSC): push crawl equity to Discovered /services URLs.
   "mobile-app-development": [
     "ios-app-development",
     "android-app-development",
+    "ai-development",
+    "software-development",
     "ui-ux-design",
     "website-development",
+    "fintech-app-development",
+    "ev-charging-app-development",
+    "on-demand",
   ],
   "ios-app-development": [
     "android-app-development",
@@ -202,11 +208,17 @@ export const SERVICE_SIBLINGS = {
     "fintech-app-development",
     "website-development",
   ],
+  // Indexed hub (GSC): mesh into software, apps, MLM, CRM; products are
+  // linked separately via fintech relatedLinks (bbps/aeps/dmt/recharge).
   "fintech-app-development": [
     "software-development",
     "mobile-app-development",
-    "website-development",
+    "android-app-development",
+    "ios-app-development",
+    "mlm-crm-development",
     "crm-erp-development",
+    "website-development",
+    "ai-development",
   ],
   "ev-charging-app-development": [
     "software-development",
@@ -214,11 +226,135 @@ export const SERVICE_SIBLINGS = {
     "android-app-development",
     "ios-app-development",
   ],
+  // Indexed hub (GSC): push equity to Discovered ops / AI / fintech URLs.
   "crm-erp-development": [
     "software-development",
     "mlm-crm-development",
     "salesforce",
     "business-modernization",
+    "rpa",
+    "ai-development",
+    "fintech-app-development",
+    "on-demand",
+    "devops",
+  ],
+};
+
+/**
+ * Extra referring links rendered on the three GSC-indexed service pages so
+ * Discovered URLs stop looking like orphans. Paths only (apex-relative).
+ */
+export const INDEXED_HUB_REFERRING_LINKS = {
+  "mobile-app-development": [
+    {
+      href: "/services/android-app-development",
+      title: "Android app development",
+      text: "Play Store-first Android builds from Jaipur.",
+    },
+    {
+      href: "/services/ios-app-development",
+      title: "iOS app development",
+      text: "App Store and TestFlight delivery.",
+    },
+    {
+      href: "/services/ai-development",
+      title: "AI development",
+      text: "Assistants and document ops inside the app.",
+    },
+    {
+      href: "/services/software-development",
+      title: "Custom software development",
+      text: "APIs and admin that sit behind the mobile app.",
+    },
+    {
+      href: "/services/ui-ux-design",
+      title: "UI/UX design",
+      text: "Figma flows before the build.",
+    },
+    {
+      href: "/services/ev-charging-app-development",
+      title: "EV charging app development",
+      text: "Driver apps on OCPP/OCPI stacks.",
+    },
+  ],
+  "crm-erp-development": [
+    {
+      href: "/services/software-development",
+      title: "Custom software development",
+      text: "When CRM is one module of a larger product.",
+    },
+    {
+      href: "/services/mlm-crm-development",
+      title: "MLM CRM development",
+      text: "Unilevel trees and payout ledgers.",
+    },
+    {
+      href: "/services/salesforce",
+      title: "Salesforce implementation",
+      text: "Flows on an org you already pay for.",
+    },
+    {
+      href: "/services/rpa",
+      title: "RPA services",
+      text: "Invoice and Tally bots beside the CRM.",
+    },
+    {
+      href: "/services/business-modernization",
+      title: "Business modernization",
+      text: "Spreadsheet cutovers into CRM/ERP.",
+    },
+    {
+      href: "/services/ai-development",
+      title: "AI development",
+      text: "Retrieval and assistants on CRM data.",
+    },
+    {
+      href: "/services/fintech-app-development",
+      title: "Fintech app development",
+      text: "When wallets and settlement sit next to CRM.",
+    },
+  ],
+  "fintech-app-development": [
+    {
+      href: "/services/fintech-app-development/bbps-software",
+      title: "BBPS software",
+      text: "Bharat BillPay retailer and distributor panels.",
+    },
+    {
+      href: "/services/fintech-app-development/aeps-software",
+      title: "AEPS software",
+      text: "Aadhaar-enabled payments on certified devices.",
+    },
+    {
+      href: "/services/fintech-app-development/dmt-software",
+      title: "DMT software",
+      text: "Domestic money transfer for retailer networks.",
+    },
+    {
+      href: "/services/fintech-app-development/recharge-software",
+      title: "Recharge software",
+      text: "Mobile and DTH top-ups on your partner API.",
+    },
+    {
+      href: "/services/software-development",
+      title: "Custom software development",
+      text: "When fintech sits inside a broader product.",
+    },
+    {
+      href: "/services/mlm-crm-development",
+      title: "MLM CRM development",
+      text: "When wallet payouts sit next to a compensation tree.",
+    },
+    {
+      href: "/services/android-app-development",
+      title: "Android app development",
+      text: "Retailer apps that ship on Play Store.",
+    },
+    {
+      href: "/services/mobile-app-development",
+      title: "Mobile app development",
+      text: "iOS + Android when both stores matter.",
+    },
   ],
 };
 

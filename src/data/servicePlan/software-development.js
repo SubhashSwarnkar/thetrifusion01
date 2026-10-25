@@ -8,7 +8,7 @@ import { LIVE, NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: named lead-engineer bios + personal LinkedIn URLs.
  */
 export default {
-  contentUpdatedAt: "2026-10-12",
+  contentUpdatedAt: "2026-10-25",
   metaTitle: "Custom Software Development Company in Jaipur | TheTriFusion",
   bannerTitle: "Custom Software Development Company in Jaipur",
   metaDescription:

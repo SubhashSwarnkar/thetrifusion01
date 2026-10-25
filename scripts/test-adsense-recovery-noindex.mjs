@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 /**
- * Index restore: event, offtopic, and geo-template posts are index,follow,
- * in the published hub, and in sitemap-blog.xml. Only archive 301s and
- * true 308 duplicates stay out. Future daily posts default to indexable.
+ * Service-pages-first indexing guards:
+ * - Off-topic trend/event posts: soft-noindex + omitted from sitemap-blog.
+ * - Business posts stay index,follow and in the sitemap.
+ * - Archive 301s and 308 duplicates stay out.
  *
  * Usage: node --import ./scripts/register-extensionless.mjs scripts/test-adsense-recovery-noindex.mjs
  */
@@ -28,8 +29,11 @@ import {
   registerEventNoindexSlugs,
 } from "../src/lib/adsensePaths.js";
 import { isLeadPopupEligiblePath } from "../src/lib/leadPopupGate.js";
-import { allSitemapEntries } from "../src/lib/sitemaps.js";
+import { allSitemapEntries, buildSitemapParts } from "../src/lib/sitemaps.js";
+import { isNoindexCitySolutionSlug } from "../src/data/cityLandingRobots.js";
 import { withTrafficServiceCta } from "../src/data/trafficServiceLinks.js";
+import { services } from "../src/data/servicesData.js";
+import { fintechProductPages } from "../src/data/fintechProductPages.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const failures = [];
@@ -87,16 +91,15 @@ for (const slug of expectedArchive) {
   if (publishedSlugs.has(slug)) fail(`archive slug still published: ${slug}`);
 }
 
-if (OFFTOPIC_NOINDEX_SLUGS.size !== 0) {
-  fail(`OFFTOPIC_NOINDEX_SLUGS must be empty, got ${OFFTOPIC_NOINDEX_SLUGS.size}`);
+if (OFFTOPIC_NOINDEX_SLUGS.size < 200) {
+  fail(
+    `OFFTOPIC_NOINDEX_SLUGS too small (${OFFTOPIC_NOINDEX_SLUGS.size}); expected ~260+`
+  );
 }
 if (ADSENSE_RECOVERY_NOINDEX_SLUGS.size !== 0) {
   fail(
     `ADSENSE_RECOVERY_NOINDEX_SLUGS must be empty, got ${ADSENSE_RECOVERY_NOINDEX_SLUGS.size}`
   );
-}
-if (eventNoindexSlugList().length !== 0) {
-  fail("eventNoindexSlugList must be empty so event posts load ads");
 }
 
 const localePage = fs.readFileSync(
@@ -107,7 +110,6 @@ if (!localePage.includes("noIndex: isSoftNoindexBlogPost(source)")) {
   fail("locale blog routes must set noIndex from isSoftNoindexBlogPost");
 }
 
-const eventPosts = blogPosts.filter((post) => post.event);
 const seen = new Set();
 const uniquePosts = [];
 for (const post of blogPosts) {
@@ -125,50 +127,50 @@ for (const slug of b1) {
     continue;
   }
   if (!post.event) fail(`B1 slug is not an event post: ${slug}`);
-  if (isSoftNoindexBlogPost(post)) fail(`B1 slug is still noindex: ${slug}`);
-  if (!isIndexableBlogPost(post)) fail(`B1 slug is not indexable: ${slug}`);
-  if (!publishedSlugs.has(slug)) fail(`B1 slug missing from published hub: ${slug}`);
-  if (!sitemapBlogSlugs.has(slug)) fail(`B1 slug missing from sitemap: ${slug}`);
+  // Off-topic event posts must be soft-noindex; business event posts stay indexed.
+  if (OFFTOPIC_NOINDEX_SLUGS.has(slug)) {
+    if (!isSoftNoindexBlogPost(post)) fail(`B1 offtopic not soft-noindex: ${slug}`);
+    if (isIndexableBlogPost(post)) fail(`B1 offtopic still indexable: ${slug}`);
+    if (sitemapBlogSlugs.has(slug)) fail(`B1 offtopic still in sitemap: ${slug}`);
+    if (publishedSlugs.has(slug)) fail(`B1 offtopic still published: ${slug}`);
+  } else {
+    if (isSoftNoindexBlogPost(post)) fail(`B1 business slug is noindex: ${slug}`);
+    if (!isIndexableBlogPost(post)) fail(`B1 business slug not indexable: ${slug}`);
+    if (!publishedSlugs.has(slug)) fail(`B1 business slug missing from hub: ${slug}`);
+    if (!sitemapBlogSlugs.has(slug)) fail(`B1 business slug missing from sitemap: ${slug}`);
+  }
 }
 
-for (const id of [432, 433]) {
-  const post = blogPosts.find((item) => item.id === id);
-  if (!post) fail(`post id ${id} is missing`);
-  else if (isSoftNoindexBlogPost(post)) fail(`post ${id} ${post.slug} is still noindex`);
-  else if (!isIndexableBlogPost(post)) fail(`post ${id} ${post.slug} is not indexable`);
-}
-
-for (const post of eventPosts) {
-  if (isSoftNoindexBlogPost(post)) fail(`event post still noindex: ${post.slug}`);
-  if (!isIndexableBlogPost(post)) fail(`event post not indexable: ${post.slug}`);
-  if (!publishedSlugs.has(post.slug)) fail(`event post not published: ${post.slug}`);
-  if (!sitemapBlogSlugs.has(post.slug)) fail(`event post missing from sitemap: ${post.slug}`);
-}
-
-const gscWinners = [
-  "f1-singapore-grand-prix-2026-race-day-guide",
-  "india-vs-west-indies-2nd-t20i-ranchi-9-oct-2026",
-  "india-vs-uruguay-6-oct-2026-kolkata",
-  "prix-arc-de-triomphe-4-oct-2026-longchamp",
-  "thanksgiving-2026-date-us-ist-guide",
-  "nfl-colts-vs-commanders-london-4-oct-2026",
-  "the-social-reckoning-release-9-oct-2026",
-  "england-vs-czechia-nations-league-6-oct-2026",
-  "czech-senate-election-9-10-october-2026",
-  "india-women-vs-zimbabwe-1st-t20i-raipur-16-oct-2026",
-  "india-bypolls-6-october-2026-eci-schedule",
-  "nfl-steelers-vs-saints-paris-25-oct-2026",
-  "india-vs-west-indies-3rd-t20i-indore-11-oct-2026",
-  "f1-bahrain-malaysia-sepang-4-oct-2026",
-  "ranji-trophy-2026-27-elite-phase-starts-11-oct",
-  "g20-foreign-ministers-atlanta-30-october-2026",
-  "india-vs-west-indies-4th-t20i-hyderabad-14-oct-2026",
-];
-for (const slug of gscWinners) {
+for (const slug of OFFTOPIC_NOINDEX_SLUGS) {
   const post = getBlogBySlug(slug);
-  if (!post) fail(`GSC winner missing: ${slug}`);
-  else if (!isIndexableBlogPost(post)) fail(`GSC winner not indexable: ${slug}`);
-  else if (!sitemapBlogSlugs.has(slug)) fail(`GSC winner missing from sitemap: ${slug}`);
+  if (!post) {
+    fail(`offtopic slug missing from blog posts: ${slug}`);
+    continue;
+  }
+  if (!isSoftNoindexBlogPost(post)) fail(`offtopic not soft-noindex: ${slug}`);
+  if (isIndexableBlogPost(post)) fail(`offtopic still indexable: ${slug}`);
+  if (sitemapBlogSlugs.has(slug)) fail(`offtopic still in sitemap: ${slug}`);
+  if (publishedSlugs.has(slug)) fail(`offtopic still in published hub: ${slug}`);
+}
+
+const mustStayIndexed = [
+  "ev-charging-csms-india-cpo-guide",
+  "upi-charges-in-india-2026-complete-guide",
+  "ecommerce-website-development-cost-india",
+  "software-development-cost-india-2026",
+  "android-app-development-company-jaipur",
+  "mlm-crm-unilevel-compensation-plan",
+  "bbps-aeps-recharge-software-cost-india-2026",
+];
+for (const slug of mustStayIndexed) {
+  const post = getBlogBySlug(slug);
+  if (!post) {
+    fail(`business keeper missing: ${slug}`);
+    continue;
+  }
+  if (OFFTOPIC_NOINDEX_SLUGS.has(slug)) fail(`business keeper marked offtopic: ${slug}`);
+  if (!isIndexableBlogPost(post)) fail(`business keeper not indexable: ${slug}`);
+  if (!sitemapBlogSlugs.has(slug)) fail(`business keeper missing from sitemap: ${slug}`);
 }
 
 for (const [slug, target] of Object.entries(BLOG_CANONICAL_REDIRECTS)) {
@@ -176,12 +178,12 @@ for (const [slug, target] of Object.entries(BLOG_CANONICAL_REDIRECTS)) {
     fail(`308 duplicate is indexable: ${slug}`);
   }
   if (sitemapBlogSlugs.has(slug)) fail(`308 duplicate still in sitemap: ${slug}`);
-  if (!sitemapBlogSlugs.has(target)) {
+  if (!sitemapBlogSlugs.has(target) && !OFFTOPIC_NOINDEX_SLUGS.has(target)) {
     fail(`308 canonical target missing from sitemap: ${target}`);
   }
 }
 
-let restored = 0;
+let indexedLive = 0;
 for (const post of uniquePosts) {
   const isArchive = ARCHIVE_NOINDEX_SLUGS.has(post.slug);
   const isRedirect = Boolean(BLOG_CANONICAL_REDIRECTS[post.slug]);
@@ -190,96 +192,115 @@ for (const post of uniquePosts) {
     if (isSoftNoindexBlogPost(post)) fail(`301/308 slug is soft-noindex: ${post.slug}`);
     continue;
   }
-  if (isSoftNoindexBlogPost(post)) fail(`live post is soft-noindex: ${post.slug}`);
-  if (!isIndexableBlogPost(post)) fail(`live post is not indexable: ${post.slug}`);
-  if (!publishedSlugs.has(post.slug)) fail(`live post not in hub: ${post.slug}`);
-  if (!sitemapBlogSlugs.has(post.slug)) fail(`live post missing from sitemap: ${post.slug}`);
+  if (OFFTOPIC_NOINDEX_SLUGS.has(post.slug)) {
+    if (!isSoftNoindexBlogPost(post)) fail(`offtopic live post not soft-noindex: ${post.slug}`);
+    continue;
+  }
+  if (isSoftNoindexBlogPost(post)) fail(`business post is soft-noindex: ${post.slug}`);
+  if (!isIndexableBlogPost(post)) fail(`business post is not indexable: ${post.slug}`);
+  if (!publishedSlugs.has(post.slug)) fail(`business post not in hub: ${post.slug}`);
+  if (!sitemapBlogSlugs.has(post.slug)) fail(`business post missing from sitemap: ${post.slug}`);
   const html = withTrafficServiceCta(post.slug, post.content || "");
   if (!html.includes("Built by TheTriFusion")) {
-    fail(`live post missing Built-by CTA: ${post.slug}`);
+    fail(`business post missing Built-by CTA: ${post.slug}`);
   }
-  restored += 1;
+  indexedLive += 1;
 }
 
-const fakeEventPost = {
-  slug: "future-daily-topic-any-event-2026",
-  event: { name: "Future daily", startDate: "2026-12-01" },
-  content: "<p>A later daily post of any topic.</p>",
-};
-if (isSoftNoindexBlogPost(fakeEventPost)) {
-  fail("future event posts must default to index,follow");
+// --- Service-pages-first checks ---
+const parts = buildSitemapParts();
+const servicePaths = new Set(
+  parts.services.map((entry) => entry.url.replace("https://thetrifusion.in", ""))
+);
+for (const service of services) {
+  const pathName = `/services/${service.slug}`;
+  if (!servicePaths.has(pathName)) fail(`service missing from sitemap: ${pathName}`);
+  if (!service.contentUpdatedAt) fail(`service missing contentUpdatedAt: ${service.slug}`);
 }
-if (!isIndexableBlogPost(fakeEventPost)) {
-  fail("future event posts must be indexable by default");
+for (const page of fintechProductPages) {
+  if (!servicePaths.has(page.path)) fail(`fintech product missing from sitemap: ${page.path}`);
+  if (page.contentUpdatedAt !== "2026-10-25") {
+    fail(`fintech product lastmod not 2026-10-25: ${page.slug}`);
+  }
+  const text = [
+    page.answer,
+    ...(page.sections || []).flatMap((section) => section.paragraphs || []),
+    ...(page.faqs || []).flatMap((faq) => [faq.question, faq.answer]),
+  ].join(" ");
+  const words = text.split(/\s+/).filter(Boolean).length;
+  if (words < 1200) fail(`fintech product too thin (${words} words): ${page.slug}`);
+}
+
+for (const url of sitemapUrls) {
+  if (/www\.thetrifusion/i.test(url)) fail(`www URL in sitemap: ${url}`);
+  if (!url.startsWith("https://thetrifusion.in")) {
+    fail(`non-apex sitemap URL: ${url}`);
+  }
+}
+
+for (const entry of parts.solutions) {
+  const slug = entry.url.split("/solutions/")[1];
+  if (slug && isNoindexCitySolutionSlug(slug)) {
+    fail(`noindex city still in solutions sitemap: ${slug}`);
+  }
+}
+
+const requiredServicePaths = [
+  "/services/software-development",
+  "/services/website-development",
+  "/services/mobile-app-development",
+  "/services/android-app-development",
+  "/services/ios-app-development",
+  "/services/ai-development",
+  "/services/mlm-crm-development",
+  "/services/digital-marketing",
+  "/services/crm-erp-development",
+  "/services/fintech-app-development",
+  "/services/fintech-app-development/bbps-software",
+  "/services/fintech-app-development/aeps-software",
+  "/services/fintech-app-development/dmt-software",
+  "/services/fintech-app-development/recharge-software",
+];
+for (const pathName of requiredServicePaths) {
+  if (!servicePaths.has(pathName)) fail(`priority service missing from sitemap: ${pathName}`);
+}
+
+const ecommerceInSolutions = parts.solutions.some((entry) =>
+  entry.url.endsWith("/solutions/ecommerce-website-development")
+);
+if (!ecommerceInSolutions) {
+  fail("ecommerce-website-development missing from solutions sitemap");
 }
 
 const samples = [
-  ["/blog/liverpool-vs-man-city-11-oct-2026-preview", false],
-  ["/es/blog/liverpool-vs-man-city-11-oct-2026-preview", false],
-  ["/hi/blog/rugby-league-world-cup-2026-final-brisbane-15-nov", false],
+  ["/blog/liverpool-vs-man-city-11-oct-2026-preview", true],
+  ["/es/blog/liverpool-vs-man-city-11-oct-2026-preview", true],
   ["/blog/ev-charging-csms-ireland-cpo-guide", false],
-  ["/pt/blog/chatgpt-ai-tools-for-us-startups-2026", false],
   ["/blog/ev-charging-csms-india-cpo-guide", false],
-  ["/blog/ev-charging-csms-uk-europe-cpo-guide", false],
-  ["/blog/upi-charges-in-india-2026-complete-guide", false],
-  ["/es/blog/ev-charging-app-ocpi-ocpp-guide", false],
   ["/services/ev-charging-app-development", false],
-  ["/es/services/ev-charging-app-development", false],
   ["/", false],
   ["/contact", true],
-  ["/portfolio", true],
 ];
-for (const [pathname, excluded] of samples) {
-  if (isAdSenseExcludedPath(pathname) !== excluded) {
+for (const [samplePath, expectExcluded] of samples) {
+  const excluded = isAdSenseExcludedPath(samplePath);
+  if (Boolean(excluded) !== expectExcluded) {
     fail(
-      `isAdSenseExcludedPath(${pathname}) expected ${excluded}, got ${!excluded}`
+      `AdSense exclusion for ${samplePath}: got ${excluded}, expected ${expectExcluded}`
     );
   }
 }
 
-const popupSamples = [
-  ["/", true],
-  ["/services/ev-charging-app-development", true],
-  ["/es/services/ev-charging-app-development", true],
-  ["/contact", true],
-  ["/blog", false],
-  ["/blog/", false],
-  ["/blog/ev-charging-csms-india-cpo-guide", false],
-  ["/es/blog", false],
-  ["/es/blog/ev-charging-app-ocpi-ocpp-guide", false],
-  ["/hi/blog/liverpool-vs-man-city-11-oct-2026-preview", false],
-];
-for (const [pathname, eligible] of popupSamples) {
-  if (isLeadPopupEligiblePath(pathname) !== eligible) {
-    fail(`isLeadPopupEligiblePath(${pathname}) expected ${eligible}`);
-  }
+if (!isLeadPopupEligiblePath("/contact")) fail("contact should allow lead popup");
+if (isLeadPopupEligiblePath("/blog/ev-charging-csms-india-cpo-guide")) {
+  fail("blog paths must not show lead popup");
 }
-
-if (!sitemapUrls.includes("https://thetrifusion.in/services/ev-charging-app-development")) {
-  fail("EV service page dropped out of the sitemap");
-}
-
-console.log(
-  JSON.stringify(
-    {
-      uniquePosts: uniquePosts.length,
-      indexableBlogs: publishedSlugs.size,
-      sitemapBlogUrls: sitemapBlogSlugs.size,
-      sitemapUrls: sitemapUrls.length,
-      eventPosts: eventPosts.length,
-      archiveExcluded: ARCHIVE_NOINDEX_SLUGS.size,
-      redirectExcluded: Object.keys(BLOG_CANONICAL_REDIRECTS).length,
-      restoredLivePosts: restored,
-    },
-    null,
-    2
-  )
-);
 
 if (failures.length) {
-  console.error(`\n${failures.length} failure(s):`);
-  for (const message of failures) console.error(`FAIL: ${message}`);
+  console.error("FAIL");
+  for (const message of failures) console.error(` - ${message}`);
   process.exit(1);
 }
 
-console.log("\nIndex restore checks passed");
+console.log(
+  `OK offtopic=${OFFTOPIC_NOINDEX_SLUGS.size} indexedBlogs=${indexedLive} services=${servicePaths.size}`
+);

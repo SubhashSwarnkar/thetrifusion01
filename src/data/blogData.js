@@ -44,16 +44,16 @@ export { OFFTOPIC_NOINDEX_SLUGS, ADSENSE_RECOVERY_NOINDEX_SLUGS };
  * Blog editorial: ship 2 Jaipur / Rajasthan / India delivery posts each month.
  * Featured = local or product work.
  *
- * Indexing is a narrow blocklist. New daily posts of any topic default to
- * index,follow, sitemap-blog.xml (with lastmod), /blog listing, and llms-full.
- * Only these stay out:
+ * Indexing is a blocklist so service pages can recover crawl trust:
  * - ARCHIVE_NOINDEX_SLUGS: empty/broken 2024 posts, 301 to /blog.
  * - BLOG_CANONICAL_REDIRECTS: true duplicates, 308 to the canonical twin.
+ * - OFFTOPIC_NOINDEX_SLUGS: sports / celebs / exams / elections / F1 /
+ *   non-English trends / non-software event posts — HTTP 200, noindex,follow,
+ *   omitted from sitemap-blog.xml (do not delete).
  *
- * OFFTOPIC_NOINDEX_SLUGS and ADSENSE_RECOVERY_NOINDEX_SLUGS are empty. A
- * truthy `event` field is metadata for Event schema, not a robots rule.
- * Re-adding topic slugs to those sets is how GSC impressions collapsed
- * after PR #44 (7 Oct 2026).
+ * Business posts (software, apps, CRM/ERP, fintech, ecommerce, digital
+ * marketing) stay index,follow. A truthy `event` field alone is not a robots
+ * rule; off-topic event slugs are listed explicitly in OFFTOPIC_NOINDEX_SLUGS.
  */
 
 export const ARCHIVE_NOINDEX_SLUGS = new Set([
@@ -2784,9 +2784,9 @@ export function isEventPost(post) {
 }
 
 /**
- * HTTP 200, self-canonical, `noindex, follow`. Distinct from ARCHIVE_NOINDEX_SLUGS.
- * Always false: topic/event/template lists no longer noindex live posts.
- * Keep the helper so generateMetadata can stay on one flag.
+ * HTTP 200, self-canonical, `noindex, follow`. Distinct from ARCHIVE_NOINDEX_SLUGS
+ * (those 301). Soft-noindex posts stay live for existing links but leave the
+ * index and sitemap so Google can trust /services pages again.
  */
 export function isSoftNoindexBlogPost(post) {
   if (!post) return false;

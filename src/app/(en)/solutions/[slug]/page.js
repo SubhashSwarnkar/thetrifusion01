@@ -10,6 +10,7 @@ import {
   getRelatedGuidesForSolution,
 } from "data/blogData";
 import { buildMetadata } from "lib/seoConfig";
+import { isNoindexCitySolutionSlug } from "data/cityLandingRobots";
 import {
   breadcrumbSchema,
   faqSchema,
@@ -62,6 +63,8 @@ export function generateMetadata({ params }) {
     ),
     path: `/solutions/${page.slug}`,
     image: `/solutions/${page.slug}/opengraph-image`,
+    // Non-Jaipur templated city landings: live but noindex (doorway risk).
+    noIndex: isNoindexCitySolutionSlug(page.slug),
   });
 }
 

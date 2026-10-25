@@ -1,66 +1,102 @@
 // Slim footer links so seoLandingPages stays off the client bundle.
+// Non-Jaipur city landings are noindex — do not push them from the footer.
+// Fintech product URLs are listed so Google finds referring links to money pages.
 export const featuredSolutionNav = [
   {
-    "slug": "website-development",
-    "href": "/services/website-development",
-    "navLabel": "Web development — Jaipur office"
+    slug: "website-development",
+    href: "/services/website-development",
+    navLabel: "Website development — Jaipur",
   },
   {
-    "slug": "software-company-rajasthan",
-    "navLabel": "Software company in Rajasthan"
+    slug: "software-development",
+    href: "/services/software-development",
+    navLabel: "Custom software development",
   },
   {
-    "slug": "ecommerce-website-development",
-    "navLabel": "Ecommerce website development"
+    slug: "software-company-rajasthan",
+    navLabel: "Software company in Rajasthan",
   },
   {
-    "slug": "mobile-app-development",
-    "href": "/services/mobile-app-development",
-    "navLabel": "Mobile app development"
+    slug: "ecommerce-website-development",
+    navLabel: "Ecommerce website development",
   },
   {
-    "slug": "digital-marketing",
-    "href": "/services/digital-marketing",
-    "navLabel": "Digital marketing & performance ads"
+    slug: "mobile-app-development",
+    href: "/services/mobile-app-development",
+    navLabel: "Mobile app development",
   },
   {
-    "slug": "website-development-company-bhilwara",
-    "navLabel": "Bhilwara websites (from Jaipur office)"
+    slug: "android-app-development",
+    href: "/services/android-app-development",
+    navLabel: "Android app development",
   },
   {
-    "slug": "website-development-company-udaipur",
-    "navLabel": "Udaipur websites (from Jaipur office)"
+    slug: "ios-app-development",
+    href: "/services/ios-app-development",
+    navLabel: "iOS app development",
   },
   {
-    "slug": "website-development-company-kota",
-    "navLabel": "Kota websites (from Jaipur office)"
+    slug: "ai-development",
+    href: "/services/ai-development",
+    navLabel: "AI development",
   },
   {
-    "slug": "website-development-company-ajmer",
-    "navLabel": "Ajmer websites (from Jaipur office)"
+    slug: "digital-marketing",
+    href: "/services/digital-marketing",
+    navLabel: "Digital marketing & performance ads",
   },
   {
-    "slug": "website-development-company-jaipur",
-    "navLabel": "Jaipur websites (HQ)"
+    slug: "mlm-crm-development",
+    href: "/services/mlm-crm-development",
+    navLabel: "MLM CRM development",
   },
   {
-    "slug": "custom-software-development-jaipur",
-    "navLabel": "Jaipur custom software (HQ)"
+    slug: "fintech-app-development",
+    href: "/services/fintech-app-development",
+    navLabel: "Fintech app development",
   },
   {
-    "slug": "mobile-app-development-company-jaipur",
-    "navLabel": "Jaipur mobile apps (HQ)"
+    slug: "bbps-software",
+    href: "/services/fintech-app-development/bbps-software",
+    navLabel: "BBPS software",
   },
   {
-    "slug": "digital-marketing-company-jaipur",
-    "navLabel": "Jaipur digital marketing (HQ)"
+    slug: "aeps-software",
+    href: "/services/fintech-app-development/aeps-software",
+    navLabel: "AEPS software",
   },
   {
-    "slug": "fintech-app-development-jaipur",
-    "navLabel": "Jaipur fintech (HQ)"
+    slug: "dmt-software",
+    href: "/services/fintech-app-development/dmt-software",
+    navLabel: "DMT software",
   },
   {
-    "slug": "ecommerce-website-development-jaipur",
-    "navLabel": "Jaipur ecommerce (HQ)"
-  }
+    slug: "recharge-software",
+    href: "/services/fintech-app-development/recharge-software",
+    navLabel: "Recharge software",
+  },
+  {
+    slug: "website-development-company-jaipur",
+    navLabel: "Jaipur websites (HQ)",
+  },
+  {
+    slug: "custom-software-development-jaipur",
+    navLabel: "Jaipur custom software (HQ)",
+  },
+  {
+    slug: "mobile-app-development-company-jaipur",
+    navLabel: "Jaipur mobile apps (HQ)",
+  },
+  {
+    slug: "digital-marketing-company-jaipur",
+    navLabel: "Jaipur digital marketing (HQ)",
+  },
+  {
+    slug: "fintech-app-development-jaipur",
+    navLabel: "Jaipur fintech (HQ)",
+  },
+  {
+    slug: "ecommerce-website-development-jaipur",
+    navLabel: "Jaipur ecommerce (HQ)",
+  },
 ];
