@@ -2055,9 +2055,67 @@ const coreServices = [
   }
 ];
 
+/** Map retired /blog/... hrefs to the closest live money URL (internal chrome only). */
+function liveHrefForRetiredBlog(href) {
+  const s = String(href || "").toLowerCase();
+  if (!s.startsWith("/blog/")) return href;
+  if (s.includes("ecommerce") || s.includes("shopify") || s.includes("woocommerce")) {
+    return "/solutions/ecommerce-website-development";
+  }
+  if (
+    s.includes("flutter") ||
+    s.includes("react-native") ||
+    s.includes("mobile") ||
+    s.includes("play-store") ||
+    s.includes("ios") ||
+    s.includes("android") ||
+    s.includes("app-")
+  ) {
+    return "/services/mobile-app-development";
+  }
+  if (s.includes("mlm")) return "/services/mlm-crm-development";
+  if (s.includes("fintech") || s.includes("bbps") || s.includes("aeps")) {
+    return "/services/fintech-app-development";
+  }
+  if (s.includes("website") || s.includes("nextjs") || s.includes("react-server")) {
+    return "/services/website-development";
+  }
+  if (s.includes("software") || s.includes("crm") || s.includes("erp")) {
+    return "/services/software-development";
+  }
+  return "/services";
+}
+
+function scrubRetiredBlogLinks(value) {
+  if (typeof value === "string") {
+    return value.replace(/\]\(\/blog\/[a-z0-9-]+\)/gi, (match) => {
+      const href = match.slice(2, -1); // /blog/...
+      return `](${liveHrefForRetiredBlog(href)})`;
+    }).replace(/href:\s*"(\/blog\/[a-z0-9-]+)"/gi, (_, href) => {
+      return `href: "${liveHrefForRetiredBlog(href)}"`;
+    });
+  }
+  if (Array.isArray(value)) {
+    return value.map(scrubRetiredBlogLinks);
+  }
+  if (value && typeof value === "object") {
+    const out = {};
+    for (const [key, child] of Object.entries(value)) {
+      if (key === "href" && typeof child === "string" && child.startsWith("/blog/")) {
+        out[key] = liveHrefForRetiredBlog(child);
+      } else {
+        out[key] = scrubRetiredBlogLinks(child);
+      }
+    }
+    return out;
+  }
+  return value;
+}
+
 function withPageSeo(service) {
   const extra = servicePageSeo[service.slug];
-  return extra ? { ...service, ...extra } : service;
+  const merged = extra ? { ...service, ...extra } : service;
+  return scrubRetiredBlogLinks(merged);
 }
 
 export const services = [...coreServices, ...nicheServices].map(withPageSeo);

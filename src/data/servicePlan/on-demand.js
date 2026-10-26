@@ -38,7 +38,7 @@ export default {
       id: "hire-rates",
       heading: "How we price dedicated developers",
       paragraphs: [
-        "Published project plans on [pricing](/pricing): ₹50,000 / ₹1,50,000 / ₹3,00,000. Those are engagement starting points, not a public monthly rate card. Competitors publish monthly bands; we will not invent ours. Ask for a written monthly or part-time rate for the role you need. Cost notes: [hire dedicated developers cost guide](/blog/hire-dedicated-developers-cost-guide-uk-australia).",
+        "Published project plans on [pricing](/pricing): ₹50,000 / ₹1,50,000 / ₹3,00,000. Those are engagement starting points, not a public monthly rate card. Competitors publish monthly bands; we will not invent ours. Ask for a written monthly or part-time rate for the role you need. Cost notes: [hire dedicated developers cost guide](/services).",
       ],
       comparison: {
         heading: "Engagement models",
@@ -110,7 +110,7 @@ export default {
       text: "When the seat is a mobile build with a definition of done.",
     },
     {
-      href: "/blog/hire-dedicated-developers-cost-guide-uk-australia",
+      href: "/services",
       title: "Hire dedicated developers cost guide",
       text: "How UK and Australian teams should read an India rate.",
     },

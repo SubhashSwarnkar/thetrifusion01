@@ -35,53 +35,14 @@ export function gstFaq(city) {
 }
 
 export function siblingCitySlugs(serviceKey, selfSlug, extras = []) {
+  // Jaipur HQ only — other city URLs 301 to services and must not be linked.
   const clusters = {
-    website: [
-      "website-development-company-jaipur",
-      "website-development-company-delhi",
-      "website-development-company-mumbai",
-      "website-development-company-bangalore",
-      "website-development-company-jodhpur",
-      "website-development-company-bhilwara",
-      "website-development-company-udaipur",
-      "website-development-company-kota",
-      "website-development-company-ajmer",
-    ],
-    software: [
-      "custom-software-development-jaipur",
-      "software-development-company-delhi",
-      "software-development-company-mumbai",
-      "software-development-company-bangalore",
-      "software-development-company-jodhpur",
-    ],
-    mobile: [
-      "mobile-app-development-company-jaipur",
-      "mobile-app-development-company-delhi",
-      "mobile-app-development-company-mumbai",
-      "mobile-app-development-company-bangalore",
-      "mobile-app-development-company-jodhpur",
-    ],
-    ecommerce: [
-      "ecommerce-website-development-jaipur",
-      "ecommerce-website-development-delhi",
-      "ecommerce-website-development-mumbai",
-      "ecommerce-website-development-bangalore",
-      "ecommerce-website-development-jodhpur",
-    ],
-    digitalMarketing: [
-      "digital-marketing-company-jaipur",
-      "digital-marketing-company-delhi",
-      "digital-marketing-company-mumbai",
-      "digital-marketing-company-bangalore",
-      "digital-marketing-company-jodhpur",
-    ],
-    fintech: [
-      "fintech-app-development-jaipur",
-      "fintech-app-development-delhi",
-      "fintech-app-development-mumbai",
-      "fintech-app-development-bangalore",
-      "fintech-app-development-jodhpur",
-    ],
+    website: ["website-development-company-jaipur"],
+    software: ["custom-software-development-jaipur"],
+    mobile: ["mobile-app-development-company-jaipur"],
+    ecommerce: ["ecommerce-website-development-jaipur"],
+    digitalMarketing: ["digital-marketing-company-jaipur"],
+    fintech: ["fintech-app-development-jaipur"],
   };
   return [...new Set([...(clusters[serviceKey] || []), ...extras])].filter(
     (slug) => slug !== selfSlug

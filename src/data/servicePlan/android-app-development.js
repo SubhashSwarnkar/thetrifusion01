@@ -6,7 +6,7 @@ import { LIVE, NAP_LINE, SOURCES, TEAM } from "./_shared";
  * TODO OWNER: device/vernacular proof (screenshots of Hindi UI, low-end device QA list).
  */
 export default {
-  contentUpdatedAt: "2026-10-12",
+  contentUpdatedAt: "2026-10-25",
   metaTitle: "Android App Development Company in Jaipur | Play Store Apps",
   bannerTitle: "Android App Development Company in Jaipur",
   metaDescription:
@@ -39,7 +39,7 @@ export default {
       id: "kotlin-vs-rn-vs-flutter",
       heading: "Kotlin vs React Native vs Flutter",
       paragraphs: [
-        "Kotlin when Android is the product. React Native or Flutter when iOS will follow. See [Flutter vs React Native](/blog/flutter-vs-react-native-2024) and the [Play Store launch checklist](/blog/google-play-store-app-launch-checklist-india-sme).",
+        "Kotlin when Android is the product. React Native or Flutter when iOS will follow. See [Flutter vs React Native](/services/mobile-app-development) and the [Play Store launch checklist](/services/mobile-app-development).",
       ],
       comparison: {
         heading: "How we choose",
@@ -55,7 +55,7 @@ export default {
       id: "play-store-checklist",
       heading: "Play Store launch checklist",
       paragraphs: [
-        "Signing keys, a Play Console account in your company name, testing tracks, store listing, and a privacy policy. The working list is on the [Google Play launch checklist for Indian SMEs](/blog/google-play-store-app-launch-checklist-india-sme).",
+        "Signing keys, a Play Console account in your company name, testing tracks, store listing, and a privacy policy. The working list is on the [Google Play launch checklist for Indian SMEs](/services/mobile-app-development).",
       ],
     },
     {
@@ -134,7 +134,7 @@ export default {
       text: "When the other store is the App Store.",
     },
     {
-      href: "/blog/google-play-store-app-launch-checklist-india-sme",
+      href: "/services/mobile-app-development",
       title: "Play Store launch checklist",
       text: "Accounts, signing, listing and review.",
     },

@@ -6,7 +6,7 @@ import { NAP_LINE, SOURCES, TEAM } from "./_shared";
  * TODO OWNER: pilot price you will publish (beyond the ₹2,00,000 Basic plan).
  */
 export default {
-  contentUpdatedAt: "2026-10-12",
+  contentUpdatedAt: "2026-10-25",
   metaTitle: "AI Development Company in Jaipur | Chatbots, RAG & AI Agents",
   bannerTitle: "AI Development Company in Jaipur",
   metaDescription:
@@ -30,7 +30,7 @@ export default {
       id: "ai-use-cases",
       heading: "AI use cases for Indian SMEs",
       paragraphs: [
-        "WhatsApp support or booking bots, invoice and document extraction into an ERP, an internal search assistant over your PDFs, and a human-reviewed agent that drafts replies. Related reading: [WhatsApp AI chatbot for Indian businesses](/blog/whatsapp-ai-chatbot-india-business), [custom GPT agents for SMEs](/blog/custom-gpt-agents-for-sme-india), [AI app development cost in India](/blog/ai-app-development-cost-india-2026).",
+        "WhatsApp support or booking bots, invoice and document extraction into an ERP, an internal search assistant over your PDFs, and a human-reviewed agent that drafts replies. Related reading: [WhatsApp AI chatbot for Indian businesses](/services/mobile-app-development), [custom GPT agents for SMEs](/services/ai-development), [AI app development cost in India](/services/mobile-app-development).",
       ],
     },
     {
@@ -100,7 +100,7 @@ export default {
     {
       question: "Can you build a WhatsApp AI chatbot for my business?",
       answer:
-        "Yes. We use the WhatsApp Business API through a provider you contract, plus a human review step. See /blog/whatsapp-ai-chatbot-india-business.",
+        "Yes. We use the WhatsApp Business API through a provider you contract, plus a human review step. See /services.",
     },
     {
       question: "Is my data safe — do you comply with the DPDP Act?",
@@ -110,7 +110,7 @@ export default {
     {
       question: "ChatGPT vs custom AI — what's the difference?",
       answer:
-        "ChatGPT is a general assistant. Custom AI here means a feature wired to your data, tools and a human review step. See /blog/custom-gpt-agents-for-sme-india.",
+        "ChatGPT is a general assistant. Custom AI here means a feature wired to your data, tools and a human review step. See /services.",
     },
     {
       question: "How long does an AI pilot take?",
@@ -135,17 +135,17 @@ export default {
       text: "When the job is a deterministic bot, not a model.",
     },
     {
-      href: "/blog/whatsapp-ai-chatbot-india-business",
+      href: "/services/mobile-app-development",
       title: "WhatsApp AI chatbot for Indian businesses",
       text: "Channel, review step, and what not to automate.",
     },
     {
-      href: "/blog/custom-gpt-agents-for-sme-india",
+      href: "/services/ai-development",
       title: "Custom GPT agents for SMEs",
       text: "Agents with tools and a human tick.",
     },
     {
-      href: "/blog/ai-app-development-cost-india-2026",
+      href: "/services/mobile-app-development",
       title: "AI app development cost in India",
       text: "What actually moves the quote.",
     },

@@ -535,4 +535,9 @@ const ajmer = {
   updatedAt: "2026-09-27",
 };
 
-export const cityServiceAreaPages = [bhilwara, udaipur, kota, ajmer];
+/**
+ * Retired non-Jaipur Rajasthan service-area pages. URLs 301 to
+ * /services/website-development (see citySolutionRedirects.js).
+ * Page objects kept above for reference / possible revive; not published.
+ */
+export const cityServiceAreaPages = [];

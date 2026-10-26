@@ -156,14 +156,6 @@ export default function Footer({ hideNewsletter = false }) {
                 </li>
                 <li>
                   <Link
-                    href="/blog"
-                    className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block"
-                  >
-                    Insights
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     href="/contact"
                     className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block"
                   >

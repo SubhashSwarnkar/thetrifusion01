@@ -172,12 +172,12 @@ export default {
       text: "Named React, Node or DevOps capacity when you need extra hands.",
     },
     {
-      href: "/blog/devops-ci-cd-checklist-sme-saas-2026",
+      href: "/services",
       title: "CI/CD checklist for SME SaaS",
       text: "What to put in the first pipeline before you scale the cloud bill.",
     },
     {
-      href: "/blog/webhook-reliability-idempotency-playbook-saas",
+      href: "/services/fintech-app-development",
       title: "Webhook reliability playbook",
       text: "Idempotency and retries next to the deploy pipeline.",
     },

@@ -393,6 +393,16 @@ export function enrichLandingPage(page) {
     relatedBlogSlug: null,
   };
 
+  const mergedLinks = [
+    ...(extra.relatedLinks || page.relatedLinks || []),
+  ].filter(
+    (link) =>
+      link &&
+      typeof link.href === "string" &&
+      !link.href.startsWith("/blog") &&
+      !link.href.includes("/blog/")
+  );
+
   return {
     primaryCtaLabel: "Get a project estimate",
     primaryCtaHref: "/estimate",
@@ -407,16 +417,17 @@ export function enrichLandingPage(page) {
     criteria: [],
     updatedAt: "2026-08-20",
     relatedSolutionSlugs: related.relatedSolutionSlugs,
-    relatedBlogSlug: related.relatedBlogSlug,
+    relatedBlogSlug: null,
     ...page,
     ...extra,
+    relatedLinks: mergedLinks.length ? mergedLinks : undefined,
     relatedSolutionSlugs:
       extra.relatedSolutionSlugs ||
       page.relatedSolutionSlugs ||
       related.relatedSolutionSlugs ||
       [],
-    relatedBlogSlug:
-      extra.relatedBlogSlug || related.relatedBlogSlug || null,
+    // Blogs removed from the live site — never surface related blog cards.
+    relatedBlogSlug: null,
     updatedAt: extra.updatedAt || page.updatedAt || "2026-08-20",
     whatsappMessage:
       extra.whatsappMessage ||

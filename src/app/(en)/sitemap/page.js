@@ -5,7 +5,7 @@ import { NOINDEX_PATHS, pageMetadata, pages } from "lib/seoConfig";
 import { services } from "data/servicesData";
 import { seoLandingPages, getSeoLandingBySlug } from "data/seoLandingPages";
 import { REDIRECTED_SOLUTION_SLUGS } from "lib/solutionRedirects";
-import { getPublishedBlogPosts } from "data/blogData";
+import { isNoindexCitySolutionSlug } from "data/cityLandingRobots";
 import { fintechProductPages } from "data/fintechProductPages";
 
 export const metadata = pageMetadata("/sitemap");
@@ -18,7 +18,6 @@ const CORE_LABELS = {
   "/portfolio": "Portfolio",
   "/pricing": "Pricing",
   "/contact": "Contact",
-  "/blog": "Blog",
   "/faq": "FAQ",
   "/editorial-policy": "Editorial policy",
   "/privacy": "Privacy",
@@ -26,9 +25,11 @@ const CORE_LABELS = {
   "/sitemap": "HTML sitemap",
 };
 
+const GONE_CORE_PATHS = new Set(["/blog"]);
+
 export default function RoutePage() {
   const core = Object.keys(pages)
-    .filter((path) => !NOINDEX_PATHS.has(path))
+    .filter((path) => !NOINDEX_PATHS.has(path) && !GONE_CORE_PATHS.has(path))
     .map((path) => ({
       href: path,
       label: CORE_LABELS[path] || path,
@@ -49,7 +50,8 @@ export default function RoutePage() {
     .filter(
       (raw) =>
         raw.slug !== "online-store-development" &&
-        !REDIRECTED_SOLUTION_SLUGS.has(raw.slug)
+        !REDIRECTED_SOLUTION_SLUGS.has(raw.slug) &&
+        !isNoindexCitySolutionSlug(raw.slug)
     )
     .map((raw) => {
       const page = getSeoLandingBySlug(raw.slug);
@@ -59,16 +61,10 @@ export default function RoutePage() {
       };
     });
 
-  const blogItems = getPublishedBlogPosts().map((post) => ({
-    href: `/blog/${post.slug}`,
-    label: post.title,
-  }));
-
   const groups = [
     { title: "Company", items: core },
     { title: "Services", items: serviceItems },
     { title: "Solutions", items: solutionItems },
-    { title: "Blog", items: blogItems },
   ];
 
   return (

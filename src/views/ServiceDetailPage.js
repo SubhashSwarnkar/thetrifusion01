@@ -11,6 +11,7 @@ import BrandTrustStrip from "components/BrandTrustStrip";
 import ServiceIcon from "components/ServiceIcon";
 import { getServiceBySlug, services } from "data/servicesData";
 import {
+  INDEXED_HUB_REFERRING_LINKS,
   SERVICE_KEYWORD_BY_SLUG,
   SERVICE_SIBLINGS,
 } from "data/serviceIndexLinks";
@@ -300,7 +301,8 @@ export default function ServiceDetailPage({
     relatedSiblings.length
       ? relatedSiblings
       : services.filter((item) => item.slug !== slug)
-  ).slice(0, 5);
+  ).slice(0, relatedSiblings.length > 5 ? 9 : 5);
+  const hubReferringLinks = INDEXED_HUB_REFERRING_LINKS[slug] || [];
   const primary = accentForSlug(service?.slug);
 
   useEffect(() => {
@@ -932,21 +934,32 @@ export default function ServiceDetailPage({
         </section>
       )}
 
-      {service.relatedLinks?.length ? (
-        <section id="further-reading" className="container mx-auto px-5 py-16 border-t border-gray-100">
-          <SectionHeading kicker="Related">Related services and guides</SectionHeading>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl">
-            {service.relatedLinks.map((item) => (
-              <li key={item.href}>
-                <Link href={canonicalInternalHref(item.href)} className="block h-full rounded-2xl border border-gray-100 p-5 hover:border-theme-purple/40">
-                  <h3 className="text-lg font-bold text-theme-blue mb-2">{item.title}</h3>
-                  <p className="text-sm text-gray-600 font-light leading-relaxed">{item.text}</p>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-      ) : null}
+      {(() => {
+        const seen = new Set();
+        const mergedLinks = [];
+        for (const item of [...hubReferringLinks, ...(service.relatedLinks || [])]) {
+          const href = canonicalInternalHref(item.href);
+          if (!href || href.startsWith("/blog") || seen.has(href)) continue;
+          seen.add(href);
+          mergedLinks.push({ ...item, href });
+        }
+        if (!mergedLinks.length) return null;
+        return (
+          <section id="further-reading" className="container mx-auto px-5 py-16 border-t border-gray-100">
+            <SectionHeading kicker="Related">Related services and guides</SectionHeading>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl">
+              {mergedLinks.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="block h-full rounded-2xl border border-gray-100 p-5 hover:border-theme-purple/40">
+                    <h3 className="text-lg font-bold text-theme-blue mb-2">{item.title}</h3>
+                    <p className="text-sm text-gray-600 font-light leading-relaxed">{item.text}</p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        );
+      })()}
 
       {/* Related Solutions Cross-Linking */}
       {relatedSolutions.length > 0 && (

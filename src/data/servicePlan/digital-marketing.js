@@ -7,7 +7,7 @@ import { NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: Google Partner / Meta Partner badges if held.
  */
 export default {
-  contentUpdatedAt: "2026-10-12",
+  contentUpdatedAt: "2026-10-25",
   metaTitle: "Digital Marketing Agency in Jaipur | SEO, Google Ads & Meta Ads",
   bannerTitle: "Digital Marketing Agency in Jaipur",
   metaDescription:

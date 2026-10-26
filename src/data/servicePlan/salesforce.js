@@ -37,7 +37,7 @@ export default {
       id: "salesforce-vs-custom",
       heading: "Salesforce vs custom CRM",
       paragraphs: [
-        "Keep Salesforce when sales process fits Sales Cloud. Build custom when commissions trees, network marketing, or ops modules will not fit without fighting the platform. Decision notes: [custom CRM vs Salesforce](/blog/custom-crm-vs-salesforce-mid-market-2026).",
+        "Keep Salesforce when sales process fits Sales Cloud. Build custom when commissions trees, network marketing, or ops modules will not fit without fighting the platform. Decision notes: [custom CRM vs Salesforce](/services/crm-erp-development).",
       ],
       comparison: {
         heading: "Which path",
@@ -99,7 +99,7 @@ export default {
       text: "When Salesforce is the wrong shape.",
     },
     {
-      href: "/blog/custom-crm-vs-salesforce-mid-market-2026",
+      href: "/services/crm-erp-development",
       title: "Custom CRM vs Salesforce",
       text: "A mid-market decision guide.",
     },

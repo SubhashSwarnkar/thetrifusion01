@@ -35,6 +35,11 @@ const GROUPS = [
     heading: "Apps and cloud",
     items: [
       {
+        href: "/services/mobile-app-development",
+        label: "mobile app development company in India",
+        note: "iOS + Android MVPs from ₹2,50,000",
+      },
+      {
         href: "/services/ios-app-development",
         label: "iOS app development company in India",
         note: "App Store-first from ₹2,50,000",
@@ -70,6 +75,11 @@ const GROUPS = [
         note: "MVPs from ₹1,00,000",
       },
       {
+        href: "/services/crm-erp-development",
+        label: "custom CRM and ERP development in Jaipur",
+        note: "pipelines and GST billing from ₹3,00,000",
+      },
+      {
         href: "/services/rpa",
         label: "RPA services company in India",
         note: "invoice and Tally bots from ₹50,000",
@@ -99,6 +109,11 @@ const GROUPS = [
   {
     heading: "BBPS, AEPS, DMT, recharge",
     items: [
+      {
+        href: "/services/fintech-app-development",
+        label: "fintech app development company in India",
+        note: "BBPS, AEPS, DMT, recharge hub from ₹99,999",
+      },
       {
         href: "/services/fintech-app-development/bbps-software",
         label: "BBPS software development",

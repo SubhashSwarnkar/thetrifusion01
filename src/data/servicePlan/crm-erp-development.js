@@ -6,7 +6,7 @@ import { LIVE, NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: price range if you want bands beyond ₹3,00,000 / ₹6,00,000 / ₹11,00,000.
  */
 export default {
-  contentUpdatedAt: "2026-10-12",
+  contentUpdatedAt: "2026-10-25",
   metaTitle: "Custom CRM & ERP Software Development Company in Jaipur",
   bannerTitle: "Custom CRM & ERP Software Development in Jaipur",
   metaDescription:
@@ -46,7 +46,7 @@ export default {
       id: "crm-vs-zoho",
       heading: "Custom CRM vs Zoho / Salesforce / Odoo",
       paragraphs: [
-        "Buy Zoho or Salesforce when the process is standard. Buy Odoo when you want a known ERP shape. Commission custom when commissions, GST+Tally, or a process those tools will not hold. Three-year seat maths depends on your headcount; we will not invent a TCO chart. Guide: [custom CRM vs Salesforce](/blog/custom-crm-vs-salesforce-mid-market-2026).",
+        "Buy Zoho or Salesforce when the process is standard. Buy Odoo when you want a known ERP shape. Commission custom when commissions, GST+Tally, or a process those tools will not hold. Three-year seat maths depends on your headcount; we will not invent a TCO chart. Guide: [custom CRM vs Salesforce](/services/crm-erp-development).",
       ],
       comparison: {
         heading: "How to choose",
@@ -70,7 +70,7 @@ export default {
       id: "crm-cost",
       heading: "CRM development cost",
       paragraphs: [
-        "Published plans on [pricing](/pricing): ₹3,00,000 / ₹6,00,000 / ₹11,00,000. Hosting on your server is a yes when the scope says so. Related: [ERP/CRM API playbook](/blog/erp-crm-api-integration-playbook-mid-market).",
+        "Published plans on [pricing](/pricing): ₹3,00,000 / ₹6,00,000 / ₹11,00,000. Hosting on your server is a yes when the scope says so. Related: [ERP/CRM API playbook](/services/crm-erp-development).",
       ],
       comparison: {
         heading: "Published CRM/ERP plans",
@@ -147,12 +147,12 @@ export default {
       text: "When CRM is one module of a larger product.",
     },
     {
-      href: "/blog/custom-crm-vs-salesforce-mid-market-2026",
+      href: "/services/crm-erp-development",
       title: "Custom CRM vs Salesforce",
       text: "A mid-market decision guide.",
     },
     {
-      href: "/blog/erp-crm-api-integration-playbook-mid-market",
+      href: "/services/crm-erp-development",
       title: "ERP and CRM API playbook",
       text: "How the integrations actually fail.",
     },

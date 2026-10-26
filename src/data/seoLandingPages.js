@@ -127,10 +127,6 @@ export const seoLandingPages = [
         },
         links: [
           { href: "/solutions/ecommerce-website-development#ecommerce-website", label: "See full package details and the 48-hour guarantee terms" },
-          { href: "/blog/ecommerce-website-development-cost-india", label: "Read: ecommerce website development cost in India" },
-          { href: "/blog/festive-ecommerce-website-india-ondc-2026", label: "Read: festive 2026 ecommerce, ONDC, and the first Diwali week" },
-          { href: "/blog/ecommerce-amendment-rules-india-2027", label: "Read: e-commerce Amendment Rules 2026 — dark patterns, ranking, seller IDs from 1 Jan 2027" },
-          { href: "/blog/d2c-own-store-festive-shipments-india-2026", label: "Read: D2C own-store festive shipments — ClickPost and Unicommerce, 18 Oct 2026" },
         ],
       },
       {
@@ -148,7 +144,6 @@ export const seoLandingPages = [
           ],
         },
         links: [
-          { href: "/blog/custom-website-vs-shopify-vs-woocommerce", label: "Read: custom website vs Shopify vs WooCommerce" },
         ],
       },
       {
@@ -352,34 +347,6 @@ export const seoLandingPages = [
         href: "/solutions/ecommerce-website-development#ecommerce-website",
         label:
           "Ecommerce packages: Website ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · High-End logistics ₹99,000 — website live in 48 hours or 50% refund",
-      },
-      {
-        href: "/blog/ecommerce-website-development-cost-india",
-        label: "Ecommerce website development cost in India",
-      },
-      {
-        href: "/blog/festive-ecommerce-website-india-ondc-2026",
-        label: "Festive 2026 ecommerce: own store, ONDC, and the first Diwali week",
-      },
-      {
-        href: "/blog/ecommerce-amendment-rules-india-2027",
-        label: "E-commerce Amendment Rules: dark patterns, ranking, seller IDs from 1 Jan 2027",
-      },
-      {
-        href: "/blog/d2c-own-store-festive-shipments-india-2026",
-        label: "D2C own-store festive shipments: ClickPost +31.4% and Unicommerce brand sites",
-      },
-      {
-        href: "/blog/ecommerce-app-development-cost-india",
-        label: "Ecommerce app development cost in India (web + Android + iOS)",
-      },
-      {
-        href: "/blog/how-to-build-ecommerce-website-india-2026",
-        label: "How to build an ecommerce website in India (2026 guide)",
-      },
-      {
-        href: "/blog/ecommerce-website-development-mumbai-vs-jaipur",
-        label: "Ecommerce website development: Mumbai vs Jaipur agencies",
       },
       {
         href: "/portfolio/dailyconcepts-ecommerce-pos",
@@ -1120,11 +1087,8 @@ export const featuredSolutionSlugs = [
   "software-company-rajasthan",
   "ecommerce-website-development",
   "msp-managed-it-services",
+  // Jaipur HQ only — non-Jaipur city landings are noindex and stay out of nav.
   "website-development-company-jaipur",
-  "website-development-company-bhilwara",
-  "website-development-company-udaipur",
-  "website-development-company-kota",
-  "website-development-company-ajmer",
   "custom-software-development-jaipur",
   "mobile-app-development-company-jaipur",
   "ecommerce-website-development-jaipur",

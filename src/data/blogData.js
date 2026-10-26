@@ -41,20 +41,18 @@ export { BLOG_CANONICAL_REDIRECTS, HOMEPAGE_INDIA_BLOG_SLUGS };
 export { OFFTOPIC_NOINDEX_SLUGS, ADSENSE_RECOVERY_NOINDEX_SLUGS };
 
 /**
- * Blog editorial: ship 2 Jaipur / Rajasthan / India delivery posts each month.
- * Featured = local or product work.
+ * Blog removed from the live site (crawl-budget / trust policy, Oct 2026).
+ * Post modules remain in the repo for archival reference, but:
+ * - isIndexableBlogPost / getPublishedBlogPosts always empty
+ * - middleware returns 410 for /blog and /blog/*
+ * - sitemap-blog is omitted from the sitemap index
+ * - nav, footer, homepage, and HTML sitemap do not link blogs
  *
- * Indexing is a narrow blocklist. New daily posts of any topic default to
- * index,follow, sitemap-blog.xml (with lastmod), /blog listing, and llms-full.
- * Only these stay out:
- * - ARCHIVE_NOINDEX_SLUGS: empty/broken 2024 posts, 301 to /blog.
- * - BLOG_CANONICAL_REDIRECTS: true duplicates, 308 to the canonical twin.
- *
- * OFFTOPIC_NOINDEX_SLUGS and ADSENSE_RECOVERY_NOINDEX_SLUGS are empty. A
- * truthy `event` field is metadata for Event schema, not a robots rule.
- * Re-adding topic slugs to those sets is how GSC impressions collapsed
- * after PR #44 (7 Oct 2026).
+ * Do not mass-301 posts to service pages (soft-404 risk).
  */
+
+/** Master switch: no blog URL is published or indexable. */
+export const BLOGS_REMOVED_FROM_SITE = true;
 
 export const ARCHIVE_NOINDEX_SLUGS = new Set([
   "generative-ai-revolution",
@@ -2784,9 +2782,9 @@ export function isEventPost(post) {
 }
 
 /**
- * HTTP 200, self-canonical, `noindex, follow`. Distinct from ARCHIVE_NOINDEX_SLUGS.
- * Always false: topic/event/template lists no longer noindex live posts.
- * Keep the helper so generateMetadata can stay on one flag.
+ * HTTP 200, self-canonical, `noindex, follow`. Distinct from ARCHIVE_NOINDEX_SLUGS
+ * (those 301). Soft-noindex posts stay live for existing links but leave the
+ * index and sitemap so Google can trust /services pages again.
  */
 export function isSoftNoindexBlogPost(post) {
   if (!post) return false;
@@ -2798,21 +2796,13 @@ export function isSoftNoindexBlogPost(post) {
   );
 }
 
-export function isIndexableBlogPost(post) {
-  return Boolean(
-    post &&
-      !ARCHIVE_NOINDEX_SLUGS.has(post.slug) &&
-      !isRedirectedBlogSlug(post.slug) &&
-      !isSoftNoindexBlogPost(post)
-  );
+export function isIndexableBlogPost(_post) {
+  // All blogs unpublished — see BLOGS_REMOVED_FROM_SITE.
+  return false;
 }
 
-export function isIndexableBlogSlug(slug) {
-  const post = blogPosts.find((item) => item.slug === slug);
-  if (!post) {
-    return !ARCHIVE_NOINDEX_SLUGS.has(slug) && !isRedirectedBlogSlug(slug);
-  }
-  return isIndexableBlogPost(post);
+export function isIndexableBlogSlug(_slug) {
+  return false;
 }
 
 /** AdSense used to skip event URLs. Empty so restored pages load ads again. */

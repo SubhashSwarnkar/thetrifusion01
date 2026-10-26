@@ -964,3 +964,18 @@ for (const [slug, extra] of Object.entries(serviceIndiaOnpage)) {
     relatedLinks,
   };
 }
+
+/** Drop retired /blog links from live service chrome (blogs are 410 Gone). */
+function isLiveRelatedLink(link) {
+  if (!link || typeof link.href !== "string") return false;
+  return !link.href.startsWith("/blog");
+}
+
+for (const slug of Object.keys(servicePageSeo)) {
+  const current = servicePageSeo[slug];
+  if (!Array.isArray(current.relatedLinks)) continue;
+  servicePageSeo[slug] = {
+    ...current,
+    relatedLinks: current.relatedLinks.filter(isLiveRelatedLink),
+  };
+}

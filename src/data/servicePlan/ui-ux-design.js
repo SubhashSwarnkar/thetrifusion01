@@ -122,7 +122,7 @@ export default {
       text: "Logo, type and guidelines the UI should use.",
     },
     {
-      href: "/blog/ui-ux-for-ai-products-india",
+      href: "/services/ai-development",
       title: "UI/UX for AI products",
       text: "Empty states, review steps, and trust.",
     },

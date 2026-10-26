@@ -173,29 +173,6 @@ async function main() {
 
   const parser = new XMLParser();
   let pageLocs = [];
-  // Former blocklist / offtopic / geo-template URLs must be in the sitemap
-  // again. Only 308 duplicates and archive 301s stay out.
-  const RESTORED_BLOGS = [
-    "/blog/ecommerce-website-for-nigerian-smes-2026",
-    "/blog/ios-27-siri-ai-business-apps-uk-australia",
-    "/blog/hire-dedicated-developers-cost-guide-uk-australia",
-    "/blog/shopify-plus-vs-custom-ecommerce-uk-canada",
-    "/blog/ev-charging-csms-uk-europe-cpo-guide",
-    "/blog/pwn2own-ireland-2026-security-lessons-for-businesses",
-    "/blog/opus-5-5-ai-model-whats-known",
-    "/blog/gpt-6-astra-whats-known-vs-rumor",
-    "/blog/reflection-beam-open-weight-ai-model-whats-known",
-    "/blog/flutter-vs-react-native-2024",
-    "/blog/f1-singapore-grand-prix-2026-race-day-guide",
-    "/blog/india-vs-west-indies-2nd-t20i-ranchi-9-oct-2026",
-    "/blog/thanksgiving-2026-date-us-ist-guide",
-  ];
-  const STAY_OUT_BLOGS = [
-    "/blog/iphone-18-india-features-apps-businesses",
-    "/blog/generative-ai-revolution",
-  ];
-  // Published post that PR #57's allowlist dropped from the sitemap.
-  const MUST_INDEX_BLOG = "/blog/emsp-vs-cpo-software-stack-buyer-guide";
 
   if (/<sitemapindex/i.test(text)) {
     const childLocs = parser.extractLocs(text);
@@ -211,6 +188,9 @@ async function main() {
         return child;
       }
     });
+    if (childPaths.length !== 3) {
+      fail(`sitemap index should have 3 children, got ${childPaths.length}`);
+    }
     if (!childPaths.some((p) => p === "/sitemap-pages.xml")) {
       fail("sitemap index missing /sitemap-pages.xml");
     }
@@ -220,8 +200,8 @@ async function main() {
     if (!childPaths.some((p) => p === "/sitemap-solutions.xml")) {
       fail("sitemap index missing /sitemap-solutions.xml");
     }
-    if (!childPaths.some((p) => /^\/sitemap-blog(\-\d+)?\.xml$/.test(p))) {
-      fail("sitemap index missing sitemap-blog.xml");
+    if (childPaths.some((p) => /^\/sitemap-blog(\-\d+)?\.xml$/.test(p))) {
+      fail("sitemap index still lists sitemap-blog (blogs removed)");
     }
     for (const child of childLocs) {
       let childUrl = child;
@@ -245,13 +225,6 @@ async function main() {
       if (locs.length > 1000) {
         fail(`${childPath} has ${locs.length} URLs; split at 1000`);
       }
-      if (/^\/sitemap-blog(\-\d+)?\.xml$/.test(childPath)) {
-        const urlBlocks = childRes.text.match(/<url>[\s\S]*?<\/url>/gi) || [];
-        const missingLastmod = urlBlocks.find((block) => !/<lastmod>/i.test(block));
-        if (missingLastmod) {
-          fail(`${childPath} blog entry is missing <lastmod>`);
-        }
-      }
       pageLocs.push(...locs);
     }
   } else {
@@ -263,8 +236,8 @@ async function main() {
     fail("No URLs found in sitemap");
     process.exit(1);
   }
-  if (unique.length < 40) {
-    fail(`sitemap has ${unique.length} URLs; expected at least 40`);
+  if (unique.length < 30) {
+    fail(`sitemap has ${unique.length} URLs; expected at least 30`);
   } else if (unique.length > 50000) {
     fail(`sitemap has ${unique.length} URLs; over the 50,000 cap`);
   } else {
@@ -279,13 +252,11 @@ async function main() {
         return "";
       }
     })
-    .filter((p) => p.startsWith("/blog/"));
-  if (blogPaths.length < 400) {
-    fail(
-      `sitemap-blog has ${blogPaths.length} URLs; restored posts should be indexed by default`
-    );
+    .filter((p) => p === "/blog" || p.startsWith("/blog/"));
+  if (blogPaths.length) {
+    fail(`sitemap still contains blog URLs (${blogPaths.length})`);
   } else {
-    ok(`Found ${blogPaths.length} indexable blog URLs`);
+    ok("No blog URLs in sitemap");
   }
 
   const localeHit = unique.find((u) =>
@@ -298,18 +269,15 @@ async function main() {
   );
   if (paidEcommerce) fail(`paid ecommerce URL still in sitemap: ${paidEcommerce}`);
 
-  if (!unique.some((u) => new URL(u, BASE_URL).pathname === MUST_INDEX_BLOG)) {
-    fail(`sitemap missing previously indexable post ${MUST_INDEX_BLOG}`);
-  }
-
-  for (const path of RESTORED_BLOGS) {
-    if (!unique.some((u) => new URL(u, BASE_URL).pathname === path)) {
-      fail(`restored blog missing from sitemap: ${path}`);
-    }
-  }
-  for (const path of STAY_OUT_BLOGS) {
+  const REDIRECTED_STATIC = [
+    "/web-development",
+    "/android-app-development",
+    "/ios-app-development",
+    "/ecommerce-development",
+  ];
+  for (const path of REDIRECTED_STATIC) {
     if (unique.some((u) => new URL(u, BASE_URL).pathname === path)) {
-      fail(`redirected or archived blog still in sitemap: ${path}`);
+      fail(`redirected static path still in sitemap: ${path}`);
     }
   }
 
@@ -320,61 +288,6 @@ async function main() {
     "/services/fintech-app-development/dmt-software",
     "/services/fintech-app-development/recharge-software",
     "/sitemap",
-    "/blog/dpdp-consent-manager-software-india-2026",
-    "/blog/gst-einvoice-custom-software-india-2026",
-    "/blog/google-ai-overviews-indian-business-websites-2026",
-    "/blog/dpdp-privacy-notice-indian-website-2026",
-    "/blog/whatsapp-business-ai-vs-custom-chatbot-india",
-    "/blog/hindi-indic-ui-ux-design-india-2026",
-    "/blog/d2c-branding-trademark-india-festive-2026",
-    "/blog/hire-dedicated-developers-india-cost-2026",
-    "/blog/google-ai-overviews-seo-india-2026",
-    "/blog/festive-ecommerce-website-india-ondc-2026",
-    "/blog/uipath-agentic-rpa-india-sme-2026",
-    "/blog/salesforce-india-innovation-series-delhi-2026",
-    "/blog/gstn-rcm-self-invoice-modernize-india-2026",
-    "/blog/direct-selling-crm-india-adsei-2026",
-    "/blog/odisha-pm-edrive-cpo-csms-india-2026",
-    "/blog/upi-mdr-recharge-software-india-2026",
-    "/blog/hire-developers-gstn-sandbox-india-2026",
-    "/blog/ecommerce-amendment-rules-india-2027",
-    "/blog/google-ads-automated-promotions-india-2026",
-    "/blog/gstn-rcm-einvoice-software-india-2026",
-    "/blog/automation-anywhere-bengaluru-rpa-india-2026",
-    "/blog/salesforce-india-md-agentforce-sme-2026",
-    "/blog/gst-council-57-ims-modernize-india-2026",
-    "/blog/google-official-site-indian-business-website-2026",
-    "/blog/mlm-crm-gst-ims-payouts-india-2026",
-    "/blog/pm-edrive-8147-chargers-csms-india-2026",
-    "/blog/d2c-own-store-festive-shipments-india-2026",
-    "/blog/google-ai-overviews-ads-festive-india-2026",
-    "/blog/bbps-neft-corporate-recharge-panel-india-2026",
-    "/blog/meity-ai-consultation-custom-ai-india-2026",
-    "/blog/uipath-ai-trust-layer-audit-off-rpa-india-2026",
-    "/blog/salesforce-hunter-piper-agents-sme-india-2026",
-    "/blog/gst-1-nov-inverted-duty-modernize-india-2026",
-    "/blog/tcs-ai-hiring-on-demand-developers-india-2026",
-    "/blog/dpdp-guardian-consent-mlm-crm-india-2026",
-    "/blog/jiobp-kia-roaming-csms-india-2026",
-    "/blog/dussehra-delivery-own-store-ecommerce-india-2026",
-    "/blog/dussehra-ai-max-festive-ads-india-2026",
-    "/blog/cert-in-payment-api-recharge-panel-india-2026",
-    "/blog/tcs-manageengine-sovereign-cloud-software-india-2026",
-    "/blog/chatgpt-1980s-ai-photo-prompt-guide",
-    "/blog/neet-pg-result-2026-how-to-check",
-    "/blog/motorola-signature-27-india-whats-known",
-    "/blog/portugal-vs-wales-nations-league-why-trending",
-    "/blog/sbi-po-mains-result-2026-how-to-check",
-    "/blog/afghanistan-vs-japan-asian-games-cricket-explained",
-    "/blog/23-september-2026-why-trending-india",
-    "/blog/nse-listing-date-how-ipo-listing-works-india",
-    "/blog/ocpi-roaming-explained-cpo-emsp",
-    "/blog/website-development-cost-india-2026",
-    "/blog/mobile-app-development-cost-india-2026",
-    "/blog/ecommerce-website-packages-cost-india-2026",
-    "/blog/software-development-cost-india-2026",
-    "/blog/bbps-aeps-recharge-software-cost-india-2026",
-    "/blog/how-to-choose-website-software-company-jaipur-india-2026",
     "/solutions/website-development-company-jaipur",
     "/solutions/custom-software-development-jaipur",
     "/solutions/mobile-app-development-company-jaipur",
@@ -384,10 +297,31 @@ async function main() {
     "/services/website-development",
     "/services/software-development",
     "/services/digital-marketing",
+    "/services/mobile-app-development",
+    "/services/fintech-app-development",
+    "/contact",
+    "/about",
+    "/pricing",
   ];
   for (const path of required) {
     if (!unique.some((u) => new URL(u, BASE_URL).pathname === path)) {
       fail(`sitemap missing ${path}`);
+    }
+  }
+
+  const removedCities = [
+    "/solutions/website-development-company-delhi",
+    "/solutions/website-development-company-mumbai",
+    "/solutions/software-development-company-delhi",
+    "/solutions/mobile-app-development-company-bangalore",
+    "/solutions/ecommerce-website-development-mumbai",
+    "/solutions/digital-marketing-company-jodhpur",
+    "/solutions/fintech-app-development-delhi",
+    "/solutions/website-development-company-bhilwara",
+  ];
+  for (const path of removedCities) {
+    if (unique.some((u) => new URL(u, BASE_URL).pathname === path)) {
+      fail(`removed city page still in sitemap: ${path}`);
     }
   }
 
@@ -439,13 +373,27 @@ async function main() {
     ok("homepage JSON-LD includes LinkedIn and Instagram sameAs");
   }
 
-  const blogHtml = (
-    await fetchText(`${BASE_URL}/blog/website-development-cost-india-2026`)
-  ).text;
-  if (!/"@type":\s*"Person"/i.test(blogHtml) || !/Amardeep/.test(blogHtml)) {
-    fail("cost guide missing Person author schema for Amardeep");
+  // Blogs removed: hub + sample posts must be 410 Gone (not soft-404 via 301).
+  for (const path of [
+    "/blog",
+    "/blog-1",
+    "/blog/website-development-cost-india-2026",
+    "/blog/generative-ai-revolution",
+    "/blog/f1-singapore-grand-prix-2026-race-day-guide",
+  ]) {
+    const { res } = await fetchText(`${BASE_URL}${path}`);
+    if (res.status !== 410) {
+      fail(`${path} should be 410 Gone, got ${res.status}`);
+    } else {
+      ok(`${path} → 410`);
+    }
+  }
+
+  const blogSitemap = await fetchText(`${BASE_URL}/sitemap-blog.xml`);
+  if (blogSitemap.res.status !== 410) {
+    fail(`sitemap-blog.xml should be 410, got ${blogSitemap.res.status}`);
   } else {
-    ok("cost guide BlogPosting author is Person Amardeep");
+    ok("sitemap-blog.xml → 410");
   }
 
   if (!INDEXNOW_KEY) {
@@ -466,18 +414,63 @@ async function main() {
   for (const path of [
     "/solutions/ecommerce-website-development",
     "/services/digital-marketing",
+    "/services/website-development",
+    "/solutions/website-development-company-jaipur",
   ]) {
     const url = `${BASE_URL}${path}`;
-    const { text } = await fetchText(url);
-    const canonical = extractCanonical(text);
+    const { text: pageText } = await fetchText(url);
+    const canonical = extractCanonical(pageText);
+    const ogUrl = extractMeta(pageText, "og:url");
     if (!canonical) {
       fail(`${path} missing canonical`);
-    } else if (!canonical.startsWith("https://thetrifusion.in/")) {
+    } else if (!canonical.startsWith("https://thetrifusion.in")) {
       fail(`${path} canonical is ${canonical}, expected https://thetrifusion.in/...`);
     } else if (canonical.includes("www.thetrifusion")) {
       fail(`${path} canonical still uses www: ${canonical}`);
     } else {
       ok(`${path} canonical is apex ${canonical}`);
+    }
+    if (ogUrl && (ogUrl.includes("www.thetrifusion") || !ogUrl.startsWith("https://thetrifusion.in"))) {
+      fail(`${path} og:url is ${ogUrl}, expected apex`);
+    } else if (ogUrl) {
+      ok(`${path} og:url is apex`);
+    }
+  }
+
+  // Legacy ads landings must 301/308 to /services (not 200 + noindex).
+  const legacyRedirects = [
+    ["/web-development", "/services/website-development"],
+    ["/android-app-development", "/services/android-app-development"],
+    ["/ios-app-development", "/services/ios-app-development"],
+    ["/solutions/website-development-company-delhi", "/services/website-development"],
+    ["/solutions/website-development-company-mumbai", "/services/website-development"],
+    ["/solutions/software-development-company-delhi", "/services/software-development"],
+    ["/solutions/mobile-app-development-company-bangalore", "/services/mobile-app-development"],
+    [
+      "/solutions/ecommerce-website-development-mumbai",
+      "/solutions/ecommerce-website-development",
+    ],
+    ["/solutions/digital-marketing-company-jodhpur", "/services/digital-marketing"],
+    ["/solutions/fintech-app-development-delhi", "/services/fintech-app-development"],
+    ["/solutions/website-development-company-bhilwara", "/services/website-development"],
+  ];
+  for (const [from, to] of legacyRedirects) {
+    const { res } = await fetchText(`${BASE_URL}${from}`);
+    const location = res.headers.get("location") || "";
+    const okStatus = res.status === 301 || res.status === 308;
+    const destPath = (() => {
+      try {
+        return new URL(location, BASE_URL).pathname;
+      } catch {
+        return location;
+      }
+    })();
+    if (!okStatus) {
+      fail(`${from} should permanently redirect, got ${res.status}`);
+    } else if (destPath !== to) {
+      fail(`${from} redirects to ${destPath || location}, expected ${to}`);
+    } else {
+      ok(`${from} → ${to} (${res.status})`);
     }
   }
 

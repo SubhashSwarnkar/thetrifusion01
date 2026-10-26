@@ -6,7 +6,7 @@ import { LIVE, NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: Apple-platform experience years of the iOS lead.
  */
 export default {
-  contentUpdatedAt: "2026-10-12",
+  contentUpdatedAt: "2026-10-25",
   metaTitle: "iOS App Development Company in India | iPhone Apps from Jaipur",
   bannerTitle: "iOS App Development Company in India",
   metaDescription:

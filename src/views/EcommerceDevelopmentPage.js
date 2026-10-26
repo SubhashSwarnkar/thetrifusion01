@@ -684,12 +684,9 @@ export default function EcommerceDevelopmentPage() {
             >
               {page.relatedSolutionLabel}
             </Link>
-            . Cost factors:{" "}
-            <Link
-              href={`/blog/${page.relatedBlogSlug}`}
-              className="font-semibold text-theme-purple"
-            >
-              ecommerce website development cost in India
+            . Published package ranges:{" "}
+            <Link href="/pricing" className="font-semibold text-theme-purple">
+              pricing
             </Link>
             .
           </p>

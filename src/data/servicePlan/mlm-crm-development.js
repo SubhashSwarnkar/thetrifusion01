@@ -8,7 +8,7 @@ import { NAP_LINE, SOURCES, TEAM } from "./_shared";
  * TODO OWNER: any MLM client you can name.
  */
 export default {
-  contentUpdatedAt: "2026-10-12",
+  contentUpdatedAt: "2026-10-25",
   metaTitle: "MLM Software Development Company in India | Binary, Unilevel & Matrix",
   bannerTitle: "MLM Software Development Company in Jaipur, India",
   metaDescription:
@@ -51,7 +51,7 @@ export default {
       id: "mlm-modules",
       heading: "Core modules",
       paragraphs: [
-        "Genealogy tree, e-wallet, payout engine, KYC, e-pin, optional ecommerce, and Android/iOS apps for distributors. See [MLM unilevel compensation notes](/blog/mlm-crm-unilevel-compensation-plan).",
+        "Genealogy tree, e-wallet, payout engine, KYC, e-pin, optional ecommerce, and Android/iOS apps for distributors. See [MLM unilevel compensation notes](/services/crm-erp-development).",
       ],
     },
     {
@@ -134,7 +134,7 @@ export default {
       text: "When payouts sit on a bank or NPCI rail.",
     },
     {
-      href: "/blog/mlm-crm-unilevel-compensation-plan",
+      href: "/services/crm-erp-development",
       title: "Unilevel compensation plan notes",
       text: "How unilevel is modelled in software.",
     },

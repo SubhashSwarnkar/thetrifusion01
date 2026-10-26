@@ -16,13 +16,8 @@ const nextConfig = {
     ],
   },
   async rewrites() {
-    return [
-      // Extra blog urlsets when sitemap-blog.xml exceeds 1000 URLs.
-      {
-        source: "/sitemap-blog-:chunk(\\d+).xml",
-        destination: "/internal-blog-sitemap/:chunk",
-      },
-    ];
+    // Blog sitemap chunks removed — blogs are 410 Gone from the live site.
+    return [];
   },
   async redirects() {
     return [
@@ -30,6 +25,7 @@ const nextConfig = {
       // If www still returns 307 in production, change the Vercel Domains
       // "Redirect www to apex" setting — that hop runs before this config.
       // Explicit GSC-flagged money URLs first so www cannot self-canonicalize.
+      // One-hop www → apex+canonical path avoids GSC "Redirect error" chains.
       {
         source: "/solutions/ecommerce-website-development",
         has: [{ type: "host", value: "www.thetrifusion.in" }],
@@ -41,6 +37,25 @@ const nextConfig = {
         source: "/services/digital-marketing",
         has: [{ type: "host", value: "www.thetrifusion.in" }],
         destination: "https://thetrifusion.in/services/digital-marketing",
+        permanent: true,
+      },
+      {
+        source: "/services/website-development",
+        has: [{ type: "host", value: "www.thetrifusion.in" }],
+        destination: "https://thetrifusion.in/services/website-development",
+        permanent: true,
+      },
+      {
+        source: "/services/mlm-crm-development",
+        has: [{ type: "host", value: "www.thetrifusion.in" }],
+        destination: "https://thetrifusion.in/services/mlm-crm-development",
+        permanent: true,
+      },
+      {
+        // GSC Redirect error: www hop + path hop. Land on the services URL.
+        source: "/solutions/web-development-company-jaipur",
+        has: [{ type: "host", value: "www.thetrifusion.in" }],
+        destination: "https://thetrifusion.in/services/website-development",
         permanent: true,
       },
       {
@@ -92,6 +107,28 @@ const nextConfig = {
         destination: "/services/website-development",
         permanent: true,
       },
+      // Legacy ads landings → indexed /services twins (was 200 + noindex).
+      {
+        source: "/web-development",
+        destination: "/services/website-development",
+        permanent: true,
+      },
+      {
+        source: "/android-app-development",
+        destination: "/services/android-app-development",
+        permanent: true,
+      },
+      {
+        source: "/ios-app-development",
+        destination: "/services/ios-app-development",
+        permanent: true,
+      },
+      // Legacy hashed OG image URLs (route-group hash) → stable opengraph-image.
+      {
+        source: "/solutions/:slug/opengraph-image-:hash",
+        destination: "/solutions/:slug/opengraph-image",
+        permanent: true,
+      },
       {
         source: "/discuss",
         destination: "/discuss-project",
@@ -107,42 +144,9 @@ const nextConfig = {
         destination: "/solutions/ecommerce-website-development",
         permanent: true,
       },
-      // Near-duplicate blog posts → one canonical each
-      {
-        source: "/blog/iphone-18-india-features-apps-businesses",
-        destination: "/blog/iphone-18-india-price-launch-ios-apps-business",
-        permanent: true,
-      },
-      {
-        source: "/blog/iphone-18-apple-intelligence-business-apps-india",
-        destination: "/blog/iphone-18-india-price-launch-ios-apps-business",
-        permanent: true,
-      },
-      {
-        source: "/blog/salesforce-koa-crm-reasoning-model-nvidia-nemotron-explained",
-        destination:
-          "/blog/salesforce-agentforce-koa-ai-push-what-investors-and-teams-watch",
-        permanent: true,
-      },
-      {
-        source: "/blog/salesforce-nvidia-koa-vs-frontier-ai-labs",
-        destination:
-          "/blog/salesforce-agentforce-koa-ai-push-what-investors-and-teams-watch",
-        permanent: true,
-      },
-      {
-        source: "/blog/nse-ipo-digital-presence-india-companies",
-        destination: "/blog/ipo-ready-website-digital-presence-india",
-        permanent: true,
-      },
-      {
-        source: "/blog/fashion-d2c-ecommerce-website-cost-india",
-        destination: "/blog/ecommerce-website-development-cost-india",
-        permanent: true,
-      },
       // Same service and intent as the /services twin. Keep in sync with
-      // src/lib/solutionRedirects.js. City pages, ecommerce, MSP, the buyer
-      // guide, and software-company-rajasthan stay as distinct landings.
+      // src/lib/solutionRedirects.js. Jaipur HQ city pages, ecommerce, MSP,
+      // the buyer guide, and software-company-rajasthan stay live.
       {
         source: "/solutions/android-app-development-company-jaipur",
         destination: "/services/android-app-development",
@@ -188,97 +192,149 @@ const nextConfig = {
         destination: "/services/software-development",
         permanent: true,
       },
-      // Retired 2024 archive posts → /blog (drop soft-200 noindex URLs)
+      // Non-Jaipur city landings → matching service / ecommerce money page.
+      // Keep in sync with src/lib/citySolutionRedirects.js.
       {
-        source: "/blog/generative-ai-revolution",
-        destination: "/blog",
+        source: "/solutions/website-development-company-delhi",
+        destination: "/services/website-development",
         permanent: true,
       },
       {
-        source: "/blog/web3-decentralized-future",
-        destination: "/blog",
+        source: "/solutions/website-development-company-mumbai",
+        destination: "/services/website-development",
         permanent: true,
       },
       {
-        source: "/blog/quantum-computing-leap",
-        destination: "/blog",
+        source: "/solutions/website-development-company-bangalore",
+        destination: "/services/website-development",
         permanent: true,
       },
       {
-        source: "/blog/cybersecurity-zero-trust",
-        destination: "/blog",
+        source: "/solutions/website-development-company-jodhpur",
+        destination: "/services/website-development",
         permanent: true,
       },
       {
-        source: "/blog/rise-of-edge-computing",
-        destination: "/blog",
+        source: "/solutions/website-development-company-bhilwara",
+        destination: "/services/website-development",
         permanent: true,
       },
       {
-        source: "/blog/green-tech-sustainable-coding",
-        destination: "/blog",
+        source: "/solutions/website-development-company-udaipur",
+        destination: "/services/website-development",
         permanent: true,
       },
       {
-        source: "/blog/5g-6g-connectivity",
-        destination: "/blog",
+        source: "/solutions/website-development-company-kota",
+        destination: "/services/website-development",
         permanent: true,
       },
       {
-        source: "/blog/metaverse-business-impact",
-        destination: "/blog",
+        source: "/solutions/website-development-company-ajmer",
+        destination: "/services/website-development",
         permanent: true,
       },
       {
-        source: "/blog/rust-programming-rise",
-        destination: "/blog",
+        source: "/solutions/software-development-company-delhi",
+        destination: "/services/software-development",
         permanent: true,
       },
       {
-        source: "/blog/future-of-devops",
-        destination: "/blog",
+        source: "/solutions/software-development-company-mumbai",
+        destination: "/services/software-development",
         permanent: true,
       },
       {
-        source: "/blog/fintech-embedded-finance",
-        destination: "/blog",
+        source: "/solutions/software-development-company-bangalore",
+        destination: "/services/software-development",
         permanent: true,
       },
       {
-        source: "/blog/ethical-ai-challenges",
-        destination: "/blog",
+        source: "/solutions/software-development-company-jodhpur",
+        destination: "/services/software-development",
         permanent: true,
       },
       {
-        source: "/blog/cloud-native-security",
-        destination: "/blog",
+        source: "/solutions/mobile-app-development-company-delhi",
+        destination: "/services/mobile-app-development",
         permanent: true,
       },
       {
-        source: "/blog/low-code-no-code",
-        destination: "/blog",
+        source: "/solutions/mobile-app-development-company-mumbai",
+        destination: "/services/mobile-app-development",
         permanent: true,
       },
       {
-        source: "/blog/biotech-crispr-software",
-        destination: "/blog",
+        source: "/solutions/mobile-app-development-company-bangalore",
+        destination: "/services/mobile-app-development",
         permanent: true,
       },
       {
-        source: "/blog/autonomous-vehicles-status",
-        destination: "/blog",
+        source: "/solutions/mobile-app-development-company-jodhpur",
+        destination: "/services/mobile-app-development",
         permanent: true,
       },
       {
-        source: "/blog/smart-cities-iot",
-        destination: "/blog",
+        source: "/solutions/ecommerce-website-development-delhi",
+        destination: "/solutions/ecommerce-website-development",
         permanent: true,
       },
       {
-        source: "/blog/space-tech-commercial",
-        destination: "/blog",
+        source: "/solutions/ecommerce-website-development-mumbai",
+        destination: "/solutions/ecommerce-website-development",
         permanent: true,
       },
+      {
+        source: "/solutions/ecommerce-website-development-bangalore",
+        destination: "/solutions/ecommerce-website-development",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ecommerce-website-development-jodhpur",
+        destination: "/solutions/ecommerce-website-development",
+        permanent: true,
+      },
+      {
+        source: "/solutions/digital-marketing-company-delhi",
+        destination: "/services/digital-marketing",
+        permanent: true,
+      },
+      {
+        source: "/solutions/digital-marketing-company-mumbai",
+        destination: "/services/digital-marketing",
+        permanent: true,
+      },
+      {
+        source: "/solutions/digital-marketing-company-bangalore",
+        destination: "/services/digital-marketing",
+        permanent: true,
+      },
+      {
+        source: "/solutions/digital-marketing-company-jodhpur",
+        destination: "/services/digital-marketing",
+        permanent: true,
+      },
+      {
+        source: "/solutions/fintech-app-development-delhi",
+        destination: "/services/fintech-app-development",
+        permanent: true,
+      },
+      {
+        source: "/solutions/fintech-app-development-mumbai",
+        destination: "/services/fintech-app-development",
+        permanent: true,
+      },
+      {
+        source: "/solutions/fintech-app-development-bangalore",
+        destination: "/services/fintech-app-development",
+        permanent: true,
+      },
+      {
+        source: "/solutions/fintech-app-development-jodhpur",
+        destination: "/services/fintech-app-development",
+        permanent: true,
+      },
+      // All /blog and /blog-1 URLs return 410 via middleware (not 301).
     ];
   },
   async headers() {

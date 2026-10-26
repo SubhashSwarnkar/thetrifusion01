@@ -1,5 +1,4 @@
 import Page from "views/LandingPage";
-import HomeTrendingPosts from "components/HomeTrendingPosts";
 import HomeRest from "components/HomeRest";
 import JsonLd from "components/JsonLd";
 import { services } from "data/servicesData";
@@ -29,7 +28,7 @@ export default function RoutePage() {
       <JsonLd data={faqSchema(HOME_FAQS)} />
       <JsonLd data={videoObjectSchema()} />
       <link rel="preload" as="image" href="/images/Web.avif" type="image/avif" fetchPriority="high" />
-      <Page trending={<HomeTrendingPosts />} below={<HomeRest />} />
+      <Page below={<HomeRest />} />
     </>
   );
 }

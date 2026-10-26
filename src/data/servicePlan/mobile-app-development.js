@@ -6,7 +6,7 @@ import { LIVE, NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: client quotes for PlugOne and Connect Dairy.
  */
 export default {
-  contentUpdatedAt: "2026-10-12",
+  contentUpdatedAt: "2026-10-25",
   metaTitle: "Mobile App Development Company in Jaipur | iOS & Android from ₹50,000",
   bannerTitle: "Mobile App Development Company in Jaipur",
   metaDescription:
@@ -37,7 +37,7 @@ export default {
       id: "app-cost-india",
       heading: "App development cost in India",
       paragraphs: [
-        "Published starter price for mobile app development is ₹50,000. Focused native MVPs on [pricing](/pricing) start at ₹2,50,000 each for iOS and for Android. What moves the number: roles, payments, offline use, admin, maps, and whether both stores launch together. See the [ecommerce app cost guide](/blog/ecommerce-app-development-cost-india).",
+        "Published starter price for mobile app development is ₹50,000. Focused native MVPs on [pricing](/pricing) start at ₹2,50,000 each for iOS and for Android. What moves the number: roles, payments, offline use, admin, maps, and whether both stores launch together. See the [ecommerce app cost guide](/solutions/ecommerce-website-development).",
       ],
       comparison: {
         heading: "Cost by complexity (published starting points)",
@@ -54,7 +54,7 @@ export default {
       id: "flutter-vs-rn-vs-native",
       heading: "Flutter vs React Native vs native",
       paragraphs: [
-        "Both Flutter and React Native can ship one app to both stores. Native Swift or Kotlin when one store needs platform APIs that cannot be shared cleanly. Read [Flutter vs React Native](/blog/flutter-vs-react-native-2024).",
+        "Both Flutter and React Native can ship one app to both stores. Native Swift or Kotlin when one store needs platform APIs that cannot be shared cleanly. Read [Flutter vs React Native](/services/mobile-app-development).",
       ],
       comparison: {
         heading: "How we choose",
@@ -166,12 +166,12 @@ export default {
       text: "Figma flows before the first sprint.",
     },
     {
-      href: "/blog/flutter-vs-react-native-2024",
+      href: "/services/mobile-app-development",
       title: "Flutter vs React Native",
       text: "How we choose a shared codebase.",
     },
     {
-      href: "/blog/ecommerce-app-development-cost-india",
+      href: "/solutions/ecommerce-website-development",
       title: "Ecommerce app development cost in India",
       text: "What changes the price of a store app.",
     },
