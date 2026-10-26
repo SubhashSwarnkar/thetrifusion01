@@ -3,7 +3,6 @@ import {
   SOLUTION_SERVICE_REDIRECTS,
   solutionRedirectDestination,
 } from "lib/solutionRedirects";
-import { BLOG_CANONICAL_REDIRECTS } from "data/blogCanonicalRedirects";
 
 /** Canonical paths for URLs that permanently redirect. */
 const SOLUTION_ALIAS = {
@@ -37,7 +36,6 @@ const EXACT_REDIRECTS = {
   "/web-development": "/services/website-development",
   "/android-app-development": "/services/android-app-development",
   "/ios-app-development": "/services/ios-app-development",
-  "/blog-1": "/blog",
   "/discuss": "/discuss-project",
   "/services/ecommerce-development":
     "/solutions/ecommerce-website-development",
@@ -47,28 +45,6 @@ const EXACT_REDIRECTS = {
 for (const item of SOLUTION_SERVICE_REDIRECTS) {
   EXACT_REDIRECTS[`/solutions/${item.slug}`] = item.destination;
 }
-
-/** Retired 2024 posts that 301 to /blog. Keep in sync with next.config.mjs. */
-const RETIRED_BLOG_SLUGS = new Set([
-  "generative-ai-revolution",
-  "web3-decentralized-future",
-  "quantum-computing-leap",
-  "cybersecurity-zero-trust",
-  "rise-of-edge-computing",
-  "green-tech-sustainable-coding",
-  "5g-6g-connectivity",
-  "metaverse-business-impact",
-  "rust-programming-rise",
-  "future-of-devops",
-  "fintech-embedded-finance",
-  "ethical-ai-challenges",
-  "cloud-native-security",
-  "low-code-no-code",
-  "biotech-crispr-software",
-  "autonomous-vehicles-status",
-  "smart-cities-iot",
-  "space-tech-commercial",
-]);
 
 const SITE_HOSTS = new Set([
   "thetrifusion.in",
@@ -83,13 +59,9 @@ function rewritePath(pathname) {
     return `/portfolio${path.slice("/project".length)}` || "/portfolio";
   }
   if (EXACT_REDIRECTS[path]) return EXACT_REDIRECTS[path];
-  if (path.startsWith("/blog/")) {
-    const slug = path.slice("/blog/".length).split("/")[0];
-    if (RETIRED_BLOG_SLUGS.has(slug)) return "/blog";
-    if (BLOG_CANONICAL_REDIRECTS[slug]) {
-      return `/blog/${BLOG_CANONICAL_REDIRECTS[slug]}`;
-    }
-  }
+  // Blog URLs are 410 Gone — do not rewrite them into soft-404 service targets.
+  // Callers should drop /blog links from live chrome; leaving the path unchanged
+  // avoids inventing a mass-301 to /services.
   return path;
 }
 

@@ -57,13 +57,13 @@ export default function LandingPage({ trending, below }) {
           <section id="home-explore-hubs" className="container mx-auto px-5 pb-6">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <Link
-                href="/blog"
+                href="/services"
                 prefetch={false}
                 className="rounded-2xl border border-gray-100 bg-white p-5 hover:border-theme-purple/40 transition-colors shadow-sm"
               >
-                <p className="text-xs font-bold uppercase tracking-[0.14em] text-theme-purple mb-1">Insights</p>
-                <p className="font-bold text-theme-blue">Blog &amp; guides</p>
-                <p className="text-sm text-gray-500 font-light mt-1">Trends, AI, apps, ecommerce how-tos — plus company notes on <span className="text-theme-blue">About</span></p>
+                <p className="text-xs font-bold uppercase tracking-[0.14em] text-theme-purple mb-1">Services</p>
+                <p className="font-bold text-theme-blue">What we build</p>
+                <p className="text-sm text-gray-500 font-light mt-1">Websites, apps, ecommerce, fintech, and more from Jaipur</p>
               </Link>
               <Link
                 href="/portfolio"

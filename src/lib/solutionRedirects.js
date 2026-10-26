@@ -1,9 +1,10 @@
+import { CITY_SOLUTION_SERVICE_REDIRECTS } from "lib/citySolutionRedirects";
+
 /**
  * Near-duplicate /solutions pages merged into the matching /services page.
- * City pages, /solutions hub, ecommerce, MSP, the buyer guide, and
- * software-company-rajasthan stay. The Jaipur company URL now redirects
- * because it targeted the same query as /services/software-development.
- * Keep next.config.mjs in sync with this list.
+ * Jaipur HQ city pages, /solutions hub, ecommerce, MSP, the buyer guide, and
+ * software-company-rajasthan stay. Non-Jaipur city landings 301 to the
+ * matching service (or ecommerce money page). Keep next.config.mjs in sync.
  */
 export const SOLUTION_SERVICE_REDIRECTS = [
   {
@@ -42,6 +43,7 @@ export const SOLUTION_SERVICE_REDIRECTS = [
     slug: "software-development-company-jaipur",
     destination: "/services/software-development",
   },
+  ...CITY_SOLUTION_SERVICE_REDIRECTS,
 ];
 
 export const REDIRECTED_SOLUTION_SLUGS = new Set(

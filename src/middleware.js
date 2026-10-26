@@ -2,6 +2,14 @@ import { NextResponse } from "next/server";
 
 const APEX = "thetrifusion.in";
 
+/** Blog removed from the live site — return 410 Gone (not soft-404 via 301). */
+function isRemovedBlogPath(pathname) {
+  if (pathname === "/blog" || pathname === "/blog-1") return true;
+  if (pathname.startsWith("/blog/")) return true;
+  if (/^\/(es|pt|ar|id|hi)\/blog(\/|$)/.test(pathname)) return true;
+  return false;
+}
+
 /** Permanent host canonicalization when the request reaches the Next app. */
 export function middleware(request) {
   const host = (request.headers.get("host") || "").toLowerCase().split(":")[0];
@@ -16,14 +24,26 @@ export function middleware(request) {
     url.port = "";
     return NextResponse.redirect(url, 308);
   }
+
+  const { pathname } = request.nextUrl;
+  if (isRemovedBlogPath(pathname)) {
+    return new NextResponse("Gone", {
+      status: 410,
+      headers: {
+        "Cache-Control": "public, max-age=86400",
+        "Content-Type": "text/plain; charset=utf-8",
+        "X-Robots-Tag": "noindex, follow",
+      },
+    });
+  }
+
   const response = NextResponse.next();
-  if (!request.nextUrl.pathname.startsWith("/api")) {
+  if (!pathname.startsWith("/api")) {
     response.headers.set(
       "Cache-Control",
       "public, s-maxage=86400, stale-while-revalidate=604800"
     );
-    const canonicalPath =
-      request.nextUrl.pathname === "/" ? "" : request.nextUrl.pathname;
+    const canonicalPath = pathname === "/" ? "" : pathname;
     response.headers.set(
       "Link",
       `<https://${APEX}${canonicalPath}>; rel="canonical"`

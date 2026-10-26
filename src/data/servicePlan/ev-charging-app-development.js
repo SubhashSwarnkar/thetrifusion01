@@ -43,7 +43,7 @@ export default {
       id: "ev-pricing-model",
       heading: "Pricing model",
       paragraphs: [
-        "The [pricing page](/pricing) lists a starting range of ₹4,50,000 ex-GST for an MVP (Basic), with Standard ₹9,00,000 and Premium ₹18,00,000. This page does not sell a per-charger monthly SaaS menu. White-label vs build-vs-buy notes: [build vs buy a CSMS](/blog/build-vs-buy-ev-charging-csms) and [CMS cost guide](/blog/ev-charging-cms-software-cost-guide).",
+        "The [pricing page](/pricing) lists a starting range of ₹4,50,000 ex-GST for an MVP (Basic), with Standard ₹9,00,000 and Premium ₹18,00,000. This page does not sell a per-charger monthly SaaS menu. White-label vs build-vs-buy notes: [build vs buy a CSMS](/services) and [CMS cost guide](/services/software-development).",
       ],
       comparison: {
         heading: "Build vs buy vs white-label",
@@ -72,7 +72,7 @@ export default {
       id: "plugone-case",
       heading: "PlugOne",
       paragraphs: [
-        `${LIVE.plugone} is a live EV charging product (driver app + CMS). Charger counts, session counts and uptime are not in this repo. Case: [PlugOne portfolio](/portfolio/plugone-ev-charging-platform). Protocol explainer: [OCPP/OCPI guide](/blog/ev-charging-app-ocpi-ocpp-guide).`,
+        `${LIVE.plugone} is a live EV charging product (driver app + CMS). Charger counts, session counts and uptime are not in this repo. Case: [PlugOne portfolio](/portfolio/plugone-ev-charging-platform). Protocol explainer: [OCPP/OCPI guide](/services/mobile-app-development).`,
       ],
     },
     {
@@ -127,12 +127,12 @@ export default {
       text: "Live EV charging product.",
     },
     {
-      href: "/blog/ev-charging-app-ocpi-ocpp-guide",
+      href: "/services/mobile-app-development",
       title: "OCPP and OCPI guide",
       text: "How the two protocols split.",
     },
     {
-      href: "/blog/build-vs-buy-ev-charging-csms",
+      href: "/services",
       title: "Build vs buy a CSMS",
       text: "Product vs white-label vs custom.",
     },

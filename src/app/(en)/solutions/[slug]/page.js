@@ -5,12 +5,10 @@ import {
   getSeoLandingBySlug,
   seoLandingPages,
 } from "data/seoLandingPages";
-import {
-  getBlogBySlug,
-  getRelatedGuidesForSolution,
-} from "data/blogData";
+import { getRelatedGuidesForSolution } from "data/blogData";
 import { buildMetadata } from "lib/seoConfig";
 import { isNoindexCitySolutionSlug } from "data/cityLandingRobots";
+import { REDIRECTED_SOLUTION_SLUGS } from "lib/solutionRedirects";
 import {
   breadcrumbSchema,
   faqSchema,
@@ -42,7 +40,14 @@ function solutionCity(page) {
 }
 
 export function generateStaticParams() {
-  return seoLandingPages.map((page) => ({ slug: page.slug }));
+  return seoLandingPages
+    .filter(
+      (page) =>
+        page.slug !== "online-store-development" &&
+        !REDIRECTED_SOLUTION_SLUGS.has(page.slug) &&
+        !isNoindexCitySolutionSlug(page.slug)
+    )
+    .map((page) => ({ slug: page.slug }));
 }
 
 export function generateMetadata({ params }) {
@@ -106,19 +111,7 @@ export default function RoutePage({ params }) {
           { name: page.h1, path: `/solutions/${page.slug}` },
         ])}
       />
-      <Page
-        relatedGuides={getRelatedGuidesForSolution(page.slug, 6)}
-        relatedBlog={
-          page.relatedBlogSlug
-            ? (() => {
-                const post = getBlogBySlug(page.relatedBlogSlug);
-                return post
-                  ? { slug: post.slug, title: post.title, excerpt: post.excerpt }
-                  : null;
-              })()
-            : null
-        }
-      />
+      <Page relatedGuides={getRelatedGuidesForSolution(page.slug, 6)} />
     </>
   );
 }

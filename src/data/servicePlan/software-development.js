@@ -173,7 +173,7 @@ export default {
     {
       question: "Can you integrate with Tally, Zoho or our existing ERP?",
       answer:
-        "Yes. APIs, webhooks and file drops are common. We read the other system's docs before we promise a sync. See the [ERP/CRM integration playbook](/blog/erp-crm-api-integration-playbook-mid-market).",
+        "Yes. APIs, webhooks and file drops are common. We read the other system's docs before we promise a sync. See the [ERP/CRM integration playbook](/services/crm-erp-development).",
     },
     {
       question: "Do I need to visit your Jaipur office?",
@@ -203,12 +203,12 @@ export default {
       text: "Live operations platform — fleet, roles and P&L.",
     },
     {
-      href: "/blog/webhook-reliability-idempotency-playbook-saas",
+      href: "/services/fintech-app-development",
       title: "Webhook reliability playbook",
       text: "Idempotency and retries for SaaS APIs.",
     },
     {
-      href: "/blog/erp-crm-api-integration-playbook-mid-market",
+      href: "/services/crm-erp-development",
       title: "ERP and CRM API integration",
       text: "How mid-market teams connect the systems they already run.",
     },

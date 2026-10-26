@@ -93,29 +93,25 @@ export default function PricingPage() {
               a written scope. Illustrative tiers below show how effort scales.
             </p>
             <p className="text-base text-gray-600 mb-8 max-w-2xl mx-auto">
-              Cost notes with the same INR figures:{" "}
-              <Link href="/blog/website-development-cost-india-2026" className="font-semibold text-theme-purple hover:underline">
-                website development cost in India 2026
+              Same INR starting ranges on the service pages:{" "}
+              <Link href="/services/website-development" className="font-semibold text-theme-purple hover:underline">
+                website development
               </Link>
               {", "}
-              <Link href="/blog/mobile-app-development-cost-india-2026" className="font-semibold text-theme-purple hover:underline">
-                mobile app development cost
+              <Link href="/services/mobile-app-development" className="font-semibold text-theme-purple hover:underline">
+                mobile apps
               </Link>
               {", "}
-              <Link href="/blog/ecommerce-website-packages-cost-india-2026" className="font-semibold text-theme-purple hover:underline">
+              <Link href="/solutions/ecommerce-website-development" className="font-semibold text-theme-purple hover:underline">
                 ecommerce packages
               </Link>
               {", "}
-              <Link href="/blog/software-development-cost-india-2026" className="font-semibold text-theme-purple hover:underline">
+              <Link href="/services/software-development" className="font-semibold text-theme-purple hover:underline">
                 custom software
               </Link>
-              {", "}
-              <Link href="/blog/bbps-aeps-recharge-software-cost-india-2026" className="font-semibold text-theme-purple hover:underline">
-                BBPS / AEPS / recharge
-              </Link>
               {", and "}
-              <Link href="/blog/how-to-choose-website-software-company-jaipur-india-2026" className="font-semibold text-theme-purple hover:underline">
-                how to choose a company in Jaipur
+              <Link href="/services/fintech-app-development" className="font-semibold text-theme-purple hover:underline">
+                BBPS / AEPS / recharge
               </Link>
               .
             </p>

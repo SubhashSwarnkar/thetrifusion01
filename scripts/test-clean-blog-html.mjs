@@ -52,6 +52,32 @@ function tagCounts(html, tag) {
 
 const indexable = blogPosts.filter(isIndexableBlogPost);
 
+if (!indexable.length) {
+  // Blogs unpublished from the live site; cleaner still exercised on a sample.
+  const sample = blogPosts.slice(0, 20);
+  for (const post of sample) {
+    const cleaned = cleanBlogHtml(post.content || "");
+    for (const tag of BALANCED_TAGS) {
+      const counts = tagCounts(cleaned, tag);
+      if (counts.open !== counts.close) {
+        fail(
+          `${post.slug}: unbalanced <${tag}> (${counts.open} open, ${counts.close} close)`
+        );
+      }
+    }
+  }
+  if (failures.length) {
+    console.error(`\n${failures.length} failure(s):`);
+    for (const message of failures.slice(0, 40)) console.error(`FAIL: ${message}`);
+    process.exit(1);
+  }
+  console.log(
+    JSON.stringify({ indexablePosts: 0, sampleChecked: sample.length }, null, 2)
+  );
+  console.log("cleanBlogHtml checks passed (blogs removed from live site)");
+  process.exit(0);
+}
+
 const beforeWords = [];
 const afterWords = [];
 let changed = 0;

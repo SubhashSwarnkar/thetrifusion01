@@ -158,7 +158,6 @@ export default function Header() {
             { name: "Solutions", to: "/solutions" },
             { name: "Portfolio", to: "/portfolio" },
             { name: "Pricing", to: "/pricing" },
-            { name: "Insights", to: "/blog" },
             { name: "Company", to: "/about" },
           ].map((item) => {
             const isActive = item.isDropdown
@@ -344,7 +343,6 @@ export default function Header() {
                   { name: "Solutions", to: "/solutions" },
                   { name: "Portfolio", to: "/portfolio" },
                   { name: "Pricing", to: "/pricing" },
-                  { name: "Insights", to: "/blog" },
                   { name: "Company", to: "/about" },
                 ].map((item) => (
                   <div key={item.name}>

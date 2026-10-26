@@ -364,16 +364,8 @@ export const devopsPageContent = {
       title: "AI development",
       text: "Product AI features, separate from AIOps on infrastructure.",
     },
-    {
-      href: "/blog/react-server-components",
-      title: "React Server Components",
-      text: "How pages stay in the initial HTML a pipeline should deploy.",
-    },
-    {
-      href: "/blog/how-to-build-ecommerce-website-india-2026",
-      title: "Ecommerce website guide",
-      text: "If the workload you want to host is an online store.",
-    },
+
+
     {
       href: "/services/ev-charging-app-development",
       title: "EV charging app development",

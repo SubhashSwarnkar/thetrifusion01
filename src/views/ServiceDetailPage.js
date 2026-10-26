@@ -939,7 +939,7 @@ export default function ServiceDetailPage({
         const mergedLinks = [];
         for (const item of [...hubReferringLinks, ...(service.relatedLinks || [])]) {
           const href = canonicalInternalHref(item.href);
-          if (!href || seen.has(href)) continue;
+          if (!href || href.startsWith("/blog") || seen.has(href)) continue;
           seen.add(href);
           mergedLinks.push({ ...item, href });
         }

@@ -69,7 +69,7 @@ export default {
       id: "wordpress-vs-next-vs-shopify",
       heading: "WordPress vs Next.js vs Shopify",
       paragraphs: [
-        "Pick WordPress when editors must change pages without a developer. Pick Next.js when the site is a product or needs tight SEO and speed. Pick Shopify when the job is a standard catalogue — that work lives on the [ecommerce page](/solutions/ecommerce-website-development). Read [custom website vs Shopify vs WooCommerce](/blog/custom-website-vs-shopify-vs-woocommerce).",
+        "Pick WordPress when editors must change pages without a developer. Pick Next.js when the site is a product or needs tight SEO and speed. Pick Shopify when the job is a standard catalogue — that work lives on the [ecommerce page](/solutions/ecommerce-website-development). Read [custom website vs Shopify vs WooCommerce](/solutions/ecommerce-website-development).",
       ],
       comparison: {
         heading: "Platform choice",
@@ -183,7 +183,7 @@ export default {
       text: "SEO, Google Ads and Meta Ads after the site is live.",
     },
     {
-      href: "/blog/custom-website-vs-shopify-vs-woocommerce",
+      href: "/solutions/ecommerce-website-development",
       title: "Custom website vs Shopify vs WooCommerce",
       text: "How to choose a platform before you ask for a quote.",
     },

@@ -21,14 +21,8 @@ import EventWorldTimes, {
 } from "components/blog/EventWorldTimes";
 
 export function generateStaticParams() {
-  // Archived slugs 301 to /blog. 308 duplicates are omitted. Live posts stay 200.
-  return blogPosts
-    .filter(
-      (post) =>
-        !ARCHIVE_NOINDEX_SLUGS.has(post.slug) &&
-        !isRedirectedBlogSlug(post.slug)
-    )
-    .map((post) => ({ slug: post.slug }));
+  // Blogs removed from the live site — middleware returns 410 for /blog/*.
+  return [];
 }
 
 export const dynamicParams = true;

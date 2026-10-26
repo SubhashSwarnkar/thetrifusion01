@@ -1,7 +1,7 @@
 /**
  * Templated /solutions/*-{city} doorway pages.
- * Keep Jaipur (real HQ) indexable. Other cities stay live HTTP 200 with
- * noindex,follow and are omitted from sitemap-solutions.xml.
+ * Keep Jaipur (real HQ) indexable. Other cities 301 to matching /services
+ * (or ecommerce money page) and are omitted from generation + sitemaps.
  */
 
 export const INDEXABLE_CITY_SUFFIXES = new Set(["jaipur"]);

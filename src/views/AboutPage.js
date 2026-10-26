@@ -294,13 +294,7 @@ export default function AboutPage() {
                 <Link href="/portfolio" className={linkClass}>
                   portfolio
                 </Link>{" "}
-                page. Articles on software, apps, EV charging, AI, and business
-                technology are on the{" "}
-                <Link href="/blog" className={linkClass}>
-                  blog
-                </Link>
-                . How those articles are written, checked, and corrected is on
-                the{" "}
+                page. How we write and correct public copy is on the{" "}
                 <Link href="/editorial-policy" className={linkClass}>
                   editorial policy
                 </Link>

@@ -176,10 +176,6 @@ export default function EditorialPolicyPage() {
                 <Link href="/portfolio" className={linkClass}>
                   portfolio
                 </Link>
-                , the{" "}
-                <Link href="/blog" className={linkClass}>
-                  blog
-                </Link>
                 , and{" "}
                 <Link href="/contact" className={linkClass}>
                   contact

@@ -51,7 +51,7 @@ export default {
       id: "mlm-modules",
       heading: "Core modules",
       paragraphs: [
-        "Genealogy tree, e-wallet, payout engine, KYC, e-pin, optional ecommerce, and Android/iOS apps for distributors. See [MLM unilevel compensation notes](/blog/mlm-crm-unilevel-compensation-plan).",
+        "Genealogy tree, e-wallet, payout engine, KYC, e-pin, optional ecommerce, and Android/iOS apps for distributors. See [MLM unilevel compensation notes](/services/crm-erp-development).",
       ],
     },
     {
@@ -134,7 +134,7 @@ export default {
       text: "When payouts sit on a bank or NPCI rail.",
     },
     {
-      href: "/blog/mlm-crm-unilevel-compensation-plan",
+      href: "/services/crm-erp-development",
       title: "Unilevel compensation plan notes",
       text: "How unilevel is modelled in software.",
     },

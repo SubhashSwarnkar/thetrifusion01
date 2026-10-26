@@ -15,7 +15,8 @@ import { buildMetadata } from "lib/seoConfig";
 import { cleanBlogHtml } from "lib/cleanBlogHtml";
 
 export function generateStaticParams() {
-  return TRANSLATED_BLOG_SLUGS.map((slug) => ({ slug }));
+  // Localized blogs removed with the English blog (middleware 410).
+  return [];
 }
 
 export const dynamicParams = false;
