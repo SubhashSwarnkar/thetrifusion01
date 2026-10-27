@@ -22,7 +22,14 @@ export function middleware(request) {
     url.protocol = "https:";
     url.hostname = APEX;
     url.port = "";
-    return NextResponse.redirect(url, 308);
+    const response = NextResponse.redirect(url, 308);
+    // Prefer apex even on the redirect hop (GSC duplicate-canonical cases).
+    const canonicalPath = url.pathname === "/" ? "" : url.pathname;
+    response.headers.set(
+      "Link",
+      `<https://${APEX}${canonicalPath}${url.search || ""}>; rel="canonical"`
+    );
+    return response;
   }
 
   const { pathname } = request.nextUrl;

@@ -280,11 +280,8 @@ export function buildMetadata({
   locale,
 }) {
   const url = absoluteUrl(path);
-  const ogImage = image
-    ? image.startsWith("http")
-      ? image
-      : absoluteUrl(image)
-    : DEFAULT_OG_IMAGE;
+  // Always run through absoluteUrl so www/.com image hosts cannot leak into og:image.
+  const ogImage = image ? absoluteUrl(image) : DEFAULT_OG_IMAGE;
 
   return {
     title: {

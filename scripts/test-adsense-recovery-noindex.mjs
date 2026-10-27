@@ -166,6 +166,36 @@ if (
   fail("ecommerce-website-development missing from solutions sitemap");
 }
 
+// GSC duplicate-canonical money URLs must stay apex-only with fresh lastmods.
+const gscMoneyUrls = [
+  {
+    part: "services",
+    path: "/services/digital-marketing",
+    lastmod: "2026-10-27",
+  },
+  {
+    part: "solutions",
+    path: "/solutions/ecommerce-website-development",
+    lastmod: "2026-10-27",
+  },
+];
+for (const item of gscMoneyUrls) {
+  const entry = parts[item.part].find((row) => row.url.endsWith(item.path));
+  if (!entry) {
+    fail(`GSC money URL missing from sitemap-${item.part}: ${item.path}`);
+    continue;
+  }
+  if (entry.url !== `https://thetrifusion.in${item.path}`) {
+    fail(`GSC money URL not apex: ${entry.url}`);
+  }
+  const stamp = entry.lastModified?.toISOString?.().slice(0, 10);
+  if (stamp !== item.lastmod) {
+    fail(
+      `GSC money URL lastmod ${stamp || "missing"} for ${item.path}, expected ${item.lastmod}`
+    );
+  }
+}
+
 if (!isLeadPopupEligiblePath("/contact")) fail("contact should allow lead popup");
 if (isLeadPopupEligiblePath("/blog/any-slug")) {
   fail("blog paths must not show lead popup");

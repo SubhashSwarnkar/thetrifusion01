@@ -435,6 +435,11 @@ async function main() {
     } else if (ogUrl) {
       ok(`${path} og:url is apex`);
     }
+    if (/https:\/\/www\.thetrifusion\.in/i.test(pageText)) {
+      fail(`${path} HTML still contains hard-coded https://www.thetrifusion.in`);
+    } else {
+      ok(`${path} HTML has no hard-coded www host`);
+    }
   }
 
   // Legacy ads landings must 301/308 to /services (not 200 + noindex).

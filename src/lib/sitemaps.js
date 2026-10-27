@@ -5,7 +5,6 @@ import { Portfolios, isIndexablePortfolio } from "json/landingPageData";
 import { NOINDEX_PATHS, REDIRECTED_STATIC_PATHS, pages } from "lib/seoConfig";
 import { REDIRECTED_SOLUTION_SLUGS } from "lib/solutionRedirects";
 import { isNoindexCitySolutionSlug } from "data/cityLandingRobots";
-import { siteConfig } from "config/site";
 
 /** Live child sitemaps only — blogs removed from the site. */
 export const SITEMAP_IDS = ["pages", "services", "solutions"];
@@ -37,21 +36,20 @@ function latestDate(values, fallback) {
 }
 
 function apexSitemapUrl(path) {
-  // Hard rule: sitemaps never emit www or non-apex hosts.
-  if (!path || path === "/") return siteConfig.url;
+  // Hard rule: sitemaps never emit www or non-apex hosts (even if env mis-sets SITE_URL).
+  const APEX = "https://thetrifusion.in";
+  if (!path || path === "/") return APEX;
   const value = String(path);
   if (/^https?:\/\//i.test(value)) {
     try {
       const parsed = new URL(value);
       const suffix = `${parsed.pathname}${parsed.search}` || "/";
-      return suffix === "/"
-        ? siteConfig.url
-        : `${siteConfig.url}${suffix}`;
+      return suffix === "/" ? APEX : `${APEX}${suffix}`;
     } catch {
-      return siteConfig.url;
+      return APEX;
     }
   }
-  return `${siteConfig.url}${value.startsWith("/") ? value : `/${value}`}`;
+  return `${APEX}${value.startsWith("/") ? value : `/${value}`}`;
 }
 
 /** Static paths that must never appear in sitemaps (gone / unpublished hubs). */
@@ -171,10 +169,12 @@ export function allSitemapEntries() {
 }
 
 export function childSitemapLocs() {
+  // Prefer the same hard apex used by apexSitemapUrl (ignore mis-set SITE_URL).
+  const origin = "https://thetrifusion.in";
   return [
-    `${siteConfig.url}${CHILD_SITEMAP_PATHS.pages}`,
-    `${siteConfig.url}${CHILD_SITEMAP_PATHS.services}`,
-    `${siteConfig.url}${CHILD_SITEMAP_PATHS.solutions}`,
+    `${origin}${CHILD_SITEMAP_PATHS.pages}`,
+    `${origin}${CHILD_SITEMAP_PATHS.services}`,
+    `${origin}${CHILD_SITEMAP_PATHS.solutions}`,
   ];
 }
 

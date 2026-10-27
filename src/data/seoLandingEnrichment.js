@@ -96,7 +96,7 @@ export const landingEnrichment = {
     primaryCtaHref: "/estimate",
   },
   "ecommerce-website-development": {
-    updatedAt: "2026-10-12",
+    updatedAt: "2026-10-27",
     outcomeLine:
       "Ecommerce website development in Jaipur from ₹25,000 (website) to ₹99,000 (high-end with logistics + Android + iOS), or a scoped custom build for complex catalogs, B2B pricing and marketplaces.",
     whatsappMessage:
