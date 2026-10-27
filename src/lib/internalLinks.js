@@ -36,6 +36,8 @@ const EXACT_REDIRECTS = {
   "/web-development": "/services/website-development",
   "/android-app-development": "/services/android-app-development",
   "/ios-app-development": "/services/ios-app-development",
+  "/ai-development": "/services/ai-development",
+  "/graphic-design": "/services/graphic-design",
   "/discuss": "/discuss-project",
   "/services/ecommerce-development":
     "/solutions/ecommerce-website-development",

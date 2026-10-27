@@ -6,7 +6,7 @@ import { NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: UiPath / Power Automate certifications.
  */
 export default {
-  contentUpdatedAt: "2026-10-12",
+  contentUpdatedAt: "2026-10-27",
   metaTitle: "RPA Services in India | Business Process Automation from Jaipur",
   bannerTitle: "RPA & Business Process Automation Services in India",
   metaDescription:

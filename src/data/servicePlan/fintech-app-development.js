@@ -7,7 +7,7 @@ import { NAP_LINE, SOURCES, TEAM } from "./_shared";
  * TODO OWNER: client count / operators live.
  */
 export default {
-  contentUpdatedAt: "2026-10-25",
+  contentUpdatedAt: "2026-10-27",
   metaTitle: "BBPS, AEPS & DMT Software Provider India | White-Label Fintech Apps",
   bannerTitle: "BBPS, AEPS, DMT & XDMT Software Development in India",
   metaDescription:

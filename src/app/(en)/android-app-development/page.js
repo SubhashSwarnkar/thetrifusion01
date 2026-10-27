@@ -1,7 +1,6 @@
-import { createAdsRoute } from "lib/createAdsRoute";
+import { permanentRedirect } from "next/navigation";
 
-const route = createAdsRoute("/android-app-development");
-
-export const metadata = route.metadata;
-
-export default route.RoutePage;
+/** Legacy bare path — permanently redirect to the indexed service URL. */
+export default function LegacyAndroidAppDevelopmentRedirect() {
+  permanentRedirect("/services/android-app-development");
+}

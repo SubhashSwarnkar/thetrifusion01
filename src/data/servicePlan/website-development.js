@@ -8,7 +8,7 @@ import { LIVE, MAPS_SEARCH, NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: team size / years since 2023 stated as a precise number if you want it on-page.
  */
 export default {
-  contentUpdatedAt: "2026-10-25",
+  contentUpdatedAt: "2026-10-27",
   metaTitle: "Website Development Company in Jaipur | Websites from ₹15,000",
   bannerTitle: "Website Development Company in Jaipur",
   metaDescription:
@@ -176,6 +176,21 @@ export default {
       href: "/services/ui-ux-design",
       title: "UI/UX design",
       text: "Figma product UI when the site is more than a brochure.",
+    },
+    {
+      href: "/services/graphic-design",
+      title: "Graphic design",
+      text: "Campaign kits matched to the live website.",
+    },
+    {
+      href: "/services/branding",
+      title: "Branding",
+      text: "Logo, colour, and guidelines the website can use.",
+    },
+    {
+      href: "/services/software-development",
+      title: "Custom software development",
+      text: "When the marketing site grows into portals and APIs.",
     },
     {
       href: "/services/digital-marketing",

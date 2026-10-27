@@ -7,7 +7,7 @@ import { LIVE, NAP_LINE, SOURCES, TEAM } from "./_shared";
  * TODO OWNER: pricing model (per-charger/month SaaS vs one-time white-label) beyond ₹4,50,000 starting range.
  */
 export default {
-  contentUpdatedAt: "2026-10-12",
+  contentUpdatedAt: "2026-10-27",
   metaTitle: "EV Charging Management Software (CMS) India | OCPP & OCPI | TheTriFusion",
   bannerTitle: "EV Charging Management System (CMS) for CPOs & eMSPs",
   metaDescription:

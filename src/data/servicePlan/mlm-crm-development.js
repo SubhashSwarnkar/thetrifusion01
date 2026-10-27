@@ -8,7 +8,7 @@ import { NAP_LINE, SOURCES, TEAM } from "./_shared";
  * TODO OWNER: any MLM client you can name.
  */
 export default {
-  contentUpdatedAt: "2026-10-25",
+  contentUpdatedAt: "2026-10-27",
   metaTitle: "MLM Software Development Company in India | Binary, Unilevel & Matrix",
   bannerTitle: "MLM Software Development Company in Jaipur, India",
   metaDescription:

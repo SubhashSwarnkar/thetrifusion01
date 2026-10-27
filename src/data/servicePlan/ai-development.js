@@ -6,7 +6,7 @@ import { NAP_LINE, SOURCES, TEAM } from "./_shared";
  * TODO OWNER: pilot price you will publish (beyond the ₹2,00,000 Basic plan).
  */
 export default {
-  contentUpdatedAt: "2026-10-25",
+  contentUpdatedAt: "2026-10-27",
   metaTitle: "AI Development Company in Jaipur | Chatbots, RAG & AI Agents",
   bannerTitle: "AI Development Company in Jaipur",
   metaDescription:

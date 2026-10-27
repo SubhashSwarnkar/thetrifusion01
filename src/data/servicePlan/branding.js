@@ -6,7 +6,7 @@ import { NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: package prices if they differ from /pricing ₹30,000 / ₹60,000 / ₹1,20,000.
  */
 export default {
-  contentUpdatedAt: "2026-10-12",
+  contentUpdatedAt: "2026-10-27",
   metaTitle: "Branding Agency in Jaipur | Logo, Brand Identity & Guidelines",
   bannerTitle: "Branding Agency in Jaipur",
   metaDescription:

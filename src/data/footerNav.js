@@ -41,6 +41,51 @@ export const featuredSolutionNav = [
     navLabel: "AI development",
   },
   {
+    slug: "graphic-design",
+    href: "/services/graphic-design",
+    navLabel: "Graphic design",
+  },
+  {
+    slug: "ui-ux-design",
+    href: "/services/ui-ux-design",
+    navLabel: "UI/UX design",
+  },
+  {
+    slug: "branding",
+    href: "/services/branding",
+    navLabel: "Branding",
+  },
+  {
+    slug: "devops",
+    href: "/services/devops",
+    navLabel: "DevOps & cloud",
+  },
+  {
+    slug: "rpa",
+    href: "/services/rpa",
+    navLabel: "RPA services",
+  },
+  {
+    slug: "on-demand",
+    href: "/services/on-demand",
+    navLabel: "Hire dedicated developers",
+  },
+  {
+    slug: "business-modernization",
+    href: "/services/business-modernization",
+    navLabel: "Business modernization",
+  },
+  {
+    slug: "ev-charging-app-development",
+    href: "/services/ev-charging-app-development",
+    navLabel: "EV charging app development",
+  },
+  {
+    slug: "crm-erp-development",
+    href: "/services/crm-erp-development",
+    navLabel: "CRM & ERP development",
+  },
+  {
     slug: "digital-marketing",
     href: "/services/digital-marketing",
     navLabel: "Digital marketing & performance ads",

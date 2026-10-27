@@ -200,6 +200,8 @@ export const REDIRECTED_STATIC_PATHS = new Set([
   "/web-development",
   "/android-app-development",
   "/ios-app-development",
+  "/ai-development",
+  "/graphic-design",
   "/ecommerce-development",
 ]);
 

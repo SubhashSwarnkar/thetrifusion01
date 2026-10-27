@@ -8,7 +8,7 @@ import { NAP_LINE, SOURCES, TEAM } from "./_shared";
  * TODO OWNER: whether 24/7 managed support is actually offered.
  */
 export default {
-  contentUpdatedAt: "2026-10-12",
+  contentUpdatedAt: "2026-10-27",
   metaTitle: "DevOps & Cloud Services in Jaipur, India | Free Audit | TheTriFusion",
   bannerTitle: "DevOps & Cloud Services in Jaipur, India",
   metaDescription:

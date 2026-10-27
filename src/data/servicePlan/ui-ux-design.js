@@ -6,7 +6,7 @@ import { NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: designer bios beyond the team-page name and role.
  */
 export default {
-  contentUpdatedAt: "2026-10-12",
+  contentUpdatedAt: "2026-10-27",
   metaTitle: "UI/UX Design Agency in Jaipur | Figma Product Design",
   bannerTitle: "UI/UX Design Agency in Jaipur",
   metaDescription:

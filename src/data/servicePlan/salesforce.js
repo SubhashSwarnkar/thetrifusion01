@@ -6,7 +6,7 @@ import { NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: any Salesforce project delivered (named, with permission).
  */
 export default {
-  contentUpdatedAt: "2026-10-12",
+  contentUpdatedAt: "2026-10-27",
   metaTitle: "Salesforce Customization & Integration in Jaipur | TheTriFusion",
   bannerTitle: "Salesforce Customization & Integration Services in Jaipur",
   metaDescription:
@@ -97,6 +97,26 @@ export default {
       href: "/services/crm-erp-development",
       title: "Custom CRM & ERP",
       text: "When Salesforce is the wrong shape.",
+    },
+    {
+      href: "/services/software-development",
+      title: "Custom software development",
+      text: "APIs and portals that sit beside the org.",
+    },
+    {
+      href: "/services/mlm-crm-development",
+      title: "MLM CRM development",
+      text: "Compensation trees Salesforce cannot hold cleanly.",
+    },
+    {
+      href: "/services/rpa",
+      title: "RPA services",
+      text: "Bots that fill Salesforce fields from Tally and email.",
+    },
+    {
+      href: "/services/business-modernization",
+      title: "Business modernization",
+      text: "Spreadsheet cutovers into Salesforce or custom CRM.",
     },
     {
       href: "/services/crm-erp-development",

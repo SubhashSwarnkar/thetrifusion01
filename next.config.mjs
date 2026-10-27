@@ -123,6 +123,16 @@ const nextConfig = {
         destination: "/services/ios-app-development",
         permanent: true,
       },
+      {
+        source: "/ai-development",
+        destination: "/services/ai-development",
+        permanent: true,
+      },
+      {
+        source: "/graphic-design",
+        destination: "/services/graphic-design",
+        permanent: true,
+      },
       // Legacy hashed OG image URLs (route-group hash) → stable opengraph-image.
       {
         source: "/solutions/:slug/opengraph-image-:hash",

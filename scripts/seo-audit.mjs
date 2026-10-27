@@ -447,6 +447,8 @@ async function main() {
     ["/web-development", "/services/website-development"],
     ["/android-app-development", "/services/android-app-development"],
     ["/ios-app-development", "/services/ios-app-development"],
+    ["/ai-development", "/services/ai-development"],
+    ["/graphic-design", "/services/graphic-design"],
     ["/solutions/website-development-company-delhi", "/services/website-development"],
     ["/solutions/website-development-company-mumbai", "/services/website-development"],
     ["/solutions/software-development-company-delhi", "/services/software-development"],

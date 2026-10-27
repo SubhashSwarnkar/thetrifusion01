@@ -117,11 +117,16 @@ export const SERVICE_SIBLINGS = {
     "on-demand",
     "ai-development",
   ],
+  // Indexed hub (GSC): push equity to design / ops / software Discovereds.
   "website-development": [
     "ui-ux-design",
     "digital-marketing",
     "graphic-design",
     "software-development",
+    "branding",
+    "mobile-app-development",
+    "devops",
+    "on-demand",
   ],
   // Indexed hub (GSC): push crawl equity to Discovered /services URLs.
   "mobile-app-development": [
@@ -178,11 +183,16 @@ export const SERVICE_SIBLINGS = {
     "crm-erp-development",
     "on-demand",
   ],
+  // Indexed hub (GSC): mesh into CRM / RPA / MLM / modernization Discovereds.
   salesforce: [
     "crm-erp-development",
     "software-development",
     "on-demand",
     "ai-development",
+    "business-modernization",
+    "rpa",
+    "mlm-crm-development",
+    "devops",
   ],
   "ai-development": [
     "software-development",
@@ -245,6 +255,80 @@ export const SERVICE_SIBLINGS = {
  * Discovered URLs stop looking like orphans. Paths only (apex-relative).
  */
 export const INDEXED_HUB_REFERRING_LINKS = {
+  "website-development": [
+    {
+      href: "/services/software-development",
+      title: "Custom software development",
+      text: "Portals and APIs when the site becomes a product.",
+    },
+    {
+      href: "/services/ui-ux-design",
+      title: "UI/UX design",
+      text: "Figma flows before the first marketing-site sprint.",
+    },
+    {
+      href: "/services/graphic-design",
+      title: "Graphic design",
+      text: "Campaign kits matched to the live website.",
+    },
+    {
+      href: "/services/branding",
+      title: "Branding",
+      text: "Logo, colour, and type the site can reuse.",
+    },
+    {
+      href: "/services/digital-marketing",
+      title: "Digital marketing",
+      text: "SEO and paid ads after launch.",
+    },
+    {
+      href: "/services/devops",
+      title: "DevOps & cloud",
+      text: "CI/CD and hosting for the site you just shipped.",
+    },
+    {
+      href: "/solutions/ecommerce-website-development",
+      title: "Ecommerce website development",
+      text: "Shopify, WooCommerce, or custom stores from ₹25,000.",
+    },
+  ],
+  salesforce: [
+    {
+      href: "/services/crm-erp-development",
+      title: "Custom CRM & ERP",
+      text: "When Salesforce is the wrong shape for the ops tree.",
+    },
+    {
+      href: "/services/software-development",
+      title: "Custom software development",
+      text: "APIs and portals that sit beside the org.",
+    },
+    {
+      href: "/services/mlm-crm-development",
+      title: "MLM CRM development",
+      text: "Unilevel trees Salesforce cannot hold cleanly.",
+    },
+    {
+      href: "/services/rpa",
+      title: "RPA services",
+      text: "Invoice and Tally bots feeding Salesforce fields.",
+    },
+    {
+      href: "/services/business-modernization",
+      title: "Business modernization",
+      text: "Spreadsheet cutovers into Salesforce or custom CRM.",
+    },
+    {
+      href: "/services/ai-development",
+      title: "AI development",
+      text: "Assistants and retrieval on org data.",
+    },
+    {
+      href: "/services/on-demand",
+      title: "Hire dedicated developers",
+      text: "Named seats for Apex, Flows, and integrations.",
+    },
+  ],
   "mobile-app-development": [
     {
       href: "/services/android-app-development",

@@ -2,12 +2,19 @@ import { NextResponse } from "next/server";
 
 const APEX = "thetrifusion.in";
 
+const STATIC_EXT =
+  /\.(?:svg|png|jpg|jpeg|gif|webp|avif|woff2|mp4|txt|xml|json|ico|css|js|map)$/i;
+
 /** Blog removed from the live site — return 410 Gone (not soft-404 via 301). */
 function isRemovedBlogPath(pathname) {
   if (pathname === "/blog" || pathname === "/blog-1") return true;
   if (pathname.startsWith("/blog/")) return true;
   if (/^\/(es|pt|ar|id|hi)\/blog(\/|$)/.test(pathname)) return true;
   return false;
+}
+
+function isStaticAssetPath(pathname) {
+  return STATIC_EXT.test(pathname);
 }
 
 /** Permanent host canonicalization when the request reaches the Next app. */
@@ -44,6 +51,11 @@ export function middleware(request) {
     });
   }
 
+  // Static assets: host already apex — do not rewrite Cache-Control.
+  if (isStaticAssetPath(pathname)) {
+    return NextResponse.next();
+  }
+
   const response = NextResponse.next();
   if (!pathname.startsWith("/api")) {
     response.headers.set(
@@ -62,8 +74,9 @@ export function middleware(request) {
 export const config = {
   matcher: [
     /*
-     * Skip Next internals and static assets; still cover HTML routes.
+     * Run on all paths except Next internals so www/.com → apex is permanent
+     * for HTML and static assets alike. next.config redirects are the other hop.
      */
-    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|avif|woff2|mp4|txt|xml|json)$).*)",
+    "/((?!_next/static|_next/image).*)",
   ],
 };
