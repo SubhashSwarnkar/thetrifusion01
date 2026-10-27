@@ -37,6 +37,24 @@ function isStaticAssetPath(pathname) {
 }
 
 /**
+ * Permanent redirect with an explicit absolute apex Location.
+ * Do NOT use NextResponse.redirect(URL) — on same-host requests Next/Vercel
+ * relativizes Location to "/path", which www clients resolve back to www.
+ */
+function apexRedirect(finalPath, search = "") {
+  const location = `https://${APEX}${finalPath}${search || ""}`;
+  const canonicalPath = finalPath === "/" ? "" : finalPath;
+  return new NextResponse(null, {
+    status: 308,
+    headers: {
+      Location: location,
+      Link: `<https://${APEX}${canonicalPath}>; rel="canonical"`,
+      "Cache-Control": "public, max-age=0, must-revalidate",
+    },
+  });
+}
+
+/**
  * Host + path canonicalization in ONE hop.
  * next.config must NOT also www→apex (that runs before middleware and creates
  * GSC redirect-error chains: www/blog→apex/blog→410, www/ios→apex/ios→/services).
@@ -56,17 +74,9 @@ export function middleware(request) {
   const needsHostFix = NON_APEX_HOSTS.has(host);
   const needsPathFix = finalPath !== normalizedPath;
 
-  // Single hop to apex + final money URL (covers www legacy paths that would
-  // otherwise relative-redirect on www via next.config, then hop again).
+  // Single hop to absolute apex + final money URL.
   if (needsHostFix || needsPathFix) {
-    const target = new URL(`https://${APEX}${finalPath}${search || ""}`);
-    const response = NextResponse.redirect(target, 308);
-    const canonicalPath = finalPath === "/" ? "" : finalPath;
-    response.headers.set(
-      "Link",
-      `<https://${APEX}${canonicalPath}>; rel="canonical"`
-    );
-    return response;
+    return apexRedirect(finalPath, search || "");
   }
 
   // Static assets: host already apex — do not rewrite Cache-Control.
@@ -93,7 +103,7 @@ export const config = {
   matcher: [
     /*
      * Run on all paths except Next internals so www/.com → apex is permanent
-     * for HTML and static assets alike. Path-only redirects stay in next.config.
+     * for HTML and static assets alike.
      */
     "/((?!_next/static|_next/image).*)",
   ],

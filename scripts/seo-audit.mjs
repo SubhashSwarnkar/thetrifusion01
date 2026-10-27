@@ -409,7 +409,9 @@ async function main() {
       "/ios-app-development",
       "https://thetrifusion.in/services/ios-app-development",
     ],
+    // Must be absolute apex — relative /portfolio resolves to www on www host.
     ["/portfolio/asd1293uhjkhkjh2", "https://thetrifusion.in/portfolio"],
+    ["/portfolio/not-a-real-project-slug", "https://thetrifusion.in/portfolio"],
     [
       "/services/digital-marketing",
       "https://thetrifusion.in/services/digital-marketing",

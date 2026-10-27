@@ -1,4 +1,5 @@
 import { SOLUTION_SERVICE_REDIRECTS } from "lib/solutionRedirects";
+import { PORTFOLIO_SLUGS } from "lib/portfolioSlugs";
 
 /**
  * Permanent path redirects (apex pathname only).
@@ -23,8 +24,6 @@ const EXACT_REDIRECTS = {
   "/ecommerce-development": "/solutions/ecommerce-website-development",
   "/portfolio/atharv-narayan-wellness-website":
     "/portfolio/atharv-narayan-dairy-logistics-website",
-  // GSC 404 junk portfolio slug
-  "/portfolio/asd1293uhjkhkjh2": "/portfolio",
 };
 
 for (const item of SOLUTION_SERVICE_REDIRECTS) {
@@ -32,6 +31,7 @@ for (const item of SOLUTION_SERVICE_REDIRECTS) {
 }
 
 const HASHED_SOLUTION_OG = /^\/solutions\/([^/]+)\/opengraph-image-[^/]+$/;
+const PORTFOLIO_SLUG_PATH = /^\/portfolio\/([^/]+)$/;
 
 /**
  * Final apex pathname after permanent path redirects (no host change).
@@ -44,5 +44,10 @@ export function canonicalSitePathname(pathname) {
   const og = path.match(HASHED_SOLUTION_OG);
   if (og) return `/solutions/${og[1]}/opengraph-image`;
   if (EXACT_REDIRECTS[path]) return EXACT_REDIRECTS[path];
+  // Unknown / junk portfolio slugs (GSC crawl waste) → hub.
+  const portfolio = path.match(PORTFOLIO_SLUG_PATH);
+  if (portfolio && !PORTFOLIO_SLUGS.has(portfolio[1])) {
+    return "/portfolio";
+  }
   return path;
 }
