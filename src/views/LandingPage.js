@@ -4,7 +4,6 @@ import Footer from "parts/Footer";
 import BrandTrustStrip from "components/BrandTrustStrip";
 import DiwaliOfferCountdown from "components/DiwaliOfferCountdown";
 import { PACKAGE_PRICE_SUMMARY } from "data/ecommerceDevelopmentData";
-import HomeServiceIndex from "components/HomeServiceIndex";
 import Link from "next/link";
 
 export default function LandingPage({ trending, below }) {
@@ -85,8 +84,6 @@ export default function LandingPage({ trending, below }) {
               </Link>
             </div>
           </section>
-
-          <HomeServiceIndex />
 
           {trending}
           {below}

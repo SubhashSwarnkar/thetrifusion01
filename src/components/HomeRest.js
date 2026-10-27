@@ -13,6 +13,7 @@ import Discuss from "parts/Discuss";
 import TrustBadges from "components/TrustBadges";
 import FeaturedCaseStudy from "components/FeaturedCaseStudy";
 import SpecializedSolutions from "components/SpecializedSolutions";
+import HomeServiceIndex from "components/HomeServiceIndex";
 import { HOME_FAQS } from "data/companyInfo";
 
 /** Below-the-fold homepage. Server-rendered so Swiper and section JS stay off the client graph. */
@@ -51,6 +52,7 @@ export default function HomeRest() {
       <TrustBadges />
       <Advantage data={Advantages} />
       <Testimonial data={Testimonials} />
+      <HomeServiceIndex />
       <section className="container mx-auto px-5 py-16">
         <h2 className="text-4xl sm:text-5xl text-theme-blue font-bold mb-4 text-center">
           Frequently asked questions
