@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 import Page from "views/ProjectDetailPage";
 import JsonLd from "components/JsonLd";
 import { Portfolios, isIndexablePortfolio } from "json/landingPageData";
@@ -12,9 +12,10 @@ export function generateStaticParams() {
 export function generateMetadata({ params }) {
   const project = Portfolios.find((item) => item.id === params.slug);
 
+  // Unknown / junk portfolio slugs permanently redirect to the hub (no 404 crawl).
   if (!project) {
     return {
-      title: "Project Not Found | TheTriFusion",
+      title: "Portfolio | TheTriFusion",
       robots: { index: false, follow: true },
     };
   }
@@ -41,7 +42,7 @@ export default function RoutePage({ params }) {
   const project = Portfolios.find((item) => item.id === params.slug);
 
   if (!project) {
-    notFound();
+    permanentRedirect("/portfolio");
   }
 
   return (

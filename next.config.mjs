@@ -21,62 +21,11 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // Apex .in is the ONLY canonical host. permanent:true is 308 in Next.js.
-      // If www still returns 307 in production, change the Vercel Domains
-      // "Redirect www to apex" setting — that hop runs before this config.
-      // Explicit GSC-flagged money URLs first so www cannot self-canonicalize.
-      // One-hop www → apex+canonical path avoids GSC "Redirect error" chains.
-      {
-        source: "/solutions/ecommerce-website-development",
-        has: [{ type: "host", value: "www.thetrifusion.in" }],
-        destination:
-          "https://thetrifusion.in/solutions/ecommerce-website-development",
-        permanent: true,
-      },
-      {
-        source: "/services/digital-marketing",
-        has: [{ type: "host", value: "www.thetrifusion.in" }],
-        destination: "https://thetrifusion.in/services/digital-marketing",
-        permanent: true,
-      },
-      {
-        source: "/services/website-development",
-        has: [{ type: "host", value: "www.thetrifusion.in" }],
-        destination: "https://thetrifusion.in/services/website-development",
-        permanent: true,
-      },
-      {
-        source: "/services/mlm-crm-development",
-        has: [{ type: "host", value: "www.thetrifusion.in" }],
-        destination: "https://thetrifusion.in/services/mlm-crm-development",
-        permanent: true,
-      },
-      {
-        // GSC Redirect error: www hop + path hop. Land on the services URL.
-        source: "/solutions/web-development-company-jaipur",
-        has: [{ type: "host", value: "www.thetrifusion.in" }],
-        destination: "https://thetrifusion.in/services/website-development",
-        permanent: true,
-      },
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.thetrifusion.in" }],
-        destination: "https://thetrifusion.in/:path*",
-        permanent: true,
-      },
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "thetrifusion.com" }],
-        destination: "https://thetrifusion.in/:path*",
-        permanent: true,
-      },
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.thetrifusion.com" }],
-        destination: "https://thetrifusion.in/:path*",
-        permanent: true,
-      },
-      // Collapse /project → /portfolio in one hop (also covers www after host rewrite)
+      // Host canonicalization (www/.com → apex) lives in middleware so blogs can
+      // 410 without a prior hop and legacy paths land on /services in ONE hop.
+      // Do NOT add www catch-alls here — next.config redirects run before
+      // middleware and recreate GSC "Redirect error" chains.
+      // Collapse /project → /portfolio in one hop
       {
         source: "/project",
         destination: "/portfolio",
@@ -90,6 +39,12 @@ const nextConfig = {
       {
         source: "/portfolio/atharv-narayan-wellness-website",
         destination: "/portfolio/atharv-narayan-dairy-logistics-website",
+        permanent: true,
+      },
+      {
+        // GSC 404 sample — junk slug; stop crawl waste.
+        source: "/portfolio/asd1293uhjkhkjh2",
+        destination: "/portfolio",
         permanent: true,
       },
       {

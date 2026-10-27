@@ -373,19 +373,88 @@ async function main() {
     ok("homepage JSON-LD includes LinkedIn and Instagram sameAs");
   }
 
-  // Blogs removed: hub + sample posts must be 410 Gone (not soft-404 via 301).
+  // Blogs removed: hub + sample posts + OG must be 410 Gone (not soft-404 via 301).
   for (const path of [
     "/blog",
     "/blog-1",
     "/blog/website-development-cost-india-2026",
     "/blog/generative-ai-revolution",
     "/blog/f1-singapore-grand-prix-2026-race-day-guide",
+    "/blog/how-to-build-ecommerce-website-india-2026",
+    "/blog/google-gemini-vs-chatgpt-india-business",
+    "/blog/rbi-mpc-meeting-5-7-october-2026/opengraph-image",
+    "/blog/busan-film-festival-2026-oct-6-15-guide/opengraph-image",
   ]) {
     const { res } = await fetchText(`${BASE_URL}${path}`);
     if (res.status !== 410) {
       fail(`${path} should be 410 Gone, got ${res.status}`);
     } else {
       ok(`${path} → 410`);
+    }
+  }
+
+  // www host checks (GSC Redirect error): blogs must 410 with no prior hop;
+  // money/about paths must single-hop 308 to apex final URL.
+  // Against production use the real www host; locally send Host via curl-compatible fetch.
+  const wwwBase = /thetrifusion\.in$/i.test(new URL(BASE_URL).hostname)
+    ? "https://www.thetrifusion.in"
+    : BASE_URL;
+  const wwwCases = [
+    ["/blog", null], // 410
+    ["/blog/how-to-build-ecommerce-website-india-2026", null],
+    ["/blog/google-gemini-vs-chatgpt-india-business", null],
+    ["/about", "https://thetrifusion.in/about"],
+    [
+      "/solutions/web-development-company-jaipur",
+      "https://thetrifusion.in/services/website-development",
+    ],
+    [
+      "/ios-app-development",
+      "https://thetrifusion.in/services/ios-app-development",
+    ],
+    [
+      "/portfolio/asd1293uhjkhkjh2",
+      "https://thetrifusion.in/portfolio",
+    ],
+    [
+      "/services/digital-marketing",
+      "https://thetrifusion.in/services/digital-marketing",
+    ],
+    [
+      "/services/website-development",
+      "https://thetrifusion.in/services/website-development",
+    ],
+    [
+      "/solutions/ecommerce-website-development",
+      "https://thetrifusion.in/solutions/ecommerce-website-development",
+    ],
+  ];
+  for (const [path, expectedLoc] of wwwCases) {
+    const headers = {
+      "user-agent": "TheTriFusion-SEO-Audit/1.0",
+    };
+    if (wwwBase === BASE_URL) {
+      headers.Host = "www.thetrifusion.in";
+    }
+    const res = await fetch(`${wwwBase}${path}`, {
+      redirect: "manual",
+      headers,
+    });
+    const location = res.headers.get("location") || "";
+    if (expectedLoc === null) {
+      if (res.status !== 410) {
+        fail(
+          `www ${path} should be 410 Gone (no redirect hop), got ${res.status} ${location}`
+        );
+      } else {
+        ok(`www ${path} → 410`);
+      }
+    } else if (res.status !== 301 && res.status !== 308) {
+      fail(`www ${path} should permanently redirect, got ${res.status}`);
+    } else if (location !== expectedLoc) {
+      fail(`www ${path} redirects to ${location}, expected ${expectedLoc}`);
+    } else {
+      ok(`www ${path} → ${expectedLoc} (${res.status})`);
     }
   }
 
@@ -449,6 +518,10 @@ async function main() {
     ["/ios-app-development", "/services/ios-app-development"],
     ["/ai-development", "/services/ai-development"],
     ["/graphic-design", "/services/graphic-design"],
+    // GSC Redirect error sample
+    ["/solutions/web-development-company-jaipur", "/services/website-development"],
+    // GSC 404 junk portfolio
+    ["/portfolio/asd1293uhjkhkjh2", "/portfolio"],
     ["/solutions/website-development-company-delhi", "/services/website-development"],
     ["/solutions/website-development-company-mumbai", "/services/website-development"],
     ["/solutions/software-development-company-delhi", "/services/software-development"],

@@ -1,8 +1,10 @@
 import {
   REDIRECTED_SOLUTION_SLUGS,
-  SOLUTION_SERVICE_REDIRECTS,
   solutionRedirectDestination,
 } from "lib/solutionRedirects";
+import { canonicalSitePathname } from "lib/canonicalPath";
+
+export { canonicalSitePathname } from "lib/canonicalPath";
 
 /** Canonical paths for URLs that permanently redirect. */
 const SOLUTION_ALIAS = {
@@ -22,32 +24,6 @@ export function canonicalSolutionHref(slug) {
   return `/solutions/${canonical}`;
 }
 
-/**
- * Rewrite aliased solution pages onto the canonical page and drop duplicates.
- * `resolve` loads a page by slug (already enriched).
- */
-/** Permanent path redirects from next.config.mjs. Host redirects are separate. */
-const EXACT_REDIRECTS = {
-  "/project": "/portfolio",
-  "/case-studies": "/portfolio",
-  "/solutions/online-store-development":
-    "/solutions/ecommerce-website-development",
-  "/services/web-development": "/services/website-development",
-  "/web-development": "/services/website-development",
-  "/android-app-development": "/services/android-app-development",
-  "/ios-app-development": "/services/ios-app-development",
-  "/ai-development": "/services/ai-development",
-  "/graphic-design": "/services/graphic-design",
-  "/discuss": "/discuss-project",
-  "/services/ecommerce-development":
-    "/solutions/ecommerce-website-development",
-  "/ecommerce-development": "/solutions/ecommerce-website-development",
-};
-
-for (const item of SOLUTION_SERVICE_REDIRECTS) {
-  EXACT_REDIRECTS[`/solutions/${item.slug}`] = item.destination;
-}
-
 const SITE_HOSTS = new Set([
   "thetrifusion.in",
   "www.thetrifusion.in",
@@ -56,15 +32,9 @@ const SITE_HOSTS = new Set([
 ]);
 
 function rewritePath(pathname) {
-  const path = pathname.length > 1 ? pathname.replace(/\/$/, "") : pathname;
-  if (path === "/project" || path.startsWith("/project/")) {
-    return `/portfolio${path.slice("/project".length)}` || "/portfolio";
-  }
-  if (EXACT_REDIRECTS[path]) return EXACT_REDIRECTS[path];
-  // Blog URLs are 410 Gone — do not rewrite them into soft-404 service targets.
-  // Callers should drop /blog links from live chrome; leaving the path unchanged
-  // avoids inventing a mass-301 to /services.
-  return path;
+  // Blog URLs are 410 Gone — canonicalSitePathname leaves them unchanged
+  // so we never invent a mass-301 to /services.
+  return canonicalSitePathname(pathname);
 }
 
 /**
