@@ -2,5 +2,5 @@ import { permanentRedirect } from "next/navigation";
 
 /** Legacy bare path — permanently redirect to the indexed service URL. */
 export default function LegacyGraphicDesignRedirect() {
-  permanentRedirect("/services/graphic-design");
+  permanentRedirect("https://thetrifusion.in/services/graphic-design");
 }

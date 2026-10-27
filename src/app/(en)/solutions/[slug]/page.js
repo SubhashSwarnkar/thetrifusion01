@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import Page from "views/SolutionLandingPage";
 import JsonLd from "components/JsonLd";
 import {
@@ -8,7 +8,10 @@ import {
 import { getRelatedGuidesForSolution } from "data/blogData";
 import { buildMetadata } from "lib/seoConfig";
 import { isNoindexCitySolutionSlug } from "data/cityLandingRobots";
-import { REDIRECTED_SOLUTION_SLUGS } from "lib/solutionRedirects";
+import {
+  REDIRECTED_SOLUTION_SLUGS,
+  solutionRedirectDestination,
+} from "lib/solutionRedirects";
 import {
   breadcrumbSchema,
   faqSchema,
@@ -51,6 +54,11 @@ export function generateStaticParams() {
 }
 
 export function generateMetadata({ params }) {
+  const redirected = solutionRedirectDestination(params.slug);
+  if (redirected) {
+    return { robots: { index: false, follow: true } };
+  }
+
   const page = getSeoLandingBySlug(params.slug);
 
   if (!page) {
@@ -74,6 +82,11 @@ export function generateMetadata({ params }) {
 }
 
 export default function RoutePage({ params }) {
+  const redirected = solutionRedirectDestination(params.slug);
+  if (redirected) {
+    permanentRedirect(`https://thetrifusion.in${redirected}`);
+  }
+
   const page = getSeoLandingBySlug(params.slug);
 
   if (!page) {

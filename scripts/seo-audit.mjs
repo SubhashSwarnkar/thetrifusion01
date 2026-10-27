@@ -395,10 +395,7 @@ async function main() {
 
   // www host checks (GSC Redirect error): blogs must 410 with no prior hop;
   // money/about paths must single-hop 308 to apex final URL.
-  // Against production use the real www host; locally send Host via curl-compatible fetch.
-  const wwwBase = /thetrifusion\.in$/i.test(new URL(BASE_URL).hostname)
-    ? "https://www.thetrifusion.in"
-    : BASE_URL;
+  // Node fetch cannot set Host; use curl locally. On production hit real www.
   const wwwCases = [
     ["/blog", null], // 410
     ["/blog/how-to-build-ecommerce-website-india-2026", null],
@@ -412,10 +409,7 @@ async function main() {
       "/ios-app-development",
       "https://thetrifusion.in/services/ios-app-development",
     ],
-    [
-      "/portfolio/asd1293uhjkhkjh2",
-      "https://thetrifusion.in/portfolio",
-    ],
+    ["/portfolio/asd1293uhjkhkjh2", "https://thetrifusion.in/portfolio"],
     [
       "/services/digital-marketing",
       "https://thetrifusion.in/services/digital-marketing",
@@ -429,32 +423,52 @@ async function main() {
       "https://thetrifusion.in/solutions/ecommerce-website-development",
     ],
   ];
+  const wwwIsProd = /thetrifusion\.in$/i.test(new URL(BASE_URL).hostname);
   for (const [path, expectedLoc] of wwwCases) {
-    const headers = {
-      "user-agent": "TheTriFusion-SEO-Audit/1.0",
-    };
-    if (wwwBase === BASE_URL) {
-      headers.Host = "www.thetrifusion.in";
+    let status = 0;
+    let location = "";
+    if (wwwIsProd) {
+      const res = await fetch(`https://www.thetrifusion.in${path}`, {
+        redirect: "manual",
+        headers: { "user-agent": "TheTriFusion-SEO-Audit/1.0" },
+      });
+      status = res.status;
+      location = res.headers.get("location") || "";
+    } else {
+      const { execFileSync } = await import("node:child_process");
+      const raw = execFileSync(
+        "curl",
+        [
+          "-sI",
+          "--max-redirs",
+          "0",
+          "-H",
+          "Host: www.thetrifusion.in",
+          "-H",
+          "user-agent: TheTriFusion-SEO-Audit/1.0",
+          `${BASE_URL}${path}`,
+        ],
+        { encoding: "utf8" }
+      );
+      const statusMatch = raw.match(/^HTTP\/\S+\s+(\d+)/m);
+      status = statusMatch ? Number(statusMatch[1]) : 0;
+      const locMatch = raw.match(/^location:\s*(.+)\s*$/im);
+      location = locMatch ? locMatch[1].trim() : "";
     }
-    const res = await fetch(`${wwwBase}${path}`, {
-      redirect: "manual",
-      headers,
-    });
-    const location = res.headers.get("location") || "";
     if (expectedLoc === null) {
-      if (res.status !== 410) {
+      if (status !== 410) {
         fail(
-          `www ${path} should be 410 Gone (no redirect hop), got ${res.status} ${location}`
+          `www ${path} should be 410 Gone (no redirect hop), got ${status} ${location}`
         );
       } else {
         ok(`www ${path} → 410`);
       }
-    } else if (res.status !== 301 && res.status !== 308) {
-      fail(`www ${path} should permanently redirect, got ${res.status}`);
+    } else if (status !== 301 && status !== 308) {
+      fail(`www ${path} should permanently redirect, got ${status}`);
     } else if (location !== expectedLoc) {
       fail(`www ${path} redirects to ${location}, expected ${expectedLoc}`);
     } else {
-      ok(`www ${path} → ${expectedLoc} (${res.status})`);
+      ok(`www ${path} → ${expectedLoc} (${status})`);
     }
   }
 

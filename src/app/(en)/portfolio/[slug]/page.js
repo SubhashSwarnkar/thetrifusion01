@@ -42,7 +42,7 @@ export default function RoutePage({ params }) {
   const project = Portfolios.find((item) => item.id === params.slug);
 
   if (!project) {
-    permanentRedirect("/portfolio");
+    permanentRedirect("https://thetrifusion.in/portfolio");
   }
 
   return (

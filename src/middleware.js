@@ -50,8 +50,15 @@ export function middleware(request) {
   }
 
   const host = (request.headers.get("host") || "").toLowerCase().split(":")[0];
-  if (NON_APEX_HOSTS.has(host)) {
-    const finalPath = canonicalSitePathname(pathname);
+  const finalPath = canonicalSitePathname(pathname);
+  const normalizedPath =
+    pathname.length > 1 ? pathname.replace(/\/$/, "") : pathname || "/";
+  const needsHostFix = NON_APEX_HOSTS.has(host);
+  const needsPathFix = finalPath !== normalizedPath;
+
+  // Single hop to apex + final money URL (covers www legacy paths that would
+  // otherwise relative-redirect on www via next.config, then hop again).
+  if (needsHostFix || needsPathFix) {
     const target = new URL(`https://${APEX}${finalPath}${search || ""}`);
     const response = NextResponse.redirect(target, 308);
     const canonicalPath = finalPath === "/" ? "" : finalPath;
