@@ -2,6 +2,7 @@ import Header from "parts/Header";
 import Hero from "parts/Hero";
 import Footer from "parts/Footer";
 import BrandTrustStrip from "components/BrandTrustStrip";
+import ConnectDairyProductHighlight from "components/ConnectDairyProductHighlight";
 import DiwaliOfferCountdown from "components/DiwaliOfferCountdown";
 import { PACKAGE_PRICE_SUMMARY } from "data/ecommerceDevelopmentData";
 import Link from "next/link";
@@ -13,6 +14,7 @@ export default function LandingPage({ trending, below }) {
         
         <main className="overflow-hidden">
           <Hero />
+          <ConnectDairyProductHighlight />
           <BrandTrustStrip />
 
             <DiwaliOfferCountdown
