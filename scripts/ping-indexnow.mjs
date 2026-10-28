@@ -1,5 +1,8 @@
-const HOST = "thetrifusion.in";
-const KEY = "trifusion-indexnow-2026a1b2c3d4e5";
+import {
+  INDEXNOW_HOST,
+  INDEXNOW_KEY,
+  INDEXNOW_KEY_LOCATION,
+} from "../src/data/indexnowKey.js";
 
 const urls = process.argv.slice(2);
 if (!urls.length) {
@@ -8,9 +11,9 @@ if (!urls.length) {
 }
 
 const payload = {
-  host: HOST,
-  key: KEY,
-  keyLocation: `https://${HOST}/${KEY}.txt`,
+  host: INDEXNOW_HOST,
+  key: INDEXNOW_KEY,
+  keyLocation: INDEXNOW_KEY_LOCATION,
   urlList: urls,
 };
 

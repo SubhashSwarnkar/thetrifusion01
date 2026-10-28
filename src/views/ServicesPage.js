@@ -19,129 +19,150 @@ import {
   htmlSitemapServiceGroups,
   hubServiceBySlug,
 } from "data/serviceHub";
+import { absoluteSiteUrl } from "config/site";
 
 const SERVICE_CHOOSER = [
   {
-    href: "/services/software-development",
+    href: absoluteSiteUrl("/services/software-development"),
     label: "Custom software development company in India",
     text: "for portals, CRM modules and APIs from Jaipur, from ₹1,00,000.",
   },
   {
-    href: "/services/website-development",
+    href: absoluteSiteUrl("/services/website-development"),
     label: "Website development company in Jaipur",
     text: "for business websites, lead-generation sites, and portals on React, Next.js, or WordPress, from ₹15,000.",
   },
   {
-    href: "/services/mobile-app-development",
+    href: absoluteSiteUrl("/services/mobile-app-development"),
     label: "Mobile app development company in Jaipur",
     text: "for one React Native or Flutter app on both iOS and Android, from ₹50,000.",
   },
   {
-    href: "/services/ios-app-development",
+    href: absoluteSiteUrl("/services/ios-app-development"),
     label: "iOS app development company in India",
     text: "for App Store-only or iPhone-first apps in Swift or React Native, from ₹2,50,000.",
   },
   {
-    href: "/services/android-app-development",
+    href: absoluteSiteUrl("/services/android-app-development"),
     label: "Android app development company in Jaipur",
     text: "for Play Store-first apps in Kotlin or React Native, from ₹2,50,000.",
   },
   {
-    href: "/services/devops",
+    href: absoluteSiteUrl("/services/devops"),
     label: "DevOps services in Jaipur and India",
     text: "for CI/CD, Kubernetes, infrastructure as code, and cloud migration on AWS, Azure, or GCP, starting with a free infrastructure audit.",
   },
   {
-    href: "/services/fintech-app-development",
+    href: absoluteSiteUrl("/services/fintech-app-development"),
     label: "Fintech app development company in India",
     text: "for BBPS, AEPS, DMT, and recharge software, from ₹99,999.",
   },
   {
-    href: "/services/ai-development",
+    href: absoluteSiteUrl("/services/ai-development"),
     label: "AI development company in Jaipur, India",
     text: "for WhatsApp bots, RAG and agents with a human review step, from ₹2,00,000.",
   },
   {
-    href: "/services/digital-marketing",
+    href: absoluteSiteUrl("/services/digital-marketing"),
     label: "Digital marketing agency in Jaipur, India",
     text: "for SEO, Google Ads and Meta Ads, from ₹15,000 (ad spend separate).",
   },
   {
-    href: "/services/crm-erp-development",
+    href: absoluteSiteUrl("/services/crm-erp-development"),
     label: "Custom CRM and ERP development in Jaipur",
     text: "for pipelines, inventory and GST billing, from ₹3,00,000.",
   },
   {
-    href: "/services/ui-ux-design",
+    href: absoluteSiteUrl("/services/ui-ux-design"),
     label: "UI/UX design company in Jaipur, India",
     text: "for Figma product UI and Hindi/Indic flows, from ₹20,000.",
   },
   {
-    href: "/services/branding",
+    href: absoluteSiteUrl("/services/branding"),
     label: "Branding agency in Jaipur, India",
     text: "for logo, identity and guidelines a website can use, from ₹30,000.",
   },
   {
-    href: "/services/rpa",
+    href: absoluteSiteUrl("/services/rpa"),
     label: "RPA services company in India",
     text: "for invoice, Tally and CRM bots from Jaipur, from ₹50,000.",
   },
   {
-    href: "/services/salesforce",
+    href: absoluteSiteUrl("/services/salesforce"),
     label: "Salesforce implementation company in India",
     text: "for Flows, Apex and integrations on an org you already pay for, from ₹80,000.",
   },
   {
-    href: "/services/mlm-crm-development",
+    href: absoluteSiteUrl("/services/mlm-crm-development"),
     label: "MLM software development company in India",
     text: "for binary, unilevel and matrix plans from Jaipur, from ₹3,50,000.",
   },
   {
-    href: "/services/ev-charging-app-development",
+    href: absoluteSiteUrl("/services/ev-charging-app-development"),
     label: "EV charging app development in India",
     text: "for OCPP/OCPI CSMS from Jaipur, from ₹4,50,000.",
   },
   {
-    href: "/services/business-modernization",
+    href: absoluteSiteUrl("/services/business-modernization"),
     label: "Business modernization in Jaipur, India",
     text: "for spreadsheet-to-software cutovers, from ₹1,50,000.",
   },
   {
-    href: "/services/graphic-design",
+    href: absoluteSiteUrl("/services/graphic-design"),
     label: "Graphic design company in Jaipur, India",
     text: "for social, ads and catalogues that match the live site, from ₹10,000.",
   },
   {
-    href: "/services/on-demand",
+    href: absoluteSiteUrl("/services/on-demand"),
     label: "Hire dedicated developers in India",
     text: "for named React, Node and mobile seats from Jaipur. Project work from ₹50,000.",
   },
   {
-    href: "/services/fintech-app-development/bbps-software",
+    href: absoluteSiteUrl("/services/fintech-app-development/bbps-software"),
     label: "BBPS software development",
     text: "for white-label Bharat BillPay retailer and distributor panels. You bring BBPOU access. From ₹99,999.",
   },
   {
-    href: "/services/fintech-app-development/aeps-software",
+    href: absoluteSiteUrl("/services/fintech-app-development/aeps-software"),
     label: "AEPS software development",
     text: "for Aadhaar-enabled payment panels. You bring sponsor-bank access. From ₹99,999.",
   },
   {
-    href: "/services/fintech-app-development/dmt-software",
+    href: absoluteSiteUrl("/services/fintech-app-development/dmt-software"),
     label: "DMT software development",
     text: "for domestic money transfer retailer software. You bring the bank or aggregator contract. From ₹99,999.",
   },
   {
-    href: "/services/fintech-app-development/recharge-software",
+    href: absoluteSiteUrl("/services/fintech-app-development/recharge-software"),
     label: "Recharge software development",
     text: "for mobile and DTH top-up panels. You bring the recharge API partner. From ₹99,999.",
   },
 ];
 
+const FINTECH_CHILD_LINKS = [
+  {
+    href: absoluteSiteUrl("/services/fintech-app-development/bbps-software"),
+    label: "BBPS software development",
+  },
+  {
+    href: absoluteSiteUrl("/services/fintech-app-development/aeps-software"),
+    label: "AEPS software development",
+  },
+  {
+    href: absoluteSiteUrl("/services/fintech-app-development/dmt-software"),
+    label: "DMT software development",
+  },
+  {
+    href: absoluteSiteUrl("/services/fintech-app-development/recharge-software"),
+    label: "recharge software development",
+  },
+];
+
 function ServiceCard({ service, accent }) {
   if (!service) return null;
+  const href = absoluteSiteUrl(service.href);
   return (
-    <Link href={service.href} prefetch={false} className="group block h-full">
+    <a href={href} className="group block h-full">
       <div
         className={`relative h-full rounded-2xl border p-6 overflow-hidden hover:shadow-lg transition-all duration-300 ${accent.card}`}
       >
@@ -179,7 +200,7 @@ function ServiceCard({ service, accent }) {
           </svg>
         </span>
       </div>
-    </Link>
+    </a>
   );
 }
 
@@ -306,33 +327,17 @@ export default function ServicesPage() {
                 {group.id === "industry" && fintech ? (
                   <p className="mt-4 text-sm text-gray-600">
                     Fintech modules:{" "}
-                    <Link
-                      href="/services/fintech-app-development/bbps-software"
-                      className="font-semibold text-theme-purple hover:underline"
-                    >
-                      BBPS software development
-                    </Link>
-                    {", "}
-                    <Link
-                      href="/services/fintech-app-development/aeps-software"
-                      className="font-semibold text-theme-purple hover:underline"
-                    >
-                      AEPS software development
-                    </Link>
-                    {", "}
-                    <Link
-                      href="/services/fintech-app-development/dmt-software"
-                      className="font-semibold text-theme-purple hover:underline"
-                    >
-                      DMT software development
-                    </Link>
-                    {", and "}
-                    <Link
-                      href="/services/fintech-app-development/recharge-software"
-                      className="font-semibold text-theme-purple hover:underline"
-                    >
-                      recharge software development
-                    </Link>
+                    {FINTECH_CHILD_LINKS.map((item, idx) => (
+                      <span key={item.href}>
+                        {idx > 0 ? (idx === FINTECH_CHILD_LINKS.length - 1 ? ", and " : ", ") : null}
+                        <a
+                          href={item.href}
+                          className="font-semibold text-theme-purple hover:underline"
+                        >
+                          {item.label}
+                        </a>
+                      </span>
+                    ))}
                     .
                   </p>
                 ) : null}
@@ -349,13 +354,12 @@ export default function ServicesPage() {
             <ul className="space-y-3 text-sm md:text-base text-gray-600 font-light leading-relaxed">
               {SERVICE_CHOOSER.map((item) => (
                 <li key={item.href}>
-                  <Link
+                  <a
                     href={item.href}
-                    prefetch={false}
                     className="font-semibold text-theme-purple hover:underline"
                   >
                     {item.label}
-                  </Link>{" "}
+                  </a>{" "}
                   {item.text}
                 </li>
               ))}

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Header from "parts/Header";
 import Footer from "parts/Footer";
 import Breadcrumbs from "components/Breadcrumbs";
@@ -13,12 +12,12 @@ function Group({ title, items }) {
       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
         {items.map((item) => (
           <li key={item.href}>
-            <Link
+            <a
               href={item.href}
               className="text-theme-purple font-semibold hover:underline"
             >
               {item.label}
-            </Link>
+            </a>
           </li>
         ))}
       </ul>

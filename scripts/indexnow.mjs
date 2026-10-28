@@ -4,6 +4,7 @@
  *
  *   node --import ./scripts/register-extensionless.mjs scripts/indexnow.mjs
  *   node --import ./scripts/register-extensionless.mjs scripts/indexnow.mjs --all
+ *   node --import ./scripts/register-extensionless.mjs scripts/indexnow.mjs --services
  *   node --import ./scripts/register-extensionless.mjs scripts/indexnow.mjs --changed
  *   node --import ./scripts/register-extensionless.mjs scripts/indexnow.mjs --urls https://thetrifusion.in/services/rpa
  *   node --import ./scripts/register-extensionless.mjs scripts/indexnow.mjs --dry-run
@@ -27,10 +28,17 @@ const ENDPOINT = "https://api.indexnow.org/indexnow";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
 function parseArgs(argv) {
-  const args = { all: false, changed: false, dryRun: false, urls: [] };
+  const args = {
+    all: false,
+    services: false,
+    changed: false,
+    dryRun: false,
+    urls: [],
+  };
   for (let i = 0; i < argv.length; i += 1) {
     const token = argv[i];
     if (token === "--all") args.all = true;
+    else if (token === "--services") args.services = true;
     else if (token === "--changed") args.changed = true;
     else if (token === "--dry-run") args.dryRun = true;
     else if (token === "--urls") {
@@ -121,6 +129,11 @@ function selectUrls(args) {
   }
   if (args.urls.length) {
     return [...new Set(args.urls)].slice(0, MAX_URLS);
+  }
+  if (args.services) {
+    return all
+      .filter((url) => /\/services(\/|$)/.test(url))
+      .slice(0, MAX_URLS);
   }
   if (args.all || !args.changed) {
     return all.slice(0, MAX_URLS);

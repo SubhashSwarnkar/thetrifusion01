@@ -6,7 +6,7 @@ import { NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: monthly social package prices if they differ from /pricing project plans.
  */
 export default {
-  contentUpdatedAt: "2026-10-27",
+  contentUpdatedAt: "2026-10-28",
   metaTitle: "Graphic Design Company in Jaipur | Social, Ads, Brochures & Packaging",
   bannerTitle: "Graphic Design Services in Jaipur",
   metaDescription:

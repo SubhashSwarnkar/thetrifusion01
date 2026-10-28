@@ -111,11 +111,18 @@ export const UNINDEXED_SERVICE_LINKS = [
 
 /** Each service page should point at nearby service URLs (not city landings). */
 export const SERVICE_SIBLINGS = {
+  // Indexed hub (GSC): push equity to underlinked Discovereds.
   "software-development": [
     "website-development",
     "crm-erp-development",
     "on-demand",
     "ai-development",
+    "devops",
+    "rpa",
+    "business-modernization",
+    "mlm-crm-development",
+    "fintech-app-development",
+    "ui-ux-design",
   ],
   // Indexed hub (GSC): push equity to design / ops / software Discovereds.
   "website-development": [
@@ -255,6 +262,73 @@ export const SERVICE_SIBLINGS = {
  * Discovered URLs stop looking like orphans. Paths only (apex-relative).
  */
 export const INDEXED_HUB_REFERRING_LINKS = {
+  "software-development": [
+    {
+      href: "/services/ui-ux-design",
+      title: "UI/UX design",
+      text: "Figma product UI before the first sprint.",
+    },
+    {
+      href: "/services/graphic-design",
+      title: "Graphic design",
+      text: "Campaign kits matched to the product UI.",
+    },
+    {
+      href: "/services/branding",
+      title: "Branding",
+      text: "Logo and guidelines the product can reuse.",
+    },
+    {
+      href: "/services/mlm-crm-development",
+      title: "MLM CRM development",
+      text: "Unilevel trees and payout ledgers.",
+    },
+    {
+      href: "/services/fintech-app-development",
+      title: "Fintech app development",
+      text: "BBPS, AEPS, DMT, and recharge panels.",
+    },
+    {
+      href: "/services/fintech-app-development/bbps-software",
+      title: "BBPS software",
+      text: "Bharat BillPay retailer panels.",
+    },
+    {
+      href: "/services/ai-development",
+      title: "AI development",
+      text: "Assistants and retrieval on product data.",
+    },
+    {
+      href: "/services/devops",
+      title: "DevOps & cloud",
+      text: "CI/CD and hosting under the product.",
+    },
+    {
+      href: "/services/rpa",
+      title: "RPA services",
+      text: "Invoice and Tally bots beside the software.",
+    },
+    {
+      href: "/services/on-demand",
+      title: "Hire dedicated developers",
+      text: "Named React, Node, and mobile seats.",
+    },
+    {
+      href: "/services/business-modernization",
+      title: "Business modernization",
+      text: "Spreadsheet cutovers into custom software.",
+    },
+    {
+      href: "/services/digital-marketing",
+      title: "Digital marketing",
+      text: "SEO and paid ads once the product ships.",
+    },
+    {
+      href: "/services/ev-charging-app-development",
+      title: "EV charging app development",
+      text: "OCPP/OCPI CSMS when the product is charging.",
+    },
+  ],
   "website-development": [
     {
       href: "/services/software-development",
@@ -285,6 +359,26 @@ export const INDEXED_HUB_REFERRING_LINKS = {
       href: "/services/devops",
       title: "DevOps & cloud",
       text: "CI/CD and hosting for the site you just shipped.",
+    },
+    {
+      href: "/services/on-demand",
+      title: "Hire dedicated developers",
+      text: "Named seats when the site needs ongoing build.",
+    },
+    {
+      href: "/services/rpa",
+      title: "RPA services",
+      text: "Form and CRM bots after the site is live.",
+    },
+    {
+      href: "/services/ai-development",
+      title: "AI development",
+      text: "Assistants and chat on the marketing site.",
+    },
+    {
+      href: "/services/business-modernization",
+      title: "Business modernization",
+      text: "When the brochure site becomes ops software.",
     },
     {
       href: "/solutions/ecommerce-website-development",
@@ -356,9 +450,39 @@ export const INDEXED_HUB_REFERRING_LINKS = {
       text: "Figma flows before the build.",
     },
     {
+      href: "/services/graphic-design",
+      title: "Graphic design",
+      text: "Store listing art and in-app campaign kits.",
+    },
+    {
+      href: "/services/branding",
+      title: "Branding",
+      text: "App icon and identity the stores can reuse.",
+    },
+    {
+      href: "/services/devops",
+      title: "DevOps & cloud",
+      text: "CI/CD and backends under the mobile app.",
+    },
+    {
+      href: "/services/on-demand",
+      title: "Hire dedicated developers",
+      text: "Named React Native or Flutter seats.",
+    },
+    {
+      href: "/services/digital-marketing",
+      title: "Digital marketing",
+      text: "ASO and paid install campaigns after launch.",
+    },
+    {
       href: "/services/ev-charging-app-development",
       title: "EV charging app development",
       text: "Driver apps on OCPP/OCPI stacks.",
+    },
+    {
+      href: "/services/fintech-app-development",
+      title: "Fintech app development",
+      text: "Retailer wallets and payment rails in-app.",
     },
   ],
   "crm-erp-development": [
@@ -396,6 +520,26 @@ export const INDEXED_HUB_REFERRING_LINKS = {
       href: "/services/fintech-app-development",
       title: "Fintech app development",
       text: "When wallets and settlement sit next to CRM.",
+    },
+    {
+      href: "/services/devops",
+      title: "DevOps & cloud",
+      text: "Hosting and CI/CD under the CRM stack.",
+    },
+    {
+      href: "/services/on-demand",
+      title: "Hire dedicated developers",
+      text: "Named seats for CRM modules and APIs.",
+    },
+    {
+      href: "/services/ui-ux-design",
+      title: "UI/UX design",
+      text: "Operator flows before the CRM build.",
+    },
+    {
+      href: "/services/digital-marketing",
+      title: "Digital marketing",
+      text: "Lead gen that feeds the CRM pipeline.",
     },
   ],
   "fintech-app-development": [

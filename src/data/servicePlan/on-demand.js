@@ -7,7 +7,7 @@ import { NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: developer profiles (anonymised OK).
  */
 export default {
-  contentUpdatedAt: "2026-10-27",
+  contentUpdatedAt: "2026-10-28",
   metaTitle: "Hire Dedicated Developers in India | React, Node & Mobile from Jaipur",
   bannerTitle: "Hire Dedicated Developers in India",
   metaDescription:

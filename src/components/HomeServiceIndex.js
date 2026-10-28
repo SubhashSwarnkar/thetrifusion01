@@ -1,7 +1,8 @@
-import Link from "next/link";
 import ServiceIcon from "components/ServiceIcon";
 import { accentAt } from "lib/themeAccents";
+import { absoluteSiteUrl } from "config/site";
 
+/** Absolute apex hrefs so crawlers never resolve service URLs onto www. */
 const GROUPS = [
   {
     id: "websites-design-demand",
@@ -9,35 +10,35 @@ const GROUPS = [
     intro: "Marketing sites, product UI, brand kits, and paid/organic growth.",
     items: [
       {
-        href: "/services/website-development",
+        href: absoluteSiteUrl("/services/website-development"),
         slug: "website-development",
         title: "Website development",
         benefit: "Company sites and lead-gen pages",
         price: "From ₹15,000",
       },
       {
-        href: "/services/ui-ux-design",
+        href: absoluteSiteUrl("/services/ui-ux-design"),
         slug: "ui-ux-design",
         title: "UI/UX design",
         benefit: "Figma flows for web and apps",
         price: "From ₹20,000",
       },
       {
-        href: "/services/graphic-design",
+        href: absoluteSiteUrl("/services/graphic-design"),
         slug: "graphic-design",
         title: "Graphic design",
         benefit: "Campaign kits matched to your live site",
         price: "From ₹10,000",
       },
       {
-        href: "/services/branding",
+        href: absoluteSiteUrl("/services/branding"),
         slug: "branding",
         title: "Branding",
         benefit: "Logo, colour, type, and guidelines",
         price: "From ₹30,000",
       },
       {
-        href: "/services/digital-marketing",
+        href: absoluteSiteUrl("/services/digital-marketing"),
         slug: "digital-marketing",
         title: "Digital marketing",
         benefit: "SEO, Google Ads, and Meta Ads",
@@ -51,42 +52,42 @@ const GROUPS = [
     intro: "Mobile products, AI assistants, infrastructure, and dedicated seats.",
     items: [
       {
-        href: "/services/mobile-app-development",
+        href: absoluteSiteUrl("/services/mobile-app-development"),
         slug: "mobile-app-development",
         title: "Mobile app development",
         benefit: "iOS + Android MVPs with a shared backend",
         price: "From ₹2,50,000",
       },
       {
-        href: "/services/ios-app-development",
+        href: absoluteSiteUrl("/services/ios-app-development"),
         slug: "ios-app-development",
         title: "iOS app development",
         benefit: "App Store-first Swift or React Native",
         price: "From ₹2,50,000",
       },
       {
-        href: "/services/android-app-development",
+        href: absoluteSiteUrl("/services/android-app-development"),
         slug: "android-app-development",
         title: "Android app development",
         benefit: "Play Store-first Kotlin or React Native",
         price: "From ₹2,50,000",
       },
       {
-        href: "/services/ai-development",
+        href: absoluteSiteUrl("/services/ai-development"),
         slug: "ai-development",
         title: "AI development",
         benefit: "Assistants with a human review step",
         price: "From ₹2,00,000",
       },
       {
-        href: "/services/devops",
+        href: absoluteSiteUrl("/services/devops"),
         slug: "devops",
         title: "DevOps",
         benefit: "CI/CD and cloud — audit first",
         price: null,
       },
       {
-        href: "/services/on-demand",
+        href: absoluteSiteUrl("/services/on-demand"),
         slug: "on-demand",
         title: "Hire dedicated developers",
         benefit: "Named React, Node, or mobile seats",
@@ -100,49 +101,49 @@ const GROUPS = [
     intro: "Internal tools, CRM/ERP, automation, and industry platforms.",
     items: [
       {
-        href: "/services/software-development",
+        href: absoluteSiteUrl("/services/software-development"),
         slug: "software-development",
         title: "Custom software",
         benefit: "Portals, APIs, and product backends",
         price: "From ₹1,00,000",
       },
       {
-        href: "/services/crm-erp-development",
+        href: absoluteSiteUrl("/services/crm-erp-development"),
         slug: "crm-erp-development",
         title: "CRM & ERP",
         benefit: "Pipelines, inventory, and GST billing",
         price: "From ₹3,00,000",
       },
       {
-        href: "/services/rpa",
+        href: absoluteSiteUrl("/services/rpa"),
         slug: "rpa",
         title: "RPA services",
         benefit: "Invoice and Tally automation bots",
         price: "From ₹50,000",
       },
       {
-        href: "/services/salesforce",
+        href: absoluteSiteUrl("/services/salesforce"),
         slug: "salesforce",
         title: "Salesforce implementation",
         benefit: "Flows on an org you already pay for",
         price: null,
       },
       {
-        href: "/services/business-modernization",
+        href: absoluteSiteUrl("/services/business-modernization"),
         slug: "business-modernization",
         title: "Business modernization",
         benefit: "Spreadsheet-to-software cutovers",
         price: "From ₹1,50,000",
       },
       {
-        href: "/services/mlm-crm-development",
+        href: absoluteSiteUrl("/services/mlm-crm-development"),
         slug: "mlm-crm-development",
         title: "MLM software",
         benefit: "Unilevel CRM, genealogy, and wallets",
         price: "From ₹3,50,000",
       },
       {
-        href: "/services/ev-charging-app-development",
+        href: absoluteSiteUrl("/services/ev-charging-app-development"),
         slug: "ev-charging-app-development",
         title: "EV charging apps",
         benefit: "OCPP/OCPI charging CMS",
@@ -156,35 +157,37 @@ const GROUPS = [
     intro: "Fintech hub and white-label retailer panels — you bring network access.",
     items: [
       {
-        href: "/services/fintech-app-development",
+        href: absoluteSiteUrl("/services/fintech-app-development"),
         slug: "fintech-app-development",
         title: "Fintech app development",
         benefit: "BBPS, AEPS, DMT, and recharge hub",
         price: "From ₹99,999",
       },
       {
-        href: "/services/fintech-app-development/bbps-software",
+        href: absoluteSiteUrl("/services/fintech-app-development/bbps-software"),
         slug: "fintech-app-development",
         title: "BBPS software",
         benefit: "Bharat BillPay retailer panels",
         price: "From ₹99,999",
       },
       {
-        href: "/services/fintech-app-development/aeps-software",
+        href: absoluteSiteUrl("/services/fintech-app-development/aeps-software"),
         slug: "fintech-app-development",
         title: "AEPS software",
         benefit: "Aadhaar-enabled retailer software",
         price: null,
       },
       {
-        href: "/services/fintech-app-development/dmt-software",
+        href: absoluteSiteUrl("/services/fintech-app-development/dmt-software"),
         slug: "fintech-app-development",
         title: "DMT software",
         benefit: "Domestic money transfer panels",
         price: null,
       },
       {
-        href: "/services/fintech-app-development/recharge-software",
+        href: absoluteSiteUrl(
+          "/services/fintech-app-development/recharge-software"
+        ),
         slug: "fintech-app-development",
         title: "Recharge software",
         benefit: "Mobile and DTH top-up panels",
@@ -196,9 +199,8 @@ const GROUPS = [
 
 function ServiceCatalogCard({ item, accent }) {
   return (
-    <Link
+    <a
       href={item.href}
-      prefetch={false}
       className="group block h-full rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-purple focus-visible:ring-offset-2"
     >
       <article className="relative flex h-full flex-col rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-300 hover:border-theme-purple/40 hover:shadow-md">
@@ -246,7 +248,7 @@ function ServiceCatalogCard({ item, accent }) {
           </svg>
         </span>
       </article>
-    </Link>
+    </a>
   );
 }
 
@@ -284,9 +286,8 @@ export default function HomeServiceIndex() {
               in INR. Open the one that matches the job.
             </p>
           </div>
-          <Link
-            href="/services"
-            prefetch={false}
+          <a
+            href={absoluteSiteUrl("/services")}
             className="inline-flex items-center self-start rounded-full border border-gray-200 px-5 py-2.5 text-sm font-semibold text-theme-blue transition-colors hover:border-theme-purple hover:text-theme-purple focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-purple focus-visible:ring-offset-2 lg:self-auto"
           >
             All services
@@ -304,7 +305,7 @@ export default function HomeServiceIndex() {
                 d="M17 8l4 4m0 0l-4 4m4-4H3"
               />
             </svg>
-          </Link>
+          </a>
         </div>
 
         <nav

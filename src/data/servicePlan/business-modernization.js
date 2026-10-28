@@ -5,7 +5,7 @@ import { NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: one real spreadsheet→software migration story with permission.
  */
 export default {
-  contentUpdatedAt: "2026-10-27",
+  contentUpdatedAt: "2026-10-28",
   metaTitle: "Legacy Software Modernization & Excel-to-Software | Jaipur",
   bannerTitle: "Business & Legacy Software Modernization Services",
   metaDescription:

@@ -10,6 +10,7 @@ import { serviceNav as services } from "data/serviceNav";
 import { SERVICE_MENU_GROUPS } from "data/serviceMenu";
 import { siteConfig } from "config/site";
 import { canonicalInternalHref } from "lib/internalLinks";
+import { absoluteSiteUrl } from "config/site";
 
 function getService(slug) {
   return services.find((item) => item.slug === slug);
@@ -253,8 +254,10 @@ export default function Header() {
                         const accent = accentAt(group.accentIndex + idx);
                         return (
                           <li key={extra.slug}>
-                            <Link prefetch={false}
-                              href={canonicalInternalHref(extra.href)}
+                            <a
+                              href={absoluteSiteUrl(
+                                canonicalInternalHref(extra.href)
+                              )}
                               onClick={handleLinkClick}
                               className="group/item flex items-start gap-3 rounded-xl px-2 py-2 hover:bg-gray-50 transition-colors"
                             >
@@ -269,7 +272,7 @@ export default function Header() {
                                   {extra.shortDescription}
                                 </span>
                               </span>
-                            </Link>
+                            </a>
                           </li>
                         );
                       })}
@@ -281,8 +284,8 @@ export default function Header() {
                         );
                         return (
                           <li key={slug}>
-                            <Link prefetch={false}
-                              href={`/services/${service.slug}`}
+                            <a
+                              href={absoluteSiteUrl(`/services/${service.slug}`)}
                               onClick={handleLinkClick}
                               className="group/item flex items-start gap-3 rounded-xl px-2 py-2 hover:bg-gray-50 transition-colors"
                             >
@@ -297,7 +300,7 @@ export default function Header() {
                                   {service.shortDescription}
                                 </span>
                               </span>
-                            </Link>
+                            </a>
                           </li>
                         );
                       })}
@@ -310,8 +313,8 @@ export default function Header() {
                 <p className="text-xs text-theme-blue/50 hidden sm:block">
                   Web, apps, design and growth — from Jaipur.
                 </p>
-                <Link prefetch={false}
-                  href="/services"
+                <a
+                  href={absoluteSiteUrl("/services")}
                   onClick={handleLinkClick}
                   className="ml-auto inline-flex items-center gap-2 text-sm font-bold text-theme-purple hover:text-dark-theme-purple"
                 >
@@ -319,7 +322,7 @@ export default function Header() {
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -372,9 +375,9 @@ export default function Header() {
                               {servicesForMobileMenu(services).map((s, sIdx) => {
                                 const accent = accentAt(sIdx + 1);
                                 return (
-                                <Link prefetch={false}
+                                <a
                                   key={s.id}
-                                  href={`/services/${s.slug}`}
+                                  href={absoluteSiteUrl(`/services/${s.slug}`)}
                                   onClick={handleLinkClick}
                                   className={`flex items-center gap-3 py-2.5 px-3 rounded-xl border ${accent.card}`}
                                 >
@@ -382,7 +385,7 @@ export default function Header() {
                                     <ServiceIcon slug={s.slug} className="w-4 h-4" />
                                   </span>
                                   <span className="font-semibold text-theme-blue text-base">{s.title}</span>
-                                </Link>
+                                </a>
                                 );
                               })}
                             </div>

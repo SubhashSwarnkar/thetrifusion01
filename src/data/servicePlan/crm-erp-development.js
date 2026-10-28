@@ -6,7 +6,7 @@ import { LIVE, NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: price range if you want bands beyond ₹3,00,000 / ₹6,00,000 / ₹11,00,000.
  */
 export default {
-  contentUpdatedAt: "2026-10-27",
+  contentUpdatedAt: "2026-10-28",
   metaTitle: "Custom CRM & ERP Software Development Company in Jaipur",
   bannerTitle: "Custom CRM & ERP Software Development in Jaipur",
   metaDescription:

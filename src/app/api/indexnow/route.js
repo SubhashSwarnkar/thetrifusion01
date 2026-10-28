@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
-
-const HOST = "thetrifusion.in";
-const KEY = "trifusion-indexnow-2026a1b2c3d4e5";
+import {
+  INDEXNOW_HOST,
+  INDEXNOW_KEY,
+  INDEXNOW_KEY_LOCATION,
+} from "data/indexnowKey";
 
 export async function POST(request) {
   try {
@@ -11,9 +13,9 @@ export async function POST(request) {
       return NextResponse.json({ error: "urls required" }, { status: 400 });
     }
     const payload = {
-      host: HOST,
-      key: KEY,
-      keyLocation: `https://${HOST}/${KEY}.txt`,
+      host: INDEXNOW_HOST,
+      key: INDEXNOW_KEY,
+      keyLocation: INDEXNOW_KEY_LOCATION,
       urlList: urls.slice(0, 100),
     };
     const res = await fetch("https://api.indexnow.org/indexnow", {
@@ -22,8 +24,16 @@ export async function POST(request) {
       body: JSON.stringify(payload),
     });
     const text = await res.text();
-    return NextResponse.json({ ok: res.ok, status: res.status, body: text, submitted: payload.urlList.length });
+    return NextResponse.json({
+      ok: res.ok,
+      status: res.status,
+      body: text,
+      submitted: payload.urlList.length,
+    });
   } catch (error) {
-    return NextResponse.json({ error: error.message || "IndexNow failed" }, { status: 500 });
+    return NextResponse.json(
+      { error: error.message || "IndexNow failed" },
+      { status: 500 }
+    );
   }
 }

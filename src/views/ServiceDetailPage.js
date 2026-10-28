@@ -21,12 +21,36 @@ import {
   canonicalSolutionHref,
   dedupeCanonicalSolutions,
 } from "lib/internalLinks";
+import { absoluteSiteUrl } from "config/site";
 import { accentAt, accentForSlug } from "lib/themeAccents";
 import NotFoundPage from "./NotFoundPage";
 import SEO from "components/common/SEO";
 import RelatedGuides from "components/RelatedGuides";
 import FounderByline from "components/FounderByline";
 import { FOUNDER } from "data/founder";
+
+const FINTECH_CHILD_PRODUCTS = [
+  {
+    href: "/services/fintech-app-development/bbps-software",
+    title: "BBPS software",
+    text: "Bharat BillPay retailer and distributor panels.",
+  },
+  {
+    href: "/services/fintech-app-development/aeps-software",
+    title: "AEPS software",
+    text: "Aadhaar-enabled payments on certified devices.",
+  },
+  {
+    href: "/services/fintech-app-development/dmt-software",
+    title: "DMT software",
+    text: "Domestic money transfer for retailer networks.",
+  },
+  {
+    href: "/services/fintech-app-development/recharge-software",
+    title: "Recharge software",
+    text: "Mobile and DTH top-ups on your partner API.",
+  },
+];
 
 function SectionHeading({ children, kicker, id }) {
   return (
@@ -452,6 +476,44 @@ export default function ServiceDetailPage({
       </section>
 
       {service.hideClientStrip ? null : <BrandTrustStrip />}
+
+      {slug === "fintech-app-development" ? (
+        <section
+          id="fintech-modules"
+          className="container mx-auto px-5 pb-10"
+          aria-labelledby="fintech-modules-heading"
+        >
+          <div className="max-w-5xl rounded-2xl border border-theme-purple/20 bg-light-theme-purple/20 p-6 md:p-8">
+            <h2
+              id="fintech-modules-heading"
+              className="text-2xl md:text-3xl font-black text-theme-blue mb-2"
+            >
+              BBPS, AEPS, DMT, and recharge software
+            </h2>
+            <p className="text-gray-600 font-light mb-5 max-w-3xl">
+              Four white-label retailer panels under this hub. You bring the
+              network or bank access; we build the software from Jaipur.
+            </p>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {FINTECH_CHILD_PRODUCTS.map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={absoluteSiteUrl(item.href)}
+                    className="block h-full rounded-xl border border-white bg-white p-4 hover:border-theme-purple/40 transition-colors"
+                  >
+                    <span className="block font-bold text-theme-purple mb-1">
+                      {item.title}
+                    </span>
+                    <span className="block text-sm text-gray-600 font-light">
+                      {item.text}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ) : null}
 
       {leadSections.map((section) => (
         <DetailBlock key={section.id} section={section} />
@@ -938,10 +1000,10 @@ export default function ServiceDetailPage({
         const seen = new Set();
         const mergedLinks = [];
         for (const item of [...hubReferringLinks, ...(service.relatedLinks || [])]) {
-          const href = canonicalInternalHref(item.href);
-          if (!href || href.startsWith("/blog") || seen.has(href)) continue;
-          seen.add(href);
-          mergedLinks.push({ ...item, href });
+          const path = canonicalInternalHref(item.href);
+          if (!path || path.startsWith("/blog") || seen.has(path)) continue;
+          seen.add(path);
+          mergedLinks.push({ ...item, href: absoluteSiteUrl(path) });
         }
         if (!mergedLinks.length) return null;
         return (
@@ -950,10 +1012,10 @@ export default function ServiceDetailPage({
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl">
               {mergedLinks.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="block h-full rounded-2xl border border-gray-100 p-5 hover:border-theme-purple/40">
+                  <a href={item.href} className="block h-full rounded-2xl border border-gray-100 p-5 hover:border-theme-purple/40">
                     <h3 className="text-lg font-bold text-theme-blue mb-2">{item.title}</h3>
                     <p className="text-sm text-gray-600 font-light leading-relaxed">{item.text}</p>
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -998,9 +1060,9 @@ export default function ServiceDetailPage({
               {otherServices.map((item, idx) => {
                 const accent = accentAt(idx);
                 return (
-                  <Link
+                  <a
                     key={item.slug}
-                    href={`/services/${item.slug}`}
+                    href={absoluteSiteUrl(`/services/${item.slug}`)}
                     className={`group flex items-center gap-3 p-4 rounded-2xl border ${accent.card}`}
                   >
                     <span className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 ${accent.iconWrap}`}>
@@ -1012,7 +1074,7 @@ export default function ServiceDetailPage({
                       </span>
                       <span className={`text-xs font-semibold ${accent.text}`}>Explore Service →</span>
                     </span>
-                  </Link>
+                  </a>
                 );
               })}
             </div>

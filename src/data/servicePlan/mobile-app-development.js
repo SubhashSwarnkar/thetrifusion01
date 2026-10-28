@@ -6,7 +6,7 @@ import { LIVE, NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: client quotes for PlugOne and Connect Dairy.
  */
 export default {
-  contentUpdatedAt: "2026-10-27",
+  contentUpdatedAt: "2026-10-28",
   metaTitle: "Mobile App Development Company in Jaipur | iOS & Android from ₹50,000",
   bannerTitle: "Mobile App Development Company in Jaipur",
   metaDescription:

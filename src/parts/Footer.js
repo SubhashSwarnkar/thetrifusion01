@@ -7,7 +7,7 @@ import DeferredNewsletter from "../components/DeferredNewsletter";
 import { serviceNav } from "data/serviceNav";
 import { featuredSolutionNav } from "data/footerNav";
 import { LINKEDIN_URL, INSTAGRAM_URL, COMPANY_EMAIL } from "data/companyInfo";
-import { siteConfig } from "config/site";
+import { siteConfig, absoluteSiteUrl } from "config/site";
 import { canonicalInternalHref } from "lib/internalLinks";
 import { trackEvent, AnalyticsEvents } from "utils/analytics";
 
@@ -74,12 +74,12 @@ export default function Footer({ hideNewsletter = false }) {
                 </li>
                 {serviceNav.map((s) => (
                   <li key={s.id}>
-                    <Link
-                      href={`/services/${s.slug}`}
+                    <a
+                      href={absoluteSiteUrl(`/services/${s.slug}`)}
                       className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block font-light"
                     >
                       {s.title}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -92,12 +92,16 @@ export default function Footer({ hideNewsletter = false }) {
               <ul className="space-y-3">
                 {featuredSolutions.map((page) => (
                   <li key={page.slug}>
-                    <Link
-                      href={canonicalInternalHref(page.href || `/solutions/${page.slug}`)}
+                    <a
+                      href={absoluteSiteUrl(
+                        canonicalInternalHref(
+                          page.href || `/solutions/${page.slug}`
+                        )
+                      )}
                       className="text-white/60 hover:text-white hover:translate-x-1 transition-all inline-block font-light leading-snug"
                     >
                       {page.navLabel}
-                    </Link>
+                    </a>
                   </li>
                 ))}
                 <li>
