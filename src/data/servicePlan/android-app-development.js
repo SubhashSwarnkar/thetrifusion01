@@ -6,7 +6,7 @@ import { LIVE, NAP_LINE, SOURCES, TEAM } from "./_shared";
  * TODO OWNER: device/vernacular proof (screenshots of Hindi UI, low-end device QA list).
  */
 export default {
-  contentUpdatedAt: "2026-10-27",
+  contentUpdatedAt: "2026-10-28",
   metaTitle: "Android App Development Company in Jaipur | Play Store Apps",
   bannerTitle: "Android App Development Company in Jaipur",
   metaDescription:

@@ -6,7 +6,7 @@ import { NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: any Salesforce project delivered (named, with permission).
  */
 export default {
-  contentUpdatedAt: "2026-10-27",
+  contentUpdatedAt: "2026-10-28",
   metaTitle: "Salesforce Customization & Integration in Jaipur | TheTriFusion",
   bannerTitle: "Salesforce Customization & Integration Services in Jaipur",
   metaDescription:

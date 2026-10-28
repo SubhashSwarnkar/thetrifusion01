@@ -8,7 +8,7 @@ import { LIVE, MAPS_SEARCH, NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: team size / years since 2023 stated as a precise number if you want it on-page.
  */
 export default {
-  contentUpdatedAt: "2026-10-27",
+  contentUpdatedAt: "2026-10-28",
   metaTitle: "Website Development Company in Jaipur | Websites from ₹15,000",
   bannerTitle: "Website Development Company in Jaipur",
   metaDescription:

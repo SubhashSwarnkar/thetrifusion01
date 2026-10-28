@@ -36,6 +36,12 @@ function isStaticAssetPath(pathname) {
   return STATIC_EXT.test(pathname);
 }
 
+function isNextAssetPath(pathname) {
+  return (
+    pathname.startsWith("/_next/static") || pathname.startsWith("/_next/image")
+  );
+}
+
 /**
  * Permanent redirect with an explicit absolute apex Location.
  * Do NOT use NextResponse.redirect(URL) — on same-host requests Next/Vercel
@@ -58,29 +64,35 @@ function apexRedirect(finalPath, search = "") {
  * Host + path canonicalization in ONE hop.
  * next.config must NOT also www→apex (that runs before middleware and creates
  * GSC redirect-error chains: www/blog→apex/blog→410, www/ios→apex/ios→/services).
+ *
+ * Matcher includes /_next/static and /_next/image so www asset requests
+ * (otherwise 404 without redirect) single-hop to apex — helps kill stale www
+ * preferences for digital-marketing and other money URLs.
  */
 export function middleware(request) {
   const { pathname, search } = request.nextUrl;
+  const nextAsset = isNextAssetPath(pathname);
 
   // Gone blogs on ANY host — never 308 to apex then 410 (GSC Redirect error).
-  if (isRemovedBlogPath(pathname)) {
+  // Skip for Next internals (they are never blog paths).
+  if (!nextAsset && isRemovedBlogPath(pathname)) {
     return goneResponse();
   }
 
   const host = (request.headers.get("host") || "").toLowerCase().split(":")[0];
-  const finalPath = canonicalSitePathname(pathname);
+  const finalPath = nextAsset ? pathname : canonicalSitePathname(pathname);
   const normalizedPath =
     pathname.length > 1 ? pathname.replace(/\/$/, "") : pathname || "/";
   const needsHostFix = NON_APEX_HOSTS.has(host);
-  const needsPathFix = finalPath !== normalizedPath;
+  const needsPathFix = !nextAsset && finalPath !== normalizedPath;
 
-  // Single hop to absolute apex + final money URL.
+  // Single hop to absolute apex + final money URL (or same Next asset path).
   if (needsHostFix || needsPathFix) {
     return apexRedirect(finalPath, search || "");
   }
 
-  // Static assets: host already apex — do not rewrite Cache-Control.
-  if (isStaticAssetPath(pathname)) {
+  // Static / Next assets on apex — do not rewrite Cache-Control.
+  if (nextAsset || isStaticAssetPath(pathname)) {
     return NextResponse.next();
   }
 
@@ -102,9 +114,11 @@ export function middleware(request) {
 export const config = {
   matcher: [
     /*
-     * Run on all paths except Next internals so www/.com → apex is permanent
-     * for HTML and static assets alike.
+     * Run on HTML, public assets, AND Next build assets so www/.com → apex
+     * is permanent for every path (including /_next/static/*).
      */
     "/((?!_next/static|_next/image).*)",
+    "/_next/static/:path*",
+    "/_next/image",
   ],
 };

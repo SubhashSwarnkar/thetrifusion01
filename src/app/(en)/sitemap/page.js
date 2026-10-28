@@ -7,6 +7,7 @@ import { seoLandingPages, getSeoLandingBySlug } from "data/seoLandingPages";
 import { REDIRECTED_SOLUTION_SLUGS } from "lib/solutionRedirects";
 import { isNoindexCitySolutionSlug } from "data/cityLandingRobots";
 import { fintechProductPages } from "data/fintechProductPages";
+import { absoluteSiteUrl } from "config/site";
 
 export const metadata = pageMetadata("/sitemap");
 
@@ -31,17 +32,17 @@ export default function RoutePage() {
   const core = Object.keys(pages)
     .filter((path) => !NOINDEX_PATHS.has(path) && !GONE_CORE_PATHS.has(path))
     .map((path) => ({
-      href: path,
+      href: absoluteSiteUrl(path),
       label: CORE_LABELS[path] || path,
     }));
 
   const serviceItems = [
     ...services.map((service) => ({
-      href: `/services/${service.slug}`,
+      href: absoluteSiteUrl(`/services/${service.slug}`),
       label: service.title,
     })),
     ...fintechProductPages.map((page) => ({
-      href: page.path,
+      href: absoluteSiteUrl(page.path),
       label: page.breadcrumbName,
     })),
   ];
@@ -56,7 +57,7 @@ export default function RoutePage() {
     .map((raw) => {
       const page = getSeoLandingBySlug(raw.slug);
       return {
-        href: `/solutions/${raw.slug}`,
+        href: absoluteSiteUrl(`/solutions/${raw.slug}`),
         label: page?.navLabel || page?.h1 || raw.slug,
       };
     });

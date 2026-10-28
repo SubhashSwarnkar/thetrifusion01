@@ -424,6 +424,11 @@ async function main() {
       "/solutions/ecommerce-website-development",
       "https://thetrifusion.in/solutions/ecommerce-website-development",
     ],
+    // www /_next/static used to 404 without redirect — must single-hop to apex.
+    [
+      "/_next/static/chunks/webpack.js",
+      "https://thetrifusion.in/_next/static/chunks/webpack.js",
+    ],
   ];
   const wwwIsProd = /thetrifusion\.in$/i.test(new URL(BASE_URL).hostname);
   for (const [path, expectedLoc] of wwwCases) {

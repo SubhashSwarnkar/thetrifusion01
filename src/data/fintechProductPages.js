@@ -13,7 +13,7 @@ export const fintechProductPages = [
     slug: "bbps-software",
     path: `${FINTECH_HUB_PATH}/bbps-software`,
     breadcrumbName: "BBPS software",
-    contentUpdatedAt: "2026-10-27",
+    contentUpdatedAt: "2026-10-28",
     metaTitle: "BBPS Software Provider India | White-Label Bharat BillPay",
     h1: "BBPS software for retailers and distributors in India",
     metaDescription:
@@ -157,7 +157,7 @@ export const fintechProductPages = [
     slug: "aeps-software",
     path: `${FINTECH_HUB_PATH}/aeps-software`,
     breadcrumbName: "AEPS software",
-    contentUpdatedAt: "2026-10-27",
+    contentUpdatedAt: "2026-10-28",
     metaTitle: "AEPS Software India | White-Label AePS Retailer App",
     h1: "AEPS software for Aadhaar-enabled payments in India",
     metaDescription:
@@ -301,7 +301,7 @@ export const fintechProductPages = [
     slug: "dmt-software",
     path: `${FINTECH_HUB_PATH}/dmt-software`,
     breadcrumbName: "DMT software",
-    contentUpdatedAt: "2026-10-27",
+    contentUpdatedAt: "2026-10-28",
     metaTitle: "DMT Software India | White-Label Domestic Money Transfer",
     h1: "DMT and XDMT software for retailer networks in India",
     metaDescription:
@@ -445,7 +445,7 @@ export const fintechProductPages = [
     slug: "recharge-software",
     path: `${FINTECH_HUB_PATH}/recharge-software`,
     breadcrumbName: "Recharge software",
-    contentUpdatedAt: "2026-10-27",
+    contentUpdatedAt: "2026-10-28",
     metaTitle: "Recharge Software India | White-Label Mobile & DTH Recharge",
     h1: "Recharge software for mobile, DTH and utility top-ups in India",
     metaDescription:
