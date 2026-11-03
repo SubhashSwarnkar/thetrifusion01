@@ -40,6 +40,7 @@ export const SERVICE_MENU_GROUPS = [
       "fintech-app-development",
       "ev-charging-app-development",
       "crm-erp-development",
+      "erp-software-development",
     ],
     extras: [
       {

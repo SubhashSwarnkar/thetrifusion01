@@ -221,16 +221,23 @@ Who: Charge point operators and e-mobility service providers.
 Price from: ₹4,50,000 ex-GST after discovery, as a starting range on the page, not a fixed package.
 Protocol: Open Charge Alliance OCPP — https://openchargealliance.org/protocols/ocpp/
 
-### CRM and ERP development
+### CRM development
 URL: https://thetrifusion.in/services/crm-erp-development
-Best for: custom CRM/ERP with leads, inventory, GST billing, Tally/WhatsApp integrations, and code you own.
-Not for: a Salesforce consulting-partner engagement (see Salesforce).
-What: Custom sales CRM and operations modules for pipelines, inventory, and billing.
+Best for: custom CRM with leads, pipelines, quotations, WhatsApp notes, and code you own.
+Not for: a Salesforce consulting-partner engagement (see Salesforce); full warehouse/GST ERP (see ERP software).
+What: Custom sales CRM for pipelines, follow-ups, and quotations.
 Platforms: Web admin, iOS, and Android.
-Who: Indian operators that need a system shaped to their process.
+Who: Indian operators that need a sales system shaped to their process.
 Price from: ₹3,00,000.
-- Decision guide, custom CRM or Salesforce: https://thetrifusion.in/blog/custom-crm-vs-salesforce-mid-market-2026
-- Integration playbook, ERP and CRM for mid-market teams: https://thetrifusion.in/blog/erp-crm-api-integration-playbook-mid-market
+
+### ERP software development
+URL: https://thetrifusion.in/services/erp-software-development
+Best for: custom ERP with GST finance, inventory, procurement, manufacturing, HR/payroll, multi-branch, and reporting.
+Not for: sales-pipeline-only CRM (see CRM development); boxed Tally/SAP/Odoo when those already fit.
+What: Phased ERP modules for Indian manufacturers, traders, and multi-branch operators.
+Platforms: Web admin, iOS, and Android companions when scoped.
+Who: Jaipur and Rajasthan SMEs, and Indian operators remote from the Jaipur studio.
+Price from: ₹6,00,000 (multi-module; published plans also list ₹3,00,000 and ₹11,00,000).
 
 - All services: https://thetrifusion.in/services
 

@@ -863,30 +863,59 @@ export const servicePageSeo = {
     ],
   },
   "crm-erp-development": {
-    contentUpdatedAt: "2026-10-12",
-    metaTitle: "Custom CRM & ERP Development in Jaipur | TheTriFusion",
+    contentUpdatedAt: "2026-11-03",
+    metaTitle: "Custom CRM Development in Jaipur | TheTriFusion",
     metaDescription:
-      "Custom pipelines, inventory, billing, and ops modules your team will use — iOS, Android, and web. Get a module MVP range from Jaipur.",
+      "Custom pipelines, quotations, WhatsApp notes, and sales CRM your team will use — iOS, Android, and web. Module MVP range from Jaipur.",
     keywords:
-      "custom CRM development Jaipur, ERP software development India, CRM ERP Jaipur, sales pipeline software Rajasthan, custom ERP SME",
+      "custom CRM development Jaipur, sales pipeline software Rajasthan, CRM development India, WhatsApp CRM Jaipur, custom CRM vs Zoho",
     locationLine:
-      "Custom CRM/ERP from Jaipur — modules your team will actually use.",
+      "Custom CRM from Jaipur — pipelines your sales team will actually use.",
     scopeKicker: "CRM",
-    scopeHeading: "CRM and ERP-lite modules we build",
+    scopeHeading: "CRM modules we build",
     processHeading: "How we pick custom CRM vs SaaS",
     ctaHeading: "Need CRM that is not a bolted-on SaaS?",
     ctaText:
-      "If HubSpot fits, buy it. If commissions or ops modules do not, share the workflow. We return a module MVP range from Jaipur.",
-    serviceType: "Custom CRM and ERP Development",
+      "If HubSpot fits, buy it. If commissions or stages do not, share the workflow. We return a module MVP range from Jaipur. Full ERP is a separate page.",
+    serviceType: "Custom CRM Development",
     whatsappMessage:
-      "Hi TriFusion, I want a custom CRM/ERP quote from the Jaipur team.",
+      "Hi TriFusion, I want a custom CRM quote from the Jaipur team.",
     coverageSections: [
       {
-        id: "crm-erp-operations",
-        heading: "CRM and ERP software development",
+        id: "crm-operations",
+        heading: "Custom CRM software development",
         paragraphs: [
-          "Unify sales, inventory, finance, and operations with CRM and ERP software built for how the company actually works. TheTriFusion does this from Jaipur for teams across India. A single CRM module MVP is often 6–12 weeks; multi-module ERP is phased.",
-          "For network-marketing companies, unilevel compensation is built into the CRM rather than bolted onto a generic sales tool. DailyConcepts India (dailyconceptsindia.com) is a live storefront plus POS-style admin. Connect Dairy (connectdairy.in) is live fleet, role, and P&L operations. If Salesforce cannot hold a commissions tree, we say so and scope a custom CRM.",
+          "Unify leads, pipelines, quotations, and follow-ups with CRM software built for how the sales team actually works. TheTriFusion does this from Jaipur for teams across India. A single CRM module MVP is often 6–12 weeks.",
+          "For network-marketing companies, unilevel compensation is built into the CRM rather than bolted onto a generic sales tool — see MLM CRM development. Warehouse, GST finance, manufacturing and multi-branch ERP modules live on ERP software development. DailyConcepts India and Connect Dairy remain live proof that admin workflows are the product.",
+        ],
+      },
+    ],
+  },
+  "erp-software-development": {
+    contentUpdatedAt: "2026-11-03",
+    metaTitle: "ERP Software Development Company in Jaipur | TheTriFusion",
+    metaDescription:
+      "Custom ERP for Indian SMEs — GST finance, inventory, procurement, manufacturing, HR and multi-branch. Phased from Jaipur. From ₹6,00,000.",
+    keywords:
+      "ERP software development company Jaipur, custom ERP software India, GST inventory ERP Rajasthan, manufacturing ERP Jaipur, custom ERP vs Tally SAP Odoo",
+    locationLine:
+      "Custom ERP from Jaipur — stock, books and branches your team will run.",
+    scopeKicker: "ERP",
+    scopeHeading: "ERP modules we build from Jaipur",
+    processHeading: "How we implement ERP in phases",
+    ctaHeading: "Need ERP that is not another spreadsheet?",
+    ctaText:
+      "If Tally or Odoo already fits, buy that. If warehouses, BOMs or multi-branch rules do not, share the process. We return a phased ERP range from Jaipur.",
+    serviceType: "ERP Software Development",
+    whatsappMessage:
+      "Hi TriFusion, I want a custom ERP software quote from the Jaipur team.",
+    coverageSections: [
+      {
+        id: "erp-operations",
+        heading: "ERP software development in Jaipur",
+        paragraphs: [
+          "Custom ERP software from TheTriFusion in Jaipur covers finance with GST, inventory and warehouse, procurement, manufacturing and production planning, sales and distribution, HR/payroll, multi-branch control, and reporting. Programmes are phased so the floor keeps running. Multi-module work typically starts from ₹6,00,000.",
+          "Sales pipelines and lead CRM are a separate product on custom CRM development. We cross-link both pages so buyers land on the right brief. Live ops references include Connect Dairy and DailyConcepts India on this site.",
         ],
       },
     ],

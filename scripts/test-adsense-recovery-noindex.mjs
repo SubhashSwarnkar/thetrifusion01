@@ -148,6 +148,7 @@ const requiredServicePaths = [
   "/services/mlm-crm-development",
   "/services/digital-marketing",
   "/services/crm-erp-development",
+  "/services/erp-software-development",
   "/services/fintech-app-development",
   "/services/fintech-app-development/bbps-software",
   "/services/fintech-app-development/aeps-software",

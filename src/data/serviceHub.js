@@ -21,6 +21,7 @@ export const SERVICE_PRICE_FROM = {
   "fintech-app-development": 99999,
   "ev-charging-app-development": 450000,
   "crm-erp-development": 300000,
+  "erp-software-development": 600000,
 };
 
 export const ECOMMERCE_PRICE_FROM = 25000;
@@ -52,12 +53,13 @@ export const SERVICE_HUB_GROUPS = [
     id: "industry",
     heading: "Industry",
     intro:
-      "Vertical products: fintech rails, EV charging CMS, MLM, CRM/ERP, and extra developers.",
+      "Vertical products: fintech rails, EV charging CMS, MLM, CRM, ERP, and extra developers.",
     slugs: [
       "fintech-app-development",
       "ev-charging-app-development",
       "mlm-crm-development",
       "crm-erp-development",
+      "erp-software-development",
       "on-demand",
     ],
   },

@@ -173,7 +173,7 @@ export default {
     {
       question: "Can you integrate with Tally, Zoho or our existing ERP?",
       answer:
-        "Yes. APIs, webhooks and file drops are common. We read the other system's docs before we promise a sync. See the [ERP/CRM integration playbook](/services/crm-erp-development).",
+        "Yes. APIs, webhooks and file drops are common. We read the other system's docs before we promise a sync. See [ERP software development](/services/erp-software-development) and [custom CRM](/services/crm-erp-development).",
     },
     {
       question: "Do I need to visit your Jaipur office?",
@@ -184,8 +184,13 @@ export default {
   relatedLinks: [
     {
       href: "/services/crm-erp-development",
-      title: "Custom CRM & ERP development",
-      text: "Pipelines, inventory, GST billing and Tally/WhatsApp integrations.",
+      title: "Custom CRM development",
+      text: "Pipelines, quotations and WhatsApp follow-ups.",
+    },
+    {
+      href: "/services/erp-software-development",
+      title: "ERP software development",
+      text: "GST finance, inventory, MRP and multi-branch.",
     },
     {
       href: "/services/business-modernization",
@@ -208,7 +213,7 @@ export default {
       text: "Idempotency and retries for SaaS APIs.",
     },
     {
-      href: "/services/crm-erp-development",
+      href: "/services/erp-software-development",
       title: "ERP and CRM API integration",
       text: "How mid-market teams connect the systems they already run.",
     },

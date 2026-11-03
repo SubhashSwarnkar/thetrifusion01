@@ -62,7 +62,8 @@ Each line is the canonical URL. Paid landing pages are not listed here.
 - https://thetrifusion.in/services/fintech-app-development/dmt-software — White-label DMT / XDMT software. From ₹99,999. You bring the bank or aggregator contract.
 - https://thetrifusion.in/services/fintech-app-development/recharge-software — White-label recharge software. From ₹99,999. You bring the recharge API partner.
 - https://thetrifusion.in/services/ev-charging-app-development — CMS for CPOs and eMSPs. OCPP 1.6J/2.0.1, OCPI 2.2.1, driver app. Starting range ₹4,50,000 ex-GST, not a fixed package.
-- https://thetrifusion.in/services/crm-erp-development — Custom CRM/ERP for pipelines, inventory, and billing. Web, iOS, Android. From ₹3,00,000.
+- https://thetrifusion.in/services/crm-erp-development — Custom CRM for pipelines, quotations, and WhatsApp follow-ups. Web, iOS, Android. From ₹3,00,000.
+- https://thetrifusion.in/services/erp-software-development — Custom ERP for GST finance, inventory, MRP, multi-branch. Web, iOS, Android. From ₹6,00,000.
 
 ## DevOps & Cloud services
 

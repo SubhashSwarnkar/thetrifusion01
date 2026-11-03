@@ -22,7 +22,8 @@ export const SERVICE_KEYWORD_BY_SLUG = {
   salesforce: "Salesforce implementation company in India",
   "business-modernization": "business modernization in India",
   "digital-marketing": "digital marketing company in India",
-  "crm-erp-development": "custom CRM and ERP development in Jaipur",
+  "crm-erp-development": "custom CRM development in Jaipur",
+  "erp-software-development": "ERP software development company in Jaipur",
   "fintech-app-development": "fintech app development company in India",
 };
 
@@ -92,6 +93,14 @@ export const UNINDEXED_SERVICE_LINKS = [
     anchor: "digital marketing company in India",
   },
   {
+    href: "/services/crm-erp-development",
+    anchor: "custom CRM development in Jaipur",
+  },
+  {
+    href: "/services/erp-software-development",
+    anchor: "ERP software development company in Jaipur",
+  },
+  {
     href: "/services/fintech-app-development/bbps-software",
     anchor: "BBPS software development",
   },
@@ -115,6 +124,7 @@ export const SERVICE_SIBLINGS = {
   "software-development": [
     "website-development",
     "crm-erp-development",
+    "erp-software-development",
     "on-demand",
     "ai-development",
     "devops",
@@ -245,6 +255,7 @@ export const SERVICE_SIBLINGS = {
   ],
   // Indexed hub (GSC): push equity to Discovered ops / AI / fintech URLs.
   "crm-erp-development": [
+    "erp-software-development",
     "software-development",
     "mlm-crm-development",
     "salesforce",
@@ -254,6 +265,16 @@ export const SERVICE_SIBLINGS = {
     "fintech-app-development",
     "on-demand",
     "devops",
+  ],
+  "erp-software-development": [
+    "crm-erp-development",
+    "software-development",
+    "business-modernization",
+    "rpa",
+    "devops",
+    "mobile-app-development",
+    "ai-development",
+    "on-demand",
   ],
 };
 
@@ -487,6 +508,11 @@ export const INDEXED_HUB_REFERRING_LINKS = {
   ],
   "crm-erp-development": [
     {
+      href: "/services/erp-software-development",
+      title: "ERP software development",
+      text: "GST finance, inventory, MRP and multi-branch.",
+    },
+    {
       href: "/services/software-development",
       title: "Custom software development",
       text: "When CRM is one module of a larger product.",
@@ -509,7 +535,7 @@ export const INDEXED_HUB_REFERRING_LINKS = {
     {
       href: "/services/business-modernization",
       title: "Business modernization",
-      text: "Spreadsheet cutovers into CRM/ERP.",
+      text: "Spreadsheet cutovers into CRM or ERP.",
     },
     {
       href: "/services/ai-development",
@@ -540,6 +566,48 @@ export const INDEXED_HUB_REFERRING_LINKS = {
       href: "/services/digital-marketing",
       title: "Digital marketing",
       text: "Lead gen that feeds the CRM pipeline.",
+    },
+  ],
+  "erp-software-development": [
+    {
+      href: "/services/crm-erp-development",
+      title: "Custom CRM development",
+      text: "Pipelines and lead follow-ups beside the ERP.",
+    },
+    {
+      href: "/services/software-development",
+      title: "Custom software development",
+      text: "When ERP is one module of a larger product.",
+    },
+    {
+      href: "/services/business-modernization",
+      title: "Business modernization",
+      text: "Spreadsheet cutovers into ERP modules.",
+    },
+    {
+      href: "/services/rpa",
+      title: "RPA services",
+      text: "Invoice and Tally bots beside the ERP.",
+    },
+    {
+      href: "/services/devops",
+      title: "DevOps & cloud",
+      text: "Hosting and CI/CD under the ERP stack.",
+    },
+    {
+      href: "/services/mobile-app-development",
+      title: "Mobile app development",
+      text: "Warehouse and floor companions.",
+    },
+    {
+      href: "/services/ai-development",
+      title: "AI development",
+      text: "Assistants on ERP data with a human step.",
+    },
+    {
+      href: "/services/on-demand",
+      title: "Hire dedicated developers",
+      text: "Named seats for ERP modules and APIs.",
     },
   ],
   "fintech-app-development": [

@@ -483,13 +483,30 @@ export const getAllServicePricingPlans = () => {
             "1 month support"
           ],
           standard: [
-            "Sales + one ops module",
-            "Mobile companion",
+            "Sales CRM + mobile companion",
+            "Quotations & lead capture",
             "3 months support"
           ],
           premium: [
-            "Multi-module ERP-lite",
+            "Broader CRM programme",
             "iOS + Android + Web",
+            "6 months support"
+          ]
+        },
+        "erp-software-development": {
+          basic: [
+            "Single ops module MVP",
+            "Web admin",
+            "1 month support"
+          ],
+          standard: [
+            "Multi-module ERP start",
+            "Inventory + GST finance (+ one more)",
+            "3 months support"
+          ],
+          premium: [
+            "Broader ERP programme",
+            "Branches / manufacturing / mobile",
             "6 months support"
           ]
         }

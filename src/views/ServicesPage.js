@@ -69,8 +69,13 @@ const SERVICE_CHOOSER = [
   },
   {
     href: absoluteSiteUrl("/services/crm-erp-development"),
-    label: "Custom CRM and ERP development in Jaipur",
-    text: "for pipelines, inventory and GST billing, from ₹3,00,000.",
+    label: "Custom CRM development in Jaipur",
+    text: "for pipelines, quotations and WhatsApp follow-ups, from ₹3,00,000.",
+  },
+  {
+    href: absoluteSiteUrl("/services/erp-software-development"),
+    label: "ERP software development company in Jaipur",
+    text: "for GST finance, inventory, MRP and multi-branch, from ₹6,00,000.",
   },
   {
     href: absoluteSiteUrl("/services/ui-ux-design"),

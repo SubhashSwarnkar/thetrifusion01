@@ -613,20 +613,20 @@ export const nicheServices = [
   },
   {
     id: "crm-erp-development",
-    title: "CRM & ERP Development",
+    title: "CRM Development",
     slug: "crm-erp-development",
     description:
-      "TheTriFusion builds custom CRM and ERP modules in Jaipur — pipelines, inventory, billing, and role-based admin — with iOS, Android, and web where field teams need them.",
+      "TheTriFusion builds custom CRM in Jaipur — pipelines, quotations, WhatsApp notes, and role-based admin — with iOS, Android, and web where field sales need them. Full ERP modules live on the ERP software page.",
     shortDescription:
-      "TheTriFusion in Jaipur, Rajasthan builds custom CRM/ERP — pipelines, inventory, billing, iOS, Android, and web. See live client ops. Get a scoped quote.",
+      "TheTriFusion in Jaipur, Rajasthan builds custom CRM — pipelines, quotations, WhatsApp, iOS, Android, and web. See live client ops. Get a scoped quote.",
     imageUrl: Web,
     featuresImage: SoftwareFeatures,
     icon: "📊",
-    bannerTitle: "CRM & ERP Software Development Company in Jaipur, India",
+    bannerTitle: "Custom CRM Software Development Company in Jaipur, India",
     bannerDescription:
-      "Replace spreadsheet chaos with modules your team will actually use — sales, ops, and a mobile companion when needed.",
+      "Replace spreadsheet follow-ups with a CRM your sales team will actually use — pipelines, quotations, and a mobile companion when needed.",
     imageAlt:
-      "Custom CRM and ERP admin dashboard built by TheTriFusion in Jaipur",
+      "Custom CRM admin dashboard built by TheTriFusion in Jaipur",
     platforms,
     relatedBlogSlug: "mlm-crm-unilevel-compensation-plan",
     startingFrom: 300000,
@@ -647,9 +647,9 @@ export const nicheServices = [
           "Pipelines, follow-ups, quotations, and reporting matched to your stages.",
       },
       {
-        title: "Ops / ERP-lite",
+        title: "Lead capture",
         description:
-          "Inventory, billing, and dashboards instead of five spreadsheets.",
+          "Website forms, WhatsApp notes, and IndiaMART-style inboxes when scoped.",
       },
       {
         title: "Mobile + web",
@@ -664,13 +664,13 @@ export const nicheServices = [
     ],
     process: defaultProcess,
     technologies: [
-      { title: "Web", description: "React admin for dense operational screens." },
-      { title: "Mobile", description: "React Native when sales or drivers are in the field." },
-      { title: "Integrations", description: "Payments, WhatsApp, and accounting exports as needed." },
+      { title: "Web", description: "React admin for dense sales screens." },
+      { title: "Mobile", description: "React Native when sales are in the field." },
+      { title: "Integrations", description: "WhatsApp, website leads, and exports as needed." },
     ],
     features: [
       "Custom pipelines",
-      "Inventory & billing",
+      "Quotations & follow-ups",
       "Role-based admin",
       "iOS + Android + Web",
       "Live client examples",
@@ -682,7 +682,7 @@ export const nicheServices = [
       {
         question: "SaaS CRM or custom?",
         answer:
-          "If HubSpot or Zoho fit, buy them. We build when workflows, commissions, or ops modules do not. If your process is unique or the tools feel limiting, a custom or heavily customized system often pays off — we decide that in discovery.",
+          "If HubSpot or Zoho fit, buy them. We build when workflows or commissions do not. Warehouse and GST ERP modules are on the ERP software page.",
       },
       {
         question: "Can you show live work?",
@@ -692,7 +692,7 @@ export const nicheServices = [
       {
         question: "Starting range?",
         answer:
-          "A single CRM module MVP often starts around ₹3L. Multi-module ERP is phased.",
+          "A single CRM module MVP often starts around ₹3L. Multi-module ERP is on /services/erp-software-development.",
       },
       {
         question: "Can you integrate CRM with my website or ecommerce store?",
@@ -712,6 +712,171 @@ export const nicheServices = [
       "PostgreSQL",
       "React Native",
       "REST APIs",
+    ],
+  },
+  {
+    id: "erp-software-development",
+    title: "ERP Software Development",
+    slug: "erp-software-development",
+    description:
+      "TheTriFusion builds custom ERP software in Jaipur — finance with GST, inventory, procurement, manufacturing, sales distribution, HR/payroll, multi-branch, and reporting — for Indian manufacturers and traders.",
+    shortDescription:
+      "TheTriFusion in Jaipur, Rajasthan builds custom ERP — GST finance, inventory, MRP, multi-branch, web and mobile. Phased programmes from ₹6,00,000.",
+    imageUrl: Web,
+    featuresImage: SoftwareFeatures,
+    icon: "🏭",
+    bannerTitle: "ERP Software Development Company in Jaipur, India",
+    bannerDescription:
+      "Replace Tally-plus-spreadsheet chaos with ERP modules your floor and accounts team will actually run — phased, with code you own.",
+    imageAlt:
+      "Custom ERP dashboard for inventory, GST finance and multi-branch ops by TheTriFusion Jaipur",
+    platforms,
+    startingFrom: 600000,
+    startingFromNote: "Multi-module ERP start (Standard plan)",
+    timelineLabel: "8 – 14 Weeks",
+    timelineNote:
+      "First live module often 8–14 weeks after discovery. Broader ERP programmes are phased so the floor keeps running.",
+    caseStudy: {
+      title: "Connect Dairy ops + DailyConcepts admin",
+      summary:
+        "Connect Dairy (connectdairy.in) is live agri-logistics with fleets, roles and P&L. DailyConcepts (dailyconceptsindia.com) is storefront plus POS-style admin. Both prove operational software beats shared spreadsheets once godowns and roles multiply.",
+      href: "/portfolio/connect-dairy-supply-chain",
+      hrefLabel: "Connect Dairy case study",
+      liveUrl: "https://www.connectdairy.in/",
+      liveLabel: "Live — connectdairy.in",
+    },
+    services: [
+      {
+        title: "Finance & GST",
+        description:
+          "Ledgers, GST invoices, credit/debit notes, and Tally export or sync when scoped.",
+      },
+      {
+        title: "Inventory & warehouse",
+        description:
+          "SKU, batch/lot, bins, transfers, and stock that matches the invoice.",
+      },
+      {
+        title: "Procurement & manufacturing",
+        description:
+          "Indent→PO→GRN, BOM, work orders, and material issues for the shop floor.",
+      },
+      {
+        title: "Distribution, HR & branches",
+        description:
+          "Order-to-dispatch, payroll when scoped, multi-branch stock and books.",
+      },
+    ],
+    industriesKicker: "Rajasthan",
+    industriesHeading: "Industries we build ERP for",
+    industries: [
+      {
+        title: "Manufacturing",
+        description:
+          "BOM, work orders, material issues and finished-goods costing for Jaipur and Sitapura-style units — phase one pairs stock with production and GST invoices.",
+      },
+      {
+        title: "Trading and export",
+        description:
+          "Lot traceability, packing lists, party ledgers and GST-ready documents for Rajasthan trading houses and exporters.",
+      },
+      {
+        title: "Textiles",
+        description:
+          "Metre and lot stock, shade-wise holds, process stages and job-work issue/return for textile units.",
+      },
+      {
+        title: "Gems and jewellery",
+        description:
+          "Carat and piece tracking, tagging, karigar job-work and costing that matches the tray — built for Jaipur jewellery ops.",
+      },
+      {
+        title: "Construction",
+        description:
+          "Project-wise material issues, site stock and vendor bills against work orders, with a Jaipur HO console.",
+      },
+      {
+        title: "Pharma distribution",
+        description:
+          "Batch, expiry and FEFO picking for distributors — data fields your QA SOP defines, not a fake “certified” badge.",
+      },
+      {
+        title: "Education",
+        description:
+          "Fee ledgers, multi-campus roles, book/uniform inventory and payroll when groups need ERP-shaped operations.",
+      },
+      {
+        title: "Retail",
+        description:
+          "Multi-store stock, transfers and HO pricing for retail chains; storefront-only work stays on ecommerce.",
+      },
+    ],
+    process: [
+      {
+        step: 1,
+        title: "Discovery & module map",
+        description:
+          "Lock GSTINs, godowns, roles, and the first module that can go live without stopping the floor.",
+      },
+      {
+        step: 2,
+        title: "Data model & migration rehearsal",
+        description:
+          "Entities, BOMs and opening stock on staging — with row counts you can check before cutover.",
+      },
+      {
+        step: 3,
+        title: "Build in visible phases",
+        description:
+          "Weekly demos from Jaipur. Finance+inventory first is common; manufacturing and HR follow.",
+      },
+      {
+        step: 4,
+        title: "Parallel run, train, cut over",
+        description:
+          "Old books stay open until the new module is boring. Support window from the published plan.",
+      },
+    ],
+    technologies: [
+      { title: "Web admin", description: "React for dense ERP screens accountants and planners use daily." },
+      { title: "API & data", description: "Node.js APIs and PostgreSQL for transactional stock and ledgers." },
+      { title: "Mobile & integrations", description: "React Native for floor apps; Tally/WhatsApp/gateway hooks as scoped." },
+    ],
+    features: [
+      "GST finance modules",
+      "Inventory & warehouse",
+      "Procurement & MRP",
+      "Multi-branch control",
+      "HR / payroll option",
+      "Reporting / BI exports",
+      "Jaipur delivery",
+      "Code you own",
+    ],
+    faqs: [
+      {
+        question: "Custom ERP or Tally?",
+        answer:
+          "Keep Tally when books are enough. Commission custom ERP when warehouses, BOMs or multi-branch rules outgrow Tally-plus-Excel.",
+      },
+      {
+        question: "Starting range for ERP?",
+        answer:
+          "Multi-module ERP programmes typically start from ₹6,00,000 (Standard). Published plans also list ₹3,00,000 and ₹11,00,000.",
+      },
+      {
+        question: "CRM or ERP — which page?",
+        answer:
+          "Sales pipelines and lead CRM: /services/crm-erp-development. Stock, GST books, manufacturing and branches: this page.",
+      },
+    ],
+    pricing: { basic: 300000, standard: 600000, premium: 1100000 },
+    technologiesList: [
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "React Native",
+      "REST APIs",
+      "Tally sync (scoped)",
     ],
   },
 ];

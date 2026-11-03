@@ -104,9 +104,13 @@ export default function AboutPage() {
                 {" "}cover BBPS, AEPS,
                 DMT, XDMT, UPI, and KYC software with retailer and admin panels.{" "}
                 <Link href="/services/crm-erp-development" className={linkClass}>
-                  CRM and ERP
+                  CRM development
                 </Link>{" "}
-                work covers pipelines, inventory, billing, and role-based
+                covers pipelines, quotations, and sales follow-ups.{" "}
+                <Link href="/services/erp-software-development" className={linkClass}>
+                  ERP software
+                </Link>{" "}
+                covers GST finance, inventory, manufacturing, and multi-branch
                 admin.{" "}
                 <Link href="/services/software-development" className={linkClass}>
                   Custom software

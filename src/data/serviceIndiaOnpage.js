@@ -222,7 +222,7 @@ export const serviceIndiaOnpage = {
         id: "india-city-pages",
         heading: "Salesforce work from Jaipur for Indian orgs",
         paragraphs: [
-          "Flows, Apex and integrations on an org you already pay for, from ₹80,000. If a commissions CRM will not fit, see [custom CRM/ERP](/services/crm-erp-development).",
+          "Flows, Apex and integrations on an org you already pay for, from ₹80,000. If a commissions CRM will not fit, see [custom CRM](/services/crm-erp-development).",
           "Indian mid-market teams often already pay for Sales Cloud and then ask for a commissions tree, Tally invoice sync, or a WhatsApp note on the lead. We implement what Fits Flows first. Apex and LWC when Flows are not enough. We do not claim Summit-partner status. Published work starts from ₹80,000. If the cheaper long-term answer is a custom CRM, we say so before you buy more licences.",
           "Kickoff is a video review of your org with the access you grant. Delivery is from Jaipur. Hindi field labels are ordinary when your sales team works in Hindi. Website or ERP connections are scoped after we read the other system’s docs.",
         ],
@@ -239,24 +239,58 @@ export const serviceIndiaOnpage = {
   },
   "crm-erp-development": {
     metaTitle:
-      "Custom CRM & ERP Development Company in Jaipur, India",
-    bannerTitle: "Custom CRM & ERP Software Development in Jaipur, India",
+      "Custom CRM Development Company in Jaipur, India",
+    bannerTitle: "Custom CRM Software Development in Jaipur, India",
     extraSections: [
       {
         id: "india-city-pages",
-        heading: "CRM/ERP for Indian SMEs",
+        heading: "CRM for Indian SMEs",
         paragraphs: [
-          "Pipelines, inventory, GST billing and Tally from Jaipur. A CRM module MVP starts from ₹3,00,000. See also [custom software](/services/software-development).",
-          "Jaipur exporters and NCR vendors usually need leads from a website form, a WhatsApp note, and a GST invoice that matches Tally — not a 40-module ERP poster. We ship one CRM module first: pipeline, accounts, follow-ups. Inventory and GST billing are the second slice when the first is in use. You own the code after payment. Salesforce stays the right buy when Sales Cloud already fits; we will say so.",
+          "Pipelines, quotations, WhatsApp notes and website lead capture from Jaipur. A CRM module MVP starts from ₹3,00,000. Full warehouse and GST ERP modules are on [ERP software development](/services/erp-software-development). See also [custom software](/services/software-development).",
+          "Jaipur exporters and NCR vendors usually need leads from a website form and a WhatsApp note next to the deal — not a 40-module ERP poster on day one. We ship one CRM module first: pipeline, accounts, follow-ups. You own the code after payment. Salesforce stays the right buy when Sales Cloud already fits; we will say so.",
           "IndiaMART-style lead capture is in scope when you have the mailbox or API. We do not scrape portals. Mobile companions sit on [mobile app development](/services/mobile-app-development). Network-marketing trees belong on [MLM software](/services/mlm-crm-development).",
         ],
       },
     ],
     relatedLinks: [
       {
+        href: "/services/erp-software-development",
+        title: "ERP software development",
+        text: "Inventory, GST finance, MRP and multi-branch.",
+      },
+      {
         href: "/services/mlm-crm-development",
         title: "MLM CRM development",
         text: "When the brief is a commissions tree.",
+      },
+    ],
+    schemaAreaServed: INDIA_AREA_SERVED,
+  },
+  "erp-software-development": {
+    metaTitle:
+      "ERP Software Development Company in Jaipur, India",
+    bannerTitle: "ERP Software Development in Jaipur, India",
+    extraSections: [
+      {
+        id: "india-city-pages",
+        heading: "ERP for Indian SMEs in Jaipur and Rajasthan",
+        paragraphs: [
+          "GST finance, inventory, procurement, manufacturing, HR and multi-branch ERP from Jaipur. Multi-module programmes typically start from ₹6,00,000. Sales CRM stays on [custom CRM development](/services/crm-erp-development). See also [custom software](/services/software-development).",
+          "Manufacturers in Sitapura and traders across Rajasthan usually need stock that matches the invoice, PO→GRN discipline, and books a CA can close — not a CRM with an inventory tab. We phase modules so the floor keeps running. You own the code after payment. Tally, SAP or Odoo stay the right buy when they already fit; we will say so.",
+          "Mobile warehouse companions sit on [mobile app development](/services/mobile-app-development). Spreadsheet cutovers without a full ERP map sit on [business modernization](/services/business-modernization).",
+        ],
+      },
+    ],
+    relatedLinks: [
+      {
+        href: "/services/crm-erp-development",
+        title: "Custom CRM development",
+        text: "Pipelines and lead follow-ups.",
+      },
+      {
+        href: "/services/business-modernization",
+        title: "Business modernization",
+        text: "Phased spreadsheet cutovers.",
       },
     ],
     schemaAreaServed: INDIA_AREA_SERVED,

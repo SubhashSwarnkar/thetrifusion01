@@ -117,6 +117,12 @@ export default function ServiceIcon({ slug, className = "w-5 h-5" }) {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M4 7h16M4 12h10M4 17h7" />
         </svg>
       );
+    case "erp-software-development":
+      return (
+        <svg {...props}>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6" />
+        </svg>
+      );
     case "ecommerce-development":
       return (
         <svg {...props}>

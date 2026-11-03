@@ -111,7 +111,13 @@ export const serviceNav = [
   {
     "id": "crm-erp-development",
     "slug": "crm-erp-development",
-    "title": "CRM & ERP Development",
-    "shortDescription": "TheTriFusion in Jaipur, Rajasthan builds custom CRM/ERP — pipelines, inventory, billing, iOS, Android, and web. See live client ops. Get a scoped quote."
+    "title": "CRM Development",
+    "shortDescription": "TheTriFusion in Jaipur, Rajasthan builds custom CRM — pipelines, quotations, WhatsApp, iOS, Android, and web. See live client ops. Get a scoped quote."
+  },
+  {
+    "id": "erp-software-development",
+    "slug": "erp-software-development",
+    "title": "ERP Software Development",
+    "shortDescription": "TheTriFusion in Jaipur, Rajasthan builds custom ERP — GST finance, inventory, MRP, multi-branch, web and mobile. Phased programmes from ₹6,00,000."
   }
 ];

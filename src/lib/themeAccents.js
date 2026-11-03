@@ -53,6 +53,7 @@ const SLUG_ACCENT_INDEX = {
   "ios-app-development": 2,
   "android-app-development": 1,
   "crm-erp-development": 3,
+  "erp-software-development": 0,
   "ecommerce-development": 0,
 };
 

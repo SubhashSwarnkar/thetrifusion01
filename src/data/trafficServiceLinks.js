@@ -70,7 +70,7 @@ const BLOCKS = {
 `,
   "gst-einvoice-custom-software-india-2026": `
 <h2>Built by TheTriFusion</h2>
-<p>IRP helpers and GST-aware admin are <a href="/services/software-development">custom software development company in India</a> work from Jaipur (MVPs from ₹1,00,000). Module CRM is <a href="/services/crm-erp-development">custom CRM and ERP development in Jaipur</a>. Spreadsheet cutovers are <a href="/services/business-modernization">business modernization in India</a>. We do not replace GSTN.</p>
+<p>IRP helpers and GST-aware admin are <a href="/services/software-development">custom software development company in India</a> work from Jaipur (MVPs from ₹1,00,000). Module CRM is <a href="/services/crm-erp-development">custom CRM development in Jaipur</a>; warehouse and GST books are <a href="/services/erp-software-development">ERP software development in Jaipur</a>. Spreadsheet cutovers are <a href="/services/business-modernization">business modernization in India</a>. We do not replace GSTN.</p>
 `,
   "festive-ecommerce-website-india-ondc-2026": `
 <h2>Built by TheTriFusion</h2>
@@ -113,7 +113,7 @@ const DEFAULT_BLOCKS = {
 `,
   crm: `
 <h2>Built by TheTriFusion</h2>
-<p>Pipeline, inventory, and payouts that staff can finish in a browser are <a href="/services/crm-erp-development">custom CRM and ERP development in Jaipur</a> (from ₹3,00,000) or <a href="/services/software-development">custom software development company in India</a>. Direct-selling trees sit on <a href="/services/mlm-crm-development">MLM CRM development</a>.</p>
+<p>Pipelines that staff can finish in a browser are <a href="/services/crm-erp-development">custom CRM development in Jaipur</a> (from ₹3,00,000); inventory and GST books are <a href="/services/erp-software-development">ERP software development in Jaipur</a> (from ₹6,00,000) or <a href="/services/software-development">custom software development company in India</a>. Direct-selling trees sit on <a href="/services/mlm-crm-development">MLM CRM development</a>.</p>
 `,
   uiux: `
 <h2>Built by TheTriFusion</h2>

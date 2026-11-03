@@ -43,7 +43,7 @@ export default {
       id: "phased-roadmap",
       heading: "Phased roadmap",
       paragraphs: [
-        "Inventory the real process → pick the first slice that can go live without stopping the rest → migrate data with a check, not a hope → run old and new in parallel until the new one is boring → cut over. Related: [CRM/ERP](/services/crm-erp-development).",
+        "Inventory the real process → pick the first slice that can go live without stopping the rest → migrate data with a check, not a hope → run old and new in parallel until the new one is boring → cut over. Related: [CRM](/services/crm-erp-development) and [ERP software](/services/erp-software-development).",
       ],
     },
     {
@@ -106,8 +106,13 @@ export default {
     },
     {
       href: "/services/crm-erp-development",
-      title: "Custom CRM & ERP",
-      text: "When the spreadsheet is actually sales and stock.",
+      title: "Custom CRM development",
+      text: "When the spreadsheet is actually a sales pipeline.",
+    },
+    {
+      href: "/services/erp-software-development",
+      title: "ERP software development",
+      text: "When the spreadsheet is stock, books and branches.",
     },
     {
       href: "/services/rpa",

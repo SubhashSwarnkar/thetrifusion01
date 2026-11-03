@@ -83,7 +83,12 @@ export const featuredSolutionNav = [
   {
     slug: "crm-erp-development",
     href: "/services/crm-erp-development",
-    navLabel: "CRM & ERP development",
+    navLabel: "CRM development",
+  },
+  {
+    slug: "erp-software-development",
+    href: "/services/erp-software-development",
+    navLabel: "ERP software development",
   },
   {
     slug: "digital-marketing",
