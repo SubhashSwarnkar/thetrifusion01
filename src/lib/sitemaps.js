@@ -25,16 +25,6 @@ function safeDate(value, fallback) {
   }
 }
 
-function latestDate(values, fallback) {
-  let latest = fallback;
-  for (const value of values) {
-    if (!value) continue;
-    const next = safeDate(value, null);
-    if (next && next.getTime() > latest.getTime()) latest = next;
-  }
-  return latest;
-}
-
 function apexSitemapUrl(path) {
   // Hard rule: sitemaps never emit www or non-apex hosts (even if env mis-sets SITE_URL).
   const APEX = "https://thetrifusion.in";
@@ -58,18 +48,12 @@ const GONE_STATIC_PATHS = new Set(["/blog"]);
 export function buildSitemapParts() {
   const fallbackDate = new Date("2026-09-24");
 
-  const newestServiceDate = latestDate(
-    [
-      ...services.map((service) => service.contentUpdatedAt),
-      ...fintechProductPages.map((page) => page.contentUpdatedAt),
-    ],
-    fallbackDate
-  );
+  // Services hub lastmod — keep in sync when the hub is re-submitted to GSC.
+  const servicesHubLastmod = new Date("2026-11-05");
 
   const staticLastmod = {
     "/": new Date("2026-10-14"),
     "/about": fallbackDate,
-    "/services": newestServiceDate,
     "/solutions": new Date("2026-10-12"),
     "/portfolio": fallbackDate,
     "/pricing": fallbackDate,
@@ -84,6 +68,8 @@ export function buildSitemapParts() {
   const staticRoutes = Object.keys(pages)
     .filter(
       (path) =>
+        // Hub lives in sitemap-services.xml (not pages).
+        path !== "/services" &&
         !NOINDEX_PATHS.has(path) &&
         !REDIRECTED_STATIC_PATHS.has(path) &&
         !GONE_STATIC_PATHS.has(path)
@@ -95,12 +81,17 @@ export function buildSitemapParts() {
       priority:
         path === "/"
           ? 1
-          : path === "/services" ||
-              path === "/contact" ||
-              path === "/solutions"
+          : path === "/contact" || path === "/solutions"
             ? 0.9
             : 0.7,
     }));
+
+  const servicesHubRoute = {
+    url: apexSitemapUrl("/services"),
+    lastModified: servicesHubLastmod,
+    changeFrequency: "weekly",
+    priority: 0.9,
+  };
 
   const serviceRoutes = services.map((service) => ({
     url: apexSitemapUrl(`/services/${service.slug}`),
@@ -151,7 +142,7 @@ export function buildSitemapParts() {
 
   return {
     pages: [...staticRoutes, ...portfolioRoutes],
-    services: [...serviceRoutes, ...fintechRoutes],
+    services: [servicesHubRoute, ...serviceRoutes, ...fintechRoutes],
     solutions: solutionRoutes,
     blog: [],
   };

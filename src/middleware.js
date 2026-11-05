@@ -7,6 +7,8 @@ const NON_APEX_HOSTS = new Set([
   "thetrifusion.com",
   "www.thetrifusion.com",
 ]);
+/** Production Vercel alias — always 308 to apex (GSC duplicate host). */
+const PRODUCTION_VERCEL_ALIAS = "thetrifusion01.vercel.app";
 
 const STATIC_EXT =
   /\.(?:svg|png|jpg|jpeg|gif|webp|avif|woff2|mp4|txt|xml|json|ico|css|js|map)$/i;
@@ -42,6 +44,10 @@ function isNextAssetPath(pathname) {
   );
 }
 
+function isVercelAppHost(host) {
+  return host === "vercel.app" || host.endsWith(".vercel.app");
+}
+
 /**
  * Permanent redirect with an explicit absolute apex Location.
  * Do NOT use NextResponse.redirect(URL) — on same-host requests Next/Vercel
@@ -55,6 +61,18 @@ function apexRedirect(finalPath, search = "") {
     headers: {
       Location: location,
       Link: `<https://${APEX}${canonicalPath}>; rel="canonical"`,
+      "Cache-Control": "public, max-age=0, must-revalidate",
+    },
+  });
+}
+
+/** Preview / non-production *.vercel.app hosts — keep previews usable but unindexable. */
+function vercelPreviewRobotsTxt() {
+  return new NextResponse("User-Agent: *\nDisallow: /\n", {
+    status: 200,
+    headers: {
+      "Content-Type": "text/plain; charset=utf-8",
+      "X-Robots-Tag": "noindex, nofollow",
       "Cache-Control": "public, max-age=0, must-revalidate",
     },
   });
@@ -83,6 +101,19 @@ export function middleware(request) {
   const finalPath = nextAsset ? pathname : canonicalSitePathname(pathname);
   const normalizedPath =
     pathname.length > 1 ? pathname.replace(/\/$/, "") : pathname || "/";
+
+  // Production Vercel alias → absolute apex (same path + query), one hop.
+  if (host === PRODUCTION_VERCEL_ALIAS) {
+    return apexRedirect(finalPath, search || "");
+  }
+
+  // Other *.vercel.app (preview deploys): noindex + disallow-all robots.txt.
+  // Do not redirect — that would break Vercel preview URLs.
+  const vercelPreview = isVercelAppHost(host);
+  if (vercelPreview && pathname === "/robots.txt") {
+    return vercelPreviewRobotsTxt();
+  }
+
   const needsHostFix = NON_APEX_HOSTS.has(host);
   const needsPathFix = !nextAsset && finalPath !== normalizedPath;
 
@@ -91,12 +122,20 @@ export function middleware(request) {
     return apexRedirect(finalPath, search || "");
   }
 
-  // Static / Next assets on apex — do not rewrite Cache-Control.
+  // Static / Next assets — do not rewrite Cache-Control; still noindex previews.
   if (nextAsset || isStaticAssetPath(pathname)) {
+    if (vercelPreview) {
+      const response = NextResponse.next();
+      response.headers.set("X-Robots-Tag", "noindex, nofollow");
+      return response;
+    }
     return NextResponse.next();
   }
 
   const response = NextResponse.next();
+  if (vercelPreview) {
+    response.headers.set("X-Robots-Tag", "noindex, nofollow");
+  }
   if (!pathname.startsWith("/api")) {
     response.headers.set(
       "Cache-Control",
