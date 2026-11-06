@@ -16,11 +16,15 @@ function serviceHrefsInHtml(html) {
   let match;
   while ((match = re.exec(source))) {
     const href = match[1].replace(/\/$/, "");
-    found.add(
-      href === "/services/web-development"
-        ? "/services/website-development"
-        : href
-    );
+    const aliases = {
+      "/services/web-development": "/services/website-development",
+      "/services/mobile-app": "/services/mobile-app-development",
+      "/services/android-app": "/services/android-app-development",
+      "/services/ios-app": "/services/ios-app-development",
+      "/services/mlm-crm": "/services/mlm-crm-development",
+      "/services/mobile-development": "/services/mobile-app-development",
+    };
+    found.add(aliases[href] || href);
   }
   return found;
 }

@@ -274,6 +274,11 @@ async function main() {
     "/android-app-development",
     "/ios-app-development",
     "/ecommerce-development",
+    "/services/mobile-app",
+    "/services/android-app",
+    "/services/ios-app",
+    "/services/mlm-crm",
+    "/services/mobile-development",
   ];
   for (const path of REDIRECTED_STATIC) {
     if (unique.some((u) => new URL(u, BASE_URL).pathname === path)) {
@@ -539,6 +544,12 @@ async function main() {
     ["/ios-app-development", "/services/ios-app-development"],
     ["/ai-development", "/services/ai-development"],
     ["/graphic-design", "/services/graphic-design"],
+    // GSC "URL is unknown" after short service slugs 404+noindex
+    ["/services/mobile-app", "/services/mobile-app-development"],
+    ["/services/android-app", "/services/android-app-development"],
+    ["/services/ios-app", "/services/ios-app-development"],
+    ["/services/mlm-crm", "/services/mlm-crm-development"],
+    ["/services/mobile-development", "/services/mobile-app-development"],
     // GSC Redirect error sample
     ["/solutions/web-development-company-jaipur", "/services/website-development"],
     // GSC 404 junk portfolio

@@ -14,6 +14,13 @@ const EXACT_REDIRECTS = {
     "/solutions/ecommerce-website-development",
   "/services/web-development": "/services/website-development",
   "/web-development": "/services/website-development",
+  // Short / retired service slugs that used to 404+noindex (GSC drop).
+  "/services/mobile-app": "/services/mobile-app-development",
+  "/services/android-app": "/services/android-app-development",
+  "/services/ios-app": "/services/ios-app-development",
+  "/services/mlm-crm": "/services/mlm-crm-development",
+  // Pre-rename core slug (servicesData once used mobile-development).
+  "/services/mobile-development": "/services/mobile-app-development",
   "/android-app-development": "/services/android-app-development",
   "/ios-app-development": "/services/ios-app-development",
   "/ai-development": "/services/ai-development",
