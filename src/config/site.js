@@ -100,6 +100,11 @@ export const siteConfig = {
   },
 };
 
+function stripTrailingSlash(pathname) {
+  if (!pathname || pathname === "/") return "/";
+  return pathname.replace(/\/+$/, "") || "/";
+}
+
 export function absoluteSiteUrl(path = "/") {
   // Keep homepage canonical without trailing slash to match Next.js default
   // (trailingSlash: false) and avoid sitemap/canonical mismatch on "/".
@@ -112,12 +117,19 @@ export function absoluteSiteUrl(path = "/") {
         `${parsed.protocol}//${parsed.host}`
       );
       if (origin !== APEX_ORIGIN) return value;
-      const suffix = `${parsed.pathname}${parsed.search}${parsed.hash}`;
-      if (!suffix || suffix === "/") return APEX_ORIGIN;
-      return `${APEX_ORIGIN}${suffix}`;
+      const cleanPath = stripTrailingSlash(parsed.pathname || "/");
+      if (cleanPath === "/") {
+        return `${APEX_ORIGIN}${parsed.search || ""}${parsed.hash || ""}` || APEX_ORIGIN;
+      }
+      return `${APEX_ORIGIN}${cleanPath}${parsed.search || ""}${parsed.hash || ""}`;
     } catch {
       return siteConfig.url;
     }
   }
-  return `${siteConfig.url}${value.startsWith("/") ? value : `/${value}`}`;
+  const withSlash = value.startsWith("/") ? value : `/${value}`;
+  const [pathnamePart, ...rest] = withSlash.split(/([?#].*)/);
+  const cleanPath = stripTrailingSlash(pathnamePart || "/");
+  const suffix = rest.join("") || "";
+  if (cleanPath === "/") return `${siteConfig.url}${suffix}` || siteConfig.url;
+  return `${siteConfig.url}${cleanPath}${suffix}`;
 }

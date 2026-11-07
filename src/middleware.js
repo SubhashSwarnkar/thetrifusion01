@@ -98,9 +98,9 @@ export function middleware(request) {
   }
 
   const host = (request.headers.get("host") || "").toLowerCase().split(":")[0];
+  // Compare against the raw pathname so a trailing slash alone is a path fix
+  // (Next's built-in slash redirect is disabled via skipTrailingSlashRedirect).
   const finalPath = nextAsset ? pathname : canonicalSitePathname(pathname);
-  const normalizedPath =
-    pathname.length > 1 ? pathname.replace(/\/$/, "") : pathname || "/";
 
   // Production Vercel alias → absolute apex (same path + query), one hop.
   if (host === PRODUCTION_VERCEL_ALIAS) {
@@ -115,7 +115,7 @@ export function middleware(request) {
   }
 
   const needsHostFix = NON_APEX_HOSTS.has(host);
-  const needsPathFix = !nextAsset && finalPath !== normalizedPath;
+  const needsPathFix = !nextAsset && finalPath !== pathname;
 
   // Single hop to absolute apex + final money URL (or same Next asset path).
   if (needsHostFix || needsPathFix) {
@@ -141,7 +141,7 @@ export function middleware(request) {
       "Cache-Control",
       "public, s-maxage=86400, stale-while-revalidate=604800"
     );
-    const canonicalPath = pathname === "/" ? "" : pathname;
+    const canonicalPath = finalPath === "/" ? "" : finalPath;
     response.headers.set(
       "Link",
       `<https://${APEX}${canonicalPath}>; rel="canonical"`

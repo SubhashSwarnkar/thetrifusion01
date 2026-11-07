@@ -44,7 +44,8 @@ const PORTFOLIO_SLUG_PATH = /^\/portfolio\/([^/]+)$/;
  * Final apex pathname after permanent path redirects (no host change).
  */
 export function canonicalSitePathname(pathname) {
-  const path = pathname.length > 1 ? pathname.replace(/\/$/, "") : pathname;
+  // Strip one or more trailing slashes so /path/ and /path/// match /path.
+  const path = pathname.length > 1 ? pathname.replace(/\/+$/, "") : pathname;
   if (path === "/project" || path.startsWith("/project/")) {
     return `/portfolio${path.slice("/project".length)}` || "/portfolio";
   }

@@ -425,6 +425,16 @@ async function main() {
       "/services/website-development",
       "https://thetrifusion.in/services/website-development",
     ],
+    // Trailing slash on www used to 308 relatively (stay on www) then hop to
+    // apex — GSC redirect-error. Must be one absolute apex Location.
+    [
+      "/services/digital-marketing/",
+      "https://thetrifusion.in/services/digital-marketing",
+    ],
+    [
+      "/services/website-development/",
+      "https://thetrifusion.in/services/website-development",
+    ],
     [
       "/solutions/ecommerce-website-development",
       "https://thetrifusion.in/solutions/ecommerce-website-development",
@@ -513,20 +523,28 @@ async function main() {
     "/solutions/website-development-company-jaipur",
   ]) {
     const url = `${BASE_URL}${path}`;
-    const { text: pageText } = await fetchText(url);
+    const { res: pageRes, text: pageText } = await fetchText(url);
+    const expected = `https://thetrifusion.in${path}`;
+    const linkHeader = pageRes.headers.get("link") || "";
     const canonical = extractCanonical(pageText);
     const ogUrl = extractMeta(pageText, "og:url");
+    if (pageRes.status !== 200) {
+      fail(`${path} returned ${pageRes.status}`);
+    }
+    if (!linkHeader.includes(`<${expected}>; rel="canonical"`)) {
+      fail(`${path} Link header missing apex canonical, got: ${linkHeader}`);
+    } else {
+      ok(`${path} Link header is apex canonical`);
+    }
     if (!canonical) {
       fail(`${path} missing canonical`);
-    } else if (!canonical.startsWith("https://thetrifusion.in")) {
-      fail(`${path} canonical is ${canonical}, expected https://thetrifusion.in/...`);
-    } else if (canonical.includes("www.thetrifusion")) {
-      fail(`${path} canonical still uses www: ${canonical}`);
+    } else if (canonical !== expected) {
+      fail(`${path} canonical is ${canonical}, expected ${expected}`);
     } else {
       ok(`${path} canonical is apex ${canonical}`);
     }
-    if (ogUrl && (ogUrl.includes("www.thetrifusion") || !ogUrl.startsWith("https://thetrifusion.in"))) {
-      fail(`${path} og:url is ${ogUrl}, expected apex`);
+    if (ogUrl && ogUrl !== expected) {
+      fail(`${path} og:url is ${ogUrl}, expected ${expected}`);
     } else if (ogUrl) {
       ok(`${path} og:url is apex`);
     }
@@ -534,6 +552,71 @@ async function main() {
       fail(`${path} HTML still contains hard-coded https://www.thetrifusion.in`);
     } else {
       ok(`${path} HTML has no hard-coded www host`);
+    }
+    if (/https:\/\/(www\.)?thetrifusion\.com/i.test(pageText)) {
+      fail(`${path} HTML still contains thetrifusion.com host`);
+    } else {
+      ok(`${path} HTML has no .com host`);
+    }
+    // Apex trailing slash must 308 to the non-slash money URL (middleware).
+    const slash = await fetchText(`${BASE_URL}${path}/`);
+    const slashLoc = slash.res.headers.get("location") || "";
+    const slashPath = (() => {
+      try {
+        return new URL(slashLoc, BASE_URL).pathname;
+      } catch {
+        return slashLoc;
+      }
+    })();
+    if (slash.res.status !== 301 && slash.res.status !== 308) {
+      fail(`${path}/ should permanently redirect, got ${slash.res.status}`);
+    } else if (slashPath !== path) {
+      fail(`${path}/ redirects to ${slashPath || slashLoc}, expected ${path}`);
+    } else {
+      ok(`${path}/ → ${path} (${slash.res.status})`);
+    }
+  }
+
+  // Every sitemap-services URL must self-declare apex canonical (HTML + Link).
+  {
+    const servicesXml = await fetchText(`${BASE_URL}/sitemap-services.xml`);
+    if (servicesXml.res.status !== 200) {
+      fail(`sitemap-services.xml returned ${servicesXml.res.status}`);
+    } else {
+      const serviceLocs = parser.extractLocs(servicesXml.text);
+      if (serviceLocs.length < 20) {
+        fail(`sitemap-services.xml expected 20+ locs, got ${serviceLocs.length}`);
+      }
+      for (const loc of serviceLocs) {
+        let path;
+        try {
+          const u = new URL(loc);
+          if (u.origin !== "https://thetrifusion.in") {
+            fail(`sitemap-services loc not apex: ${loc}`);
+            continue;
+          }
+          path = u.pathname;
+        } catch {
+          fail(`invalid sitemap-services loc: ${loc}`);
+          continue;
+        }
+        const { res, text } = await fetchText(`${BASE_URL}${path}`);
+        const expected = `https://thetrifusion.in${path}`;
+        const linkHeader = res.headers.get("link") || "";
+        const canonical = extractCanonical(text);
+        if (res.status !== 200) {
+          fail(`${path} from sitemap-services returned ${res.status}`);
+          continue;
+        }
+        if (!linkHeader.includes(`<${expected}>; rel="canonical"`)) {
+          fail(`${path} Link header not apex self-canonical: ${linkHeader}`);
+        }
+        if (canonical !== expected) {
+          fail(`${path} HTML canonical ${canonical}, expected ${expected}`);
+        } else {
+          ok(`${path} sitemap service self-canonical apex`);
+        }
+      }
     }
   }
 

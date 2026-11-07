@@ -33,13 +33,21 @@ function apexSitemapUrl(path) {
   if (/^https?:\/\//i.test(value)) {
     try {
       const parsed = new URL(value);
-      const suffix = `${parsed.pathname}${parsed.search}` || "/";
-      return suffix === "/" ? APEX : `${APEX}${suffix}`;
+      const cleanPath =
+        !parsed.pathname || parsed.pathname === "/"
+          ? "/"
+          : parsed.pathname.replace(/\/+$/, "") || "/";
+      if (cleanPath === "/") return APEX;
+      return `${APEX}${cleanPath}${parsed.search || ""}`;
     } catch {
       return APEX;
     }
   }
-  return `${APEX}${value.startsWith("/") ? value : `/${value}`}`;
+  const withSlash = value.startsWith("/") ? value : `/${value}`;
+  const cleanPath =
+    withSlash === "/" ? "/" : withSlash.replace(/\/+$/, "") || "/";
+  if (cleanPath === "/") return APEX;
+  return `${APEX}${cleanPath}`;
 }
 
 /** Static paths that must never appear in sitemaps (gone / unpublished hubs). */

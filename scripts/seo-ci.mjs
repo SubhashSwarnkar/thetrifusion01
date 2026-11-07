@@ -46,6 +46,11 @@ async function main() {
     "./scripts/register-extensionless.mjs",
     "scripts/test-clean-blog-html.mjs",
   ]);
+  await run("node", [
+    "--import",
+    "./scripts/register-extensionless.mjs",
+    "scripts/test-canonical-apex.mjs",
+  ]);
   await run("npm", ["run", "build"]);
 
   const server = spawn("npx", ["next", "start", "-p", PORT], {

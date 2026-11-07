@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "seo:audit": "node scripts/seo-audit.mjs",
+    "seo:canonical": "node --import ./scripts/register-extensionless.mjs scripts/test-canonical-apex.mjs",
     "seo:events": "node --import ./scripts/register-extensionless.mjs scripts/validate-event-schema.mjs",
     "seo:clean-html": "node --import ./scripts/register-extensionless.mjs scripts/test-clean-blog-html.mjs",
     "seo:recovery": "node --import ./scripts/register-extensionless.mjs scripts/test-adsense-recovery-noindex.mjs",

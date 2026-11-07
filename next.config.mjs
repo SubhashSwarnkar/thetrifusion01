@@ -1,6 +1,10 @@
 /** @type {import("next").NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // Disable Next's built-in trailing-slash 308 (relative Location). On www that
+  // hop stays on www before middleware can send an absolute apex Location —
+  // a GSC redirect-error chain. Middleware owns slash + host in one hop.
+  skipTrailingSlashRedirect: true,
   eslint: {
     ignoreDuringBuilds: true,
   },
