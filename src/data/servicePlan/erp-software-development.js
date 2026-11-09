@@ -6,18 +6,19 @@ import { LIVE, NAP_LINE, TEAM } from "./_shared";
  * (which stays CRM-first). Do not copy CRM pipeline / Zoho-vs-custom wording here.
  */
 export default {
-  contentUpdatedAt: "2026-11-03",
-  metaTitle: "ERP Software Development Company in Jaipur | TheTriFusion",
-  bannerTitle: "ERP Software Development Company in Jaipur, India",
+  contentUpdatedAt: "2026-11-09",
+  metaTitle: "ERP Software Development Company in India | Jaipur Studio",
+  bannerTitle: "ERP Software Development Company in India — Jaipur Studio",
   metaDescription:
-    "Custom ERP software for Indian SMEs in Jaipur — finance with GST, inventory, procurement, manufacturing, HR/payroll and multi-branch. Code you own. Phased from ₹6,00,000.",
+    "Custom ERP for Indian SMEs — finance with GST, inventory, procurement, manufacturing, HR/payroll and multi-branch. Built in Jaipur; code you own. Phased from ₹6,00,000.",
   keywords:
-    "ERP software development company Jaipur, custom ERP software India, ERP development Rajasthan, GST inventory ERP Jaipur, manufacturing ERP software India, custom ERP vs Tally SAP Odoo",
+    "ERP software development company India, custom ERP software India, ERP development Rajasthan, GST inventory ERP Jaipur, manufacturing ERP software India, custom ERP vs Tally SAP Odoo",
+  industries: [],
   answerFirst: {
     id: "quick-answer",
-    heading: "ERP software development in Jaipur: the short answer",
+    heading: "ERP software development in India: the short answer",
     text:
-      "TheTriFusion (Trifusion Infotech Private Limited) builds custom ERP software in Jaipur for Indian manufacturers, traders, and multi-branch operators who have outgrown Tally-plus-spreadsheets. We ship finance and GST ledgers, inventory and warehouse, procurement, production planning, sales and distribution, HR/payroll, multi-branch control, and reporting — in phases you can run. You own the code. A multi-module ERP programme typically starts from ₹6,00,000 on our published plans; a single ops slice can start lower. Sales pipelines and lead CRM live on [custom CRM development](/services/crm-erp-development), not on this page.",
+      "TheTriFusion (Trifusion Infotech Private Limited) builds custom ERP software from a Jaipur, Rajasthan studio for Indian manufacturers, traders, and multi-branch operators who have outgrown Tally-plus-spreadsheets. We ship finance and GST ledgers, inventory and warehouse, procurement, production planning, sales and distribution, HR/payroll, multi-branch control, and reporting — in phases you can run. You own the code. A multi-module ERP programme typically starts from ₹6,00,000 on our published plans; a single ops slice can start lower. Sales pipelines and lead CRM live on [custom CRM development](/services/crm-erp-development), not on this page.",
     facts: [
       { label: "Starting price", value: "From ₹6,00,000 (multi-module ERP; Standard plan)" },
       { label: "You own", value: "Source code, after completion and payment" },
@@ -270,6 +271,7 @@ export default {
       paragraphs: [
         "Typical stack: React admin for dense operational screens, Node.js or similar API layer, PostgreSQL for transactional data, and React Native when warehouse or sales staff need a phone companion. REST or webhook integrations for Tally exports, payment gateways, and WhatsApp alerts are scoped per project. We match the stack to your hosting preference and to any existing systems you must not rip out in phase one.",
         `${LIVE.dairy} and ${LIVE.daily} are live operations and POS-adjacent proof points already on this site. Outcome metrics stay unpublished until a client allows a named figure.`,
+        "Case studies: [Connect Dairy](/portfolio/connect-dairy-supply-chain) and [DailyConcepts](/portfolio/dailyconcepts-ecommerce-pos).",
       ],
     },
     {
@@ -333,6 +335,16 @@ export default {
     },
   ],
   relatedLinks: [
+    {
+      href: "/portfolio/connect-dairy-supply-chain",
+      title: "Connect Dairy case study",
+      text: "Live ops — fleets, roles and P&L (ERP-adjacent proof).",
+    },
+    {
+      href: "/portfolio/dailyconcepts-ecommerce-pos",
+      title: "DailyConcepts case study",
+      text: "Live storefront plus POS-style admin workflows.",
+    },
     {
       href: "/services/crm-erp-development",
       title: "Custom CRM development",

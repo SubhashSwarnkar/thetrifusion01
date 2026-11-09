@@ -7,18 +7,19 @@ import { NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: developer profiles (anonymised OK).
  */
 export default {
-  contentUpdatedAt: "2026-10-28",
+  contentUpdatedAt: "2026-11-09",
   metaTitle: "Hire Dedicated Developers in India | React, Node & Mobile from Jaipur",
   bannerTitle: "Hire Dedicated Developers in India",
   metaDescription:
     "Hire React, Next.js, Node and mobile developers from Jaipur — part-time or full-time, named lead, IST/UK overlap. Project work from ₹50,000; monthly rates scoped.",
   keywords:
-    "hire dedicated developers India, hire React developers India, staff augmentation company Jaipur, hire Node developers India, dedicated development team Jaipur",
+    "hire dedicated developers India, hire React developers India, staff augmentation company Jaipur, hire Node developers India, dedicated development team Jaipur, hire developers Jaipur",
+  industries: [],
   answerFirst: {
     id: "quick-answer",
     heading: "Hire dedicated developers in India: the short answer",
     text:
-      "TheTriFusion lets you hire dedicated React, Next.js, Node and mobile developers from Jaipur — part-time or full-time, with a named lead, NDA/IP in the contract, and IST overlap that also covers morning UK hours. The published starting price on this site is ₹50,000 for a scoped engagement. Monthly role rates are written after we know the stack and the hours. This URL stays /services/on-demand.",
+      "TheTriFusion lets you hire dedicated React, Next.js, Node and mobile developers from Jaipur, Rajasthan — part-time or full-time, with a named lead, NDA/IP in the contract, and IST overlap that also covers morning UK hours. The published starting price on this site is ₹50,000 for a scoped engagement. Monthly role rates are written after we know the stack and the hours. This URL stays /services/on-demand.",
     facts: [
       { label: "Starting price", value: "From ₹50,000 (published Basic plan)" },
       { label: "Roles", value: "React, Next.js, Node, React Native, Flutter, DevOps" },
@@ -27,6 +28,13 @@ export default {
     ],
   },
   extraSections: [
+    {
+      id: "seat-vs-project",
+      heading: "Dedicated seat vs scoped project",
+      paragraphs: [
+        "Hire on this page when you need a named person inside your standup, backlog, or PR review loop. Choose [custom software](/services/software-development) or [mobile app development](/services/mobile-app-development) when you want a written first-release cut, Friday demos, and a fixed-scope MVP instead of a standing seat. [DevOps](/services/devops) remains a separate capability when the ask is pipelines and cloud, not a full-time engineer on your board.",
+      ],
+    },
     {
       id: "roles-you-can-hire",
       heading: "Roles you can hire",
@@ -38,7 +46,7 @@ export default {
       id: "hire-rates",
       heading: "How we price dedicated developers",
       paragraphs: [
-        "Published project plans on [pricing](/pricing): ₹50,000 / ₹1,50,000 / ₹3,00,000. Those are engagement starting points, not a public monthly rate card. Competitors publish monthly bands; we will not invent ours. Ask for a written monthly or part-time rate for the role you need. Cost notes: [hire dedicated developers cost guide](/services).",
+        "Published project plans on [pricing](/pricing): ₹50,000 / ₹1,50,000 / ₹3,00,000. Those are engagement starting points, not a public monthly rate card. We will not invent a public monthly band. Ask for a written monthly or part-time rate for the role and hours you need.",
       ],
       comparison: {
         heading: "Engagement models",
@@ -97,6 +105,16 @@ export default {
       answer:
         "The office is IST (Mon–Sat 10:00–19:00). That overlaps UK mornings. US overlap is scoped if you need evening IST.",
     },
+    {
+      question: "Can I hire developers from your Jaipur studio for remote work?",
+      answer:
+        "Yes. The studio is in Patrakar Colony, Jaipur; day-to-day work is remote on your tools with video standups. Visiting the office is optional by appointment.",
+    },
+    {
+      question: "Is this the same as hiring for a fixed software project?",
+      answer:
+        "No. This page is a named seat (staff-aug). A fixed MVP with a written definition of done belongs on software development or mobile app development.",
+    },
   ],
   relatedLinks: [
     {
@@ -110,9 +128,14 @@ export default {
       text: "When the seat is a mobile build with a definition of done.",
     },
     {
-      href: "/services",
-      title: "Hire dedicated developers cost guide",
-      text: "How UK and Australian teams should read an India rate.",
+      href: "/services/android-app-development",
+      title: "Android app development",
+      text: "Play Store-first product work instead of a standing Android seat.",
+    },
+    {
+      href: "/pricing",
+      title: "Published pricing",
+      text: "Engagement starting plans from ₹50,000 — monthly rates quoted in writing.",
     },
   ],
 };

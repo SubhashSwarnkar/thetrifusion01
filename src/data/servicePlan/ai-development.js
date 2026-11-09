@@ -6,18 +6,19 @@ import { NAP_LINE, SOURCES, TEAM } from "./_shared";
  * TODO OWNER: pilot price you will publish (beyond the ₹2,00,000 Basic plan).
  */
 export default {
-  contentUpdatedAt: "2026-10-28",
-  metaTitle: "AI Development Company in Jaipur | Chatbots, RAG & AI Agents",
-  bannerTitle: "AI Development Company in Jaipur",
+  contentUpdatedAt: "2026-11-09",
+  metaTitle: "AI Development Company in India | Chatbots, RAG & Agents",
+  bannerTitle: "AI Development Company in India — Jaipur Studio",
   metaDescription:
     "WhatsApp AI chatbots, RAG search, document AI and AI agents added to your product by a Jaipur team, with human review built in. Pilot first.",
   keywords:
-    "AI development company in Jaipur, WhatsApp AI chatbot development India, AI agent development company India, RAG search Jaipur, DPDP Act AI",
+    "AI development company in India, WhatsApp AI chatbot development India, AI agent development company India, RAG search Jaipur, DPDP Act AI",
+  industries: [],
   answerFirst: {
     id: "quick-answer",
-    heading: "AI development company in Jaipur: the short answer",
+    heading: "AI development company in India: the short answer",
     text:
-      "TheTriFusion adds practical AI features to products Indian SMEs already run: WhatsApp chatbots, RAG search over your documents, invoice/PDF extraction, and agents with a human review step. We start with a pilot, not a lab. Published plans start from ₹2,00,000. Your production data is not used to train public models.",
+      "TheTriFusion adds practical AI features to products Indian SMEs already run — from a Jaipur, Rajasthan studio: WhatsApp chatbots, RAG search over your documents, invoice/PDF extraction, and agents with a human review step. We start with a pilot, not a lab. Published plans start from ₹2,00,000. Your production data is not used to train public models.",
     facts: [
       { label: "Starting price", value: "From ₹2,00,000 (published Basic plan)" },
       { label: "Usual first step", value: "A 2–4 week pilot with a written success metric" },
@@ -30,7 +31,14 @@ export default {
       id: "ai-use-cases",
       heading: "AI use cases for Indian SMEs",
       paragraphs: [
-        "WhatsApp support or booking bots, invoice and document extraction into an ERP, an internal search assistant over your PDFs, and a human-reviewed agent that drafts replies. Related reading: [WhatsApp AI chatbot for Indian businesses](/services/mobile-app-development), [custom GPT agents for SMEs](/services/ai-development), [AI app development cost in India](/services/mobile-app-development).",
+        "WhatsApp support or booking bots, invoice and document extraction into an ERP, an internal search assistant over your PDFs, and a human-reviewed agent that drafts replies. Channel and mobile delivery often sit next to [mobile app development](/services/mobile-app-development). Deterministic office bots without a model belong on [RPA](/services/rpa).",
+      ],
+    },
+    {
+      id: "custom-gpt-agents",
+      heading: "Custom GPT-style agents for SMEs",
+      paragraphs: [
+        "Agents here mean a feature wired to your tools and data with a human tick before anything outward is sent — not a promise that ChatGPT replaces your team. We scope tools, logs, and the review step in writing. Published pilots start from ₹2,00,000 on [pricing](/pricing).",
       ],
     },
     {
@@ -136,18 +144,18 @@ export default {
     },
     {
       href: "/services/mobile-app-development",
-      title: "WhatsApp AI chatbot for Indian businesses",
-      text: "Channel, review step, and what not to automate.",
+      title: "Mobile app development",
+      text: "When the AI feature ships inside an iOS/Android product.",
     },
     {
-      href: "/services/ai-development",
-      title: "Custom GPT agents for SMEs",
-      text: "Agents with tools and a human tick.",
+      href: "/services/ai-development#custom-gpt-agents",
+      title: "Custom GPT-style agents for SMEs",
+      text: "Jump to the agents section on this page.",
     },
     {
-      href: "/services/mobile-app-development",
-      title: "AI app development cost in India",
-      text: "What actually moves the quote.",
+      href: "/pricing",
+      title: "Published AI plans",
+      text: "Pilots from ₹2,00,000 — token spend usually on your vendor account.",
     },
   ],
 };

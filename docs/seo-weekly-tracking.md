@@ -42,8 +42,9 @@ Canonical property: apex `https://thetrifusion.in` (URL-prefix or Domain). Do no
 
 | Week starting | /services/ clicks | /services/ impr. | India vs RJ vs Jaipur query notes | AI citations observed? | Notes |
 |---|---:|---:|---|---|---|
-| 2026-11-03 (baseline window ends 8 Nov) | 0 (Oct12–Nov8) | 1 | Only supplied sample: salesforce/fexle jaipur; **national/RJ baselines not measured** | Not measured | See batch doc |
-| 2026-11-10 | | | Await parent GSC dumps before refining | | After on-site batch deploy — record actuals |
+| 2026-11-03 (baseline window ends 8 Nov) | 0 (Oct12–Nov8 India /services) | 1 (India) | Only early India sample; **national/RJ baselines incomplete** | Not measured | See batch doc |
+| 2026-11-09 (READONLY GSC) | 11 (90d global /services) | 210 (90d) | www fintech historical clicks; apex fintech 30 imps; on-demand/Android/fintech Jaipur query imps; website www duplicate as of crawl Nov3 pre-e2b9132 | Not measured | Informs batch 2; no canonical churn; see `seo-services-coverage-audit.md` |
+| 2026-11-10 | | | | | Post batch-2 deploy — record actuals |
 
 ## 30 / 60 / 90 day workplan (priorities + measurable targets)
 

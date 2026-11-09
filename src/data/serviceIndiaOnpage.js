@@ -108,34 +108,38 @@ export const serviceIndiaOnpage = {
     bannerTitle:
       "Fintech App Development Company in India — Jaipur Studio",
     ...citySection(
-      "BBPS, AEPS, DMT and recharge from Jaipur",
+      "BBPS, AEPS, DMT and recharge for India (Jaipur studio)",
       [
-        "Modules and product URLs live here (from ₹99,999). You bring the bank or API partner. City copy: [Jaipur](/solutions/fintech-app-development-jaipur).",
+        "This apex /services URL is the national fintech capability hub (from ₹99,999): retailer app, distributor panel, admin. You bring the bank or API partner; we do not issue NPCI/RBI licences. Prefer the apex host https://thetrifusion.in — www is redirected. Child modules: [BBPS](/services/fintech-app-development/bbps-software), [AEPS](/services/fintech-app-development/aeps-software), [DMT](/services/fintech-app-development/dmt-software), [recharge](/services/fintech-app-development/recharge-software). Local flavour only: [Jaipur](/solutions/fintech-app-development-jaipur).",
       ],
       [
-        {
-          href: "/solutions/fintech-app-development-jaipur",
-          title: "Fintech app development in Jaipur",
-          text: "Retailer app, distributor panel, admin. From ₹99,999.",
-        },
         {
           href: "/services/fintech-app-development/bbps-software",
           title: "BBPS software",
           text: "Bharat BillPay retailer and distributor panels.",
         },
+        {
+          href: "/services/fintech-app-development/aeps-software",
+          title: "AEPS software",
+          text: "Aadhaar-enabled payments on partner-certified devices.",
+        },
+        {
+          href: "/solutions/fintech-app-development-jaipur",
+          title: "Fintech app development in Jaipur",
+          text: "Local studio flavour — same product family, not a second national canonical.",
+        },
       ]
     ),
   },
   "ai-development": {
-    metaTitle:
-      "AI Development Company in Jaipur, India | Chatbots, RAG & Agents",
-    bannerTitle: "AI Development Company in Jaipur, India",
+    metaTitle: "AI Development Company in India | Chatbots, RAG & Agents",
+    bannerTitle: "AI Development Company in India — Jaipur Studio",
     extraSections: [
       {
         id: "india-city-pages",
-        heading: "India delivery from Jaipur",
+        heading: "India delivery from Jaipur, Rajasthan",
         paragraphs: [
-          "AI features ship from the same Patrakar Colony studio as [website development](/services/website-development) and [custom software](/services/software-development). Published pilots from ₹2,00,000.",
+          "AI features ship from the same Patrakar Colony studio as [website development](/services/website-development) and [custom software](/services/software-development). Published pilots from ₹2,00,000. We do not invent branch offices outside Jaipur.",
         ],
       },
     ],
@@ -277,21 +281,30 @@ export const serviceIndiaOnpage = {
     schemaAreaServed: INDIA_AREA_SERVED,
   },
   "erp-software-development": {
-    metaTitle:
-      "ERP Software Development Company in Jaipur, India",
-    bannerTitle: "ERP Software Development in Jaipur, India",
+    metaTitle: "ERP Software Development Company in India | Jaipur Studio",
+    bannerTitle: "ERP Software Development in India — Jaipur Studio",
     extraSections: [
       {
         id: "india-city-pages",
-        heading: "ERP for Indian SMEs in Jaipur and Rajasthan",
+        heading: "ERP for Indian SMEs (studio in Jaipur, Rajasthan)",
         paragraphs: [
-          "GST finance, inventory, procurement, manufacturing, HR and multi-branch ERP from Jaipur. Multi-module programmes typically start from ₹6,00,000. Sales CRM stays on [custom CRM development](/services/crm-erp-development). See also [custom software](/services/software-development).",
-          "Manufacturers in Sitapura and traders across Rajasthan usually need stock that matches the invoice, PO→GRN discipline, and books a CA can close — not a CRM with an inventory tab. We phase modules so the floor keeps running. You own the code after payment. Tally, SAP or Odoo stay the right buy when they already fit; we will say so.",
+          "GST finance, inventory, procurement, manufacturing, HR and multi-branch ERP from Jaipur for buyers across India. Multi-module programmes typically start from ₹6,00,000. Sales CRM stays on [custom CRM development](/services/crm-erp-development). See also [custom software](/services/software-development).",
+          "Manufacturers in Sitapura and traders across Rajasthan usually need stock that matches the invoice, PO→GRN discipline, and books a CA can close — not a CRM with an inventory tab. We phase modules so the floor keeps running. You own the code after payment. Tally, SAP or Odoo stay the right buy when they already fit; we will say so. Live ops proof: [Connect Dairy](/portfolio/connect-dairy-supply-chain).",
           "Mobile warehouse companions sit on [mobile app development](/services/mobile-app-development). Spreadsheet cutovers without a full ERP map sit on [business modernization](/services/business-modernization).",
         ],
       },
     ],
     relatedLinks: [
+      {
+        href: "/portfolio/connect-dairy-supply-chain",
+        title: "Connect Dairy case study",
+        text: "Live ops — fleets, roles and P&L.",
+      },
+      {
+        href: "/portfolio/dailyconcepts-ecommerce-pos",
+        title: "DailyConcepts case study",
+        text: "Live storefront plus POS-style admin.",
+      },
       {
         href: "/services/crm-erp-development",
         title: "Custom CRM development",
@@ -361,8 +374,8 @@ export const serviceIndiaOnpage = {
         id: "india-city-pages",
         heading: "Hire developers in India, from Jaipur",
         paragraphs: [
-          "Named React, Node and mobile developers from Jaipur. Project work from ₹50,000.",
-          "This page is staff-aug: a named person inside your sprint, NDA/IP in the contract, IST overlap that also covers morning UK hours. A written MVP with a first-release cut is still [custom software](/services/software-development) or [mobile app development](/services/mobile-app-development).",
+          "Named React, Node and mobile developers from the Patrakar Colony, Jaipur studio for teams across India (and remote clients). Project engagements start from ₹50,000 on [pricing](/pricing); monthly seat rates are quoted in writing — we do not invent a public rate card.",
+          "This page is staff-aug: a named person inside your sprint, NDA/IP in the contract, IST overlap that also covers morning UK hours. A written MVP with a first-release cut is still [custom software](/services/software-development) or [mobile app development](/services/mobile-app-development). Play Store-first products sit on [Android app development](/services/android-app-development).",
         ],
       },
     ],
@@ -370,14 +383,14 @@ export const serviceIndiaOnpage = {
   },
   "graphic-design": {
     metaTitle:
-      "Graphic Design Company in Jaipur, India | Social, Ads & Packs",
-    bannerTitle: "Graphic Design Services in Jaipur, India",
+      "Graphic Design Company in India | Social, Ads & Packs from Jaipur",
+    bannerTitle: "Graphic Design Services in India — Jaipur Studio",
     extraSections: [
       {
         id: "india-city-pages",
         heading: "Creatives that match the live Indian site",
         paragraphs: [
-          "Social, ads and catalogues from Jaipur. Brand systems sit on [branding](/services/branding); traffic on [digital marketing](/services/digital-marketing). Product UI is [UI/UX](/services/ui-ux-design).",
+          "Social, ads and catalogues from Jaipur for brands across India. Brand systems sit on [branding](/services/branding); traffic on [digital marketing](/services/digital-marketing). Product UI is [UI/UX](/services/ui-ux-design).",
         ],
       },
     ],
@@ -409,15 +422,27 @@ export const serviceIndiaOnpage = {
   },
   "android-app-development": {
     metaTitle:
-      "Android App Development Company in Jaipur, India | Play Store",
-    bannerTitle: "Android App Development Company in Jaipur, India",
+      "Android App Development Company in India | Play Store from Jaipur",
+    bannerTitle: "Android App Development Company in India — Jaipur Studio",
     extraSections: [
       {
         id: "india-city-pages",
-        heading: "Play Store apps from Jaipur, India",
+        heading: "Play Store apps for India, built in Jaipur",
         paragraphs: [
-          "Kotlin or React Native from Jaipur, from ₹2,50,000. Both stores: [mobile app development](/services/mobile-app-development). City context: [Jaipur apps](/solutions/mobile-app-development-company-jaipur).",
+          "Kotlin or React Native from Jaipur, Rajasthan, from ₹2,50,000. Both stores: [mobile app development](/services/mobile-app-development). City flavour (not a second national canonical): [Jaipur apps](/solutions/mobile-app-development-company-jaipur). Live proof: [PlugOne](/portfolio/plugone-ev-charging-platform).",
         ],
+      },
+    ],
+    relatedLinks: [
+      {
+        href: "/portfolio/plugone-ev-charging-platform",
+        title: "PlugOne case study",
+        text: "Live EV charging product with Android clients.",
+      },
+      {
+        href: "/portfolio/connect-dairy-supply-chain",
+        title: "Connect Dairy case study",
+        text: "Live agri-logistics web & mobile.",
       },
     ],
     schemaAreaServed: INDIA_AREA_SERVED,

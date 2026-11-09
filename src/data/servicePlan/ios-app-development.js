@@ -6,7 +6,8 @@ import { LIVE, NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: Apple-platform experience years of the iOS lead.
  */
 export default {
-  contentUpdatedAt: "2026-10-28",
+  contentUpdatedAt: "2026-11-09",
+  industries: [],
   metaTitle: "iOS App Development Company in India | iPhone Apps from Jaipur",
   bannerTitle: "iOS App Development Company in India",
   metaDescription:
@@ -86,6 +87,7 @@ export default {
       heading: "Shipped iOS apps",
       paragraphs: [
         `${LIVE.plugone} includes an iOS driver experience. App Store URLs are not stored in this repo, so they are not invented here.`,
+        "Case study: [PlugOne](/portfolio/plugone-ev-charging-platform).",
       ],
     },
     {
@@ -129,6 +131,11 @@ export default {
     },
   ],
   relatedLinks: [
+    {
+      href: "/portfolio/plugone-ev-charging-platform",
+      title: "PlugOne case study",
+      text: "Live product with an iOS driver experience.",
+    },
     {
       href: "/services/mobile-app-development",
       title: "Mobile app development",

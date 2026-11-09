@@ -7,18 +7,21 @@ import { NAP_LINE, SOURCES, TEAM } from "./_shared";
  * TODO OWNER: client count / operators live.
  */
 export default {
-  contentUpdatedAt: "2026-10-28",
+  contentUpdatedAt: "2026-11-09",
   metaTitle: "BBPS, AEPS & DMT Software Provider India | White-Label Fintech Apps",
   bannerTitle: "BBPS, AEPS, DMT & XDMT Software Development in India",
   metaDescription:
     "White-label BBPS, AEPS, DMT, recharge and UPI software: retailer app, distributor panel and admin. From ₹99,999. You bring bank/API partner, we build.",
   keywords:
-    "BBPS AEPS DMT software provider India, white label fintech software India, recharge software company Jaipur, XDMT software India",
+    "BBPS AEPS DMT software provider India, white label fintech software India, recharge software company Jaipur, XDMT software India, fintech app development India",
+  // Suppress legacy templated industry packs; module depth lives in extraSections.
+  industries: [],
+  services: [],
   answerFirst: {
     id: "quick-answer",
     heading: "BBPS, AEPS and DMT software: the short answer",
     text:
-      "TheTriFusion builds white-label BBPS, AEPS, DMT, XDMT, recharge and UPI software from Jaipur: retailer app, distributor panel and admin. You bring the bank, BBPOU or API partner; we build the software. Published plans start from ₹99,999. We do not issue NPCI or RBI licences. See [NPCI](" +
+      "TheTriFusion builds white-label BBPS, AEPS, DMT, XDMT, recharge and UPI software from a Jaipur, Rajasthan studio for operators across India: retailer app, distributor panel and admin. You bring the bank, BBPOU or API partner; we build the software. Published plans start from ₹99,999. We do not issue NPCI or RBI licences. See [NPCI](" +
       SOURCES.npci +
       ") and [RBI](" +
       SOURCES.rbi +
@@ -31,6 +34,14 @@ export default {
     ],
   },
   extraSections: [
+    {
+      id: "who-fintech-page-is-for",
+      heading: "Who this fintech page is for",
+      paragraphs: [
+        "Use this hub when you need a white-label retailer stack (app + distributor + admin) and already have — or are arranging — a bank, BBPOU or aggregator contract. Pick a child URL when the brief is only one rail: [BBPS](/services/fintech-app-development/bbps-software), [AEPS](/services/fintech-app-development/aeps-software), [DMT](/services/fintech-app-development/dmt-software), or [recharge](/services/fintech-app-development/recharge-software).",
+        "This page is not a licence bureau, not a competitor-brand comparison, and not a claim that we hold NPCI membership for you. If the product is a sales CRM or compensation tree, start on [custom CRM](/services/crm-erp-development) or [MLM software](/services/mlm-crm-development) instead.",
+      ],
+    },
     {
       id: "fintech-modules",
       heading: "Modules: BBPS, AEPS, DMT/XDMT, recharge, PAN, UPI, CMS",
@@ -147,6 +158,16 @@ export default {
       question: "Is a licence required to run DMT/AEPS?",
       answer:
         "Operators need the relationships RBI and NPCI require. We are not a licence bureau. Read the circulars on rbi.org.in and npci.org.in.",
+    },
+    {
+      question: "Should I open this hub or a BBPS/AEPS/DMT child page?",
+      answer:
+        "Open this hub for the full retailer → distributor → admin stack or when several rails share one product. Open a child page when the first release is only BBPS, only AePS, only DMT, or only recharge — those URLs stay the deep write-ups so this hub does not cannibalize them.",
+    },
+    {
+      question: "Do you publish named bank or aggregator partners?",
+      answer:
+        "Not on this page. Partner names are not stored in this repo until an operator allows them to be listed. Bring your contract; we integrate against that partner’s docs.",
     },
   ],
   relatedLinks: [

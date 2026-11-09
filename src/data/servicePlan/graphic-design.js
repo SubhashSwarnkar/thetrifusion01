@@ -6,13 +6,15 @@ import { NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: monthly social package prices if they differ from /pricing project plans.
  */
 export default {
-  contentUpdatedAt: "2026-10-28",
-  metaTitle: "Graphic Design Company in Jaipur | Social, Ads, Brochures & Packaging",
-  bannerTitle: "Graphic Design Services in Jaipur",
+  contentUpdatedAt: "2026-11-09",
+  metaTitle: "Graphic Design Company in India | Social, Ads & Packs from Jaipur",
+  bannerTitle: "Graphic Design Services in India — Jaipur Studio",
   metaDescription:
     "Social media creatives, ad visuals, brochures, catalogues and packaging designed in Jaipur to match your brand and website. Monthly or per-pack pricing.",
   keywords:
-    "graphic design company in Jaipur, logo design in Jaipur, social media post design services India, brochure packaging design Jaipur",
+    "graphic design company in India, graphic design company Jaipur, social media post design services India, brochure packaging design Jaipur",
+  // Drop legacy industry cards that used unverifiable “cutting-edge” fluff.
+  industries: [],
   answerFirst: {
     id: "quick-answer",
     heading: "Graphic design company in Jaipur: the short answer",

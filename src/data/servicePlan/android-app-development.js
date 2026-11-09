@@ -2,22 +2,25 @@ import { LIVE, NAP_LINE, SOURCES, TEAM } from "./_shared";
 
 /**
  * /services/android-app-development
+ * Primary intent: Play Store-first / Android-first apps (India), studio in Jaipur.
+ * Cross-platform both-stores → mobile-app-development.
  * TODO OWNER: Play Store links + ratings for live apps.
  * TODO OWNER: device/vernacular proof (screenshots of Hindi UI, low-end device QA list).
  */
 export default {
-  contentUpdatedAt: "2026-10-28",
-  metaTitle: "Android App Development Company in Jaipur | Play Store Apps",
-  bannerTitle: "Android App Development Company in Jaipur",
+  contentUpdatedAt: "2026-11-09",
+  metaTitle: "Android App Development Company in India | Play Store from Jaipur",
+  bannerTitle: "Android App Development Company in India — Jaipur Studio",
   metaDescription:
-    "Kotlin or React Native Android apps built in Jaipur, with Play Console setup, signing and Play Store listing. From ₹2,50,000; MVP in 8–12 weeks.",
+    "Kotlin or React Native Android apps from a Jaipur studio, with Play Console setup, signing and Play Store listing. From ₹2,50,000; MVP in 8–12 weeks.",
   keywords:
-    "android app development company in Jaipur, android app development cost India, Kotlin app developer India, Play Store app development Jaipur",
+    "android app development company in India, android app development company Jaipur, android app development cost India, Kotlin app developer India, Play Store app development",
+  industries: [],
   answerFirst: {
     id: "quick-answer",
-    heading: "Android app development company in Jaipur: the short answer",
+    heading: "Android app development company in India: the short answer",
     text:
-      "TheTriFusion builds Play Store apps in Jaipur in Kotlin, or React Native / Flutter when iOS should follow. We handle signing, the store listing and the first production release. The Play Console account stays in your company's name. Focused Android MVPs start from ₹2,50,000 and typically take 8–12 weeks after discovery.",
+      "TheTriFusion builds Play Store apps from a Jaipur, Rajasthan studio in Kotlin, or React Native / Flutter when iOS should follow. We handle signing, the store listing and the first production release. The Play Console account stays in your company's name. Focused Android MVPs start from ₹2,50,000 and typically take 8–12 weeks after discovery.",
     facts: [
       { label: "Starting price", value: "From ₹2,50,000 (focused Android MVP)" },
       { label: "Typical timeline", value: "8–12 weeks after discovery" },
@@ -39,7 +42,7 @@ export default {
       id: "kotlin-vs-rn-vs-flutter",
       heading: "Kotlin vs React Native vs Flutter",
       paragraphs: [
-        "Kotlin when Android is the product. React Native or Flutter when iOS will follow. See [Flutter vs React Native](/services/mobile-app-development) and the [Play Store launch checklist](/services/mobile-app-development).",
+        "Kotlin when Android is the product. React Native or Flutter when iOS will follow. Cross-platform process for both stores lives on [mobile app development](/services/mobile-app-development#flutter-vs-rn-vs-native).",
       ],
       comparison: {
         heading: "How we choose",
@@ -55,7 +58,7 @@ export default {
       id: "play-store-checklist",
       heading: "Play Store launch checklist",
       paragraphs: [
-        "Signing keys, a Play Console account in your company name, testing tracks, store listing, and a privacy policy. The working list is on the [Google Play launch checklist for Indian SMEs](/services/mobile-app-development).",
+        "Signing keys, a Play Console account in your company name, testing tracks, store listing, and a privacy policy. Keep the Console ownership with your company — not a personal contractor account that walks away.",
       ],
     },
     {
@@ -79,7 +82,8 @@ export default {
       id: "live-android",
       heading: "Live Android apps",
       paragraphs: [
-        `${LIVE.plugone} and ${LIVE.dairy} are live. Play Store URLs and ratings are not in this repo.`,
+        `${LIVE.plugone} and ${LIVE.dairy} are live. Play Store URLs and ratings are not in this repo, so they are not invented here.`,
+        "Case studies: [PlugOne](/portfolio/plugone-ev-charging-platform) and [Connect Dairy](/portfolio/connect-dairy-supply-chain).",
       ],
     },
     {
@@ -121,8 +125,23 @@ export default {
       answer:
         "You do. The Play Console stays in your company's name. We use access you grant.",
     },
+    {
+      question: "Android-only or both stores?",
+      answer:
+        "Use this page for Play Store-first or Android-only releases. Use mobile app development when one shared codebase should ship to both stores in the same programme.",
+    },
   ],
   relatedLinks: [
+    {
+      href: "/portfolio/plugone-ev-charging-platform",
+      title: "PlugOne case study",
+      text: "Live EV charging product — iOS, Android and web.",
+    },
+    {
+      href: "/portfolio/connect-dairy-supply-chain",
+      title: "Connect Dairy case study",
+      text: "Live agri-logistics web & mobile ops.",
+    },
     {
       href: "/services/mobile-app-development",
       title: "Mobile app development",
@@ -134,9 +153,9 @@ export default {
       text: "When the other store is the App Store.",
     },
     {
-      href: "/services/mobile-app-development",
+      href: "/services/android-app-development#play-store-checklist",
       title: "Play Store launch checklist",
-      text: "Accounts, signing, listing and review.",
+      text: "Accounts, signing, listing and review on this page.",
     },
   ],
 };
