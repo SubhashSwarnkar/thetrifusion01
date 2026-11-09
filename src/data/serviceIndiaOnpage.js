@@ -85,13 +85,14 @@ export const serviceIndiaOnpage = {
     ),
   },
   "digital-marketing": {
+    // Apex canonical preserved; www historical duplicate — observe, do not churn host.
     metaTitle:
-      "Digital Marketing Agency in Jaipur, India | SEO & Ads from ₹15,000",
-    bannerTitle: "Digital Marketing Agency in Jaipur, India",
+      "Digital Marketing Agency in India | SEO & Ads from Jaipur, ₹15,000",
+    bannerTitle: "Digital Marketing Agency in India — Jaipur Studio",
     ...citySection(
-      "SEO and ads from Jaipur",
+      "SEO and ads for India (Jaipur studio)",
       [
-        "India-wide SEO, Google Ads and Meta Ads live here (from ₹15,000; ad spend separate; no ranking guarantee). City copy: [Jaipur](/solutions/digital-marketing-company-jaipur). The old slug digital-marketing-agency still 308s here.",
+        "This apex /services URL is the national digital marketing write-up: SEO, Google Ads and Meta Ads from ₹15,000 (ad spend separate; no ranking guarantee). Prefer https://thetrifusion.in — www redirects here. City flavour only: [Jaipur](/solutions/digital-marketing-company-jaipur). The old slug digital-marketing-agency still 308s here.",
       ],
       [
         {
@@ -124,6 +125,16 @@ export const serviceIndiaOnpage = {
           text: "Aadhaar-enabled payments on partner-certified devices.",
         },
         {
+          href: "/services/fintech-app-development/dmt-software",
+          title: "DMT software",
+          text: "Domestic money transfer for the retailer network.",
+        },
+        {
+          href: "/services/fintech-app-development/recharge-software",
+          title: "Recharge software",
+          text: "Mobile and DTH top-ups on the partner you contract.",
+        },
+        {
           href: "/solutions/fintech-app-development-jaipur",
           title: "Fintech app development in Jaipur",
           text: "Local studio flavour — same product family, not a second national canonical.",
@@ -153,14 +164,14 @@ export const serviceIndiaOnpage = {
     schemaAreaServed: INDIA_AREA_SERVED,
   },
   "ui-ux-design": {
-    metaTitle: "UI/UX Design Agency in Jaipur, India | Figma Product Design",
-    bannerTitle: "UI/UX Design Agency in Jaipur, India",
+    metaTitle: "UI/UX Design Agency in India | Figma Product Design from Jaipur",
+    bannerTitle: "UI/UX Design Agency in India — Jaipur Studio",
     extraSections: [
       {
         id: "india-city-pages",
         heading: "Hindi UI and India product design",
         paragraphs: [
-          "Figma product UI from Jaipur for Indian websites and apps, from ₹20,000. Continue to [website development](/services/website-development) or [mobile app development](/services/mobile-app-development).",
+          "Figma product UI from Jaipur for Indian websites and apps, from ₹20,000. Continue to [website development](/services/website-development) or [mobile app development](/services/mobile-app-development). Prefer the apex host https://thetrifusion.in — www redirects here.",
         ],
       },
     ],
@@ -170,20 +181,30 @@ export const serviceIndiaOnpage = {
         title: "Website development",
         text: "Ship the designed UI on a live site.",
       },
+      {
+        href: "/services/branding",
+        title: "Branding",
+        text: "Logo and guidelines before product screens.",
+      },
+      {
+        href: "/services/graphic-design",
+        title: "Graphic design",
+        text: "Campaign creatives after the product UI exists.",
+      },
     ],
     schemaAreaServed: INDIA_AREA_SERVED,
   },
   branding: {
     metaTitle:
-      "Branding Agency in Jaipur, India | Logo, Identity & Guidelines",
-    bannerTitle: "Branding Agency in Jaipur, India",
+      "Branding Agency in India | Logo, Identity & Guidelines from Jaipur",
+    bannerTitle: "Branding Agency in India — Jaipur Studio",
     extraSections: [
       {
         id: "india-city-pages",
         heading: "Brand identity Indian D2C can put on a website",
         paragraphs: [
-          "Logo, colour, type and guidelines from Jaipur, from ₹30,000, then a [website](/services/website-development) or [ecommerce store](/solutions/ecommerce-website-development). We are not a trademark attorney.",
-          "Indian D2C labels often arrive with a festival drop date and no guidelines PDF. We still start with the system the website can use: primary mark, reverse, colour that survives GST invoice paper, and type that works in Hindi if the store is bilingual. Campaign kits after the identity exists are [graphic design](/services/graphic-design). We will not file a trademark or promise a class number.",
+          "Logo, colour, type and guidelines from Jaipur for buyers across India, from ₹30,000, then a [website](/services/website-development) or [ecommerce store](/solutions/ecommerce-website-development). We are not a trademark attorney.",
+          "Indian D2C labels often arrive with a festival drop date and no guidelines PDF. We still start with the system the website can use: primary mark, reverse, colour that survives GST invoice paper, and type that works in Hindi if the store is bilingual. Campaign kits after the identity exists are [graphic design](/services/graphic-design). Product screens are [UI/UX](/services/ui-ux-design). We will not file a trademark or promise a class number.",
           "Published branding packs: ₹30,000 / ₹60,000 / ₹1,20,000 on [pricing](/pricing). Naming is in scope only when you ask. The studio is at Patrakar Colony, Jaipur; delivery is remote across India.",
         ],
       },
@@ -194,16 +215,28 @@ export const serviceIndiaOnpage = {
         title: "Website development",
         text: "Put the identity on a live company site.",
       },
+      {
+        href: "/services/ui-ux-design",
+        title: "UI/UX design",
+        text: "Product screens that use the same system.",
+      },
+      {
+        href: "/services/graphic-design",
+        title: "Graphic design",
+        text: "Campaign kits after the identity exists.",
+      },
     ],
     schemaAreaServed: INDIA_AREA_SERVED,
   },
   rpa: {
+    metaTitle: "RPA Services in India | Business Process Automation from Jaipur",
+    bannerTitle: "RPA Services in India — Jaipur Studio",
     extraSections: [
       {
         id: "india-city-pages",
         heading: "RPA for Indian SMEs, from Jaipur",
         paragraphs: [
-          "Invoice, Tally and CRM bots from Jaipur, from ₹50,000. If the spreadsheet is the product, see [business modernization](/services/business-modernization).",
+          "Invoice, Tally and CRM bots from Jaipur for buyers across India, from ₹50,000. If the spreadsheet is the product, see [business modernization](/services/business-modernization).",
           "The first process we usually record is the one accounts already do twice: GST invoice PDF to Tally, or a portal report into a sheet. A bot that copies a validated row and stops on a mismatch is RPA. A model that “decides” an exception is [AI development](/services/ai-development). We do not invent hours-saved percentages. Published plans: ₹50,000 / ₹1,00,000 / ₹2,00,000. UiPath, Power Automate or Python is a stack choice in the written scope. We are not listed as a UiPath partner on this page.",
         ],
       },
@@ -213,6 +246,11 @@ export const serviceIndiaOnpage = {
         href: "/services/business-modernization",
         title: "Business modernization",
         text: "When the spreadsheet itself should become software.",
+      },
+      {
+        href: "/services/ai-development",
+        title: "AI development",
+        text: "When the exception needs a model, not a deterministic bot.",
       },
     ],
     schemaAreaServed: INDIA_AREA_SERVED,
@@ -333,20 +371,33 @@ export const serviceIndiaOnpage = {
     schemaAreaServed: INDIA_AREA_SERVED,
   },
   "ev-charging-app-development": {
+    metaTitle:
+      "EV Charging Management Software (CMS) India | OCPP & OCPI | TheTriFusion",
+    bannerTitle: "EV Charging Management Software in India — Jaipur Studio",
     extraSections: [
       {
         id: "india-city-pages",
         heading: "EV charging CMS from Jaipur, India",
         paragraphs: [
-          "OCPP and OCPI software for Indian CPOs and eMSPs, from ₹4,50,000. See [custom software](/services/software-development) when the product still needs building around the CSMS.",
+          "OCPP and OCPI software for Indian CPOs and eMSPs, from ₹4,50,000. Live product proof: [PlugOne](/portfolio/plugone-ev-charging-platform). See [custom software](/services/software-development) when the product still needs building around the CSMS; [Android](/services/android-app-development) when drivers need a Play Store client.",
         ],
       },
     ],
     relatedLinks: [
       {
+        href: "/portfolio/plugone-ev-charging-platform",
+        title: "PlugOne case study",
+        text: "Live EV charging CSMS with mobile clients.",
+      },
+      {
         href: "/services/software-development",
         title: "Custom software development",
         text: "When CSMS sits inside a larger product.",
+      },
+      {
+        href: "/services/android-app-development",
+        title: "Android app development",
+        text: "Play Store driver or operator apps beside the CSMS.",
       },
     ],
     schemaAreaServed: INDIA_AREA_SERVED,
@@ -397,13 +448,28 @@ export const serviceIndiaOnpage = {
     schemaAreaServed: INDIA_AREA_SERVED,
   },
   devops: {
+    metaTitle:
+      "DevOps & Cloud Services in India | CI/CD from Jaipur, Free Audit",
+    bannerTitle: "DevOps & Cloud Services in India — Jaipur Studio",
     extraSections: [
       {
         id: "india-city-pages",
-        heading: "DevOps from Jaipur, India",
+        heading: "DevOps for Indian products, from Jaipur",
         paragraphs: [
-          "CI/CD, Kubernetes and cloud from Jaipur, starting with a free infrastructure audit. Related: [custom software](/services/software-development) when the product still needs building.",
+          "CI/CD, Kubernetes and cloud for teams across India, from the Jaipur studio, starting with a free infrastructure audit. Related: [custom software](/services/software-development) when the product still needs building; [on-demand](/services/on-demand) when you need a named engineer inside your sprint.",
         ],
+      },
+    ],
+    relatedLinks: [
+      {
+        href: "/services/software-development",
+        title: "Custom software development",
+        text: "When the product still needs building before pipelines.",
+      },
+      {
+        href: "/services/on-demand",
+        title: "Hire dedicated developers",
+        text: "Named seats when you want staff-aug, not a DevOps project.",
       },
     ],
     schemaAreaServed: INDIA_AREA_SERVED,

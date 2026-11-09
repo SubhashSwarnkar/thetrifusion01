@@ -6,18 +6,18 @@ import { NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: package prices if they differ from /pricing ₹30,000 / ₹60,000 / ₹1,20,000.
  */
 export default {
-  contentUpdatedAt: "2026-10-28",
-  metaTitle: "Branding Agency in Jaipur | Logo, Brand Identity & Guidelines",
-  bannerTitle: "Branding Agency in Jaipur",
+  contentUpdatedAt: "2026-11-09",
+  metaTitle: "Branding Agency in India | Logo, Identity & Guidelines from Jaipur",
+  bannerTitle: "Branding Agency in India — Jaipur Studio",
   metaDescription:
-    "Brand strategy, naming, logo, colour, typography and brand guidelines from Jaipur — plus a website that uses them. Get a scoped branding package.",
+    "Brand strategy, naming, logo, colour, typography and brand guidelines from Jaipur for Indian brands — plus a website that uses them. Packs from ₹30,000.",
   keywords:
-    "branding agency in Jaipur, brand identity design company India, logo and brand identity design cost India, brand guidelines Jaipur",
+    "branding agency India, brand identity design company India, logo and brand identity design cost India, brand guidelines Jaipur",
   answerFirst: {
     id: "quick-answer",
-    heading: "Branding agency in Jaipur: the short answer",
+    heading: "Branding agency in India: the short answer",
     text:
-      "TheTriFusion is a branding agency in Jaipur. We do brand strategy, naming when you need it, a logo suite, colour, typography and a guidelines PDF — then a [website](/services/website-development) that actually uses them. Published branding packs start from ₹30,000. This is not a poster shop (see graphic design) and not product UI (see UI/UX).",
+      "TheTriFusion is a branding agency in India, based in Jaipur. We do brand strategy, naming when you need it, a logo suite, colour, typography and a guidelines PDF — then a [website](/services/website-development) that actually uses them. Published branding packs start from ₹30,000. This is not a poster shop (see graphic design) and not product UI (see UI/UX).",
     facts: [
       { label: "Starting price", value: "From ₹30,000 (published Basic plan)" },
       { label: "You get", value: "Logo suite, palette, type, guidelines PDF" },

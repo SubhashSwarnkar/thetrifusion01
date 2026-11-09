@@ -6,18 +6,18 @@ import { NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: designer bios beyond the team-page name and role.
  */
 export default {
-  contentUpdatedAt: "2026-10-28",
-  metaTitle: "UI/UX Design Agency in Jaipur | Figma Product Design",
-  bannerTitle: "UI/UX Design Agency in Jaipur",
+  contentUpdatedAt: "2026-11-09",
+  metaTitle: "UI/UX Design Agency in India | Figma Product Design from Jaipur",
+  bannerTitle: "UI/UX Design Agency in India — Jaipur Studio",
   metaDescription:
-    "UX research, wireframes, Figma UI and design systems for Indian apps and websites — with developer-ready handoff. Fixed-price design projects.",
+    "UX research, wireframes, Figma UI and design systems for Indian apps and websites — with developer-ready handoff from Jaipur. Fixed-price projects from ₹20,000.",
   keywords:
-    "UI UX design agency in Jaipur, UI UX design company India, app UI design cost India, Figma design Jaipur, product design agency Jaipur",
+    "UI UX design agency India, UI UX design company India, app UI design cost India, Figma design Jaipur, product design agency India",
   answerFirst: {
     id: "quick-answer",
-    heading: "UI/UX design agency in Jaipur: the short answer",
+    heading: "UI/UX design agency in India: the short answer",
     text:
-      "TheTriFusion is a UI/UX design agency in Jaipur for product teams, not poster work. We research users, map flows, design web and app screens in Figma, and hand a component set to engineering — often the same team that will build. Fixed-price design projects start from ₹20,000.",
+      "TheTriFusion is a UI/UX design agency in India (Jaipur studio) for product teams, not poster work. We research users, map flows, design web and app screens in Figma, and hand a component set to engineering — often the same team that will build. Fixed-price design projects start from ₹20,000.",
     facts: [
       { label: "Starting price", value: "From ₹20,000 (published Basic plan)" },
       { label: "Deliverable", value: "Figma UI, flows, and developer-ready handoff" },

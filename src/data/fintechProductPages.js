@@ -13,7 +13,7 @@ export const fintechProductPages = [
     slug: "bbps-software",
     path: `${FINTECH_HUB_PATH}/bbps-software`,
     breadcrumbName: "BBPS software",
-    contentUpdatedAt: "2026-10-28",
+    contentUpdatedAt: "2026-11-09",
     metaTitle: "BBPS Software Provider India | White-Label Bharat BillPay",
     h1: "BBPS software for retailers and distributors in India",
     metaDescription:
@@ -32,6 +32,13 @@ export const fintechProductPages = [
       { label: "Office", value: NAP_LINE },
     ],
     sections: [
+      {
+        heading: "Who this BBPS page is for",
+        paragraphs: [
+          "Use this URL when the first release is Bharat BillPay only — fetch/pay for enrolled billers — not a full multi-rail retailer stack. If you need AEPS, DMT and recharge in the same first ship, start at the [fintech app development](/services/fintech-app-development) hub and lock modules in one brief. Sibling rails stay on their own pages: [AEPS](/services/fintech-app-development/aeps-software), [DMT](/services/fintech-app-development/dmt-software), [recharge](/services/fintech-app-development/recharge-software).",
+          "You already have — or are arranging — BBPOU or aggregator API access. We build retailer, distributor and admin panels. We do not issue NPCI permissions, act as a BBPOU, or invent a regulated “BBPS licence” product.",
+        ],
+      },
       {
         heading: "What BBPS software actually does",
         paragraphs: [
@@ -120,7 +127,7 @@ export const fintechProductPages = [
       {
         question: "Can BBPS sit on the same retailer app as AEPS or DMT?",
         answer:
-          "Yes when those modules are in the same locked brief. Each still needs its own partner access. See AEPS software, DMT software and recharge software under fintech app development.",
+          "Yes when those modules are in the same locked brief. Each still needs its own partner access. See [AEPS software](/services/fintech-app-development/aeps-software), [DMT software](/services/fintech-app-development/dmt-software) and [recharge software](/services/fintech-app-development/recharge-software) — or the [fintech hub](/services/fintech-app-development) for the full stack.",
       },
       {
         question: "Who handles BBPS customer complaints?",
@@ -157,7 +164,7 @@ export const fintechProductPages = [
     slug: "aeps-software",
     path: `${FINTECH_HUB_PATH}/aeps-software`,
     breadcrumbName: "AEPS software",
-    contentUpdatedAt: "2026-10-28",
+    contentUpdatedAt: "2026-11-09",
     metaTitle: "AEPS Software India | White-Label AePS Retailer App",
     h1: "AEPS software for Aadhaar-enabled payments in India",
     metaDescription:
@@ -174,6 +181,13 @@ export const fintechProductPages = [
       { label: "Office", value: NAP_LINE },
     ],
     sections: [
+      {
+        heading: "Who this AEPS page is for",
+        paragraphs: [
+          "Use this URL when the first release is AePS / Aadhaar-enabled payments at a physical counter — not bill pay, remittance or prepaid top-up. Multi-rail stacks belong on the [fintech app development](/services/fintech-app-development) hub. Compare siblings: [BBPS](/services/fintech-app-development/bbps-software), [DMT](/services/fintech-app-development/dmt-software), [recharge](/services/fintech-app-development/recharge-software).",
+          "You bring sponsor-bank / NPCI AePS access and bank-accepted biometric devices. We build the software. We do not certify devices, issue bank permissions, or sell a micro-ATM licence.",
+        ],
+      },
       {
         heading: "What AEPS software actually does",
         paragraphs: [
@@ -301,7 +315,7 @@ export const fintechProductPages = [
     slug: "dmt-software",
     path: `${FINTECH_HUB_PATH}/dmt-software`,
     breadcrumbName: "DMT software",
-    contentUpdatedAt: "2026-10-28",
+    contentUpdatedAt: "2026-11-09",
     metaTitle: "DMT Software India | White-Label Domestic Money Transfer",
     h1: "DMT and XDMT software for retailer networks in India",
     metaDescription:
@@ -318,6 +332,13 @@ export const fintechProductPages = [
       { label: "Office", value: NAP_LINE },
     ],
     sections: [
+      {
+        heading: "Who this DMT page is for",
+        paragraphs: [
+          "Use this URL when the first release is domestic money transfer (DMT/XDMT) for a retailer network — send-money to a beneficiary, not bill settlement or Aadhaar cash-out. Full multi-module stacks: [fintech app development](/services/fintech-app-development). Other rails: [BBPS](/services/fintech-app-development/bbps-software), [AEPS](/services/fintech-app-development/aeps-software), [recharge](/services/fintech-app-development/recharge-software).",
+          "You bring the bank or aggregator remittance contract and KYC rules. We build retailer, distributor and admin. We do not issue RBI licences or invent a per-transaction payout rate.",
+        ],
+      },
       {
         heading: "What DMT software actually does",
         paragraphs: [
@@ -445,7 +466,7 @@ export const fintechProductPages = [
     slug: "recharge-software",
     path: `${FINTECH_HUB_PATH}/recharge-software`,
     breadcrumbName: "Recharge software",
-    contentUpdatedAt: "2026-10-28",
+    contentUpdatedAt: "2026-11-09",
     metaTitle: "Recharge Software India | White-Label Mobile & DTH Recharge",
     h1: "Recharge software for mobile, DTH and utility top-ups in India",
     metaDescription:
@@ -462,6 +483,13 @@ export const fintechProductPages = [
       { label: "Office", value: NAP_LINE },
     ],
     sections: [
+      {
+        heading: "Who this recharge page is for",
+        paragraphs: [
+          "Use this URL when the first release is prepaid mobile / DTH (and similar) top-ups through a recharge API partner — not Bharat BillPay bill fetch, AePS cash services or DMT remittance. Hub for multi-rail: [fintech app development](/services/fintech-app-development). Siblings: [BBPS](/services/fintech-app-development/bbps-software), [AEPS](/services/fintech-app-development/aeps-software), [DMT](/services/fintech-app-development/dmt-software).",
+          "You bring the recharge aggregator API. We build the panels. We do not hold operator inventory, resell airtime as a telecom, or fabricate TRAI/operator channel claims.",
+        ],
+      },
       {
         heading: "What recharge software actually does",
         paragraphs: [

@@ -26,12 +26,12 @@ const SERVICE_CHOOSER = [
   },
   {
     href: absoluteSiteUrl("/services/website-development"),
-    label: "Website development company in Jaipur",
+    label: "Website development company in India",
     text: "for business websites, lead-generation sites, and portals on React, Next.js, or WordPress, from ₹15,000.",
   },
   {
     href: absoluteSiteUrl("/services/mobile-app-development"),
-    label: "Mobile app development company in Jaipur",
+    label: "Mobile app development company in India",
     text: "for one React Native or Flutter app on both iOS and Android, from ₹50,000.",
   },
   {
@@ -41,12 +41,12 @@ const SERVICE_CHOOSER = [
   },
   {
     href: absoluteSiteUrl("/services/android-app-development"),
-    label: "Android app development company in Jaipur",
+    label: "Android app development company in India",
     text: "for Play Store-first apps in Kotlin or React Native, from ₹2,50,000.",
   },
   {
     href: absoluteSiteUrl("/services/devops"),
-    label: "DevOps services in Jaipur and India",
+    label: "DevOps services in India",
     text: "for CI/CD, Kubernetes, infrastructure as code, and cloud migration on AWS, Azure, or GCP, starting with a free infrastructure audit.",
   },
   {
@@ -56,32 +56,32 @@ const SERVICE_CHOOSER = [
   },
   {
     href: absoluteSiteUrl("/services/ai-development"),
-    label: "AI development company in Jaipur, India",
+    label: "AI development company in India",
     text: "for WhatsApp bots, RAG and agents with a human review step, from ₹2,00,000.",
   },
   {
     href: absoluteSiteUrl("/services/digital-marketing"),
-    label: "Digital marketing agency in Jaipur, India",
+    label: "Digital marketing agency in India",
     text: "for SEO, Google Ads and Meta Ads, from ₹15,000 (ad spend separate).",
   },
   {
     href: absoluteSiteUrl("/services/crm-erp-development"),
-    label: "Custom CRM development in Jaipur",
+    label: "Custom CRM development in India",
     text: "for pipelines, quotations and WhatsApp follow-ups, from ₹3,00,000.",
   },
   {
     href: absoluteSiteUrl("/services/erp-software-development"),
-    label: "ERP software development company in Jaipur",
+    label: "ERP software development company in India",
     text: "for GST finance, inventory, MRP and multi-branch, from ₹6,00,000.",
   },
   {
     href: absoluteSiteUrl("/services/ui-ux-design"),
-    label: "UI/UX design company in Jaipur, India",
+    label: "UI/UX design company in India",
     text: "for Figma product UI and Hindi/Indic flows, from ₹20,000.",
   },
   {
     href: absoluteSiteUrl("/services/branding"),
-    label: "Branding agency in Jaipur, India",
+    label: "Branding agency in India",
     text: "for logo, identity and guidelines a website can use, from ₹30,000.",
   },
   {
@@ -217,8 +217,8 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-white overflow-hidden">
       <SEO
-        title="IT Services in Jaipur | TheTriFusion"
-        description="IT services in Jaipur for software, websites, apps, UI/UX, and digital marketing. Grouped by Build, Industry, Grow, and Automate — with published starting prices."
+        title="IT Services in India | Software, Web, Apps from Jaipur"
+        description="IT services for Indian buyers: software, websites, apps, UI/UX and digital marketing from TheTriFusion’s Jaipur studio. Grouped by Build, Industry, Grow and Automate — with published starting prices."
       />
       <Header />
 
@@ -232,8 +232,8 @@ export default function ServicesPage() {
                 Services
               </span>
               <h1 className="text-4xl sm:text-5xl md:text-6xl text-theme-blue font-black mb-3 tracking-tight leading-[1.1]">
-                IT services from{" "}
-                <span className="text-gradient">Jaipur</span>
+                IT services in India —{" "}
+                <span className="text-gradient">Jaipur</span> studio
               </h1>
               <div className="mb-6 h-1.5 w-20 rounded-full bg-gradient-to-r from-theme-purple via-theme-cyan to-theme-pink" />
               <p className="font-light text-lg text-gray-500 leading-relaxed max-w-2xl">
@@ -258,16 +258,24 @@ export default function ServicesPage() {
                 >
                   mobile apps
                 </a>
-                , or{" "}
+                ,{" "}
                 <a
                   href={absoluteSiteUrl("/services/crm-erp-development")}
                   className="font-semibold text-theme-purple hover:underline"
                 >
                   CRM
                 </a>
+                , or{" "}
+                <a
+                  href={absoluteSiteUrl("/services/fintech-app-development")}
+                  className="font-semibold text-theme-purple hover:underline"
+                >
+                  fintech modules
+                </a>
                 — then see the published starting price and related services.
-                Full ERP, store-only iOS/Android, and ecommerce stores have
-                their own URLs so intents do not compete.
+                Full ERP, store-only iOS/Android, ecommerce stores, and nested
+                BBPS / AEPS / DMT / recharge pages have their own URLs so intents
+                do not compete.
               </p>
             </div>
             <nav aria-label="Service groups" className="flex flex-wrap gap-2">

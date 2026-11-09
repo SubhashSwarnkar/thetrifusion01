@@ -44,6 +44,7 @@ Canonical property: apex `https://thetrifusion.in` (URL-prefix or Domain). Do no
 |---|---:|---:|---|---|---|
 | 2026-11-03 (baseline window ends 8 Nov) | 0 (Oct12–Nov8 India /services) | 1 (India) | Only early India sample; **national/RJ baselines incomplete** | Not measured | See batch doc |
 | 2026-11-09 (READONLY GSC) | 11 (90d global /services) | 210 (90d) | www fintech historical clicks; apex fintech 30 imps; on-demand/Android/fintech Jaipur query imps; website www duplicate as of crawl Nov3 pre-e2b9132 | Not measured | Informs batch 2; no canonical churn; see `seo-services-coverage-audit.md` |
+| 2026-11-09 (coverage export Nov6) | — | — | Redirect errors 5 verified intentional (308/410); 6 service canonicals mostly historical www; Discovered 14 services + /sitemap | Not measured | Batch 3 nested fintech + remaining discovered titles; **observe until Mon 16 Nov ~11:00 IST** — no daily churn |
 | 2026-11-10 | | | | | Post batch-2 deploy — record actuals |
 
 ## 30 / 60 / 90 day workplan (priorities + measurable targets)

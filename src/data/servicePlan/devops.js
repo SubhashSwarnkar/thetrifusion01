@@ -8,18 +8,18 @@ import { NAP_LINE, SOURCES, TEAM } from "./_shared";
  * TODO OWNER: whether 24/7 managed support is actually offered.
  */
 export default {
-  contentUpdatedAt: "2026-10-28",
-  metaTitle: "DevOps & Cloud Services in Jaipur, India | Free Audit | TheTriFusion",
-  bannerTitle: "DevOps & Cloud Services in Jaipur, India",
+  contentUpdatedAt: "2026-11-09",
+  metaTitle: "DevOps & Cloud Services in India | CI/CD from Jaipur, Free Audit",
+  bannerTitle: "DevOps & Cloud Services in India — Jaipur Studio",
   metaDescription:
-    "CI/CD, Kubernetes, Terraform, AWS/Azure/GCP migration and cloud cost optimisation from Jaipur. Free infrastructure audit, then a fixed written plan.",
+    "CI/CD, Kubernetes, Terraform, AWS/Azure/GCP migration and cloud cost optimisation from Jaipur for Indian teams. Free infrastructure audit, then a fixed written plan.",
   keywords:
-    "DevOps services in Jaipur, DevOps consulting company India, AWS cost optimization services India, Kubernetes Terraform Jaipur, managed DevOps India",
+    "DevOps services India, DevOps consulting company India, AWS cost optimization services India, Kubernetes Terraform Jaipur, managed DevOps India",
   answerFirst: {
     id: "quick-answer",
-    heading: "DevOps services in Jaipur and India: the short answer",
+    heading: "DevOps services in India: the short answer",
     text:
-      "TheTriFusion provides DevOps and cloud services from Jaipur: CI/CD, infrastructure as code, Kubernetes, DevSecOps readiness, FinOps, cloud migration and managed DevOps on AWS, Azure and Google Cloud. Every engagement starts with a free infrastructure audit, then a written plan. Published /pricing plans start at ₹1,00,000; the fee after the audit follows that scope.",
+      "TheTriFusion provides DevOps and cloud services from Jaipur for teams across India: CI/CD, infrastructure as code, Kubernetes, DevSecOps readiness, FinOps, cloud migration and managed DevOps on AWS, Azure and Google Cloud. Every engagement starts with a free infrastructure audit, then a written plan. Published /pricing plans start at ₹1,00,000; the fee after the audit follows that scope.",
     facts: [
       { label: "First step", value: "Free infrastructure audit" },
       { label: "Clouds", value: "AWS, Azure, Google Cloud" },

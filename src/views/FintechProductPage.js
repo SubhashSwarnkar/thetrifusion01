@@ -123,7 +123,7 @@ export default function FintechProductPage({ slug, relatedGuides = [] }) {
                   </span>
                 </summary>
                 <p className="pb-5 text-sm text-gray-600 font-light leading-relaxed">
-                  {faq.answer}
+                  <InlineText text={faq.answer} />
                 </p>
               </details>
             ))}

@@ -70,7 +70,7 @@ export function buildSitemapParts() {
     "/editorial-policy": fallbackDate,
     "/privacy": fallbackDate,
     "/terms": fallbackDate,
-    "/sitemap": new Date("2026-10-26"),
+    "/sitemap": new Date("2026-11-09"),
   };
 
   const staticRoutes = Object.keys(pages)

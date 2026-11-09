@@ -7,18 +7,18 @@ import { NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: Google Partner / Meta Partner badges if held.
  */
 export default {
-  contentUpdatedAt: "2026-10-28",
-  metaTitle: "Digital Marketing Agency in Jaipur | SEO, Google Ads & Meta Ads",
-  bannerTitle: "Digital Marketing Agency in Jaipur",
+  contentUpdatedAt: "2026-11-09",
+  metaTitle: "Digital Marketing Agency in India | SEO & Ads from Jaipur, ₹15,000",
+  bannerTitle: "Digital Marketing Agency in India — Jaipur Studio",
   metaDescription:
     "SEO, Google Ads, Meta Ads and landing-page CRO for Indian brands, run from Jaipur with monthly reports. Plans from ₹15,000 (ad spend separate).",
   keywords:
-    "digital marketing agency in Jaipur, SEO company in Jaipur, Google Ads agency Jaipur, Meta Ads Jaipur, performance marketing India",
+    "digital marketing agency India, SEO company India, Google Ads agency Jaipur, Meta Ads India, performance marketing India",
   answerFirst: {
     id: "quick-answer",
-    heading: "Digital marketing agency in Jaipur: the short answer",
+    heading: "Digital marketing agency in India: the short answer",
     text:
-      "TheTriFusion runs SEO, local SEO / Google Business Profile work, Google Ads, Meta Ads and landing-page CRO from Jaipur for Indian brands that already have a site or store. Published plans start from ₹15,000. Ad spend is separate. We do not guarantee first-page rankings.",
+      "TheTriFusion runs SEO, local SEO / Google Business Profile work, Google Ads, Meta Ads and landing-page CRO from Jaipur for Indian brands that already have a site or store. Published plans start from ₹15,000. Ad spend is separate. We do not guarantee first-page rankings. Prefer the apex host https://thetrifusion.in — www redirects here.",
     facts: [
       { label: "Starting price", value: "From ₹15,000 (published Basic plan)" },
       { label: "Ad spend", value: "Billed to your Ads/Meta account, not included in the fee" },

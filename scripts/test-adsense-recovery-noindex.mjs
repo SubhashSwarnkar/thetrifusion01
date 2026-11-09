@@ -81,8 +81,8 @@ for (const service of services) {
 }
 for (const page of fintechProductPages) {
   if (!servicePaths.has(page.path)) fail(`fintech product missing from sitemap: ${page.path}`);
-  if (page.contentUpdatedAt !== "2026-10-28") {
-    fail(`fintech product lastmod not 2026-10-28: ${page.slug}`);
+  if (page.contentUpdatedAt !== "2026-11-09") {
+    fail(`fintech product lastmod not 2026-11-09: ${page.slug}`);
   }
   const text = [
     page.answer,
@@ -172,7 +172,7 @@ const gscMoneyUrls = [
   {
     part: "services",
     path: "/services/digital-marketing",
-    lastmod: "2026-10-28",
+    lastmod: "2026-11-09",
   },
   {
     part: "solutions",
