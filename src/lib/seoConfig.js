@@ -24,11 +24,11 @@ export const pages = {
       "software company Jaipur, IT company Rajasthan, about TheTriFusion, Startup India, EV charging software Jaipur",
   },
   "/services": {
-    title: "IT Services in Jaipur | TheTriFusion",
+    title: "IT Services in India | Software, Web, Apps from Jaipur",
     description:
-      "IT services in Jaipur for software, websites, apps, UI/UX, and digital marketing. TheTriFusion.",
+      "IT services for Indian buyers: software, websites, apps, UI/UX and digital marketing from TheTriFusion’s Jaipur studio — with published starting prices.",
     keywords:
-      "IT services Jaipur, website development Rajasthan, software development services, ecommerce website development, mobile app development India",
+      "IT services India, website development India, software development services, ecommerce website development, mobile app development India, Jaipur IT company",
   },
   "/solutions": {
     title: "Digital Solutions in Jaipur | TheTriFusion",
