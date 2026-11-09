@@ -10,9 +10,6 @@ import SEO from "components/common/SEO";
 import ServiceIcon from "components/ServiceIcon";
 import { accentAt } from "lib/themeAccents";
 import { siteConfig } from "config/site";
-import DiwaliOfferCountdown, {
-  DiwaliRefundLabel,
-} from "components/DiwaliOfferCountdown";
 import {
   ECOMMERCE_PRICE_FROM,
   formatInrFrom,
@@ -278,19 +275,16 @@ export default function ServicesPage() {
                   >
                     <ServiceIcon slug="ecommerce-development" className="w-5 h-5" />
                   </div>
-                  <DiwaliOfferCountdown compact showLabel={false} className="mb-2">
-                    <p className="text-xs font-bold uppercase tracking-widest text-theme-purple">
-                      {formatInrFrom(ECOMMERCE_PRICE_FROM)} · Live in 48 hrs · or 50% refund
-                    </p>
-                  </DiwaliOfferCountdown>
+                  <p className="text-xs font-bold uppercase tracking-widest text-theme-purple mb-2">
+                    {formatInrFrom(ECOMMERCE_PRICE_FROM)} · Live in 48 hrs
+                  </p>
                   <h2 className="text-xl text-theme-blue font-bold mb-2 group-hover:text-theme-purple transition-colors">
                     Ecommerce website development
                   </h2>
                   <p className="font-light text-gray-500 mb-6 leading-relaxed text-sm max-w-3xl">
                     Shopify, WooCommerce, or custom stores with Razorpay/UPI.
                     Four packages from ₹25,000 to ₹99,000. Website live in 48
-                    hours after locked brief
-                    <DiwaliRefundLabel before=" — or 50% refund." after="." />
+                    hours after locked brief.
                   </p>
                   <span className={`inline-flex items-center font-semibold text-sm ${accentAt(0).text}`}>
                     See packages

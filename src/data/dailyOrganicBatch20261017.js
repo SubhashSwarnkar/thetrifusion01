@@ -363,7 +363,7 @@ export const dailyOrganicBatch20261017Posts = [
 <h2>Own store vs marketplace</h2>
 <p>Own store: catalogue, cart, GST invoice, seller identity that matches the invoice. Marketplace: their theme and their takedown. Traffic after go-live is <a href="/services/digital-marketing">digital marketing</a>. The festive ONDC note on this site is a different article.</p>
 <h2>Cost</h2>
-<p>Published packages: ₹25,000 website · ₹35,000 + Android · ₹45,000 + Android + iOS · ₹99,000 high-end logistics. 48-hour go-live after a locked brief, or 50% refund, on the terms printed on the ecommerce page until 8 November 2026, 11:59 PM IST.</p>
+<p>Published packages: ₹25,000 website · ₹35,000 + Android · ₹45,000 + Android + iOS · ₹99,000 high-end logistics. 48-hour go-live after a locked brief, on the terms printed on the ecommerce page.</p>
 <p><a href="/contact">Contact TheTriFusion</a> with SKU count, or pick a pack on <a href="/solutions/ecommerce-website-development">ecommerce website development</a>.</p>
 <h2>FAQ</h2>
 <h3>When do the new rules apply?</h3>

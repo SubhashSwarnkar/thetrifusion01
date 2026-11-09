@@ -245,7 +245,7 @@ Price from: ₹6,00,000 (multi-module; published plans also list ₹3,00,000 and
 
 Primary page: https://thetrifusion.in/solutions/ecommerce-website-development
 Summary: TheTriFusion (Trifusion Infotech Pvt. Ltd., Jaipur, India) is an ecommerce website development company building Shopify, WooCommerce and custom (Next.js / React / Node.js) online stores, B2B / wholesale ordering portals and multi-vendor marketplaces for clients in Jaipur, across India, and worldwide (remote).
-- Packaged pricing (published on the canonical page): Ecommerce Website ₹25,000; Website + Android App ₹35,000; Website + Android + iOS App ₹45,000; High-End Ecommerce with Logistics + Android + iOS App ₹99,000; website live within 48 hours after a locked brief and assets, or 50% refund until Diwali (8 November 2026, 11:59 PM IST).
+- Packaged pricing (published on the canonical page): Ecommerce Website ₹25,000; Website + Android App ₹35,000; Website + Android + iOS App ₹45,000; High-End Ecommerce with Logistics + Android + iOS App ₹99,000; website live within 48 hours after a locked brief and assets.
 - Custom / B2B / ERP-integrated builds: quoted after discovery; a typical custom ecommerce MVP takes 4–10 weeks.
 - Integrations: Razorpay, Cashfree, PayU, CCAvenue, Stripe, UPI; Shiprocket, Delhivery; offline POS / inventory sync (live example: DailyConcepts India).
 - Platform comparison (Shopify vs WooCommerce vs custom): https://thetrifusion.in/solutions/ecommerce-website-development

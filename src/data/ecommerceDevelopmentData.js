@@ -5,12 +5,11 @@ export const PACKAGE_PRICE_SUMMARY =
 
 export const launchGuarantee = {
   id: "guarantee",
-  headline: "Website live in 48 hours — or 50% refund",
+  headline: "Website live in 48 hours",
   subheadline:
-    "Ecommerce websites go live within 48 hours after we receive your locked brief and required assets. If we miss that clock, you get 50% of the package amount refunded. Diwali offer ends 8 November 2026, 11:59 PM IST.",
-  badge: "Diwali offer · Ads guarantee",
+    "Ecommerce websites go live within 48 hours after we receive your locked brief and required assets. The same website clock applies to every published package.",
+  badge: "48-hour delivery",
   clockLabel: "48 hours",
-  refundLabel: "50% refund",
   appliesTo: "Website go-live (all four packages)",
   points: [
     {
@@ -22,8 +21,8 @@ export const launchGuarantee = {
       body: "Your ecommerce website is online on a public URL with catalog, cart, checkout, and admin access working. The same website clock applies to every package.",
     },
     {
-      title: "If we miss 48 hours",
-      body: "You receive a 50% refund of the package development fee you paid us. Written claim within 7 days of the missed deadline. This refund offer ends at Diwali: 8 November 2026, 11:59 PM IST.",
+      title: "What we prioritise",
+      body: "We schedule your build so the public storefront reaches go-live inside the 48-hour window once the brief is locked. You get progress updates on WhatsApp while we ship.",
     },
     {
       title: "What the clock does not wait on",
@@ -43,27 +42,27 @@ export const ecommercePage = {
   serviceName: "Ecommerce Development",
   navTitle: "Ecommerce Development",
   shortDescription:
-    "Four ecommerce packages from ₹25,000. Website live in 48 hours or 50% refund until Diwali.",
-  kicker: "Ecommerce · Jaipur · Diwali offer",
-  h1: "Ecommerce website live in 48 hours — or 50% refund",
+    "Four ecommerce packages from ₹25,000. Website live in 48 hours after a locked brief.",
+  kicker: "Ecommerce · Jaipur",
+  h1: "Ecommerce website live in 48 hours",
   outcome:
-    "₹25,000 website · ₹35,000 website + Android · ₹45,000 website + Android + iOS · ₹99,000 high-end with logistics + Android + iOS. Website live in 48 hours after locked brief, or we refund 50% (until Diwali, 8 Nov 2026).",
+    "₹25,000 website · ₹35,000 website + Android · ₹45,000 website + Android + iOS · ₹99,000 high-end with logistics + Android + iOS. Website live in 48 hours after locked brief.",
   intro:
     "TheTriFusion in Jaipur builds ecommerce products for Indian sellers: grocery, fashion, electronics, and every store type. Pick the platforms you need — website only, website plus Android, or website plus Android and iOS. High-end adds courier logistics on top of both apps. Play Store and Apple Developer accounts stay in your name.",
   metaTitle: "Ecommerce from ₹25,000 | 48-Hour Launch | TheTriFusion",
   metaDescription:
-    "Ecommerce Website ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · High-End logistics ₹99,000. Live in 48 hours or 50% refund.",
+    "Ecommerce Website ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · High-End logistics ₹99,000. Website live in 48 hours after a locked brief.",
   keywords:
-    "ecommerce website live in 48 hours, ecommerce 50% refund guarantee, ecommerce website development India, ecommerce website Android app India, ecommerce web android ios package, high-end ecommerce logistics app, grocery ecommerce website, clothing ecommerce app, online store live fast India, D2C ecommerce Jaipur",
+    "ecommerce website live in 48 hours, ecommerce website development India, ecommerce website Android app India, ecommerce web android ios package, high-end ecommerce logistics app, grocery ecommerce website, clothing ecommerce app, online store live fast India, D2C ecommerce Jaipur",
   whatsappMessage:
-    "Hi TriFusion, I want an ecommerce package — website live in 48 hours or 50% refund. Packages: Website ₹25,000 / + Android ₹35,000 / + Android + iOS ₹45,000 / High-End logistics ₹99,000.",
+    "Hi TriFusion, I want an ecommerce package — website live in 48 hours. Packages: Website ₹25,000 / + Android ₹35,000 / + Android + iOS ₹45,000 / High-End logistics ₹99,000.",
   projectType: "Ecommerce",
   leadSource: "ecommerce-development",
   heroImage: "/images/ecommerce/hero-storefront.png",
   heroImageAlt:
     "Ecommerce website live in 48 hours with optional Android and iOS shopping apps by TheTriFusion",
   trust: [
-    "Website live in 48 hours or 50% refund",
+    "Website live in 48 hours after locked brief",
     PACKAGE_PRICE_SUMMARY,
     "Add Android, iOS, or logistics when you need them",
     "Razorpay / UPI checkout",
@@ -95,9 +94,9 @@ export const ecommercePackages = [
     image: "/images/ecommerce/package-single-vendor.png",
     imageAlt: "Ecommerce website storefront with catalog, cart, and checkout",
     summary:
-      "Customer website with catalog, cart, checkout, and admin. Website live in 48 hours after locked brief — or 50% refund.",
+      "Customer website with catalog, cart, checkout, and admin. Website live in 48 hours after locked brief.",
     includes: [
-      "Website live in 48 hours (or 50% refund)",
+      "Website live in 48 hours after locked brief",
       "Customer website (responsive)",
       "Admin panel",
       "Product catalog, categories, variants",
@@ -108,7 +107,7 @@ export const ecommercePackages = [
       "Basic on-page SEO",
     ],
     whatsappMessage:
-      "Hi TriFusion, I want Ecommerce Website at ₹25,000 — website live in 48 hours or 50% refund.",
+      "Hi TriFusion, I want Ecommerce Website at ₹25,000 — website live in 48 hours.",
   },
   {
     id: "website-android",
@@ -120,9 +119,9 @@ export const ecommercePackages = [
     image: "/images/ecommerce/grocery.png",
     imageAlt: "Ecommerce website with an Android shopping app",
     summary:
-      "Everything in Ecommerce Website, plus a customer Android app. Website live in 48 hours after locked brief — or 50% refund.",
+      "Everything in Ecommerce Website, plus a customer Android app. Website live in 48 hours after locked brief.",
     includes: [
-      "Website live in 48 hours (or 50% refund)",
+      "Website live in 48 hours after locked brief",
       "Customer website (responsive)",
       "Android app",
       "Admin panel",
@@ -135,7 +134,7 @@ export const ecommercePackages = [
       "Listing assets — we submit using your Play Store account",
     ],
     whatsappMessage:
-      "Hi TriFusion, I want Ecommerce Website + Android App at ₹35,000 — website live in 48 hours or 50% refund.",
+      "Hi TriFusion, I want Ecommerce Website + Android App at ₹35,000 — website live in 48 hours.",
   },
   {
     id: "website-android-ios",
@@ -147,9 +146,9 @@ export const ecommercePackages = [
     image: "/images/ecommerce/package-multi-vendor.png",
     imageAlt: "Ecommerce website with Android and iOS shopping apps",
     summary:
-      "Website plus customer Android and iOS apps. Website live in 48 hours after locked brief — or 50% refund.",
+      "Website plus customer Android and iOS apps. Website live in 48 hours after locked brief.",
     includes: [
-      "Website live in 48 hours (or 50% refund)",
+      "Website live in 48 hours after locked brief",
       "Customer website (responsive)",
       "Android app",
       "iOS app",
@@ -163,7 +162,7 @@ export const ecommercePackages = [
       "Listing assets — we submit using your store accounts",
     ],
     whatsappMessage:
-      "Hi TriFusion, I want Ecommerce Website + Android + iOS App at ₹45,000 — website live in 48 hours or 50% refund.",
+      "Hi TriFusion, I want Ecommerce Website + Android + iOS App at ₹45,000 — website live in 48 hours.",
   },
   {
     id: "high-end-logistics",
@@ -176,9 +175,9 @@ export const ecommercePackages = [
     imageAlt:
       "High-end ecommerce with courier logistics plus Android and iOS apps",
     summary:
-      "Website, Android app, iOS app, and courier logistics (Shiprocket / Delhivery, tracking). Website live in 48 hours after locked brief — or 50% refund.",
+      "Website, Android app, iOS app, and courier logistics (Shiprocket / Delhivery, tracking). Website live in 48 hours after locked brief.",
     includes: [
-      "Website live in 48 hours (or 50% refund)",
+      "Website live in 48 hours after locked brief",
       "Customer website (responsive)",
       "Android app",
       "iOS app",
@@ -194,7 +193,7 @@ export const ecommercePackages = [
       "Listing assets — we submit using your store accounts",
     ],
     whatsappMessage:
-      "Hi TriFusion, I want High-End Ecommerce with Logistics + Android + iOS App at ₹99,000 — website live in 48 hours or 50% refund.",
+      "Hi TriFusion, I want High-End Ecommerce with Logistics + Android + iOS App at ₹99,000 — website live in 48 hours.",
   },
 ];
 
@@ -305,10 +304,10 @@ export const packageComparison = [
   {
     feature: "48-hour live guarantee",
     values: [
-      "Website live in 48 hrs or 50% refund",
-      "Website live in 48 hrs or 50% refund",
-      "Website live in 48 hrs or 50% refund",
-      "Website live in 48 hrs or 50% refund",
+      "Website live in 48 hrs",
+      "Website live in 48 hrs",
+      "Website live in 48 hrs",
+      "Website live in 48 hrs",
     ],
   },
   {
@@ -350,7 +349,7 @@ export const packageComparisonHeaders = [
 ];
 
 export const includedItems = [
-  "Website live in 48 hours after locked brief — or 50% refund",
+  "Website live in 48 hours after locked brief",
   "UI/UX for storefront and admin",
   "Customer website",
   "Product catalog, cart, and checkout",
@@ -389,9 +388,9 @@ export const ecommerceFaqs = [
       "Yes — on all four packages. The 48-hour clock starts after you provide the locked brief and required assets (logo, store name, product list or sample SKUs, brand notes, payment details) and we confirm in writing. “Live” means your ecommerce website is on a public URL with catalog, cart, checkout, and admin working.",
   },
   {
-    question: "What if you miss the 48-hour deadline?",
+    question: "What pauses the 48-hour clock?",
     answer:
-      "You get a 50% refund of the package development fee paid to TheTriFusion. Claim in writing within 7 days of the missed deadline. This 50% refund offer runs until Diwali, 8 November 2026, 11:59 PM IST. Delays caused by missing assets, unpaid invoices, domain/DNS not ready, Razorpay KYC on your side, or third-party outages pause the clock.",
+      "Delays caused by missing assets, unpaid invoices, domain/DNS not ready, Razorpay KYC on your side, or third-party outages pause the clock until you unblock us. Play Store and App Store review times stay outside the website go-live clock.",
   },
   {
     question: "Does the 48-hour guarantee include Android and iOS apps?",
@@ -439,5 +438,5 @@ export const ecommerceMenuItem = {
   href: ECOMMERCE_PATH,
   slug: "ecommerce-development",
   title: "Ecommerce Development",
-  shortDescription: "Live in 48 hrs or 50% refund. Four packages from ₹25,000.",
+  shortDescription: "Live in 48 hrs. Four packages from ₹25,000.",
 };

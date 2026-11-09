@@ -597,7 +597,7 @@ export const blogPosts = [
       <h3>Why do multi-vendor marketplaces cost more than single-vendor stores?</h3>
       <p>Multi-vendor builds need vendor onboarding/KYC, a commission engine, and settlement reporting — none of which exist in a single-seller store, so the added logic genuinely costs more to build correctly.</p>
       <h3>What's the next step?</h3>
-      <p>Use our <a href="/solutions/ecommerce-website-development">ecommerce packages</a> (Website ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · High-End logistics ₹99,000) with a website live in 48 hours — or 50% refund until Diwali — or <a href="/appointment">book a discovery call</a> for a written custom scope. Complex catalogs still need a brief — packages cover the listed platforms and features, not unlimited custom work.</p>
+      <p>Use our <a href="/solutions/ecommerce-website-development">ecommerce packages</a> (Website ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · High-End logistics ₹99,000) with a website live in 48 hours after a locked brief — or <a href="/appointment">book a discovery call</a> for a written custom scope. Complex catalogs still need a brief — packages cover the listed platforms and features, not unlimited custom work.</p>
     `,
     category: "webdev",
     image: "/assets/images/blog/ecommerce-cost.jpg",
@@ -972,7 +972,7 @@ export const blogPosts = [
 
       <h2>Three product types (and three price realities)</h2>
       <h3>1) Packaged multi-vendor storefront (fast launch)</h3>
-      <p>You need one public shopper site, vendor signup/KYC, vendor dashboard, commission rules, admin settlements, catalog split by seller, plus customer Android/iOS apps. Multi-vendor marketplaces are quoted after discovery — they are not one of the four published packages (Website ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · High-End logistics ₹99,000). Website live in 48 hours after a locked brief, or 50% refund on the package fee until Diwali. Play Store / App Store accounts stay in your name; store review time is outside the 48-hour clock.</p>
+      <p>You need one public shopper site, vendor signup/KYC, vendor dashboard, commission rules, admin settlements, catalog split by seller, plus customer Android/iOS apps. Multi-vendor marketplaces are quoted after discovery — they are not one of the four published packages (Website ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · High-End logistics ₹99,000). Website live in 48 hours after a locked brief. Play Store / App Store accounts stay in your name; store review time is outside the 48-hour clock.</p>
       <h3>2) Mid custom marketplace (growth)</h3>
       <p>Industry guides for India in 2026 often place growth builds roughly in the <strong>₹3L–₹15L</strong> band when you add deeper payouts, logistics rules, dispute flows, and heavier catalog ops. Timeline stretches into months because payout edge cases dominate — not the homepage design.</p>
       <h3>3) Enterprise / app-heavy marketplace</h3>
@@ -1040,7 +1040,7 @@ export const blogPosts = [
         <li><strong>Add Android ₹35,000 / Android + iOS ₹45,000 / High-End logistics ₹99,000</strong> — same storefront, extra platforms and courier tracking.</li>
         <li><strong>Multi-vendor grocery mall</strong> — many sellers under one marketplace; quoted after discovery.</li>
       </ul>
-      <p>Published packages target website live in 48 hours after a locked brief — or 50% refund on the package fee until Diwali. See full terms on <a href="/solutions/ecommerce-website-development#guarantee">the guarantee section</a>.</p>
+      <p>Published packages target website live in 48 hours after a locked brief. See delivery terms on <a href="/solutions/ecommerce-website-development#guarantee">the guarantee section</a>.</p>
 
       <h2>Scope traps that inflate grocery builds</h2>
       <ul>
@@ -1062,7 +1062,7 @@ export const blogPosts = [
         <li><strong>Add Android ₹35,000 / Android + iOS ₹45,000 / High-End logistics ₹99,000</strong> — same storefront, extra platforms and courier tracking.</li>
         <li><strong>Multi-vendor grocery mall</strong> — many sellers under one marketplace; quoted after discovery.</li>
       </ul>
-      <p>Published packages target website live in 48 hours after a locked brief — or 50% refund on the package fee until Diwali. See full terms on <a href="/solutions/ecommerce-website-development#guarantee">the guarantee section</a>.</p>
+      <p>Published packages target website live in 48 hours after a locked brief. See delivery terms on <a href="/solutions/ecommerce-website-development#guarantee">the guarantee section</a>.</p>
 
       <h2>Scope traps that inflate grocery builds</h2>
       <ul>
@@ -1122,7 +1122,7 @@ export const blogPosts = [
       <h3>Custom ecommerce app builds</h3>
       <p>Public India guides in 2026 often quote roughly <strong>₹4L–₹30L+</strong> for app-heavy ecommerce, and far more for multi-sided marketplaces. That can be fair when you need custom matching, live tracking, multi-city ops, or deep ERP sync.</p>
       <h3>Fixed storefront package (web + Android + iOS)</h3>
-      <p>If you need a <strong>customer website plus Android and iOS shopping apps</strong> with catalog, cart, checkout, and admin — not a logistics unicorn — our <a href="/solutions/ecommerce-website-development">ecommerce packages</a> list <strong>Website + Android + iOS at ₹45,000</strong> (website only ₹25,000; + Android ₹35,000; high-end logistics ₹99,000). Website live in 48 hours after a locked brief, or 50% refund on the package fee until Diwali. Apps are included on the packages that list them; Google Play and Apple Developer accounts stay in your business name.</p>
+      <p>If you need a <strong>customer website plus Android and iOS shopping apps</strong> with catalog, cart, checkout, and admin — not a logistics unicorn — our <a href="/solutions/ecommerce-website-development">ecommerce packages</a> list <strong>Website + Android + iOS at ₹45,000</strong> (website only ₹25,000; + Android ₹35,000; high-end logistics ₹99,000). Website live in 48 hours after a locked brief. Apps are included on the packages that list them; Google Play and Apple Developer accounts stay in your business name.</p>
 
       <h2>Must-have India features (apps included)</h2>
       <ul>
@@ -1138,7 +1138,7 @@ export const blogPosts = [
       <p>Related mobile pages: <a href="/android-app-development">Android app development</a> and <a href="/ios-app-development">iOS app development</a>.</p>
 
       <h2>Timeline: 48-hour website clock vs store review</h2>
-      <p>The 48-hour / 50% refund USP applies to <strong>website go-live</strong> after logo, store name, sample SKUs, brand notes, and payment details are locked in writing. Android/iOS builds are included on the packages that list them; <strong>Play Store and App Store review time is outside the clock</strong> — Google and Apple control that queue.</p>
+      <p>The 48-hour delivery clock applies to <strong>website go-live</strong> after logo, store name, sample SKUs, brand notes, and payment details are locked in writing. Android/iOS builds are included on the packages that list them; <strong>Play Store and App Store review time is outside the clock</strong> — Google and Apple control that queue.</p>
 
       <h2>Single vendor vs multi-vendor when apps are included</h2>
       <ul>
@@ -1203,7 +1203,7 @@ export const blogPosts = [
 
       <h2>Three fashion store products (three price realities)</h2>
       <h3>1) Packaged single-brand fashion storefront (fast launch)</h3>
-      <p>One brand catalog, variants (size/colour), cart, Razorpay/UPI (+ COD if you need it), and admin. Website-only is our <a href="/solutions/ecommerce-website-development#ecommerce-website">₹25,000 Ecommerce Website</a>; add Android and iOS at ₹45,000. Website live in 48 hours after a locked brief, or 50% refund on the package fee until Diwali. Multi-seller fashion malls are quoted after discovery.</p>
+      <p>One brand catalog, variants (size/colour), cart, Razorpay/UPI (+ COD if you need it), and admin. Website-only is our <a href="/solutions/ecommerce-website-development#ecommerce-website">₹25,000 Ecommerce Website</a>; add Android and iOS at ₹45,000. Website live in 48 hours after a locked brief. Multi-seller fashion malls are quoted after discovery.</p>
       <h3>2) Polished Shopify / WooCommerce D2C brand site</h3>
       <p>India guides in 2026 commonly place a professionally customized fashion Shopify store roughly in the <strong>₹80,000–₹3 lakh</strong> band (theme + apps + content), with monthly platform/app running costs on top. Strong when you want the app ecosystem fast; weaker when you need unusual size/pricing rules or full code ownership.</p>
       <h3>3) Custom / headless fashion platform</h3>
@@ -1576,7 +1576,7 @@ export const blogPosts = [
       <p>Launch to a small audience first — your own network, an email list, or organic social — to catch bugs and gather your first reviews before scaling paid traffic. A store with zero reviews and a broken coupon code loses far more from paid ads than it gains.</p>
 
       <h2>DIY builders vs scoped agency packages: an honest comparison</h2>
-      <p>Templates and DIY builders (Shopify's own onboarding flow, WooCommerce starter themes) are genuinely fine for learning the ropes on a low-stakes catalog. Once you are buying paid traffic or need multi-vendor rules, a scoped team usually wins on speed-to-stable, because the cost of a broken checkout during a paid campaign is higher than the cost of hiring it out correctly the first time. TheTriFusion offers a website live in 48 hours after a locked brief — or 50% refund until Diwali — on <a href="/solutions/ecommerce-website-development">ecommerce development</a> (from ₹25,000 website to ₹99,000 high-end logistics + Android + iOS).</p>
+      <p>Templates and DIY builders (Shopify's own onboarding flow, WooCommerce starter themes) are genuinely fine for learning the ropes on a low-stakes catalog. Once you are buying paid traffic or need multi-vendor rules, a scoped team usually wins on speed-to-stable, because the cost of a broken checkout during a paid campaign is higher than the cost of hiring it out correctly the first time. TheTriFusion offers a website live in 48 hours after a locked brief on <a href="/solutions/ecommerce-website-development">ecommerce development</a> (from ₹25,000 website to ₹99,000 high-end logistics + Android + iOS).</p>
 
       <h2>SEO and conversion basics to get right on day one</h2>
       <ul>
@@ -1644,7 +1644,7 @@ export const blogPosts = [
       <p>Some businesses use an AI builder to quickly test a niche idea's copy and layout, then bring that direction to a proper scoped build once they are confident in the concept — this is a legitimate way to move fast without wasting engineering time on an idea that has not been validated yet. Once you are ready to accept real payments and real orders, that is when correctly-implemented UPI, logistics, and SEO stop being optional.</p>
 
       <h3>What we offer as the "real build" step</h3>
-      <p>Our <a href="/solutions/ecommerce-website-development">ecommerce packages</a> (Website ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · High-End logistics ₹99,000) include correctly implemented UPI + COD checkout, mobile-first design, WhatsApp lead capture, and SEO fundamentals from day one — the pieces an AI builder draft typically leaves unfinished. Website live in 48 hours after a locked brief, or 50% refund until Diwali.</p>
+      <p>Our <a href="/solutions/ecommerce-website-development">ecommerce packages</a> (Website ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · High-End logistics ₹99,000) include correctly implemented UPI + COD checkout, mobile-first design, WhatsApp lead capture, and SEO fundamentals from day one — the pieces an AI builder draft typically leaves unfinished. Website live in 48 hours after a locked brief.</p>
 
       <h3>A quick checklist before you trust an AI-built store with real traffic</h3>
       <ul>

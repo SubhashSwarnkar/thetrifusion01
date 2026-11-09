@@ -118,7 +118,7 @@ export const seoLandingPages = [
           caption: "Ecommerce pricing published by TheTriFusion",
           columns: ["Option", "Price", "What it covers"],
           rows: [
-            ["Ecommerce Website", "₹25,000", "Customer website with catalog, cart, checkout and admin. Website live in 48 hours after a locked brief, or 50% refund (until Diwali, 8 Nov 2026)."],
+            ["Ecommerce Website", "₹25,000", "Customer website with catalog, cart, checkout and admin. Website live in 48 hours after a locked brief."],
             ["Ecommerce Website + Android App", "₹35,000", "Website plus a customer Android app. Same 48-hour website guarantee."],
             ["Ecommerce Website + Android + iOS App", "₹45,000", "Website plus customer Android and iOS apps. Same 48-hour website guarantee."],
             ["High-End Ecommerce with Logistics + Android + iOS App", "₹99,000", "Website, both apps, and courier logistics (Shiprocket / Delhivery with tracking). Same 48-hour website guarantee."],
@@ -246,10 +246,10 @@ export const seoLandingPages = [
         { title: "Multi-vendor marketplace development", description: "Marketplaces with vendor dashboards, commissions and payouts." },
       ],
       pricedOffers: [
-        { name: "Ecommerce Website", description: "Customer website. Live in 48 hours after locked brief, or 50% refund.", price: 25000, url: "/solutions/ecommerce-website-development#ecommerce-website", validThrough: "2026-11-08T23:59:59+05:30", priceValidUntil: "2026-11-08" },
-        { name: "Ecommerce Website + Android App", description: "Website plus Android app. Live in 48 hours after locked brief, or 50% refund.", price: 35000, url: "/solutions/ecommerce-website-development#website-android", validThrough: "2026-11-08T23:59:59+05:30", priceValidUntil: "2026-11-08" },
-        { name: "Ecommerce Website + Android + iOS App", description: "Website plus Android and iOS apps. Live in 48 hours after locked brief, or 50% refund.", price: 45000, url: "/solutions/ecommerce-website-development#website-android-ios", validThrough: "2026-11-08T23:59:59+05:30", priceValidUntil: "2026-11-08" },
-        { name: "High-End Ecommerce with Logistics + Android + iOS App", description: "Website, both apps, and courier logistics. Live in 48 hours after locked brief, or 50% refund.", price: 99000, url: "/solutions/ecommerce-website-development#high-end-logistics", validThrough: "2026-11-08T23:59:59+05:30", priceValidUntil: "2026-11-08" },
+        { name: "Ecommerce Website", description: "Customer website. Live in 48 hours after locked brief.", price: 25000, url: "/solutions/ecommerce-website-development#ecommerce-website" },
+        { name: "Ecommerce Website + Android App", description: "Website plus Android app. Live in 48 hours after locked brief.", price: 35000, url: "/solutions/ecommerce-website-development#website-android" },
+        { name: "Ecommerce Website + Android + iOS App", description: "Website plus Android and iOS apps. Live in 48 hours after locked brief.", price: 45000, url: "/solutions/ecommerce-website-development#website-android-ios" },
+        { name: "High-End Ecommerce with Logistics + Android + iOS App", description: "Website, both apps, and courier logistics. Live in 48 hours after locked brief.", price: 99000, url: "/solutions/ecommerce-website-development#high-end-logistics" },
       ],
     },
     faqs: [
@@ -346,7 +346,7 @@ export const seoLandingPages = [
       {
         href: "/solutions/ecommerce-website-development#ecommerce-website",
         label:
-          "Ecommerce packages: Website ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · High-End logistics ₹99,000 — website live in 48 hours or 50% refund",
+          "Ecommerce packages: Website ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · High-End logistics ₹99,000 — website live in 48 hours",
       },
       {
         href: "/portfolio/dailyconcepts-ecommerce-pos",
@@ -966,7 +966,7 @@ export const seoLandingPages = [
       },
       {
         title: "Ecommerce and lead engines",
-        body: "Need a store fast? Our ecommerce packages start at ₹25,000 (website) and go to ₹99,000 (high-end logistics + Android + iOS), with website live in 48 hours after a locked brief — or 50% refund until Diwali. For custom software roadmaps, we scope features around leads, ops, and measurable outcomes.",
+        body: "Need a store fast? Our ecommerce packages start at ₹25,000 (website) and go to ₹99,000 (high-end logistics + Android + iOS), with website live in 48 hours after a locked brief. For custom software roadmaps, we scope features around leads, ops, and measurable outcomes.",
       },
       {
         title: "Why Jaipur SMEs hire us",

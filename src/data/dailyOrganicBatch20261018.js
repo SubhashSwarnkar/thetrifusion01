@@ -369,7 +369,7 @@ export const dailyOrganicBatch20261018Posts = [
 <tr><td>High-end + logistics</td><td>₹99,000</td><td>Website, both apps, courier logistics as printed</td></tr>
 </tbody>
 </table>
-<p>48-hour go-live after a locked brief, or 50% refund, on the terms printed on the ecommerce page until 8 November 2026, 11:59 PM IST.</p>
+<p>48-hour go-live after a locked brief, on the terms printed on the ecommerce page.</p>
 <p><a href="/contact">Contact TheTriFusion</a> with SKU count, or pick a pack on <a href="/solutions/ecommerce-website-development">ecommerce website development</a>.</p>
 <h2>FAQ</h2>
 <h3>Is the 31.4% figure yours?</h3>

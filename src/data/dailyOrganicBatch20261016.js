@@ -469,7 +469,7 @@ export const dailyOrganicBatch20261016Posts = [
 <h2>Own store vs marketplace vs ONDC</h2>
 <p>Own store on <a href="/solutions/ecommerce-website-development">ecommerce website development</a>: catalogue, cart, checkout, admin — our four packages (₹25,000 website · ₹35,000 + Android · ₹45,000 + Android + iOS · ₹99,000 high-end logistics). Marketplace: their theme, their traffic, their takedown. ONDC: seller app / buyer app you join. Many Jaipur brands need the own store plus one network. Payments, GST, and DPDP notices still sit on <a href="/services/website-development">website development</a>. Traffic after go-live is <a href="/services/digital-marketing">digital marketing</a>.</p>
 <h2>Diwali clock on this site</h2>
-<p>The <a href="/solutions/ecommerce-website-development">ecommerce</a> page already publishes a 48-hour go-live clock and a Diwali 50% refund offer ending 8 November 2026, 11:59 PM IST, after a locked brief. Read that page for the legal wording of the offer. This article does not change it.</p>
+<p>The <a href="/solutions/ecommerce-website-development">ecommerce</a> page publishes a 48-hour go-live clock after a locked brief. Read that page for the delivery wording. This article does not change it.</p>
 <p><a href="/contact">Contact TheTriFusion</a> with SKU count and whether Android is in the first release, or pick a package on <a href="/solutions/ecommerce-website-development">ecommerce website development</a>.</p>
 <h2>FAQ</h2>
 <h3>How much is an ecommerce website in India?</h3>

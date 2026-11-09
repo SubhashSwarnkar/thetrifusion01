@@ -19,9 +19,6 @@ import { Portfolios } from "json/landingPageData";
 import { trackEvent, AnalyticsEvents } from "utils/analytics";
 import { siteConfig } from "config/site";
 import NotFoundPage from "./NotFoundPage";
-import DiwaliOfferCountdown, {
-  DiwaliRefundLabel,
-} from "components/DiwaliOfferCountdown";
 import {
   ecommercePackages,
   launchGuarantee,
@@ -148,7 +145,7 @@ export default function SolutionLandingPage({
             className="!mb-0 py-14 md:py-16 border-t border-gray-100"
           >
             <div className="container mx-auto px-5 max-w-4xl">
-              <DiwaliOfferCountdown className="mb-6">
+              <div className="mb-6">
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-theme-purple mb-2">
                   {PACKAGE_PRICE_SUMMARY}
                 </p>
@@ -157,10 +154,9 @@ export default function SolutionLandingPage({
                 </h2>
                 <p className="text-gray-600 font-light">
                   Four published packages. Website live in 48 hours after a
-                  locked brief
-                  <DiwaliRefundLabel before=" — or 50% refund." after="." />
+                  locked brief.
                 </p>
-              </DiwaliOfferCountdown>
+              </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {ecommercePackages.map((pkg) => (
                   <article

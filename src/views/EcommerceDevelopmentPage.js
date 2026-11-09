@@ -10,9 +10,6 @@ import BrandTrustStrip from "components/BrandTrustStrip";
 import ShortLeadForm from "components/ShortLeadForm";
 import WhatsAppButton from "components/WhatsAppButton";
 import { ADS_PROCESS } from "data/adsLandingPages";
-import DiwaliOfferCountdown, {
-  DiwaliRefundLabel,
-} from "components/DiwaliOfferCountdown";
 import {
   ecommercePage as page,
   ecommercePackages,
@@ -78,31 +75,6 @@ export default function EcommerceDevelopmentPage() {
               <span className="inline-block px-3 py-1.5 rounded-full bg-light-theme-purple text-theme-purple text-xs font-bold uppercase tracking-[0.16em] mb-5">
                 {page.kicker}
               </span>
-              <DiwaliOfferCountdown className="mb-5 p-4 sm:p-5 rounded-2xl border-2 border-theme-purple/30 bg-gradient-to-r from-light-theme-purple via-white to-cyan-50 shadow-sm">
-                <p className="text-xs font-bold uppercase tracking-[0.18em] text-theme-purple mb-2">
-                  {launchGuarantee.badge}
-                </p>
-                <p className="text-xl sm:text-2xl font-black text-theme-blue leading-snug mb-2">
-                  {launchGuarantee.headline}
-                </p>
-                <p className="text-sm text-gray-600 font-light leading-relaxed">
-                  {launchGuarantee.subheadline}
-                </p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-theme-purple text-white text-xs font-bold">
-                    {launchGuarantee.clockLabel}
-                  </span>
-                  <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-theme-blue text-white text-xs font-bold">
-                    {launchGuarantee.refundLabel}
-                  </span>
-                  <a
-                    href="#guarantee"
-                    className="inline-flex items-center px-3 py-1.5 rounded-full border border-theme-purple/40 text-theme-purple text-xs font-bold hover:bg-light-theme-purple"
-                  >
-                    See guarantee terms →
-                  </a>
-                </div>
-              </DiwaliOfferCountdown>
               <h1 className="text-4xl sm:text-5xl font-black text-theme-blue tracking-tight leading-[1.12] mb-4">
                 {page.h1}
               </h1>
@@ -191,8 +163,8 @@ export default function EcommerceDevelopmentPage() {
                 defaultProjectType="Ecommerce Website"
                 defaultBudgetRange="₹25,000"
                 leadSource={page.leadSource}
-                heading="Claim 48-hour live offer"
-                note="48h / 50% refund covers website go-live after a locked brief — not App Store / Play Store review time. Four packages from ₹25,000 to ₹99,000."
+                heading="Get a callback on ecommerce packages"
+                note="Website go-live in 48 hours after a locked brief — not App Store / Play Store review time. Four packages from ₹25,000 to ₹99,000."
               />
               {proofs.length > 0 ? (
                 <div className="rounded-2xl border border-theme-purple/15 bg-white/80 p-4 shadow-sm">
@@ -236,14 +208,12 @@ export default function EcommerceDevelopmentPage() {
         id="guarantee"
         className="container mx-auto px-5 py-16 scroll-mt-28"
       >
-        <DiwaliOfferCountdown timerFirst>
-        <SectionHeading kicker="USP · Ads guarantee">
-          Live in 48 hours — or 50% refund
+        <SectionHeading kicker="Delivery">
+          Website live in 48 hours
         </SectionHeading>
         <p className="text-gray-600 font-light leading-relaxed max-w-3xl mb-8 -mt-2">
-            Built for Google and Meta ads: a clear promise on the ecommerce
-            website go-live. Same 48-hour / 50% refund clock on all four
-            packages until Diwali.
+          A clear delivery clock on ecommerce website go-live after a locked
+          brief. Same 48-hour clock on all four packages.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
           {launchGuarantee.points.map((point, idx) => {
@@ -295,7 +265,6 @@ export default function EcommerceDevelopmentPage() {
             Start the 48-hour clock
           </a>
         </div>
-        </DiwaliOfferCountdown>
       </section>
 
       <section id="packages" className="container mx-auto px-5 py-16 scroll-mt-28">
@@ -304,7 +273,7 @@ export default function EcommerceDevelopmentPage() {
         </SectionHeading>
         <p className="text-gray-600 font-light leading-relaxed max-w-3xl mb-6 -mt-2">
           Start with a website, then add Android, iOS, or courier logistics.
-          The 48-hour / 50% refund USP applies to website go-live on every
+          The 48-hour delivery clock applies to website go-live on every
           package. Play Store and App Store accounts are yours to create when
           the package includes apps.
         </p>
@@ -349,18 +318,13 @@ export default function EcommerceDevelopmentPage() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
                     className="object-cover"
                   />
-                  {pkg.popular ? (
-                    <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-theme-purple text-white text-xs font-bold uppercase tracking-widest">
-                      Most requested · 48 hrs
-                    </span>
-                  ) : (
-                    <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-theme-blue text-white text-xs font-bold uppercase tracking-widest">
-                      <DiwaliRefundLabel
-                        before="48 hrs or 50% refund"
-                        after="Live in 48 hrs"
-                      />
-                    </span>
-                  )}
+                  <span
+                    className={`absolute top-4 left-4 px-3 py-1 rounded-full text-white text-xs font-bold uppercase tracking-widest ${
+                      pkg.popular ? "bg-theme-purple" : "bg-theme-blue"
+                    }`}
+                  >
+                    {pkg.popular ? "Most requested · 48 hrs" : "Live in 48 hrs"}
+                  </span>
                 </div>
                 <div className={`p-7 flex flex-col flex-1 ${accent.card}`}>
                   <p className={`text-xs font-bold uppercase tracking-widest mb-2 ${accent.text}`}>
@@ -700,13 +664,8 @@ export default function EcommerceDevelopmentPage() {
           </h2>
           <p className="text-white/80 mb-8 max-w-xl mx-auto font-light">
             {PACKAGE_PRICE_SUMMARY}. Website live in 48 hours after locked
-            brief
-            <DiwaliRefundLabel
-              before=" — or 50% refund until Diwali."
-              after="."
-            />{" "}
-            You create Play Store and App Store accounts when the package
-            includes apps.
+            brief. You create Play Store and App Store accounts when the
+            package includes apps.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
@@ -734,11 +693,9 @@ export default function EcommerceDevelopmentPage() {
 
       {/* Mobile sticky — primary WA for ads traffic; floats above home-indicator */}
       <div className="lg:hidden fixed bottom-0 left-0 right-0 z-[90] bg-white/95 backdrop-blur border-t border-gray-100 p-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))] shadow-[0_-8px_24px_rgba(15,23,42,0.08)]">
-        <DiwaliOfferCountdown compact showLabel={false} className="mb-1.5">
-          <p className="text-[11px] text-center text-theme-blue/70 font-medium">
-            From ₹25k · 48h live or 50% refund · Diwali
-          </p>
-        </DiwaliOfferCountdown>
+        <p className="mb-1.5 text-[11px] text-center text-theme-blue/70 font-medium">
+          From ₹25k · live in 48 hours
+        </p>
         <div className="flex gap-2">
           <a
             href={phoneHref}
@@ -760,7 +717,7 @@ export default function EcommerceDevelopmentPage() {
             }
             className="flex-[1.4] text-center py-3 rounded-full bg-green-500 text-white font-bold text-sm shadow-md shadow-green-500/30"
           >
-            WhatsApp offer
+            WhatsApp
           </a>
           <a
             href="#lead-form"
@@ -773,11 +730,9 @@ export default function EcommerceDevelopmentPage() {
 
       {/* Desktop sticky — keep WA visible after scroll on paid traffic */}
       <div className="hidden lg:flex fixed bottom-4 left-1/2 -translate-x-1/2 z-[90] items-center gap-3 rounded-full border border-theme-purple/15 bg-white/95 backdrop-blur px-3 py-2 shadow-xl shadow-theme-blue/10">
-        <DiwaliOfferCountdown compact showLabel={false} className="pl-2">
-          <span className="text-xs font-semibold text-theme-blue whitespace-nowrap">
-            From ₹25k · 48h live or 50% refund
-          </span>
-        </DiwaliOfferCountdown>
+        <span className="pl-2 text-xs font-semibold text-theme-blue whitespace-nowrap">
+          From ₹25k · live in 48 hours
+        </span>
         <a
           href={defaultWa}
           target="_blank"
@@ -795,7 +750,7 @@ export default function EcommerceDevelopmentPage() {
           href="#lead-form"
           className="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-theme-purple text-white text-sm font-bold"
         >
-          Claim offer
+          Get a callback
         </a>
       </div>
       </main>
