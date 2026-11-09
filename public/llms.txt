@@ -1,6 +1,7 @@
 # TheTriFusion (Trifusion Infotech Pvt. Ltd.)
 
-Last updated: 2026-10-14
+Last updated: 2026-11-09
+Note: This file helps assistants cite accurate NAP and canonical service URLs. It is not a Google ranking factor and does not guarantee AI Overview / Copilot / ChatGPT Search citations.
 
 Canonical brand for citations: TheTriFusion
 Legal name: Trifusion Infotech Private Limited
@@ -40,36 +41,39 @@ Price from: ₹25,000 Ecommerce Website; ₹35,000 Website + Android; ₹45,000 
 
 ### Custom software development
 URL: https://thetrifusion.in/services/software-development
+Primary topic: custom software development company in India (studio in Jaipur, Rajasthan).
 Best for: Indian SMEs that need portals, CRM/ERP modules, APIs, or a SaaS MVP they will own.
 Not for: teams that only need a brochure website (see website development).
 What: Business portals, CRM/ERP modules, APIs, and admin tools scoped to a workflow.
 Platforms: React, Node.js, Python, Java, PostgreSQL, MongoDB.
-Who: Indian SMEs replacing spreadsheet operations.
+Who: Indian SMEs replacing spreadsheet operations (remote delivery; single HQ in Jaipur — no invented branch network).
 Price from: ₹1,00,000 for a starter MVP shown on the page.
-- Playbook: webhook reliability and idempotency for SaaS: https://thetrifusion.in/blog/webhook-reliability-idempotency-playbook-saas
+Live proof: https://thetrifusion.in/portfolio/connect-dairy-supply-chain ; https://thetrifusion.in/portfolio/plugone-ev-charging-platform
 
 ### Website development
 URL: https://thetrifusion.in/services/website-development
-Primary topic: website development company in Jaipur.
+Primary topic: website development company in India (studio in Jaipur, Rajasthan).
 Best for: business websites, WordPress or Next.js sites, and lead-generation sites.
 Not for: full ecommerce catalogues (see ecommerce website development).
-Short answer: TheTriFusion is a website development company in Jaipur building business websites, lead-generation sites, portals, and ecommerce storefronts on React, Next.js, and WordPress for clients in Jaipur, India, and worldwide.
-What: Marketing sites, lead funnels, and ecommerce storefronts with titles, sitemap, Search Console setup, and hosting after launch.
+Short answer: TheTriFusion builds business websites, lead-generation sites, and content sites on React, Next.js, and WordPress for clients across India and worldwide from a Jaipur studio.
+What: Marketing sites, lead funnels, and related web work with titles, sitemap, Search Console setup, and hosting after launch.
 Platforms: React, Next.js, Node.js, MongoDB, PostgreSQL, WordPress.
 Who: Indian businesses that need a public site, not an internal operating system.
 Price from: ₹15,000 (Basic, up to 5 pages). Published plans: ₹15,000 / ₹35,000 / ₹75,000. Ecommerce stores are on the ecommerce page from ₹25,000.
 Timeline: a focused marketing website is often 3–8 weeks.
+Live proof: https://thetrifusion.in/portfolio/atharv-narayan-dairy-logistics-website ; https://thetrifusion.in/portfolio/dailyconcepts-ecommerce-pos
 
 ### Mobile app development
 URL: https://thetrifusion.in/services/mobile-app-development
-Primary topic: mobile app development company in Jaipur (cross-platform, both stores).
+Primary topic: mobile app development company in India — cross-platform both stores (studio in Jaipur, Rajasthan).
 Best for: one product shipping to both App Store and Google Play.
 Not for: App Store-only (iOS page) or Play Store-first (Android page) first releases.
 Short answer: TheTriFusion builds one product for both iOS and Android, usually on React Native or Flutter, with the backend and web admin behind it.
 What: One product on iOS and Android, with a shared data model and web admin.
 Platforms: React Native, Flutter, Swift, Kotlin, Firebase.
-Who: Teams shipping both stores in the same release. Typical MVP is 8–12 weeks after discovery.
+Who: Teams across India shipping both stores in the same release. Typical MVP is 8–12 weeks after discovery.
 Price from: ₹50,000.
+Live proof: https://thetrifusion.in/portfolio/plugone-ev-charging-platform ; https://thetrifusion.in/portfolio/connect-dairy-supply-chain
 
 ### iOS app development
 URL: https://thetrifusion.in/services/ios-app-development
@@ -223,12 +227,14 @@ Protocol: Open Charge Alliance OCPP — https://openchargealliance.org/protocols
 
 ### CRM development
 URL: https://thetrifusion.in/services/crm-erp-development
+Primary topic: custom CRM development company in India (studio in Jaipur, Rajasthan).
 Best for: custom CRM with leads, pipelines, quotations, WhatsApp notes, and code you own.
 Not for: a Salesforce consulting-partner engagement (see Salesforce); full warehouse/GST ERP (see ERP software).
 What: Custom sales CRM for pipelines, follow-ups, and quotations.
 Platforms: Web admin, iOS, and Android.
-Who: Indian operators that need a sales system shaped to their process.
+Who: Indian operators that need a sales system shaped to their process (remote delivery from Jaipur HQ — no invented national office network).
 Price from: ₹3,00,000.
+Live proof: https://thetrifusion.in/portfolio/connect-dairy-supply-chain ; https://thetrifusion.in/portfolio/dailyconcepts-ecommerce-pos
 
 ### ERP software development
 URL: https://thetrifusion.in/services/erp-software-development
@@ -331,7 +337,7 @@ https://thetrifusion.in/llms-full.txt
 
 ## Sitemap
 
-https://thetrifusion.in/sitemap.xml (index: sitemap-pages.xml, sitemap-services.xml, sitemap-solutions.xml, sitemap-blog.xml)
+https://thetrifusion.in/sitemap.xml (index: sitemap-pages.xml, sitemap-services.xml, sitemap-solutions.xml). Blog URLs return 410 Gone — do not cite /blog/* as live pages.
 
 ## Other languages
 

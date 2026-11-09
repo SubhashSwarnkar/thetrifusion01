@@ -2,24 +2,49 @@ import { LIVE, NAP_LINE, TEAM } from "./_shared";
 
 /**
  * /services/software-development
+ * Primary intent: custom software / portals / APIs / ops tools (India + Jaipur studio).
+ * Not the marketing-website intent (→ website-development) and not CRM-only (→ crm-erp).
  * TODO OWNER: project counts / years / team size beyond "about ten".
  * TODO OWNER: client testimonials with name + company (Google/Clutch-verifiable).
  * TODO OWNER: outcome metrics for Connect Dairy, Atharv Narayan, PlugOne.
  * TODO OWNER: named lead-engineer bios + personal LinkedIn URLs.
  */
 export default {
-  contentUpdatedAt: "2026-10-28",
+  contentUpdatedAt: "2026-11-09",
   metaTitle: "Custom Software Development Company in Jaipur | TheTriFusion",
   bannerTitle: "Custom Software Development Company in Jaipur",
   metaDescription:
     "Custom software, CRM, portals and APIs for Indian SMEs from a Jaipur team. Written scope, weekly demos, you own the code. MVPs from ₹1,00,000.",
   keywords:
     "software development company in Jaipur, custom software development company India, custom software development cost India, custom software Jaipur, API development Jaipur",
+  description:
+    "TheTriFusion is a custom software development company in Jaipur, Rajasthan. We build portals, APIs, CRM/ERP modules, internal tools and SaaS MVPs for Indian SMEs — with a written scope, weekly demos, and source code you own. Marketing websites belong on website development; sales-pipeline CRM briefs belong on custom CRM development.",
+  shortDescription:
+    "Portals, APIs and ops software from Jaipur — written scope, weekly demos, code you own. MVPs from ₹1,00,000.",
+  bannerDescription:
+    "Replace spreadsheet chaos with portals, APIs and admin tools your team can run — scoped in Jaipur, delivered remotely across India.",
+  // Suppress legacy templated blocks that claimed unverified “8 years” industry tenure.
+  services: [],
+  process: [],
+  technologies: [],
+  methodologies: [],
+  industries: [],
+  costFactors: [],
+  features: [
+    "Written scope before build",
+    "Weekly Friday demos",
+    "Source code you own",
+    "Portal & admin roles",
+    "API & Tally-style integrations",
+    "CRM / ERP modules when scoped",
+    "Jaipur in-house delivery",
+    "Published plans from ₹1,00,000",
+  ],
   answerFirst: {
     id: "quick-answer",
-    heading: "Custom software development in Jaipur: the short answer",
+    heading: "Custom software development in India: the short answer",
     text:
-      "TheTriFusion (Trifusion Infotech Private Limited) is a custom software development company in Jaipur. We build portals, CRM/ERP modules, APIs, internal tools and SaaS MVPs for Indian SMEs. You get a written scope, weekly demos, and the code you own. Published starter MVPs start from ₹1,00,000; a focused module is often 6–12 weeks after discovery.",
+      "TheTriFusion (Trifusion Infotech Private Limited) is a custom software development company in India with its studio in Jaipur, Rajasthan. We build portals, CRM/ERP modules, APIs, internal tools and SaaS MVPs for Indian SMEs. You get a written scope, weekly demos, and the code you own. Published starter MVPs start from ₹1,00,000; a focused module is often 6–12 weeks after discovery.",
     facts: [
       { label: "Starting price", value: "From ₹1,00,000 (published Basic plan)" },
       { label: "Typical timeline", value: "6–12 weeks for a focused MVP module" },
@@ -33,7 +58,7 @@ export default {
       heading: "What we build",
       paragraphs: [
         "Custom software here means the operating system of the business — roles, data and workflows — not a marketing website. Typical Jaipur briefs are business portals, CRM and ERP modules, booking and inventory tools, dashboards, APIs, and a first SaaS slice. When field teams need a companion app, the same team can add [iOS](/services/ios-app-development) or [Android](/services/android-app-development).",
-        "If the public site is the product, start with [website development](/services/website-development). If the job is replacing spreadsheets or an old desktop tool without stopping operations, see [business modernization](/services/business-modernization).",
+        "If the public site is the product, start with [website development](/services/website-development). If the job is replacing spreadsheets or an old desktop tool without stopping operations, see [business modernization](/services/business-modernization). Sales-pipeline CRM with WhatsApp notes belongs on [custom CRM development](/services/crm-erp-development).",
       ],
       included: [
         "Portals and admin tools with roles",
@@ -128,7 +153,15 @@ export default {
       heading: "Shipped projects",
       paragraphs: [
         `${LIVE.dairy} is live fleet, role and P&L operations. ${LIVE.atharv} is a live dairy-services website for Jaipur and Bhilwara. ${LIVE.plugone} is a live EV charging product (driver app + CMS). We name only projects that are already public on this site. Outcome metrics stay unpublished until the owner supplies them.`,
-        "See the [Connect Dairy case](/portfolio/connect-dairy-supply-chain) and the [PlugOne case](/portfolio/plugone-ev-charging-platform).",
+        "Read the case studies: [Connect Dairy](/portfolio/connect-dairy-supply-chain) and [PlugOne](/portfolio/plugone-ev-charging-platform). Atharv Narayan’s marketing site is documented on [website development](/services/website-development).",
+      ],
+    },
+    {
+      id: "who-for-jaipur",
+      heading: "Who this page is for in Jaipur",
+      paragraphs: [
+        "Use this page when you need software your team will log into every day — dealer portals, internal tools, APIs, or a first SaaS slice — and you want a Jaipur studio that writes a scope before coding. Sitapura exporters, hotel groups, distributors and multi-branch SMEs are common briefs; we still scope from your process, not from a fake industry pack.",
+        "Local industry flavour without splitting this URL: [custom software in Jaipur](/solutions/custom-software-development-jaipur). That solutions page supports local examples; this /services URL stays the capability and pricing write-up so Google does not see two competing “company” pages for the same brief.",
       ],
     },
     {
@@ -180,6 +213,11 @@ export default {
       answer:
         "No. Delivery is remote with weekly demos. The office is at 5th Floor, Amoro Building, Patrakar Colony, Jaipur, Rajasthan 302020. You can visit by appointment, Monday to Saturday, 10 AM–7 PM IST.",
     },
+    {
+      question: "Is this the same page as website development?",
+      answer:
+        "No. Website development is for public marketing and lead-generation sites. This page is for portals, APIs and ops tools people log into. We cross-link both so the brief lands on the right URL.",
+    },
   ],
   relatedLinks: [
     {
@@ -204,18 +242,18 @@ export default {
     },
     {
       href: "/portfolio/connect-dairy-supply-chain",
-      title: "Connect Dairy",
+      title: "Connect Dairy case study",
       text: "Live operations platform — fleet, roles and P&L.",
     },
     {
-      href: "/services/fintech-app-development",
-      title: "Webhook reliability playbook",
-      text: "Idempotency and retries for SaaS APIs.",
+      href: "/portfolio/plugone-ev-charging-platform",
+      title: "PlugOne case study",
+      text: "Live EV charging product — map, sessions, iOS + Android + web.",
     },
     {
-      href: "/services/erp-software-development",
-      title: "ERP and CRM API integration",
-      text: "How mid-market teams connect the systems they already run.",
+      href: "/services/website-development",
+      title: "Website development",
+      text: "When the first job is a public marketing site, not an admin portal.",
     },
   ],
 };

@@ -57,13 +57,13 @@ export function buildSitemapParts() {
   const fallbackDate = new Date("2026-09-24");
 
   // Services hub lastmod — keep in sync when the hub is re-submitted to GSC.
-  const servicesHubLastmod = new Date("2026-11-05");
+  const servicesHubLastmod = new Date("2026-11-09");
 
   const staticLastmod = {
-    "/": new Date("2026-10-14"),
+    "/": new Date("2026-11-09"),
     "/about": fallbackDate,
     "/solutions": new Date("2026-10-12"),
-    "/portfolio": fallbackDate,
+    "/portfolio": new Date("2026-11-09"),
     "/pricing": fallbackDate,
     "/contact": fallbackDate,
     "/faq": fallbackDate,
@@ -142,7 +142,9 @@ export function buildSitemapParts() {
   const portfolioRoutes = Portfolios.filter(isIndexablePortfolio).map(
     (project) => ({
       url: apexSitemapUrl(`/portfolio/${project.id}`),
-      lastModified: fallbackDate,
+      lastModified: project.contentUpdatedAt
+        ? safeDate(project.contentUpdatedAt, fallbackDate)
+        : fallbackDate,
       changeFrequency: "monthly",
       priority: project.featured ? 0.75 : 0.6,
     })

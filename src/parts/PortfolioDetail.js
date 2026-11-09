@@ -113,6 +113,39 @@ export default function PortfolioDetail({ data }) {
               </p>
             </div>
 
+            {item.caseStudy ? (
+              <div className="flex flex-col mt-4 mb-12 mx-8 sm:mx-16 xl:mx-28 gap-6">
+                <h2 className="text-3xl text-theme-blue font-bold">
+                  {typeof item.caseStudy === "object" && item.caseStudy.heading
+                    ? item.caseStudy.heading
+                    : "Case study"}
+                </h2>
+                {typeof item.caseStudy === "string" ? (
+                  <p className="font-light text-lg text-gray-600 leading-relaxed whitespace-pre-line">
+                    {item.caseStudy}
+                  </p>
+                ) : (
+                  [
+                    ["problem", "Problem"],
+                    ["whatWeBuilt", "What we built"],
+                    ["deliveryNotes", "Delivery notes"],
+                    ["forBuyers", "What this means for buyers"],
+                  ]
+                    .filter(([key]) => item.caseStudy[key])
+                    .map(([key, label]) => (
+                      <div key={key}>
+                        <h3 className="text-xl text-theme-blue font-semibold mb-2">
+                          {label}
+                        </h3>
+                        <p className="font-light text-lg text-gray-600 leading-relaxed">
+                          {item.caseStudy[key]}
+                        </p>
+                      </div>
+                    ))
+                )}
+              </div>
+            ) : null}
+
             <div className="flex flex-col mx-8 sm:mx-16 xl:mx-28">
               <h2 className="text-3xl text-theme-blue font-bold mb-5">
                 Project Responsibilities

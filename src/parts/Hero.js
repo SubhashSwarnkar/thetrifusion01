@@ -71,22 +71,34 @@ export default function Hero() {
               </p>
               <p className="text-base sm:text-lg text-gray-500 font-light leading-relaxed mb-8 max-w-md mx-auto lg:mx-0">
                 A{" "}
-                <Link href="/services/website-development" prefetch={false} className="font-semibold text-theme-purple hover:underline">
-                  website development company in Jaipur
+                <Link href="/services/software-development" prefetch={false} className="font-semibold text-theme-purple hover:underline">
+                  custom software
                 </Link>
                 ,{" "}
+                <Link href="/services/website-development" prefetch={false} className="font-semibold text-theme-purple hover:underline">
+                  website development
+                </Link>
+                ,{" "}
+                <Link href="/services/mobile-app-development" prefetch={false} className="font-semibold text-theme-purple hover:underline">
+                  mobile app
+                </Link>
+                , and{" "}
+                <Link href="/services/crm-erp-development" prefetch={false} className="font-semibold text-theme-purple hover:underline">
+                  CRM development
+                </Link>{" "}
+                studio in Jaipur — same team for related{" "}
                 <Link href="/services/ios-app-development" prefetch={false} className="font-semibold text-theme-purple hover:underline">
-                  iOS app development
+                  iOS
                 </Link>
                 ,{" "}
                 <Link href="/services/android-app-development" prefetch={false} className="font-semibold text-theme-purple hover:underline">
-                  Android app development
+                  Android
                 </Link>
                 , and{" "}
                 <Link href="/services/ai-development" prefetch={false} className="font-semibold text-theme-purple hover:underline">
-                  AI development
+                  AI
                 </Link>{" "}
-                from the same studio.
+                work.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button

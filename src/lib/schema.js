@@ -11,6 +11,7 @@ const HOME_DESCRIPTION =
   "Trifusion Infotech Private Limited (TheTriFusion) is a software development company in Jaipur, Rajasthan offering custom software, ecommerce websites, mobile apps, UI/UX, and digital marketing for businesses across India.";
 
 const ORGANIZATION_ID = `${siteConfig.url}/#organization`;
+const LOCAL_BUSINESS_ID = `${siteConfig.url}/#localbusiness`;
 export const FOUNDER_ID = `${siteConfig.url}/#founder`;
 
 /** India and worldwide. No invented coordinates or city-level office pins. */
@@ -136,11 +137,14 @@ function websiteNode() {
 function localBusinessNode() {
   return {
     "@type": ["ProfessionalService", "LocalBusiness"],
-    "@id": ORGANIZATION_ID,
+    // Distinct @id from Organization so the site graph does not collide two
+    // typed nodes on the same identifier.
+    "@id": LOCAL_BUSINESS_ID,
     name: siteConfig.name,
     legalName: siteConfig.legalName,
     alternateName: "Trifusion Infotech",
     url: siteConfig.url,
+    parentOrganization: { "@id": ORGANIZATION_ID },
     image: siteConfig.defaultOgImage,
     logo: {
       "@type": "ImageObject",

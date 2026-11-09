@@ -2,24 +2,48 @@ import { LIVE, MAPS_SEARCH, NAP_LINE, TEAM } from "./_shared";
 
 /**
  * /services/website-development
+ * Primary intent: business / marketing website design & development in Jaipur.
+ * Not ecommerce-first (→ /solutions/ecommerce-website-development) and not portals (→ software).
  * TODO OWNER: live website portfolio list with client permission beyond Atharv Narayan / DailyConcepts.
  * TODO OWNER: Google Business Profile reviews to embed.
  * TODO OWNER: office photos for a 'visit us' block.
  * TODO OWNER: team size / years since 2023 stated as a precise number if you want it on-page.
  */
 export default {
-  contentUpdatedAt: "2026-10-28",
+  contentUpdatedAt: "2026-11-09",
   metaTitle: "Website Development Company in Jaipur | Websites from ₹15,000",
   bannerTitle: "Website Development Company in Jaipur",
   metaDescription:
     "Website design & development in Jaipur: business sites, WordPress, Next.js and ecommerce. From ₹15,000, live in 3–8 weeks, SEO set up at launch.",
   keywords:
     "website development company in Jaipur, website design company in Jaipur, website development cost in India, web development Jaipur, WordPress Next.js Jaipur",
+  description:
+    "TheTriFusion is a website design and development company in Jaipur, Rajasthan. We build business websites, lead-generation sites, WordPress and Next.js sites, and ecommerce storefronts — with titles, sitemap and Search Console set up at go-live. Portals with roles belong on custom software; pure catalogue stores can start on ecommerce website development.",
+  shortDescription:
+    "Business websites and lead-gen sites from Jaipur — from ₹15,000, typically live in 3–8 weeks.",
+  bannerDescription:
+    "Company sites, lead-generation pages and content sites from the Patrakar Colony studio — SEO basics included at launch, not as an afterthought.",
+  services: [],
+  process: [],
+  technologies: [],
+  methodologies: [],
+  industries: [],
+  costFactors: [],
+  features: [
+    "Responsive business sites",
+    "WordPress or Next.js",
+    "Titles & sitemap at launch",
+    "Search Console setup",
+    "Hindi / English when scoped",
+    "Enquiry & WhatsApp flows",
+    "Published plans from ₹15,000",
+    "Jaipur office by appointment",
+  ],
   answerFirst: {
     id: "quick-answer",
-    heading: "Website development company in Jaipur: the short answer",
+    heading: "Website development company in India: the short answer",
     text:
-      "TheTriFusion is a website design and development company in Jaipur, Rajasthan. We build business websites, lead-generation sites, WordPress sites, Next.js sites and ecommerce storefronts for clients in Jaipur, across India and worldwide. Business websites start from ₹15,000. A focused marketing site typically launches in 3–8 weeks, with titles, sitemap and Search Console set up at go-live.",
+      "TheTriFusion is a website design and development company in India with its studio in Jaipur, Rajasthan. We build business websites, lead-generation sites, WordPress sites, Next.js sites and ecommerce storefronts for clients across India and worldwide. Business websites start from ₹15,000. A focused marketing site typically launches in 3–8 weeks, with titles, sitemap and Search Console set up at go-live.",
     facts: [
       { label: "Starting price", value: "From ₹15,000 (Basic, up to 5 pages)" },
       { label: "Typical timeline", value: "3–8 weeks for a focused marketing site" },
@@ -69,7 +93,7 @@ export default {
       id: "wordpress-vs-next-vs-shopify",
       heading: "WordPress vs Next.js vs Shopify",
       paragraphs: [
-        "Pick WordPress when editors must change pages without a developer. Pick Next.js when the site is a product or needs tight SEO and speed. Pick Shopify when the job is a standard catalogue — that work lives on the [ecommerce page](/solutions/ecommerce-website-development). Read [custom website vs Shopify vs WooCommerce](/solutions/ecommerce-website-development).",
+        "Pick WordPress when editors must change pages without a developer. Pick Next.js when the site is a product or needs tight SEO and speed. Pick Shopify when the job is a standard catalogue — that work lives on the [ecommerce page](/solutions/ecommerce-website-development).",
       ],
       comparison: {
         heading: "Platform choice",
@@ -99,14 +123,15 @@ export default {
       id: "website-portfolio",
       heading: "Live websites we can name",
       paragraphs: [
-        `${LIVE.atharv} is a live dairy-services site for Jaipur and Bhilwara. ${LIVE.daily} is a live storefront with POS-style admin. Further named sites need client permission, so they are not listed here.`,
+        `${LIVE.atharv} is a live dairy-services site for Jaipur and Bhilwara — bilingual English/Hindi with enquiry and WhatsApp paths. ${LIVE.daily} is a live storefront with POS-style admin. Further named sites need client permission, so they are not listed here.`,
+        "Case studies: [Atharv Narayan](/portfolio/atharv-narayan-dairy-logistics-website) and [DailyConcepts](/portfolio/dailyconcepts-ecommerce-pos).",
       ],
     },
     {
       id: "visit-jaipur-office",
       heading: "Visit our Jaipur office",
       paragraphs: [
-        `The studio is at ${NAP_LINE}. [Open in Google Maps](${MAPS_SEARCH}). Kickoff visits are by appointment. Day-to-day work runs on video, WhatsApp and shared boards. Businesses outside Jaipur can also read the city pages for [Kota](/solutions/website-development-company-kota), [Udaipur](/solutions/website-development-company-udaipur), [Ajmer](/solutions/website-development-company-ajmer) and [Bhilwara](/solutions/website-development-company-bhilwara).`,
+        `The studio is at ${NAP_LINE}. [Open in Google Maps](${MAPS_SEARCH}). Kickoff visits are by appointment. Day-to-day work runs on video, WhatsApp and shared boards. Local industry copy for jewellers, hotels and Sitapura exporters also sits on [website development company in Jaipur](/solutions/website-development-company-jaipur) — that page supports local examples; this /services URL stays the capability and pricing write-up.`,
       ],
     },
     {
@@ -143,7 +168,7 @@ export default {
     {
       question: "Will my website be SEO-friendly and mobile-friendly?",
       answer:
-        "Yes. Responsive layouts, titles, meta descriptions, a sitemap, structured data and Google Search Console are part of launch, not a later extra.",
+        "Yes. Responsive layouts, titles, meta descriptions, a sitemap, structured data and Google Search Console are part of launch, not a later extra. Rankings are not guaranteed.",
     },
     {
       question: "Can I update the website myself?",
@@ -165,8 +190,23 @@ export default {
       answer:
         "Yes. We can ship Hindi, English, or both, when copy is provided or scoped. The office works in English and Hindi.",
     },
+    {
+      question: "Is TheTriFusion’s office in Bhilwara?",
+      answer:
+        "No. The office is in Jaipur (Patrakar Colony). Some client sites we build serve Bhilwara and other Rajasthan cities; that is the client’s service area, not our HQ.",
+    },
   ],
   relatedLinks: [
+    {
+      href: "/portfolio/atharv-narayan-dairy-logistics-website",
+      title: "Atharv Narayan case study",
+      text: "Live bilingual dairy logistics website for Jaipur & Bhilwara.",
+    },
+    {
+      href: "/portfolio/dailyconcepts-ecommerce-pos",
+      title: "DailyConcepts case study",
+      text: "Live storefront plus POS-style admin.",
+    },
     {
       href: "/solutions/ecommerce-website-development",
       title: "Ecommerce website development in Jaipur",
@@ -176,16 +216,6 @@ export default {
       href: "/services/ui-ux-design",
       title: "UI/UX design",
       text: "Figma product UI when the site is more than a brochure.",
-    },
-    {
-      href: "/services/graphic-design",
-      title: "Graphic design",
-      text: "Campaign kits matched to the live website.",
-    },
-    {
-      href: "/services/branding",
-      title: "Branding",
-      text: "Logo, colour, and guidelines the website can use.",
     },
     {
       href: "/services/software-development",
@@ -198,9 +228,9 @@ export default {
       text: "SEO, Google Ads and Meta Ads after the site is live.",
     },
     {
-      href: "/solutions/ecommerce-website-development",
-      title: "Custom website vs Shopify vs WooCommerce",
-      text: "How to choose a platform before you ask for a quote.",
+      href: "/solutions/website-development-company-jaipur",
+      title: "Jaipur website company (local page)",
+      text: "Local industry copy for the Patrakar Colony studio.",
     },
   ],
 };

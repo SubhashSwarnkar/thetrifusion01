@@ -2,22 +2,46 @@ import { LIVE, NAP_LINE, TEAM } from "./_shared";
 
 /**
  * /services/mobile-app-development
+ * Primary intent: cross-platform iOS + Android product apps from Jaipur.
+ * Store-only briefs → ios-app-development / android-app-development.
  * TODO OWNER: Play Store / App Store links plus download and rating numbers.
  * TODO OWNER: client quotes for PlugOne and Connect Dairy.
  */
 export default {
-  contentUpdatedAt: "2026-10-28",
+  contentUpdatedAt: "2026-11-09",
   metaTitle: "Mobile App Development Company in Jaipur | iOS & Android from ₹50,000",
   bannerTitle: "Mobile App Development Company in Jaipur",
   metaDescription:
     "Android & iOS apps from one React Native or Flutter codebase, built in Jaipur with backend and admin. From ₹50,000; MVP in 8–12 weeks.",
   keywords:
     "mobile app development company in Jaipur, app development cost in India, Flutter app development company India, React Native Jaipur, iOS Android app company",
+  description:
+    "TheTriFusion is a mobile app development company in Jaipur that builds one product for iOS and Android — usually React Native or Flutter — with the backend and web admin behind it. Store-only briefs belong on the iOS or Android pages. Marketing websites belong on website development.",
+  shortDescription:
+    "Cross-platform iOS + Android apps from Jaipur — from ₹50,000; focused MVP often 8–12 weeks.",
+  bannerDescription:
+    "One shared codebase for both stores, plus the API and admin your ops team needs — scoped in Jaipur with weekly demos.",
+  services: [],
+  process: [],
+  technologies: [],
+  methodologies: [],
+  industries: [],
+  costFactors: [],
+  features: [
+    "React Native or Flutter",
+    "Shared iOS + Android codebase",
+    "Backend & web admin",
+    "Store submission support",
+    "Written first-release cut",
+    "Accounts stay in your name",
+    "Published plans from ₹50,000",
+    "Jaipur in-house mobile seats",
+  ],
   answerFirst: {
     id: "quick-answer",
-    heading: "Mobile app development company in Jaipur: the short answer",
+    heading: "Mobile app development company in India: the short answer",
     text:
-      "TheTriFusion is a mobile app development company in Jaipur that builds one product for both iOS and Android, usually on React Native or Flutter, with the backend and web admin behind it. Mobile projects start from ₹50,000, and a focused cross-platform MVP typically takes 8–12 weeks after discovery. For a single store, see [iOS app development](/services/ios-app-development) or [Android app development](/services/android-app-development).",
+      "TheTriFusion is a mobile app development company in India (studio in Jaipur, Rajasthan) that builds one product for both iOS and Android, usually on React Native or Flutter, with the backend and web admin behind it. Mobile projects start from ₹50,000, and a focused cross-platform MVP typically takes 8–12 weeks after discovery. For a single store, see [iOS app development](/services/ios-app-development) or [Android app development](/services/android-app-development).",
     facts: [
       { label: "Starting price", value: "From ₹50,000" },
       { label: "Typical MVP timeline", value: "8–12 weeks after discovery" },
@@ -54,7 +78,7 @@ export default {
       id: "flutter-vs-rn-vs-native",
       heading: "Flutter vs React Native vs native",
       paragraphs: [
-        "Both Flutter and React Native can ship one app to both stores. Native Swift or Kotlin when one store needs platform APIs that cannot be shared cleanly. Read [Flutter vs React Native](/services/mobile-app-development).",
+        "Both Flutter and React Native can ship one app to both stores. Native Swift or Kotlin when one store needs platform APIs that cannot be shared cleanly. The comparison below is the decision guide — there is no separate blog post for this choice.",
       ],
       comparison: {
         heading: "How we choose",
@@ -80,7 +104,8 @@ export default {
       id: "live-apps",
       heading: "Live apps",
       paragraphs: [
-        `${LIVE.plugone} (EV charging) and ${LIVE.dairy} (agri logistics) are live. Store listing URLs and download counts are not in this repo, so they are not invented here.`,
+        `${LIVE.plugone} (EV charging — map, sessions, iOS + Android + web) and ${LIVE.dairy} (agri logistics) are live. Store listing URLs and download counts are not in this repo, so they are not invented here.`,
+        "Case studies: [PlugOne](/portfolio/plugone-ev-charging-platform) and [Connect Dairy](/portfolio/connect-dairy-supply-chain).",
       ],
     },
     {
@@ -101,7 +126,7 @@ export default {
       id: "mobile-which-page",
       heading: "Cross-platform, iOS only, or Android only?",
       paragraphs: [
-        "This page is for one product that ships to both stores. Use [iOS app development](/services/ios-app-development) for an App Store-only or iPhone-first product, and [Android app development](/services/android-app-development) for a Play Store-first product.",
+        "This page is for one product that ships to both stores. Use [iOS app development](/services/ios-app-development) for an App Store-only or iPhone-first product, and [Android app development](/services/android-app-development) for a Play Store-first product. Local industry examples also sit on [mobile app development company in Jaipur](/solutions/mobile-app-development-company-jaipur) without replacing this capability URL.",
       ],
     },
     {
@@ -126,7 +151,7 @@ export default {
     {
       question: "Flutter or React Native — which is better?",
       answer:
-        "Both can ship one app to iOS and Android. We pick the one your team can maintain and the one with solid plugins for your payments and device features.",
+        "Both can ship one app to iOS and Android. We pick the one your team can maintain and the one with solid plugins for your payments and device features. See the Flutter vs React Native vs native section on this page.",
     },
     {
       question: "Will you publish the app on Play Store and App Store?",
@@ -151,6 +176,16 @@ export default {
   ],
   relatedLinks: [
     {
+      href: "/portfolio/plugone-ev-charging-platform",
+      title: "PlugOne case study",
+      text: "Live EV charging app — map, sessions, both stores + web.",
+    },
+    {
+      href: "/portfolio/connect-dairy-supply-chain",
+      title: "Connect Dairy case study",
+      text: "Live agri-logistics web & mobile ops product.",
+    },
+    {
       href: "/services/ios-app-development",
       title: "iOS app development",
       text: "Swift or React Native iPhone apps with TestFlight and App Store submission.",
@@ -161,14 +196,14 @@ export default {
       text: "Kotlin or React Native Play Store apps with signing and listing.",
     },
     {
+      href: "/services/mobile-app-development#flutter-vs-rn-vs-native",
+      title: "Flutter vs React Native vs native",
+      text: "Jump to the stack comparison on this page.",
+    },
+    {
       href: "/services/ui-ux-design",
       title: "UI/UX design",
       text: "Figma flows before the first sprint.",
-    },
-    {
-      href: "/services/mobile-app-development",
-      title: "Flutter vs React Native",
-      text: "How we choose a shared codebase.",
     },
     {
       href: "/solutions/ecommerce-website-development",

@@ -110,8 +110,8 @@ const GROUPS = [
       {
         href: absoluteSiteUrl("/services/crm-erp-development"),
         slug: "crm-erp-development",
-        title: "CRM & ERP",
-        benefit: "Pipelines, inventory, and GST billing",
+        title: "Custom CRM",
+        benefit: "Pipelines, quotations, and WhatsApp notes",
         price: "From ₹3,00,000",
       },
       {

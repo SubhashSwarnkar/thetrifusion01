@@ -35,13 +35,14 @@ function citySection(heading, paragraphs, links) {
 
 export const serviceIndiaOnpage = {
   "website-development": {
+    // National capability URL: India primary; Jaipur = authentic HQ, not the only geo in the title.
     metaTitle:
-      "Website Development Company in Jaipur, India | From ₹15,000",
-    bannerTitle: "Website Development Company in Jaipur, India",
+      "Website Development Company in India | Jaipur Studio, from ₹15,000",
+    bannerTitle: "Website Development Company in India — Jaipur Studio",
     ...citySection(
-      "Jaipur HQ and India-wide delivery",
+      "Jaipur HQ, Rajasthan — delivery across India",
       [
-        "This India page is the capability write-up: stack, WordPress vs Next.js, published plans (₹15,000 / ₹35,000 / ₹75,000) and FAQs. Local industry copy for the Patrakar Colony studio sits on [website development company in Jaipur](/solutions/website-development-company-jaipur). We deliver across India by video and WhatsApp; we do not print fake local offices. Stores belong on [ecommerce website development](/solutions/ecommerce-website-development).",
+        "This /services URL is the national capability write-up: stack, WordPress vs Next.js, published plans (₹15,000 / ₹35,000 / ₹75,000) and FAQs for buyers across India. The studio is in Jaipur, Rajasthan; we deliver by video and WhatsApp and do not invent branch offices. Local industry flavour for the Patrakar Colony studio sits on [website development company in Jaipur](/solutions/website-development-company-jaipur). Stores belong on [ecommerce website development](/solutions/ecommerce-website-development).",
       ],
       CITY_LINKS_WEBSITE
     ),
@@ -52,9 +53,9 @@ export const serviceIndiaOnpage = {
     bannerTitle:
       "Custom Software Development Company in India — Jaipur Studio",
     ...citySection(
-      "Custom software from Jaipur",
+      "India delivery from a Jaipur, Rajasthan studio",
       [
-        "India-wide process, Tally, NDA and ownership live here. Local industry copy: [custom software in Jaipur](/solutions/custom-software-development-jaipur). Published MVPs from ₹1,00,000. The old slug software-development-company-jaipur still 308s here so we do not split that query.",
+        "India-wide process, Tally, NDA and ownership live on this national /services URL. HQ is Jaipur, Rajasthan — not a claim of offices in every city. Local industry copy: [custom software in Jaipur](/solutions/custom-software-development-jaipur). Published MVPs from ₹1,00,000. The old slug software-development-company-jaipur still 308s here so we do not split that query.",
       ],
       [
         {
@@ -67,12 +68,12 @@ export const serviceIndiaOnpage = {
   },
   "mobile-app-development": {
     metaTitle:
-      "Mobile App Development Company in Jaipur, India | From ₹50,000",
-    bannerTitle: "Mobile App Development Company in Jaipur, India",
+      "Mobile App Development Company in India | Jaipur, from ₹50,000",
+    bannerTitle: "Mobile App Development Company in India — Jaipur Studio",
     ...citySection(
-      "iOS and Android apps from Jaipur",
+      "Cross-platform apps for India, built in Jaipur",
       [
-        "Cross-platform process and store FAQs live here. City copy: [Jaipur](/solutions/mobile-app-development-company-jaipur). From ₹50,000. Native store MVPs from ₹2,50,000 each on [iOS](/services/ios-app-development) and [Android](/services/android-app-development).",
+        "Cross-platform process and store FAQs live on this national URL. Studio: Jaipur, Rajasthan; remote delivery across India. City flavour: [Jaipur](/solutions/mobile-app-development-company-jaipur). From ₹50,000. Native store MVPs from ₹2,50,000 each on [iOS](/services/ios-app-development) and [Android](/services/android-app-development).",
       ],
       [
         {
@@ -238,21 +239,30 @@ export const serviceIndiaOnpage = {
     schemaAreaServed: INDIA_AREA_SERVED,
   },
   "crm-erp-development": {
-    metaTitle:
-      "Custom CRM Development Company in Jaipur, India",
-    bannerTitle: "Custom CRM Software Development in Jaipur, India",
+    metaTitle: "Custom CRM Development Company in India | Jaipur Studio",
+    bannerTitle: "Custom CRM Software Development in India — Jaipur Studio",
     extraSections: [
       {
         id: "india-city-pages",
-        heading: "CRM for Indian SMEs",
+        heading: "CRM for Indian SMEs (studio in Jaipur, Rajasthan)",
         paragraphs: [
-          "Pipelines, quotations, WhatsApp notes and website lead capture from Jaipur. A CRM module MVP starts from ₹3,00,000. Full warehouse and GST ERP modules are on [ERP software development](/services/erp-software-development). See also [custom software](/services/software-development).",
-          "Jaipur exporters and NCR vendors usually need leads from a website form and a WhatsApp note next to the deal — not a 40-module ERP poster on day one. We ship one CRM module first: pipeline, accounts, follow-ups. You own the code after payment. Salesforce stays the right buy when Sales Cloud already fits; we will say so.",
-          "IndiaMART-style lead capture is in scope when you have the mailbox or API. We do not scrape portals. Mobile companions sit on [mobile app development](/services/mobile-app-development). Network-marketing trees belong on [MLM software](/services/mlm-crm-development).",
+          "Pipelines, quotations, WhatsApp notes and website lead capture for Indian SMEs — built from our Jaipur, Rajasthan studio with remote delivery. A CRM module MVP starts from ₹3,00,000. Full warehouse and GST ERP modules are on [ERP software development](/services/erp-software-development). See also [custom software](/services/software-development).",
+          "Exporters and vendors across India usually need leads from a website form and a WhatsApp note next to the deal — not a 40-module ERP poster on day one. We ship one CRM module first: pipeline, accounts, follow-ups. You own the code after payment. Salesforce stays the right buy when Sales Cloud already fits; we will say so. We do not claim branch offices outside Jaipur.",
+          "IndiaMART-style lead capture is in scope when you have the mailbox or API. We do not scrape portals. Mobile companions sit on [mobile app development](/services/mobile-app-development). Network-marketing trees belong on [MLM software](/services/mlm-crm-development). Live ops proof: [Connect Dairy](/portfolio/connect-dairy-supply-chain).",
         ],
       },
     ],
     relatedLinks: [
+      {
+        href: "/portfolio/connect-dairy-supply-chain",
+        title: "Connect Dairy case study",
+        text: "Live agri-logistics ops — fleets, roles, P&L.",
+      },
+      {
+        href: "/portfolio/dailyconcepts-ecommerce-pos",
+        title: "DailyConcepts case study",
+        text: "Live storefront plus POS-style admin.",
+      },
       {
         href: "/services/erp-software-development",
         title: "ERP software development",

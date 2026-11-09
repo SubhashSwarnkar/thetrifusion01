@@ -22,9 +22,12 @@ import UIUX1 from "../assets/images/TeamMembers/UIUX1.png";
 
 const liveShot = (id) => `/images/portfolio/${id}.jpg`;
 
+/** Early homepage service cards — priority Jaipur commercial intents first. */
 export const Services = [
+  { title: "Custom Software", slug: "software-development" },
   { title: "Website Development", slug: "website-development" },
   { title: "Mobile App Development", slug: "mobile-app-development" },
+  { title: "CRM Development", slug: "crm-erp-development" },
   { title: "UI/UX Design", slug: "ui-ux-design" },
   { title: "Digital Marketing", slug: "digital-marketing" },
 ];
@@ -100,6 +103,7 @@ export const Portfolios = [
     imageUrl: liveShot("plugone-ev-charging-platform"),
     type: "Mobile Apps",
     featured: true,
+    contentUpdatedAt: "2026-11-09",
     cardDescription:
       "EV charging app — OCPI/OCPP roaming, live charger map, iOS + Android + web",
     relatedServiceSlug: "ev-charging-app-development",
@@ -112,6 +116,17 @@ export const Portfolios = [
       "Maps & Real-time Tracking",
     ],
     credit: "https://plugone.in/",
+    caseStudy: {
+      heading: "Case study: PlugOne EV charging product",
+      problem:
+        "EV drivers need a trustworthy way to find chargers, start a session, and see status without calling a station operator. Operators need a content and session layer that can talk to charging networks using open protocols rather than a one-off vendor lock-in. The brief for PlugOne was a real product surface — not a brochure site — covering mobile clients and a web console that operators can update.",
+      whatWeBuilt:
+        "TheTriFusion built the PlugOne product stack that is live at plugone.in: an interactive charger map, charging-status tracking, session management across networks, and a smart mobility dashboard. Delivery covered iOS and Android mobile clients plus web, with UI/UX for map and session flows, backend integration for live charger data, and OCPI/OCPP-oriented roaming language that matches how public charging networks interconnect. The public site is the product home for that work; store listing download counts are not published in this repo and are not invented here.",
+      deliveryNotes:
+        "Work was led from the Jaipur studio with the same mobile and backend seats that ship other field products. Related capability pages on this site are EV charging app development for CSMS-style briefs, and mobile app development when the buyer needs a cross-platform MVP pattern without the EV protocol layer. We name PlugOne because the live credit URL is public on this portfolio. Outcome metrics (sessions, revenue, rating averages) stay unpublished until the product owner supplies numbers we can verify.",
+      forBuyers:
+        "If you are comparing Jaipur mobile or custom software vendors for a map-plus-session product, PlugOne is evidence that we ship live client software with maps, real-time status, and multi-surface delivery (iOS, Android, web). Ask for a written scope that lists the first-release jobs: map, auth, session start/stop, and the admin fields your operators will edit weekly. Do not expect a fake “#1 EV app” claim on this page — the case study only restates what the live product and this repo already show.",
+    },
   },
   {
     id: "connect-dairy-supply-chain",
@@ -119,6 +134,7 @@ export const Portfolios = [
     imageUrl: liveShot("connect-dairy-supply-chain"),
     type: "Mobile Apps",
     featured: true,
+    contentUpdatedAt: "2026-11-09",
     cardDescription:
       "Agri logistics web & mobile — milk/feed fleets, live tracking, role dashboards",
     relatedServiceSlug: "crm-erp-development",
@@ -131,6 +147,17 @@ export const Portfolios = [
       "Supply Chain Integration",
     ],
     credit: "https://www.connectdairy.in/",
+    caseStudy: {
+      heading: "Case study: Connect Dairy operations platform",
+      problem:
+        "Dairy and cattle-feed logistics teams juggle milk trucks, feed trucks, role-based approvals, and P&L variance across the day. Spreadsheets and chat threads break when fleets move and managers need one console. Connect Dairy needed a live operations product — web plus mobile — that treats fleet, roles, and variance as first-class workflows rather than afterthought reports.",
+      whatWeBuilt:
+        "TheTriFusion delivered the Connect Dairy platform live at connectdairy.in: milk-truck management, feed-truck distribution, feed business workflows, live fleet tracking, role-based dashboards, and P&L variance analytics. Delivery included web and mobile surfaces, UI/UX for dense ops screens, dashboard and analytics views for managers, and supply-chain style integration points the operations team runs daily. The product is agri-logistics software, not a marketing microsite.",
+      deliveryNotes:
+        "This is the named live reference for custom CRM / ops software on /services/crm-erp-development and for broader custom software on /services/software-development. Full warehouse, GST ledger, and manufacturing ERP depth is documented separately on /services/erp-software-development so buyers do not confuse a sales or fleet CRM with a multi-branch ERP programme. Quantitative before/after metrics are not stored in this repository and are not fabricated for SEO. Screenshots beyond the portfolio card need client permission before we publish them.",
+      forBuyers:
+        "Jaipur and Rajasthan operators evaluating a custom CRM or ops build can open connectdairy.in, then ask us for a scoped module MVP (published CRM plans start from ₹3,00,000 on pricing). Bring your roles, the one report managers check every morning, and whether field staff need a phone companion. We will say when a boxed SaaS CRM is enough — Connect Dairy exists because the workflow did not fit a generic seat product without weekly fighting. Office visits are optional; day-to-day delivery runs on video, WhatsApp, and shared boards from Patrakar Colony, Jaipur, with the same in-house engineering seats listed on the team page.",
+    },
   },
   {
     id: "atharv-narayan-dairy-logistics-website",
@@ -138,6 +165,7 @@ export const Portfolios = [
     imageUrl: liveShot("atharv-narayan-dairy-logistics-website"),
     type: "Website",
     featured: true,
+    contentUpdatedAt: "2026-11-09",
     tags: [
       "dairy logistics",
       "milk transportation",
@@ -162,12 +190,25 @@ export const Portfolios = [
       "Lead, enquiry & WhatsApp flows",
     ],
     credit: "https://www.atharvnarayan.in/",
+    caseStudy: {
+      heading: "Case study: Atharv Narayan dairy logistics website",
+      problem:
+        "A Rajasthan dairy logistics and manpower partner needed a public site that works in English and Hindi, explains milk transport, manpower, cattle feed, and tender support, and routes enquiries without forcing every visitor through a single generic contact form. The service area includes Bhilwara and Jaipur; TheTriFusion’s office remains Jaipur — Bhilwara is a service geography on the client site, not a claim that TheTriFusion’s HQ is in Bhilwara.",
+      whatWeBuilt:
+        "We shipped the bilingual marketing site live at atharvnarayan.in: service pages for temperature-controlled milk transportation, trained dairy manpower, cattle-feed supply, and tender documentation support; enquiry forms; and WhatsApp-ready contact. Group verticals visible on the live site include Manvender Singh Enterprises, Atharv Narayan Cattle Feed, and Atharv Narayan Tenders. Delivery covered web development, UI/UX, English/Hindi presentation, and lead capture flows a local operations buyer can use from a phone.",
+      deliveryNotes:
+        "This is the named live website reference on /services/website-development. It is distinct from Connect Dairy (connectdairy.in), which is the operations platform for fleet and P&L workflows. Buyers who need a company site should start on website development; buyers who need roles, fleets, and dashboards should open CRM development or custom software. Titles, sitemap, and Search Console setup at launch follow the published website process on this site.",
+      forBuyers:
+        "If you want a Jaipur website development partner for a bilingual Rajasthan service business, Atharv Narayan is evidence we can ship Hindi/English service pages with enquiry and WhatsApp paths. Published website plans start from ₹15,000 on pricing. Bring your service list, the languages you must support, and whether old URLs must redirect. We will not invent traffic or lead-volume claims for this case study. When the marketing site later needs logins, roles, or fleet tools, the same studio can continue into custom software or CRM without forcing a second agency handoff.",
+    },
   },
   {
     id: "dailyconcepts-ecommerce-pos",
     title: "DailyConcepts",
     imageUrl: Recruiting,
     type: "Mobile Apps",
+    featured: true,
+    contentUpdatedAt: "2026-11-09",
     cardDescription:
       "Ecommerce + POS admin — checkout, inventory, online and offline Indian retail",
     relatedServiceSlug: "website-development",
@@ -180,6 +221,17 @@ export const Portfolios = [
       "Point of Sales App ",
     ],
     credit: "https://dailyconceptsindia.com",
+    caseStudy: {
+      heading: "Case study: DailyConcepts ecommerce and POS admin",
+      problem:
+        "Indian retail teams often need one stack for online catalogue sales and an admin that can behave like a point-of-sale counter — inventory, orders, and checkout — instead of bolting a separate till tool onto a brochure site. DailyConcepts required an ecommerce experience plus a POS-style admin panel so online and offline sales share the same operational backbone.",
+      whatWeBuilt:
+        "TheTriFusion built Daily Concepts India, live at dailyconceptsindia.com: a storefront shopping experience with order management and checkout, plus an integrated POS-style system in the admin panel for inventory-minded retail workflows. Delivery included development and UI/UX focused on usable admin screens, not only the public catalogue. The live credit URL is the evidence; GMV, order counts, and conversion rates are not in this repository and are not stated as marketing numbers.",
+      deliveryNotes:
+        "On this site, DailyConcepts supports two buyer paths without cannibalizing URLs: website / ecommerce-minded briefs on /services/website-development and /solutions/ecommerce-website-development, and admin-workflow briefs alongside Connect Dairy on /services/crm-erp-development. The portfolio card stays related to website development because the public storefront is the primary artifact; CRM and software pages may still cite the admin lesson in copy.",
+      forBuyers:
+        "Jaipur buyers comparing website or light ops vendors should treat DailyConcepts as proof we can ship catalogue + admin together. If you only need a five-page company site, start with the Basic website plan from ₹15,000. If the admin is the product, bring your SKU rules, tax invoices, and whether staff will work primarily in a browser or on a phone — we will scope ecommerce versus custom CRM honestly after discovery. Hosting and domain accounts should stay in your company’s name; we can configure them or work with accounts you already own, then hand over the repo and admin access after completion and payment. For a pure catalogue without custom POS logic, the ecommerce website development solutions page may be the cleaner brief.",
+    },
   },
   {
     id: "meditative-yoga-platform",

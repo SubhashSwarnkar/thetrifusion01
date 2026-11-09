@@ -237,9 +237,37 @@ export default function ServicesPage() {
               </h1>
               <div className="mb-6 h-1.5 w-20 rounded-full bg-gradient-to-r from-theme-purple via-theme-cyan to-theme-pink" />
               <p className="font-light text-lg text-gray-500 leading-relaxed max-w-2xl">
-                Software, websites, mobile apps, UI/UX, and digital marketing —
-                grouped so you can pick a page, see the published starting
-                price, and open a related service.
+                Pick the page that matches the job:{" "}
+                <a
+                  href={absoluteSiteUrl("/services/software-development")}
+                  className="font-semibold text-theme-purple hover:underline"
+                >
+                  custom software
+                </a>
+                ,{" "}
+                <a
+                  href={absoluteSiteUrl("/services/website-development")}
+                  className="font-semibold text-theme-purple hover:underline"
+                >
+                  websites
+                </a>
+                ,{" "}
+                <a
+                  href={absoluteSiteUrl("/services/mobile-app-development")}
+                  className="font-semibold text-theme-purple hover:underline"
+                >
+                  mobile apps
+                </a>
+                , or{" "}
+                <a
+                  href={absoluteSiteUrl("/services/crm-erp-development")}
+                  className="font-semibold text-theme-purple hover:underline"
+                >
+                  CRM
+                </a>
+                — then see the published starting price and related services.
+                Full ERP, store-only iOS/Android, and ecommerce stores have
+                their own URLs so intents do not compete.
               </p>
             </div>
             <nav aria-label="Service groups" className="flex flex-wrap gap-2">

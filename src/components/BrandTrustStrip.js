@@ -3,6 +3,10 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
+/**
+ * Live client marks only. Demo / pages.dev / vercel.app concept sites stay on
+ * /portfolio as noindex concepts — they must not appear as “Our clients”.
+ */
 const clients = [
   {
     name: "Shanav Technologies",
@@ -39,60 +43,6 @@ const clients = [
     href: "https://dailyconceptsindia.com/",
     logo: "/client-logos/dailyconcepts.jpg",
     subtitle: "ECOMMERCE & POS",
-  },
-  {
-    name: "Meditative",
-    href: "https://yoga-80f.pages.dev/",
-    logo: "/client-logos/meditative.jpg",
-    subtitle: "YOGA & WELLNESS",
-  },
-  {
-    name: "Pet Sitting",
-    href: "https://petcare-c3n.pages.dev/services",
-    logo: "/client-logos/pet-sitting.jpg",
-    subtitle: "PET CARE SERVICES",
-  },
-  {
-    name: "Podcast",
-    href: "https://podcast-ctw.pages.dev/",
-    logo: "/client-logos/podcast.jpg",
-    subtitle: "STORIES & EPISODES",
-  },
-  {
-    name: "Resto",
-    href: "https://resto-4tn.pages.dev/",
-    logo: "/client-logos/resto.jpg",
-    subtitle: "FOOD & HOSPITALITY",
-  },
-  {
-    name: "Alime",
-    href: "https://alimephotographer.pages.dev/",
-    logo: "/client-logos/alime.jpg",
-    subtitle: "CREATIVE PHOTOGRAPHY",
-  },
-  {
-    name: "AppLab",
-    href: "https://app-lab.pages.dev/",
-    logo: "/client-logos/applab.jpg",
-    subtitle: "MOBILE PRODUCT",
-  },
-  {
-    name: "Dentista",
-    href: "https://dentista-dental-clinic.vercel.app/",
-    logo: "/client-logos/dentista.jpg",
-    subtitle: "DENTAL CARE",
-  },
-  {
-    name: "Travelix",
-    href: "https://travelix-neon.vercel.app/",
-    logo: "/client-logos/travelix.jpg",
-    subtitle: "TRAVEL & EXPERIENCES",
-  },
-  {
-    name: "DentaCare",
-    href: "https://dente-ua67.vercel.app/",
-    logo: "/client-logos/dentacare.jpg",
-    subtitle: "MODERN DENTISTRY",
   },
 ];
 
@@ -166,12 +116,12 @@ export default function BrandTrustStrip() {
           id="brand-trust-heading"
           className="mx-auto mb-4 max-w-4xl text-3xl font-black tracking-tight text-theme-blue sm:text-4xl lg:text-5xl"
         >
-          Trusted by clients across industries
+          Live products from the Jaipur studio
         </h2>
         <p className="mx-auto max-w-3xl text-sm font-light leading-relaxed text-gray-600 sm:text-base lg:text-lg">
-          Businesses trust TheTriFusion to streamline operations, improve
-          productivity, and launch dependable digital products. We build every
-          solution around our clients&apos; real workflows, goals, and growth.
+          Named live sites and products we can show publicly — open any mark to
+          verify the URL. Concept demos stay on the portfolio page and are not
+          listed here as clients.
         </p>
       </div>
 
