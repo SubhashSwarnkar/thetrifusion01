@@ -30,13 +30,14 @@ export const rootMetadata = {
   twitter: home.twitter,
   robots: home.robots,
   icons: {
-    // Inline mark so the tab icon is not a render-competing request for the 17KB logo.
+    // Crawlable apex paths (Google ignores data: URI icons). Prefer public/
+    // URLs over app/icon.png file conventions so links stay stable (/icon.png).
     icon: [
-      {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236610f2'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='18' font-family='Arial' fill='white'%3ET%3C/text%3E%3C/svg%3E",
-        type: "image/svg+xml",
-      },
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
     ],
+    apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
   },
   manifest: "/manifest.json",
   ...(googleVerification

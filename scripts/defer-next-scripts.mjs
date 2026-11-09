@@ -48,7 +48,6 @@ for (const file of files) {
     if (!srcs.includes(src)) srcs.push(src);
     return "";
   });
-  html = html.replace(/<link rel="icon" href="\/favicon.ico"[^>]*>/g, "");
   const existing = html.match(/<script id="tf-boot">\(function\(\)\{var srcs=(\[[^\]]*\]);/);
   if (!srcs.length && existing) {
     srcs.push(...JSON.parse(existing[1]));

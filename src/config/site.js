@@ -91,7 +91,8 @@ export const siteConfig = {
     )}`;
   },
   defaultOgImagePath: "/images/Web.png",
-  logoPath: "/logo.svg",
+  // Square PNG >=112x112 for Organization JSON-LD (Google requires raster).
+  logoPath: "/logo.png",
   get defaultOgImage() {
     return `${this.url}${this.defaultOgImagePath}`;
   },
