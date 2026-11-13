@@ -22,10 +22,10 @@ function getContextualChips(pathname) {
     }
     if (slug === "ev-charging-app-development") {
       return [
-        { label: "⚡ EV Charging App", text: "Hi TriFusion, I need an EV charging app with OCPI roaming & OCPP charger control." },
-        { label: "🔌 eMSP & CPO System", text: "Hi TriFusion, we need a driver mobile app (iOS/Android) plus an operator web console." },
-        { label: "🔋 PlugOne Demo", text: "Hi TriFusion, can you share live capabilities based on your PlugOne EV platform?" },
-        { label: "📅 Book Discovery Call", text: "Hi TriFusion, I want to book a technical consultation for EV charging software." },
+        { label: "⚡ EV Charging Software", text: "Hi TriFusion, I need EV charging management software / a white-label charging app (OCPP, OCPI, UPI). Please share a scoped estimate." },
+        { label: "🔌 CMS & Driver App", text: "Hi TriFusion, we need a white-label CMS plus driver app (iOS/Android) and operator console." },
+        { label: "🔋 PlugOne Demo", text: "Hi TriFusion, can you share live capabilities based on your PlugOne EV client product?" },
+        { label: "📅 Book Discovery Call", text: "Hi TriFusion, I want to book a technical consultation for EV charging management software." },
       ];
     }
     if (slug === "fintech-app-development") {

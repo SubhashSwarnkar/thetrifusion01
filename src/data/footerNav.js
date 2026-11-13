@@ -78,7 +78,7 @@ export const featuredSolutionNav = [
   {
     slug: "ev-charging-app-development",
     href: "/services/ev-charging-app-development",
-    navLabel: "EV charging app development",
+    navLabel: "EV Charging Software (CMS & App)",
   },
   {
     slug: "crm-erp-development",

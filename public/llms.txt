@@ -215,14 +215,15 @@ Sources: NPCI https://www.npci.org.in/ · RBI https://www.rbi.org.in/
 - DMT software: https://thetrifusion.in/services/fintech-app-development/dmt-software
 - Recharge software: https://thetrifusion.in/services/fintech-app-development/recharge-software
 
-### EV charging app development
+### EV Charging Management Software (CMS & App)
 URL: https://thetrifusion.in/services/ev-charging-app-development
-Best for: white-label EV charging CMS for Indian CPOs and eMSPs (OCPP 1.6J/2.0.1, OCPI 2.2.1, UPI, GST invoices).
-Not for: charger hardware manufacturing.
-What: One charging management system for a CPO, an eMSP, or both: OCPP 1.6J/2.0.1, OCPI 2.2.1 roaming, driver app, operator dashboard, and GST invoice fields.
+Best for: white-label EV charging management software for Indian CPOs, fleets and charger owners (OCPP 1.6J/2.0.1, OCPI 2.2.1, UPI, GST invoices).
+Not for: charger hardware manufacturing or operating a public CPO network.
+What: White-label CMS/CSMS, driver app, billing & settlement, OCPI roaming, load management, O&M, fleet/depot, and APIs. Client owns the code.
 Platforms: iOS, Android, web admin. Charger connectivity is part of this engagement.
-Who: Charge point operators and e-mobility service providers.
+Who: CPOs & startups, franchise/DOCO owners, fleets, OEMs, real estate/RWAs/hospitality; DISCOMs/PSUs can be scoped.
 Price from: ₹4,50,000 ex-GST after discovery, as a starting range on the page, not a fixed package.
+Live client: PlugOne (plugone.in) — OCPP + OCPI; Ecoplug, Sonic, ChargeMOD, ChargeIndia OCPI hub.
 Protocol: Open Charge Alliance OCPP — https://openchargealliance.org/protocols/ocpp/
 
 ### CRM development
@@ -276,37 +277,26 @@ Jaipur-based delivery for India and worldwide. The initial infrastructure audit 
 - DevOps Starter Pack for startups: https://thetrifusion.in/services/devops#devops-starter-pack
 - Guide: CI/CD checklist for SME SaaS teams: https://thetrifusion.in/blog/devops-ci-cd-checklist-sme-saas-2026
 
-## EV charging CMS for CPOs and eMSPs
+## EV Charging Management Software (CMS & App)
 
 Page: https://thetrifusion.in/services/ev-charging-app-development
-EV charging CMS for CPOs and eMSPs, built in Jaipur for India and worldwide. One charging management system can run CPO software (OCPP 1.6J and 2.0.1), an eMSP platform (OCPI 2.2.1 roaming, driver tokens, CDRs), or both. Also covers driver apps, the operator dashboard, billing with GST invoice fields, fleet charging, and a white-label EV CMS. The pricing page lists a starting range; this page does not sell a fixed package. No separate IoT service page — charger connectivity is part of this engagement.
+White-label EV charging management software for CPOs, fleets and charger owners, built in Jaipur for India and worldwide. Modules: CMS/CSMS, driver app, billing & settlement, OCPI roaming (UEI can be scoped), load management, O&M & complaints, fleet & depot, APIs. The pricing page lists a starting range; this page does not sell a fixed package. Live client: PlugOne (OCPP + OCPI; Ecoplug, Sonic, ChargeMOD, ChargeIndia). No separate IoT service page — charger connectivity is part of this engagement.
 
-- CMS for CPO and eMSP: https://thetrifusion.in/services/ev-charging-app-development#cms-for-cpo-emsp
-- CPO CMS: https://thetrifusion.in/services/ev-charging-app-development#cpo-cms
-- eMSP platform: https://thetrifusion.in/services/ev-charging-app-development#emsp-cms
-- CPMS / charging management system: https://thetrifusion.in/services/ev-charging-app-development#cpms
-- OCPP 1.6J and 2.0.1 backend: https://thetrifusion.in/services/ev-charging-app-development#ocpp-backend
-- OCPI 2.2.1 roaming: https://thetrifusion.in/services/ev-charging-app-development#ocpi-roaming
+- Platform modules: https://thetrifusion.in/services/ev-charging-app-development#modules
+- CMS / CSMS: https://thetrifusion.in/services/ev-charging-app-development#cms-csms
+- Driver app: https://thetrifusion.in/services/ev-charging-app-development#driver-app
+- Billing & settlement: https://thetrifusion.in/services/ev-charging-app-development#billing-settlement
+- Roaming (OCPI): https://thetrifusion.in/services/ev-charging-app-development#roaming
+- Load management: https://thetrifusion.in/services/ev-charging-app-development#load-management
+- O&M & complaints: https://thetrifusion.in/services/ev-charging-app-development#om-complaints
+- Fleet & depot: https://thetrifusion.in/services/ev-charging-app-development#fleet-depot
+- APIs & integrations: https://thetrifusion.in/services/ev-charging-app-development#apis-integrations
+- Who it's for: https://thetrifusion.in/services/ev-charging-app-development#who-its-for
 - OCPP vs OCPI: https://thetrifusion.in/services/ev-charging-app-development#ocpp-vs-ocpi
-- eMSP and CPO platforms: https://thetrifusion.in/services/ev-charging-app-development#emsp-cpo
-- Driver mobile app: https://thetrifusion.in/services/ev-charging-app-development#driver-app
-- Operator dashboard: https://thetrifusion.in/services/ev-charging-app-development#operator-dashboard
-- Load management and smart charging: https://thetrifusion.in/services/ev-charging-app-development#smart-charging
-- OCPP hardware integration: https://thetrifusion.in/services/ev-charging-app-development#hardware-integration
-- Billing, tariffs, GST invoices: https://thetrifusion.in/services/ev-charging-app-development#billing-tariffs
-- Fleet charging: https://thetrifusion.in/services/ev-charging-app-development#fleet-charging
-- White-label EV CMS: https://thetrifusion.in/services/ev-charging-app-development#white-label
-- ISO 15118 / Plug & Charge readiness: https://thetrifusion.in/services/ev-charging-app-development#plug-and-charge
-- Analytics: https://thetrifusion.in/services/ev-charging-app-development#analytics
-- India context (Bharat, UPI, GST): https://thetrifusion.in/services/ev-charging-app-development#india-context
-- Guide: https://thetrifusion.in/blog/ev-charging-app-ocpi-ocpp-guide
-- Guide: OCPP 1.6 vs 2.0.1 vs 2.1: https://thetrifusion.in/blog/ocpp-1-6-vs-2-0-1-vs-2-1-comparison
-- Guide: OCPI roaming for CPO and eMSP: https://thetrifusion.in/blog/ocpi-roaming-explained-cpo-emsp
-- Guide: EV charging CMS cost: https://thetrifusion.in/blog/ev-charging-cms-software-cost-guide
-- Guide: Build vs buy a CSMS: https://thetrifusion.in/blog/build-vs-buy-ev-charging-csms
-- Guide: EV charging software glossary: https://thetrifusion.in/blog/ev-charging-software-glossary
-- Guide: CSMS for India CPOs: https://thetrifusion.in/blog/ev-charging-csms-india-cpo-guide
-- Guide: CSMS RFP checklist for an OCPP platform: https://thetrifusion.in/blog/csms-rfp-checklist-ocpp-platform-evaluation
+- Protocols: https://thetrifusion.in/services/ev-charging-app-development#protocols
+- White-label vs SaaS vs custom: https://thetrifusion.in/services/ev-charging-app-development#white-label
+- PlugOne proof: https://thetrifusion.in/services/ev-charging-app-development#plugone-proof
+- India delivery: https://thetrifusion.in/services/ev-charging-app-development#india-context
 - Guide: EV depot smart charging and load management: https://thetrifusion.in/blog/ev-depot-smart-charging-load-management-guide
 - Guide: ISO 15118 Plug and Charge for CPO software: https://thetrifusion.in/blog/iso-15118-plug-and-charge-cpo-software-guide
 - Guide: eMSP vs CPO software, what buyers need: https://thetrifusion.in/blog/emsp-vs-cpo-software-stack-buyer-guide

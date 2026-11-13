@@ -368,7 +368,7 @@ export const devopsPageContent = {
 
     {
       href: "/services/ev-charging-app-development",
-      title: "EV charging app development",
+      title: "EV charging management software (CMS & app)",
       text: "When the product is a charger network, the app and OCPP backend come before the pipeline.",
     },
   ],

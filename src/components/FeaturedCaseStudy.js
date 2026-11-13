@@ -71,7 +71,7 @@ export default function FeaturedCaseStudy() {
                 prefetch={false}
                 className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-theme-purple text-white font-bold hover:bg-dark-theme-purple transition-colors"
               >
-                EV charging service page
+                EV charging management software
               </Link>
               <Link
                 href="/contact"

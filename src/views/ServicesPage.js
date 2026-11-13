@@ -101,7 +101,7 @@ const SERVICE_CHOOSER = [
   },
   {
     href: absoluteSiteUrl("/services/ev-charging-app-development"),
-    label: "EV charging app development in India",
+    label: "EV charging management software (CMS & app) in India",
     text: "for OCPP/OCPI CSMS from Jaipur, from ₹4,50,000.",
   },
   {

@@ -312,7 +312,7 @@ export const nicheServices = [
   },
   {
     id: "ev-charging-app-development",
-    title: "EV Charging App Development",
+    title: "EV Charging Management Software (CMS & App)",
     slug: "ev-charging-app-development",
     description:
       "TheTriFusion is a premier EV charging app development company in Jaipur & India. We build complete eMSP (e-Mobility Service Provider) driver apps, CPO (Charge Point Operator) station management software, OCPP 1.6J/2.0.1 charger connectivity, and OCPI 2.2.1 roaming networks. We engineered PlugOne (live at plugone.in) — India's unified EV charging platform.",
@@ -322,11 +322,11 @@ export const nicheServices = [
     featuresImage: SoftwareFeatures,
     icon: "⚡",
     bannerTitle:
-      "EV Charging App Development Company in Jaipur India | OCPI, OCPP & eMSP Software",
+      "EV Charging Management Software & White-Label Charging App for CPOs in India",
     bannerDescription:
       "OCPI 2.2.1 for seamless network roaming, OCPP 1.6J/2.0.1 for live charger telemetry, interactive map routing, and turnkey eMSP / CPO mobile and web applications — backed by real live proof on PlugOne.",
     imageAlt:
-      "EV charging app development company in Jaipur India — PlugOne live map, OCPP station management, and mobile app by TheTriFusion",
+      "EV charging management software CMS and white-label charging app by TheTriFusion in Jaipur — PlugOne live proof",
     platforms,
     relatedBlogSlug: "jiobp-kia-roaming-csms-india-2026",
     startingFrom: 450000,

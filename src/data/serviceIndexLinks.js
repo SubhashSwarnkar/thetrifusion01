@@ -13,7 +13,7 @@ export const SERVICE_KEYWORD_BY_SLUG = {
   "ai-development": "AI development company in India",
   "on-demand": "hire dedicated developers in India",
   "mlm-crm-development": "MLM software development company in India",
-  "ev-charging-app-development": "EV charging app development in India",
+  "ev-charging-app-development": "EV charging management software (CMS & app) in India",
   "ios-app-development": "iOS app development company in India",
   "android-app-development": "Android app development company in Jaipur",
   "ui-ux-design": "UI/UX design company in Jaipur",
@@ -58,7 +58,7 @@ export const UNINDEXED_SERVICE_LINKS = [
   },
   {
     href: "/services/ev-charging-app-development",
-    anchor: "EV charging app development in India",
+    anchor: "EV charging management software (CMS & app) in India",
   },
   {
     href: "/services/ios-app-development",
@@ -346,8 +346,8 @@ export const INDEXED_HUB_REFERRING_LINKS = {
     },
     {
       href: "/services/ev-charging-app-development",
-      title: "EV charging app development",
-      text: "OCPP/OCPI CSMS when the product is charging.",
+      title: "EV charging management software (CMS & app)",
+      text: "OCPP/OCPI CMS when the product is charging.",
     },
   ],
   "website-development": [
@@ -497,7 +497,7 @@ export const INDEXED_HUB_REFERRING_LINKS = {
     },
     {
       href: "/services/ev-charging-app-development",
-      title: "EV charging app development",
+      title: "EV charging management software (CMS & app)",
       text: "Driver apps on OCPP/OCPI stacks.",
     },
     {

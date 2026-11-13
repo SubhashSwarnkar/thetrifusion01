@@ -145,7 +145,7 @@ const GROUPS = [
       {
         href: absoluteSiteUrl("/services/ev-charging-app-development"),
         slug: "ev-charging-app-development",
-        title: "EV charging apps",
+        title: "EV charging software (CMS & app)",
         benefit: "OCPP/OCPI charging CMS",
         price: "From ₹4,50,000",
       },

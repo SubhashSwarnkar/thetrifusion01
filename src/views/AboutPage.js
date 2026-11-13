@@ -78,7 +78,7 @@ export default function AboutPage() {
                   href="/services/ev-charging-app-development"
                   className={linkClass}
                 >
-                  EV charging app development
+                  EV charging management software (CMS & app)
                 </Link>{" "}
                 page.
               </p>

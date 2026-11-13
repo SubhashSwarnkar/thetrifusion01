@@ -83,7 +83,7 @@ export const servicePageSeo = {
     relatedLinks: [
       {
         href: "/services/ev-charging-app-development",
-        title: "EV charging app development",
+        title: "EV charging management software (CMS & app)",
         text: "Driver apps, OCPP backends, and OCPI roaming when the product is charging software.",
       },
     ],
@@ -242,8 +242,8 @@ export const servicePageSeo = {
     relatedLinks: [
       {
         href: "/services/ev-charging-app-development",
-        title: "EV charging app development",
-        text: "The driver app for finding a charger, starting a session, and paying, with the OCPP backend behind it.",
+        title: "EV charging management software (CMS & app)",
+        text: "White-label CMS and driver app for finding a charger, starting a session, and paying, with the OCPP backend behind it.",
       },
     ],
   },
@@ -315,7 +315,7 @@ export const servicePageSeo = {
     relatedLinks: [
       {
         href: "/services/ev-charging-app-development",
-        title: "EV charging app development",
+        title: "EV charging management software (CMS & app)",
         text: "Driver map, session, and operator dashboard flows for charging products.",
       },
     ],

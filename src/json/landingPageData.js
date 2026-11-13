@@ -105,7 +105,7 @@ export const Portfolios = [
     featured: true,
     contentUpdatedAt: "2026-11-09",
     cardDescription:
-      "EV charging app — OCPI/OCPP roaming, live charger map, iOS + Android + web",
+      "EV charging management software — OCPP + OCPI, live charger map, iOS + Android + web",
     relatedServiceSlug: "ev-charging-app-development",
     description:
       "PlugOne is India's unified EV charging platform. It connects EV owners to nearby charging stations in real time, with an interactive map, charging-status tracking, a smart mobility dashboard, and session management across charging networks.",
@@ -121,9 +121,9 @@ export const Portfolios = [
       problem:
         "EV drivers need a trustworthy way to find chargers, start a session, and see status without calling a station operator. Operators need a content and session layer that can talk to charging networks using open protocols rather than a one-off vendor lock-in. The brief for PlugOne was a real product surface — not a brochure site — covering mobile clients and a web console that operators can update.",
       whatWeBuilt:
-        "TheTriFusion built the PlugOne product stack that is live at plugone.in: an interactive charger map, charging-status tracking, session management across networks, and a smart mobility dashboard. Delivery covered iOS and Android mobile clients plus web, with UI/UX for map and session flows, backend integration for live charger data, and OCPI/OCPP-oriented roaming language that matches how public charging networks interconnect. The public site is the product home for that work; store listing download counts are not published in this repo and are not invented here.",
+        "TheTriFusion built the PlugOne client product stack that is live at plugone.in: an interactive charger map, charging-status tracking, session management across networks, and a smart mobility dashboard. Delivery covered iOS and Android mobile clients plus web, with UI/UX for map and session flows, backend integration for live charger data, and both OCPP (direct charger connection) and OCPI (roaming and aggregation). Tested / integrated with Ecoplug, Sonic, ChargeMOD, and ChargeIndia (OCPI hub). The public site is the product home for that work; store listing download counts are not published and are not invented here.",
       deliveryNotes:
-        "Work was led from the Jaipur studio with the same mobile and backend seats that ship other field products. Related capability pages on this site are EV charging app development for CSMS-style briefs, and mobile app development when the buyer needs a cross-platform MVP pattern without the EV protocol layer. We name PlugOne because the live credit URL is public on this portfolio. Outcome metrics (sessions, revenue, rating averages) stay unpublished until the product owner supplies numbers we can verify.",
+        "Work was led from the Jaipur studio with the same mobile and backend seats that ship other field products. Related capability pages on this site are EV charging management software (CMS & app) for CSMS-style briefs, and mobile app development when the buyer needs a cross-platform MVP pattern without the EV protocol layer. We name PlugOne as a client case study because the live credit URL is public on this portfolio. Outcome metrics (sessions, revenue, rating averages) stay unpublished until the product owner supplies numbers we can verify.",
       forBuyers:
         "If you are comparing Jaipur mobile or custom software vendors for a map-plus-session product, PlugOne is evidence that we ship live client software with maps, real-time status, and multi-surface delivery (iOS, Android, web). Ask for a written scope that lists the first-release jobs: map, auth, session start/stop, and the admin fields your operators will edit weekly. Do not expect a fake “#1 EV app” claim on this page — the case study only restates what the live product and this repo already show.",
     },

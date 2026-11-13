@@ -62,7 +62,7 @@ const BLOCKS = {
 `,
   "ocpi-roaming-explained-cpo-emsp": `
 <h2>Built by TheTriFusion</h2>
-<p>OCPI is how a CPO and an eMSP exchange locations, tokens and CDRs. TheTriFusion builds that software as <a href="/services/ev-charging-app-development">EV charging app development in India</a> from Jaipur (OCPP 1.6J/2.0.1, OCPI 2.2.1, published CMS from ₹4,50,000). Related: <a href="/services/software-development">custom software development company in India</a> and <a href="/services/mobile-app-development">mobile app development company in India</a> for the driver app. We do not operate a public roaming hub.</p>
+<p>OCPI is how a CPO and an eMSP exchange locations, tokens and CDRs. TheTriFusion builds that software as <a href="/services/ev-charging-app-development">EV charging management software (CMS &amp; app) in India</a> from Jaipur (OCPP 1.6J/2.0.1, OCPI 2.2.1, published CMS from ₹4,50,000). Related: <a href="/services/software-development">custom software development company in India</a> and <a href="/services/mobile-app-development">mobile app development company in India</a> for the driver app. We do not operate a public roaming hub.</p>
 `,
   "google-ai-overviews-indian-business-websites-2026": `
 <h2>Built by TheTriFusion</h2>
@@ -93,7 +93,7 @@ const BLOCKS = {
 const DEFAULT_BLOCKS = {
   ev: `
 <h2>Built by TheTriFusion</h2>
-<p>Charging software is a product, not a brochure: OCPP, OCPI, tariffs, and a driver app that can start a session. TheTriFusion is an <a href="/services/ev-charging-app-development">EV charging app development company in India</a> in Jaipur (published CMS from ₹4,50,000). Related: <a href="/services/software-development">custom software development company in India</a> and <a href="/services/mobile-app-development">mobile app development company in India</a>. We do not operate a public network.</p>
+<p>Charging software is a product, not a brochure: OCPP, OCPI, tariffs, and a driver app that can start a session. TheTriFusion is an <a href="/services/ev-charging-app-development">EV charging app development company</a> building EV charging management software (CMS &amp; app) in India from Jaipur (published CMS from ₹4,50,000). Related: <a href="/services/software-development">custom software development company in India</a> and <a href="/services/mobile-app-development">mobile app development company in India</a>. We do not operate a public network.</p>
 `,
   fintech: `
 <h2>Built by TheTriFusion</h2>

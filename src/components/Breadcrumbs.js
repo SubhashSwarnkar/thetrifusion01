@@ -40,7 +40,7 @@ export default function Breadcrumbs() {
       "dmt-software": "DMT software",
       "recharge-software": "Recharge software",
       sitemap: "Sitemap",
-      "ev-charging-app-development": "EV Charging CMS",
+      "ev-charging-app-development": "EV Charging Software",
       "crm-erp-development": "CRM Development",
       "erp-software-development": "ERP Software",
       "software-development": "Software Development",

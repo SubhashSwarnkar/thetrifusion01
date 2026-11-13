@@ -178,7 +178,7 @@ export default {
     {
       href: "/portfolio/plugone-ev-charging-platform",
       title: "PlugOne case study",
-      text: "Live EV charging app — map, sessions, both stores + web.",
+      text: "Live client EV charging product — map, sessions, OCPP + OCPI, both stores + web.",
     },
     {
       href: "/portfolio/connect-dairy-supply-chain",

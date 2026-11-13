@@ -105,8 +105,8 @@ export const serviceNav = [
   {
     "id": "ev-charging-app-development",
     "slug": "ev-charging-app-development",
-    "title": "EV Charging App Development",
-    "shortDescription": "EV charging CMS for CPOs and eMSPs in Jaipur: OCPP 1.6J/2.0.1, OCPI 2.2.1 roaming, driver app, billing, and white-label."
+    "title": "EV Charging Software (CMS & App)",
+    "shortDescription": "White-label EV charging management software for Indian CPOs: OCPP CMS, driver app, billing, OCPI roaming."
   },
   {
     "id": "crm-erp-development",

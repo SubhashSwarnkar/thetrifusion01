@@ -357,8 +357,8 @@ export const serviceRankingContent = {
       },
       {
         href: "/services/ev-charging-app-development",
-        title: "EV charging app development",
-        text: "The driver app for finding a charger, starting a session, and paying, with the OCPP backend behind it.",
+        title: "EV charging management software (CMS & app)",
+        text: "White-label CMS and driver app for finding a charger, starting a session, and paying, with the OCPP backend behind it.",
       },
     ],
   },

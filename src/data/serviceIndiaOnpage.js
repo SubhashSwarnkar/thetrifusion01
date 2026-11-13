@@ -371,15 +371,17 @@ export const serviceIndiaOnpage = {
     schemaAreaServed: INDIA_AREA_SERVED,
   },
   "ev-charging-app-development": {
+    contentUpdatedAt: "2026-11-13",
     metaTitle:
-      "EV Charging Management Software (CMS) India | OCPP & OCPI | TheTriFusion",
-    bannerTitle: "EV Charging Management Software in India — Jaipur Studio",
+      "EV Charging Management Software India | OCPP CMS & App | TheTriFusion",
+    bannerTitle:
+      "EV Charging Management Software & White-Label Charging App for CPOs in India",
     extraSections: [
       {
         id: "india-city-pages",
-        heading: "EV charging CMS from Jaipur, India",
+        heading: "EV charging software from Jaipur for operators across India",
         paragraphs: [
-          "OCPP and OCPI software for Indian CPOs and eMSPs, from ₹4,50,000. Live product proof: [PlugOne](/portfolio/plugone-ev-charging-platform). See [custom software](/services/software-development) when the product still needs building around the CSMS; [Android](/services/android-app-development) when drivers need a Play Store client.",
+          "White-label EV charging management software (CMS & app) for Indian CPOs, fleets and charger owners — from ₹4,50,000 ex-GST after discovery. Live client proof: [PlugOne](/portfolio/plugone-ev-charging-platform) (OCPP + OCPI; Ecoplug, Sonic, ChargeMOD, ChargeIndia). See [custom software](/services/software-development) when charging sits inside a larger product; [Android](/services/android-app-development) when drivers need a Play Store client.",
         ],
       },
     ],
@@ -387,17 +389,17 @@ export const serviceIndiaOnpage = {
       {
         href: "/portfolio/plugone-ev-charging-platform",
         title: "PlugOne case study",
-        text: "Live EV charging CSMS with mobile clients.",
+        text: "Live client EV charging product — OCPP + OCPI.",
       },
       {
         href: "/services/software-development",
         title: "Custom software development",
-        text: "When CSMS sits inside a larger product.",
+        text: "When CMS sits inside a larger product.",
       },
       {
         href: "/services/android-app-development",
         title: "Android app development",
-        text: "Play Store driver or operator apps beside the CSMS.",
+        text: "Play Store driver or operator apps beside the CMS.",
       },
     ],
     schemaAreaServed: INDIA_AREA_SERVED,

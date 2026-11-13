@@ -15,7 +15,7 @@ const SPECIALIZED = [
     href: "/services/fintech-app-development/aeps-software",
   },
   {
-    title: "EV charging app development in India",
+    title: "EV charging management software (CMS & app) in India",
     description:
       "OCPP/OCPI charging CMS. See PlugOne live before you brief us. From ₹4,50,000.",
     href: "/services/ev-charging-app-development",
