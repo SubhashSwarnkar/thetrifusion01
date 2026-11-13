@@ -27,6 +27,7 @@ import NotFoundPage from "./NotFoundPage";
 import SEO from "components/common/SEO";
 import RelatedGuides from "components/RelatedGuides";
 import FounderByline from "components/FounderByline";
+import EvChargingProductLayout from "components/EvChargingProductLayout";
 import { FOUNDER } from "data/founder";
 
 const FINTECH_CHILD_PRODUCTS = [
@@ -341,6 +342,37 @@ export default function ServiceDetailPage({
   const detailSections = service.detailSections || [];
   const leadSections = detailSections.filter((section) => section.lead);
   const bodySections = detailSections.filter((section) => !section.lead);
+
+  if (slug === "ev-charging-app-development") {
+    const seen = new Set();
+    const mergedLinks = [];
+    for (const item of [...hubReferringLinks, ...(service.relatedLinks || [])]) {
+      const path = canonicalInternalHref(item.href);
+      if (!path || path.startsWith("/blog") || seen.has(path)) continue;
+      seen.add(path);
+      mergedLinks.push({ ...item, href: absoluteSiteUrl(path) });
+    }
+    return (
+      <div className="min-h-screen bg-white">
+        <SEO
+          title={`${service.title} - TheTriFusion`}
+          description={service.description}
+          image={service.imageUrl}
+        />
+        <Header />
+        <Breadcrumbs />
+        {languageSwitcher}
+        <main>
+          <EvChargingProductLayout
+            service={service}
+            relatedLinks={mergedLinks}
+            otherServices={otherServices}
+          />
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-white">

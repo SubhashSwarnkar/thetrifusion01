@@ -19,17 +19,17 @@ export const evChargingPageContent = {
   shortDescription:
     "White-label EV charging management software (CMS & app) for Indian CPOs: OCPP 1.6J/2.0.1, OCPI roaming, UPI billing, GST invoices. Client owns the code.",
   description:
-    "TheTriFusion is a Jaipur software studio that builds EV charging management software — not a charge point operator and not a charger manufacturer. The product is a white-label CMS (also called CSMS or CPMS) plus a driver app under your brand. Chargers connect over OCPP; roaming uses OCPI when you need it. You own the repositories named in the scope. Related work: [mobile app development](/services/mobile-app-development) for store delivery patterns, [UI/UX design](/services/ui-ux-design) for driver and operator flows, [DevOps and cloud](/services/devops) for hosting, and [custom software development](/services/software-development) when charging is one module in a wider platform.",
+    "TheTriFusion is a Jaipur software studio that builds EV charging management software — not a charge point operator and not a charger manufacturer. The product is a white-label CMS (also called CSMS or CPMS) plus a driver app under your brand. Chargers connect over OCPP; roaming uses OCPI when you need it. You own the repositories named in the scope. Related work: [mobile app development](/services/mobile-app-development) for store delivery, [fintech app development](/services/fintech-app-development) for payment-heavy panels, [custom software development](/services/software-development) when charging is one module in a wider platform, and [CRM development](/services/crm-erp-development) for franchise and partner ops beside the CMS.",
   locationLine:
-    "Jaipur team, delivering across India and worldwide.",
+    "Jaipur studio serving CPOs and fleets across India (and worldwide, remotely).",
   scopeKicker: "On this page",
-  scopeHeading: "EV charging software modules we build",
-  processHeading: "How an EV charging CMS project runs",
+  scopeHeading: "What modules does EV charging management software include?",
+  processHeading: "How does an EV charging CMS project run?",
   processLayout: "howto",
-  ctaHeading: "Tell us your chargers, sites and brand",
+  ctaHeading: "Ready for a white-label EV charging CMS demo?",
   ctaText:
-    "Share charger make/model and OCPP version, number of sites, whether you need roaming, and your payment gateway. We reply with a written scope. This page does not sell a fixed package.",
-  primaryCtaLabel: "Get a scoped estimate",
+    "Share charger make/model and OCPP version, number of sites, whether you need roaming, and your payment gateway. We reply with a written scope from Jaipur. This page does not sell a fixed package.",
+  primaryCtaLabel: "Get a demo / quote",
   primaryCtaHref: "/contact",
   secondaryCtaLabel: "See PlugOne case study",
   secondaryCtaHref: "/portfolio/plugone-ev-charging-platform",
@@ -39,13 +39,13 @@ export const evChargingPageContent = {
   whatsappMessage:
     "Hi TriFusion, I need EV charging management software / a white-label charging app (OCPP, OCPI, UPI). Please share a scoped estimate.",
   imageAlt:
-    "EV charging management software CMS and white-label charging app by TheTriFusion in Jaipur for CPOs in India",
+    "Product mock of EV charging management software CMS and white-label driver app by TheTriFusion in Jaipur for Indian CPOs",
   contentUpdatedAt: "2026-11-13",
   sitemapPriority: 0.85,
   hideClientStrip: true,
   hidePricingEstimates: true,
   hideStandardDeliverables: true,
-  faqsExpanded: true,
+  faqsExpanded: false,
   tocAriaLabel: "EV charging software modules on this page",
   schemaAreaServed: [
     { "@type": "Country", name: "India" },
@@ -109,7 +109,7 @@ export const evChargingPageContent = {
       id: "modules",
       lead: true,
       tocLabel: "Platform modules",
-      heading: "Eight modules of EV charging management software",
+      heading: "What modules does EV charging management software include?",
       schemaDescription:
         "White-label EV charging CMS modules: CSMS, driver app, billing, roaming, load management, O&M, fleet, and APIs.",
       paragraphs: [
@@ -241,7 +241,7 @@ export const evChargingPageContent = {
     {
       id: "who-its-for",
       tocLabel: "Who it's for",
-      heading: "Who this EV charging software is for",
+      heading: "Who is EV charging management software for?",
       schemaDescription:
         "CPOs, franchise owners, fleets, OEMs, real estate and DISCOMs that need white-label charging software.",
       paragraphs: [
@@ -295,7 +295,7 @@ export const evChargingPageContent = {
     {
       id: "ocpp-vs-ocpi",
       tocLabel: "How the pieces connect",
-      heading: "How the pieces connect: OCPP vs OCPI",
+      heading: "How do OCPP and OCPI connect in a charging CMS?",
       schemaDescription:
         "OCPP connects chargers to the CMS. OCPI connects networks for roaming.",
       paragraphs: [
@@ -336,7 +336,7 @@ export const evChargingPageContent = {
     {
       id: "protocols",
       tocLabel: "Protocols & standards",
-      heading: "Protocols and standards we build to",
+      heading: "Which protocols does the CMS support?",
       schemaDescription:
         "OCPP 1.6J, OCPP 2.0.1 and OCPI 2.2.1 built to the specification and tested against your chargers.",
       paragraphs: [
@@ -394,7 +394,7 @@ export const evChargingPageContent = {
     {
       id: "white-label",
       tocLabel: "White-label vs SaaS vs custom",
-      heading: "White-label vs SaaS rent vs custom build",
+      heading: "White-label, SaaS rent, or custom build — which fits?",
       schemaDescription:
         "Honest comparison of renting a network CMS, white-label from TheTriFusion, and building from zero.",
       paragraphs: [
@@ -455,7 +455,7 @@ export const evChargingPageContent = {
     {
       id: "plugone-proof",
       tocLabel: "PlugOne proof",
-      heading: "Proof: PlugOne (client case study)",
+      heading: "What is PlugOne — a live client case study?",
       schemaDescription:
         "PlugOne is a live EV charging client product built by TheTriFusion with OCPP and OCPI.",
       paragraphs: [
@@ -466,7 +466,7 @@ export const evChargingPageContent = {
     {
       id: "india-context",
       tocLabel: "India delivery",
-      heading: "EV charging software from Jaipur for operators across India",
+      heading: "Where is TheTriFusion based for EV charging software in India?",
       schemaDescription:
         "Jaipur software studio delivering EV charging CMS and apps across India with UPI and GST invoice fields.",
       paragraphs: [
@@ -483,7 +483,7 @@ export const evChargingPageContent = {
     {
       id: "cost-and-timeline",
       tocLabel: "Cost and timeline",
-      heading: "What changes cost and timeline",
+      heading: "What changes EV charging CMS cost and timeline?",
       schemaDescription:
         "Cost factors for EV charging management software. Pricing page lists published starting ranges.",
       paragraphs: [
@@ -494,7 +494,7 @@ export const evChargingPageContent = {
   ],
   starterPack: {
     id: "ev-first-release",
-    heading: "What a first EV charging release usually includes",
+    heading: "What does a first EV charging CMS release include?",
     intro:
       "The first release is the smallest system a real driver and a real operator can use. It is quoted. It is not a free bundle and it is not the full roaming catalogue.",
     items: [
@@ -616,6 +616,11 @@ export const evChargingPageContent = {
       href: "/services/crm-erp-development",
       title: "CRM/ERP for charging businesses",
       text: "Franchise leads, partner tracking and ops CRM beside the CMS.",
+    },
+    {
+      href: "/services/fintech-app-development",
+      title: "Fintech & payments software",
+      text: "When wallet, settlement or retailer payment panels sit beside the CMS.",
     },
     {
       href: "/pricing",

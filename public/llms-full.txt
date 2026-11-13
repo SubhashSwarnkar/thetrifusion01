@@ -83,7 +83,7 @@ Jaipur-based DevOps and cloud delivery for India and worldwide. The initial infr
 ## EV Charging Management Software (CMS & App)
 
 https://thetrifusion.in/services/ev-charging-app-development
-White-label EV charging management software for CPOs, fleets and charger owners, built in Jaipur for India and worldwide. Modules: CMS/CSMS, driver app, billing & settlement, OCPI roaming (UEI can be scoped), load management, O&M & complaints, fleet & depot, APIs. The pricing page lists a starting range of ₹4,50,000 ex-GST for an MVP; this page does not treat that figure as a fixed package. PlugOne (https://plugone.in) is a live client product using both OCPP and OCPI; tested / integrated with Ecoplug, Sonic, ChargeMOD, and ChargeIndia (OCPI hub). There is no separate IoT service page.
+Jaipur software studio building white-label EV charging CMS/CSMS and driver apps for Indian CPOs, fleets and charger owners — not a CPO and not a charger maker. Client owns the code. Modules: CMS/CSMS, driver app, billing & settlement, OCPI roaming (UEI can be scoped), load management, O&M & complaints, fleet & depot, APIs. Protocols: OCPP 1.6J/2.0.1 and OCPI 2.2.1 built to the spec and tested against your chargers (no OCA certification claim). Published starting ranges ₹4,50,000 / ₹9,00,000 / ₹18,00,000 ex-GST after discovery. PlugOne (https://plugone.in) is a live client product using both OCPP and OCPI; tested / integrated with Ecoplug, Sonic, ChargeMOD, and ChargeIndia (OCPI hub).
 
 - Platform modules — https://thetrifusion.in/services/ev-charging-app-development#modules
 - CMS / CSMS — https://thetrifusion.in/services/ev-charging-app-development#cms-csms

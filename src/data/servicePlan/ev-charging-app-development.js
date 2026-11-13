@@ -18,20 +18,20 @@ export default {
     "EV charging management software India, EV charging CMS, OCPP CSMS, charge point management system, white label EV charging app, OCPI roaming India, EV charging app development company",
   answerFirst: {
     id: "quick-answer",
-    heading: "EV charging management software: key facts",
+    heading: "What is EV charging management software? Key facts",
     text:
-      "TheTriFusion builds white-label EV charging management software (CMS, also called CSMS or CPMS) and driver apps for charge point operators, fleets and charger owners in India. We are a software studio — not a CPO and not a charger maker. Chargers connect over [OCPP 1.6J or 2.0.1](" +
+      "EV charging management software (CMS / CSMS / CPMS) is the operator platform that talks to chargers, authorises drivers, bills sessions and helps settle partners. TheTriFusion builds white-label CMS and driver apps for charge point operators, fleets and charger owners in India. We are a software studio in Jaipur — not a CPO and not a charger maker. Chargers connect over [OCPP 1.6J or 2.0.1](" +
       SOURCES.ocpp +
-      "); roaming with other networks uses [OCPI 2.2.1](" +
+      "); roaming uses [OCPI 2.2.1](" +
       SOURCES.ocpi +
-      "). Payments run through your own gateway (UPI, cards, wallet) with GST invoice fields. You own the code after completion and payment. Published starting range: ₹4,50,000 ex-GST after discovery (Standard ₹9,00,000, Premium ₹18,00,000). Live client product: " +
+      "). Payments run through your gateway (UPI, cards, wallet) with GST invoice fields. You own the code after completion and payment. Published starting range: ₹4,50,000 ex-GST after discovery (Standard ₹9,00,000, Premium ₹18,00,000). Live client example: " +
       LIVE.plugone +
       ".",
     facts: [
-      { label: "OCPP", value: "1.6J and 2.0.1" },
-      { label: "OCPI", value: "2.2.1 (UEI can be scoped)" },
-      { label: "Starting range", value: "₹4,50,000 ex-GST after discovery" },
-      { label: "Live client", value: "PlugOne — plugone.in" },
+      { label: "Studio", value: "Jaipur, serving all India" },
+      { label: "Protocols", value: "OCPP 1.6J/2.0.1 + OCPI 2.2.1" },
+      { label: "Delivery", value: "White-label · you own the code" },
+      { label: "Live example", value: "PlugOne — plugone.in" },
     ],
   },
   softwareApplication: {
@@ -160,6 +160,16 @@ export default {
       href: "/pricing",
       title: "Published pricing",
       text: "Starting ranges for EV charging CMS engagements.",
+    },
+    {
+      href: "/services/fintech-app-development",
+      title: "Fintech & payments software",
+      text: "When wallet or settlement panels sit beside the CMS.",
+    },
+    {
+      href: "/services/crm-erp-development",
+      title: "CRM/ERP for charging businesses",
+      text: "Franchise and partner ops beside the charging stack.",
     },
   ],
 };

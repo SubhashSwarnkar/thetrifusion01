@@ -217,14 +217,16 @@ Sources: NPCI https://www.npci.org.in/ · RBI https://www.rbi.org.in/
 
 ### EV Charging Management Software (CMS & App)
 URL: https://thetrifusion.in/services/ev-charging-app-development
-Best for: white-label EV charging management software for Indian CPOs, fleets and charger owners (OCPP 1.6J/2.0.1, OCPI 2.2.1, UPI, GST invoices).
-Not for: charger hardware manufacturing or operating a public CPO network.
-What: White-label CMS/CSMS, driver app, billing & settlement, OCPI roaming, load management, O&M, fleet/depot, and APIs. Client owns the code.
-Platforms: iOS, Android, web admin. Charger connectivity is part of this engagement.
+Summary: Jaipur software studio building white-label EV charging CMS/CSMS and driver apps for Indian CPOs, fleets and charger owners — not a CPO and not a charger maker. Client owns the code.
+Best for: operators who want their own brand on OCPP chargers, UPI/GST billing, and optional OCPI roaming.
+Not for: buying charger hardware or renting TheTriFusion as a public network.
+Modules: CMS/CSMS · driver app (iOS/Android/web) · billing & settlement · OCPI roaming (UEI can be scoped) · load management · O&M/ticketing · fleet/depot · APIs.
+Protocols: OCPP 1.6J/2.0.1 · OCPI 2.2.1 — built to the spec and tested against your chargers (no OCA certification claim).
 Who: CPOs & startups, franchise/DOCO owners, fleets, OEMs, real estate/RWAs/hospitality; DISCOMs/PSUs can be scoped.
-Price from: ₹4,50,000 ex-GST after discovery, as a starting range on the page, not a fixed package.
-Live client: PlugOne (plugone.in) — OCPP + OCPI; Ecoplug, Sonic, ChargeMOD, ChargeIndia OCPI hub.
-Protocol: Open Charge Alliance OCPP — https://openchargealliance.org/protocols/ocpp/
+Price from: ₹4,50,000 / ₹9,00,000 / ₹18,00,000 ex-GST after discovery (starting ranges, not a fixed package).
+Live client: PlugOne (https://plugone.in) — OCPP + OCPI; Ecoplug, Sonic, ChargeMOD, ChargeIndia (OCPI hub).
+Contact: https://thetrifusion.in/contact · WhatsApp +91 63781 33780
+Protocol docs: OCPP https://openchargealliance.org/protocols/ocpp/ · OCPI https://evroaming.org/
 
 ### CRM development
 URL: https://thetrifusion.in/services/crm-erp-development

@@ -47,6 +47,7 @@ Canonical property: apex `https://thetrifusion.in` (URL-prefix or Domain). Do no
 | 2026-11-09 (coverage export Nov6) | — | — | Redirect errors 5 verified intentional (308/410); 6 service canonicals mostly historical www; Discovered 14 services + /sitemap | Not measured | Batch 3 nested fintech + remaining discovered titles; **observe until Mon 16 Nov ~11:00 IST** — no daily churn |
 | 2026-11-10 | | | | | Post batch-2 deploy — record actuals |
 | 2026-11-13 | | | | | **EV page rebuild** `/services/ev-charging-app-development`: renamed to EV Charging Management Software (CMS & App); H1/title/schema/nav aligned; 8-module grid; PlugOne named as client with OCPP+OCPI and Ecoplug/Sonic/ChargeMOD/ChargeIndia; mislabeled related links fixed; softwareGuides cards removed; `contentUpdatedAt` 2026-11-13. Slug unchanged. Verify live title/H1/canonical after Vercel. |
+| 2026-11-13 (UI) | | | | | **EV page product UI** — SaaS-style layout: trust-chip hero + Contact/WhatsApp CTAs, icon module cards, audience cards, OCPP→CMS→app/OCPI SVG flow, protocol table, white-label comparison cards, PlugOne text badges, process timeline, FAQ accordion, sticky mobile CTA. SEO: question H2s, answer-first key facts, llms.txt refresh. Title/H1/slug/prices unchanged. |
 
 ## 30 / 60 / 90 day workplan (priorities + measurable targets)
 
