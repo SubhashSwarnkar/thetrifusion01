@@ -52,7 +52,7 @@ export const websiteCityLandings = [
       },
       {
         title: "When to use this page vs the India service page",
-        body: `Use this Jaipur city page when the search and the brief are local: a shop in C-Scheme, a factory in Sitapura, a hotel that wants a visit. Use the parent website development service page when the buyer is anywhere in India and wants the full capability write-up, stack comparison and related guides. Both URLs are real pages. We do not 308 this slug into the service page — it is a different query from “web development company Jaipur” which already redirects.`,
+        body: `Use this Jaipur city page when the search and the brief are local: a shop in C-Scheme, a factory in Sitapura, a hotel that wants a visit. Use the parent website development service page when the buyer is anywhere in India and wants the full capability write-up, stack comparison and related guides. Both URLs are real pages with different intents — this city page for local Jaipur briefs, and the India service page for the full capability write-up. That is separate from “web development company Jaipur”, which already redirects to the national service page.`,
       },
     ],
     faqs: [

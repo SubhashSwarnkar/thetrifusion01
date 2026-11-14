@@ -55,7 +55,7 @@ export const serviceIndiaOnpage = {
     ...citySection(
       "India delivery from a Jaipur, Rajasthan studio",
       [
-        "India-wide process, Tally, NDA and ownership live on this national /services URL. HQ is Jaipur, Rajasthan — not a claim of offices in every city. Local industry copy: [custom software in Jaipur](/solutions/custom-software-development-jaipur). Published MVPs from ₹1,00,000. The old slug software-development-company-jaipur still 308s here so we do not split that query.",
+        "India-wide process, Tally, NDA and ownership live on this national /services URL. HQ is Jaipur, Rajasthan — not a claim of offices in every city. Local industry copy: [custom software in Jaipur](/solutions/custom-software-development-jaipur). Published MVPs from ₹1,00,000.",
       ],
       [
         {
@@ -92,7 +92,7 @@ export const serviceIndiaOnpage = {
     ...citySection(
       "SEO and ads for India (Jaipur studio)",
       [
-        "This apex /services URL is the national digital marketing write-up: SEO, Google Ads and Meta Ads from ₹15,000 (ad spend separate; no ranking guarantee). Prefer https://thetrifusion.in — www redirects here. City flavour only: [Jaipur](/solutions/digital-marketing-company-jaipur). The old slug digital-marketing-agency still 308s here.",
+        "This /services URL is the national digital marketing write-up: SEO, Google Ads and Meta Ads from ₹15,000 (ad spend separate; no ranking guarantee). City flavour only: [Jaipur](/solutions/digital-marketing-company-jaipur).",
       ],
       [
         {
@@ -111,7 +111,7 @@ export const serviceIndiaOnpage = {
     ...citySection(
       "BBPS, AEPS, DMT and recharge for India (Jaipur studio)",
       [
-        "This apex /services URL is the national fintech capability hub (from ₹99,999): retailer app, distributor panel, admin. You bring the bank or API partner; we do not issue NPCI/RBI licences. Prefer the apex host https://thetrifusion.in — www is redirected. Child modules: [BBPS](/services/fintech-app-development/bbps-software), [AEPS](/services/fintech-app-development/aeps-software), [DMT](/services/fintech-app-development/dmt-software), [recharge](/services/fintech-app-development/recharge-software). Local flavour only: [Jaipur](/solutions/fintech-app-development-jaipur).",
+        "This /services URL is the national fintech capability hub (from ₹99,999): retailer app, distributor panel, admin. You bring the bank or API partner; we do not issue NPCI/RBI licences. Child modules: [BBPS](/services/fintech-app-development/bbps-software), [AEPS](/services/fintech-app-development/aeps-software), [DMT](/services/fintech-app-development/dmt-software), [recharge](/services/fintech-app-development/recharge-software). Local flavour only: [Jaipur](/solutions/fintech-app-development-jaipur).",
       ],
       [
         {
@@ -171,7 +171,7 @@ export const serviceIndiaOnpage = {
         id: "india-city-pages",
         heading: "Hindi UI and India product design",
         paragraphs: [
-          "Figma product UI from Jaipur for Indian websites and apps, from ₹20,000. Continue to [website development](/services/website-development) or [mobile app development](/services/mobile-app-development). Prefer the apex host https://thetrifusion.in — www redirects here.",
+          "Figma product UI from Jaipur for Indian websites and apps, from ₹20,000. Continue to [website development](/services/website-development) or [mobile app development](/services/mobile-app-development).",
         ],
       },
     ],

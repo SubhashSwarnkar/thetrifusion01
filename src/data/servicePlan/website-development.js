@@ -151,14 +151,14 @@ export default {
   ],
   faqs: [
     {
-      question: "How much does a website cost in Jaipur?",
+      question: "How much does website development cost in Jaipur?",
       answer:
-        "TheTriFusion's published plans start at ₹15,000 for a Basic site of up to 5 pages, ₹35,000 for Standard, and ₹75,000 for Premium. Ecommerce stores start from ₹25,000. The final price follows a written scope.",
+        "TheTriFusion's published plans start at ₹15,000 for a Basic site of up to 5 pages, ₹35,000 for Standard (up to 10 pages with CMS and payment gateway), and ₹75,000 for Premium. Ecommerce stores start from ₹25,000. The final price follows a written scope.",
     },
     {
-      question: "How long does it take to build a website?",
+      question: "How long does it take to build a business website?",
       answer:
-        "A focused marketing website is often 3–8 weeks from approved scope to launch. Ecommerce, portals, or custom features take longer.",
+        "A focused marketing website is often 3–8 weeks from approved scope to launch. Ecommerce, portals, or custom features take longer. We share a written timeline after discovery.",
     },
     {
       question: "Do you provide domain, hosting and business email?",
@@ -176,9 +176,9 @@ export default {
         "Yes, on WordPress or when we add a CMS. Next.js sites can still get an editor if the scope says so.",
     },
     {
-      question: "Do you redesign existing websites?",
+      question: "Can you redesign an old website without losing rankings?",
       answer:
-        "Yes. We modernise design, speed and conversion paths while keeping important URLs or redirecting them one-to-one.",
+        "Yes. We modernise design, speed, and conversion paths while keeping important URLs, or redirecting them one-to-one, so existing search visibility is protected.",
     },
     {
       question: "Do you offer website maintenance plans?",
