@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server";
-import { canonicalSitePathname } from "lib/canonicalPath";
+import {
+  canonicalSitePathname,
+  documentCanonicalPathname,
+} from "lib/canonicalPath";
 
 const APEX = "thetrifusion.in";
 const NON_APEX_HOSTS = new Set([
@@ -141,7 +144,10 @@ export function middleware(request) {
       "Cache-Control",
       "public, s-maxage=86400, stale-while-revalidate=604800"
     );
-    const canonicalPath = finalPath === "/" ? "" : finalPath;
+    // Locale EV pages stay 200 on /{lang}/services/... but Link must advertise
+    // the English money URL (same as HTML canonical / og:url).
+    const linkPath = documentCanonicalPathname(pathname);
+    const canonicalPath = linkPath === "/" ? "" : linkPath;
     response.headers.set(
       "Link",
       `<https://${APEX}${canonicalPath}>; rel="canonical"`

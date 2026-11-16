@@ -358,6 +358,36 @@ async function main() {
     await auditPage(`${BASE_URL}${path}`);
   }
 
+  // Locale EV copies stay 200 + noindex,follow but canonical/og:url/Link → English EV.
+  const englishEv = "https://thetrifusion.in/services/ev-charging-app-development";
+  for (const lang of ["es", "pt", "ar", "id", "hi"]) {
+    const path = `/${lang}/services/ev-charging-app-development`;
+    const { res, text } = await fetchText(`${BASE_URL}${path}`);
+    const robots = extractMeta(text, "robots") || "";
+    const canonical = extractCanonical(text);
+    const ogUrl = extractMeta(text, "og:url");
+    const linkHeader = res.headers.get("link") || "";
+    const xRobots = res.headers.get("x-robots-tag") || "";
+    if (res.status !== 200) {
+      fail(`${path} should be 200, got ${res.status}`);
+      continue;
+    }
+    if (!/noindex/i.test(robots) && !/noindex/i.test(xRobots)) {
+      fail(`${path} should be noindex,follow`);
+    }
+    if (canonical !== englishEv) {
+      fail(`${path} HTML canonical ${canonical}, expected ${englishEv}`);
+    }
+    if (ogUrl && ogUrl !== englishEv) {
+      fail(`${path} og:url ${ogUrl}, expected ${englishEv}`);
+    }
+    if (!linkHeader.includes(`<${englishEv}>; rel="canonical"`)) {
+      fail(`${path} Link header missing English EV canonical: ${linkHeader}`);
+    } else {
+      ok(`${path} → 200 noindex, English EV canonical`);
+    }
+  }
+
   const homeHtml = (await fetchText(`${BASE_URL}/`)).text;
   if (!/"@type":\s*"Person"/i.test(homeHtml) || !/Amardeep/.test(homeHtml)) {
     fail("homepage JSON-LD missing Person schema for Amardeep");
@@ -417,6 +447,14 @@ async function main() {
     // Must be absolute apex — relative /portfolio resolves to www on www host.
     ["/portfolio/asd1293uhjkhkjh2", "https://thetrifusion.in/portfolio"],
     ["/portfolio/not-a-real-project-slug", "https://thetrifusion.in/portfolio"],
+    // Legacy /project junk must collapse in ONE hop (not /portfolio/{junk} then hub).
+    ["/project/asd1293uasdads1", "https://thetrifusion.in/portfolio"],
+    [
+      "/project/plugone-ev-charging-platform",
+      "https://thetrifusion.in/portfolio/plugone-ev-charging-platform",
+    ],
+    ["/es", "https://thetrifusion.in/"],
+    ["/hi/services", "https://thetrifusion.in/services"],
     [
       "/services/digital-marketing",
       "https://thetrifusion.in/services/digital-marketing",
@@ -637,6 +675,10 @@ async function main() {
     ["/solutions/web-development-company-jaipur", "/services/website-development"],
     // GSC 404 junk portfolio
     ["/portfolio/asd1293uhjkhkjh2", "/portfolio"],
+    // Legacy /project junk must not chain through /portfolio/{junk}
+    ["/project/asd1293uasdads1", "/portfolio"],
+    ["/es", "/"],
+    ["/hi/services", "/services"],
     ["/solutions/website-development-company-delhi", "/services/website-development"],
     ["/solutions/website-development-company-mumbai", "/services/website-development"],
     ["/solutions/software-development-company-delhi", "/services/software-development"],

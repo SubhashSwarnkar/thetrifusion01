@@ -3,7 +3,6 @@ import JsonLd from "components/JsonLd";
 import TranslatedDocument from "components/TranslatedDocument";
 import { getLocale } from "data/i18n";
 import {
-  hreflangLanguagesForPath,
   localizedPath,
   TRANSLATED_SERVICE_PATH,
 } from "data/i18n/routes";
@@ -46,11 +45,13 @@ export function generateMetadata({ params }) {
     };
   }
 
+  // Stay 200 + noindex,follow, but advertise the English EV money URL as
+  // canonical / og:url. Do not emit locale hreflang (India-only crawl).
   return buildMetadata({
     title: service.metaTitle || service.title,
     description: service.description,
-    path: localizedPath(locale.code, TRANSLATED_SERVICE_PATH),
-    languages: hreflangLanguagesForPath(TRANSLATED_SERVICE_PATH),
+    path: TRANSLATED_SERVICE_PATH,
+    languages: null,
     locale: locale.ogLocale,
     noIndex: true,
   });
