@@ -298,6 +298,7 @@ White-label EV charging management software for CPOs, fleets and charger owners,
 - Protocols: https://thetrifusion.in/services/ev-charging-app-development#protocols
 - White-label vs SaaS vs custom: https://thetrifusion.in/services/ev-charging-app-development#white-label
 - PlugOne proof: https://thetrifusion.in/services/ev-charging-app-development#plugone-proof
+- PlugOne case study: https://thetrifusion.in/portfolio/plugone-ev-charging-platform
 - India delivery: https://thetrifusion.in/services/ev-charging-app-development#india-context
 - Guide: EV depot smart charging and load management: https://thetrifusion.in/blog/ev-depot-smart-charging-load-management-guide
 - Guide: ISO 15118 Plug and Charge for CPO software: https://thetrifusion.in/blog/iso-15118-plug-and-charge-cpo-software-guide

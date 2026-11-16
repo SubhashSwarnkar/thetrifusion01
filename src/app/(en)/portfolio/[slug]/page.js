@@ -1,9 +1,12 @@
 import { permanentRedirect } from "next/navigation";
 import Page from "views/ProjectDetailPage";
+import PlugOneCaseStudyPage from "views/PlugOneCaseStudyPage";
 import JsonLd from "components/JsonLd";
 import { Portfolios, isIndexablePortfolio } from "json/landingPageData";
 import { buildMetadata } from "lib/seoConfig";
-import { breadcrumbSchema, creativeWorkSchema } from "lib/schema";
+import { breadcrumbSchema, creativeWorkSchema, faqSchema } from "lib/schema";
+
+const PLUGONE_SLUG = "plugone-ev-charging-platform";
 
 export function generateStaticParams() {
   return Portfolios.map((project) => ({ slug: project.id }));
@@ -21,19 +24,26 @@ export function generateMetadata({ params }) {
   }
 
   return buildMetadata({
-    title: `${project.title} | Portfolio | TheTriFusion`,
+    title:
+      project.seoTitle || `${project.title} | Portfolio | TheTriFusion`,
     description:
+      project.seoDescription ||
       project.description ||
       `View ${project.title} — a ${project.type} project by TheTriFusion.`,
     keywords: [
       project.title,
       "portfolio",
-      project.type,
       "case study",
+      project.type,
       "TheTriFusion",
       ...(project.tags || []),
+      ...(project.id === PLUGONE_SLUG
+        ? ["OCPP", "OCPI", "EV charging CMS", "ChargeIndia"]
+        : []),
     ].join(", "),
     path: `/portfolio/${project.id}`,
+    type: "article",
+    image: project.imageUrl,
     noIndex: !isIndexablePortfolio(project),
   });
 }
@@ -45,9 +55,12 @@ export default function RoutePage({ params }) {
     permanentRedirect("https://thetrifusion.in/portfolio");
   }
 
+  const isPlugOne = project.id === PLUGONE_SLUG;
+  const faqs = project.caseStudy?.faqs;
+
   return (
     <>
-      <JsonLd data={creativeWorkSchema(project)} />
+      <JsonLd data={creativeWorkSchema(project, { asArticle: true })} />
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", path: "/" },
@@ -55,7 +68,10 @@ export default function RoutePage({ params }) {
           { name: project.title, path: `/portfolio/${project.id}` },
         ])}
       />
-      <Page />
+      {Array.isArray(faqs) && faqs.length > 0 ? (
+        <JsonLd data={faqSchema(faqs)} />
+      ) : null}
+      {isPlugOne ? <PlugOneCaseStudyPage /> : <Page />}
     </>
   );
 }

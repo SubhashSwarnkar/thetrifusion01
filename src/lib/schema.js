@@ -1089,25 +1089,54 @@ export function articleSchema(post, options = {}) {
   };
 }
 
-export function creativeWorkSchema(project) {
+export function creativeWorkSchema(project, options = {}) {
   const liveUrl =
     typeof project.credit === "string" && /^https?:\/\//i.test(project.credit)
       ? project.credit
       : null;
+  const path = `/portfolio/${project.id}`;
+  const url = absoluteSiteUrl(path);
+  const description =
+    project.seoDescription ||
+    project.description ||
+    `${project.title} — ${project.type} project by ${siteConfig.name}`;
+  const headline =
+    project.seoTitle ||
+    `${project.title} case study by ${siteConfig.name}`;
 
   return {
     "@context": "https://schema.org",
-    "@type": "CreativeWork",
+    "@type": options.asArticle ? ["CreativeWork", "Article"] : "CreativeWork",
     name: project.title,
-    description:
-      project.description ||
-      `${project.title} — ${project.type} project by ${siteConfig.name}`,
+    headline,
+    description,
     creator: {
       "@type": "Organization",
       name: siteConfig.name,
       url: siteConfig.url,
     },
-    url: absoluteSiteUrl(`/portfolio/${project.id}`),
+    author: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.legalName,
+      url: siteConfig.url,
+      logo: {
+        "@type": "ImageObject",
+        url: siteConfig.logoUrl,
+      },
+    },
+    url,
+    mainEntityOfPage: url,
+    ...(project.imageUrl
+      ? { image: absoluteSiteUrl(project.imageUrl) }
+      : {}),
+    ...(project.contentUpdatedAt
+      ? { dateModified: project.contentUpdatedAt }
+      : {}),
     ...(liveUrl ? { sameAs: liveUrl } : {}),
   };
 }

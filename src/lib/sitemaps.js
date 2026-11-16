@@ -63,7 +63,7 @@ export function buildSitemapParts() {
     "/": new Date("2026-11-09"),
     "/about": fallbackDate,
     "/solutions": new Date("2026-10-12"),
-    "/portfolio": new Date("2026-11-09"),
+    "/portfolio": new Date("2026-11-16"),
     "/pricing": fallbackDate,
     "/contact": fallbackDate,
     "/faq": fallbackDate,

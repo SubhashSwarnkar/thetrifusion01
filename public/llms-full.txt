@@ -99,6 +99,7 @@ Jaipur software studio building white-label EV charging CMS/CSMS and driver apps
 - Protocols — https://thetrifusion.in/services/ev-charging-app-development#protocols
 - White-label vs SaaS vs custom — https://thetrifusion.in/services/ev-charging-app-development#white-label
 - PlugOne proof — https://thetrifusion.in/services/ev-charging-app-development#plugone-proof
+- PlugOne case study — https://thetrifusion.in/portfolio/plugone-ev-charging-platform
 - India delivery — https://thetrifusion.in/services/ev-charging-app-development#india-context
 
 ## Solutions hubs
