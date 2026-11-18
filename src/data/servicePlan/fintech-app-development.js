@@ -25,7 +25,7 @@ export default {
       SOURCES.npci +
       ") and [RBI](" +
       SOURCES.rbi +
-      ").",
+      "). Based in Jaipur? See [fintech app development in Jaipur](/solutions/fintech-app-development-jaipur).",
     facts: [
       { label: "Starting price", value: "From ₹99,999 (published Basic plan)" },
       { label: "You bring", value: "Bank / BBPOU / API partner" },

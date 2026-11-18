@@ -311,7 +311,7 @@ export default function Header() {
               </div>
               <div className="mt-4 pt-4 border-t border-theme-purple/10 flex items-center justify-between gap-4">
                 <p className="text-xs text-theme-blue/50 hidden sm:block">
-                  Web, apps, design and growth — from Jaipur.
+                  Web, apps, design and growth.
                 </p>
                 <a
                   href={absoluteSiteUrl("/services")}

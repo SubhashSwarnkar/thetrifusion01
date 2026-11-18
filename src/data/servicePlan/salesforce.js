@@ -7,12 +7,12 @@ import { NAP_LINE, TEAM } from "./_shared";
  */
 export default {
   contentUpdatedAt: "2026-10-28",
-  metaTitle: "Salesforce Customization & Integration in Jaipur | TheTriFusion",
-  bannerTitle: "Salesforce Customization & Integration Services in Jaipur",
+  metaTitle: "Salesforce Developers in Jaipur | Flows, Apex & Integrations",
+  bannerTitle: "Salesforce Developers in Jaipur | Flows, Apex & Integrations",
   metaDescription:
-    "Flows, custom objects, Apex and website/ERP integrations on your existing Salesforce org, from a Jaipur team. Share your org for a scoped plan.",
+    "Salesforce Flows, Apex/LWC and website or ERP integrations for your existing org, by a Jaipur team working with Indian businesses. Share your org for a scoped plan.",
   keywords:
-    "Salesforce consulting partner Jaipur, Salesforce implementation partner India, Salesforce developer for hire India, Salesforce vs custom CRM",
+    "Salesforce developers Jaipur, Salesforce Flows Apex India, Salesforce integration India, Salesforce vs custom CRM",
   answerFirst: {
     id: "quick-answer",
     heading: "Salesforce customization in Jaipur: the short answer",

@@ -40,7 +40,7 @@ export const nicheServices = [
     description:
       "TheTriFusion designs MLM CRM software around your compensation plan — unilevel, genealogy, KYC, wallets, and lead management — delivered as iOS, Android, and web from Jaipur.",
     shortDescription:
-      "TheTriFusion in Jaipur, Rajasthan builds MLM CRM software — unilevel plans, genealogy, KYC, and leads on iOS, Android, and web. Get a scoped estimate.",
+      "MLM CRM: unilevel plans, genealogy, KYC and leads on iOS, Android and web.",
     imageUrl: Web,
     featuresImage: SoftwareFeatures,
     icon: "🌳",
@@ -151,7 +151,7 @@ export const nicheServices = [
     description:
       "TheTriFusion sells custom fintech software from Jaipur: BBPS bill-pay, AEPS Aadhaar banking, DMT, XDMT, UPI, KYC, and retailer–distributor panels. We build the product you operate — white-label or custom — on iOS, Android, and web.",
     shortDescription:
-      "TheTriFusion in Jaipur builds and sells BBPS, AEPS, DMT and XDMT software — plus UPI, KYC, and banking apps for retailers, distributors, and fintech operators across India.",
+      "BBPS, AEPS, DMT and XDMT software — retailer, distributor and admin apps.",
     bannerTitle:
       "Fintech App Development Company in Jaipur | BBPS, AEPS, DMT & XDMT Software",
     bannerDescription:
@@ -317,7 +317,7 @@ export const nicheServices = [
     description:
       "TheTriFusion is a premier EV charging app development company in Jaipur & India. We build complete eMSP (e-Mobility Service Provider) driver apps, CPO (Charge Point Operator) station management software, OCPP 1.6J/2.0.1 charger connectivity, and OCPI 2.2.1 roaming networks. We engineered PlugOne (live at plugone.in) — India's unified EV charging platform.",
     shortDescription:
-      "TheTriFusion in Jaipur, Rajasthan builds turnkey EV charging software — OCPI roaming, OCPP 1.6J/2.0.1 charger control, live map navigation, wallet billing, iOS & Android driver apps. See PlugOne live.",
+      "White-label EV charging CMS: OCPP, driver app, billing, OCPI roaming. See PlugOne live.",
     imageUrl: Mobile,
     featuresImage: SoftwareFeatures,
     icon: "⚡",
@@ -438,7 +438,7 @@ export const nicheServices = [
     description:
       "TheTriFusion builds App Store–ready iOS apps in Jaipur — Swift or React Native, TestFlight, review notes, and a backend you own. Paid landing stays at /ios-app-development.",
     shortDescription:
-      "TheTriFusion in Jaipur, Rajasthan ships iOS apps — Swift or React Native, App Store review, and TestFlight. Typical MVP 8–12 weeks. Get a scoped quote.",
+      "iPhone apps — Swift or React Native, App Store review, and TestFlight.",
     imageUrl: Mobile,
     featuresImage: SoftwareFeatures,
     icon: "",
@@ -523,7 +523,7 @@ export const nicheServices = [
     description:
       "TheTriFusion builds Play Store–ready Android apps in Jaipur — Kotlin or React Native, listing assets, and a backend you own. Paid landing stays at /android-app-development.",
     shortDescription:
-      "TheTriFusion in Jaipur, Rajasthan ships Android apps — Kotlin or React Native and Play Store listing. Typical MVP 8–12 weeks. Request a scoped quote now.",
+      "Play Store apps — Kotlin or React Native, signing and listing support.",
     imageUrl: Mobile,
     featuresImage: SoftwareFeatures,
     icon: "🤖",
@@ -618,7 +618,7 @@ export const nicheServices = [
     description:
       "TheTriFusion builds custom CRM in Jaipur — pipelines, quotations, WhatsApp notes, and role-based admin — with iOS, Android, and web where field sales need them. Full ERP modules live on the ERP software page.",
     shortDescription:
-      "TheTriFusion in Jaipur, Rajasthan builds custom CRM — pipelines, quotations, WhatsApp, iOS, Android, and web. See live client ops. Get a scoped quote.",
+      "Custom CRM: pipelines, quotations, WhatsApp, iOS/Android/web.",
     imageUrl: Web,
     featuresImage: SoftwareFeatures,
     icon: "📊",
@@ -721,7 +721,7 @@ export const nicheServices = [
     description:
       "TheTriFusion builds custom ERP software in Jaipur — finance with GST, inventory, procurement, manufacturing, sales distribution, HR/payroll, multi-branch, and reporting — for Indian manufacturers and traders.",
     shortDescription:
-      "TheTriFusion in Jaipur, Rajasthan builds custom ERP — GST finance, inventory, MRP, multi-branch, web and mobile. Phased programmes from ₹6,00,000.",
+      "Custom ERP: GST finance, inventory, MRP, multi-branch. From ₹6,00,000.",
     imageUrl: Web,
     featuresImage: SoftwareFeatures,
     icon: "🏭",

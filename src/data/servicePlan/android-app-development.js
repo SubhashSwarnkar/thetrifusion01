@@ -9,8 +9,8 @@ import { LIVE, NAP_LINE, SOURCES, TEAM } from "./_shared";
  */
 export default {
   contentUpdatedAt: "2026-11-09",
-  metaTitle: "Android App Development Company in India | Play Store from Jaipur",
-  bannerTitle: "Android App Development Company in India — Jaipur Studio",
+  metaTitle: "Android App Development Company in Jaipur | Kotlin & Play Store",
+  bannerTitle: "Android App Development Company in Jaipur | Kotlin & Play Store",
   metaDescription:
     "Kotlin or React Native Android apps from a Jaipur studio, with Play Console setup, signing and Play Store listing. From ₹2,50,000; MVP in 8–12 weeks.",
   keywords:

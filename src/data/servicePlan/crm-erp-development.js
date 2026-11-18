@@ -8,8 +8,8 @@ import { LIVE, NAP_LINE, TEAM } from "./_shared";
  */
 export default {
   contentUpdatedAt: "2026-11-09",
-  metaTitle: "Custom CRM Software Development Company in Jaipur | TheTriFusion",
-  bannerTitle: "Custom CRM Software Development in Jaipur",
+  metaTitle: "Custom CRM Software Development Company in Jaipur, India",
+  bannerTitle: "Custom CRM Software Development Company in Jaipur, India",
   metaDescription:
     "Custom CRM for Indian SMEs — leads, pipelines, quotations, WhatsApp notes and IndiaMART-style capture. Built in Jaipur; you own the code. From ₹3,00,000.",
   keywords:

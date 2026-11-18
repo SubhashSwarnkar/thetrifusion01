@@ -10,11 +10,11 @@ export const DEFAULT_OG_IMAGE = absoluteSiteUrl("/opengraph-image");
 export const pages = {
   "/": {
     title:
-      "TheTriFusion | Jaipur Studio for Websites, Apps & Digital Marketing",
+      "Software Company in Jaipur | Websites, Apps, EV & Fintech Software",
     description:
-      "Trifusion Infotech Private Limited (TheTriFusion) is a Jaipur studio for websites, ecommerce, mobile apps, UI/UX, and digital marketing. Custom software lives on the services pages.",
+      "TheTriFusion builds websites, mobile apps, CRM, EV charging and fintech software from our Jaipur office — React/Next.js, iOS/Android, and scoped delivery across India.",
     keywords:
-      "TheTriFusion Jaipur, website studio Rajasthan, mobile apps Jaipur, digital marketing Jaipur, ecommerce from Jaipur",
+      "TheTriFusion Jaipur, website studio Rajasthan, mobile apps Jaipur, EV charging software Jaipur, fintech software Jaipur",
   },
   "/about": {
     title: "About TheTriFusion | Software Company in Jaipur",

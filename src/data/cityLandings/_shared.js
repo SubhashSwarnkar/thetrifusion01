@@ -21,9 +21,12 @@ export const PRICES = {
 };
 
 export function officeFaq(city) {
+  const isHq = city === siteConfig.city;
   return {
     question: `Do you have an office in ${city}?`,
-    answer: `No. TheTriFusion’s only office is at ${NAP}. Phone ${PHONE}. Hours: ${HOURS}. ${city} is a service area: video calls, WhatsApp, weekly demos, and travel when a kickoff or launch needs to be on site. We will not print a ${city} address for TheTriFusion, and we will not open a Google Business Profile that pretends we sit there.`,
+    answer: isHq
+      ? `Yes. TheTriFusion's office is at ${NAP}. Phone ${PHONE}. Hours: ${HOURS}. You can visit for a scoped discussion by appointment, or we meet on video/WhatsApp with weekly demos.`
+      : `No. TheTriFusion’s only office is at ${NAP}. Phone ${PHONE}. Hours: ${HOURS}. ${city} is a service area: video calls, WhatsApp, weekly demos, and travel when a kickoff or launch needs to be on site. We will not print a ${city} address for TheTriFusion, and we will not open a Google Business Profile that pretends we sit there.`,
   };
 }
 

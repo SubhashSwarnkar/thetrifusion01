@@ -5,32 +5,32 @@
  */
 
 export const SERVICE_KEYWORD_BY_SLUG = {
-  "website-development": "website development company in Jaipur",
+  "website-development": "website development company in India",
   "software-development": "custom software development company in India",
   "mobile-app-development": "mobile app development company in India",
-  "graphic-design": "graphic design company in Jaipur",
+  "graphic-design": "graphic design company in India",
   rpa: "RPA services company in India",
   "ai-development": "AI development company in India",
   "on-demand": "hire dedicated developers in India",
   "mlm-crm-development": "MLM software development company in India",
   "ev-charging-app-development": "EV charging management software (CMS & app) in India",
   "ios-app-development": "iOS app development company in India",
-  "android-app-development": "Android app development company in Jaipur",
-  "ui-ux-design": "UI/UX design company in Jaipur",
-  branding: "branding agency in Jaipur",
-  devops: "DevOps services in Jaipur",
+  "android-app-development": "Android app development company in India",
+  "ui-ux-design": "UI/UX design company in India",
+  branding: "branding agency in India",
+  devops: "DevOps services in India",
   salesforce: "Salesforce implementation company in India",
   "business-modernization": "business modernization in India",
   "digital-marketing": "digital marketing company in India",
-  "crm-erp-development": "custom CRM development in Jaipur",
-  "erp-software-development": "ERP software development company in Jaipur",
+  "crm-erp-development": "custom CRM development in India",
+  "erp-software-development": "ERP software development company in India",
   "fintech-app-development": "fintech app development company in India",
 };
 
 export const UNINDEXED_SERVICE_LINKS = [
   {
     href: "/services/website-development",
-    anchor: "website development company in Jaipur",
+    anchor: "website development company in India",
   },
   {
     href: "/services/software-development",
@@ -38,7 +38,7 @@ export const UNINDEXED_SERVICE_LINKS = [
   },
   {
     href: "/services/graphic-design",
-    anchor: "graphic design company in Jaipur",
+    anchor: "graphic design company in India",
   },
   {
     href: "/services/rpa",
@@ -66,19 +66,19 @@ export const UNINDEXED_SERVICE_LINKS = [
   },
   {
     href: "/services/android-app-development",
-    anchor: "Android app development company in Jaipur",
+    anchor: "Android app development company in India",
   },
   {
     href: "/services/ui-ux-design",
-    anchor: "UI/UX design company in Jaipur",
+    anchor: "UI/UX design company in India",
   },
   {
     href: "/services/branding",
-    anchor: "branding agency in Jaipur",
+    anchor: "branding agency in India",
   },
   {
     href: "/services/devops",
-    anchor: "DevOps services in Jaipur",
+    anchor: "DevOps services in India",
   },
   {
     href: "/services/salesforce",
@@ -94,11 +94,11 @@ export const UNINDEXED_SERVICE_LINKS = [
   },
   {
     href: "/services/crm-erp-development",
-    anchor: "custom CRM development in Jaipur",
+    anchor: "custom CRM development in India",
   },
   {
     href: "/services/erp-software-development",
-    anchor: "ERP software development company in Jaipur",
+    anchor: "ERP software development company in India",
   },
   {
     href: "/services/fintech-app-development/bbps-software",

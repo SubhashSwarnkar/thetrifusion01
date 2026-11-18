@@ -44,7 +44,7 @@ export default {
     id: "quick-answer",
     heading: "Custom software development in India: the short answer",
     text:
-      "TheTriFusion (Trifusion Infotech Private Limited) is a custom software development company in India with its studio in Jaipur, Rajasthan. We build portals, CRM/ERP modules, APIs, internal tools and SaaS MVPs for Indian SMEs. You get a written scope, weekly demos, and the code you own. Published starter MVPs start from ₹1,00,000; a focused module is often 6–12 weeks after discovery.",
+      "TheTriFusion (Trifusion Infotech Private Limited) is a custom software development company in India with its studio in Jaipur, Rajasthan. We build portals, CRM/ERP modules, APIs, internal tools and SaaS MVPs for Indian SMEs. You get a written scope, weekly demos, and the code you own. Published starter MVPs start from ₹1,00,000; a focused module is often 6–12 weeks after discovery. Based in Jaipur? See [custom software development in Jaipur](/solutions/custom-software-development-jaipur).",
     facts: [
       { label: "Starting price", value: "From ₹1,00,000 (published Basic plan)" },
       { label: "Typical timeline", value: "6–12 weeks for a focused MVP module" },

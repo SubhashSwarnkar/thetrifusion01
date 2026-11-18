@@ -3,7 +3,13 @@ import HomeRest from "components/HomeRest";
 import JsonLd from "components/JsonLd";
 import { services } from "data/servicesData";
 import { HOME_FAQS } from "data/companyInfo";
-import { breadcrumbSchema, faqSchema, itemListSchema, videoObjectSchema } from "lib/schema";
+import {
+  breadcrumbSchema,
+  faqSchema,
+  itemListSchema,
+  localBusinessSchema,
+  videoObjectSchema,
+} from "lib/schema";
 import { pageMetadata } from "lib/seoConfig";
 
 export const metadata = pageMetadata("/");
@@ -11,6 +17,7 @@ export const metadata = pageMetadata("/");
 export default function RoutePage() {
   return (
     <>
+      <JsonLd data={localBusinessSchema()} />
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", path: "/" },

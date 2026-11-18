@@ -41,7 +41,7 @@ export default {
     id: "quick-answer",
     heading: "Mobile app development company in India: the short answer",
     text:
-      "TheTriFusion is a mobile app development company in India (studio in Jaipur, Rajasthan) that builds one product for both iOS and Android, usually on React Native or Flutter, with the backend and web admin behind it. Mobile projects start from ₹50,000, and a focused cross-platform MVP typically takes 8–12 weeks after discovery. For a single store, see [iOS app development](/services/ios-app-development) or [Android app development](/services/android-app-development).",
+      "TheTriFusion is a mobile app development company in India (studio in Jaipur, Rajasthan) that builds one product for both iOS and Android, usually on React Native or Flutter, with the backend and web admin behind it. Mobile projects start from ₹50,000, and a focused cross-platform MVP typically takes 8–12 weeks after discovery. For a single store, see [iOS app development](/services/ios-app-development) or [Android app development](/services/android-app-development). Based in Jaipur? See [mobile app development in Jaipur](/solutions/mobile-app-development-company-jaipur).",
     facts: [
       { label: "Starting price", value: "From ₹50,000" },
       { label: "Typical MVP timeline", value: "8–12 weeks after discovery" },

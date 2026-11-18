@@ -143,8 +143,8 @@ export const serviceIndiaOnpage = {
     ),
   },
   "ai-development": {
-    metaTitle: "AI Development Company in India | Chatbots, RAG & Agents",
-    bannerTitle: "AI Development Company in India — Jaipur Studio",
+    metaTitle: "AI Chatbot & AI Agent Development in India | WhatsApp, RAG",
+    bannerTitle: "AI Chatbot & AI Agent Development in India | WhatsApp, RAG",
     extraSections: [
       {
         id: "india-city-pages",
@@ -256,10 +256,8 @@ export const serviceIndiaOnpage = {
     schemaAreaServed: INDIA_AREA_SERVED,
   },
   salesforce: {
-    metaTitle:
-      "Salesforce Implementation Company in India | Jaipur Flows & Apex",
-    bannerTitle:
-      "Salesforce Customization & Implementation in Jaipur, India",
+    metaTitle: "Salesforce Developers in Jaipur | Flows, Apex & Integrations",
+    bannerTitle: "Salesforce Developers in Jaipur | Flows, Apex & Integrations",
     extraSections: [
       {
         id: "india-city-pages",
@@ -281,8 +279,8 @@ export const serviceIndiaOnpage = {
     schemaAreaServed: INDIA_AREA_SERVED,
   },
   "crm-erp-development": {
-    metaTitle: "Custom CRM Development Company in India | Jaipur Studio",
-    bannerTitle: "Custom CRM Software Development in India — Jaipur Studio",
+    metaTitle: "Custom CRM Software Development Company in Jaipur, India",
+    bannerTitle: "Custom CRM Software Development Company in Jaipur, India",
     extraSections: [
       {
         id: "india-city-pages",
@@ -489,9 +487,8 @@ export const serviceIndiaOnpage = {
     schemaAreaServed: INDIA_AREA_SERVED,
   },
   "android-app-development": {
-    metaTitle:
-      "Android App Development Company in India | Play Store from Jaipur",
-    bannerTitle: "Android App Development Company in India — Jaipur Studio",
+    metaTitle: "Android App Development Company in Jaipur | Kotlin & Play Store",
+    bannerTitle: "Android App Development Company in Jaipur | Kotlin & Play Store",
     extraSections: [
       {
         id: "india-city-pages",

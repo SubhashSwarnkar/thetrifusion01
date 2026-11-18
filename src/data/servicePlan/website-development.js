@@ -43,7 +43,7 @@ export default {
     id: "quick-answer",
     heading: "Website development company in India: the short answer",
     text:
-      "TheTriFusion is a website design and development company in India with its studio in Jaipur, Rajasthan. We build business websites, lead-generation sites, WordPress sites, Next.js sites and ecommerce storefronts for clients across India and worldwide. Business websites start from ₹15,000. A focused marketing site typically launches in 3–8 weeks, with titles, sitemap and Search Console set up at go-live.",
+      "TheTriFusion is a website design and development company in India with its studio in Jaipur, Rajasthan. We build business websites, lead-generation sites, WordPress sites, Next.js sites and ecommerce storefronts for clients across India and worldwide. Business websites start from ₹15,000. A focused marketing site typically launches in 3–8 weeks, with titles, sitemap and Search Console set up at go-live. Based in Jaipur? See [website development in Jaipur](/solutions/website-development-company-jaipur).",
     facts: [
       { label: "Starting price", value: "From ₹15,000 (Basic, up to 5 pages)" },
       { label: "Typical timeline", value: "3–8 weeks for a focused marketing site" },

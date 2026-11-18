@@ -9,7 +9,7 @@ import { NAP_LINE, SOURCES, TEAM } from "./_shared";
  */
 export default {
   contentUpdatedAt: "2026-10-28",
-  metaTitle: "MLM Software Development Company in India | Binary, Unilevel & Matrix",
+  metaTitle: "MLM Software Company in Jaipur, India | Binary, Unilevel & Matrix",
   bannerTitle: "MLM Software Development Company in Jaipur, India",
   metaDescription:
     "Custom MLM software for binary, unilevel, matrix and hybrid plans — genealogy, e-wallet, KYC, payouts and apps. Built in Jaipur. See plans & pricing.",

@@ -5,7 +5,7 @@ export const featuredSolutionNav = [
   {
     slug: "website-development",
     href: "/services/website-development",
-    navLabel: "Website development — Jaipur",
+    navLabel: "Website development",
   },
   {
     slug: "software-development",
@@ -127,26 +127,32 @@ export const featuredSolutionNav = [
   },
   {
     slug: "website-development-company-jaipur",
-    navLabel: "Jaipur websites (HQ)",
+    navLabel: "Websites",
+    group: "jaipur-hq",
   },
   {
     slug: "custom-software-development-jaipur",
-    navLabel: "Jaipur custom software (HQ)",
+    navLabel: "Custom software",
+    group: "jaipur-hq",
   },
   {
     slug: "mobile-app-development-company-jaipur",
-    navLabel: "Jaipur mobile apps (HQ)",
+    navLabel: "Mobile apps",
+    group: "jaipur-hq",
   },
   {
     slug: "digital-marketing-company-jaipur",
-    navLabel: "Jaipur digital marketing (HQ)",
+    navLabel: "Digital marketing",
+    group: "jaipur-hq",
   },
   {
     slug: "fintech-app-development-jaipur",
-    navLabel: "Jaipur fintech (HQ)",
+    navLabel: "Fintech",
+    group: "jaipur-hq",
   },
   {
     slug: "ecommerce-website-development-jaipur",
-    navLabel: "Jaipur ecommerce (HQ)",
+    navLabel: "Ecommerce",
+    group: "jaipur-hq",
   },
 ];

@@ -90,20 +90,35 @@ export default function Footer({ hideNewsletter = false }) {
                 Solutions
               </h4>
               <ul className="space-y-3">
-                {featuredSolutions.map((page) => (
-                  <li key={page.slug}>
-                    <a
-                      href={absoluteSiteUrl(
-                        canonicalInternalHref(
-                          page.href || `/solutions/${page.slug}`
-                        )
-                      )}
-                      className="text-white/60 hover:text-white hover:translate-x-1 transition-all inline-block font-light leading-snug"
-                    >
-                      {page.navLabel}
-                    </a>
-                  </li>
-                ))}
+                {featuredSolutions.map((page, index) => {
+                  const prev = featuredSolutions[index - 1];
+                  const showHqHeading =
+                    page.group === "jaipur-hq" &&
+                    (!prev || prev.group !== "jaipur-hq");
+                  return (
+                    <React.Fragment key={page.slug}>
+                      {showHqHeading ? (
+                        <li className="pt-2">
+                          <p className="text-white/90 text-sm font-bold tracking-wide">
+                            Jaipur (HQ)
+                          </p>
+                        </li>
+                      ) : null}
+                      <li>
+                        <a
+                          href={absoluteSiteUrl(
+                            canonicalInternalHref(
+                              page.href || `/solutions/${page.slug}`
+                            )
+                          )}
+                          className="text-white/60 hover:text-white hover:translate-x-1 transition-all inline-block font-light leading-snug"
+                        >
+                          {page.navLabel}
+                        </a>
+                      </li>
+                    </React.Fragment>
+                  );
+                })}
                 <li>
                   <Link
                     href="/solutions"

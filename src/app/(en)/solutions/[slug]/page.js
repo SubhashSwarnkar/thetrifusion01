@@ -15,7 +15,6 @@ import {
 import {
   breadcrumbSchema,
   faqSchema,
-  localBusinessSchema,
   serviceSchema,
 } from "lib/schema";
 
@@ -115,7 +114,6 @@ export default function RoutePage({ params }) {
             : {}),
         })}
       />
-      {city ? <JsonLd data={localBusinessSchema()} /> : null}
       <JsonLd data={faqSchema(page.faqs)} />
       <JsonLd
         data={breadcrumbSchema([

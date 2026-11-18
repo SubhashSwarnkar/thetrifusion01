@@ -64,7 +64,7 @@ export default function Hero() {
                 {siteConfig.addressLine}
               </address>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.12] text-theme-blue mb-3">
-                Software Company in Jaipur for Websites, Apps &amp; Digital Marketing
+                Software Company in Jaipur for Websites, Apps, EV & Fintech Software
               </h1>
               <p className="text-xl sm:text-2xl font-semibold text-theme-purple tracking-tight mb-4">
                 Growing your business is our calling.

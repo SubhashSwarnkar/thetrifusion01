@@ -4,120 +4,120 @@ export const serviceNav = [
     "id": "software-development",
     "slug": "software-development",
     "title": "Software Development",
-    "shortDescription": "TheTriFusion in Jaipur, Rajasthan delivers custom software for Indian SMEs — CRM, APIs, and ops tools. Talk to us this week for a written scoped estimate."
+    "shortDescription": "Custom software: CRM, APIs, portals and ops tools for Indian SMEs."
   },
   {
     "id": "website-development",
     "slug": "website-development",
     "title": "Website Development",
-    "shortDescription": "TheTriFusion in Jaipur builds custom websites and web apps for Indian businesses — React/Next.js, SEO basics, post-launch support. Request a scoped quote today."
+    "shortDescription": "Business websites and web apps — React/Next.js, SEO basics, post-launch support."
   },
   {
     "id": "mobile-app-development",
     "slug": "mobile-app-development",
     "title": "Mobile App Development",
-    "shortDescription": "TheTriFusion in Jaipur builds iOS and Android apps for Indian businesses — React Native, Flutter, or native. Typical MVP 8–12 weeks. Get a scoped estimate."
+    "shortDescription": "iOS and Android apps — React Native, Flutter, or native. Typical MVP 8–12 weeks."
   },
   {
     "id": "ios-app-development",
     "slug": "ios-app-development",
     "title": "iOS App Development",
-    "shortDescription": "TheTriFusion in Jaipur, Rajasthan ships iOS apps — Swift or React Native, App Store review, and TestFlight. Typical MVP 8–12 weeks. Get a scoped quote."
+    "shortDescription": "iPhone apps — Swift or React Native, App Store review, and TestFlight."
   },
   {
     "id": "android-app-development",
     "slug": "android-app-development",
     "title": "Android App Development",
-    "shortDescription": "TheTriFusion in Jaipur, Rajasthan ships Android apps — Kotlin or React Native and Play Store listing. Typical MVP 8–12 weeks. Request a scoped quote now."
+    "shortDescription": "Play Store apps — Kotlin or React Native, signing and listing support."
   },
   {
     "id": "ai-development",
     "slug": "ai-development",
     "title": "AI Development",
-    "shortDescription": "TheTriFusion in Jaipur adds practical AI to Indian products — assistants, document ops, and search — with a human workflow around it. Request a scoped pilot."
+    "shortDescription": "WhatsApp bots, RAG search and AI agents with a human review step."
   },
   {
     "id": "devops",
     "slug": "devops",
     "title": "DevOps & Cloud",
-    "shortDescription": "TheTriFusion in Jaipur runs DevOps and cloud: Kubernetes, CI/CD, Terraform, AWS/Azure/GCP migration, cost optimization and managed DevOps. Free infrastructure audit."
+    "shortDescription": "Kubernetes, CI/CD, Terraform, cloud migration and managed DevOps."
   },
   {
     "id": "ui-ux-design",
     "slug": "ui-ux-design",
     "title": "UI/UX Design",
-    "shortDescription": "TheTriFusion in Jaipur designs product UI/UX for Indian websites and apps — flows, design systems, and handoff to build. Book a scoped design review today."
+    "shortDescription": "Product UI/UX — flows, design systems, and handoff to build."
   },
   {
     "id": "graphic-design",
     "slug": "graphic-design",
     "title": "Graphic Design",
-    "shortDescription": "TheTriFusion in Jaipur delivers graphic design for Indian brands — social kits, ads, and campaign visuals that match your live website. Request a scoped pack."
+    "shortDescription": "Social kits, ads and campaign visuals matched to your live site."
   },
   {
     "id": "branding",
     "slug": "branding",
     "title": "Branding",
-    "shortDescription": "TheTriFusion in Jaipur builds brand identity for Indian companies — logo, colour, type, and guidelines the website can use. From ₹30,000."
+    "shortDescription": "Logo, colour, type and guidelines the website can use. From ₹30,000."
   },
   {
     "id": "digital-marketing",
     "slug": "digital-marketing",
     "title": "Digital Marketing",
-    "shortDescription": "TheTriFusion in Jaipur runs data-driven digital marketing & performance ad campaigns — SEO, Google Ads, Meta Ads, and custom landing page CRO for high ROAS."
+    "shortDescription": "SEO, Google Ads, Meta Ads and landing-page CRO for measurable ROAS."
   },
   {
     "id": "rpa",
     "slug": "rpa",
     "title": "RPA",
-    "shortDescription": "TheTriFusion in Jaipur automates invoice entry, Tally sync, and CRM updates with a human exception path. From ₹50,000."
+    "shortDescription": "Invoice entry, Tally sync and CRM updates with a human exception path. From ₹50,000."
   },
   {
     "id": "salesforce",
     "slug": "salesforce",
     "title": "Salesforce",
-    "shortDescription": "TheTriFusion in Jaipur implements Salesforce Flows, Apex, and integrations on an org you already pay for. From ₹80,000."
+    "shortDescription": "Salesforce Flows, Apex and integrations on an org you already pay for. From ₹80,000."
   },
   {
     "id": "business-modernization",
     "slug": "business-modernization",
     "title": "Business Modernization",
-    "shortDescription": "TheTriFusion in Jaipur modernizes Indian SME operations — replace spreadsheets with web apps, CRM, and mobile. Book a discovery call for a phased roadmap."
+    "shortDescription": "Replace spreadsheets with web apps, CRM and mobile — phased roadmaps."
   },
   {
     "id": "on-demand",
     "slug": "on-demand",
     "title": "On Demand",
-    "shortDescription": "TheTriFusion in Jaipur provides on-demand developers for Indian teams — React, Node, mobile. Flexible hours with a named lead. Request an availability slot."
+    "shortDescription": "Named React, Node and mobile developers — flexible hours with a lead."
   },
   {
     "id": "mlm-crm-development",
     "slug": "mlm-crm-development",
     "title": "MLM CRM Development",
-    "shortDescription": "TheTriFusion in Jaipur, Rajasthan builds MLM CRM software — unilevel plans, genealogy, KYC, and leads on iOS, Android, and web. Get a scoped estimate."
+    "shortDescription": "MLM CRM: unilevel plans, genealogy, KYC and leads on iOS, Android and web."
   },
   {
     "id": "fintech-app-development",
     "slug": "fintech-app-development",
     "title": "Fintech App Development",
-    "shortDescription": "TheTriFusion in Jaipur builds and sells BBPS, AEPS, DMT and XDMT software — plus UPI, KYC, and banking apps for retailers, distributors, and fintech operators across India."
+    "shortDescription": "BBPS, AEPS, DMT and XDMT software — retailer, distributor and admin apps."
   },
   {
     "id": "ev-charging-app-development",
     "slug": "ev-charging-app-development",
     "title": "EV Charging Software (CMS & App)",
-    "shortDescription": "White-label EV charging management software for Indian CPOs: OCPP CMS, driver app, billing, OCPI roaming."
+    "shortDescription": "White-label EV charging CMS: OCPP, driver app, billing, OCPI roaming."
   },
   {
     "id": "crm-erp-development",
     "slug": "crm-erp-development",
     "title": "CRM Development",
-    "shortDescription": "TheTriFusion in Jaipur, Rajasthan builds custom CRM — pipelines, quotations, WhatsApp, iOS, Android, and web. See live client ops. Get a scoped quote."
+    "shortDescription": "Custom CRM: pipelines, quotations, WhatsApp, iOS/Android/web."
   },
   {
     "id": "erp-software-development",
     "slug": "erp-software-development",
     "title": "ERP Software Development",
-    "shortDescription": "TheTriFusion in Jaipur, Rajasthan builds custom ERP — GST finance, inventory, MRP, multi-branch, web and mobile. Phased programmes from ₹6,00,000."
+    "shortDescription": "Custom ERP: GST finance, inventory, MRP, multi-branch. From ₹6,00,000."
   }
 ];

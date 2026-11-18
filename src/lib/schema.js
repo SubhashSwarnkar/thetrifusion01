@@ -20,6 +20,19 @@ const AREA_SERVED = [
   { "@type": "Place", name: "Worldwide" },
 ];
 
+/** LocalBusiness areaServed: HQ city + state + country only. */
+const LOCAL_AREA_SERVED = [
+  { "@type": "City", name: siteConfig.city },
+  { "@type": "AdministrativeArea", name: siteConfig.region },
+  { "@type": "Country", name: "India" },
+];
+
+const ORGANIZATION_SAME_AS = [
+  siteConfig.instagram,
+  siteConfig.linkedin,
+  "https://www.goodfirms.co/company/thetrifusion",
+];
+
 /**
  * Founder Person from TeamMembers (Amardeep, CEO). No personal LinkedIn,
  * years-of-experience, or certifications are stored in this repo.
@@ -116,9 +129,9 @@ function organizationNode() {
     },
     areaServed: AREA_SERVED,
     contactPoint: contactPoints(),
-    // sameAs: company profiles that already exist in siteConfig only.
-    // TODO OWNER: GBP, Clutch (fix HQ to Jaipur), GoodFirms, YouTube, X URLs.
-    sameAs: [siteConfig.instagram, siteConfig.linkedin],
+    // sameAs: company profiles that already exist — Instagram, LinkedIn, GoodFirms.
+    // TODO OWNER: GBP, Clutch (fix HQ to Jaipur), YouTube, X URLs.
+    sameAs: ORGANIZATION_SAME_AS,
   };
 }
 
@@ -183,7 +196,7 @@ function localBusinessNode() {
     // No coordinates are stored in this repo today — do not invent them.
     currenciesAccepted: "INR",
     paymentAccepted: "UPI, Bank Transfer, Cards",
-    areaServed: AREA_SERVED,
+    areaServed: LOCAL_AREA_SERVED,
     knowsLanguage: ["en-IN", "hi"],
     knowsAbout: [
       "Software Development",
@@ -215,7 +228,7 @@ function localBusinessNode() {
       "WhatsApp Business API",
     ],
     contactPoint: contactPoints(),
-    sameAs: [siteConfig.instagram, siteConfig.linkedin],
+    sameAs: ORGANIZATION_SAME_AS,
   };
 }
 
@@ -240,15 +253,14 @@ export function websiteSchema() {
   };
 }
 
+/**
+ * Sitewide graph: Organization + WebSite + Founder.
+ * LocalBusiness is emitted only on homepage and /contact (see those routes).
+ */
 export function siteGraphSchema() {
   return {
     "@context": "https://schema.org",
-    "@graph": [
-      organizationNode(),
-      localBusinessNode(),
-      websiteNode(),
-      founderPerson(),
-    ],
+    "@graph": [organizationNode(), websiteNode(), founderPerson()],
   };
 }
 

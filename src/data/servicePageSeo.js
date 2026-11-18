@@ -21,7 +21,7 @@ export const servicePageSeo = {
     bannerDescription:
       "Internal tools, APIs, and product backends from Jaipur — scoped to your workflow, not a boxed product with a logo swap.",
     shortDescription:
-      "TheTriFusion in Jaipur, Rajasthan delivers custom software for Indian SMEs — CRM, APIs, and ops tools. Talk to us this week for a written scoped estimate.",
+      "Custom software: CRM, APIs, portals and ops tools for Indian SMEs.",
     description:
       "TheTriFusion is a custom software development company in Jaipur, Rajasthan. We replace spreadsheet chaos with portals, APIs, and admin tools Indian SMEs can actually run — then add iOS or Android when field teams need a companion app. You get a written scope, weekly demos, and code you own.",
     locationLine:
@@ -98,7 +98,7 @@ export const servicePageSeo = {
     bannerDescription:
       "Marketing sites, business portals, and ecommerce storefronts on React/Next.js — titles, sitemap, and support after go-live, not a ZIP dump.",
     shortDescription:
-      "TheTriFusion in Jaipur builds custom websites and web apps for Indian businesses — React/Next.js, SEO basics, post-launch support. Request a scoped quote today.",
+      "Business websites and web apps — React/Next.js, SEO basics, post-launch support.",
     description:
       "TheTriFusion is a website development company in Jaipur. We ship React and Next.js sites for Indian businesses: company pages, lead funnels, and ecommerce storefronts with payments and admin. Paid ads use /web-development; this page is the organic capability write-up with stack, process, and SEO handover.",
     locationLine:
@@ -180,7 +180,7 @@ export const servicePageSeo = {
     bannerDescription:
       "One product on iOS and Android from Jaipur — shared data model, store listings, and a web admin. Dedicated iOS and Android pages cover store-specific process.",
     shortDescription:
-      "TheTriFusion in Jaipur builds iOS and Android apps for Indian businesses — React Native, Flutter, or native. Typical MVP 8–12 weeks. Get a scoped estimate.",
+      "iOS and Android apps — React Native, Flutter, or native. Typical MVP 8–12 weeks.",
     description:
       "TheTriFusion is a mobile app development company in Jaipur covering the shared iOS + Android practice: React Native, Flutter, or native when a store needs depth. PlugOne and Connect Dairy are live. Use the iOS or Android service pages when you only need one store; this page is for teams shipping both.",
     locationLine:
@@ -258,7 +258,7 @@ export const servicePageSeo = {
     bannerDescription:
       "Flows, high-fidelity screens, and a component set developers can ship — not a mood board that dies in a ZIP file.",
     shortDescription:
-      "TheTriFusion in Jaipur designs product UI/UX for Indian websites and apps — flows, design systems, and handoff to build. Book a scoped design review today.",
+      "Product UI/UX — flows, design systems, and handoff to build.",
     description:
       "TheTriFusion is a UI/UX design agency in Jaipur for product teams, not poster work. We map user flows, design web and app screens in Figma, and hand a component set to engineering — often the same team that will build. Graphic design is a separate page when you need campaign kits, not product UI.",
     locationLine:
@@ -331,7 +331,7 @@ export const servicePageSeo = {
     bannerDescription:
       "Campaign kits and social sets that match the live site we also build — not random one-off posters with no brand system.",
     shortDescription:
-      "TheTriFusion in Jaipur delivers graphic design for Indian brands — social kits, ads, and campaign visuals that match your live website. Request a scoped pack.",
+      "Social kits, ads and campaign visuals matched to your live site.",
     description:
       "TheTriFusion offers graphic design services in Jaipur for campaigns that have to sit next to a real website or app. We produce social kits, ad creatives, and launch visuals using the same colours and type as your product. Branding (logo and identity) and UI/UX (product screens) are separate pages.",
     locationLine:
@@ -382,7 +382,7 @@ export const servicePageSeo = {
     bannerDescription:
       "Data-backed performance marketing, high-ROAS Google & Meta ads, and revenue-focused SEO directly integrated with high-converting custom landing pages.",
     shortDescription:
-      "TheTriFusion in Jaipur runs data-driven digital marketing & performance ad campaigns — SEO, Google Ads, Meta Ads, and custom landing page CRO for high ROAS.",
+      "SEO, Google Ads, Meta Ads and landing-page CRO for measurable ROAS.",
     description:
       "TheTriFusion is a leading digital marketing and performance marketing agency in Jaipur. We bridge the gap between creative marketing and engineering: our team crafts laser-targeted Google Search/PMax campaigns, Meta (Facebook & Instagram) ads, technical SEO, and conversion-optimized landing pages that turn expensive traffic into paying customers. Every campaign is tracked against concrete business metrics: CAC, ROAS, and qualified lead volume.",
     locationLine:
@@ -448,7 +448,7 @@ export const servicePageSeo = {
     bannerDescription:
       "Name, logo, colour, and type — then a website that uses them. Identity is not an orphan PNG sitting next to a mismatched template.",
     shortDescription:
-      "TheTriFusion in Jaipur builds brand identity for Indian companies — logo, voice, and a site that matches. Get a scoped branding + web package outline.",
+      "Logo, colour, type and guidelines the website can use. From ₹30,000.",
     description:
       "TheTriFusion is a brand identity studio in Jaipur for companies that need a logo and a site that actually uses it. We define voice, mark, colour, and type, then hand rules to web and campaign work. Graphic design covers campaign kits; UI/UX covers product screens.",
     locationLine:
@@ -499,7 +499,7 @@ export const servicePageSeo = {
     bannerDescription:
       "Bots for invoice copy, report pulls, and CRM updates — with a human still owning exceptions. Fuzzy judgement work is a poor fit.",
     shortDescription:
-      "TheTriFusion in Jaipur automates repetitive office work for Indian SMEs — bots, APIs, and human handoff. Send a process list for a scoped RPA estimate.",
+      "Invoice entry, Tally sync and CRM updates with a human exception path. From ₹50,000.",
     description:
       "TheTriFusion offers RPA automation services in Jaipur for Indian SMEs drowning in copy-paste. We record the current process, mark what a bot can own versus what needs a proper API, and leave people on exceptions and customers. Business modernization covers replacing spreadsheets with a full app; RPA is the bot layer on work you are not ready to rewrite.",
     locationLine:
@@ -550,7 +550,7 @@ export const servicePageSeo = {
     bannerDescription:
       "One painful workflow off Excel and WhatsApp first — then the next module. Not a 200-user ERP dumped on a 12-person team.",
     shortDescription:
-      "TheTriFusion in Jaipur modernizes Indian SME operations — replace spreadsheets with web apps, CRM, and mobile. Book a discovery call for a phased roadmap.",
+      "Replace spreadsheets with web apps, CRM and mobile — phased roadmaps.",
     description:
       "TheTriFusion runs business modernization from Jaipur for Indian SMEs who have outgrown Excel but are not buying enterprise ERP. We phase: one painful workflow into a web or mobile system, then the next. Custom software is the build; this page is the roadmap and sequencing. RPA is for bots on processes you will not rewrite yet.",
     locationLine:
@@ -592,16 +592,16 @@ export const servicePageSeo = {
   },
   salesforce: {
     contentUpdatedAt: "2026-10-12",
-    metaTitle: "Salesforce Customization Company in Jaipur | Flows & Apps",
+    metaTitle: "Salesforce Developers in Jaipur | Flows, Apex & Integrations",
     metaDescription:
-      "Objects, flows, and website integrations on the Salesforce org you already have. Share the broken process for a configuration-vs-custom plan.",
+      "Salesforce Flows, Apex/LWC and website or ERP integrations for your existing org, by a Jaipur team working with Indian businesses. Share your org for a scoped plan.",
     keywords:
-      "Salesforce customization Jaipur, Salesforce implementation India, Salesforce developer Rajasthan, Salesforce integration Jaipur, CRM Salesforce partner",
-    bannerTitle: "Salesforce Customization in Jaipur, India",
+      "Salesforce developers Jaipur, Salesforce Flows Apex India, Salesforce developer Rajasthan, Salesforce integration Jaipur, Salesforce customization India",
+    bannerTitle: "Salesforce Developers in Jaipur | Flows, Apex & Integrations",
     bannerDescription:
       "Objects, flows, and website integrations on the org you already have — configuration first, custom code when standard is not enough.",
     shortDescription:
-      "TheTriFusion in Jaipur customizes Salesforce for Indian sales teams — objects, flows, and integrations. Share your org and we return a scoped work plan.",
+      "Salesforce Flows, Apex and integrations on an org you already pay for. From ₹80,000.",
     description:
       "TheTriFusion customizes Salesforce from Jaipur for Indian sales teams: objects, flows, and lead-form integrations into the org you already pay for. Configuration first; custom Apex when flows are not enough. When commissions, MLM trees, or ops modules will never fit Salesforce cleanly, we say so and point to custom CRM/ERP or MLM CRM.",
     locationLine:
@@ -643,16 +643,16 @@ export const servicePageSeo = {
   },
   "ai-development": {
     contentUpdatedAt: "2026-10-12",
-    metaTitle: "AI Development Company in Jaipur | Practical AI Features",
+    metaTitle: "AI Chatbot & AI Agent Development in India | WhatsApp, RAG",
     metaDescription:
       "Add assistants, document ops, and retrieval to your web or mobile product — with a human review step. Request a scoped AI pilot.",
     keywords:
       "AI development company Jaipur, AI software India, ChatGPT integration Jaipur, document AI Rajasthan, practical AI for SMEs",
-    bannerTitle: "AI Development Company in Jaipur, India",
+    bannerTitle: "AI Chatbot & AI Agent Development in India | WhatsApp, RAG",
     bannerDescription:
       "Assistants, retrieval, and document ops inside your web or mobile product — with a human review step. We do not train foundation models.",
     shortDescription:
-      "TheTriFusion in Jaipur adds practical AI to Indian products — assistants, document ops, and search — with a human workflow around it. Request a scoped pilot.",
+      "WhatsApp bots, RAG search and AI agents with a human review step.",
     description:
       "TheTriFusion is an AI development company in Jaipur that applies existing models to your workflow: search, drafting, classification, and support deflection — always with a human fallback. We ship AI as a feature of iOS, Android, or web, not a disconnected chatbot demo. Custom software is the product shell; this page is the AI slice.",
     locationLine:
@@ -704,7 +704,7 @@ export const servicePageSeo = {
     bannerDescription:
       "Hours against a named scope — React, Node, mobile — with a lead and demos. Not anonymous bench filling or a one-day drive-by PR.",
     shortDescription:
-      "TheTriFusion in Jaipur provides on-demand developers for Indian teams — React, Node, mobile. Flexible hours with a named lead. Request an availability slot.",
+      "Named React, Node and mobile developers — flexible hours with a lead.",
     description:
       "TheTriFusion provides on-demand developers from Jaipur for Indian product teams that need extra React, Node, or mobile hours without a full project handover. You get a named lead, demos, and a written minimum engagement. If you need a scoped product from discovery to launch, use custom software or website development instead.",
     locationLine:
@@ -747,7 +747,7 @@ export const servicePageSeo = {
 
   "mlm-crm-development": {
     contentUpdatedAt: "2026-10-12",
-    metaTitle: "MLM CRM Development in Jaipur | Unilevel Software",
+    metaTitle: "MLM Software Company in Jaipur, India | Binary, Unilevel & Matrix",
     metaDescription:
       "Unilevel genealogy, KYC, and payout engines for network-marketing CRM — iOS, Android, and web. Share your plan document for a scoped estimate.",
     keywords:
@@ -776,7 +776,7 @@ export const servicePageSeo = {
     bannerDescription:
       "We sell BBPS, AEPS, DMT and XDMT software you can white-label: retailer app, distributor panel, and admin — plus UPI and KYC. You bring bank/NPCI live access; we build the product.",
     shortDescription:
-      "TheTriFusion in Jaipur builds and sells BBPS, AEPS, DMT and XDMT software — plus UPI, KYC, and banking apps for retailers, distributors, and fintech operators across India.",
+      "BBPS, AEPS, DMT and XDMT software — retailer, distributor and admin apps.",
     description:
       "TheTriFusion sells custom fintech software from Jaipur: BBPS bill-pay, AEPS Aadhaar banking, DMT, XDMT, UPI, KYC, and retailer–distributor panels. We build the product you operate — white-label or custom — on iOS, Android, and web.",
     locationLine:
@@ -835,11 +835,12 @@ export const servicePageSeo = {
       "Hi TriFusion, I want an iOS / App Store app quote from the Jaipur team.",
   },
   "android-app-development": {
-    metaTitle: "Android App Development in Jaipur | TheTriFusion",
+    metaTitle: "Android App Development Company in Jaipur | Kotlin & Play Store",
     metaDescription:
       "Android app development in Jaipur. TheTriFusion builds Kotlin and React Native apps with Play Store listing. Typical MVP is 8–12 weeks.",
     keywords:
       "Android app development company Jaipur, android app development company in jaipur, android app development services jaipur, android application development in jaipur, Kotlin app development India, Play Store app Jaipur, hire Android developers Rajasthan",
+    bannerTitle: "Android App Development Company in Jaipur | Kotlin & Play Store",
     locationLine:
       "Play Store apps from Jaipur — signing, listing, and crash monitoring.",
     scopeKicker: "Android",
@@ -864,11 +865,12 @@ export const servicePageSeo = {
   },
   "crm-erp-development": {
     contentUpdatedAt: "2026-11-03",
-    metaTitle: "Custom CRM Development in Jaipur | TheTriFusion",
+    metaTitle: "Custom CRM Software Development Company in Jaipur, India",
     metaDescription:
       "Custom pipelines, quotations, WhatsApp notes, and sales CRM your team will use — iOS, Android, and web. Module MVP range from Jaipur.",
     keywords:
       "custom CRM development Jaipur, sales pipeline software Rajasthan, CRM development India, WhatsApp CRM Jaipur, custom CRM vs Zoho",
+    bannerTitle: "Custom CRM Software Development Company in Jaipur, India",
     locationLine:
       "Custom CRM from Jaipur — pipelines your sales team will actually use.",
     scopeKicker: "CRM",

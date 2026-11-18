@@ -7,8 +7,8 @@ import { NAP_LINE, SOURCES, TEAM } from "./_shared";
  */
 export default {
   contentUpdatedAt: "2026-11-09",
-  metaTitle: "AI Development Company in India | Chatbots, RAG & Agents",
-  bannerTitle: "AI Development Company in India — Jaipur Studio",
+  metaTitle: "AI Chatbot & AI Agent Development in India | WhatsApp, RAG",
+  bannerTitle: "AI Chatbot & AI Agent Development in India | WhatsApp, RAG",
   metaDescription:
     "WhatsApp AI chatbots, RAG search, document AI and AI agents added to your product by a Jaipur team, with human review built in. Pilot first.",
   keywords:

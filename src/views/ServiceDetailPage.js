@@ -115,7 +115,7 @@ function AccentCards({ items }) {
 
 const WHY_CHOOSE_POINTS = [
   {
-    title: "100% In-House Jaipur Engineering",
+    title: "100% In-House Engineering",
     description: "No anonymous subcontractors or black-box freelancers. Direct Slack/WhatsApp access to the developers writing your code.",
     icon: "🏢",
   },
@@ -1068,13 +1068,12 @@ export default function ServiceDetailPage({
                   href={canonicalSolutionHref(solution.slug)}
                   className={`p-6 rounded-2xl border hover:shadow-lg transition-all group ${accent.card}`}
                 >
-                  <p className={`text-xs font-bold uppercase tracking-widest mb-2 ${accent.text}`}>
-                    {solution.primaryKeyword}
-                  </p>
                   <h3 className="text-xl font-bold text-theme-blue mb-2 group-hover:text-theme-purple transition-colors">
                     {solution.h1}
                   </h3>
-                  <p className="text-gray-500 text-sm font-light line-clamp-2">{solution.intro}</p>
+                  <span className={`text-xs font-semibold ${accent.text}`}>
+                    View page →
+                  </span>
                 </Link>
               );
             })}
