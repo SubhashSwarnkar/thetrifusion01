@@ -477,6 +477,37 @@ export function breadcrumbSchema(items) {
   };
 }
 
+export function collectionPageSchema({
+  name,
+  description,
+  path = "/blog",
+  items = [],
+}) {
+  const url = absoluteSiteUrl(path);
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${url}#collection`,
+    name,
+    description,
+    url,
+    isPartOf: {
+      "@type": "WebSite",
+      "@id": absoluteSiteUrl("/"),
+      name: siteConfig.name,
+    },
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: items.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        url: absoluteSiteUrl(`/blog/${item.slug}`),
+        name: item.title,
+      })),
+    },
+  };
+}
+
 export function faqSchema(faqItems = [], inLanguage) {
   return {
     "@context": "https://schema.org",

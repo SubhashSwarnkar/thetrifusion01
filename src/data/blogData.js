@@ -41,17 +41,13 @@ export { BLOG_CANONICAL_REDIRECTS, HOMEPAGE_INDIA_BLOG_SLUGS };
 export { OFFTOPIC_NOINDEX_SLUGS, ADSENSE_RECOVERY_NOINDEX_SLUGS };
 
 /**
- * Blog removed from the live site (crawl-budget / trust policy, Oct 2026).
- * Post modules remain in the repo for archival reference, but:
- * - isIndexableBlogPost / getPublishedBlogPosts always empty
- * - middleware returns 410 for /blog and /blog/*
- * - sitemap-blog is omitted from the sitemap index
- * - nav, footer, homepage, and HTML sitemap do not link blogs
- *
- * Do not mass-301 posts to service pages (soft-404 risk).
+ * Legacy AI/event blog modules stay in the repo for archival reference only.
+ * Live posts now come from content/blog/*.md (see lib/blogMarkdown.js).
+ * Retired slugs return 410 via middleware + data/retiredBlogSlugs.js.
+ * Do not mass-301 old posts to service pages (soft-404 risk).
  */
 
-/** Master switch: no blog URL is published or indexable. */
+/** Legacy modules are unpublished; new Markdown posts are separate. */
 export const BLOGS_REMOVED_FROM_SITE = true;
 
 export const ARCHIVE_NOINDEX_SLUGS = new Set([
@@ -2887,31 +2883,15 @@ function toGuideCard(post) {
   };
 }
 
-/** Indexable posts that name this service in relatedServiceSlugs (newest first). */
-export function getRelatedGuidesForService(serviceSlug, limit = 6) {
-  if (!serviceSlug) return [];
-  return getPublishedBlogPosts()
-    .filter((post) => (post.relatedServiceSlugs || []).includes(serviceSlug))
-    .slice(0, limit)
-    .map(toGuideCard);
+/** Legacy modules stay unpublished; service pages use lib/blogMarkdown guides. */
+export function getRelatedGuidesForService(_serviceSlug, _limit = 6) {
+  return [];
 }
 
-/** Indexable posts that name this solutions slug in relatedSolutionSlugs. */
-export function getRelatedGuidesForSolution(solutionSlug, limit = 6) {
-  if (!solutionSlug) return [];
-  return getPublishedBlogPosts()
-    .filter((post) => (post.relatedSolutionSlugs || []).includes(solutionSlug))
-    .slice(0, limit)
-    .map(toGuideCard);
+export function getRelatedGuidesForSolution(_solutionSlug, _limit = 6) {
+  return [];
 }
 
-/** Indexable posts that name a nested fintech product (e.g. recharge-software). */
-export function getRelatedGuidesForFintechProduct(productSlug, limit = 6) {
-  if (!productSlug) return [];
-  return getPublishedBlogPosts()
-    .filter((post) =>
-      (post.relatedFintechProductSlugs || []).includes(productSlug)
-    )
-    .slice(0, limit)
-    .map(toGuideCard);
+export function getRelatedGuidesForFintechProduct(_productSlug, _limit = 6) {
+  return [];
 }

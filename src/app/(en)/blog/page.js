@@ -1,19 +1,14 @@
 import Link from "next/link";
 import Page from "views/BlogPage";
 import JsonLd from "components/JsonLd";
-import { breadcrumbSchema } from "lib/schema";
+import { breadcrumbSchema, collectionPageSchema } from "lib/schema";
 import { pageMetadata } from "lib/seoConfig";
-import {
-  blogCategories,
-  getHubTrendingPosts,
-  getPublishedBlogPosts,
-} from "data/blogData";
-import { toBlogCard } from "lib/blogArticleProps";
+import { getPublishedMarkdownPosts } from "lib/blogMarkdown";
 
 export const metadata = pageMetadata("/blog");
 
 export default function RoutePage() {
-  const posts = getPublishedBlogPosts();
+  const posts = getPublishedMarkdownPosts();
 
   return (
     <>
@@ -23,45 +18,38 @@ export default function RoutePage() {
           { name: "Blog", path: "/blog" },
         ])}
       />
-      <Page
-        posts={posts.map(toBlogCard)}
-        trendingPosts={getHubTrendingPosts().map(toBlogCard)}
-        latestPosts={posts.slice(0, 40).map(toBlogCard)}
-        categories={blogCategories}
+      <JsonLd
+        data={collectionPageSchema({
+          name: "Tech, Software & AI Insights | TheTriFusion",
+          description:
+            "Practical tech, software, and AI insights from TheTriFusion in Jaipur.",
+          path: "/blog",
+          items: posts,
+        })}
       />
-      {/* Plain server-rendered link list so Googlebot always sees every indexable post URL */}
-      <nav
-        aria-label="All blog articles"
-        className="container mx-auto px-5 pb-16"
-      >
-        <h2 className="text-lg font-bold text-theme-blue mb-4">
-          Tech & business guides ({posts.length})
-        </h2>
-        <ul className="columns-1 sm:columns-2 lg:columns-3 gap-6 text-sm text-gray-700">
-          {posts.map((post) => (
-            <li key={post.slug} className="mb-2 break-inside-avoid">
-              <a href={`/blog/${post.slug}`} className="hover:text-theme-purple">
-                {post.title}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <p className="mt-6 text-sm text-gray-500">
-          Looking for services? See{" "}
-          <Link href="/services" className="text-theme-purple font-semibold">
-            all services
-          </Link>
-          ,{" "}
-          <Link href="/solutions" className="text-theme-purple font-semibold">
-            solutions
-          </Link>
-          , or{" "}
-          <Link href="/contact" className="text-theme-purple font-semibold">
-            contact
-          </Link>
-          .
-        </p>
-      </nav>
+      <Page posts={posts} />
+      {posts.length > 0 ? (
+        <nav
+          aria-label="All blog articles"
+          className="container mx-auto px-5 pb-16"
+        >
+          <h2 className="mb-4 text-lg font-bold text-theme-blue">
+            All posts ({posts.length})
+          </h2>
+          <ul className="columns-1 gap-6 text-sm text-gray-700 sm:columns-2 lg:columns-3">
+            {posts.map((post) => (
+              <li key={post.slug} className="mb-2 break-inside-avoid">
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="hover:text-theme-purple"
+                >
+                  {post.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      ) : null}
     </>
   );
 }

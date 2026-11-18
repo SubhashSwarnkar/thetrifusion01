@@ -3,6 +3,7 @@ import {
   canonicalSitePathname,
   documentCanonicalPathname,
 } from "lib/canonicalPath";
+import { isRetiredBlogSlug } from "data/retiredBlogSlugs";
 
 const APEX = "thetrifusion.in";
 const NON_APEX_HOSTS = new Set([
@@ -16,14 +17,28 @@ const PRODUCTION_VERCEL_ALIAS = "thetrifusion01.vercel.app";
 const STATIC_EXT =
   /\.(?:svg|png|jpg|jpeg|gif|webp|avif|woff2|mp4|txt|xml|json|ico|css|js|map)$/i;
 
-/** Blog removed from the live site — return 410 Gone (not soft-404 via 301). */
+/**
+ * Only retired AI/legacy blog slugs return 410.
+ * /blog hub, /blog/rss.xml, and new content/blog posts stay live.
+ */
 function isRemovedBlogPath(pathname) {
   const path =
     pathname.length > 1 ? pathname.replace(/\/+$/, "") : pathname || "/";
-  if (path === "/blog" || path === "/blog-1") return true;
-  if (path.startsWith("/blog/")) return true;
-  if (/^\/(es|pt|ar|id|hi)\/blog(\/|$)/.test(path)) return true;
-  return false;
+  if (path === "/blog-1") return true;
+  if (path === "/blog" || path === "/blog/rss.xml") return false;
+
+  const localeBlog = path.match(/^\/(es|pt|ar|id|hi)\/blog(?:\/(.*))?$/);
+  if (localeBlog) {
+    const rest = localeBlog[2] || "";
+    if (!rest) return false;
+    const slug = rest.split("/")[0];
+    return isRetiredBlogSlug(slug);
+  }
+
+  if (!path.startsWith("/blog/")) return false;
+  const slug = path.slice("/blog/".length).split("/")[0];
+  if (!slug || slug === "rss.xml") return false;
+  return isRetiredBlogSlug(slug);
 }
 
 function goneResponse() {
@@ -94,7 +109,7 @@ export function middleware(request) {
   const { pathname, search } = request.nextUrl;
   const nextAsset = isNextAssetPath(pathname);
 
-  // Gone blogs on ANY host — never 308 to apex then 410 (GSC Redirect error).
+  // Retired blog slugs on ANY host — never 308 to apex then 410 (GSC Redirect error).
   // Skip for Next internals (they are never blog paths).
   if (!nextAsset && isRemovedBlogPath(pathname)) {
     return goneResponse();

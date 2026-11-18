@@ -20,7 +20,6 @@ const nextConfig = {
     ],
   },
   async rewrites() {
-    // Blog sitemap chunks removed — blogs are 410 Gone from the live site.
     return [];
   },
   async redirects() {

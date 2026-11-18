@@ -5,14 +5,16 @@ import { Portfolios, isIndexablePortfolio } from "json/landingPageData";
 import { NOINDEX_PATHS, REDIRECTED_STATIC_PATHS, pages } from "lib/seoConfig";
 import { REDIRECTED_SOLUTION_SLUGS } from "lib/solutionRedirects";
 import { isNoindexCitySolutionSlug } from "data/cityLandingRobots";
+import { getPublishedMarkdownPosts } from "lib/blogMarkdown";
 
-/** Live child sitemaps only — blogs removed from the site. */
-export const SITEMAP_IDS = ["pages", "services", "solutions"];
+/** Live child sitemaps — pages, services, solutions, and the new blog. */
+export const SITEMAP_IDS = ["pages", "services", "solutions", "blog"];
 
 export const CHILD_SITEMAP_PATHS = {
   pages: "/sitemap-pages.xml",
   services: "/sitemap-services.xml",
   solutions: "/sitemap-solutions.xml",
+  blog: "/sitemap-blog.xml",
 };
 
 function safeDate(value, fallback) {
@@ -51,10 +53,15 @@ function apexSitemapUrl(path) {
 }
 
 /** Static paths that must never appear in sitemaps (gone / unpublished hubs). */
-const GONE_STATIC_PATHS = new Set(["/blog"]);
+const GONE_STATIC_PATHS = new Set();
 
 export function buildSitemapParts() {
   const fallbackDate = new Date("2026-09-24");
+  const blogPosts = getPublishedMarkdownPosts();
+  const blogHubLastmod =
+    blogPosts.length > 0
+      ? safeDate(blogPosts[0].updatedAt || blogPosts[0].date, new Date())
+      : new Date();
 
   // Services hub lastmod — keep in sync when the hub is re-submitted to GSC.
   const servicesHubLastmod = new Date("2026-11-09");
@@ -71,13 +78,16 @@ export function buildSitemapParts() {
     "/privacy": fallbackDate,
     "/terms": fallbackDate,
     "/sitemap": new Date("2026-11-09"),
+    "/blog": blogHubLastmod,
   };
 
   const staticRoutes = Object.keys(pages)
     .filter(
       (path) =>
         // Hub lives in sitemap-services.xml (not pages).
+        // Blog hub + posts live in sitemap-blog.xml.
         path !== "/services" &&
+        path !== "/blog" &&
         !NOINDEX_PATHS.has(path) &&
         !REDIRECTED_STATIC_PATHS.has(path) &&
         !GONE_STATIC_PATHS.has(path)
@@ -150,17 +160,36 @@ export function buildSitemapParts() {
     })
   );
 
+  const blogHubRoute = {
+    url: apexSitemapUrl("/blog"),
+    lastModified: blogHubLastmod,
+    changeFrequency: "daily",
+    priority: 0.7,
+  };
+
+  const blogRoutes = blogPosts.map((post) => ({
+    url: apexSitemapUrl(`/blog/${post.slug}`),
+    lastModified: safeDate(post.updatedAt || post.date, blogHubLastmod),
+    changeFrequency: "weekly",
+    priority: 0.65,
+  }));
+
   return {
     pages: [...staticRoutes, ...portfolioRoutes],
     services: [servicesHubRoute, ...serviceRoutes, ...fintechRoutes],
     solutions: solutionRoutes,
-    blog: [],
+    blog: [blogHubRoute, ...blogRoutes],
   };
 }
 
 export function allSitemapEntries() {
   const parts = buildSitemapParts();
-  const all = [...parts.pages, ...parts.services, ...parts.solutions];
+  const all = [
+    ...parts.pages,
+    ...parts.services,
+    ...parts.solutions,
+    ...parts.blog,
+  ];
   const seen = new Set();
   return all.filter((entry) => {
     if (seen.has(entry.url)) return false;
@@ -176,14 +205,15 @@ export function childSitemapLocs() {
     `${origin}${CHILD_SITEMAP_PATHS.pages}`,
     `${origin}${CHILD_SITEMAP_PATHS.services}`,
     `${origin}${CHILD_SITEMAP_PATHS.solutions}`,
+    `${origin}${CHILD_SITEMAP_PATHS.blog}`,
   ];
 }
 
-/** @deprecated Blog sitemap removed; stubs keep old routes from crashing. */
 export function getBlogSitemapChunks() {
-  return [[]];
+  return [buildSitemapParts().blog];
 }
 
-export function getBlogSitemapChunk(_chunkIndex) {
-  return [];
+export function getBlogSitemapChunk(chunkIndex = 0) {
+  const chunks = getBlogSitemapChunks();
+  return chunks[chunkIndex] || [];
 }

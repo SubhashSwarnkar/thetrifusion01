@@ -97,9 +97,9 @@ export const pages = {
       "TheTriFusion team, developers, designers, project managers, software team",
   },
   "/blog": {
-    title: "Blog | Jaipur Software Company Insights | TheTriFusion",
+    title: "Tech, Software & AI Insights | TheTriFusion",
     description:
-      "Jaipur delivery notes from TheTriFusion: ecommerce, MLM CRM, EV charging (OCPI/OCPP), and fintech — at least two India-relevant posts each month.",
+      "Practical tech, software, and AI insights from TheTriFusion in Jaipur — guides for Indian businesses buying websites, apps, and custom software.",
   },
   "/sitemap": {
     title: "HTML Sitemap | TheTriFusion",

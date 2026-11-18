@@ -158,6 +158,7 @@ export default function Header() {
             { name: "Services", isDropdown: true },
             { name: "Solutions", to: "/solutions" },
             { name: "Portfolio", to: "/portfolio" },
+            { name: "Blog", to: "/blog" },
             { name: "Pricing", to: "/pricing" },
             { name: "Company", to: "/about" },
           ].map((item) => {
@@ -345,6 +346,7 @@ export default function Header() {
                   { name: "Services", isDropdown: true },
                   { name: "Solutions", to: "/solutions" },
                   { name: "Portfolio", to: "/portfolio" },
+                  { name: "Blog", to: "/blog" },
                   { name: "Pricing", to: "/pricing" },
                   { name: "Company", to: "/about" },
                 ].map((item) => (

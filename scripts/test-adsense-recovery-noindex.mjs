@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * Crawl-budget guards after blogs-removed + Jaipur-only city policy:
- * - No blog URLs in any sitemap child
+ * Crawl-budget guards (legacy blogs unpublished + Jaipur-only city policy):
+ * - Legacy blog modules stay unpublished; new Markdown blog hub is in sitemap-blog
  * - All /services/* + fintech products stay in sitemap-services
  * - Non-Jaipur city landings are redirected (in REDIRECTED_SOLUTION_SLUGS)
  * - Jaipur HQ solutions stay in sitemap-solutions
@@ -49,26 +49,23 @@ if (indexed) fail(`${indexed} blogs still indexable`);
 const parts = buildSitemapParts();
 const sitemapUrls = allSitemapEntries().map((entry) => entry.url);
 
-if (parts.blog.length !== 0) {
-  fail(`sitemap blog part not empty (${parts.blog.length})`);
+if (!parts.blog.some((entry) => entry.url.endsWith("/blog"))) {
+  fail("sitemap blog part missing /blog hub");
 }
 
 const childLocs = childSitemapLocs();
-if (childLocs.length !== 3) {
-  fail(`expected 3 child sitemaps, got ${childLocs.length}: ${childLocs.join(", ")}`);
+if (childLocs.length !== 4) {
+  fail(`expected 4 child sitemaps, got ${childLocs.length}: ${childLocs.join(", ")}`);
 }
-for (const id of ["pages", "services", "solutions"]) {
+for (const id of ["pages", "services", "solutions", "blog"]) {
   if (!childLocs.some((loc) => loc.endsWith(`/sitemap-${id}.xml`))) {
     fail(`sitemap index missing sitemap-${id}.xml`);
   }
 }
-if (childLocs.some((loc) => /sitemap-blog/i.test(loc))) {
-  fail("sitemap index still lists sitemap-blog");
-}
 
 const blogInSitemap = sitemapUrls.filter((url) => /\/blog(\/|$)/.test(url));
-if (blogInSitemap.length) {
-  fail(`blog URLs still in sitemap: ${blogInSitemap.slice(0, 5).join(", ")}`);
+if (!blogInSitemap.some((url) => url.endsWith("/blog"))) {
+  fail("sitemap missing https://thetrifusion.in/blog");
 }
 
 const servicePaths = new Set(

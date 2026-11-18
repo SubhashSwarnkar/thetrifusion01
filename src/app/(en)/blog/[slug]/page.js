@@ -1,78 +1,70 @@
 import { notFound } from "next/navigation";
 import Page from "views/BlogDetailPage";
 import JsonLd from "components/JsonLd";
-import LanguageSwitcher from "components/LanguageSwitcher";
 import {
-  blogPosts,
-  getBlogBySlug,
-  ARCHIVE_NOINDEX_SLUGS,
-  isRedirectedBlogSlug,
-  isSoftNoindexBlogPost,
-} from "data/blogData";
-import { cleanBlogHtml } from "lib/cleanBlogHtml";
-import { hreflangLanguagesForPath } from "data/i18n/routes";
+  getMarkdownPostBySlug,
+  getPublishedMarkdownPosts,
+  getRelatedMarkdownPosts,
+} from "lib/blogMarkdown";
+import { isRetiredBlogSlug } from "data/retiredBlogSlugs";
+import { getServiceBySlug } from "data/servicesData";
 import { buildMetadata } from "lib/seoConfig";
-import { articleSchema, breadcrumbSchema, faqSchema, eventSchema } from "lib/schema";
+import { articleSchema, breadcrumbSchema, faqSchema } from "lib/schema";
 import { extractBlogFaqs } from "lib/blogFaqs";
-import { getBlogArticleView } from "lib/blogArticleProps";
-import EventWorldTimes, {
-  eventHasWorldTimes,
-  withEventWorldTimeFaq,
-} from "components/blog/EventWorldTimes";
 
 export function generateStaticParams() {
-  // Blogs removed from the live site — middleware returns 410 for /blog/*.
-  return [];
+  return getPublishedMarkdownPosts().map((post) => ({ slug: post.slug }));
 }
 
 export const dynamicParams = true;
 
 export function generateMetadata({ params }) {
-  const post = getBlogBySlug(params.slug);
+  if (isRetiredBlogSlug(params.slug)) {
+    return {
+      title: "Gone | TheTriFusion",
+      robots: { index: false, follow: false },
+    };
+  }
 
-  if (
-    !post ||
-    ARCHIVE_NOINDEX_SLUGS.has(params.slug) ||
-    isRedirectedBlogSlug(params.slug)
-  ) {
+  const post = getMarkdownPostBySlug(params.slug);
+  if (!post) {
     return {
       title: "Article Not Found | TheTriFusion Blog",
       robots: { index: false, follow: true },
     };
   }
 
-  // Unique 1200×630 PNG from src/app/blog/[slug]/opengraph-image.jsx.
-  // Hero still uses /images/blog-og/<slug>.svg.
-  const selfHostedOg = `/blog/${post.slug}/opengraph-image`;
   const path = `/blog/${post.slug}`;
-  const languages = hreflangLanguagesForPath(path);
   return buildMetadata({
-    title: post.metaTitle || `${post.title} | TheTriFusion`,
+    title: `${post.title} | TheTriFusion`,
     description: post.excerpt,
     path,
     type: "article",
-    image: selfHostedOg,
+    image: post.imageUrl,
     publishedTime: post.date,
     authors: post.author ? [post.author] : undefined,
-    noIndex: isSoftNoindexBlogPost(post),
-    ...(languages ? { languages } : {}),
+    noIndex: false,
   });
 }
 
 export default function RoutePage({ params }) {
-  const storedPost = getBlogBySlug(params.slug);
-
-  if (
-    !storedPost ||
-    ARCHIVE_NOINDEX_SLUGS.has(params.slug) ||
-    isRedirectedBlogSlug(params.slug)
-  ) {
+  if (isRetiredBlogSlug(params.slug)) {
     notFound();
   }
 
-  const post = { ...storedPost, content: cleanBlogHtml(storedPost.content) };
+  const post = getMarkdownPostBySlug(params.slug);
+  if (!post) {
+    notFound();
+  }
 
-  const faqs = withEventWorldTimeFaq(post.event, extractBlogFaqs(post.content));
+  const faqs =
+    post.faqs?.length > 0 ? post.faqs : extractBlogFaqs(post.content);
+  const relatedPosts = getRelatedMarkdownPosts(post.slug, 4);
+  const relatedServices = [];
+  if (post.targetService) {
+    const service = getServiceBySlug(post.targetService);
+    if (service) relatedServices.push(service);
+  }
 
   return (
     <>
@@ -85,19 +77,11 @@ export default function RoutePage({ params }) {
         ])}
       />
       {faqs.length > 0 ? <JsonLd data={faqSchema(faqs)} /> : null}
-      {eventSchema(post) ? <JsonLd data={eventSchema(post)} /> : null}
       <Page
-        {...getBlogArticleView(post)}
-        languageSwitcher={
-          hreflangLanguagesForPath(`/blog/${post.slug}`) ? (
-            <LanguageSwitcher path={`/blog/${post.slug}`} current="en" />
-          ) : null
-        }
-        worldTimes={
-          eventHasWorldTimes(post.event) ? (
-            <EventWorldTimes event={post.event} />
-          ) : null
-        }
+        post={post}
+        faqs={faqs}
+        relatedServices={relatedServices}
+        relatedPosts={relatedPosts}
       />
     </>
   );

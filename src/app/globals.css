@@ -54,8 +54,12 @@ section {
   @apply rounded bg-slate-100 px-1.5 py-0.5 text-base;
 }
 
+.blog-html .table-scroll {
+  @apply mb-4 w-full max-w-full overflow-x-auto;
+}
+
 .blog-html table {
-  @apply mb-4 w-full border-collapse text-sm;
+  @apply mb-0 w-full min-w-[28rem] border-collapse text-sm;
 }
 
 .blog-html th,

@@ -13,52 +13,21 @@ import {
   BlogAdTop,
 } from "components/BlogAdSense";
 import { SITE_URL } from "lib/seoConfig";
-import { WHATSAPP_NUMBER } from "data/companyInfo";
+import { WHATSAPP_NUMBER, COMPANY_PHONE_DISPLAY } from "data/companyInfo";
+import { siteConfig } from "config/site";
 import { trackEvent, AnalyticsEvents } from "utils/analytics";
 import BlogAuthorBox from "components/BlogAuthorBox";
 import FounderByline from "components/FounderByline";
 
-function splitAfterIntro(html) {
-  const source = typeof html === "string" ? html : "";
-  const match = /<h2\b/i.exec(source);
-  if (!match) return { before: source, after: "" };
-  const before = source.slice(0, match.index);
-  if (!before.replace(/<[^>]+>/g, " ").trim()) {
-    return { before: "", after: source };
-  }
-  return { before, after: source.slice(match.index) };
-}
-
-function ArticleBody({ html, worldTimes }) {
-  const className = "blog-html text-lg leading-relaxed text-gray-700";
-  if (!worldTimes) {
-    return <div className={className} dangerouslySetInnerHTML={{ __html: html }} />;
-  }
-  const { before, after } = splitAfterIntro(html);
-  return (
-    <>
-      {before ? (
-        <div className={className} dangerouslySetInnerHTML={{ __html: before }} />
-      ) : null}
-      {worldTimes}
-      {after ? (
-        <div className={className} dangerouslySetInnerHTML={{ __html: after }} />
-      ) : null}
-    </>
-  );
-}
-
 export default function BlogDetailPage({
   post,
-  categoryName,
-  relatedSolutions = [],
+  faqs = [],
   relatedServices = [],
   relatedPosts = [],
-  isEcommerceTopic = false,
   languageSwitcher = null,
-  worldTimes = null,
 }) {
   const shareUrl = `${SITE_URL}/blog/${post?.slug || ""}`;
+  const whatsappDigits = WHATSAPP_NUMBER.replace(/[^0-9]/g, "");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -70,7 +39,7 @@ export default function BlogDetailPage({
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString("en-US", {
+    return date.toLocaleDateString("en-IN", {
       year: "numeric",
       month: "long",
       day: "numeric",
@@ -79,8 +48,8 @@ export default function BlogDetailPage({
 
   return (
     <>
-      <SEO 
-        title={post.title} 
+      <SEO
+        title={post.title}
         description={post.excerpt}
         image={post.imageUrl}
         type="article"
@@ -90,228 +59,300 @@ export default function BlogDetailPage({
       {languageSwitcher}
       <BlogAdSenseAuto />
       <main className="container mx-auto max-w-6xl px-5 py-20">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_300px]">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_280px]">
           <article className="min-w-0">
-            {/* Header */}
-              <div className="mb-8">
-                <Link
-                  href="/blog"
-                  className="mb-4 inline-block text-theme-purple hover:underline"
-                >
-                  ← Back to Blog
-                </Link>
-                <div className="mb-4 flex items-center gap-3 text-sm text-gray-500">
-                  <span>{formatDate(post.date)}</span>
-                  <span>•</span>
-                  <span>{post.readTime}</span>
-                  <span>•</span>
-                  <span className="rounded-full bg-light-theme-purple px-3 py-1 text-sm font-medium text-theme-purple">
-                    {categoryName}
-                  </span>
-                </div>
-                <h1 className="mb-4 text-3xl font-bold text-theme-blue sm:text-4xl md:text-5xl">
-                  {post.title}
-                </h1>
-                <p className="mb-6 text-lg text-gray-600">{post.excerpt}</p>
-                <FounderByline
-                  compact
-                  publishedLabel={`Published on ${formatDate(post.date)}`}
-                />
+            <div className="mb-8">
+              <Link
+                href="/blog"
+                className="mb-4 inline-block text-theme-purple hover:underline"
+              >
+                ← Back to Blog
+              </Link>
+              <div className="mb-4 flex flex-wrap items-center gap-3 text-sm text-gray-500">
+                <time dateTime={post.date}>{formatDate(post.date)}</time>
+                {post.readTime ? (
+                  <>
+                    <span>•</span>
+                    <span>{post.readTime}</span>
+                  </>
+                ) : null}
+                {post.author ? (
+                  <>
+                    <span>•</span>
+                    <span>{post.author}</span>
+                  </>
+                ) : null}
               </div>
-            
+              <h1 className="mb-4 text-3xl font-bold text-theme-blue sm:text-4xl md:text-5xl">
+                {post.title}
+              </h1>
+              <p className="mb-6 text-lg text-gray-600">{post.excerpt}</p>
+              <FounderByline
+                compact
+                publishedLabel={`Published on ${formatDate(post.date)}`}
+              />
+            </div>
+
             <BlogAdTop />
 
-            {/* Content */}
-              <div className="prose prose-lg max-w-none">
-                {post.content ? (
-                  <ArticleBody html={post.content} worldTimes={worldTimes} />
-                ) : (
-                  <p className="text-gray-600">
-                    This article has no body content yet.
-                  </p>
-                )}
-              </div>
-            
+            {post.toc?.length > 1 ? (
+              <nav
+                aria-label="Table of contents"
+                className="mb-10 rounded-2xl border border-gray-100 bg-slate-50/80 p-5"
+              >
+                <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-theme-purple">
+                  On this page
+                </p>
+                <ol className="space-y-2 text-sm text-theme-blue">
+                  {post.toc.map((item) => (
+                    <li
+                      key={item.id}
+                      className={item.level === 3 ? "ml-4" : ""}
+                    >
+                      <a
+                        href={`#${item.id}`}
+                        className="hover:text-theme-purple hover:underline"
+                      >
+                        {item.text}
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </nav>
+            ) : null}
+
+            <div className="prose prose-lg max-w-none">
+              {post.content ? (
+                <div
+                  className="blog-html text-lg leading-relaxed text-gray-700"
+                  dangerouslySetInnerHTML={{ __html: post.content }}
+                />
+              ) : (
+                <p className="text-gray-600">
+                  This article has no body content yet.
+                </p>
+              )}
+            </div>
+
             <BlogAdBottom />
+
+            {faqs.length > 0 ? (
+              <section className="mt-12 border-t border-gray-200 pt-8" id="faq">
+                <h2 className="mb-6 text-2xl font-bold text-theme-blue">
+                  Frequently asked questions
+                </h2>
+                <dl className="space-y-5">
+                  {faqs.map((faq) => (
+                    <div
+                      key={faq.question}
+                      className="rounded-2xl border border-gray-100 bg-white p-5"
+                    >
+                      <dt className="mb-2 text-lg font-bold text-theme-blue">
+                        {faq.question}
+                      </dt>
+                      <dd className="text-gray-600">{faq.answer}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </section>
+            ) : null}
+
+            {post.sources?.length > 0 ? (
+              <section className="mt-10 border-t border-gray-200 pt-8">
+                <h2 className="mb-4 text-xl font-bold text-theme-blue">
+                  Sources
+                </h2>
+                <ul className="list-disc space-y-2 pl-5 text-sm text-gray-600">
+                  {post.sources.map((source) => (
+                    <li key={`${source.title}-${source.url}`}>
+                      {source.url ? (
+                        <a
+                          href={source.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-theme-purple hover:underline"
+                        >
+                          {source.title}
+                        </a>
+                      ) : (
+                        source.title
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ) : null}
 
             <BlogAuthorBox reviewDate={post.updatedAt || post.date} />
 
-            {/* Lead CTA — convert organic readers */}
-              <div
-                id="blog-lead-cta"
-                className="mt-12 rounded-2xl border border-theme-purple/20 bg-gradient-to-br from-light-theme-purple/40 to-white p-6 shadow-sm sm:p-8"
-              >
-                <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-theme-purple">
-                  Next step
-                </p>
-                <h2 className="mb-2 text-2xl font-bold text-theme-blue">
-                  Want this built for your business?
-                </h2>
-                <p className="mb-5 max-w-2xl text-gray-600">
-                  Jaipur team · Hindi + English · GST invoicing. Ecommerce live
-                  in 48h packages from ₹25,000, or a scoped custom website /
-                  app / AI build.
-                </p>
-                {isEcommerceTopic && (
-                  <p className="mb-5 max-w-2xl text-gray-600">
-                    Planning an online store? Compare Shopify, WooCommerce and
-                    custom builds on our{" "}
-                    <Link
-                      href="/solutions/ecommerce-website-development"
-                      className="font-semibold text-theme-purple underline-offset-2 hover:underline"
-                    >
-                      ecommerce website development
-                    </Link>{" "}
-                    page.
-                  </p>
-                )}
-                <div className="flex flex-col gap-3 sm:flex-row">
-                  <a
-                    href={`https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(
-                      `Hi TriFusion, I read /blog/${post.slug} and want a quote.`
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() =>
-                      trackEvent(AnalyticsEvents.CLICK_WHATSAPP, {
-                        source: `blog-${post.slug}`,
-                      })
-                    }
-                    className="inline-flex items-center justify-center rounded-full bg-green-500 px-6 py-3.5 font-bold text-white hover:bg-green-600"
-                  >
-                    WhatsApp for quote
-                  </a>
+            <div
+              id="blog-lead-cta"
+              className="mt-12 rounded-2xl border border-theme-purple/20 bg-gradient-to-br from-light-theme-purple/40 to-white p-6 shadow-sm sm:p-8"
+            >
+              <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-theme-purple">
+                Related service
+              </p>
+              <h2 className="mb-2 text-2xl font-bold text-theme-blue">
+                {post.serviceTitle
+                  ? `Need ${post.serviceTitle}?`
+                  : "Want this built for your business?"}
+              </h2>
+              <p className="mb-5 max-w-2xl text-gray-600">
+                Talk to TheTriFusion in Jaipur — WhatsApp, call, or a scoped
+                quote. Hindi + English · GST invoicing.
+              </p>
+              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <a
+                  href={`https://wa.me/${whatsappDigits}?text=${encodeURIComponent(
+                    `Hi TriFusion, I read /blog/${post.slug} and want a quote.`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() =>
+                    trackEvent(AnalyticsEvents.CLICK_WHATSAPP, {
+                      source: `blog-${post.slug}`,
+                    })
+                  }
+                  className="inline-flex items-center justify-center rounded-full bg-green-500 px-6 py-3.5 font-bold text-white hover:bg-green-600"
+                >
+                  WhatsApp
+                </a>
+                <a
+                  href={siteConfig.telHref}
+                  className="inline-flex items-center justify-center rounded-full border border-theme-purple px-6 py-3.5 font-bold text-theme-purple"
+                >
+                  Call {COMPANY_PHONE_DISPLAY}
+                </a>
+                <Link
+                  href="/discuss-project"
+                  className="inline-flex items-center justify-center rounded-full bg-theme-purple px-6 py-3.5 font-bold text-white"
+                >
+                  Get a quote
+                </Link>
+                {post.serviceHref ? (
                   <Link
-                    href="/discuss-project"
-                    className="inline-flex items-center justify-center rounded-full bg-theme-purple px-6 py-3.5 font-bold text-white"
+                    href={post.serviceHref}
+                    className="inline-flex items-center justify-center rounded-full border border-gray-200 px-6 py-3.5 font-bold text-theme-blue"
                   >
-                    Discuss project
+                    View service
                   </Link>
-                  {isEcommerceTopic ? (
-                    <Link
-                      href="/solutions/ecommerce-website-development"
-                      className="inline-flex items-center justify-center rounded-full border border-theme-purple px-6 py-3.5 font-bold text-theme-purple"
-                    >
-                      Ecommerce ₹25k offer
-                    </Link>
-                  ) : null}
-                </div>
+                ) : null}
               </div>
-            
-            {/* Social Share */}
+            </div>
+
+            <div className="mt-12 border-t border-gray-200 pt-8">
+              <h3 className="mb-4 text-xl font-bold text-theme-blue">
+                Share this article
+              </h3>
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(shareUrl)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-lg bg-blue-500 px-4 py-2 text-white transition duration-200 hover:bg-blue-600"
+                >
+                  Twitter
+                </a>
+                <a
+                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-lg bg-blue-700 px-4 py-2 text-white transition duration-200 hover:bg-blue-800"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-lg bg-blue-600 px-4 py-2 text-white transition duration-200 hover:bg-blue-700"
+                >
+                  Facebook
+                </a>
+              </div>
+            </div>
+
+            {relatedServices.length > 0 ? (
               <div className="mt-12 border-t border-gray-200 pt-8">
-                <h3 className="mb-4 text-xl font-bold text-theme-blue">
-                  Share this article
+                <h3 className="mb-6 text-2xl font-bold text-theme-blue">
+                  Related services
                 </h3>
-                <div className="flex gap-4">
-                  <a
-                    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(shareUrl)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="rounded-lg bg-blue-500 px-4 py-2 text-white transition duration-200 hover:bg-blue-600"
-                  >
-                    Twitter
-                  </a>
-                  <a
-                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="rounded-lg bg-blue-700 px-4 py-2 text-white transition duration-200 hover:bg-blue-800"
-                  >
-                    LinkedIn
-                  </a>
-                  <a
-                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="rounded-lg bg-blue-600 px-4 py-2 text-white transition duration-200 hover:bg-blue-700"
-                  >
-                    Facebook
-                  </a>
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                  {relatedServices.map((service) => (
+                    <Link
+                      key={service.slug}
+                      href={`/services/${service.slug}`}
+                      className="rounded-2xl border border-gray-100 p-5 transition-all hover:border-theme-purple/40"
+                    >
+                      <h4 className="mb-2 text-lg font-bold text-theme-blue">
+                        {service.title}
+                      </h4>
+                      <p className="line-clamp-2 text-sm text-gray-500">
+                        {service.shortDescription}
+                      </p>
+                    </Link>
+                  ))}
                 </div>
               </div>
-            
-            {relatedServices.length > 0 && (
-                <div className="mt-12 border-t border-gray-200 pt-8">
-                  <h3 className="mb-6 text-2xl font-bold text-theme-blue">
-                    Related services
-                  </h3>
-                  <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                    {relatedServices.map((service) => (
-                      <Link
-                        key={service.slug}
-                        href={`/services/${service.slug}`}
-                        className="rounded-2xl border border-gray-100 p-5 transition-all hover:border-theme-purple/40"
-                      >
-                        <h4 className="mb-2 text-lg font-bold text-theme-blue">
-                          {service.title}
-                        </h4>
-                        <p className="line-clamp-2 text-sm text-gray-500">
-                          {service.shortDescription}
-                        </p>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-                          )}
+            ) : null}
 
-            {relatedSolutions.length > 0 && (
-                <div className="mt-12 border-t border-gray-200 pt-8">
-                  <h3 className="mb-6 text-2xl font-bold text-theme-blue">
-                    Related solutions
-                  </h3>
-                  <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                    {relatedSolutions.map((solution) => (
-                      <Link
-                        key={solution.slug}
-                        href={solution.href || `/solutions/${solution.slug}`}
-                        className="rounded-2xl border border-gray-100 p-5 transition-all hover:border-theme-purple/40"
-                      >
-                        <h4 className="mb-2 text-lg font-bold text-theme-blue">
-                          {solution.h1}
-                        </h4>
-                        <p className="line-clamp-2 text-sm text-gray-500">
-                          {solution.outcomeLine}
-                        </p>
-                      </Link>
-                    ))}
-                  </div>
+            {relatedPosts.length > 0 ? (
+              <div className="mt-12 border-t border-gray-200 pt-8">
+                <h3 className="mb-6 text-2xl font-bold text-theme-blue">
+                  Related Articles
+                </h3>
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                  {relatedPosts.map((related) => (
+                    <Link
+                      key={related.slug}
+                      href={`/blog/${related.slug}`}
+                      className="rounded-2xl border border-gray-100 p-5 transition-all hover:border-theme-purple/40"
+                    >
+                      <h4 className="mb-2 text-lg font-bold text-theme-blue">
+                        {related.title}
+                      </h4>
+                      <p className="line-clamp-2 text-sm text-gray-500">
+                        {related.excerpt}
+                      </p>
+                    </Link>
+                  ))}
                 </div>
-                          )}
-
-            {relatedPosts.length > 0 && (
-                <div className="mt-12 border-t border-gray-200 pt-8">
-                  <h3 className="mb-6 text-2xl font-bold text-theme-blue">
-                    Related Articles
-                  </h3>
-                  <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                    {relatedPosts.map((related) => (
-                      <Link
-                        key={related.slug}
-                        href={`/blog/${related.slug}`}
-                        className="rounded-2xl border border-gray-100 p-5 transition-all hover:border-theme-purple/40"
-                      >
-                        <h4 className="mb-2 text-lg font-bold text-theme-blue">
-                          {related.title}
-                        </h4>
-                        <p className="line-clamp-2 text-sm text-gray-500">
-                          {related.excerpt}
-                        </p>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-                          )}
+              </div>
+            ) : null}
           </article>
 
           <aside className="hidden lg:block">
-            <div className="sticky top-24">
+            <div className="sticky top-24 space-y-6">
+              {post.toc?.length > 1 ? (
+                <nav
+                  aria-label="Sidebar table of contents"
+                  className="rounded-2xl border border-gray-100 bg-white p-4"
+                >
+                  <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-theme-purple">
+                    Contents
+                  </p>
+                  <ol className="space-y-2 text-sm text-theme-blue">
+                    {post.toc.map((item) => (
+                      <li
+                        key={`side-${item.id}`}
+                        className={item.level === 3 ? "ml-3" : ""}
+                      >
+                        <a
+                          href={`#${item.id}`}
+                          className="hover:text-theme-purple hover:underline"
+                        >
+                          {item.text}
+                        </a>
+                      </li>
+                    ))}
+                  </ol>
+                </nav>
+              ) : null}
               <BlogAdSidebar />
             </div>
           </aside>
         </div>
 
-        {/* Mobile: sidebar ad under content */}
         <div className="mt-8 lg:hidden">
           <BlogAdSidebar />
         </div>
@@ -320,4 +361,3 @@ export default function BlogDetailPage({
     </>
   );
 }
-

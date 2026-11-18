@@ -948,7 +948,11 @@ export default function ServiceDetailPage({
       ) : null}
 
       {relatedGuides.length > 0 ? (
-        <RelatedGuides guides={relatedGuides} />
+        <RelatedGuides
+          guides={relatedGuides}
+          heading="Latest insights"
+          kicker="Blog"
+        />
       ) : relatedBlog ? (
         <section className="container mx-auto px-5 pb-8">
           <SectionHeading kicker="Insights">Technical Guides & Insights</SectionHeading>

@@ -167,6 +167,14 @@ export default function Footer({ hideNewsletter = false }) {
                 </li>
                 <li>
                   <Link
+                    href="/blog"
+                    className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block"
+                  >
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/pricing"
                     className="text-white/60 hover:text-white hover:translate-x-2 transition-all inline-block"
                   >

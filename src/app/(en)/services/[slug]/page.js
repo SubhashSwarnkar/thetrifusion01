@@ -3,7 +3,7 @@ import Page from "views/ServiceDetailPage";
 import JsonLd from "components/JsonLd";
 import LanguageSwitcher from "components/LanguageSwitcher";
 import { getServiceBySlug, services } from "data/servicesData";
-import { getRelatedGuidesForService } from "data/blogData";
+import { getMarkdownGuidesForService } from "lib/blogMarkdown";
 import { hreflangLanguagesForPath } from "data/i18n/routes";
 import {
   breadcrumbSchema,
@@ -144,7 +144,7 @@ export default function RoutePage({ params }) {
             />
           ) : null
         }
-        relatedGuides={getRelatedGuidesForService(service.slug, 6)}
+        relatedGuides={getMarkdownGuidesForService(service.slug, 3)}
       />
     </>
   );

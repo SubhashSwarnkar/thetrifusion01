@@ -188,8 +188,8 @@ async function main() {
         return child;
       }
     });
-    if (childPaths.length !== 3) {
-      fail(`sitemap index should have 3 children, got ${childPaths.length}`);
+    if (childPaths.length !== 4) {
+      fail(`sitemap index should have 4 children, got ${childPaths.length}`);
     }
     if (!childPaths.some((p) => p === "/sitemap-pages.xml")) {
       fail("sitemap index missing /sitemap-pages.xml");
@@ -200,8 +200,8 @@ async function main() {
     if (!childPaths.some((p) => p === "/sitemap-solutions.xml")) {
       fail("sitemap index missing /sitemap-solutions.xml");
     }
-    if (childPaths.some((p) => /^\/sitemap-blog(\-\d+)?\.xml$/.test(p))) {
-      fail("sitemap index still lists sitemap-blog (blogs removed)");
+    if (!childPaths.some((p) => p === "/sitemap-blog.xml")) {
+      fail("sitemap index missing /sitemap-blog.xml");
     }
     for (const child of childLocs) {
       let childUrl = child;
@@ -253,10 +253,10 @@ async function main() {
       }
     })
     .filter((p) => p === "/blog" || p.startsWith("/blog/"));
-  if (blogPaths.length) {
-    fail(`sitemap still contains blog URLs (${blogPaths.length})`);
+  if (!blogPaths.includes("/blog")) {
+    fail("sitemap missing /blog hub");
   } else {
-    ok("No blog URLs in sitemap");
+    ok(`Blog URLs in sitemap (${blogPaths.length})`);
   }
 
   const localeHit = unique.find((u) =>
@@ -408,9 +408,34 @@ async function main() {
     ok("homepage JSON-LD includes LinkedIn and Instagram sameAs");
   }
 
-  // Blogs removed: hub + sample posts + OG must be 410 Gone (not soft-404 via 301).
+  // New blog hub is live; only retired legacy slugs stay 410 Gone.
+  {
+    const { res, text } = await fetchText(`${BASE_URL}/blog`);
+    if (res.status !== 200) {
+      fail(`/blog should be 200, got ${res.status}`);
+    } else {
+      ok("/blog → 200");
+    }
+    const robots = (res.headers.get("x-robots-tag") || "").toLowerCase();
+    if (robots && /noindex/.test(robots)) {
+      fail(`/blog X-Robots-Tag should allow indexing, got ${robots}`);
+    }
+    if (!/rel=["']canonical["'][^>]*href=["']https:\/\/thetrifusion\.in\/blog["']/i.test(text) &&
+        !/href=["']https:\/\/thetrifusion\.in\/blog["'][^>]*rel=["']canonical["']/i.test(text) &&
+        !/<link[^>]+rel=["']canonical["'][^>]+href=["']https:\/\/thetrifusion\.in\/blog\/?["']/i.test(text)) {
+      // Next metadata may emit canonical without self-closing quirks — also accept Link header.
+      const link = res.headers.get("link") || "";
+      if (!/https:\/\/thetrifusion\.in\/blog>;\s*rel="canonical"/i.test(link)) {
+        fail("/blog missing self-canonical");
+      } else {
+        ok("/blog self-canonical (Link header)");
+      }
+    } else {
+      ok("/blog self-canonical");
+    }
+  }
+
   for (const path of [
-    "/blog",
     "/blog-1",
     "/blog/website-development-cost-india-2026",
     "/blog/generative-ai-revolution",
@@ -428,11 +453,11 @@ async function main() {
     }
   }
 
-  // www host checks (GSC Redirect error): blogs must 410 with no prior hop;
+  // www host checks (GSC Redirect error): retired blogs must 410 with no prior hop;
   // money/about paths must single-hop 308 to apex final URL.
   // Node fetch cannot set Host; use curl locally. On production hit real www.
   const wwwCases = [
-    ["/blog", null], // 410
+    ["/blog", "https://thetrifusion.in/blog"],
     ["/blog/how-to-build-ecommerce-website-india-2026", null],
     ["/blog/google-gemini-vs-chatgpt-india-business", null],
     ["/about", "https://thetrifusion.in/about"],
@@ -533,10 +558,14 @@ async function main() {
   }
 
   const blogSitemap = await fetchText(`${BASE_URL}/sitemap-blog.xml`);
-  if (blogSitemap.res.status !== 410) {
-    fail(`sitemap-blog.xml should be 410, got ${blogSitemap.res.status}`);
+  if (blogSitemap.res.status !== 200) {
+    fail(`sitemap-blog.xml should be 200, got ${blogSitemap.res.status}`);
+  } else if (!/<urlset/i.test(blogSitemap.text)) {
+    fail("sitemap-blog.xml is not a urlset");
+  } else if (!/https:\/\/thetrifusion\.in\/blog</.test(blogSitemap.text)) {
+    fail("sitemap-blog.xml missing /blog loc");
   } else {
-    ok("sitemap-blog.xml → 410");
+    ok("sitemap-blog.xml → 200 with /blog");
   }
 
   if (!INDEXNOW_KEY) {

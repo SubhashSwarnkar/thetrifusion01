@@ -17,6 +17,7 @@ const CORE_LABELS = {
   "/services": "Services",
   "/solutions": "Solutions",
   "/portfolio": "Portfolio",
+  "/blog": "Blog",
   "/pricing": "Pricing",
   "/contact": "Contact",
   "/faq": "FAQ",
@@ -26,7 +27,7 @@ const CORE_LABELS = {
   "/sitemap": "HTML sitemap",
 };
 
-const GONE_CORE_PATHS = new Set(["/blog"]);
+const GONE_CORE_PATHS = new Set();
 
 export default function RoutePage() {
   const core = Object.keys(pages)
