@@ -19,6 +19,29 @@ import {
 } from "data/companyInfo";
 import { AWS_PROMO_OFFER, getOfferPrefill } from "data/promoOffer";
 import { siteConfig } from "config/site";
+import { SERVICE_OPTIONS } from "parts/DiscussForm";
+
+const SERVICE_PARAM_TO_INTEREST = {
+  "website-development": "Website",
+  "software-development": "Custom software",
+  "mobile-app-development": "Mobile app (both)",
+  "android-app-development": "Android app",
+  "ios-app-development": "iOS app",
+  "ai-development": "AI chatbot / AI feature",
+  "crm-erp-development": "CRM",
+  "mlm-crm-development": "MLM software",
+  salesforce: "Salesforce",
+  "fintech-app-development": "Fintech (BBPS/AEPS/DMT)",
+  "business-modernization": "Business modernization",
+  devops: "DevOps / Cloud",
+  "ev-charging-app-development": "EV charging software",
+};
+
+function serviceInterestFromParam(raw) {
+  if (!raw) return "";
+  const mapped = SERVICE_PARAM_TO_INTEREST[raw] || raw;
+  return SERVICE_OPTIONS.includes(mapped) ? mapped : "";
+}
 
 export default function ContactPage() {
   const [isAwsOffer, setIsAwsOffer] = useState(false);
@@ -39,17 +62,33 @@ export default function ContactPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    // Read offer from URL after mount — avoids useSearchParams CSR bailout
-    const offerParam = new URLSearchParams(window.location.search).get("offer");
+    // Read offer/service from URL after mount — avoids useSearchParams CSR bailout
+    const params = new URLSearchParams(window.location.search);
+    const offerParam = params.get("offer");
+    const serviceParam = params.get("service");
+    const serviceInterest = serviceInterestFromParam(serviceParam);
     const prefill = getOfferPrefill(offerParam);
-    if (!prefill) return;
 
-    setIsAwsOffer(offerParam === AWS_PROMO_OFFER.queryValue);
-    setData((prev) => ({
-      ...prev,
-      company: prev.company || prefill.company,
-      projectIdea: prev.projectIdea || prefill.projectIdea,
-    }));
+    if (serviceInterest) {
+      setData((prev) => ({
+        ...prev,
+        serviceInterest: prev.serviceInterest || serviceInterest,
+      }));
+    }
+
+    if (!prefill && !serviceInterest) return;
+
+    if (prefill) {
+      setIsAwsOffer(offerParam === AWS_PROMO_OFFER.queryValue);
+      setData((prev) => ({
+        ...prev,
+        company: prev.company || prefill.company,
+        projectIdea: prev.projectIdea || prefill.projectIdea,
+        ...(serviceInterest
+          ? { serviceInterest: prev.serviceInterest || serviceInterest }
+          : {}),
+      }));
+    }
 
     const timer = window.setTimeout(() => {
       document.getElementById("contact-form")?.scrollIntoView({

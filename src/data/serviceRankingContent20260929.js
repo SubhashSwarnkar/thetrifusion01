@@ -151,7 +151,7 @@ export const serviceRankingContent = {
         id: "website-which-page",
         heading: "Website, ecommerce store, or custom web app?",
         paragraphs: [
-          "Use this page for a company website, a lead-generation site, a landing-page set for campaigns, or a content site you want to rank. If the main job is selling products online, the store packages are on [ecommerce website development](/solutions/ecommerce-website-development). If the site is really an internal system with roles, approvals, and reports, start with [custom software development](/services/software-development).",
+          "Choose website development for a company website, a lead-generation site, a landing-page set for campaigns, or a content site you want to rank. If the main job is selling products online, the store packages are on [ecommerce website development](/solutions/ecommerce-website-development). If the site is really an internal system with roles, approvals, and reports, start with [custom software development](/services/software-development).",
           "Design-only briefs go to [UI/UX design](/services/ui-ux-design), traffic after launch to [digital marketing](/services/digital-marketing), and hosting pipelines for larger sites to [DevOps and cloud services](/services/devops). Businesses outside Jaipur can also read the city pages for [Kota](/solutions/website-development-company-kota), [Udaipur](/solutions/website-development-company-udaipur), and [Ajmer](/solutions/website-development-company-ajmer).",
         ],
       },
@@ -267,9 +267,9 @@ export const serviceRankingContent = {
     extraSections: [
       {
         id: "mobile-which-page",
-        heading: "Mobile app development in Jaipur: which page fits your app?",
+        heading: "Cross-platform, iOS only, or Android only?",
         paragraphs: [
-          "This page covers cross-platform work: one product that ships to both stores together. When only one store matters in the first release, the dedicated pages describe the store-specific process, stack, and pricing.",
+          "Choose cross-platform when both stores ship in the same release; choose [iOS app development](/services/ios-app-development) or [Android app development](/services/android-app-development) for a single-store product.",
         ],
         comparison: APP_PAGE_CHOOSER,
       },
@@ -302,11 +302,6 @@ export const serviceRankingContent = {
         question: "React Native or Flutter?",
         answer:
           "Both can ship one app to iOS and Android. We pick the one your team can maintain and hire for, and the one with solid plugins for your payment and device features.",
-      },
-      {
-        question: "Do I need this page, or the iOS or Android page?",
-        answer:
-          "Use this page when both stores ship in the same release. Use iOS app development for an App Store-only or iPhone-first product, and Android app development for a Play Store-first product.",
       },
       {
         question: "Can you show live apps?",
@@ -443,7 +438,7 @@ export const serviceRankingContent = {
         id: "ios-which-page",
         heading: "iOS only, or iOS and Android together?",
         paragraphs: [
-          "Choose this page when the first release is App Store-only or iPhone-first, for example a premium consumer app or a product whose early users are mostly on iPhone. If both stores must launch together, [mobile app development](/services/mobile-app-development) covers the shared React Native or Flutter build. If Android comes first, see the [Android app development company in Jaipur](/services/android-app-development) page.",
+          "Choose iOS app development when the first release is App Store-only or iPhone-first, for example a premium consumer app or a product whose early users are mostly on iPhone. If both stores must launch together, [mobile app development](/services/mobile-app-development) covers the shared React Native or Flutter build. If Android comes first, see the [Android app development company in Jaipur](/services/android-app-development) page.",
           "For Apple platform changes that affect business apps, read the guides on [iPhone 18 and iOS apps for businesses](/blog/iphone-18-india-price-launch-ios-apps-business) and [iOS 27 Siri AI for business apps](/blog/ios-27-siri-ai-business-apps-uk-australia).",
         ],
       },
@@ -680,12 +675,12 @@ export const serviceRankingContent = {
 
   /* ------------------------------------------------------------------ */
   devops: {
-    contentUpdatedAt: "2026-09-29",
+    contentUpdatedAt: "2026-11-18",
     answerFirst: {
       id: "quick-answer",
-      heading: "DevOps services in Jaipur and India: the short answer",
+      heading: "What do DevOps services cost in India?",
       text:
-        "TheTriFusion provides DevOps services in Jaipur and across India: CI/CD pipelines, infrastructure as code, Kubernetes management, DevSecOps readiness, cloud cost optimization, cloud migration and managed DevOps on AWS, Azure and Google Cloud. Every engagement starts with a free infrastructure audit. The fee follows the audit, so this page does not list a package price.",
+        "TheTriFusion provides DevOps and cloud services for Indian product teams: CI/CD pipelines, infrastructure as code, Kubernetes, cloud migration to AWS, Azure or Google Cloud, and cloud cost reviews. Every engagement starts with a free infrastructure audit and a written plan. Published plans start at ₹1,00,000, and cloud bills stay on your own account.",
       facts: [
         { label: "First step", value: "Free infrastructure audit" },
         { label: "Clouds", value: "AWS, Azure, Google Cloud" },

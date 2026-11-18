@@ -1,37 +1,47 @@
-import { LIVE, NAP_LINE, SOURCES, TEAM } from "./_shared";
+import { NAP_LINE, SOURCES, TEAM } from "./_shared";
 
 /**
  * /services/ev-charging-app-development
+ * Indexed-pages pass 2026-11-18 (§3.12).
  * TODO OWNER: PlugOne metrics (chargers connected, sessions, uptime).
  * TODO OWNER: pricing model (per-charger/month SaaS vs one-time white-label) beyond ₹4,50,000 starting range.
  * Owner-confirmed 2026-11-13: PlugOne uses OCPP (direct) + OCPI (roaming); integrated Ecoplug, Sonic, ChargeMOD, ChargeIndia OCPI hub.
  */
 export default {
-  contentUpdatedAt: "2026-11-13",
-  metaTitle:
-    "EV Charging Management Software India | OCPP CMS & App | TheTriFusion",
+  contentUpdatedAt: "2026-11-18",
+  replaceFaqs: true,
+  replaceRelatedLinks: true,
+  metaTitle: "EV Charging Management Software India | OCPP CMS & App",
   bannerTitle:
     "EV Charging Management Software & White-Label Charging App for CPOs in India",
   metaDescription:
-    "White-label EV charging management software and driver app for Indian CPOs and fleets: OCPP 1.6J/2.0.1, OCPI roaming, UPI billing, GST invoices. Jaipur team.",
+    "White-label EV charging CMS and driver app for Indian CPOs: OCPP 1.6J/2.0.1, OCPI roaming, UPI billing, GST invoices. Live client: PlugOne.",
   keywords:
     "EV charging management software India, EV charging CMS, OCPP CSMS, charge point management system, white label EV charging app, OCPI roaming India, EV charging app development company",
+  whyHeading: "Why charge point operators choose TheTriFusion",
+  breadcrumbName: "EV Charging Management Software",
+  schemaServiceName: "EV Charging Management Software",
+  serviceType: "EV Charging Management Software",
+  primaryCtaLabel: "Get a CMS demo / quote",
+  primaryCtaHref: "/contact?service=ev-charging-app-development",
+  whatsappMessage:
+    "Hi TheTriFusion, I want EV charging software. Chargers/sites: ",
+  leadProjectType: "EV charging software",
+  formHeading: "Get an EV charging CMS demo",
+  midCtaText:
+    "Share your charger make, OCPP version and number of sites for a written scope.",
   answerFirst: {
     id: "quick-answer",
     heading: "What is EV charging management software? Key facts",
     text:
-      "EV charging management software (CMS / CSMS / CPMS) is the operator platform that talks to chargers, authorises drivers, bills sessions and helps settle partners. TheTriFusion builds white-label CMS and driver apps for charge point operators, fleets and charger owners in India. We are a software studio in Jaipur — not a CPO and not a charger maker. Chargers connect over [OCPP 1.6J or 2.0.1](" +
-      SOURCES.ocpp +
-      "); roaming uses [OCPI 2.2.1](" +
-      SOURCES.ocpi +
-      "). Payments run through your gateway (UPI, cards, wallet) with GST invoice fields. You own the code after completion and payment. Published starting range: ₹4,50,000 ex-GST after discovery (Standard ₹9,00,000, Premium ₹18,00,000). Live client example: " +
-      LIVE.plugone +
-      ".",
+      "EV charging management software (CMS or CSMS) connects your chargers, drivers and payments. TheTriFusion builds white-label CMS platforms and driver apps for charge point operators and fleets in India, using OCPP 1.6J/2.0.1 and OCPI 2.2.1, with UPI billing and GST invoices. Plans start at ₹4,50,000 ex-GST. Live client: [PlugOne](/portfolio/plugone-ev-charging-platform).",
     facts: [
       { label: "Studio", value: "Jaipur, serving all India" },
       { label: "Protocols", value: "OCPP 1.6J/2.0.1 + OCPI 2.2.1" },
       { label: "Delivery", value: "White-label · you own the code" },
       { label: "Live example", value: "PlugOne — plugone.in" },
+      { label: "Starting price", value: "From ₹4,50,000 ex-GST" },
+      { label: "Office", value: NAP_LINE },
     ],
   },
   softwareApplication: {
@@ -47,7 +57,7 @@ export default {
       id: "ev-pricing-model",
       heading: "Pricing model",
       paragraphs: [
-        "The [pricing page](/pricing) lists a starting range of ₹4,50,000 ex-GST for an MVP (Basic), with Standard ₹9,00,000 and Premium ₹18,00,000. This page does not sell a per-charger monthly SaaS menu. See the white-label vs SaaS vs custom comparison on this page for an honest fit check.",
+        "The [pricing page](/pricing) lists a starting range of ₹4,50,000 ex-GST for an MVP (Basic), with Standard ₹9,00,000 and Premium ₹18,00,000. Every quote is a written scope. See the white-label vs SaaS vs custom comparison for an honest fit check.",
       ],
     },
     {
@@ -67,7 +77,7 @@ export default {
       id: "plugone-case",
       heading: "PlugOne — client case study",
       paragraphs: [
-        `${LIVE.plugone} is a live EV charging client product we built: driver app and CMS with both OCPP (direct charger connection) and OCPI (roaming and aggregation). Tested / integrated with Ecoplug, Sonic, ChargeMOD, and ChargeIndia (OCPI hub). Case study: [PlugOne portfolio](/portfolio/plugone-ev-charging-platform).`,
+        "[PlugOne](/portfolio/plugone-ev-charging-platform) (plugone.in) is a live EV charging client product we built: driver app and CMS with both OCPP (direct charger connection) and OCPI (roaming and aggregation). Tested / integrated with Ecoplug, Sonic, ChargeMOD, and ChargeIndia (OCPI hub).",
       ],
     },
     {
@@ -110,11 +120,6 @@ export default {
         "Yes, when they are in scope. UPI and cards go through a payment gateway you contract (for example Razorpay). RFID and QR start are wired through the CMS. We are the software vendor, not a payment institution.",
     },
     {
-      question: "Can site hosts or franchise owners see their own revenue?",
-      answer:
-        "Yes. Role-based portals can show sessions and earnings per site, with T+1-style settlement reports for franchise partners when that reporting is in the scope. Settlement timing still depends on your gateway and contracts.",
-    },
-    {
       question: "Do you handle load management for societies and fleet depots?",
       answer:
         "Yes. Site power caps and dynamic load sharing across connectors use OCPP charging profiles on chargers that accept them. Fleet and depot priority rules can be scoped.",
@@ -122,54 +127,54 @@ export default {
     {
       question: "How much does EV charging software cost in India?",
       answer:
-        "TheTriFusion publishes a starting range of ₹4,50,000 ex-GST after discovery, with higher published plans at ₹9,00,000 and ₹18,00,000. It is not a per-charger monthly menu.",
+        "TheTriFusion publishes a starting range of ₹4,50,000 ex-GST after discovery, with higher published plans at ₹9,00,000 and ₹18,00,000. Every quote is a written scope.",
     },
     {
       question: "How long does an EV charging app development project take?",
       answer:
         "As an EV charging app development company, we set the MVP timeline after discovery. A focused first release is often on the order of 10–14 weeks once charger access and payment credentials are ready. Hardware, SIM, and site work run on the CPO’s clock.",
     },
+    {
+      question: "What is the difference between OCPP and OCPI?",
+      answer:
+        "OCPP is the protocol between a charger and your CMS: start, stop, metering and status. OCPI is the protocol between two charging networks, so your drivers can use partner chargers and partner apps can use yours. A CPO needs OCPP from day one and OCPI when roaming starts.",
+    },
+    {
+      question: "Can I use chargers from different manufacturers?",
+      answer:
+        "Yes, if the chargers support OCPP 1.6J or 2.0.1. Share the make, model and firmware details, and we confirm compatibility and test the connection during discovery.",
+    },
+    {
+      question: "Is PlugOne built on this platform?",
+      answer:
+        "PlugOne (plugone.in) is a live TheTriFusion client: a CMS with driver apps that uses OCPP for chargers and OCPI roaming through the ChargeIndia hub. Read the PlugOne case study for what was built.",
+    },
   ],
   relatedLinks: [
     {
-      href: "/portfolio/plugone-ev-charging-platform",
-      title: "PlugOne case study",
-      text: "Live client EV charging product — OCPP + OCPI.",
-    },
-    {
-      href: "/white-label-development",
-      title: "White-label software development",
-      text: "Agency or brand engagements when the product is white-label under your client.",
-    },
-    {
       href: "/services/mobile-app-development",
-      title: "Mobile app development",
+      title: "driver app development",
       text: "iOS and Android delivery when the driver app sits in a broader mobile brief.",
     },
     {
-      href: "/services/software-development",
-      title: "Custom software development",
-      text: "When charging is one module inside a larger product platform.",
-    },
-    {
       href: "/services/devops",
-      title: "DevOps & cloud hosting for the CMS",
+      title: "cloud hosting and monitoring for the CMS",
       text: "Pipelines, hosting, and monitoring for the charging backend.",
     },
     {
-      href: "/pricing",
-      title: "Published pricing",
-      text: "Starting ranges for EV charging CMS engagements.",
-    },
-    {
       href: "/services/fintech-app-development",
-      title: "Fintech & payments software",
+      title: "UPI wallet and payment flows",
       text: "When wallet or settlement panels sit beside the CMS.",
     },
     {
-      href: "/services/crm-erp-development",
-      title: "CRM/ERP for charging businesses",
-      text: "Franchise and partner ops beside the charging stack.",
+      href: "/services/software-development",
+      title: "custom software",
+      text: "When charging is one module inside a larger product platform.",
+    },
+    {
+      href: "/portfolio/plugone-ev-charging-platform",
+      title: "PlugOne EV charging case study",
+      text: "Live client EV charging product — OCPP + OCPI.",
     },
   ],
 };

@@ -28,6 +28,15 @@ const PROJECT_OPTIONS = [
   "iOS app",
   "Mobile app (both)",
   "White-label / partner",
+  "Custom software",
+  "CRM",
+  "MLM software",
+  "Salesforce",
+  "AI chatbot / AI feature",
+  "Fintech (BBPS/AEPS/DMT)",
+  "Business modernization",
+  "DevOps / Cloud",
+  "EV charging software",
   "Other",
 ];
 

@@ -112,12 +112,12 @@ export default function BrandTrustStrip() {
         <p className="mb-3 text-xs font-black uppercase tracking-[0.22em] text-theme-purple">
           Our clients
         </p>
-        <h2
+        <p
           id="brand-trust-heading"
           className="mx-auto mb-4 max-w-4xl text-3xl font-black tracking-tight text-theme-blue sm:text-4xl lg:text-5xl"
         >
-          Live products from the Jaipur studio
-        </h2>
+          Live client products
+        </p>
         <p className="mx-auto max-w-3xl text-sm font-light leading-relaxed text-gray-600 sm:text-base lg:text-lg">
           Named live sites and products we can show publicly — open any mark to
           verify the URL. Concept demos stay on the portfolio page and are not

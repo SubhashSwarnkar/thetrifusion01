@@ -9,17 +9,15 @@ import Footer from "parts/Footer";
 import Breadcrumbs from "components/Breadcrumbs";
 import BrandTrustStrip from "components/BrandTrustStrip";
 import ServiceIcon from "components/ServiceIcon";
+import WhatsAppButton from "components/WhatsAppButton";
+import ShortLeadForm from "components/ShortLeadForm";
 import { getServiceBySlug, services } from "data/servicesData";
 import {
   INDEXED_HUB_REFERRING_LINKS,
-  SERVICE_KEYWORD_BY_SLUG,
   SERVICE_SIBLINGS,
 } from "data/serviceIndexLinks";
-import { getSeoLandingBySlug, getSolutionsForService } from "data/seoLandingPages";
 import {
   canonicalInternalHref,
-  canonicalSolutionHref,
-  dedupeCanonicalSolutions,
 } from "lib/internalLinks";
 import { absoluteSiteUrl } from "config/site";
 import { accentAt, accentForSlug } from "lib/themeAccents";
@@ -29,6 +27,8 @@ import RelatedGuides from "components/RelatedGuides";
 import FounderByline from "components/FounderByline";
 import EvChargingProductLayout from "components/EvChargingProductLayout";
 import { FOUNDER } from "data/founder";
+import { trackEvent, AnalyticsEvents } from "utils/analytics";
+import { COMPANY_PHONE_DISPLAY, WHATSAPP_NUMBER } from "data/companyInfo";
 
 const FINTECH_CHILD_PRODUCTS = [
   {
@@ -76,16 +76,32 @@ function InlineText({ text }) {
   let key = 0;
   while ((match = re.exec(text))) {
     if (match.index > last) nodes.push(text.slice(last, match.index));
-    const href = canonicalInternalHref(match[2]);
-    nodes.push(
-      <Link
-        key={key++}
-        href={href}
-        className="font-semibold text-theme-purple hover:underline"
-      >
-        {match[1]}
-      </Link>
-    );
+    const rawHref = match[2];
+    const external = /^https?:\/\//i.test(rawHref);
+    const href = external ? rawHref : canonicalInternalHref(rawHref);
+    if (external) {
+      nodes.push(
+        <a
+          key={key++}
+          href={href}
+          className="font-semibold text-theme-purple hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {match[1]}
+        </a>
+      );
+    } else {
+      nodes.push(
+        <Link
+          key={key++}
+          href={href}
+          className="font-semibold text-theme-purple hover:underline"
+        >
+          {match[1]}
+        </Link>
+      );
+    }
     last = match.index + match[0].length;
   }
   if (last < text.length) nodes.push(text.slice(last));
@@ -285,13 +301,101 @@ function AnswerFirst({ block }) {
 }
 
 const STANDARD_DELIVERABLES = [
-  "Complete clean-architecture source code repo",
+  "Full source code repository, handed over to you",
   "Production-ready deployment & CI/CD pipeline setup",
   "Full interactive Figma UI design kit & assets",
   "REST / GraphQL API specifications & documentation",
   "Automated testing & security audit report",
   "30-day post-launch support & stability warranty",
 ];
+
+function phoneTelHref() {
+  const digits = String(WHATSAPP_NUMBER || "").replace(/\D/g, "");
+  return digits ? `tel:+${digits}` : "tel:+916378133780";
+}
+
+function ServiceMidCta({ service }) {
+  const contactHref = canonicalInternalHref(
+    service.primaryCtaHref || `/contact?service=${service.slug}`
+  );
+  return (
+    <section className="container mx-auto px-5 py-10">
+      <div className="bg-gradient-to-r from-theme-blue via-theme-purple to-theme-cyan rounded-[2rem] p-8 md:p-10 text-white shadow-xl">
+        <p className="text-lg md:text-xl font-semibold max-w-3xl mb-6">
+          {service.midCtaText ||
+            "Share your brief on WhatsApp and get a written estimate."}
+        </p>
+        <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3">
+          <WhatsAppButton
+            directLink
+            message={
+              service.whatsappMessage ||
+              `Hi TheTriFusion, I need help with ${service.title}.`
+            }
+            className="inline-flex items-center justify-center px-7 py-3.5 bg-emerald-500 text-white rounded-full font-bold hover:bg-emerald-600 transition-colors"
+            label="WhatsApp us"
+          >
+            WhatsApp us
+          </WhatsAppButton>
+          <Link
+            href={contactHref}
+            className="inline-flex items-center justify-center px-7 py-3.5 bg-white text-theme-purple rounded-full font-bold hover:bg-light-theme-purple transition-colors"
+          >
+            Get a written estimate
+          </Link>
+          <a
+            href={phoneTelHref()}
+            onClick={() =>
+              trackEvent(AnalyticsEvents.CLICK_PHONE, {
+                source: `service_${service.slug}_mid`,
+              })
+            }
+            className="inline-flex items-center justify-center px-4 py-3 text-white/95 font-semibold underline-offset-4 hover:underline"
+          >
+            Call {COMPANY_PHONE_DISPLAY || "+91 63781 33780"}
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ServiceStickyMobileBar({ service }) {
+  const waMessage =
+    service.whatsappMessage ||
+    `Hi TheTriFusion, I need help with ${service.title}.`;
+  const waHref = `https://wa.me/${String(WHATSAPP_NUMBER || "916378133780").replace(/\D/g, "")}?text=${encodeURIComponent(waMessage)}`;
+  return (
+    <div className="md:hidden fixed bottom-0 left-0 right-0 z-[85] bg-white/95 backdrop-blur border-t border-gray-100 p-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))] shadow-[0_-8px_24px_rgba(15,23,42,0.08)]">
+      <div className="flex gap-2">
+        <a
+          href={waHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() =>
+            trackEvent(AnalyticsEvents.CLICK_WHATSAPP, {
+              source: `service_${service.slug}_sticky`,
+            })
+          }
+          className="flex-1 text-center py-3 rounded-full bg-emerald-500 text-white font-bold text-sm"
+        >
+          WhatsApp
+        </a>
+        <a
+          href={phoneTelHref()}
+          onClick={() =>
+            trackEvent(AnalyticsEvents.CLICK_PHONE, {
+              source: `service_${service.slug}_sticky`,
+            })
+          }
+          className="flex-1 text-center py-3 rounded-full border border-theme-purple text-theme-purple font-bold text-sm"
+        >
+          Call
+        </a>
+      </div>
+    </div>
+  );
+}
 
 export default function ServiceDetailPage({
   relatedBlog = null,
@@ -300,10 +404,6 @@ export default function ServiceDetailPage({
 }) {
   const { slug } = useParams();
   const service = getServiceBySlug(slug);
-  const relatedSolutions = dedupeCanonicalSolutions(
-    getSolutionsForService(slug || ""),
-    getSeoLandingBySlug
-  );
   const siblingFromLinks = (service?.relatedLinks || [])
     .map((item) => {
       const href = canonicalInternalHref(item.href || "");
@@ -424,9 +524,11 @@ export default function ServiceDetailPage({
                 </div>
               )}
 
-              <div className="flex flex-col sm:flex-row gap-3 mb-8">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 mb-3">
                 <Link
-                  href={canonicalInternalHref(service.primaryCtaHref || "/contact")}
+                  href={canonicalInternalHref(
+                    service.primaryCtaHref || `/contact?service=${service.slug}`
+                  )}
                   className="inline-flex items-center justify-center px-7 py-3.5 bg-theme-purple text-white rounded-full font-bold shadow-lg shadow-theme-purple/25 hover:bg-dark-theme-purple hover:scale-[1.02] transition-all"
                 >
                   {service.primaryCtaLabel || "Get a free scoped estimate"}
@@ -442,11 +544,37 @@ export default function ServiceDetailPage({
                     {service.secondaryCtaLabel || "Learn more"}
                   </Link>
                 ) : (
+                  <WhatsAppButton
+                    directLink
+                    message={
+                      service.whatsappMessage ||
+                      `Hi TheTriFusion, I need help with ${service.title}.`
+                    }
+                    className="inline-flex items-center justify-center px-7 py-3.5 bg-emerald-500 text-white rounded-full font-bold hover:bg-emerald-600 transition-colors"
+                    label="WhatsApp us"
+                  >
+                    WhatsApp us
+                  </WhatsAppButton>
+                )}
+              </div>
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-8 text-sm">
+                <a
+                  href={phoneTelHref()}
+                  onClick={() =>
+                    trackEvent(AnalyticsEvents.CLICK_PHONE, {
+                      source: `service_${service.slug}_hero`,
+                    })
+                  }
+                  className="font-semibold text-theme-blue hover:text-theme-purple underline-offset-4 hover:underline"
+                >
+                  Call {COMPANY_PHONE_DISPLAY || "+91 63781 33780"}
+                </a>
+                {service.hidePricingEstimates ? null : (
                   <Link
                     href="/pricing"
-                    className="inline-flex items-center justify-center px-7 py-3.5 bg-white text-theme-purple border-2 border-theme-purple/40 rounded-full font-bold hover:bg-light-theme-purple transition-colors"
+                    className="font-semibold text-gray-600 hover:text-theme-purple underline-offset-4 hover:underline"
                   >
-                    View Pricing Plans
+                    View pricing
                   </Link>
                 )}
               </div>
@@ -468,24 +596,33 @@ export default function ServiceDetailPage({
               )}
             </div>
 
-            <div className="relative">
-              <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-theme-purple via-theme-cyan to-theme-pink opacity-50 blur-sm" />
-              <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden border-4 border-white shadow-2xl bg-gray-50">
-                <Image
-                  src={service.imageUrl}
-                  alt={
-                    service.imageAlt ||
-                    `${service.title} services in Jaipur by TheTriFusion`
-                  }
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                  quality={70}
-                  priority
+            <div className="relative space-y-6">
+              <div className="hidden lg:block">
+                <ShortLeadForm
+                  defaultProjectType={service.leadProjectType || "Other"}
+                  leadSource={`service_${service.slug}`}
+                  heading={service.formHeading || "Get a scoped next step"}
                 />
               </div>
-              <div className={`absolute -bottom-4 -left-4 w-16 h-16 rounded-2xl shadow-xl flex items-center justify-center ${primary.check}`}>
-                <ServiceIcon slug={service.slug} className="w-7 h-7" />
+              <div className="relative">
+                <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-theme-purple via-theme-cyan to-theme-pink opacity-50 blur-sm" />
+                <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden border-4 border-white shadow-2xl bg-gray-50">
+                  <Image
+                    src={service.imageUrl}
+                    alt={
+                      service.imageAlt ||
+                      `${service.title} services in Jaipur by TheTriFusion`
+                    }
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                    quality={70}
+                    priority
+                  />
+                </div>
+                <div className={`absolute -bottom-4 -left-4 w-16 h-16 rounded-2xl shadow-xl flex items-center justify-center ${primary.check}`}>
+                  <ServiceIcon slug={service.slug} className="w-7 h-7" />
+                </div>
               </div>
             </div>
           </div>
@@ -494,6 +631,14 @@ export default function ServiceDetailPage({
 
       <AnswerFirst block={service.answerFirst} />
 
+      <div className="lg:hidden container mx-auto px-5 pb-8">
+        <ShortLeadForm
+          defaultProjectType={service.leadProjectType || "Other"}
+          leadSource={`service_${service.slug}`}
+          heading={service.formHeading || "Get a scoped next step"}
+        />
+      </div>
+
       <section
         aria-label={`${FOUNDER.name}, ${FOUNDER.jobTitle}`}
         className="container mx-auto px-5 pb-6"
@@ -501,8 +646,7 @@ export default function ServiceDetailPage({
         <div className="max-w-4xl rounded-2xl border border-gray-200 bg-gray-50 px-5 py-4">
           <FounderByline compact />
           <p className="mt-3 text-sm leading-relaxed text-gray-600">
-            {FOUNDER.bio} This {service.title.toLowerCase()} page is reviewed
-            by {FOUNDER.name}.
+            {FOUNDER.bio} {service.title} content is reviewed by {FOUNDER.name}.
           </p>
         </div>
       </section>
@@ -597,7 +741,7 @@ export default function ServiceDetailPage({
             <InlineText text={service.description} />
           </p>
           {service.detailSections?.length ? (
-            <nav id="services-toc" aria-label={service.tocAriaLabel || "DevOps services on this page"} className="mb-4">
+            <nav id="services-toc" aria-label={service.tocAriaLabel || "Service sections"} className="mb-4">
               <ol className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {service.detailSections.map((section, idx) => (
                   <li key={section.id}>
@@ -768,7 +912,8 @@ export default function ServiceDetailPage({
       {/* Why Choose TheTriFusion Section */}
       <section id="why-us" className="container mx-auto px-5 py-16 border-t border-gray-100">
         <SectionHeading kicker="Advantage">
-          Why Choose TheTriFusion For {service.title}
+          {service.whyHeading ||
+            `Why teams pick TheTriFusion for ${service.schemaServiceName || service.serviceType || service.title}`}
         </SectionHeading>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {(service.whyPoints?.length ? service.whyPoints : WHY_CHOOSE_POINTS).map((point, idx) => {
@@ -828,7 +973,8 @@ export default function ServiceDetailPage({
       {service.hidePricingEstimates ? null : (
       <section id="pricing" className="container mx-auto px-5 py-16 border-t border-gray-100">
         <SectionHeading kicker="Investment">
-          Transparent Estimates & Scoping
+          {service.pricingHeading ||
+            `${service.schemaServiceName || service.serviceType || service.title} cost and timeline`}
         </SectionHeading>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
           <div className="p-7 rounded-2xl border border-gray-200 bg-white shadow-sm flex flex-col justify-between">
@@ -866,7 +1012,9 @@ export default function ServiceDetailPage({
               </p>
             </div>
             <Link
-              href="/contact"
+              href={canonicalInternalHref(
+                service.primaryCtaHref || `/contact?service=${service.slug}`
+              )}
               className="w-full text-center py-3 rounded-xl bg-theme-purple text-white font-bold text-sm hover:bg-dark-theme-purple transition-all shadow-md"
             >
               Request Scoped Timeline →
@@ -886,7 +1034,9 @@ export default function ServiceDetailPage({
               </p>
             </div>
             <Link
-              href="/contact"
+              href={canonicalInternalHref(
+                service.primaryCtaHref || `/contact?service=${service.slug}`
+              )}
               className="w-full text-center py-3 rounded-xl bg-theme-blue text-white font-bold text-sm hover:bg-theme-purple transition-all shadow-md"
             >
               Get a free scoped estimate →
@@ -896,10 +1046,17 @@ export default function ServiceDetailPage({
       </section>
       )}
 
+      {service.hidePricingEstimates ? null : <ServiceMidCta service={service} />}
+
       {/* Case Study / Proof Section */}
       {service.caseStudy && (
         <section className="container mx-auto px-5 py-12">
-          <SectionHeading kicker="Proof">Case Study & Proven Results</SectionHeading>
+          <SectionHeading kicker="Proof">
+            {service.caseStudy.heading ||
+              (service.caseStudy.title
+                ? `Client project: ${service.caseStudy.title}`
+                : "Client project")}
+          </SectionHeading>
           <div className="rounded-2xl border border-theme-purple/20 bg-light-theme-purple/20 p-6 md:p-8 max-w-3xl">
             <h3 className="text-xl font-bold text-theme-blue mb-3">
               {service.caseStudy.title}
@@ -1035,23 +1192,34 @@ export default function ServiceDetailPage({
       {(() => {
         const seen = new Set();
         const mergedLinks = [];
-        for (const item of [...hubReferringLinks, ...(service.relatedLinks || [])]) {
+        for (const item of [...(service.relatedLinks || []), ...hubReferringLinks]) {
           const path = canonicalInternalHref(item.href);
           if (!path || path.startsWith("/blog") || seen.has(path)) continue;
           seen.add(path);
-          mergedLinks.push({ ...item, href: absoluteSiteUrl(path) });
+          mergedLinks.push({
+            ...item,
+            href: path,
+            title: item.title,
+            text: item.text,
+          });
+          if (mergedLinks.length >= 6) break;
         }
         if (!mergedLinks.length) return null;
         return (
-          <section id="further-reading" className="container mx-auto px-5 py-16 border-t border-gray-100">
-            <SectionHeading kicker="Related">Related services and guides</SectionHeading>
+          <section id="related" className="container mx-auto px-5 py-16 border-t border-gray-100">
+            <SectionHeading kicker="Related">Related services and client work</SectionHeading>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl">
               {mergedLinks.map((item) => (
                 <li key={item.href}>
-                  <a href={item.href} className="block h-full rounded-2xl border border-gray-100 p-5 hover:border-theme-purple/40">
+                  <Link
+                    href={item.href}
+                    className="block h-full rounded-2xl border border-gray-100 p-5 hover:border-theme-purple/40"
+                  >
                     <h3 className="text-lg font-bold text-theme-blue mb-2">{item.title}</h3>
-                    <p className="text-sm text-gray-600 font-light leading-relaxed">{item.text}</p>
-                  </a>
+                    {item.text ? (
+                      <p className="text-sm text-gray-600 font-light leading-relaxed">{item.text}</p>
+                    ) : null}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -1059,66 +1227,8 @@ export default function ServiceDetailPage({
         );
       })()}
 
-      {/* Related Solutions Cross-Linking */}
-      {relatedSolutions.length > 0 && (
-        <section id="related" className="container mx-auto px-5 py-16 border-t border-gray-100">
-          <SectionHeading kicker="Next">City pages and related solutions</SectionHeading>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {relatedSolutions.slice(0, 12).map((solution, idx) => {
-              const accent = accentAt(idx);
-              return (
-                <Link
-                  key={solution.slug}
-                  href={canonicalSolutionHref(solution.slug)}
-                  className={`p-6 rounded-2xl border hover:shadow-lg transition-all group ${accent.card}`}
-                >
-                  <h3 className="text-xl font-bold text-theme-blue mb-2 group-hover:text-theme-purple transition-colors">
-                    {solution.h1}
-                  </h3>
-                  <span className={`text-xs font-semibold ${accent.text}`}>
-                    View page →
-                  </span>
-                </Link>
-              );
-            })}
-          </div>
-        </section>
-      )}
-
-      {/* Other Services Cross-Link Directory */}
-      {otherServices.length > 0 && (
-        <section className="relative py-16 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-light-theme-purple/40 to-white" />
-          <div className="container mx-auto px-5 relative">
-            <SectionHeading kicker="Related">Related services</SectionHeading>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {otherServices.map((item, idx) => {
-                const accent = accentAt(idx);
-                return (
-                  <a
-                    key={item.slug}
-                    href={absoluteSiteUrl(`/services/${item.slug}`)}
-                    className={`group flex items-center gap-3 p-4 rounded-2xl border ${accent.card}`}
-                  >
-                    <span className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 ${accent.iconWrap}`}>
-                      <ServiceIcon slug={item.slug} className="w-5 h-5" />
-                    </span>
-                    <span>
-                      <span className="block font-bold text-theme-blue group-hover:text-theme-purple transition-colors">
-                        {SERVICE_KEYWORD_BY_SLUG[item.slug] || item.title}
-                      </span>
-                      <span className={`text-xs font-semibold ${accent.text}`}>Explore Service →</span>
-                    </span>
-                  </a>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* High Converting Bottom CTA Banner */}
-      <section className="container mx-auto px-5 pb-20">
+      <section className="container mx-auto px-5 pb-24 md:pb-20">
         <div className="bg-gradient-to-r from-theme-blue via-theme-purple to-theme-cyan rounded-[2rem] p-10 md:p-14 text-center text-white relative overflow-hidden shadow-2xl">
           <h2 className="text-3xl md:text-4xl font-black mb-4">
             {service.ctaHeading || `Ready to start ${service.title.toLowerCase()}?`}
@@ -1129,29 +1239,28 @@ export default function ServiceDetailPage({
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href={canonicalInternalHref(service.primaryCtaHref || "/contact")}
+              href={canonicalInternalHref(
+                service.primaryCtaHref || `/contact?service=${service.slug}`
+              )}
               className="inline-flex items-center px-8 py-3.5 bg-white text-theme-purple rounded-full font-bold hover:bg-light-theme-purple transition-colors shadow-lg"
             >
               {service.primaryCtaLabel || "Get a free scoped estimate"}
             </Link>
-            {service.hidePricingEstimates ? (
-              <Link
-                href="/contact"
-                className="inline-flex items-center px-8 py-3.5 bg-white/10 hover:bg-white/20 text-white rounded-full font-bold border border-white/30 transition-colors"
-              >
-                Contact the Jaipur team
-              </Link>
-            ) : (
-              <Link
-                href="/pricing"
-                className="inline-flex items-center px-8 py-3.5 bg-white/10 hover:bg-white/20 text-white rounded-full font-bold border border-white/30 transition-colors"
-              >
-                See pricing
-              </Link>
-            )}
+            <WhatsAppButton
+              directLink
+              message={
+                service.whatsappMessage ||
+                `Hi TheTriFusion, I need help with ${service.title}.`
+              }
+              className="inline-flex items-center px-8 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full font-bold transition-colors"
+              label="WhatsApp us"
+            >
+              WhatsApp us
+            </WhatsAppButton>
           </div>
         </div>
       </section>
+      <ServiceStickyMobileBar service={service} />
       </main>
 
       <Footer />

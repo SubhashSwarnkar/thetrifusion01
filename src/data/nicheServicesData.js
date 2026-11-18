@@ -166,11 +166,11 @@ export const nicheServices = [
     startingFrom: 99999,
     startingFromNote: "BBPS / AEPS / DMT software — retailer app + admin from ₹99,999",
     caseStudy: {
-      title: "How we scope fintech (no fake live bank)",
+      title: "How we scope a fintech build",
       summary:
-        "We sell software — not a banking licence. Delivery is scoped around your BBPOU/bank/AEPS partner, KYC vendor, and settlement rules. Read the India compliance and cost notes.",
-      href: "/blog/fintech-app-development-india",
-      hrefLabel: "Read the fintech India guide",
+        "We build the software, not the banking licence. Delivery is scoped around your BBPOU, bank or AEPS partner, KYC vendor and settlement rules.",
+      href: "/services/fintech-app-development",
+      hrefLabel: "See BBPS, AEPS and DMT modules",
     },
     services: [
       {
@@ -251,7 +251,7 @@ export const nicheServices = [
       },
       {
         title: "Bank-Grade Security Architecture",
-        description: "End-to-end TLS encryption, data-at-rest encryption (AES-256), HSM integration, PCI-DSS compliance, and OWASP Top 10 hardening.",
+        description: "End-to-end TLS encryption, data-at-rest encryption (AES-256), PCI-DSS-aligned practices and HSM integration when your partner requires them, and OWASP Top 10 hardening.",
       },
     ],
     features: [

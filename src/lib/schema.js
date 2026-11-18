@@ -339,6 +339,7 @@ export function serviceSchema({
   additionalOffers = [],
   areaServed,
   inLanguage,
+  subjectOf = [],
 }) {
   const url = absoluteSiteUrl(path);
   const offerUrl = (value) => {
@@ -461,13 +462,30 @@ export function serviceSchema({
           },
         }
       : {}),
+    ...(subjectOf.length > 0
+      ? {
+          subjectOf: subjectOf.map((item) => {
+            if (typeof item === "string") {
+              return absoluteSiteUrl(item);
+            }
+            return {
+              "@type": item["@type"] || "CreativeWork",
+              ...(item.url || item.path
+                ? { url: absoluteSiteUrl(item.url || item.path) }
+                : {}),
+              ...(item.name ? { name: item.name } : {}),
+            };
+          }),
+        }
+      : {}),
   };
 }
 
-export function breadcrumbSchema(items) {
+export function breadcrumbSchema(items, { id } = {}) {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    ...(id ? { "@id": id } : {}),
     itemListElement: items.map((item, index) => ({
       "@type": "ListItem",
       position: index + 1,
@@ -505,6 +523,28 @@ export function collectionPageSchema({
         name: item.title,
       })),
     },
+  };
+}
+
+export function webPageSchema({
+  path,
+  name,
+  dateModified,
+  aboutId,
+  breadcrumbId,
+}) {
+  const url = absoluteSiteUrl(path);
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${url}#webpage`,
+    url,
+    name,
+    isPartOf: { "@id": `${siteConfig.url}/#website` },
+    ...(aboutId ? { about: { "@id": aboutId } } : {}),
+    publisher: { "@id": `${siteConfig.url}/#organization` },
+    ...(breadcrumbId ? { breadcrumb: { "@id": breadcrumbId } } : {}),
+    ...(dateModified ? { dateModified } : {}),
   };
 }
 

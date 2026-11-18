@@ -4,14 +4,17 @@
  */
 import Link from "next/link";
 import Image from "next/image";
-import { siteConfig, absoluteSiteUrl } from "config/site";
+import { siteConfig } from "config/site";
 import { canonicalInternalHref } from "lib/internalLinks";
 import { accentAt } from "lib/themeAccents";
 import ServiceIcon from "components/ServiceIcon";
 import FounderByline from "components/FounderByline";
 import EvArchitectureDiagram from "components/EvArchitectureDiagram";
+import ShortLeadForm from "components/ShortLeadForm";
+import WhatsAppButton from "components/WhatsAppButton";
 import { FOUNDER } from "data/founder";
-import { SERVICE_KEYWORD_BY_SLUG } from "data/serviceIndexLinks";
+import { trackEvent, AnalyticsEvents } from "utils/analytics";
+import { COMPANY_PHONE_DISPLAY, WHATSAPP_NUMBER } from "data/companyInfo";
 
 function InlineText({ text }) {
   if (!text) return null;
@@ -150,23 +153,41 @@ const TRUST_CHIPS = [
 
 const PLUGONE_BADGES = ["Ecoplug", "Sonic", "ChargeMOD", "ChargeIndia (OCPI hub)"];
 
-function StickyCtaBar({ contactHref, whatsappHref, primaryLabel }) {
+function phoneTelHref() {
+  const digits = String(WHATSAPP_NUMBER || siteConfig.whatsappNumber || "").replace(
+    /\D/g,
+    ""
+  );
+  return digits ? `tel:+${digits}` : "tel:+916378133780";
+}
+
+function StickyCtaBar({ whatsappHref, slug }) {
   return (
-    <div className="fixed bottom-0 inset-x-0 z-40 border-t border-theme-purple/15 bg-white/95 backdrop-blur-md shadow-[0_-8px_30px_rgba(21,44,91,0.08)] md:hidden">
-      <div className="container mx-auto px-4 py-3 flex gap-2">
-        <a
-          href={contactHref}
-          className="flex-1 inline-flex items-center justify-center rounded-full bg-theme-purple text-white text-sm font-bold py-3"
-        >
-          {primaryLabel}
-        </a>
+    <div className="fixed bottom-0 inset-x-0 z-[85] border-t border-theme-purple/15 bg-white/95 backdrop-blur-md shadow-[0_-8px_30px_rgba(21,44,91,0.08)] md:hidden">
+      <div className="container mx-auto px-4 py-3 flex gap-2 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
         <a
           href={whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 inline-flex items-center justify-center rounded-full border-2 border-emerald-500 text-emerald-700 text-sm font-bold py-3"
+          onClick={() =>
+            trackEvent(AnalyticsEvents.CLICK_WHATSAPP, {
+              source: `service_${slug || "ev"}_sticky`,
+            })
+          }
+          className="flex-1 inline-flex items-center justify-center rounded-full bg-emerald-500 text-white text-sm font-bold py-3"
         >
           WhatsApp
+        </a>
+        <a
+          href={phoneTelHref()}
+          onClick={() =>
+            trackEvent(AnalyticsEvents.CLICK_PHONE, {
+              source: `service_${slug || "ev"}_sticky`,
+            })
+          }
+          className="flex-1 inline-flex items-center justify-center rounded-full border-2 border-theme-purple text-theme-purple text-sm font-bold py-3"
+        >
+          Call
         </a>
       </div>
     </div>
@@ -176,7 +197,6 @@ function StickyCtaBar({ contactHref, whatsappHref, primaryLabel }) {
 export default function EvChargingProductLayout({
   service,
   relatedLinks = [],
-  otherServices = [],
 }) {
   const modulesSection = service.detailSections?.find((s) => s.id === "modules");
   const whoSection = service.detailSections?.find((s) => s.id === "who-its-for");
@@ -190,9 +210,11 @@ export default function EvChargingProductLayout({
   const waNumber = String(siteConfig.whatsappNumber || "").replace(/\D/g, "");
   const whatsappHref = `https://wa.me/${waNumber}?text=${encodeURIComponent(
     service.whatsappMessage ||
-      "Hi TriFusion, I need EV charging management software. Please share a scoped estimate."
+      "Hi TheTriFusion, I want EV charging software. Chargers/sites: "
   )}`;
-  const contactHref = canonicalInternalHref(service.primaryCtaHref || "/contact");
+  const contactHref = canonicalInternalHref(
+    service.primaryCtaHref || "/contact?service=ev-charging-app-development"
+  );
 
   return (
     <>
@@ -232,24 +254,46 @@ export default function EvChargingProductLayout({
                 ))}
               </ul>
 
-              <div className="flex flex-col sm:flex-row gap-3 mb-6">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 mb-3">
                 <Link
                   href={contactHref}
                   className="inline-flex items-center justify-center px-7 py-3.5 bg-theme-purple text-white rounded-full font-bold shadow-lg shadow-theme-purple/25 hover:bg-dark-theme-purple hover:scale-[1.02] transition-all"
                 >
-                  {service.primaryCtaLabel || "Get a scoped estimate"}
+                  {service.primaryCtaLabel || "Get a CMS demo / quote"}
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </Link>
-                <a
-                  href={whatsappHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-7 py-3.5 bg-white text-emerald-700 border-2 border-emerald-500/50 rounded-full font-bold hover:bg-emerald-50 transition-colors"
+                <WhatsAppButton
+                  directLink
+                  message={
+                    service.whatsappMessage ||
+                    "Hi TheTriFusion, I want EV charging software. Chargers/sites: "
+                  }
+                  className="inline-flex items-center justify-center px-7 py-3.5 bg-emerald-500 text-white rounded-full font-bold hover:bg-emerald-600 transition-colors"
+                  label="WhatsApp us"
                 >
-                  WhatsApp quote
+                  WhatsApp us
+                </WhatsAppButton>
+              </div>
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-6 text-sm">
+                <a
+                  href={phoneTelHref()}
+                  onClick={() =>
+                    trackEvent(AnalyticsEvents.CLICK_PHONE, {
+                      source: `service_${service.slug}_hero`,
+                    })
+                  }
+                  className="font-semibold text-theme-blue hover:text-theme-purple underline-offset-4 hover:underline"
+                >
+                  Call {COMPANY_PHONE_DISPLAY || "+91 63781 33780"}
                 </a>
+                <Link
+                  href="/pricing"
+                  className="font-semibold text-gray-600 hover:text-theme-purple underline-offset-4 hover:underline"
+                >
+                  View pricing
+                </Link>
               </div>
               <Link
                 href={canonicalInternalHref("/portfolio/plugone-ev-charging-platform")}
@@ -259,29 +303,38 @@ export default function EvChargingProductLayout({
               </Link>
             </div>
 
-            <div className="relative">
-              <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-theme-purple via-theme-cyan to-theme-pink opacity-40 blur-sm" aria-hidden="true" />
-              <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden border-4 border-white shadow-2xl bg-gray-50">
-                <Image
-                  src={service.imageUrl}
-                  alt={
-                    service.imageAlt ||
-                    "EV charging management software CMS and white-label charging app by TheTriFusion"
-                  }
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                  quality={70}
-                  priority
+            <div className="relative space-y-6">
+              <div className="hidden lg:block">
+                <ShortLeadForm
+                  defaultProjectType={service.leadProjectType || "EV charging software"}
+                  leadSource={`service_${service.slug}`}
+                  heading={service.formHeading || "Get an EV charging CMS demo"}
                 />
               </div>
-              <div className="absolute -bottom-4 -left-4 rounded-2xl bg-white border border-gray-100 shadow-xl px-4 py-3 max-w-[14rem]">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-theme-purple mb-1">
-                  Live client
-                </p>
-                <p className="text-sm font-bold text-theme-blue leading-snug">
-                  PlugOne — OCPP + OCPI
-                </p>
+              <div className="relative">
+                <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-theme-purple via-theme-cyan to-theme-pink opacity-40 blur-sm" aria-hidden="true" />
+                <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden border-4 border-white shadow-2xl bg-gray-50">
+                  <Image
+                    src={service.imageUrl}
+                    alt={
+                      service.imageAlt ||
+                      "EV charging management software CMS and white-label charging app by TheTriFusion"
+                    }
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                    quality={70}
+                    priority
+                  />
+                </div>
+                <div className="absolute -bottom-4 -left-4 rounded-2xl bg-white border border-gray-100 shadow-xl px-4 py-3 max-w-[14rem]">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-theme-purple mb-1">
+                    Live client
+                  </p>
+                  <p className="text-sm font-bold text-theme-blue leading-snug">
+                    PlugOne — OCPP + OCPI
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -330,15 +383,22 @@ export default function EvChargingProductLayout({
         <div className="max-w-5xl rounded-2xl border border-gray-200 bg-gray-50 px-5 py-4">
           <FounderByline compact />
           <p className="mt-3 text-sm leading-relaxed text-gray-600">
-            {FOUNDER.bio} This {service.title.toLowerCase()} page is reviewed by{" "}
-            {FOUNDER.name}.
+            {FOUNDER.bio} {service.title} content is reviewed by {FOUNDER.name}.
           </p>
         </div>
       </section>
 
+      <div className="lg:hidden container mx-auto px-5 pb-8">
+        <ShortLeadForm
+          defaultProjectType={service.leadProjectType || "EV charging software"}
+          leadSource={`service_${service.slug}`}
+          heading={service.formHeading || "Get an EV charging CMS demo"}
+        />
+      </div>
+
       {/* Sticky in-page nav */}
       <nav
-        aria-label="On this page"
+        aria-label="Page sections"
         className="sticky top-16 z-30 bg-white/95 backdrop-blur-md border-y border-gray-100 hidden md:block"
       >
         <div className="container mx-auto px-5 py-3 flex items-center gap-5 text-xs font-bold uppercase tracking-wider text-gray-500 overflow-x-auto">
@@ -777,12 +837,54 @@ export default function EvChargingProductLayout({
         </section>
       ) : null}
 
+      <section className="container mx-auto px-5 py-10">
+        <div className="bg-gradient-to-r from-theme-blue via-theme-purple to-theme-cyan rounded-[2rem] p-8 md:p-10 text-white shadow-xl">
+          <p className="text-lg md:text-xl font-semibold max-w-3xl mb-6">
+            {service.midCtaText ||
+              "Share your charger make, OCPP version and number of sites for a written scope."}
+          </p>
+          <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3">
+            <WhatsAppButton
+              directLink
+              message={
+                service.whatsappMessage ||
+                "Hi TheTriFusion, I want EV charging software. Chargers/sites: "
+              }
+              className="inline-flex items-center justify-center px-7 py-3.5 bg-emerald-500 text-white rounded-full font-bold hover:bg-emerald-600 transition-colors"
+              label="WhatsApp us"
+            >
+              WhatsApp us
+            </WhatsAppButton>
+            <Link
+              href={contactHref}
+              className="inline-flex items-center justify-center px-7 py-3.5 bg-white text-theme-purple rounded-full font-bold hover:bg-light-theme-purple transition-colors"
+            >
+              Get a written estimate
+            </Link>
+            <a
+              href={phoneTelHref()}
+              onClick={() =>
+                trackEvent(AnalyticsEvents.CLICK_PHONE, {
+                  source: `service_${service.slug}_mid`,
+                })
+              }
+              className="inline-flex items-center justify-center px-4 py-3 text-white/95 font-semibold underline-offset-4 hover:underline"
+            >
+              Call {COMPANY_PHONE_DISPLAY || "+91 63781 33780"}
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Why points */}
       {service.whyPoints?.length ? (
         <section id="why-us" className="container mx-auto px-5 py-16 border-t border-gray-100">
           <SectionHead
             kicker="Why TheTriFusion"
-            title={`Why choose TheTriFusion for ${service.title}`}
+            title={
+              service.whyHeading ||
+              "Why charge point operators choose TheTriFusion"
+            }
           />
           <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 list-none m-0 p-0">
             {service.whyPoints.map((point, idx) => {
@@ -832,61 +934,27 @@ export default function EvChargingProductLayout({
         </section>
       ) : null}
 
-      {/* Related links */}
+      {/* Related links — single section */}
       {relatedLinks.length ? (
-        <section id="further-reading" className="container mx-auto px-5 py-16 border-t border-gray-100">
-          <SectionHead kicker="Related" title="Related services and proof" />
+        <section id="related" className="container mx-auto px-5 py-16 border-t border-gray-100">
+          <SectionHead kicker="Related" title="Related services and client work" />
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl list-none m-0 p-0">
-            {relatedLinks.map((item) => (
+            {relatedLinks.slice(0, 6).map((item) => (
               <li key={item.href}>
                 <a
                   href={item.href}
                   className="block h-full rounded-2xl border border-gray-100 p-5 hover:border-theme-purple/40 transition-colors"
                 >
                   <h3 className="text-lg font-bold text-theme-blue mb-2">{item.title}</h3>
-                  <p className="text-sm text-gray-600 font-light leading-relaxed">
-                    {item.text}
-                  </p>
+                  {item.text ? (
+                    <p className="text-sm text-gray-600 font-light leading-relaxed">
+                      {item.text}
+                    </p>
+                  ) : null}
                 </a>
               </li>
             ))}
           </ul>
-        </section>
-      ) : null}
-
-      {otherServices.length ? (
-        <section className="relative py-16 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-light-theme-purple/40 to-white" />
-          <div className="container mx-auto px-5 relative">
-            <SectionHead kicker="More" title="Related services" />
-            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 list-none m-0 p-0">
-              {otherServices.map((item, idx) => {
-                const accent = accentAt(idx);
-                return (
-                  <li key={item.slug}>
-                    <a
-                      href={absoluteSiteUrl(`/services/${item.slug}`)}
-                      className={`group flex items-center gap-3 p-4 rounded-2xl border ${accent.card}`}
-                    >
-                      <span
-                        className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 ${accent.iconWrap}`}
-                      >
-                        <ServiceIcon slug={item.slug} className="w-5 h-5" />
-                      </span>
-                      <span>
-                        <span className="block font-bold text-theme-blue group-hover:text-theme-purple transition-colors">
-                          {SERVICE_KEYWORD_BY_SLUG[item.slug] || item.title}
-                        </span>
-                        <span className={`text-xs font-semibold ${accent.text}`}>
-                          Explore →
-                        </span>
-                      </span>
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
         </section>
       ) : null}
 
@@ -904,25 +972,24 @@ export default function EvChargingProductLayout({
               href={contactHref}
               className="inline-flex items-center px-8 py-3.5 bg-white text-theme-purple rounded-full font-bold hover:bg-light-theme-purple transition-colors shadow-lg"
             >
-              {service.primaryCtaLabel || "Get a scoped estimate"}
+              {service.primaryCtaLabel || "Get a CMS demo / quote"}
             </Link>
-            <a
-              href={whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-8 py-3.5 bg-white/10 hover:bg-white/20 text-white rounded-full font-bold border border-white/30 transition-colors"
+            <WhatsAppButton
+              directLink
+              message={
+                service.whatsappMessage ||
+                "Hi TheTriFusion, I want EV charging software. Chargers/sites: "
+              }
+              className="inline-flex items-center px-8 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full font-bold transition-colors"
+              label="WhatsApp us"
             >
-              WhatsApp the Jaipur team
-            </a>
+              WhatsApp us
+            </WhatsAppButton>
           </div>
         </div>
       </section>
 
-      <StickyCtaBar
-        contactHref={contactHref}
-        whatsappHref={whatsappHref}
-        primaryLabel={service.primaryCtaLabel || "Get a quote"}
-      />
+      <StickyCtaBar whatsappHref={whatsappHref} slug={service.slug} />
     </>
   );
 }

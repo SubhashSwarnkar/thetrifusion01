@@ -7,6 +7,11 @@ import { getServiceBySlug } from "data/servicesData";
 export default function ContextualWhatsApp() {
   const pathname = usePathname() || "/";
 
+  // Service pages use an in-page sticky WhatsApp/Call bar on mobile — keep one WA entry point.
+  if (pathname.startsWith("/services/")) {
+    return null;
+  }
+
   let message = "Hi TriFusion, I want a project consultation.";
 
   if (pathname.startsWith("/web-development")) {

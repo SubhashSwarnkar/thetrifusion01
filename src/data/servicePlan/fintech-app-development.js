@@ -2,30 +2,65 @@ import { NAP_LINE, SOURCES, TEAM } from "./_shared";
 
 /**
  * /services/fintech-app-development
+ * Indexed-pages pass 2026-11-18 (§3.9).
  * TODO OWNER: live demo (retailer app + admin).
- * TODO OWNER: which API aggregators you have integrated with (names).
  * TODO OWNER: client count / operators live.
  */
 export default {
-  contentUpdatedAt: "2026-11-09",
-  metaTitle: "BBPS, AEPS & DMT Software Provider India | White-Label Fintech Apps",
-  bannerTitle: "BBPS, AEPS, DMT & XDMT Software Development in India",
+  contentUpdatedAt: "2026-11-18",
+  replaceFaqs: true,
+  replaceRelatedLinks: true,
+  metaTitle: "BBPS, AEPS & DMT Software Development India | From ₹99,999",
+  bannerTitle: "Fintech App Development: BBPS, AEPS & DMT Software",
   metaDescription:
-    "White-label BBPS, AEPS, DMT, recharge and UPI software: retailer app, distributor panel and admin. From ₹99,999. You bring bank/API partner, we build.",
+    "White-label BBPS, AEPS, DMT, recharge and UPI software: retailer app, distributor panel and admin. From ₹99,999. You bring the API partner, we build.",
   keywords:
     "BBPS AEPS DMT software provider India, white label fintech software India, recharge software company Jaipur, XDMT software India, fintech app development India",
-  // Suppress legacy templated industry packs; module depth lives in extraSections.
   industries: [],
   services: [],
+  technologies: [
+    {
+      title: "Mobile & Web Frontend",
+      description:
+        "React Native, Flutter, Swift, Kotlin, and React.js enterprise admin dashboards.",
+    },
+    {
+      title: "Retailer APIs & partner rails",
+      description:
+        "BBPS, AEPS, DMT, and XDMT integrations against your bank, BBPOU, or NPCI sandbox — plus UPI and KYC vendors when those modules are in scope.",
+    },
+    {
+      title: "Bank-Grade Security Architecture",
+      description:
+        "End-to-end TLS encryption, data-at-rest encryption (AES-256), HSM integration when your partner requires it, built following PCI-DSS-aligned practices (certification is the operator's responsibility), and OWASP Top 10 hardening.",
+    },
+  ],
+  scopeHeading: "Fintech software we build",
+  scopeKicker: "Modules",
+  whyHeading: "Why operators choose TheTriFusion for fintech software",
+  breadcrumbName: "Fintech App Development (BBPS, AEPS, DMT)",
+  schemaServiceName: "Fintech App Development (BBPS, AEPS, DMT)",
+  serviceType: "Fintech App Development (BBPS, AEPS, DMT)",
+  primaryCtaLabel: "Get a fintech software demo",
+  primaryCtaHref: "/contact?service=fintech-app-development",
+  whatsappMessage:
+    "Hi TheTriFusion, I want BBPS/AEPS/DMT software. API partner: ",
+  leadProjectType: "Fintech (BBPS/AEPS/DMT)",
+  formHeading: "Get a BBPS/AEPS software demo",
+  midCtaText:
+    "Already have an API partner? Send their name on WhatsApp and get a go-live plan.",
+  caseStudy: {
+    title: "How we scope a fintech build",
+    summary:
+      "We build the software, not the banking licence. Delivery is scoped around your BBPOU, bank or AEPS partner, KYC vendor and settlement rules.",
+    href: "/services/fintech-app-development",
+    hrefLabel: "See BBPS, AEPS and DMT modules",
+  },
   answerFirst: {
     id: "quick-answer",
-    heading: "BBPS, AEPS and DMT software: the short answer",
+    heading: "What is BBPS, AEPS and DMT software, and what does it cost?",
     text:
-      "TheTriFusion builds white-label BBPS, AEPS, DMT, XDMT, recharge and UPI software from a Jaipur, Rajasthan studio for operators across India: retailer app, distributor panel and admin. You bring the bank, BBPOU or API partner; we build the software. Published plans start from ₹99,999. We do not issue NPCI or RBI licences. See [NPCI](" +
-      SOURCES.npci +
-      ") and [RBI](" +
-      SOURCES.rbi +
-      "). Based in Jaipur? See [fintech app development in Jaipur](/solutions/fintech-app-development-jaipur).",
+      "TheTriFusion builds white-label BBPS, AEPS, DMT, recharge and UPI software for fintech operators in India: a retailer app, distributor panel and admin. You bring the bank, BBPOU or API partner, and we build and integrate the software. Plans start at ₹99,999, and go-live typically takes 8–12 weeks after your API sandbox access is ready.",
     facts: [
       { label: "Starting price", value: "From ₹99,999 (published Basic plan)" },
       { label: "You bring", value: "Bank / BBPOU / API partner" },
@@ -36,21 +71,21 @@ export default {
   extraSections: [
     {
       id: "who-fintech-page-is-for",
-      heading: "Who this fintech page is for",
+      heading: "Who fintech software is for",
       paragraphs: [
-        "Use this hub when you need a white-label retailer stack (app + distributor + admin) and already have — or are arranging — a bank, BBPOU or aggregator contract. Pick a child URL when the brief is only one rail: [BBPS](/services/fintech-app-development/bbps-software), [AEPS](/services/fintech-app-development/aeps-software), [DMT](/services/fintech-app-development/dmt-software), or [recharge](/services/fintech-app-development/recharge-software).",
-        "This page is not a licence bureau, not a competitor-brand comparison, and not a claim that we hold NPCI membership for you. If the product is a sales CRM or compensation tree, start on [custom CRM](/services/crm-erp-development) or [MLM software](/services/mlm-crm-development) instead.",
+        "Choose this hub when you need a white-label retailer stack (app + distributor + admin) and already have — or are arranging — a bank, BBPOU or aggregator contract. Pick a child URL when the brief is only one rail: [BBPS](/services/fintech-app-development/bbps-software), [AEPS](/services/fintech-app-development/aeps-software), [DMT](/services/fintech-app-development/dmt-software), or [recharge](/services/fintech-app-development/recharge-software).",
+        "We are not a licence bureau, not a competitor-brand comparison, and we do not claim NPCI membership for you. If the product is a sales CRM or compensation tree, start on [custom CRM](/services/crm-erp-development) or [MLM software](/services/mlm-crm-development) instead. Based in Jaipur? See [fintech app development in Jaipur](/solutions/fintech-app-development-jaipur).",
       ],
     },
     {
       id: "fintech-modules",
-      heading: "Modules: BBPS, AEPS, DMT/XDMT, recharge, PAN, UPI, CMS",
+      heading: "What each BBPS, AEPS and DMT module does",
       paragraphs: [
         "[BBPS](" +
           SOURCES.npciBbps +
           ") (Bharat BillPay) and [AePS](" +
           SOURCES.npciAeps +
-          ") are NPCI products. DMT/XDMT and recharge sits on the partner you contract. UPI is also NPCI. We implement the panels; we do not onboard you to NPCI. Dedicated pages: [BBPS software](/services/fintech-app-development/bbps-software), [AEPS software](/services/fintech-app-development/aeps-software), [DMT software](/services/fintech-app-development/dmt-software), [recharge software](/services/fintech-app-development/recharge-software).",
+          ") are NPCI products. DMT/XDMT and recharge sits on the partner you contract. UPI is also NPCI. We implement the panels; we do not onboard you to NPCI. Need only one rail? See [BBPS software](/services/fintech-app-development/bbps-software), [AEPS software](/services/fintech-app-development/aeps-software), [DMT software](/services/fintech-app-development/dmt-software), [recharge software](/services/fintech-app-development/recharge-software).",
       ],
       comparison: {
         heading: "What each module is",
@@ -84,14 +119,14 @@ export default {
       id: "fintech-hierarchy",
       heading: "Retailer → distributor → master distributor → admin",
       paragraphs: [
-        "The software models that hierarchy: retailer app, distributor panel, master distributor, admin. Roles, wallets and reports are scoped. We do not invent a “micro ATM in 4 steps” claim.",
+        "The software models that hierarchy: retailer app, distributor panel, master distributor, admin. Roles, wallets and reports are scoped.",
       ],
     },
     {
       id: "fintech-pricing",
-      heading: "Pricing",
+      heading: "Fintech software cost and timeline",
       paragraphs: [
-        "Published plans on [pricing](/pricing) and this service: ₹99,999 / ₹1,99,999 / ₹3,99,999.",
+        "Published plans on [pricing](/pricing): ₹99,999 / ₹1,99,999 / ₹3,99,999. Bank or aggregator fees are separate.",
       ],
       comparison: {
         heading: "Published fintech plans",
@@ -106,20 +141,47 @@ export default {
     },
     {
       id: "go-live-npci",
-      heading: "Go-live steps and what the operator must arrange",
+      heading: "What you need before go-live",
       paragraphs: [
-        "You arrange BBPOU / sponsor bank / aggregator access, KYC policy, and device vendors (for AEPS biometrics). We build against those contracts. Current product pages: [NPCI](" +
+        "You arrange the API partner contract, sandbox and production keys, KYC vendor and settlement bank account; we handle the software, integrations, testing and app store release. Current product pages: [NPCI](" +
           SOURCES.npci +
           "), [RBI](" +
           SOURCES.rbi +
-          "). Encryption, audit logs and VAPT are scoped; we do not print a fake audit certificate.",
+          "). Encryption, audit logs and VAPT are scoped when written into the contract.",
+      ],
+      included: [
+        "API partner contract, sandbox and production keys (operator)",
+        "KYC vendor and settlement bank account (operator)",
+        "Software, integrations, testing and app store release (TheTriFusion)",
+      ],
+    },
+    {
+      id: "typical-project-scope",
+      heading: "Typical project scope (example engagement)",
+      paragraphs: [
+        "Example engagement only — not a client case study and not a named operator. A common white-label fintech brief we scope looks like this.",
+        "Scope: retailer and distributor panels for AEPS, BBPS, DMT and recharge, plus admin, integrated with the operator's own licensed bank/BBPOU/API partners. You bring the partner contracts and keys; we build the software. Published plans start at ₹99,999 (Basic), ₹1,99,999 (Standard) and ₹3,99,999 (Premium). Bank or aggregator fees are separate.",
+      ],
+      included: [
+        "Phase 1 — Discovery (about 1 week): module list, partner API docs, roles (retailer → distributor → admin), wallet and commission rules",
+        "Phase 2 — Build (about 4–8 weeks): retailer app, distributor panel, admin, ledger/wallet screens, partner sandbox integrations",
+        "Phase 3 — UAT & go-live (about 2–3 weeks): production keys, device checks for AEPS where in scope, Play Store release from your account",
+        "Typical timeline range: 8–12 weeks after API sandbox access is ready",
+        "Deliverables: white-label retailer app, distributor panel, admin, integration against your named partners, source handover as per the written scope",
       ],
     },
     {
       id: "fintech-who-leads",
       heading: "Who leads the work",
       paragraphs: [
-        `Named people on the [team page](/team): ${TEAM.backend}; ${TEAM.mobile}; ${TEAM.pm}. Aggregator names are not in this repo.`,
+        `Named people on the [team page](/team): ${TEAM.backend}; ${TEAM.mobile}; ${TEAM.pm}. We integrate with the bank, BBPOU or API partner named in your contract.`,
+      ],
+    },
+    {
+      id: "india-city-pages",
+      heading: "Delivery from Jaipur across India",
+      paragraphs: [
+        "White-label BBPS, AEPS, DMT, recharge and UPI software from ₹99,999: retailer app, distributor panel and admin. You bring the bank or API partner; we do not issue NPCI/RBI licences. Child modules: [BBPS](/services/fintech-app-development/bbps-software), [AEPS](/services/fintech-app-development/aeps-software), [DMT](/services/fintech-app-development/dmt-software), [recharge](/services/fintech-app-development/recharge-software). Local studio flavour: [fintech app development in Jaipur](/solutions/fintech-app-development-jaipur).",
       ],
     },
   ],
@@ -132,7 +194,7 @@ export default {
     {
       question: "How much does white-label AEPS/BBPS software cost?",
       answer:
-        "TheTriFusion published plans start at ₹99,999, ₹1,99,999 and ₹3,99,999. Bank or aggregator fees are separate.",
+        "TheTriFusion published plans start at ₹99,999, ₹1,99,999 and ₹3,99,999. Bank or aggregator fees are separate. Go-live typically takes 8–12 weeks after your API sandbox access is ready.",
     },
     {
       question: "Do you provide the API or only software?",
@@ -142,12 +204,12 @@ export default {
     {
       question: "How do I start a fintech/recharge business in India?",
       answer:
-        "That is a licensing and partnership question, not a website slogan. Read RBI (https://www.rbi.org.in/) and NPCI (https://www.npci.org.in/), then talk to a bank or aggregator. We build after those contracts exist.",
+        "That is a licensing and partnership question. Read RBI (https://www.rbi.org.in/) and NPCI (https://www.npci.org.in/), then talk to a bank or aggregator. We build after those contracts exist.",
     },
     {
       question: "Which AEPS biometric devices are supported?",
       answer:
-        "Devices your AEPS partner already certifies. We integrate what that partner lists; we do not invent a device roster.",
+        "Devices your AEPS partner already certifies. We integrate what that partner lists.",
     },
     {
       question: "How long to go live?",
@@ -160,46 +222,51 @@ export default {
         "Operators need the relationships RBI and NPCI require. We are not a licence bureau. Read the circulars on rbi.org.in and npci.org.in.",
     },
     {
-      question: "Should I open this hub or a BBPS/AEPS/DMT child page?",
-      answer:
-        "Open this hub for the full retailer → distributor → admin stack or when several rails share one product. Open a child page when the first release is only BBPS, only AePS, only DMT, or only recharge — those URLs stay the deep write-ups so this hub does not cannibalize them.",
-    },
-    {
       question: "Do you publish named bank or aggregator partners?",
       answer:
-        "Not on this page. Partner names are not stored in this repo until an operator allows them to be listed. Bring your contract; we integrate against that partner’s docs.",
+        "We integrate with the bank, BBPOU or API partner named in your contract, using that partner's documentation.",
+    },
+    {
+      question: "What is the difference between AEPS and DMT?",
+      answer:
+        "AEPS lets customers withdraw cash or check balance at a retailer using their Aadhaar number and fingerprint. DMT (domestic money transfer) lets a retailer send money to any bank account for a walk-in customer. Many operators offer both in one retailer app.",
+    },
+    {
+      question: "Can I launch under my own brand?",
+      answer:
+        "Yes. The retailer app, distributor panel and admin are white-labelled with your brand name, logo and domain, and the Android app is published from your company's own Play Console account.",
+    },
+    {
+      question: "Can distributors and master distributors set their own commissions?",
+      answer:
+        "Yes, as scoped. The admin defines commission slabs per service, and the retailer → distributor → master distributor hierarchy shows each level its own earnings, wallet and reports.",
     },
   ],
   relatedLinks: [
+    {
+      href: "/services/mlm-crm-development",
+      title: "MLM software with e-wallet and payouts",
+      text: "When wallet payouts sit next to a compensation tree.",
+    },
+    {
+      href: "/services/android-app-development",
+      title: "Android retailer apps",
+      text: "Play Store retailer clients beside the fintech panels.",
+    },
+    {
+      href: "/services/devops",
+      title: "secure cloud hosting and monitoring",
+      text: "CI/CD, hosting and monitoring for fintech backends.",
+    },
     {
       href: "/services/fintech-app-development/bbps-software",
       title: "BBPS software",
       text: "Bharat BillPay retailer and distributor panels.",
     },
     {
-      href: "/services/fintech-app-development/aeps-software",
-      title: "AEPS software",
-      text: "Aadhaar-enabled payments on certified devices.",
-    },
-    {
-      href: "/services/fintech-app-development/dmt-software",
-      title: "DMT software",
-      text: "Domestic money transfer for the retailer network.",
-    },
-    {
-      href: "/services/fintech-app-development/recharge-software",
-      title: "Recharge software",
-      text: "Mobile and DTH top-ups on the partner you contract.",
-    },
-    {
-      href: "/services/software-development",
-      title: "Custom software development",
-      text: "When the fintech piece sits inside a broader product.",
-    },
-    {
-      href: "/services/mlm-crm-development",
-      title: "MLM software",
-      text: "When wallet payouts sit next to a compensation tree.",
+      href: "/solutions/fintech-app-development-jaipur",
+      title: "fintech app development in Jaipur",
+      text: "Local studio flavour — same product family.",
     },
   ],
 };

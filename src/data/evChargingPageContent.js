@@ -6,10 +6,9 @@ import { siteConfig } from "../config/site";
 
 export const evChargingPageContent = {
   title: "EV Charging Management Software (CMS & App)",
-  metaTitle:
-    "EV Charging Management Software India | OCPP CMS & App | TheTriFusion",
+  metaTitle: "EV Charging Management Software India | OCPP CMS & App",
   metaDescription:
-    "White-label EV charging management software and driver app for Indian CPOs and fleets: OCPP 1.6J/2.0.1, OCPI roaming, UPI billing, GST invoices. Jaipur team.",
+    "White-label EV charging CMS and driver app for Indian CPOs: OCPP 1.6J/2.0.1, OCPI roaming, UPI billing, GST invoices. Live client: PlugOne.",
   keywords:
     "EV charging management software India, EV charging CMS, OCPP CSMS, charge point management system, white label EV charging app, OCPI roaming India, EV charging app development company",
   bannerTitle:
@@ -19,34 +18,39 @@ export const evChargingPageContent = {
   shortDescription:
     "White-label EV charging management software (CMS & app) for Indian CPOs: OCPP 1.6J/2.0.1, OCPI roaming, UPI billing, GST invoices. Client owns the code.",
   description:
-    "TheTriFusion is a Jaipur software studio that builds EV charging management software — not a charge point operator and not a charger manufacturer. The product is a white-label CMS (also called CSMS or CPMS) plus a driver app under your brand. Chargers connect over OCPP; roaming uses OCPI when you need it. You own the repositories named in the scope. Related work: [mobile app development](/services/mobile-app-development) for store delivery, [fintech app development](/services/fintech-app-development) for payment-heavy panels, [custom software development](/services/software-development) when charging is one module in a wider platform, and [CRM development](/services/crm-erp-development) for franchise and partner ops beside the CMS.",
+    "TheTriFusion is a Jaipur software studio that builds EV charging management software — not a charge point operator and not a charger manufacturer. The product is a white-label CMS (also called CSMS or CPMS) plus a driver app under your brand. Chargers connect over OCPP; roaming uses OCPI when you need it. You own the repositories named in the scope. Related work: [mobile app development](/services/mobile-app-development) for store delivery, [fintech app development](/services/fintech-app-development) for payment-heavy panels, [custom software development](/services/software-development) when charging is one module in a wider platform, and [CRM development](/services/crm-erp-development) for franchise and partner ops beside the CMS. Live client: [PlugOne](/portfolio/plugone-ev-charging-platform).",
   locationLine:
     "Jaipur studio serving CPOs and fleets across India (and worldwide, remotely).",
-  scopeKicker: "On this page",
+  scopeKicker: "Modules",
   scopeHeading: "What modules does EV charging management software include?",
   processHeading: "How does an EV charging CMS project run?",
   processLayout: "howto",
   ctaHeading: "Ready for a white-label EV charging CMS demo?",
   ctaText:
-    "Share charger make/model and OCPP version, number of sites, whether you need roaming, and your payment gateway. We reply with a written scope from Jaipur. This page does not sell a fixed package.",
-  primaryCtaLabel: "Get a demo / quote",
-  primaryCtaHref: "/contact",
+    "Share charger make/model and OCPP version, number of sites, whether you need roaming, and your payment gateway. We reply with a written scope from Jaipur. Every quote is a written scope.",
+  primaryCtaLabel: "Get a CMS demo / quote",
+  primaryCtaHref: "/contact?service=ev-charging-app-development",
   secondaryCtaLabel: "See PlugOne case study",
   secondaryCtaHref: "/portfolio/plugone-ev-charging-platform",
-  serviceType:
-    "EV charging management software (CMS/CSMS) and driver app development",
-  breadcrumbName: "EV Charging Software",
+  serviceType: "EV Charging Management Software",
+  breadcrumbName: "EV Charging Management Software",
+  schemaServiceName: "EV Charging Management Software",
+  whyHeading: "Why charge point operators choose TheTriFusion",
   whatsappMessage:
-    "Hi TriFusion, I need EV charging management software / a white-label charging app (OCPP, OCPI, UPI). Please share a scoped estimate.",
+    "Hi TheTriFusion, I want EV charging software. Chargers/sites: ",
+  leadProjectType: "EV charging software",
+  formHeading: "Get an EV charging CMS demo",
+  midCtaText:
+    "Share your charger make, OCPP version and number of sites for a written scope.",
   imageAlt:
     "Product mock of EV charging management software CMS and white-label driver app by TheTriFusion in Jaipur for Indian CPOs",
-  contentUpdatedAt: "2026-11-13",
+  contentUpdatedAt: "2026-11-18",
   sitemapPriority: 0.85,
   hideClientStrip: true,
   hidePricingEstimates: true,
   hideStandardDeliverables: true,
   faqsExpanded: false,
-  tocAriaLabel: "EV charging software modules on this page",
+  tocAriaLabel: "EV charging software modules",
   schemaAreaServed: [
     { "@type": "Country", name: "India" },
     { "@type": "Place", name: "Worldwide" },
@@ -168,7 +172,7 @@ export const evChargingPageContent = {
           schemaDescription:
             "OCPI 2.2.1 roaming for locations, tokens, sessions and CDRs; UEI can be scoped.",
           paragraphs: [
-            "Publish your chargers to partner apps, or let your drivers use partner chargers — partner by partner, not a fake national hub claim.",
+            "Publish your chargers to partner apps, or let your drivers use partner chargers — partner by partner, through hubs such as the ChargeIndia OCPI hub used by PlugOne.",
           ],
           points: [
             "OCPI 2.2.1: locations, tariffs, tokens, sessions, CDRs, commands",
@@ -287,7 +291,7 @@ export const evChargingPageContent = {
           id: "for-discoms",
           heading: "DISCOMs, PSUs and government programmes",
           paragraphs: [
-            "Multi-operator dashboards, open protocols and reporting can be scoped. This page does not claim past DISCOM or PSU awards.",
+            "Multi-operator dashboards, open protocols and reporting can be scoped. We do not claim past DISCOM or PSU awards.",
           ],
         },
       ],
@@ -405,7 +409,7 @@ export const evChargingPageContent = {
         rowHeader: " ",
         columns: [
           "Rent a network’s CMS",
-          "White-label (this page)",
+          "White-label (TheTriFusion)",
           "Custom build on top",
         ],
         rows: [
@@ -429,7 +433,7 @@ export const evChargingPageContent = {
             label: "Fees",
             cells: [
               "Usually per-charger or per-session to the vendor",
-              "Project range from ₹4,50,000 ex-GST after discovery — not a per-charger SaaS menu on this page",
+              "Project range from ₹4,50,000 ex-GST after discovery — every quote is a written scope",
               "Same team, larger written scope",
             ],
           },
@@ -471,7 +475,7 @@ export const evChargingPageContent = {
         "Jaipur software studio delivering EV charging CMS and apps across India with UPI and GST invoice fields.",
       paragraphs: [
         "India shows up in payments (UPI), invoices (GST fields), connector mix (CCS2, Type 2, and Bharat AC/DC where the hardware is OCPP-capable), and site reality (intermittent 4G — charger queues must tolerate offline moments). Hindi/English app UI can be scoped. The studio is in Jaipur, Rajasthan; delivery is remote for operators across India and worldwide.",
-        "Published starting range for an MVP is ₹4,50,000 ex-GST after discovery — see [pricing](/pricing). That figure is a starting range, not a fixed package.",
+        "Published starting range for an MVP is ₹4,50,000 ex-GST after discovery — see [pricing](/pricing). Every quote is a written scope.",
       ],
       included: [
         "UPI and cards through your gateway",
@@ -531,7 +535,7 @@ export const evChargingPageContent = {
     {
       title: "Discovery",
       description:
-        "We write down the role you play: CPO, franchise/DOCO, fleet, OEM, site host, or a mix. We list charger models, OCPP versions, whether a vendor cloud sits in the middle, and whether payments and GST invoices are in the first release. You get a scope, not a slogan.",
+        "We write down the role you play: CPO, franchise/DOCO, fleet, OEM, site host, or a mix. We list charger models, OCPP versions, whether a vendor cloud sits in the middle, and whether payments and GST invoices are in the first release. You get a written scope.",
     },
     {
       title: "Protocol proof",
@@ -578,55 +582,36 @@ export const evChargingPageContent = {
     {
       title: "Scope before build",
       description:
-        "You get a written scope after discovery. The pricing page shows published starting ranges, not a fake fixed SKU.",
+        "You get a written scope after discovery. The pricing page shows published starting ranges.",
     },
   ],
   relatedLinks: [
     {
-      href: "/portfolio/plugone-ev-charging-platform",
-      title: "PlugOne case study",
-      text: "Live client EV charging product — OCPP + OCPI.",
-    },
-    {
-      href: "/white-label-development",
-      title: "White-label software development",
-      text: "When the engagement is white-label under an agency or brand relationship.",
-    },
-    {
       href: "/services/mobile-app-development",
-      title: "Mobile app development",
+      title: "driver app development",
       text: "iOS and Android delivery when the driver app is part of a larger mobile product.",
     },
     {
-      href: "/services/software-development",
-      title: "Custom software development",
-      text: "Backends and admin tools when charging is one module inside a wider product.",
-    },
-    {
-      href: "/services/ui-ux-design",
-      title: "UI/UX for driver and operator apps",
-      text: "Driver and operator flows designed before the build.",
-    },
-    {
       href: "/services/devops",
-      title: "DevOps & cloud hosting for the CMS",
+      title: "cloud hosting and monitoring for the CMS",
       text: "Pipelines, hosting, and monitoring for the charging backend.",
     },
     {
-      href: "/services/crm-erp-development",
-      title: "CRM/ERP for charging businesses",
-      text: "Franchise leads, partner tracking and ops CRM beside the CMS.",
-    },
-    {
       href: "/services/fintech-app-development",
-      title: "Fintech & payments software",
+      title: "UPI wallet and payment flows",
       text: "When wallet, settlement or retailer payment panels sit beside the CMS.",
     },
     {
-      href: "/pricing",
-      title: "Published pricing",
-      text: "Starting ranges for EV charging CMS engagements.",
+      href: "/services/software-development",
+      title: "custom software",
+      text: "Backends and admin tools when charging is one module inside a wider product.",
+    },
+    {
+      href: "/portfolio/plugone-ev-charging-platform",
+      title: "PlugOne EV charging case study",
+      text: "Live client EV charging product — OCPP + OCPI.",
     },
   ],
+  // FAQs replaced by servicePlan/ev-charging-app-development.js (replaceFaqs: true).
   faqs: [],
 };

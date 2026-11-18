@@ -27,59 +27,18 @@ export const servicePageSeo = {
     locationLine:
       "Custom software from Jaipur, Rajasthan — remote delivery across India.",
     scopeKicker: "Build",
-    scopeHeading: "Custom software we ship from Jaipur",
+    scopeHeading: "Custom software we build",
     processHeading: "How a Jaipur software project runs",
     ctaHeading: "Ready to scope custom software?",
     ctaText:
-      "Share users, must-have modules, and a deadline. We return a written range from Jaipur — not a fake one-price package.",
+      "Share users, must-have modules, and a deadline. We return a written range from Jaipur.",
     serviceType: "Custom Software Development",
     whatsappMessage:
-      "Hi TriFusion, I want a custom software development quote from the Jaipur team.",
+      "Hi TheTriFusion, I need custom software for: ",
     imageAlt:
       "Custom software development team in Jaipur building web and API products for TheTriFusion clients",
     relatedBlogSlug: "tcs-manageengine-sovereign-cloud-software-india-2026",
-    faqs: [
-      {
-        question: "What custom software do you build in Jaipur?",
-        answer:
-          "Business portals, CRM and ERP modules, booking systems, inventory tools, dashboards, SaaS products, MLM engines, fintech admin tools, and APIs. We scope around your workflow, then ship web plus iOS or Android when field teams need apps.",
-      },
-      {
-        question: "How is this different from website development?",
-        answer:
-          "Website pages sell and inform. Custom software is the operating system of the business — roles, data, and workflows. If you need a public marketing site, see website development.",
-      },
-      {
-        question: "How do I get a software quote?",
-        answer:
-          "Share users, must-have modules, and a deadline on the contact page. We return a written range — not a fake one-price package.",
-      },
-      {
-        question: "Do you work with clients outside Jaipur?",
-        answer:
-          "Yes. The office is Jaipur; delivery is remote with weekly demos for clients across India.",
-      },
-      {
-        question: "Do you provide post-launch support?",
-        answer:
-          "Yes. Maintenance, feature upgrades, monitoring, and managed support packages are available after launch.",
-      },
-      {
-        question: "Can you work with our existing systems?",
-        answer:
-          "Yes. We integrate with CRMs, ERPs, payment providers, and third-party APIs when the project needs them.",
-      },
-    ],
-    coverageSections: [
-      {
-        id: "custom-software-company",
-        heading: "Custom software development company",
-        paragraphs: [
-          "Off-the-shelf tools falling short is the usual reason a team asks for custom software. TheTriFusion designs and engineers software around the process you already run — internal tools, customer-facing platforms, and APIs — from the Jaipur office, for clients across India.",
-          "A focused MVP module is often 6–12 weeks. Broader platforms are phased. You get a written scope, weekly demos, and the source agreed in the contract.",
-        ],
-      },
-    ],
+    coverageSections: [],
     relatedLinks: [
       {
         href: "/services/ev-charging-app-development",
@@ -100,7 +59,7 @@ export const servicePageSeo = {
     shortDescription:
       "Business websites and web apps — React/Next.js, SEO basics, post-launch support.",
     description:
-      "TheTriFusion is a website development company in Jaipur. We ship React and Next.js sites for Indian businesses: company pages, lead funnels, and ecommerce storefronts with payments and admin. Paid ads use /web-development; this page is the organic capability write-up with stack, process, and SEO handover.",
+      "TheTriFusion is a website development company in Jaipur. We ship React and Next.js sites for Indian businesses: company pages, lead funnels, and ecommerce storefronts with payments and admin. Paid ads use /web-development; the organic capability write-up covers stack, process, and SEO handover.",
     locationLine:
       "Jaipur web team — React/Next.js sites for businesses across India.",
     scopeKicker: "Web",
@@ -111,134 +70,40 @@ export const servicePageSeo = {
       "Share pages, payments, and whether you need admin. We return a scoped range and a typical 6–8 week path from Jaipur.",
     serviceType: "Website Development",
     whatsappMessage:
-      "Hi TriFusion, I want a website development quote from the Jaipur team.",
+      "Hi TheTriFusion, I need a business website. Pages:  Deadline: ",
     imageAlt:
       "Custom website development in Jaipur — business site screens by TheTriFusion",
     relatedBlogSlug: "google-official-site-indian-business-website-2026",
-    faqs: [
-      {
-        question: "Is this different from /web-development?",
-        answer:
-          "The ads URL is a short conversion page kept live for campaigns. It is noindex. This service page is the indexed, longer capability write-up.",
-      },
-      {
-        question: "What does a typical Jaipur website cost?",
-        answer:
-          "SME sites start from ₹15,000 and rise with ecommerce, payments, and admin. See Pricing for starting ranges and the ecommerce cost article for catalogs.",
-      },
-      {
-        question: "Do you only design, or also host and SEO?",
-        answer:
-          "We ship the site, can stay on for hosting, and implement titles, sitemap, and Search Console — not a file dump at handover.",
-      },
-      {
-        question: "Which stack do you use for websites?",
-        answer:
-          "React and Next.js on the front, Node.js on the back, with MongoDB or PostgreSQL. We match the stack to your ops, not a trend.",
-      },
-      {
-        question: "Are you physically in Jaipur?",
-        answer:
-          "Our studio is in Jaipur, Rajasthan. We work with Jaipur clients remotely or in person, and can meet for discovery or launch when needed.",
-      },
-      {
-        question: "How fast can a Jaipur business website launch?",
-        answer:
-          "A focused marketing website is often 3–8 weeks. Ecommerce or custom features take longer. Use the estimate tool or book a call for a range based on pages and integrations.",
-      },
-      {
-        question: "Can you redesign an old website?",
-        answer:
-          "Yes. We modernize design, performance, and conversion paths while protecting important URLs with redirects.",
-      },
-    ],
-    coverageSections: [
-      {
-        id: "web-development-jaipur",
-        heading: "Web development company in Jaipur",
-        paragraphs: [
-          "Web development for Jaipur businesses is the design and build of a marketing site, ecommerce store, or web app that the company can update after launch. It is for local service firms, retailers, and teams that want a Jaipur software partner, TheTriFusion, with written scope and weekly demos.",
-          "The studio is in Jaipur — close enough for a kickoff visit, with day-to-day work on video, WhatsApp, and shared boards. Typical briefs are service-business sites for tourism, education, healthcare, and real estate, plus D2C stores, booking or lead funnels, and internal tools. The build includes titles, a sitemap, mobile speed, and Google Business alignment.",
-        ],
-      },
-      {
-        id: "web-development-india",
-        heading: "Web development company in India",
-        paragraphs: [
-          "The same Jaipur team builds for clients across India: marketing sites that convert, dashboards, portals, booking systems, and SaaS frontends with secure sign-in and API integrations. Technical SEO — clean URLs, metadata, structured data, and a crawlable structure — is part of the build, including when we redesign a site that already ranks.",
-        ],
-      },
-    ],
+    coverageSections: [],
   },
   "mobile-app-development": {
-    metaTitle: "Mobile App Development Company in Jaipur | iOS & Android",
+    metaTitle: "Mobile App Development in India | iOS + Android from ₹50,000",
     metaDescription:
-      "TheTriFusion in Jaipur builds cross-platform mobile apps — React Native or Flutter for iOS and Android. Typical MVP 8–12 weeks. Get a scoped estimate.",
+      "One React Native or Flutter app for iOS and Android, with backend and admin panel. From ₹50,000; focused MVP in 8–12 weeks. Jaipur team, all India.",
     keywords:
       "mobile app development company Jaipur, cross platform app development India, React Native Flutter Jaipur, iOS Android app company Rajasthan",
-    bannerTitle: "Mobile App Development Company in Jaipur, India",
+    bannerTitle: "Mobile App Development Company in India: iOS and Android",
     bannerDescription:
       "One product on iOS and Android from Jaipur — shared data model, store listings, and a web admin. Dedicated iOS and Android pages cover store-specific process.",
     shortDescription:
       "iOS and Android apps — React Native, Flutter, or native. Typical MVP 8–12 weeks.",
     description:
-      "TheTriFusion is a mobile app development company in Jaipur covering the shared iOS + Android practice: React Native, Flutter, or native when a store needs depth. PlugOne and Connect Dairy are live. Use the iOS or Android service pages when you only need one store; this page is for teams shipping both.",
+      "TheTriFusion is a mobile app development company in Jaipur covering the shared iOS + Android practice: React Native, Flutter, or native when a store needs depth. PlugOne and Connect Dairy are live. Use the iOS or Android service pages when you only need one store; choose cross-platform when both stores ship together.",
     locationLine:
       "Cross-platform apps from Jaipur — iOS, Android, and web admin together.",
     scopeKicker: "Apps",
-    scopeHeading: "Cross-platform mobile work we deliver",
+    scopeHeading: "Apps we build for iOS and Android",
     processHeading: "How we ship iOS and Android together",
     ctaHeading: "Planning iOS and Android in one release?",
     ctaText:
       "Tell us both stores or one first. We write a shared backend plan and an 8–12 week MVP path from Jaipur.",
     serviceType: "Mobile App Development",
     whatsappMessage:
-      "Hi TriFusion, I want a mobile app (iOS + Android) quote from the Jaipur team.",
+      "Hi TheTriFusion, I want to build a mobile app for: ",
     imageAlt:
       "iOS and Android mobile app development screens by TheTriFusion in Jaipur",
     relatedBlogSlug: "flutter-vs-react-native-2024",
-    faqs: [
-      {
-        question: "iOS, Android, or both?",
-        answer:
-          "Both, when the brief needs it. See dedicated iOS and Android service pages for store-specific process. This page covers the shared mobile practice.",
-      },
-      {
-        question: "Can you show live apps?",
-        answer:
-          "PlugOne (plugone.in) and Connect Dairy (connectdairy.in) are live. EV charging work is documented on the EV service page.",
-      },
-      {
-        question: "Timeline for a cross-platform MVP?",
-        answer:
-          "A focused React Native or Flutter MVP is often 8–12 weeks after discovery.",
-      },
-      {
-        question: "Native or cross-platform?",
-        answer:
-          "Cross-platform when both stores ship together. Swift or Kotlin when one store needs platform APIs we cannot share cleanly.",
-      },
-      {
-        question: "Can you build an ecommerce mobile app?",
-        answer:
-          "Yes. Product browsing, cart, payments, orders, and notifications are common ecommerce app deliverables, for a consumer shop or a business workflow.",
-      },
-      {
-        question: "Will I own the source code?",
-        answer:
-          "Yes. Project agreements transfer the agreed deliverables and source ownership to you upon completion and payment.",
-      },
-    ],
-    coverageSections: [
-      {
-        id: "mobile-app-company",
-        heading: "Mobile app development company",
-        paragraphs: [
-          "TheTriFusion is a mobile app development company in Jaipur for consumer apps and business apps: ecommerce, booking, delivery flows, workforce tools, and customer portals, with a scalable backend.",
-          "Android and iOS can ship together on Flutter or React Native, or native when one store needs it. Listing assets, release pipelines, analytics, and the next feature cycle are part of the engagement — not a file handoff.",
-        ],
-      },
-    ],
+    coverageSections: [],
     relatedLinks: [
       {
         href: "/services/ev-charging-app-development",
@@ -540,19 +405,19 @@ export const servicePageSeo = {
     ],
   },
   "business-modernization": {
-    contentUpdatedAt: "2026-10-12",
-    metaTitle: "Business Modernization in Jaipur | Spreadsheet to Software",
+    contentUpdatedAt: "2026-11-18",
+    metaTitle: "Legacy Software Modernization India | Excel to Web App",
     metaDescription:
-      "Replace spreadsheet and WhatsApp chaos with phased web apps, CRM, and mobile — one workflow at a time. Book a discovery call.",
+      "Replace Excel, WhatsApp workflows and old desktop software with phased web apps, CRM and mobile, without stopping operations. Plans from ₹1,50,000.",
     keywords:
       "business modernization Jaipur, digitize SME operations India, replace Excel with software Rajasthan, digital transformation Jaipur SME",
-    bannerTitle: "Business Modernization in Jaipur, India",
+    bannerTitle: "Business & Legacy Software Modernization in Jaipur, India",
     bannerDescription:
       "One painful workflow off Excel and WhatsApp first — then the next module. Not a 200-user ERP dumped on a 12-person team.",
     shortDescription:
       "Replace spreadsheets with web apps, CRM and mobile — phased roadmaps.",
     description:
-      "TheTriFusion runs business modernization from Jaipur for Indian SMEs who have outgrown Excel but are not buying enterprise ERP. We phase: one painful workflow into a web or mobile system, then the next. Custom software is the build; this page is the roadmap and sequencing. RPA is for bots on processes you will not rewrite yet.",
+      "TheTriFusion runs business modernization from Jaipur for Indian SMEs who have outgrown Excel but are not buying enterprise ERP. We phase: one painful workflow into a web or mobile system, then the next. Custom software is the build; modernization is the roadmap and sequencing. RPA is for bots on processes you will not rewrite yet.",
     locationLine:
       "Ops modernization from Jaipur — phased modules, not a big-bang ERP.",
     scopeKicker: "Modernize",
@@ -561,91 +426,57 @@ export const servicePageSeo = {
     ctaHeading: "Outgrown Excel but not ready for ERP?",
     ctaText:
       "Name the worst workflow. We propose a first module and a phased roadmap from Jaipur.",
-    serviceType: "Business Modernization",
+    serviceType: "Legacy Software & Business Modernization",
+    breadcrumbName: "Legacy Software & Business Modernization",
+    schemaServiceName: "Legacy Software & Business Modernization",
+    whyHeading: "Why SMEs choose TheTriFusion to modernise",
+    primaryCtaLabel: "Plan my move off Excel",
+    primaryCtaHref: "/contact?service=business-modernization",
     whatsappMessage:
-      "Hi TriFusion, I want a business modernization / spreadsheet-replacement plan from Jaipur.",
+      "Hi TheTriFusion, we want to replace Excel/old software for: ",
+    leadProjectType: "Business modernization",
+    formHeading: "Which sheet or tool should go first?",
+    midCtaText:
+      "Tell us the one spreadsheet everyone is afraid to break. We will suggest the first phase.",
     imageAlt:
       "Business modernization — replacing spreadsheets with custom software by TheTriFusion",
     relatedBlogSlug: "gst-1-nov-inverted-duty-modernize-india-2026",
-    faqs: [
-      {
-        question: "What does business modernization mean here?",
-        answer:
-          "Moving ops off spreadsheets and WhatsApp chaos into a scoped web/mobile system — CRM, inventory, or field apps.",
-      },
-      {
-        question: "Do you rip out everything at once?",
-        answer:
-          "No. We phase: one painful workflow first, then the next module.",
-      },
-      {
-        question: "Who is this for?",
-        answer:
-          "Indian SMEs in Jaipur and across India who have outgrown Excel but are not buying a 200-user ERP.",
-      },
-      {
-        question: "Is this the same as custom software?",
-        answer:
-          "Software is how we build. This page is the sequencing: which module first, what stays in Excel for a quarter, and when mobile joins.",
-      },
-    ],
+    // FAQs replaced by servicePlan (replaceFaqs).
+    faqs: [],
   },
   salesforce: {
-    contentUpdatedAt: "2026-10-12",
+    contentUpdatedAt: "2026-11-18",
     metaTitle: "Salesforce Developers in Jaipur | Flows, Apex & Integrations",
     metaDescription:
-      "Salesforce Flows, Apex/LWC and website or ERP integrations for your existing org, by a Jaipur team working with Indian businesses. Share your org for a scoped plan.",
+      "Salesforce Flows, Apex/LWC, data migration and website or ERP integrations for orgs you already use. Independent Jaipur team. Work from ₹80,000.",
     keywords:
       "Salesforce developers Jaipur, Salesforce Flows Apex India, Salesforce developer Rajasthan, Salesforce integration Jaipur, Salesforce customization India",
     bannerTitle: "Salesforce Developers in Jaipur | Flows, Apex & Integrations",
     bannerDescription:
-      "Objects, flows, and website integrations on the org you already have — configuration first, custom code when standard is not enough.",
+      "Objects, Flows, and website integrations on the org you already have — configuration first, custom code when standard is not enough.",
     shortDescription:
       "Salesforce Flows, Apex and integrations on an org you already pay for. From ₹80,000.",
     description:
-      "TheTriFusion customizes Salesforce from Jaipur for Indian sales teams: objects, flows, and lead-form integrations into the org you already pay for. Configuration first; custom Apex when flows are not enough. When commissions, MLM trees, or ops modules will never fit Salesforce cleanly, we say so and point to custom CRM/ERP or MLM CRM.",
+      "TheTriFusion customizes Salesforce from Jaipur for Indian sales teams: objects, Flows, and lead-form integrations into the org you already pay for. Configuration first; custom Apex when Flows are not enough. When commissions, MLM trees, or ops modules will never fit Salesforce cleanly, we say so and point to custom CRM/ERP or MLM software.",
     locationLine:
       "Salesforce work from Jaipur — on your existing org, not a forced new CRM.",
     scopeKicker: "Salesforce",
-    scopeHeading: "Salesforce work we take",
-    processHeading: "How we scope an existing Salesforce org",
+    scopeHeading: "Salesforce services",
+    processHeading: "How we start on an existing org",
     ctaHeading: "Have a Salesforce org that needs real flows?",
     ctaText:
       "Share the org type and the broken process. We return a configuration-vs-custom plan from Jaipur.",
-    serviceType: "Salesforce Customization",
-    whatsappMessage:
-      "Hi TriFusion, I want Salesforce customization help from the Jaipur team.",
+    serviceType: "Salesforce Customisation & Development",
+    whatsappMessage: "Hi TheTriFusion, we need Salesforce help with: ",
     imageAlt:
       "Salesforce customization and CRM flows implemented by TheTriFusion Jaipur",
     relatedBlogSlug: "salesforce-hunter-piper-agents-sme-india-2026",
-    faqs: [
-      {
-        question: "Salesforce implementation or custom code?",
-        answer:
-          "Both. Configuration first; custom when flows and objects are not enough.",
-      },
-      {
-        question: "Can you integrate a website or app with Salesforce?",
-        answer:
-          "Yes. Lead forms, orders, and customer data can sync into Salesforce.",
-      },
-      {
-        question: "When should we build custom CRM instead?",
-        answer:
-          "When commissions, MLM trees, or ops modules do not fit Salesforce cleanly. See CRM/ERP and MLM pages.",
-      },
-      {
-        question: "Do you sell Salesforce licences?",
-        answer:
-          "No. We work on the org you already have. Licences stay with Salesforce.",
-      },
-    ],
   },
   "ai-development": {
-    contentUpdatedAt: "2026-10-12",
+    contentUpdatedAt: "2026-11-18",
     metaTitle: "AI Chatbot & AI Agent Development in India | WhatsApp, RAG",
     metaDescription:
-      "Add assistants, document ops, and retrieval to your web or mobile product — with a human review step. Request a scoped AI pilot.",
+      "WhatsApp AI chatbots, document search (RAG), invoice/PDF extraction and AI agents with human review. 2–4 week pilot first. Plans from ₹2,00,000.",
     keywords:
       "AI development company Jaipur, AI software India, ChatGPT integration Jaipur, document AI Rajasthan, practical AI for SMEs",
     bannerTitle: "AI Chatbot & AI Agent Development in India | WhatsApp, RAG",
@@ -654,43 +485,20 @@ export const servicePageSeo = {
     shortDescription:
       "WhatsApp bots, RAG search and AI agents with a human review step.",
     description:
-      "TheTriFusion is an AI development company in Jaipur that applies existing models to your workflow: search, drafting, classification, and support deflection — always with a human fallback. We ship AI as a feature of iOS, Android, or web, not a disconnected chatbot demo. Custom software is the product shell; this page is the AI slice.",
+      "TheTriFusion is an AI development company in Jaipur that applies existing models to your workflow: WhatsApp chatbots, RAG search, invoice/PDF extraction, and agents with a human review step. We ship AI as a feature of iOS, Android, or web — not a disconnected chatbot demo.",
     locationLine:
       "Practical AI from Jaipur — features inside products, not model-training labs.",
     scopeKicker: "AI",
     scopeHeading: "AI features we add to real products",
-    processHeading: "How an AI pilot is scoped in Jaipur",
+    processHeading: "How an AI pilot works (2–4 weeks)",
     ctaHeading: "Have a workflow AI could actually help?",
     ctaText:
       "Describe the data, the human fallback, and the product it must live in. We propose a scoped pilot from Jaipur.",
-    serviceType: "AI Software Development",
-    whatsappMessage:
-      "Hi TriFusion, I want a practical AI feature / pilot quote from the Jaipur team.",
+    serviceType: "AI Chatbot & AI Agent Development",
+    whatsappMessage: "Hi TheTriFusion, I want an AI chatbot/agent for: ",
     imageAlt:
       "AI software development for Indian businesses by TheTriFusion in Jaipur",
     relatedBlogSlug: "meity-ai-consultation-custom-ai-india-2026",
-    faqs: [
-      {
-        question: "Do you train foundation models?",
-        answer:
-          "No. We apply existing models to your workflow: retrieval, assistants, and ops tools with a review step.",
-      },
-      {
-        question: "Where does AI actually help?",
-        answer:
-          "Search, drafting, classification, and support deflection — when you have data and a human fallback.",
-      },
-      {
-        question: "Can AI sit inside a mobile or web app?",
-        answer:
-          "Yes. We ship it as a feature of iOS, Android, or web — not a disconnected chatbot demo.",
-      },
-      {
-        question: "Is this the same as custom software?",
-        answer:
-          "Custom software is the product. This page is the AI feature: models, prompts, retrieval, and the review step around it.",
-      },
-    ],
   },
   devops: devopsPageContent,
   "on-demand": {
@@ -746,74 +554,62 @@ export const servicePageSeo = {
   },
 
   "mlm-crm-development": {
-    contentUpdatedAt: "2026-10-12",
-    metaTitle: "MLM Software Company in Jaipur, India | Binary, Unilevel & Matrix",
+    contentUpdatedAt: "2026-11-18",
+    metaTitle: "MLM Software Company in Jaipur | Binary, Unilevel, Matrix",
     metaDescription:
-      "Unilevel genealogy, KYC, and payout engines for network-marketing CRM — iOS, Android, and web. Share your plan document for a scoped estimate.",
+      "Custom MLM software for binary, unilevel, matrix and hybrid plans: genealogy, e-wallet, KYC, payouts and distributor apps. Plans from ₹3,50,000.",
     keywords:
       "MLM CRM development Jaipur, unilevel compensation software India, network marketing CRM Rajasthan, genealogy MLM software, MLM app development Jaipur",
     locationLine:
-      "MLM CRM from Jaipur — compensation engines, not a generic CRM plugin.",
+      "MLM software from Jaipur — compensation engines, not a generic CRM plugin.",
     scopeKicker: "MLM",
-    scopeHeading: "MLM CRM modules we build",
-    processHeading: "How we scope a compensation plan",
+    scopeHeading: "MLM software modules",
+    processHeading: "How an MLM software project runs",
     ctaHeading: "Have a written compensation plan ready?",
     ctaText:
-      "Share the plan document and whether field apps are in phase one. We return a scoped unilevel (or hybrid) estimate from Jaipur.",
-    serviceType: "MLM CRM Software Development",
+      "Share the plan document and whether field apps are in phase one. We return a scoped estimate from Jaipur.",
+    serviceType: "MLM Software Development",
     whatsappMessage:
-      "Hi TriFusion, I want an MLM CRM / unilevel software quote from the Jaipur team.",
+      "Hi TheTriFusion, I need MLM software. Plan type (binary/unilevel/matrix): ",
   },
   "fintech-app-development": {
-    contentUpdatedAt: "2026-10-12",
-    metaTitle: "BBPS, AEPS, DMT & XDMT Software | Fintech Apps from Jaipur",
+    contentUpdatedAt: "2026-11-18",
+    metaTitle: "BBPS, AEPS & DMT Software Development India | From ₹99,999",
     metaDescription:
-      "White-label retailer apps, distributor panels, and admin for BBPS, AEPS, DMT, and XDMT. You bring bank/NPCI access; we build the product.",
+      "White-label BBPS, AEPS, DMT, recharge and UPI software: retailer app, distributor panel and admin. From ₹99,999. You bring the API partner, we build.",
     keywords:
       "BBPS software company India, AEPS software development Jaipur, DMT software India, XDMT software, fintech app development company Jaipur, retailer banking software, Aadhaar enabled payment system software, Bharat bill payment system software, domestic money transfer software, white label BBPS AEPS DMT, UPI KYC banking software Jaipur, CSP retailer app development",
-    bannerTitle:
-      "Fintech App Development Company in Jaipur | BBPS, AEPS, DMT & XDMT Software",
+    bannerTitle: "Fintech App Development: BBPS, AEPS & DMT Software",
     bannerDescription:
-      "We sell BBPS, AEPS, DMT and XDMT software you can white-label: retailer app, distributor panel, and admin — plus UPI and KYC. You bring bank/NPCI live access; we build the product.",
+      "White-label BBPS, AEPS, DMT and XDMT software: retailer app, distributor panel, and admin — plus UPI and KYC. You bring bank/NPCI live access; we build the product.",
     shortDescription:
       "BBPS, AEPS, DMT and XDMT software — retailer, distributor and admin apps.",
     description:
-      "TheTriFusion sells custom fintech software from Jaipur: BBPS bill-pay, AEPS Aadhaar banking, DMT, XDMT, UPI, KYC, and retailer–distributor panels. We build the product you operate — white-label or custom — on iOS, Android, and web.",
+      "TheTriFusion builds custom fintech software from Jaipur: BBPS bill-pay, AEPS Aadhaar banking, DMT, XDMT, UPI, KYC, and retailer–distributor panels. We build the product you operate — white-label or custom — on iOS, Android, and web.",
     locationLine:
       "BBPS, AEPS, DMT & XDMT software from Jaipur — sold as retailer, distributor, and admin products for Indian operators.",
-    scopeKicker: "Software we sell",
-    scopeHeading: "BBPS, AEPS, DMT, XDMT & banking apps from Jaipur",
+    scopeKicker: "Modules",
+    scopeHeading: "Fintech software we build",
     processHeading: "How we deliver retailer banking software",
     ctaHeading: "Need BBPS, AEPS, DMT or XDMT software?",
     ctaText:
       "Share whether you need white-label retailer apps or a custom stack, and which live APIs you already have (BBPS, AEPS, DMT, bank). The Jaipur team returns a scoped estimate.",
-    serviceType: "Fintech, BBPS, AEPS, DMT and XDMT Software Development",
+    serviceType: "Fintech App Development (BBPS, AEPS, DMT)",
+    breadcrumbName: "Fintech App Development (BBPS, AEPS, DMT)",
+    schemaServiceName: "Fintech App Development (BBPS, AEPS, DMT)",
+    whyHeading: "Why operators choose TheTriFusion for fintech software",
+    primaryCtaLabel: "Get a fintech software demo",
+    primaryCtaHref: "/contact?service=fintech-app-development",
     whatsappMessage:
-      "Hi TriFusion, I want to buy BBPS / AEPS / DMT / XDMT software (retailer + distributor + admin) from the Jaipur team.",
+      "Hi TheTriFusion, I want BBPS/AEPS/DMT software. API partner: ",
+    leadProjectType: "Fintech (BBPS/AEPS/DMT)",
+    formHeading: "Get a BBPS/AEPS software demo",
+    midCtaText:
+      "Already have an API partner? Send their name on WhatsApp and get a go-live plan.",
     imageAlt:
       "BBPS AEPS DMT XDMT fintech software and banking apps built in Jaipur by TheTriFusion",
-    faqs: [
-      {
-        question: "Do you sell BBPS, AEPS, DMT and XDMT software?",
-        answer:
-          "Yes. TheTriFusion builds and sells BBPS, AEPS, DMT, and XDMT software as a retailer–distributor–admin product (white-label or custom). You operate it with your own bank, BBPOU, or AEPS partner credentials — we are the software vendor, not the payment network.",
-      },
-      {
-        question: "Are you an NBFC, bank, or BBPS operator?",
-        answer:
-          "No. We are a Jaipur software company. We do not issue banking licences, NPCI membership, or BBPS/AEPS live access. Those stay with you or your sponsor bank. We build the apps, APIs, ledgers, and panels.",
-      },
-      {
-        question: "What is included in the retailer banking software?",
-        answer:
-          "Typically a retailer Android app (iOS/web on request), distributor panel, super-admin, commission slabs, KYC holds, receipts, and day-end settlement. Modules can be BBPS, AEPS, DMT, XDMT, UPI, recharge, or a bundle.",
-      },
-      {
-        question: "What is the typical timeline and cost for this software?",
-        answer:
-          "A retailer BBPS/AEPS/DMT software package with admin and Android starts at ₹99,999. Timeline is typically 8–12 weeks after your API sandbox access is available. Multi-module white-label platforms can be phased.",
-      },
-    ],
+    // FAQs replaced by servicePlan (replaceFaqs).
+    faqs: [],
   },
   "ev-charging-app-development": evChargingPageContent,
   "ios-app-development": {
@@ -835,39 +631,30 @@ export const servicePageSeo = {
       "Hi TriFusion, I want an iOS / App Store app quote from the Jaipur team.",
   },
   "android-app-development": {
-    metaTitle: "Android App Development Company in Jaipur | Kotlin & Play Store",
+    metaTitle: "Android App Development Company in Jaipur | Kotlin Apps",
     metaDescription:
-      "Android app development in Jaipur. TheTriFusion builds Kotlin and React Native apps with Play Store listing. Typical MVP is 8–12 weeks.",
+      "Kotlin or React Native Android apps with Play Console setup, signing and store listing. Focused MVP from ₹2,50,000 in 8–12 weeks. Jaipur team.",
     keywords:
       "Android app development company Jaipur, android app development company in jaipur, android app development services jaipur, android application development in jaipur, Kotlin app development India, Play Store app Jaipur, hire Android developers Rajasthan",
-    bannerTitle: "Android App Development Company in Jaipur | Kotlin & Play Store",
+    bannerTitle: "Android App Development Company in Jaipur",
     locationLine:
       "Play Store apps from Jaipur — signing, listing, and crash monitoring.",
     scopeKicker: "Android",
-    scopeHeading: "Android work we ship to Play Store",
-    processHeading: "How a Play Store first release is run",
+    scopeHeading: "Android apps we build",
+    processHeading: "How an Android project runs",
     ctaHeading: "Need a Play Store–ready Android app?",
     ctaText:
-      "Say Kotlin or React Native, and whether iOS follows. Paid ads use /android-app-development; this page is the organic Android write-up.",
+      "Say Kotlin or React Native, and whether iOS follows. We return a scoped estimate and an 8–12 week MVP path from Jaipur.",
     serviceType: "Android App Development",
     whatsappMessage:
-      "Hi TriFusion, I want an Android / Play Store app quote from the Jaipur team.",
-    coverageSections: [
-      {
-        id: "android-company-jaipur",
-        heading: "Android app development company in Jaipur",
-        paragraphs: [
-          "An Android app development company in Jaipur builds Play Store apps for businesses that need a phone product, not only a website. TheTriFusion writes Kotlin or React Native apps for SMEs in Jaipur and across India, including listing support, after a scoped estimate.",
-          "Trifusion Infotech Private Limited is based in Jaipur. You get discovery, mobile UI, the app build, API integration, and Play Console signing. You own the Play Console account. When iOS should follow, the same team can share logic with React Native or Flutter instead of a second agency.",
-        ],
-      },
-    ],
+      "Hi TheTriFusion, I need an Android app for: ",
+    coverageSections: [],
   },
   "crm-erp-development": {
-    contentUpdatedAt: "2026-11-03",
+    contentUpdatedAt: "2026-11-18",
     metaTitle: "Custom CRM Software Development Company in Jaipur, India",
     metaDescription:
-      "Custom pipelines, quotations, WhatsApp notes, and sales CRM your team will use — iOS, Android, and web. Module MVP range from Jaipur.",
+      "Custom CRM for Indian SMEs: leads, pipelines, quotations, WhatsApp notes and IndiaMART lead capture. You own the code. CRM module MVP from ₹3,00,000.",
     keywords:
       "custom CRM development Jaipur, sales pipeline software Rajasthan, CRM development India, WhatsApp CRM Jaipur, custom CRM vs Zoho",
     bannerTitle: "Custom CRM Software Development Company in Jaipur, India",
@@ -875,20 +662,20 @@ export const servicePageSeo = {
       "Custom CRM from Jaipur — pipelines your sales team will actually use.",
     scopeKicker: "CRM",
     scopeHeading: "CRM modules we build",
-    processHeading: "How we pick custom CRM vs SaaS",
+    processHeading: "How a CRM project runs",
     ctaHeading: "Need CRM that is not a bolted-on SaaS?",
     ctaText:
-      "If HubSpot fits, buy it. If commissions or stages do not, share the workflow. We return a module MVP range from Jaipur. Full ERP is a separate page.",
-    serviceType: "Custom CRM Development",
+      "If HubSpot fits, buy it. If commissions or stages do not, share the workflow. We return a module MVP range from Jaipur. Full ERP is covered on ERP software development.",
+    serviceType: "Custom CRM Software Development",
     whatsappMessage:
-      "Hi TriFusion, I want a custom CRM quote from the Jaipur team.",
+      "Hi TheTriFusion, we need a custom CRM. Team size:  Current tool: ",
     coverageSections: [
       {
         id: "crm-operations",
         heading: "Custom CRM software development",
         paragraphs: [
           "Unify leads, pipelines, quotations, and follow-ups with CRM software built for how the sales team actually works. TheTriFusion does this from Jaipur for teams across India. A single CRM module MVP is often 6–12 weeks.",
-          "For network-marketing companies, unilevel compensation is built into the CRM rather than bolted onto a generic sales tool — see MLM CRM development. Warehouse, GST finance, manufacturing and multi-branch ERP modules live on ERP software development. DailyConcepts India and Connect Dairy remain live proof that admin workflows are the product.",
+          "For network-marketing companies, unilevel compensation is built into MLM software rather than bolted onto a generic sales tool. Warehouse, GST finance, manufacturing and multi-branch ERP modules live on ERP software development. DailyConcepts India and Connect Dairy remain live proof that admin workflows are the product.",
         ],
       },
     ],
@@ -917,7 +704,7 @@ export const servicePageSeo = {
         heading: "ERP software development in Jaipur",
         paragraphs: [
           "Custom ERP software from TheTriFusion in Jaipur covers finance with GST, inventory and warehouse, procurement, manufacturing and production planning, sales and distribution, HR/payroll, multi-branch control, and reporting. Programmes are phased so the floor keeps running. Multi-module work typically starts from ₹6,00,000.",
-          "Sales pipelines and lead CRM are a separate product on custom CRM development. We cross-link both pages so buyers land on the right brief. Live ops references include Connect Dairy and DailyConcepts India on this site.",
+          "Sales pipelines and lead CRM are a separate product on custom CRM development. We cross-link both pages so buyers land on the right brief. Live ops references include Connect Dairy and DailyConcepts India.",
         ],
       },
     ],
@@ -930,7 +717,8 @@ for (const [slug, extra] of Object.entries(serviceRankingContent)) {
 }
 
 // 12 Oct 2026 competitive SEO plan: title/H1/meta/answerFirst from the plan;
-// extraSections, FAQs and relatedLinks are unioned so existing page copy stays.
+// extraSections stay unioned by id. FAQs/relatedLinks replace when the plan
+// sets replaceFaqs / replaceRelatedLinks (indexed-pages cleanup).
 for (const [slug, extra] of Object.entries(servicePlanContent)) {
   const current = servicePageSeo[slug] || {};
   const extraSections = extra.extraSections
@@ -941,25 +729,33 @@ for (const [slug, extra] of Object.entries(servicePlanContent)) {
         ),
       ]
     : current.extraSections;
-  const faqs = extra.faqs
-    ? [
-        ...extra.faqs,
-        ...(current.faqs || []).filter(
-          (faq) =>
-            !extra.faqs.some(
-              (item) => item.question.toLowerCase() === faq.question.toLowerCase()
-            )
-        ),
-      ]
-    : current.faqs;
-  const relatedLinks = extra.relatedLinks
-    ? [
-        ...extra.relatedLinks,
-        ...(current.relatedLinks || []).filter(
-          (link) => !extra.relatedLinks.some((item) => item.href === link.href)
-        ),
-      ]
-    : current.relatedLinks;
+  const faqs =
+    extra.replaceFaqs && Array.isArray(extra.faqs)
+      ? extra.faqs
+      : extra.faqs
+        ? [
+            ...extra.faqs,
+            ...(current.faqs || []).filter(
+              (faq) =>
+                !extra.faqs.some(
+                  (item) =>
+                    item.question.toLowerCase() === faq.question.toLowerCase()
+                )
+            ),
+          ]
+        : current.faqs;
+  const relatedLinks =
+    extra.replaceRelatedLinks && Array.isArray(extra.relatedLinks)
+      ? extra.relatedLinks
+      : extra.relatedLinks
+        ? [
+            ...extra.relatedLinks,
+            ...(current.relatedLinks || []).filter(
+              (link) =>
+                !extra.relatedLinks.some((item) => item.href === link.href)
+            ),
+          ]
+        : current.relatedLinks;
   servicePageSeo[slug] = {
     ...current,
     ...extra,
@@ -970,6 +766,7 @@ for (const [slug, extra] of Object.entries(servicePlanContent)) {
 }
 
 // 17 Oct 2026 India ranking: titles/H1, city clusters, areaServed India.
+// When the service plan already set replaceRelatedLinks, keep that list as-is.
 for (const [slug, extra] of Object.entries(serviceIndiaOnpage)) {
   const current = servicePageSeo[slug] || {};
   const extraSections = extra.extraSections
@@ -980,19 +777,23 @@ for (const [slug, extra] of Object.entries(serviceIndiaOnpage)) {
         ),
       ]
     : current.extraSections;
-  const relatedLinks = extra.relatedLinks
-    ? [
-        ...extra.relatedLinks,
-        ...(current.relatedLinks || []).filter(
-          (link) => !extra.relatedLinks.some((item) => item.href === link.href)
-        ),
-      ]
-    : current.relatedLinks;
+  const relatedLinks = current.replaceRelatedLinks
+    ? current.relatedLinks
+    : extra.relatedLinks
+      ? [
+          ...extra.relatedLinks,
+          ...(current.relatedLinks || []).filter(
+            (link) => !extra.relatedLinks.some((item) => item.href === link.href)
+          ),
+        ]
+      : current.relatedLinks;
   servicePageSeo[slug] = {
     ...current,
     ...extra,
     extraSections,
     relatedLinks,
+    ...(current.replaceRelatedLinks ? { replaceRelatedLinks: true } : {}),
+    ...(current.replaceFaqs ? { replaceFaqs: true } : {}),
   };
 }
 

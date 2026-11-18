@@ -35,54 +35,26 @@ function citySection(heading, paragraphs, links) {
 
 export const serviceIndiaOnpage = {
   "website-development": {
-    // National capability URL: India primary; Jaipur = authentic HQ, not the only geo in the title.
-    metaTitle:
-      "Website Development Company in India | Jaipur Studio, from ₹15,000",
+    // Keep H1; title trimmed per indexed-pages spec. Location copy lives in servicePlan.
+    metaTitle: "Website Development Company in India | From ₹15,000",
     bannerTitle: "Website Development Company in India — Jaipur Studio",
-    ...citySection(
-      "Jaipur HQ, Rajasthan — delivery across India",
-      [
-        "This /services URL is the national capability write-up: stack, WordPress vs Next.js, published plans (₹15,000 / ₹35,000 / ₹75,000) and FAQs for buyers across India. The studio is in Jaipur, Rajasthan; we deliver by video and WhatsApp and do not invent branch offices. Local industry flavour for the Patrakar Colony studio sits on [website development company in Jaipur](/solutions/website-development-company-jaipur). Stores belong on [ecommerce website development](/solutions/ecommerce-website-development).",
-      ],
-      CITY_LINKS_WEBSITE
-    ),
+    metaDescription:
+      "Business websites, WordPress, Next.js and ecommerce built in Jaipur for all India. From ₹15,000, live in 3–8 weeks, with SEO set up at launch.",
+    schemaAreaServed: INDIA_AREA_SERVED,
   },
   "software-development": {
-    metaTitle:
-      "Custom Software Development Company in India | Jaipur, from ₹1,00,000",
-    bannerTitle:
-      "Custom Software Development Company in India — Jaipur Studio",
-    ...citySection(
-      "India delivery from a Jaipur, Rajasthan studio",
-      [
-        "India-wide process, Tally, NDA and ownership live on this national /services URL. HQ is Jaipur, Rajasthan — not a claim of offices in every city. Local industry copy: [custom software in Jaipur](/solutions/custom-software-development-jaipur). Published MVPs from ₹1,00,000.",
-      ],
-      [
-        {
-          href: "/solutions/custom-software-development-jaipur",
-          title: "Custom software development in Jaipur (HQ)",
-          text: "Dealer portals, hotel ops, Sitapura dispatch. From ₹1,00,000.",
-        },
-      ]
-    ),
+    metaTitle: "Custom Software Development Company India | From ₹1,00,000",
+    bannerTitle: "Custom Software Development Company in India",
+    metaDescription:
+      "Portals, CRM/ERP modules, APIs and SaaS MVPs for Indian SMEs. Written scope, weekly demos, you own the code. MVPs from ₹1,00,000 in 6–12 weeks.",
+    schemaAreaServed: INDIA_AREA_SERVED,
   },
   "mobile-app-development": {
-    metaTitle:
-      "Mobile App Development Company in India | Jaipur, from ₹50,000",
-    bannerTitle: "Mobile App Development Company in India — Jaipur Studio",
-    ...citySection(
-      "Cross-platform apps for India, built in Jaipur",
-      [
-        "Cross-platform process and store FAQs live on this national URL. Studio: Jaipur, Rajasthan; remote delivery across India. City flavour: [Jaipur](/solutions/mobile-app-development-company-jaipur). From ₹50,000. Native store MVPs from ₹2,50,000 each on [iOS](/services/ios-app-development) and [Android](/services/android-app-development).",
-      ],
-      [
-        {
-          href: "/solutions/mobile-app-development-company-jaipur",
-          title: "Mobile app development company in Jaipur",
-          text: "Dealer, hotel and field apps from Patrakar Colony.",
-        },
-      ]
-    ),
+    metaTitle: "Mobile App Development in India | iOS + Android from ₹50,000",
+    bannerTitle: "Mobile App Development Company in India: iOS and Android",
+    metaDescription:
+      "One React Native or Flutter app for iOS and Android, with backend and admin panel. From ₹50,000; focused MVP in 8–12 weeks. Jaipur team, all India.",
+    schemaAreaServed: INDIA_AREA_SERVED,
   },
   "digital-marketing": {
     // Apex canonical preserved; www historical duplicate — observe, do not churn host.
@@ -104,47 +76,19 @@ export const serviceIndiaOnpage = {
     ),
   },
   "fintech-app-development": {
-    metaTitle:
-      "Fintech App Development Company in India | Jaipur BBPS, AEPS & DMT",
-    bannerTitle:
-      "Fintech App Development Company in India — Jaipur Studio",
-    ...citySection(
-      "BBPS, AEPS, DMT and recharge for India (Jaipur studio)",
-      [
-        "This /services URL is the national fintech capability hub (from ₹99,999): retailer app, distributor panel, admin. You bring the bank or API partner; we do not issue NPCI/RBI licences. Child modules: [BBPS](/services/fintech-app-development/bbps-software), [AEPS](/services/fintech-app-development/aeps-software), [DMT](/services/fintech-app-development/dmt-software), [recharge](/services/fintech-app-development/recharge-software). Local flavour only: [Jaipur](/solutions/fintech-app-development-jaipur).",
-      ],
-      [
-        {
-          href: "/services/fintech-app-development/bbps-software",
-          title: "BBPS software",
-          text: "Bharat BillPay retailer and distributor panels.",
-        },
-        {
-          href: "/services/fintech-app-development/aeps-software",
-          title: "AEPS software",
-          text: "Aadhaar-enabled payments on partner-certified devices.",
-        },
-        {
-          href: "/services/fintech-app-development/dmt-software",
-          title: "DMT software",
-          text: "Domestic money transfer for the retailer network.",
-        },
-        {
-          href: "/services/fintech-app-development/recharge-software",
-          title: "Recharge software",
-          text: "Mobile and DTH top-ups on the partner you contract.",
-        },
-        {
-          href: "/solutions/fintech-app-development-jaipur",
-          title: "Fintech app development in Jaipur",
-          text: "Local studio flavour — same product family, not a second national canonical.",
-        },
-      ]
-    ),
+    metaTitle: "BBPS, AEPS & DMT Software Development India | From ₹99,999",
+    bannerTitle: "Fintech App Development: BBPS, AEPS & DMT Software",
+    // Duplicate Jaipur H2 removed; module list lives in servicePlan scopeHeading.
+    // relatedLinks come from servicePlan (replaceRelatedLinks); do not re-union here.
+    schemaAreaServed: INDIA_AREA_SERVED,
   },
   "ai-development": {
     metaTitle: "AI Chatbot & AI Agent Development in India | WhatsApp, RAG",
     bannerTitle: "AI Chatbot & AI Agent Development in India | WhatsApp, RAG",
+    metaDescription:
+      "WhatsApp AI chatbots, document search (RAG), invoice/PDF extraction and AI agents with human review. 2–4 week pilot first. Plans from ₹2,00,000.",
+    locationLine:
+      "Practical AI from Jaipur — features inside products, not model-training labs.",
     extraSections: [
       {
         id: "india-city-pages",
@@ -152,13 +96,6 @@ export const serviceIndiaOnpage = {
         paragraphs: [
           "AI features ship from the same Patrakar Colony studio as [website development](/services/website-development) and [custom software](/services/software-development). Published pilots from ₹2,00,000. We do not invent branch offices outside Jaipur.",
         ],
-      },
-    ],
-    relatedLinks: [
-      {
-        href: "/services/software-development",
-        title: "Custom software development",
-        text: "When the AI feature sits inside a product you own.",
       },
     ],
     schemaAreaServed: INDIA_AREA_SERVED,
@@ -258,22 +195,19 @@ export const serviceIndiaOnpage = {
   salesforce: {
     metaTitle: "Salesforce Developers in Jaipur | Flows, Apex & Integrations",
     bannerTitle: "Salesforce Developers in Jaipur | Flows, Apex & Integrations",
+    metaDescription:
+      "Salesforce Flows, Apex/LWC, data migration and website or ERP integrations for orgs you already use. Independent Jaipur team. Work from ₹80,000.",
+    locationLine:
+      "Salesforce work from Jaipur — on your existing org, not a forced new CRM.",
     extraSections: [
       {
         id: "india-city-pages",
         heading: "Salesforce work from Jaipur for Indian orgs",
         paragraphs: [
           "Flows, Apex and integrations on an org you already pay for, from ₹80,000. If a commissions CRM will not fit, see [custom CRM](/services/crm-erp-development).",
-          "Indian mid-market teams often already pay for Sales Cloud and then ask for a commissions tree, Tally invoice sync, or a WhatsApp note on the lead. We implement what Fits Flows first. Apex and LWC when Flows are not enough. We do not claim Summit-partner status. Published work starts from ₹80,000. If the cheaper long-term answer is a custom CRM, we say so before you buy more licences.",
+          "Indian mid-market teams often already pay for Sales Cloud and then ask for a commissions tree, Tally invoice sync, or a WhatsApp note on the lead. We implement what Fits Flows first. Apex and LWC when Flows are not enough. We are an independent Salesforce development team, not a Salesforce consulting partner. Published work starts from ₹80,000. If the cheaper long-term answer is a custom CRM, we say so before you buy more licences.",
           "Kickoff is a video review of your org with the access you grant. Delivery is from Jaipur. Hindi field labels are ordinary when your sales team works in Hindi. Website or ERP connections are scoped after we read the other system’s docs.",
         ],
-      },
-    ],
-    relatedLinks: [
-      {
-        href: "/services/crm-erp-development",
-        title: "Custom CRM & ERP",
-        text: "When Salesforce seats will not hold the process.",
       },
     ],
     schemaAreaServed: INDIA_AREA_SERVED,
@@ -281,37 +215,19 @@ export const serviceIndiaOnpage = {
   "crm-erp-development": {
     metaTitle: "Custom CRM Software Development Company in Jaipur, India",
     bannerTitle: "Custom CRM Software Development Company in Jaipur, India",
+    metaDescription:
+      "Custom CRM for Indian SMEs: leads, pipelines, quotations, WhatsApp notes and IndiaMART lead capture. You own the code. CRM module MVP from ₹3,00,000.",
+    locationLine:
+      "Custom CRM from Jaipur — pipelines your sales team will actually use.",
     extraSections: [
       {
         id: "india-city-pages",
-        heading: "CRM for Indian SMEs (studio in Jaipur, Rajasthan)",
+        heading: "CRM built around Indian sales workflows",
         paragraphs: [
           "Pipelines, quotations, WhatsApp notes and website lead capture for Indian SMEs — built from our Jaipur, Rajasthan studio with remote delivery. A CRM module MVP starts from ₹3,00,000. Full warehouse and GST ERP modules are on [ERP software development](/services/erp-software-development). See also [custom software](/services/software-development).",
           "Exporters and vendors across India usually need leads from a website form and a WhatsApp note next to the deal — not a 40-module ERP poster on day one. We ship one CRM module first: pipeline, accounts, follow-ups. You own the code after payment. Salesforce stays the right buy when Sales Cloud already fits; we will say so. We do not claim branch offices outside Jaipur.",
           "IndiaMART-style lead capture is in scope when you have the mailbox or API. We do not scrape portals. Mobile companions sit on [mobile app development](/services/mobile-app-development). Network-marketing trees belong on [MLM software](/services/mlm-crm-development). Live ops proof: [Connect Dairy](/portfolio/connect-dairy-supply-chain).",
         ],
-      },
-    ],
-    relatedLinks: [
-      {
-        href: "/portfolio/connect-dairy-supply-chain",
-        title: "Connect Dairy case study",
-        text: "Live agri-logistics ops — fleets, roles, P&L.",
-      },
-      {
-        href: "/portfolio/dailyconcepts-ecommerce-pos",
-        title: "DailyConcepts case study",
-        text: "Live storefront plus POS-style admin.",
-      },
-      {
-        href: "/services/erp-software-development",
-        title: "ERP software development",
-        text: "Inventory, GST finance, MRP and multi-branch.",
-      },
-      {
-        href: "/services/mlm-crm-development",
-        title: "MLM CRM development",
-        text: "When the brief is a commissions tree.",
       },
     ],
     schemaAreaServed: INDIA_AREA_SERVED,
@@ -355,6 +271,12 @@ export const serviceIndiaOnpage = {
     schemaAreaServed: INDIA_AREA_SERVED,
   },
   "mlm-crm-development": {
+    metaTitle: "MLM Software Company in Jaipur | Binary, Unilevel, Matrix",
+    bannerTitle: "MLM Software Development Company in Jaipur, India",
+    metaDescription:
+      "Custom MLM software for binary, unilevel, matrix and hybrid plans: genealogy, e-wallet, KYC, payouts and distributor apps. Plans from ₹3,50,000.",
+    locationLine:
+      "MLM software from Jaipur — compensation engines, not a generic CRM plugin.",
     extraSections: [
       {
         id: "india-city-pages",
@@ -369,9 +291,8 @@ export const serviceIndiaOnpage = {
     schemaAreaServed: INDIA_AREA_SERVED,
   },
   "ev-charging-app-development": {
-    contentUpdatedAt: "2026-11-13",
-    metaTitle:
-      "EV Charging Management Software India | OCPP CMS & App | TheTriFusion",
+    contentUpdatedAt: "2026-11-18",
+    metaTitle: "EV Charging Management Software India | OCPP CMS & App",
     bannerTitle:
       "EV Charging Management Software & White-Label Charging App for CPOs in India",
     extraSections: [
@@ -383,40 +304,14 @@ export const serviceIndiaOnpage = {
         ],
       },
     ],
-    relatedLinks: [
-      {
-        href: "/portfolio/plugone-ev-charging-platform",
-        title: "PlugOne case study",
-        text: "Live client EV charging product — OCPP + OCPI.",
-      },
-      {
-        href: "/services/software-development",
-        title: "Custom software development",
-        text: "When CMS sits inside a larger product.",
-      },
-      {
-        href: "/services/android-app-development",
-        title: "Android app development",
-        text: "Play Store driver or operator apps beside the CMS.",
-      },
-    ],
+    // relatedLinks from servicePlan (replaceRelatedLinks).
     schemaAreaServed: INDIA_AREA_SERVED,
   },
   "business-modernization": {
-    metaTitle:
-      "Legacy Software Modernization in India | Excel to Software, Jaipur",
+    metaTitle: "Legacy Software Modernization India | Excel to Web App",
     bannerTitle:
       "Business & Legacy Software Modernization in Jaipur, India",
-    extraSections: [
-      {
-        id: "india-city-pages",
-        heading: "Spreadsheet-to-software for Indian SMEs",
-        paragraphs: [
-          "Phased web apps from Jaipur, from ₹1,50,000. Greenfield products belong on [custom software](/services/software-development).",
-          "The first slice is almost always the spreadsheet everyone is afraid to break: dispatch, dealer rates, or month-end GST. We keep the old file running until the new module takes that job. Bots that sit on the old process without replacing it are [RPA](/services/rpa). A boxed CRM you already pay for is [Salesforce](/services/salesforce) when it fits.",
-        ],
-      },
-    ],
+    // india-city-pages + relatedLinks live in servicePlan (replaceRelatedLinks).
     schemaAreaServed: INDIA_AREA_SERVED,
   },
   "on-demand": {
@@ -426,7 +321,7 @@ export const serviceIndiaOnpage = {
         heading: "Hire developers in India, from Jaipur",
         paragraphs: [
           "Named React, Node and mobile developers from the Patrakar Colony, Jaipur studio for teams across India (and remote clients). Project engagements start from ₹50,000 on [pricing](/pricing); monthly seat rates are quoted in writing — we do not invent a public rate card.",
-          "This page is staff-aug: a named person inside your sprint, NDA/IP in the contract, IST overlap that also covers morning UK hours. A written MVP with a first-release cut is still [custom software](/services/software-development) or [mobile app development](/services/mobile-app-development). Play Store-first products sit on [Android app development](/services/android-app-development).",
+          "Staff augmentation means a named person inside your sprint, NDA/IP in the contract, IST overlap that also covers morning UK hours. A written MVP with a first-release cut is still [custom software](/services/software-development) or [mobile app development](/services/mobile-app-development). Play Store-first products sit on [Android app development](/services/android-app-development).",
         ],
       },
     ],
@@ -448,30 +343,10 @@ export const serviceIndiaOnpage = {
     schemaAreaServed: INDIA_AREA_SERVED,
   },
   devops: {
-    metaTitle:
-      "DevOps & Cloud Services in India | CI/CD from Jaipur, Free Audit",
-    bannerTitle: "DevOps & Cloud Services in India — Jaipur Studio",
-    extraSections: [
-      {
-        id: "india-city-pages",
-        heading: "DevOps for Indian products, from Jaipur",
-        paragraphs: [
-          "CI/CD, Kubernetes and cloud for teams across India, from the Jaipur studio, starting with a free infrastructure audit. Related: [custom software](/services/software-development) when the product still needs building; [on-demand](/services/on-demand) when you need a named engineer inside your sprint.",
-        ],
-      },
-    ],
-    relatedLinks: [
-      {
-        href: "/services/software-development",
-        title: "Custom software development",
-        text: "When the product still needs building before pipelines.",
-      },
-      {
-        href: "/services/on-demand",
-        title: "Hire dedicated developers",
-        text: "Named seats when you want staff-aug, not a DevOps project.",
-      },
-    ],
+    metaTitle: "DevOps Services Company in Jaipur & India | Free Audit",
+    bannerTitle: "DevOps & Cloud Services in Jaipur and India",
+    // Location H2s merged away; fact box + process cover Jaipur delivery.
+    // relatedLinks from servicePlan (replaceRelatedLinks).
     schemaAreaServed: INDIA_AREA_SERVED,
   },
   "ios-app-development": {
@@ -487,29 +362,11 @@ export const serviceIndiaOnpage = {
     schemaAreaServed: INDIA_AREA_SERVED,
   },
   "android-app-development": {
-    metaTitle: "Android App Development Company in Jaipur | Kotlin & Play Store",
-    bannerTitle: "Android App Development Company in Jaipur | Kotlin & Play Store",
-    extraSections: [
-      {
-        id: "india-city-pages",
-        heading: "Play Store apps for India, built in Jaipur",
-        paragraphs: [
-          "Kotlin or React Native from Jaipur, Rajasthan, from ₹2,50,000. Both stores: [mobile app development](/services/mobile-app-development). City flavour (not a second national canonical): [Jaipur apps](/solutions/mobile-app-development-company-jaipur). Live proof: [PlugOne](/portfolio/plugone-ev-charging-platform).",
-        ],
-      },
-    ],
-    relatedLinks: [
-      {
-        href: "/portfolio/plugone-ev-charging-platform",
-        title: "PlugOne case study",
-        text: "Live EV charging product with Android clients.",
-      },
-      {
-        href: "/portfolio/connect-dairy-supply-chain",
-        title: "Connect Dairy case study",
-        text: "Live agri-logistics web & mobile.",
-      },
-    ],
+    metaTitle: "Android App Development Company in Jaipur | Kotlin Apps",
+    bannerTitle: "Android App Development Company in Jaipur",
+    metaDescription:
+      "Kotlin or React Native Android apps with Play Console setup, signing and store listing. Focused MVP from ₹2,50,000 in 8–12 weeks. Jaipur team.",
+    // relatedLinks / city sections come from servicePlan (replaceRelatedLinks).
     schemaAreaServed: INDIA_AREA_SERVED,
   },
 };

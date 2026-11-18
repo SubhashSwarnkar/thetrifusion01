@@ -17,12 +17,25 @@ const SERVICE_OPTIONS = [
   "Ecommerce / online store",
   "Website",
   "Mobile app",
+  "Mobile app (both)",
+  "Android app",
+  "iOS app",
   "UI/UX design",
   "Digital marketing",
   "MSP / IT support",
   "CRM / ERP",
+  "CRM",
+  "MLM software",
+  "Salesforce",
+  "AI chatbot / AI feature",
+  "Fintech (BBPS/AEPS/DMT)",
+  "Business modernization",
+  "DevOps / Cloud",
+  "EV charging software",
   "Other",
 ];
+
+export { SERVICE_OPTIONS };
 
 const BUDGET_OPTIONS = [
   "",

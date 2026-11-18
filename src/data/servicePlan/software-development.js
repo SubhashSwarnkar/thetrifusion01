@@ -10,19 +10,47 @@ import { LIVE, NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: named lead-engineer bios + personal LinkedIn URLs.
  */
 export default {
-  contentUpdatedAt: "2026-11-09",
-  metaTitle: "Custom Software Development Company in Jaipur | TheTriFusion",
-  bannerTitle: "Custom Software Development Company in Jaipur",
+  contentUpdatedAt: "2026-11-18",
+  metaTitle: "Custom Software Development Company India | From ₹1,00,000",
+  bannerTitle: "Custom Software Development Company in India",
   metaDescription:
-    "Custom software, CRM, portals and APIs for Indian SMEs from a Jaipur team. Written scope, weekly demos, you own the code. MVPs from ₹1,00,000.",
+    "Portals, CRM/ERP modules, APIs and SaaS MVPs for Indian SMEs. Written scope, weekly demos, you own the code. MVPs from ₹1,00,000 in 6–12 weeks.",
   keywords:
-    "software development company in Jaipur, custom software development company India, custom software development cost India, custom software Jaipur, API development Jaipur",
+    "custom software development company India, software development company in Jaipur, custom software development cost India, custom software Jaipur, API development Jaipur",
   description:
     "TheTriFusion is a custom software development company in Jaipur, Rajasthan. We build portals, APIs, CRM/ERP modules, internal tools and SaaS MVPs for Indian SMEs — with a written scope, weekly demos, and source code you own. Marketing websites belong on website development; sales-pipeline CRM briefs belong on custom CRM development.",
   shortDescription:
     "Portals, APIs and ops software from Jaipur — written scope, weekly demos, code you own. MVPs from ₹1,00,000.",
   bannerDescription:
     "Replace spreadsheet chaos with portals, APIs and admin tools your team can run — scoped in Jaipur, delivered remotely across India.",
+  schemaServiceName: "Custom Software Development",
+  breadcrumbName: "Custom Software Development",
+  serviceType: "Custom Software Development",
+  whyHeading: "Why SMEs choose TheTriFusion for custom software",
+  primaryCtaLabel: "Get a software estimate",
+  primaryCtaHref: "/contact?service=software-development",
+  whatsappMessage: "Hi TheTriFusion, I need custom software for: ",
+  leadProjectType: "Custom software",
+  formHeading: "Describe your software in 1 message",
+  midCtaText:
+    "Share your users, must-have modules and deadline. We reply with a written range.",
+  subjectOfCaseStudies: [
+    "/portfolio/plugone-ev-charging-platform",
+    "/portfolio/connect-dairy-supply-chain",
+    "/portfolio/dailyconcepts-ecommerce-pos",
+  ],
+  caseStudy: {
+    heading: "Client software: PlugOne, Connect Dairy and DailyConcepts",
+    title: "PlugOne, Connect Dairy and DailyConcepts",
+    summary:
+      "Live EV charging product, dairy operations platform, and ecommerce plus POS-style admin — all built as custom software.",
+    href: "/portfolio/plugone-ev-charging-platform",
+    hrefLabel: "PlugOne case study",
+  },
+  scopeHeading: "Custom software we build",
+  ctaText:
+    "Share users, must-have modules, and a deadline. We return a written range from Jaipur.",
+  coverageSections: [],
   // Suppress legacy templated blocks that claimed unverified “8 years” industry tenure.
   services: [],
   process: [],
@@ -42,9 +70,9 @@ export default {
   ],
   answerFirst: {
     id: "quick-answer",
-    heading: "Custom software development in India: the short answer",
+    heading: "What does custom software development cost in India?",
     text:
-      "TheTriFusion (Trifusion Infotech Private Limited) is a custom software development company in India with its studio in Jaipur, Rajasthan. We build portals, CRM/ERP modules, APIs, internal tools and SaaS MVPs for Indian SMEs. You get a written scope, weekly demos, and the code you own. Published starter MVPs start from ₹1,00,000; a focused module is often 6–12 weeks after discovery. Based in Jaipur? See [custom software development in Jaipur](/solutions/custom-software-development-jaipur).",
+      "TheTriFusion (Trifusion Infotech Pvt Ltd) builds custom software for Indian SMEs: portals, CRM and ERP modules, APIs, internal tools and SaaS MVPs. You get a written scope, a working demo every week, and full ownership of the code after completion and payment. MVPs start at ₹1,00,000, and a focused module usually takes 6–12 weeks.",
     facts: [
       { label: "Starting price", value: "From ₹1,00,000 (published Basic plan)" },
       { label: "Typical timeline", value: "6–12 weeks for a focused MVP module" },
@@ -55,15 +83,15 @@ export default {
   extraSections: [
     {
       id: "what-we-build",
-      heading: "What we build",
+      heading: "Custom software we build",
       paragraphs: [
-        "Custom software here means the operating system of the business — roles, data and workflows — not a marketing website. Typical Jaipur briefs are business portals, CRM and ERP modules, booking and inventory tools, dashboards, APIs, and a first SaaS slice. When field teams need a companion app, the same team can add [iOS](/services/ios-app-development) or [Android](/services/android-app-development).",
+        "Custom software here means the operating system of the business — roles, data and workflows — not a marketing website. Typical briefs are business portals, CRM and ERP modules, booking and inventory tools, dashboards, APIs, and a first SaaS slice. When field teams need a companion app, the same team can add [iOS](/services/ios-app-development) or [Android](/services/android-app-development).",
         "If the public site is the product, start with [website development](/services/website-development). If the job is replacing spreadsheets or an old desktop tool without stopping operations, see [business modernization](/services/business-modernization). Sales-pipeline CRM with WhatsApp notes belongs on [custom CRM development](/services/crm-erp-development).",
       ],
       included: [
         "Portals and admin tools with roles",
         "CRM / ERP modules scoped to your process",
-        "APIs and integrations (Tally, Zoho, payment gateways, existing ERPs)",
+        "APIs and integrations (payment gateways, WhatsApp and SMS APIs, existing ERPs as scoped)",
         "Internal tools that replace spreadsheet chaos",
         "SaaS MVPs with a written first-release cut",
       ],
@@ -142,36 +170,58 @@ export default {
       },
     },
     {
+      id: "tech-stack",
+      heading: "Tech stack",
+      paragraphs: [
+        "Web: React, Next.js · Backend: Node.js with PostgreSQL or the database you already run · Mobile: React Native or Flutter · Cloud: AWS, Azure or Google Cloud, on your account · Integrations: Tally, Zoho, payment gateways, WhatsApp and SMS APIs as scoped.",
+      ],
+    },
+    {
+      id: "software-handover",
+      heading: "What you get at handover",
+      paragraphs: [
+        "After completion and payment, you receive the full set of project assets on accounts you control.",
+      ],
+      included: [
+        "Full source code repository, handed over to you (GitHub/GitLab in your company)",
+        "Deployed staging and production environments on your cloud account",
+        "Admin and user documentation",
+        "Database schema and API documentation",
+        "Support window as per your plan",
+      ],
+    },
+    {
       id: "process-timeline",
       heading: "Process and timeline",
       paragraphs: [
-        "Discovery → written scope → sprints with Friday demos → UAT on staging → handover of the repo, docs and environments. A focused MVP module is often 6–12 weeks. Broader platforms are phased so the first slice can run while the next modules are still being built. [DevOps](/services/devops) covers pipelines and cloud once the product needs them.",
+        "Discovery → written scope → sprints with Friday demos → UAT on staging → handover of the full source code repository, docs and environments. A focused MVP module is often 6–12 weeks. Broader platforms are phased so the first slice can run while the next modules are still being built. [DevOps](/services/devops) covers pipelines and cloud once the product needs them.",
       ],
     },
     {
       id: "shipped-projects",
       heading: "Shipped projects",
       paragraphs: [
-        `${LIVE.dairy} is live fleet, role and P&L operations. ${LIVE.atharv} is a live dairy-services website for Jaipur and Bhilwara. ${LIVE.plugone} is a live EV charging product (driver app + CMS). We name only projects that are already public on this site. Outcome metrics stay unpublished until the owner supplies them.`,
-        "Read the case studies: [Connect Dairy](/portfolio/connect-dairy-supply-chain) and [PlugOne](/portfolio/plugone-ev-charging-platform). Atharv Narayan’s marketing site is documented on [website development](/services/website-development).",
+        `${LIVE.dairy} is live fleet, role and P&L operations. ${LIVE.plugone} is a live EV charging product (driver app + CMS). DailyConcepts — ecommerce plus a POS-style admin panel ([case study](/portfolio/dailyconcepts-ecommerce-pos)).`,
+        "Read the case studies: [Connect Dairy](/portfolio/connect-dairy-supply-chain), [PlugOne](/portfolio/plugone-ev-charging-platform) and [DailyConcepts](/portfolio/dailyconcepts-ecommerce-pos).",
       ],
     },
     {
       id: "who-for-jaipur",
-      heading: "Who this page is for in Jaipur",
+      heading: "Who custom software is for",
       paragraphs: [
-        "Use this page when you need software your team will log into every day — dealer portals, internal tools, APIs, or a first SaaS slice — and you want a Jaipur studio that writes a scope before coding. Sitapura exporters, hotel groups, distributors and multi-branch SMEs are common briefs; we still scope from your process, not from a fake industry pack.",
-        "Local industry flavour without splitting this URL: [custom software in Jaipur](/solutions/custom-software-development-jaipur). That solutions page supports local examples; this /services URL stays the capability and pricing write-up so Google does not see two competing “company” pages for the same brief.",
+        "Software your team will log into every day — dealer portals, internal tools, APIs, or a first SaaS slice — with a Jaipur studio that writes a scope before coding. Sitapura exporters, hotel groups, distributors and multi-branch SMEs are common briefs; we still scope from your process, not from a generic industry pack.",
+        "Local industry flavour: [custom software in Jaipur](/solutions/custom-software-development-jaipur).",
       ],
     },
     {
       id: "who-leads",
       heading: "Who leads the work",
       paragraphs: [
-        `Delivery is in-house in Jaipur. Named people on the [team page](/team): ${TEAM.ceo}; ${TEAM.pm}; ${TEAM.backend}; ${TEAM.frontend}. Bios, years of experience and personal LinkedIn URLs are not in this repo, so they are not invented here.`,
+        `Delivery is in-house in Jaipur. Named people on the [team page](/team): ${TEAM.ceo}; ${TEAM.pm}; ${TEAM.backend}; ${TEAM.frontend}.`,
       ],
     },
   ],
+  replaceFaqs: true,
   faqs: [
     {
       question: "How much does custom software development cost in India?",
@@ -179,9 +229,19 @@ export default {
         "TheTriFusion's published plans start at ₹1,00,000 (Basic, up to 3 modules), ₹2,50,000 (Standard) and ₹5,00,000 (Premium). The signed price follows a written scope after discovery. See /pricing.",
     },
     {
+      question: "Can you build a SaaS MVP for a startup?",
+      answer:
+        "Yes. We scope the smallest version that real users can pay for, usually one core workflow, login, billing and an admin panel, then build it in weekly sprints with a demo each week. Focused MVPs start at ₹1,00,000 and typically take 6–12 weeks.",
+    },
+    {
       question: "How long does it take to build custom software?",
       answer:
         "A focused MVP module is often 6–12 weeks after discovery. Broader platforms are phased. You get a written timeline with the scope.",
+    },
+    {
+      question: "What do I receive at the end of the project?",
+      answer:
+        "The full source code repository, deployed staging and production environments on your account, documentation, and a support window as per your plan. The code and IP are yours after completion and payment.",
     },
     {
       question: "Who owns the source code?",
@@ -199,6 +259,11 @@ export default {
         "Yes. Each published plan includes a support window (1, 3 or 6 months). After that we can stay on for maintenance, monitoring and new modules.",
     },
     {
+      question: "How do you keep the project on budget?",
+      answer:
+        "Everything starts with a written scope that lists modules, screens and integrations. You see working software every week on a staging link, so changes are agreed in writing before they affect the price or the timeline.",
+    },
+    {
       question: "Fixed price or time-and-materials — which is better?",
       answer:
         "Fixed price when the first release is written down. Time-and-materials (see [hire dedicated developers](/services/on-demand)) when the backlog will keep moving. We recommend one after seeing the brief.",
@@ -211,39 +276,35 @@ export default {
     {
       question: "Do I need to visit your Jaipur office?",
       answer:
-        "No. Delivery is remote with weekly demos. The office is at 5th Floor, Amoro Building, Patrakar Colony, Jaipur, Rajasthan 302020. You can visit by appointment, Monday to Saturday, 10 AM–7 PM IST.",
+        "No. Delivery is remote with weekly demos for clients across India. The office is at 5th Floor, Amoro Building, Patrakar Colony, Jaipur, Rajasthan 302020. You can visit by appointment, Monday to Saturday, 10 AM–7 PM IST.",
     },
     {
-      question: "Is this the same page as website development?",
+      question: "How is this different from website development?",
       answer:
-        "No. Website development is for public marketing and lead-generation sites. This page is for portals, APIs and ops tools people log into. We cross-link both so the brief lands on the right URL.",
+        "Website development is for public marketing and lead-generation sites. Custom software is for portals, APIs and ops tools people log into. We cross-link both so the brief lands on the right URL.",
     },
   ],
+  replaceRelatedLinks: true,
   relatedLinks: [
     {
       href: "/services/crm-erp-development",
-      title: "Custom CRM development",
+      title: "custom CRM software",
       text: "Pipelines, quotations and WhatsApp follow-ups.",
     },
     {
-      href: "/services/erp-software-development",
-      title: "ERP software development",
-      text: "GST finance, inventory, MRP and multi-branch.",
-    },
-    {
       href: "/services/business-modernization",
-      title: "Legacy software modernization",
-      text: "Replace Excel and old desktop tools in phases, without stopping operations.",
+      title: "replace Excel with software",
+      text: "Phase off spreadsheets and old desktop tools without stopping operations.",
     },
     {
-      href: "/services/devops",
-      title: "DevOps and cloud",
-      text: "CI/CD, Terraform and a free infrastructure audit under the product.",
+      href: "/services/salesforce",
+      title: "Salesforce customisation for orgs you already use",
+      text: "Flows, Apex and integrations on your Salesforce licence.",
     },
     {
-      href: "/portfolio/connect-dairy-supply-chain",
-      title: "Connect Dairy case study",
-      text: "Live operations platform — fleet, roles and P&L.",
+      href: "/services/ev-charging-app-development",
+      title: "EV charging management software (OCPP CMS)",
+      text: "White-label CMS and driver apps for charger networks.",
     },
     {
       href: "/portfolio/plugone-ev-charging-platform",
@@ -251,9 +312,14 @@ export default {
       text: "Live EV charging product — map, sessions, iOS + Android + web.",
     },
     {
-      href: "/services/website-development",
-      title: "Website development",
-      text: "When the first job is a public marketing site, not an admin portal.",
+      href: "/portfolio/connect-dairy-supply-chain",
+      title: "Connect Dairy operations platform",
+      text: "Live operations platform — fleet, roles and P&L.",
+    },
+    {
+      href: "/portfolio/dailyconcepts-ecommerce-pos",
+      title: "DailyConcepts ecommerce + POS",
+      text: "Live storefront plus POS-style admin.",
     },
   ],
 };

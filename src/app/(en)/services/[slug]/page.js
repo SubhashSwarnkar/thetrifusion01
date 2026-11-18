@@ -10,8 +10,10 @@ import {
   faqSchema,
   serviceSchema,
   softwareApplicationSchema,
+  webPageSchema,
 } from "lib/schema";
 import { buildMetadata } from "lib/seoConfig";
+import { absoluteSiteUrl } from "config/site";
 
 export function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
@@ -56,19 +58,28 @@ export default function RoutePage({ params }) {
   const service = getServiceBySlug(params.slug);
   if (!service) notFound();
 
+  const path = `/services/${service.slug}`;
+  const pageUrl = absoluteSiteUrl(path);
+  const { title: metaTitle } = serviceMeta(service);
+  const shortServiceName =
+    service.schemaServiceName ||
+    service.breadcrumbName ||
+    service.serviceType ||
+    service.title;
+
   return (
     <>
       {service ? (
         <>
           <JsonLd
             data={serviceSchema({
-              name: service.bannerTitle || service.title,
-              serviceType: service.serviceType || service.title,
+              name: shortServiceName,
+              serviceType: service.serviceType || shortServiceName,
               description:
                 service.metaDescription ||
                 service.shortDescription ||
                 service.description,
-              path: `/services/${service.slug}`,
+              path,
               price: service.omitSchemaPrice
                 ? undefined
                 : service.startingFrom || service.pricing?.basic,
@@ -79,44 +90,50 @@ export default function RoutePage({ params }) {
                     {
                       title: section.heading,
                       description: section.schemaDescription,
-                      url: `/services/${service.slug}#${section.id}`,
+                      url: `${path}#${section.id}`,
                     },
                     ...(section.roles || [])
                       .filter((role) => role.catalogTitle)
                       .map((role) => ({
                         title: role.catalogTitle,
                         description: role.schemaDescription,
-                        url: `/services/${service.slug}#${role.id}`,
+                        url: `${path}#${role.id}`,
                       })),
                   ])
                 : service.services,
               areaServed: service.schemaAreaServed,
               provider: service.schemaProvider,
-              inLanguage: hreflangLanguagesForPath(`/services/${service.slug}`)
-                ? "en-IN"
-                : undefined,
+              subjectOf: service.subjectOfCaseStudies || [],
+              inLanguage: hreflangLanguagesForPath(path) ? "en-IN" : undefined,
             })}
           />
           <JsonLd
-            data={breadcrumbSchema([
-              { name: "Home", path: "/" },
-              { name: "Services", path: "/services" },
-              {
-                name:
-                  service.breadcrumbName ||
-                  service.bannerTitle ||
-                  service.title,
-                path: `/services/${service.slug}`,
-              },
-            ])}
+            data={breadcrumbSchema(
+              [
+                { name: "Home", path: "/" },
+                { name: "Services", path: "/services" },
+                {
+                  name: shortServiceName,
+                  path,
+                },
+              ],
+              { id: `${pageUrl}#breadcrumb` }
+            )}
+          />
+          <JsonLd
+            data={webPageSchema({
+              path,
+              name: metaTitle,
+              dateModified: service.contentUpdatedAt,
+              aboutId: `${pageUrl}#service`,
+              breadcrumbId: `${pageUrl}#breadcrumb`,
+            })}
           />
           {service.faqs?.length ? (
             <JsonLd
               data={faqSchema(
                 service.faqs,
-                hreflangLanguagesForPath(`/services/${service.slug}`)
-                  ? "en-IN"
-                  : undefined
+                hreflangLanguagesForPath(path) ? "en-IN" : undefined
               )}
             />
           ) : null}
@@ -124,7 +141,7 @@ export default function RoutePage({ params }) {
             <JsonLd
               data={softwareApplicationSchema({
                 ...service.softwareApplication,
-                path: `/services/${service.slug}`,
+                path,
                 price:
                   service.softwareApplication.price ??
                   (service.omitSchemaPrice
