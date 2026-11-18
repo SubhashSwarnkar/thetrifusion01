@@ -170,13 +170,6 @@ export default {
       },
     },
     {
-      id: "tech-stack",
-      heading: "Tech stack",
-      paragraphs: [
-        "Web: React, Next.js · Backend: Node.js with PostgreSQL or the database you already run · Mobile: React Native or Flutter · Cloud: AWS, Azure or Google Cloud, on your account · Integrations: Tally, Zoho, payment gateways, WhatsApp and SMS APIs as scoped.",
-      ],
-    },
-    {
       id: "software-handover",
       heading: "What you get at handover",
       paragraphs: [
