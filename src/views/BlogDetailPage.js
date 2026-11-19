@@ -17,6 +17,7 @@ import { WHATSAPP_NUMBER, COMPANY_PHONE_DISPLAY } from "data/companyInfo";
 import { siteConfig } from "config/site";
 import { trackEvent, AnalyticsEvents } from "utils/analytics";
 import BlogAuthorBox from "components/BlogAuthorBox";
+import BlogToc from "components/BlogToc";
 import FounderByline from "components/FounderByline";
 
 export default function BlogDetailPage({
@@ -95,31 +96,7 @@ export default function BlogDetailPage({
 
             <BlogAdTop />
 
-            {post.toc?.length > 1 ? (
-              <nav
-                aria-label="Table of contents"
-                className="mb-10 rounded-2xl border border-gray-100 bg-slate-50/80 p-5"
-              >
-                <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-theme-purple">
-                  On this page
-                </p>
-                <ol className="space-y-2 text-sm text-theme-blue">
-                  {post.toc.map((item) => (
-                    <li
-                      key={item.id}
-                      className={item.level === 3 ? "ml-4" : ""}
-                    >
-                      <a
-                        href={`#${item.id}`}
-                        className="hover:text-theme-purple hover:underline"
-                      >
-                        {item.text}
-                      </a>
-                    </li>
-                  ))}
-                </ol>
-              </nav>
-            ) : null}
+            <BlogToc items={post.toc} variant="mobile" />
 
             <div className="prose prose-lg max-w-none">
               {post.content ? (
@@ -323,31 +300,7 @@ export default function BlogDetailPage({
 
           <aside className="hidden lg:block">
             <div className="sticky top-24 space-y-6">
-              {post.toc?.length > 1 ? (
-                <nav
-                  aria-label="Sidebar table of contents"
-                  className="rounded-2xl border border-gray-100 bg-white p-4"
-                >
-                  <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-theme-purple">
-                    Contents
-                  </p>
-                  <ol className="space-y-2 text-sm text-theme-blue">
-                    {post.toc.map((item) => (
-                      <li
-                        key={`side-${item.id}`}
-                        className={item.level === 3 ? "ml-3" : ""}
-                      >
-                        <a
-                          href={`#${item.id}`}
-                          className="hover:text-theme-purple hover:underline"
-                        >
-                          {item.text}
-                        </a>
-                      </li>
-                    ))}
-                  </ol>
-                </nav>
-              ) : null}
+              <BlogToc items={post.toc} variant="sidebar" />
               <BlogAdSidebar />
             </div>
           </aside>

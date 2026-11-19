@@ -51,11 +51,62 @@ function parseFaqs(raw) {
     .filter(Boolean);
 }
 
+/**
+ * Decode HTML entities in heading / TOC text so React text nodes show real
+ * quotes and apostrophes instead of literal &quot; / &#39; / &amp;.
+ */
+function decodeHtmlEntities(value) {
+  let text = String(value || "");
+  // Numeric and hex character references first
+  text = text.replace(/&#x([0-9a-f]+);/gi, (_, hex) => {
+    const code = Number.parseInt(hex, 16);
+    return Number.isFinite(code) ? String.fromCodePoint(code) : "";
+  });
+  text = text.replace(/&#(\d+);/g, (_, dec) => {
+    const code = Number.parseInt(dec, 10);
+    return Number.isFinite(code) ? String.fromCodePoint(code) : "";
+  });
+  // Named entities (including smart quotes / apostrophes)
+  const named = {
+    amp: "&",
+    quot: '"',
+    apos: "'",
+    lt: "<",
+    gt: ">",
+    nbsp: " ",
+    ldquo: "\u201C",
+    rdquo: "\u201D",
+    lsquo: "\u2018",
+    rsquo: "\u2019",
+    mdash: "\u2014",
+    ndash: "\u2013",
+    hellip: "\u2026",
+  };
+  text = text.replace(
+    /&([a-z]+);/gi,
+    (match, name) => named[name.toLowerCase()] ?? match
+  );
+  // marked may leave &amp;quot; after a prior escape — decode amp once more
+  if (text.includes("&amp;")) {
+    text = text.replace(/&amp;/gi, "&");
+    text = text.replace(
+      /&([a-z]+);/gi,
+      (match, name) => named[name.toLowerCase()] ?? match
+    );
+  }
+  return text;
+}
+
+function stripTags(html) {
+  return String(html || "")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function slugifyHeading(text) {
-  return String(text || "")
+  return decodeHtmlEntities(text)
     .toLowerCase()
-    .replace(/<[^>]+>/g, "")
-    .replace(/&[^;]+;/g, "")
     .replace(/[^a-z0-9\s-]/g, "")
     .trim()
     .replace(/\s+/g, "-")
@@ -68,7 +119,7 @@ function injectHeadingIds(html) {
   const withIds = String(html || "").replace(
     /<h([23])(\s[^>]*)?>([\s\S]*?)<\/h\1>/gi,
     (full, level, attrs = "", inner) => {
-      const text = inner.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+      const text = decodeHtmlEntities(stripTags(inner));
       if (!text) return full;
       const existing = /\sid=["']([^"']+)["']/i.exec(attrs || "");
       const id = existing ? existing[1] : slugifyHeading(text);
