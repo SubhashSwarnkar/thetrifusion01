@@ -34,22 +34,22 @@ const FINTECH_CHILD_PRODUCTS = [
   {
     href: "/services/fintech-app-development/bbps-software",
     title: "BBPS software",
-    text: "Bharat BillPay retailer and distributor panels.",
+    text: "Bharat BillPay fetch/pay, biller categories and BBPOU reconciliation.",
   },
   {
     href: "/services/fintech-app-development/aeps-software",
     title: "AEPS software",
-    text: "Aadhaar-enabled payments on certified devices.",
+    text: "AePS biometric capture, cash services and sponsor-bank device flows.",
   },
   {
     href: "/services/fintech-app-development/dmt-software",
     title: "DMT software",
-    text: "Domestic money transfer for retailer networks.",
+    text: "Remitter KYC, beneficiaries and IMPS/NEFT status for send-money.",
   },
   {
     href: "/services/fintech-app-development/recharge-software",
     title: "Recharge software",
-    text: "Mobile and DTH top-ups on your partner API.",
+    text: "Mobile/DTH operator APIs, plan fetch and commission slabs.",
   },
 ];
 

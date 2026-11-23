@@ -133,34 +133,17 @@ export const serviceIndiaOnpage = {
   },
   branding: {
     metaTitle:
-      "Branding Agency in India | Logo, Identity & Guidelines from Jaipur",
-    bannerTitle: "Branding Agency in India — Jaipur Studio",
+      "Branding Agency in India | Strategy, Identity & Guidelines from Jaipur",
+    bannerTitle: "Brand strategy and identity systems from Jaipur",
     extraSections: [
       {
         id: "india-city-pages",
-        heading: "Brand identity Indian D2C can put on a website",
+        heading: "Brand systems for Indian businesses, built in Jaipur",
         paragraphs: [
-          "Logo, colour, type and guidelines from Jaipur for buyers across India, from ₹30,000, then a [website](/services/website-development) or [ecommerce store](/solutions/ecommerce-website-development). We are not a trademark attorney.",
-          "Indian D2C labels often arrive with a festival drop date and no guidelines PDF. We still start with the system the website can use: primary mark, reverse, colour that survives GST invoice paper, and type that works in Hindi if the store is bilingual. Campaign kits after the identity exists are [graphic design](/services/graphic-design). Product screens are [UI/UX](/services/ui-ux-design). We will not file a trademark or promise a class number.",
-          "Published branding packs: ₹30,000 / ₹60,000 / ₹1,20,000 on [pricing](/pricing). Naming is in scope only when you ask. The studio is at Patrakar Colony, Jaipur; delivery is remote across India.",
+          "Strategy notes, naming when scoped, logo suite, colour, type and guidelines from Patrakar Colony, Jaipur for buyers across India — from ₹30,000 — then a [website](/services/website-development) or [ecommerce store](/solutions/ecommerce-website-development) that uses the same system. We are not a trademark attorney and we do not sell registrability promises.",
+          "D2C and SME teams often arrive with a festival date and three conflicting logos in WhatsApp. We still start with the identity the website can obey: primary mark, reverse, colour that survives GST invoice paper, and type that works in Hindi when the store is bilingual. Campaign execution after the system exists is [graphic design](/services/graphic-design). Product screens are [UI/UX](/services/ui-ux-design).",
+          "Published branding packs: ₹30,000 / ₹60,000 / ₹1,20,000 on [pricing](/pricing). Delivery is remote across India with optional Jaipur studio meetings by appointment.",
         ],
-      },
-    ],
-    relatedLinks: [
-      {
-        href: "/services/website-development",
-        title: "Website development",
-        text: "Put the identity on a live company site.",
-      },
-      {
-        href: "/services/ui-ux-design",
-        title: "UI/UX design",
-        text: "Product screens that use the same system.",
-      },
-      {
-        href: "/services/graphic-design",
-        title: "Graphic design",
-        text: "Campaign kits after the identity exists.",
       },
     ],
     schemaAreaServed: INDIA_AREA_SERVED,
@@ -329,14 +312,15 @@ export const serviceIndiaOnpage = {
   },
   "graphic-design": {
     metaTitle:
-      "Graphic Design Company in India | Social, Ads & Packs from Jaipur",
-    bannerTitle: "Graphic Design Services in India — Jaipur Studio",
+      "Graphic Design Company in India | Social, Ads & Print from Jaipur",
+    bannerTitle: "Graphic design for campaigns, print and packaging artwork",
     extraSections: [
       {
         id: "india-city-pages",
-        heading: "Creatives that match the live Indian site",
+        heading: "Campaign creatives for brands across India",
         paragraphs: [
-          "Social, ads and catalogues from Jaipur for brands across India. Brand systems sit on [branding](/services/branding); traffic on [digital marketing](/services/digital-marketing). Product UI is [UI/UX](/services/ui-ux-design).",
+          "Social sets, ad visuals, brochures, catalogues and packaging artwork from Jaipur for teams across India — project packs from ₹10,000. Identity systems (strategy, logo, guidelines) sit on [branding](/services/branding). Traffic after creatives exist sits on [digital marketing](/services/digital-marketing). Product UI is [UI/UX](/services/ui-ux-design).",
+          "We match colours and type to the live [website](/services/website-development) when we also built it, so festival posts do not invent a fifth blue. Remote delivery nationwide; studio meetings in Jaipur by appointment.",
         ],
       },
     ],

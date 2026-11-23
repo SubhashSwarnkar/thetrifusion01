@@ -232,7 +232,7 @@ Print this and go through it with your developer or agency:
 
 Screen privacy is one part of building a trustworthy mobile product. It sits alongside secure API design, device binding and re-authentication (which the RBI direction also covers for payment apps), encrypted storage and regular security testing. If your app is several years old and was built before these platform APIs existed, the review may surface other gaps too. Our guide to [modernising unpatchable legacy software](https://thetrifusion.in/blog/legacy-software-modernization-ai-cyberattacks-india) covers how to decide between patching, isolating and rebuilding older systems.
 
-For payment, recharge and banking-adjacent products, the stakes are higher, because regulators and banking partners will look closely. Our [fintech app development work for AEPS, BBPS, DMT and recharge platforms](https://thetrifusion.in/services/fintech-app-development) treats these controls as part of the build, not an afterthought.
+For payment, recharge and banking-adjacent products, the stakes are higher, because regulators and banking partners will look closely. See our [fintech hub](https://thetrifusion.in/services/fintech-app-development) and the dedicated [AEPS](https://thetrifusion.in/services/fintech-app-development/aeps-software), [BBPS](https://thetrifusion.in/services/fintech-app-development/bbps-software), [DMT](https://thetrifusion.in/services/fintech-app-development/dmt-software) and [recharge](https://thetrifusion.in/services/fintech-app-development/recharge-software) pages — screen-privacy controls are part of those builds, not an afterthought.
 
 ## Talk to a Jaipur team that builds mobile apps
 

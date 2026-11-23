@@ -903,10 +903,11 @@ export const blogPosts = [
 
       <h3>What a retailer banking stack usually includes</h3>
       <ul>
-        <li><strong>BBPS software:</strong> biller fetch, pay, receipt generation, refunds, and commission slabs for electricity, water, gas, FASTag, DTH, insurance, and other billers your BBPS partner enables. The retailer app has to show the correct biller list per state/region and handle "bill not found" and duplicate-payment edge cases gracefully.</li>
-        <li><strong>AEPS software:</strong> cash deposit, cash withdrawal, balance enquiry, and mini-statement flows using Aadhaar biometric authentication, built for CSPs and kirana-store agents who serve customers without a bank branch nearby. The biometric device integration (fingerprint scanner drivers) is a real technical dependency, not just a UI screen.</li>
-        <li><strong>DMT software:</strong> sender and beneficiary KYC capture, IMPS/NEFT rail selection, transaction charges, daily/monthly limits per RBI guidance, and explicit failed-transaction handling so an agent's customer is never left unsure whether money actually moved.</li>
-        <li><strong>XDMT software:</strong> a faster payout rail layered on the same retailer-distributor tree, with real-time status polling, automatic retry on rail timeout, and shared settlement reporting between XDMT and standard DMT volumes.</li>
+        <li><strong><a href="/services/fintech-app-development/bbps-software">BBPS software</a>:</strong> biller fetch, pay, receipt generation, refunds, and commission slabs for electricity, water, gas, FASTag, DTH, insurance, and other billers your BBPS partner enables. The retailer app has to show the correct biller list per state/region and handle "bill not found" and duplicate-payment edge cases gracefully.</li>
+        <li><strong><a href="/services/fintech-app-development/aeps-software">AEPS software</a>:</strong> cash deposit, cash withdrawal, balance enquiry, and mini-statement flows using Aadhaar biometric authentication, built for CSPs and kirana-store agents who serve customers without a bank branch nearby. The biometric device integration (fingerprint scanner drivers) is a real technical dependency, not just a UI screen.</li>
+        <li><strong><a href="/services/fintech-app-development/dmt-software">DMT software</a>:</strong> sender and beneficiary KYC capture, IMPS/NEFT rail selection, transaction charges, daily/monthly limits per RBI guidance, and explicit failed-transaction handling so an agent's customer is never left unsure whether money actually moved.</li>
+        <li><strong>XDMT software:</strong> a faster payout rail layered on the same retailer-distributor tree (scoped with <a href="/services/fintech-app-development/dmt-software">DMT</a>), with real-time status polling, automatic retry on rail timeout, and shared settlement reporting between XDMT and standard DMT volumes.</li>
+        <li><strong><a href="/services/fintech-app-development/recharge-software">Recharge software</a>:</strong> prepaid mobile and DTH top-ups through your aggregator API, with commission slabs and pending-status handling that must stay separate from BBPS bill pay in the retailer menu.</li>
         <li><strong>Panels:</strong> a retailer Android app (iOS/web as needed) for day-to-day transactions, a distributor console for wallet top-up and downline management, and an admin dashboard for commission configuration — this three-tier structure is the actual SKU operators buy, not a single flat app.</li>
       </ul>
 
@@ -935,14 +936,14 @@ export const blogPosts = [
       <h3>Do you provide the API credentials or aggregator relationship?</h3>
       <p>No — you or your sponsor bring the live API credentials from your BBPOU/aggregator partner; we build the software layer on top of them.</p>
       <h3>What's the next step?</h3>
-      <p>See our <a href="/services/fintech-app-development">BBPS, AEPS, DMT and XDMT software page</a> for modules and FAQs, or <a href="/contact">contact TheTriFusion</a> for a scoped estimate from our Jaipur team.</p>
+      <p>See the <a href="/services/fintech-app-development">fintech hub</a> for the multi-rail overview, or open the dedicated pages for <a href="/services/fintech-app-development/bbps-software">BBPS</a>, <a href="/services/fintech-app-development/aeps-software">AEPS</a>, <a href="/services/fintech-app-development/dmt-software">DMT</a> and <a href="/services/fintech-app-development/recharge-software">recharge</a>. Prefer a written estimate? <a href="/contact">Contact TheTriFusion</a> from Jaipur.</p>
     `,
     category: "fintech",
     image: "/assets/images/blog/fintech-india.jpg",
     imageUrl:
       "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=800",
     date: "2026-08-27",
-    updatedAt: "2026-10-12",
+    updatedAt: "2026-11-23",
     readTime: "11 min read",
     author: "TheTriFusion Team",
     featured: true,
