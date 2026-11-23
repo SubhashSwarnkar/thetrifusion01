@@ -219,6 +219,7 @@ export const fintechProductPages = [
         paragraphs: [
           "Rajasthan CSP and kirana networks often need Hindi decline messages, intermittent connectivity handling, and distributor staff who can reinstall an RD service without flying in a developer. We design those realities into the brief when you name them — we do not invent a statewide deployment case study we have not published.",
           "Remote demos cover operators elsewhere in India; in-person device debugging can be scheduled at the Jaipur office when a sensor must be on the table. The product page stays honest: software studio first, not a bank branch replacement.",
+          "Support after go-live is about readable bank decline codes, device health flags and admin lock tools — not promising that every fingerprint will match on the first try. Capture quality is still a human and device problem; software can only surface it clearly.",
         ],
       },
     ],
@@ -262,6 +263,16 @@ export const fintechProductPages = [
         question: "Can AePS and DMT use one retailer login?",
         answer:
           "Yes when the brief says so. Keep menus and limits separate so cash withdrawal is never confused with send-money in reports.",
+      },
+      {
+        question: "What service codes are usually in a first AePS release?",
+        answer:
+          "Often cash withdrawal plus balance enquiry; mini statement and deposit follow when the sponsor bank enables them and the brief lists them. We do not invent service codes the partner API does not expose.",
+      },
+      {
+        question: "Who pays for biometric devices?",
+        answer:
+          "Device purchase and replacement normally sit on your distributor or device-vendor invoice. Our software quote does not silently include a sensor kit unless a separate hardware line is written into the contract.",
       },
     ],
     related: [
@@ -353,6 +364,7 @@ export const fintechProductPages = [
           "Operators selling remittance to the public should read current circulars on the [RBI](" +
             SOURCES.rbi +
             ") site before go-live. Software readiness is not the same as permission to operate.",
+          "When remitter OTP SMS fees, beneficiary verification charges or night-time transfer blocks appear in partner docs, call them out in the brief early. Surfacing those costs in the retailer confirmation screen prevents “the app ate my customer’s cash” arguments that are really commercial terms.",
         ],
       },
     ],
@@ -396,6 +408,16 @@ export const fintechProductPages = [
         question: "Do you publish average remittance volumes?",
         answer:
           "No. We do not invent transaction volumes, client counts or reviews on this page.",
+      },
+      {
+        question: "What does the retailer see before confirming a transfer?",
+        answer:
+          "Amount, partner-returned charges when available, beneficiary details the brief requires, and a clear confirm step. After submit they see a reference id and status — including pending — not a fake instant-success animation.",
+      },
+      {
+        question: "Can beneficiaries be reused across visits?",
+        answer:
+          "Yes when the partner model allows saved beneficiaries. Cooling periods and caps still follow the rail; the UI should not let a retailer bypass a partner block with a local workaround.",
       },
     ],
     related: [
@@ -483,6 +505,7 @@ export const fintechProductPages = [
         paragraphs: [
           "Distributor networks care about margin waterfall: aggregator price → master margin → distributor margin → retailer margin. The software should show the slab the logged-in role is allowed to see — not a public “earn lakhs” banner. When a promotional operator pack temporarily changes commission, admin needs a way to update that row without a code deploy.",
           "We configure what your commercial sheet specifies. If the sheet does not exist yet, finish commercial talks with the aggregator before polishing retailer dashboards that display invented numbers.",
+          "High-volume days (salary week, festival evenings) stress status polling and partner balance. Build alerts for low aggregator reserve into ops practice; the nicest UI will not top up a depleted partner wallet by itself.",
         ],
       },
     ],
@@ -526,6 +549,26 @@ export const fintechProductPages = [
         question: "Can distributors set different margins per operator?",
         answer:
           "Yes when the brief and data model allow it. Configuration follows your commercial rules, not a hidden rate we market as guaranteed income.",
+      },
+      {
+        question: "Do you build a consumer-facing recharge website?",
+        answer:
+          "This page is the retailer–distributor–admin stack. A public consumer recharge site is a different product shape — say so in the brief and we scope it under website or custom software instead of assuming the agent panel is enough.",
+      },
+      {
+        question: "What receipts can the retailer share?",
+        answer:
+          "Printable or shareable last-transaction details with partner reference ids, as scoped. Receipts are for counter disputes; they are not a substitute for aggregator settlement files in admin.",
+      },
+      {
+        question: "How often do plan catalogues change?",
+        answer:
+          "Often enough that hard-coding packs in the app is a bad idea. When the aggregator offers plan fetch, we use it; when packs change via their API, maintenance updates follow under a support agreement.",
+      },
+      {
+        question: "Is utility bill pay part of recharge software?",
+        answer:
+          "Usually no — enrolled utility bills belong on Bharat BillPay via the BBPS page. Recharge software here is prepaid mobile, DTH and similar top-ups on your aggregator.",
       },
     ],
     related: [

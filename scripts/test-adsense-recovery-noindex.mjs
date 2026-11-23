@@ -78,8 +78,8 @@ for (const service of services) {
 }
 for (const page of fintechProductPages) {
   if (!servicePaths.has(page.path)) fail(`fintech product missing from sitemap: ${page.path}`);
-  if (page.contentUpdatedAt !== "2026-11-09") {
-    fail(`fintech product lastmod not 2026-11-09: ${page.slug}`);
+  if (page.contentUpdatedAt !== "2026-11-23") {
+    fail(`fintech product lastmod not 2026-11-23: ${page.slug}`);
   }
   const text = [
     page.answer,
