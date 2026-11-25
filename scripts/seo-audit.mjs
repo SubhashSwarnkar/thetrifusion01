@@ -568,6 +568,24 @@ async function main() {
     ok("sitemap-blog.xml → 200 with /blog");
   }
 
+  for (const llmsPath of ["/llms.txt", "/llms-full.txt"]) {
+    const llms = await fetchText(`${BASE_URL}${llmsPath}`);
+    const ctype = llms.res.headers.get("content-type") || "";
+    if (llms.res.status !== 200) {
+      fail(`${llmsPath} should be 200, got ${llms.res.status}`);
+    } else if (!/text\/plain/i.test(ctype)) {
+      fail(`${llmsPath} content-type should be text/plain, got ${ctype}`);
+    } else if (!/https:\/\/thetrifusion\.in\/blog\b/.test(llms.text)) {
+      fail(`${llmsPath} missing /blog hub`);
+    } else if (!/sitemap-blog\.xml/.test(llms.text)) {
+      fail(`${llmsPath} missing sitemap-blog.xml`);
+    } else if (/Blog URLs return 410 Gone/i.test(llms.text)) {
+      fail(`${llmsPath} still claims blog URLs return 410`);
+    } else {
+      ok(`${llmsPath} → 200 text/plain with live blog`);
+    }
+  }
+
   if (!INDEXNOW_KEY) {
     fail("IndexNow key file missing from public/ (32-hex .txt)");
   } else {

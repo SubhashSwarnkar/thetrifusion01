@@ -11,6 +11,7 @@
     "seo:canonical": "node --import ./scripts/register-extensionless.mjs scripts/test-canonical-apex.mjs",
     "seo:events": "node --import ./scripts/register-extensionless.mjs scripts/validate-event-schema.mjs",
     "seo:clean-html": "node --import ./scripts/register-extensionless.mjs scripts/test-clean-blog-html.mjs",
+    "seo:llms": "node --import ./scripts/register-extensionless.mjs scripts/test-llms-txt.mjs",
     "seo:recovery": "node --import ./scripts/register-extensionless.mjs scripts/test-adsense-recovery-noindex.mjs",
     "indexnow": "node --import ./scripts/register-extensionless.mjs scripts/indexnow.mjs",
     "indexnow:services": "node --import ./scripts/register-extensionless.mjs scripts/indexnow.mjs --services",
