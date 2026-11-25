@@ -41,6 +41,8 @@ const ORGANIZATION_SAME_AS = [
  * TODO OWNER: DPIIT Startup India certificate number before adding hasCredential.
  * TODO OWNER: Google Business Profile URL, Clutch, GoodFirms, YouTube, X — add to sameAs only when live.
  * TODO OWNER: aggregateRating — do not add until third-party reviews exist.
+ * Never attach review / aggregateRating to Service (Google review-snippet
+ * parent_node error). Do not invent ratings; omit markup until verifiable.
  */
 export function founderPerson() {
   return {
@@ -328,6 +330,13 @@ export function softwareApplicationSchema({
   };
 }
 
+/**
+ * Service JSON-LD. Google review snippets do not support Service as a parent,
+ * so this node must never include review, reviews, or aggregateRating.
+ * Fake ratings (e.g. 4.9 / 48) caused GSC "Invalid object type for field
+ * <parent_node>" and were removed — do not re-add without real client data
+ * on a Google-supported type (and never self-serve on LocalBusiness alone).
+ */
 export function serviceSchema({
   name,
   description,

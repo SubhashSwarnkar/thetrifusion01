@@ -13,6 +13,7 @@
     "seo:clean-html": "node --import ./scripts/register-extensionless.mjs scripts/test-clean-blog-html.mjs",
     "seo:llms": "node --import ./scripts/register-extensionless.mjs scripts/test-llms-txt.mjs",
     "seo:recovery": "node --import ./scripts/register-extensionless.mjs scripts/test-adsense-recovery-noindex.mjs",
+    "seo:no-review": "node --import ./scripts/register-extensionless.mjs scripts/test-no-review-schema.mjs",
     "indexnow": "node --import ./scripts/register-extensionless.mjs scripts/indexnow.mjs",
     "indexnow:services": "node --import ./scripts/register-extensionless.mjs scripts/indexnow.mjs --services",
     "ci:seo": "node scripts/seo-ci.mjs"

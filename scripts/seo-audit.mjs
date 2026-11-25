@@ -94,6 +94,57 @@ function extractJsonLd(html) {
   return blocks;
 }
 
+/** Keys that trigger Google Review snippet validation (must not appear). */
+const REVIEW_SNIPPET_KEYS = new Set([
+  "aggregateRating",
+  "review",
+  "reviews",
+  "reviewRating",
+  "ratingValue",
+  "reviewCount",
+  "ratingCount",
+  "bestRating",
+  "worstRating",
+]);
+
+const REVIEW_SNIPPET_TYPES = new Set(["Review", "AggregateRating", "Rating"]);
+
+/**
+ * Site has no verifiable third-party review data. Any Review / AggregateRating
+ * markup (especially under Service) recreates GSC parent_node failures.
+ */
+function findReviewSnippetViolations(node, parentType = null, path = "$") {
+  const hits = [];
+  if (Array.isArray(node)) {
+    node.forEach((item, i) => {
+      hits.push(...findReviewSnippetViolations(item, parentType, `${path}[${i}]`));
+    });
+    return hits;
+  }
+  if (!node || typeof node !== "object") return hits;
+
+  const types = node["@type"];
+  const typeList = Array.isArray(types) ? types : types ? [types] : [];
+  const selfType = typeList[0] || parentType;
+
+  for (const t of typeList) {
+    if (REVIEW_SNIPPET_TYPES.has(t)) {
+      hits.push(`${path} @type=${t} (parent=${parentType || "none"})`);
+    }
+  }
+
+  for (const [key, value] of Object.entries(node)) {
+    if (REVIEW_SNIPPET_KEYS.has(key)) {
+      hits.push(
+        `${path}.${key} on @type=${JSON.stringify(types || parentType || "unknown")}`
+      );
+    }
+    if (key === "@type") continue;
+    hits.push(...findReviewSnippetViolations(value, selfType, `${path}.${key}`));
+  }
+  return hits;
+}
+
 async function auditPage(url) {
   const { res, text } = await fetchText(url);
   if (res.status !== 200) {
@@ -140,10 +191,18 @@ async function auditPage(url) {
 
   const jsonLdBlocks = extractJsonLd(text);
   for (const block of jsonLdBlocks) {
+    let data;
     try {
-      JSON.parse(block);
+      data = JSON.parse(block);
     } catch {
       fail(`${url} has invalid JSON-LD`);
+      continue;
+    }
+    const reviewHits = findReviewSnippetViolations(data);
+    for (const hit of reviewHits) {
+      fail(
+        `${url} JSON-LD must not emit Review/AggregateRating markup (no verifiable ratings): ${hit}`
+      );
     }
   }
 
