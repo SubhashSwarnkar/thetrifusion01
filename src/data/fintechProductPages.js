@@ -14,11 +14,11 @@ export const fintechProductPages = [
     slug: "bbps-software",
     path: `${FINTECH_HUB_PATH}/bbps-software`,
     breadcrumbName: "BBPS software",
-    contentUpdatedAt: "2026-11-23",
-    metaTitle: "BBPS Software Development India | Bharat BillPay Panels from Jaipur",
+    contentUpdatedAt: "2026-11-25",
+    metaTitle: "BBPS Software Development India | Bharat BillPay Panels",
     h1: "Bharat BillPay (BBPS) software for Indian retailer networks",
     metaDescription:
-      "Build white-label Bharat BillPay panels in Jaipur: bill fetch/pay, biller categories, retailer wallets and BBPOU reconciliation. From ₹99,999. You bring BBPOU access.",
+      "Bharat BillPay panels from Jaipur: fetch/pay, wallets and reconciliation. From ₹99,999. We build software; you bring BBPOU access — no NPCI licence claim.",
     keywords:
       "BBPS software development India, Bharat BillPay retailer app, BBPOU bill payment software Jaipur, white label BBPS panels",
     serviceType: "BBPS software development",
@@ -146,11 +146,11 @@ export const fintechProductPages = [
     slug: "aeps-software",
     path: `${FINTECH_HUB_PATH}/aeps-software`,
     breadcrumbName: "AEPS software",
-    contentUpdatedAt: "2026-11-23",
-    metaTitle: "AEPS Software Development India | AePS Retailer App from Jaipur",
+    contentUpdatedAt: "2026-11-25",
+    metaTitle: "AEPS Software Development India | AePS Retailer Apps",
     h1: "AePS software for Aadhaar-enabled payments at Indian counters",
     metaDescription:
-      "White-label AePS software from Jaipur: biometric capture, cash withdrawal and balance flows, distributor panel and admin. From ₹99,999. You bring sponsor-bank AePS access.",
+      "AePS retailer software from Jaipur: biometric flows, distributor panel and admin. From ₹99,999. We build the panels; you bring sponsor-bank AePS access.",
     keywords:
       "AEPS software development India, AePS retailer app Jaipur, Aadhaar enabled payment system software, white label AePS biometric",
     serviceType: "AEPS software development",
@@ -289,11 +289,11 @@ export const fintechProductPages = [
     slug: "dmt-software",
     path: `${FINTECH_HUB_PATH}/dmt-software`,
     breadcrumbName: "DMT software",
-    contentUpdatedAt: "2026-11-23",
-    metaTitle: "DMT Software Development India | Domestic Money Transfer Panels",
+    contentUpdatedAt: "2026-11-25",
+    metaTitle: "DMT Software Development India | Money Transfer Panels",
     h1: "DMT software for domestic money transfer retailer networks",
     metaDescription:
-      "White-label DMT / XDMT software from Jaipur: remitter KYC, beneficiary accounts, IMPS/NEFT status and distributor float. From ₹99,999. You bring the bank or aggregator contract.",
+      "DMT/XDMT panels from Jaipur: remitter KYC, beneficiaries and float. From ₹99,999. We build the software; you bring the bank or aggregator — no RBI licence.",
     keywords:
       "DMT software development India, domestic money transfer retailer app, XDMT software Jaipur, IMPS NEFT remittance panels",
     serviceType: "DMT software development",
@@ -434,11 +434,11 @@ export const fintechProductPages = [
     slug: "recharge-software",
     path: `${FINTECH_HUB_PATH}/recharge-software`,
     breadcrumbName: "Recharge software",
-    contentUpdatedAt: "2026-11-23",
-    metaTitle: "Recharge Software Development India | Mobile & DTH Panels from Jaipur",
+    contentUpdatedAt: "2026-11-25",
+    metaTitle: "Recharge Software Development India | Mobile & DTH Panels",
     h1: "Recharge software for mobile and DTH retailer networks in India",
     metaDescription:
-      "White-label mobile and DTH recharge software from Jaipur: operator APIs, plan fetch, commission slabs and high-volume status handling. From ₹99,999. You bring the recharge aggregator.",
+      "Mobile and DTH recharge panels from Jaipur: operator APIs, plans and commissions. From ₹99,999. We build the software; you bring the recharge aggregator.",
     keywords:
       "recharge software development India, mobile DTH recharge panel Jaipur, white label recharge aggregator software, prepaid top-up retailer app",
     serviceType: "Recharge software development",

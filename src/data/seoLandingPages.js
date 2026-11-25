@@ -66,12 +66,12 @@ export const seoLandingPages = [
     slug: "ecommerce-website-development",
     // TODO OWNER: live store links + GMV/conversion outcomes beyond DailyConcepts.
     // TODO OWNER: client quotes (Google/Clutch-verifiable).
-    title:
-      "Ecommerce Website Development Company in Jaipur & India | From ₹25,000",
+    title: "Ecommerce Website Development Jaipur | From ₹25,000",
     h1: "Ecommerce Website Development Company in Jaipur, India",
     navLabel: "Ecommerce website development",
     metaDescription:
-      "Shopify, WooCommerce and custom ecommerce stores with Razorpay/UPI, Shiprocket and GST invoices. Built in Jaipur from ₹25,000; Android, iOS and logistics packages available.",
+      "Shopify, WooCommerce and custom stores with Razorpay/UPI, Shiprocket and GST invoices. Built in Jaipur from ₹25,000; apps and logistics packages available.",
+    updatedAt: "2026-11-25",
     primaryKeyword: "ecommerce website development company",
     secondaryKeywords: [
       "ecommerce website development company in India",
@@ -190,6 +190,22 @@ export const seoLandingPages = [
       {
         title: "Do you build ecommerce websites for clients outside India?",
         body: "Yes. TheTriFusion is based in Jaipur and works remotely with businesses across India and in other countries. We build English storefronts, connect international gateways such as Stripe, and run projects over email, video calls and WhatsApp with written scope and milestone demos, so location does not slow the build down.",
+      },
+      {
+        title: "Is your store ready for AI shopping agents?",
+        body: "AI shopping agents can already search, compare and sometimes buy on a shopper’s behalf. Indian stores do not need a rebuild overnight — they need structured product data, clear return and shipping policies, fast pages, and schema so agents (and search) can trust the catalogue. We build those foundations into Shopify, WooCommerce and custom stores from Jaipur.",
+        bullets: [
+          "Structured product data (titles, prices, availability, GTIN/SKU where you have them)",
+          "Clear policies shoppers and agents can read without a support call",
+          "Fast, crawlable pages with product and merchant schema",
+          "Checkout that keeps a human in control — we do not invent agent payment rails",
+        ],
+        links: [
+          {
+            href: "/blog/ai-shopping-agents-online-store-readiness-india",
+            label: "AI shopping agents: online store readiness guide for India",
+          },
+        ],
       },
     ],
     deliverables: [

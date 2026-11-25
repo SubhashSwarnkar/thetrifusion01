@@ -76,7 +76,7 @@ export const serviceIndiaOnpage = {
     ),
   },
   "fintech-app-development": {
-    metaTitle: "BBPS, AEPS & DMT Software Development India | From ₹99,999",
+    metaTitle: "Fintech App Development India | Jaipur BBPS, AEPS & DMT",
     bannerTitle: "Fintech App Development: BBPS, AEPS & DMT Software",
     // Duplicate Jaipur H2 removed; module list lives in servicePlan scopeHeading.
     // relatedLinks come from servicePlan (replaceRelatedLinks); do not re-union here.
@@ -132,8 +132,7 @@ export const serviceIndiaOnpage = {
     schemaAreaServed: INDIA_AREA_SERVED,
   },
   branding: {
-    metaTitle:
-      "Branding Agency in India | Strategy, Identity & Guidelines from Jaipur",
+    metaTitle: "Branding Agency India | Identity Systems from Jaipur",
     bannerTitle: "Brand strategy and identity systems from Jaipur",
     extraSections: [
       {
@@ -274,8 +273,8 @@ export const serviceIndiaOnpage = {
     schemaAreaServed: INDIA_AREA_SERVED,
   },
   "ev-charging-app-development": {
-    contentUpdatedAt: "2026-11-18",
-    metaTitle: "EV Charging Management Software India | OCPP CMS & App",
+    contentUpdatedAt: "2026-11-25",
+    metaTitle: "EV Charging App & CSMS Software Development | OCPP",
     bannerTitle:
       "EV Charging Management Software & White-Label Charging App for CPOs in India",
     extraSections: [

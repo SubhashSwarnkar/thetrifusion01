@@ -31,6 +31,7 @@ const ORGANIZATION_SAME_AS = [
   siteConfig.instagram,
   siteConfig.linkedin,
   "https://www.goodfirms.co/company/thetrifusion",
+  "https://clutch.co/profile/trifusion-infotech",
 ];
 
 /**
@@ -39,10 +40,11 @@ const ORGANIZATION_SAME_AS = [
  * TODO OWNER: personal LinkedIn URL for founder.sameAs.
  * TODO OWNER: CIN / company registration number.
  * TODO OWNER: DPIIT Startup India certificate number before adding hasCredential.
- * TODO OWNER: Google Business Profile URL, Clutch, GoodFirms, YouTube, X — add to sameAs only when live.
+ * TODO OWNER: Google Business Profile URL, YouTube, X — add to sameAs only when live.
  * TODO OWNER: aggregateRating — do not add until third-party reviews exist.
  * Never attach review / aggregateRating to Service (Google review-snippet
  * parent_node error). Do not invent ratings; omit markup until verifiable.
+ * Clutch sameAs is the profile URL only — no Clutch ratings/reviews markup.
  */
 export function founderPerson() {
   return {
@@ -106,8 +108,10 @@ function organizationNode() {
     "@type": "Organization",
     "@id": ORGANIZATION_ID,
     name: siteConfig.name,
-    legalName: siteConfig.legalName,
-    alternateName: "Trifusion Infotech",
+    // Brand-facing legal short form for entity disambiguation (contracts may
+    // still say Private Limited). Do not invent foundingDate / sameAs here.
+    legalName: "Trifusion Infotech Pvt Ltd",
+    alternateName: ["TheTriFusion", "Trifusion Infotech"],
     brand: {
       "@type": "Brand",
       name: siteConfig.name,
@@ -122,7 +126,7 @@ function organizationNode() {
     email: siteConfig.email,
     telephone: siteConfig.phoneSchema,
     address: postalAddress(),
-    foundingDate: "2023",
+    foundingDate: "2026",
     founder: founderRef(),
     // About page: "a team of about ten developers and consultants."
     numberOfEmployees: {
@@ -131,8 +135,8 @@ function organizationNode() {
     },
     areaServed: AREA_SERVED,
     contactPoint: contactPoints(),
-    // sameAs: company profiles that already exist — Instagram, LinkedIn, GoodFirms.
-    // TODO OWNER: GBP, Clutch (fix HQ to Jaipur), YouTube, X URLs.
+    // sameAs: Instagram, LinkedIn, GoodFirms, Clutch (profile URL only).
+    // TODO OWNER: GBP, YouTube, X URLs.
     sameAs: ORGANIZATION_SAME_AS,
   };
 }
@@ -156,8 +160,8 @@ function localBusinessNode() {
     // typed nodes on the same identifier.
     "@id": LOCAL_BUSINESS_ID,
     name: siteConfig.name,
-    legalName: siteConfig.legalName,
-    alternateName: "Trifusion Infotech",
+    legalName: "Trifusion Infotech Pvt Ltd",
+    alternateName: ["TheTriFusion", "Trifusion Infotech"],
     url: siteConfig.url,
     parentOrganization: { "@id": ORGANIZATION_ID },
     image: siteConfig.defaultOgImage,
@@ -170,7 +174,7 @@ function localBusinessNode() {
     email: siteConfig.email,
     telephone: siteConfig.phoneSchema,
     address: postalAddress(),
-    foundingDate: "2023",
+    foundingDate: "2026",
     founder: founderRef(),
     numberOfEmployees: {
       "@type": "QuantitativeValue",

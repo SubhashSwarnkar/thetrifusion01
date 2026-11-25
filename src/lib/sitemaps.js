@@ -64,19 +64,19 @@ export function buildSitemapParts() {
       : new Date();
 
   // Services hub lastmod — keep in sync when the hub is re-submitted to GSC.
-  const servicesHubLastmod = new Date("2026-11-09");
+  const servicesHubLastmod = new Date("2026-11-25");
 
   const staticLastmod = {
-    "/": new Date("2026-11-09"),
+    "/": new Date("2026-11-25"),
     "/about": fallbackDate,
     "/solutions": new Date("2026-10-12"),
-    "/portfolio": new Date("2026-11-16"),
+    "/portfolio": new Date("2026-11-25"),
     "/pricing": fallbackDate,
     "/contact": fallbackDate,
-    "/faq": fallbackDate,
+    "/faq": new Date("2026-11-25"),
     "/editorial-policy": fallbackDate,
-    "/privacy": fallbackDate,
-    "/terms": fallbackDate,
+    "/privacy": new Date("2026-11-25"),
+    "/terms": new Date("2026-11-25"),
     "/sitemap": new Date("2026-11-09"),
     "/blog": blogHubLastmod,
   };

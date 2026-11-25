@@ -200,7 +200,11 @@ export default function EvChargingProductLayout({
 }) {
   const modulesSection = service.detailSections?.find((s) => s.id === "modules");
   const whoSection = service.detailSections?.find((s) => s.id === "who-its-for");
+  const cpoEmspSection = service.detailSections?.find((s) => s.id === "cpo-emsp");
   const ocppSection = service.detailSections?.find((s) => s.id === "ocpp-vs-ocpi");
+  const ocppVersionsSection = service.detailSections?.find(
+    (s) => s.id === "ocpp-versions"
+  );
   const protocolsSection = service.detailSections?.find((s) => s.id === "protocols");
   const whiteLabelSection = service.detailSections?.find((s) => s.id === "white-label");
   const plugoneSection = service.detailSections?.find((s) => s.id === "plugone-proof");
@@ -512,6 +516,37 @@ export default function EvChargingProductLayout({
         </section>
       ) : null}
 
+      {/* CPO / eMSP */}
+      {cpoEmspSection ? (
+        <section
+          id="cpo-emsp"
+          className="container mx-auto px-5 py-16 border-t border-gray-100 scroll-mt-28"
+        >
+          <SectionHead
+            kicker="Buyers"
+            title={cpoEmspSection.heading}
+            intro={cpoEmspSection.paragraphs?.[0]}
+          />
+          {cpoEmspSection.paragraphs?.[1] ? (
+            <p className="mt-4 max-w-3xl text-sm text-gray-600 font-light leading-relaxed">
+              <InlineText text={cpoEmspSection.paragraphs[1]} />
+            </p>
+          ) : null}
+          {cpoEmspSection.points?.length ? (
+            <ul className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl list-none m-0 p-0">
+              {cpoEmspSection.points.map((point) => (
+                <li
+                  key={point}
+                  className="rounded-2xl border border-gray-100 bg-white p-5 text-sm text-gray-600 font-light leading-relaxed"
+                >
+                  {point}
+                </li>
+              ))}
+            </ul>
+          ) : null}
+        </section>
+      ) : null}
+
       {/* Architecture */}
       <section id="ocpp-vs-ocpi" className="container mx-auto px-5 py-16 scroll-mt-28">
         <SectionHead
@@ -565,6 +600,64 @@ export default function EvChargingProductLayout({
           </div>
         ) : null}
       </section>
+
+      {/* OCPP version comparison */}
+      {ocppVersionsSection ? (
+        <section
+          id="ocpp-versions"
+          className="container mx-auto px-5 py-16 border-t border-gray-100 scroll-mt-28"
+        >
+          <SectionHead
+            kicker="OCPP versions"
+            title={ocppVersionsSection.heading}
+            intro={ocppVersionsSection.paragraphs?.[0]}
+          />
+          {ocppVersionsSection.comparison ? (
+            <div className="mt-8 overflow-x-auto rounded-2xl border border-gray-200">
+              <table className="min-w-full text-sm text-left">
+                <caption className="sr-only">
+                  {ocppVersionsSection.comparison.heading}
+                </caption>
+                <thead className="bg-theme-blue text-white">
+                  <tr>
+                    <th scope="col" className="px-4 py-3 font-bold">
+                      {ocppVersionsSection.comparison.rowHeader || "Capability"}
+                    </th>
+                    {ocppVersionsSection.comparison.columns.map((column) => (
+                      <th key={column} scope="col" className="px-4 py-3 font-bold">
+                        {column}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {ocppVersionsSection.comparison.rows.map((row, idx) => (
+                    <tr
+                      key={row.label}
+                      className={idx % 2 === 0 ? "bg-white" : "bg-gray-50"}
+                    >
+                      <th
+                        scope="row"
+                        className="px-4 py-3 font-semibold text-theme-blue align-top"
+                      >
+                        {row.label}
+                      </th>
+                      {row.cells.map((cell, index) => (
+                        <td
+                          key={`${row.label}-${index}`}
+                          className="px-4 py-3 text-gray-600 font-light align-top"
+                        >
+                          <InlineText text={cell} />
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : null}
+        </section>
+      ) : null}
 
       {/* Protocols */}
       {protocolsSection ? (

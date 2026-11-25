@@ -15,7 +15,7 @@ const SPECIALIZED = [
   {
     title: "Fintech app development",
     description:
-      "BBPS, AEPS, DMT and recharge software — retailer, distributor and admin. From ₹99,999.",
+      "BBPS, AEPS, DMT and recharge software — retailer, distributor and admin. From ₹99,999. You bring the licensed rail; we build the panels.",
     href: "/services/fintech-app-development",
   },
   {

@@ -23,6 +23,73 @@ export default function HomeRest() {
       <Service data={Services} />
       <SpecializedSolutions />
 
+      <section className="container mx-auto px-5 py-12">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-black text-theme-blue mb-3">
+            Looking for a specific build?
+          </h2>
+          <p className="text-gray-600 font-light leading-relaxed">
+            Browse{" "}
+            <Link href="/services/android-app-development" prefetch={false} className="font-semibold text-theme-purple hover:underline">
+              Android apps
+            </Link>
+            ,{" "}
+            <Link href="/services/ios-app-development" prefetch={false} className="font-semibold text-theme-purple hover:underline">
+              iOS apps
+            </Link>
+            ,{" "}
+            <Link href="/services/ev-charging-app-development" prefetch={false} className="font-semibold text-theme-purple hover:underline">
+              EV charging CSMS
+            </Link>
+            ,{" "}
+            <Link href="/services/fintech-app-development" prefetch={false} className="font-semibold text-theme-purple hover:underline">
+              fintech software
+            </Link>
+            {" "}(
+            <Link href="/services/fintech-app-development/bbps-software" prefetch={false} className="font-semibold text-theme-purple hover:underline">
+              BBPS
+            </Link>
+            ,{" "}
+            <Link href="/services/fintech-app-development/aeps-software" prefetch={false} className="font-semibold text-theme-purple hover:underline">
+              AEPS
+            </Link>
+            ,{" "}
+            <Link href="/services/fintech-app-development/dmt-software" prefetch={false} className="font-semibold text-theme-purple hover:underline">
+              DMT
+            </Link>
+            ,{" "}
+            <Link href="/services/fintech-app-development/recharge-software" prefetch={false} className="font-semibold text-theme-purple hover:underline">
+              recharge
+            </Link>
+            ),{" "}
+            <Link href="/services/rpa" prefetch={false} className="font-semibold text-theme-purple hover:underline">
+              RPA
+            </Link>
+            ,{" "}
+            <Link href="/services/erp-software-development" prefetch={false} className="font-semibold text-theme-purple hover:underline">
+              ERP
+            </Link>
+            ,{" "}
+            <Link href="/services/ui-ux-design" prefetch={false} className="font-semibold text-theme-purple hover:underline">
+              UI/UX
+            </Link>
+            ,{" "}
+            <Link href="/services/graphic-design" prefetch={false} className="font-semibold text-theme-purple hover:underline">
+              graphic design
+            </Link>
+            ,{" "}
+            <Link href="/services/branding" prefetch={false} className="font-semibold text-theme-purple hover:underline">
+              branding
+            </Link>
+            , or{" "}
+            <Link href="/services/on-demand" prefetch={false} className="font-semibold text-theme-purple hover:underline">
+              dedicated developers
+            </Link>
+            .
+          </p>
+        </div>
+      </section>
+
       <section className="py-20 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-light-theme-purple/20 -z-10"></div>
         <div className="container mx-auto px-5">

@@ -10,7 +10,7 @@ import { LIVE, NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: named lead-engineer bios + personal LinkedIn URLs.
  */
 export default {
-  contentUpdatedAt: "2026-11-18",
+  contentUpdatedAt: "2026-11-25",
   metaTitle: "Custom Software Development Company India | From ₹1,00,000",
   bannerTitle: "Custom Software Development Company in India",
   metaDescription:
@@ -285,6 +285,21 @@ export default {
       text: "Pipelines, quotations and WhatsApp follow-ups.",
     },
     {
+      href: "/services/erp-software-development",
+      title: "ERP software development",
+      text: "GST finance, inventory, MRP and multi-branch when CRM is not enough.",
+    },
+    {
+      href: "/services/rpa",
+      title: "RPA for invoice and Tally bots",
+      text: "Deterministic office automation beside a custom portal.",
+    },
+    {
+      href: "/services/on-demand",
+      title: "hire dedicated developers",
+      text: "Named React, Node or mobile seats inside your sprint.",
+    },
+    {
       href: "/services/business-modernization",
       title: "replace Excel with software",
       text: "Phase off spreadsheets and old desktop tools without stopping operations.",
@@ -298,6 +313,11 @@ export default {
       href: "/services/ev-charging-app-development",
       title: "EV charging management software (OCPP CMS)",
       text: "White-label CMS and driver apps for charger networks.",
+    },
+    {
+      href: "/services/fintech-app-development",
+      title: "fintech retailer panels",
+      text: "BBPS, AEPS, DMT and recharge when the product is a payment rail.",
     },
     {
       href: "/portfolio/plugone-ev-charging-platform",

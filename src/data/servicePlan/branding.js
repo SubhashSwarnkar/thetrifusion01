@@ -7,10 +7,10 @@ import { NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: real brand projects (logo before/after) with permission.
  */
 export default {
-  contentUpdatedAt: "2026-11-23",
+  contentUpdatedAt: "2026-11-25",
   replaceFaqs: true,
   replaceRelatedLinks: true,
-  metaTitle: "Branding Agency in India | Strategy, Identity & Guidelines from Jaipur",
+  metaTitle: "Branding Agency India | Identity Systems from Jaipur",
   bannerTitle: "Brand strategy and identity systems from Jaipur",
   metaDescription:
     "Brand strategy, naming, logo suite, colour, typography and guidelines PDF from Jaipur for Indian businesses — then a website that uses the system. Packs from ₹30,000.",

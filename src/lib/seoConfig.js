@@ -9,17 +9,16 @@ export const DEFAULT_OG_IMAGE = absoluteSiteUrl("/opengraph-image");
 
 export const pages = {
   "/": {
-    title:
-      "Software Company in Jaipur | Websites, Apps, EV & Fintech Software",
+    title: "TheTriFusion | Software & App Development in Jaipur, India",
     description:
-      "TheTriFusion builds websites, mobile apps, CRM, EV charging and fintech software from our Jaipur office — React/Next.js, iOS/Android, and scoped delivery across India.",
+      "TheTriFusion (Trifusion Infotech Pvt Ltd) builds websites, mobile apps, EV charging and fintech software from Jaipur for teams across India.",
     keywords:
-      "TheTriFusion Jaipur, website studio Rajasthan, mobile apps Jaipur, EV charging software Jaipur, fintech software Jaipur",
+      "TheTriFusion Jaipur, Trifusion Infotech, website studio Rajasthan, mobile apps Jaipur, EV charging software Jaipur, fintech software Jaipur",
   },
   "/about": {
     title: "About TheTriFusion | Software Company in Jaipur",
     description:
-      "Trifusion Infotech Private Limited (TheTriFusion) is a Jaipur software company operating since 2023, DPIIT-recognised under Startup India, building EV charging software, apps, and websites.",
+      "Trifusion Infotech Private Limited (TheTriFusion) is a Jaipur software company founded in 2026, DPIIT-recognised under Startup India, building EV charging software, apps, and websites.",
     keywords:
       "software company Jaipur, IT company Rajasthan, about TheTriFusion, Startup India, EV charging software Jaipur",
   },
@@ -110,7 +109,7 @@ export const pages = {
   "/faq": {
     title: "FAQ | Software Company in Jaipur | TheTriFusion",
     description:
-      "Answers about TheTriFusion services, pricing, timelines, payments, and support.",
+      "Answers about TheTriFusion services, pricing, timelines, payments and support from our Jaipur software studio — Trifusion Infotech Pvt Ltd.",
     keywords: "FAQ, frequently asked questions, TheTriFusion help, support",
   },
   "/appointment": {
@@ -155,13 +154,13 @@ export const pages = {
   "/privacy": {
     title: "Privacy Policy | TheTriFusion",
     description:
-      "How Trifusion Infotech Private Limited in Jaipur handles enquiry and website data.",
+      "How Trifusion Infotech Pvt Ltd (TheTriFusion) in Jaipur collects, uses and stores enquiry and website data when you contact us or use thetrifusion.in.",
     keywords: "privacy policy, TheTriFusion, data protection",
   },
   "/terms": {
     title: "Terms of Service | TheTriFusion",
     description:
-      "Terms for using the TheTriFusion website and requesting software project work.",
+      "Terms for using thetrifusion.in and hiring Trifusion Infotech Pvt Ltd (TheTriFusion) in Jaipur for software, websites, apps and digital projects.",
     keywords: "terms of service, TheTriFusion",
   },
 };

@@ -1,7 +1,8 @@
 import Page from "views/ServicesPage";
 import JsonLd from "components/JsonLd";
 import { services } from "data/servicesData";
-import { breadcrumbSchema, itemListSchema } from "lib/schema";
+import { SERVICE_HUB_FAQS } from "data/serviceHub";
+import { breadcrumbSchema, faqSchema, itemListSchema } from "lib/schema";
 import { pageMetadata } from "lib/seoConfig";
 
 export const metadata = pageMetadata("/services");
@@ -24,6 +25,7 @@ export default function RoutePage() {
           })),
         })}
       />
+      <JsonLd data={faqSchema(SERVICE_HUB_FAQS)} />
       <Page />
     </>
   );

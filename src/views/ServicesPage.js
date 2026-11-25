@@ -15,6 +15,7 @@ import {
   formatInrFrom,
   htmlSitemapServiceGroups,
   hubServiceBySlug,
+  SERVICE_HUB_FAQS,
 } from "data/serviceHub";
 import { absoluteSiteUrl } from "config/site";
 
@@ -399,6 +400,109 @@ export default function ServicesPage() {
                 </li>
               ))}
             </ul>
+          </div>
+        </section>
+
+        <section id="faq" className="container mx-auto px-5 py-12">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-black text-theme-blue mb-3">
+              Services FAQ — pick the right page
+            </h2>
+            <p className="text-gray-500 font-light mb-8">
+              Short answers that route buyers to CRM vs ERP, fintech rails, EV
+              charging, mobile apps, websites and AI without stuffing keywords.
+            </p>
+            <div className="divide-y divide-gray-100 border-y border-gray-100">
+              {SERVICE_HUB_FAQS.map((faq) => (
+                <details key={faq.question} className="group py-5">
+                  <summary className="cursor-pointer list-none flex justify-between gap-4 font-semibold text-theme-blue [&::-webkit-details-marker]:hidden">
+                    <span>{faq.question}</span>
+                    <span
+                      aria-hidden="true"
+                      className="text-theme-purple text-xl leading-none flex-shrink-0 group-open:rotate-45 transition-transform"
+                    >
+                      +
+                    </span>
+                  </summary>
+                  <p className="mt-3 text-sm text-gray-600 font-light leading-relaxed pr-8">
+                    {faq.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+            <p className="mt-6 text-sm text-gray-600 font-light leading-relaxed">
+              Related paths:{" "}
+              <a
+                href={absoluteSiteUrl("/services/android-app-development")}
+                className="font-semibold text-theme-purple hover:underline"
+              >
+                Android apps
+              </a>
+              ,{" "}
+              <a
+                href={absoluteSiteUrl("/services/ios-app-development")}
+                className="font-semibold text-theme-purple hover:underline"
+              >
+                iOS apps
+              </a>
+              ,{" "}
+              <a
+                href={absoluteSiteUrl("/services/ev-charging-app-development")}
+                className="font-semibold text-theme-purple hover:underline"
+              >
+                EV charging CSMS
+              </a>
+              ,{" "}
+              <a
+                href={absoluteSiteUrl("/services/fintech-app-development")}
+                className="font-semibold text-theme-purple hover:underline"
+              >
+                fintech hub
+              </a>
+              ,{" "}
+              <a
+                href={absoluteSiteUrl("/services/rpa")}
+                className="font-semibold text-theme-purple hover:underline"
+              >
+                RPA
+              </a>
+              ,{" "}
+              <a
+                href={absoluteSiteUrl("/services/erp-software-development")}
+                className="font-semibold text-theme-purple hover:underline"
+              >
+                ERP
+              </a>
+              ,{" "}
+              <a
+                href={absoluteSiteUrl("/services/ui-ux-design")}
+                className="font-semibold text-theme-purple hover:underline"
+              >
+                UI/UX
+              </a>
+              ,{" "}
+              <a
+                href={absoluteSiteUrl("/services/graphic-design")}
+                className="font-semibold text-theme-purple hover:underline"
+              >
+                graphic design
+              </a>
+              ,{" "}
+              <a
+                href={absoluteSiteUrl("/services/branding")}
+                className="font-semibold text-theme-purple hover:underline"
+              >
+                branding
+              </a>
+              , and{" "}
+              <a
+                href={absoluteSiteUrl("/services/on-demand")}
+                className="font-semibold text-theme-purple hover:underline"
+              >
+                dedicated developers
+              </a>
+              .
+            </p>
           </div>
         </section>
 

@@ -10,7 +10,7 @@ export const FOUNDER = {
   jobTitle: "CEO",
   imagePath: "/images/team/amardeep.webp",
   profilePath: "/team",
-  bio: "Amardeep is CEO of Trifusion Infotech Private Limited (TheTriFusion), a software development company in Jaipur, Rajasthan. The studio has operated since 2023 with a team of about ten developers and consultants.",
+  bio: "Amardeep is CEO of Trifusion Infotech Private Limited (TheTriFusion), a software development company in Jaipur, Rajasthan. The studio was founded in 2026 and has a team of about ten developers and consultants.",
 };
 
 export function founderImageUrl() {

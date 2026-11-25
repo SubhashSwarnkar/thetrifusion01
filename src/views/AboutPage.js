@@ -36,14 +36,14 @@ export default function AboutPage() {
               <p>
                 TheTriFusion is the public brand of Trifusion Infotech Private
                 Limited, a software company whose office is in Jaipur,
-                Rajasthan. The business has been running since 2023. In 2026 it
-                was incorporated as a private limited company. The Department
-                for Promotion of Industry and Internal Trade (DPIIT) has
-                recognised the company under Startup India. That recognition is
-                the Startup India certificate. The people who do the work are a
-                team of about ten developers and consultants. They take
-                software projects for clients in India and worldwide. A typical
-                project at TheTriFusion is between $200 and $10,000.
+                Rajasthan. The company was founded in 2026 and incorporated as a
+                private limited company the same year. The Department for
+                Promotion of Industry and Internal Trade (DPIIT) has recognised
+                the company under Startup India. That recognition is the Startup
+                India certificate. The people who do the work are a team of
+                about ten developers and consultants. They take software
+                projects for clients in India and worldwide. A typical project
+                at TheTriFusion is between $200 and $10,000.
               </p>
             </section>
 
@@ -52,12 +52,11 @@ export default function AboutPage() {
                 How the company started
               </h2>
               <p>
-                The company started as an operating business in 2023, before
-                the private-limited incorporation in 2026. The incorporation
-                changed the legal form. It did not change the office, the
-                brand, or the kind of software the team builds. Startup India
-                recognition through DPIIT is a government recognition of that
-                company.
+                The company was founded and incorporated as a private limited
+                company in 2026. The office, the TheTriFusion brand, and the
+                kind of software the team builds are what buyers meet on this
+                site. Startup India recognition through DPIIT is a government
+                recognition of that company.
               </p>
             </section>
 
@@ -265,8 +264,8 @@ export default function AboutPage() {
                 <a className={linkClass} href={`mailto:${siteConfig.email}`}>
                   {siteConfig.email}
                 </a>
-                . The business has been operating since 2023 and was
-                incorporated as a private limited company in 2026.
+                . The company was founded in 2026 and incorporated as a private
+                limited company the same year.
               </p>
               <address className="not-italic text-base text-gray-500">
                 <span className="block font-semibold text-theme-blue">

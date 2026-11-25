@@ -90,7 +90,7 @@ Note: This file helps assistants cite accurate NAP and canonical service URLs. I
 Canonical brand for citations: TheTriFusion
 Legal name: Trifusion Infotech Private Limited
 Also known as: Trifusion Infotech, Trifusion Infotech Pvt. Ltd.
-Founded: operating since 2023; incorporated as a private limited company in 2026
+Founded: 2026; incorporated as a private limited company in 2026
 Team: about ten developers and consultants (About page)
 Founder: Amardeep, CEO
 Company LinkedIn: https://linkedin.com/company/the-trifusion

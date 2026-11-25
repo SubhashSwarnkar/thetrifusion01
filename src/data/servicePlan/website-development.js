@@ -7,10 +7,10 @@ import { LIVE, MAPS_SEARCH, NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: live website portfolio list with client permission beyond Atharv Narayan / DailyConcepts.
  * TODO OWNER: Google Business Profile reviews to embed.
  * TODO OWNER: office photos for a 'visit us' block.
- * TODO OWNER: team size / years since 2023 stated as a precise number if you want it on-page.
+ * TODO OWNER: team size phrasing beyond “about ten” if you want a precise number on-page.
  */
 export default {
-  contentUpdatedAt: "2026-11-18",
+  contentUpdatedAt: "2026-11-25",
   metaTitle: "Website Development Company in India | From ₹15,000",
   // Keep H1 as on live (best-performing page).
   bannerTitle: "Website Development Company in India — Jaipur Studio",
@@ -230,7 +230,7 @@ export default {
       id: "website-who-leads",
       heading: "Who leads the work",
       paragraphs: [
-        `Named people on the [team page](/team): ${TEAM.pm}; ${TEAM.frontend}; ${TEAM.design}. The company has operated since 2023 with a team of about ten.`,
+        `Named people on the [team page](/team): ${TEAM.pm}; ${TEAM.frontend}; ${TEAM.design}. The company was founded in 2026 and has a team of about ten.`,
       ],
     },
   ],
@@ -303,6 +303,21 @@ export default {
       href: "/services/crm-erp-development",
       title: "connect website leads to a custom CRM",
       text: "Pipe enquiry forms into pipelines your sales team will use.",
+    },
+    {
+      href: "/services/ui-ux-design",
+      title: "product UI before build",
+      text: "Figma flows and components when the site is more than a brochure.",
+    },
+    {
+      href: "/services/branding",
+      title: "brand identity before launch",
+      text: "Logo, colour and guidelines the website can use without guessing.",
+    },
+    {
+      href: "/services/graphic-design",
+      title: "campaign creatives that match the site",
+      text: "Social and ad sets after the brand system exists.",
     },
     {
       href: "/services/ai-development",

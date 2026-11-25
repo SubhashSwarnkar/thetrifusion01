@@ -12,6 +12,17 @@ export function generateStaticParams() {
   return Portfolios.map((project) => ({ slug: project.id }));
 }
 
+function clipMetaDescription(text, max = 160) {
+  const value = String(text || "")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (value.length <= max) return value;
+  const cut = value.slice(0, max - 1);
+  const lastSpace = cut.lastIndexOf(" ");
+  const base = lastSpace > 100 ? cut.slice(0, lastSpace) : cut;
+  return `${base.trimEnd()}…`;
+}
+
 export function generateMetadata({ params }) {
   const project = Portfolios.find((item) => item.id === params.slug);
 
@@ -26,10 +37,11 @@ export function generateMetadata({ params }) {
   return buildMetadata({
     title:
       project.seoTitle || `${project.title} | Portfolio | TheTriFusion`,
-    description:
+    description: clipMetaDescription(
       project.seoDescription ||
-      project.description ||
-      `View ${project.title} — a ${project.type} project by TheTriFusion.`,
+        project.description ||
+        `View ${project.title} — a ${project.type} project by TheTriFusion.`
+    ),
     keywords: [
       project.title,
       "portfolio",

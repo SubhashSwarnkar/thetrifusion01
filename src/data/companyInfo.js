@@ -10,8 +10,18 @@ export const INSTAGRAM_URL = siteConfig.instagram;
 
 export const HOME_FAQS = [
   {
+    question: "What is TheTriFusion?",
+    answer:
+      "TheTriFusion is the public brand of Trifusion Infotech Pvt Ltd — a software and app development company based in Jaipur, Rajasthan. You may also see Trifusion Infotech or Trifusion Infotech Private Limited on contracts and invoices; they refer to the same company.",
+  },
+  {
+    question: "Is TheTriFusion the same as Trifusion Infotech Pvt Ltd?",
+    answer:
+      "Yes. TheTriFusion is how we brand the studio online; Trifusion Infotech Pvt Ltd is the legal entity. Quotes, NDAs and invoices use the legal name. Delivery is from our Jaipur office.",
+  },
+  {
     question: "Where is TheTriFusion located?",
-    answer: `Trifusion Infotech Private Limited’s office is at ${siteConfig.addressLine}. Phone ${siteConfig.phone}. Hours: ${siteConfig.hoursLabel}. We serve clients across Rajasthan and India through remote collaboration.`,
+    answer: `Trifusion Infotech Pvt Ltd’s office is at ${siteConfig.addressLine}. Phone ${siteConfig.phone}. Hours: ${siteConfig.hoursLabel}. We serve clients across Rajasthan and India through remote collaboration.`,
   },
   {
     question: "What does TheTriFusion build?",

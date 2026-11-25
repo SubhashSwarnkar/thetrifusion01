@@ -7,13 +7,13 @@ import { NAP_LINE, SOURCES, TEAM } from "./_shared";
  * TODO OWNER: client count / operators live.
  */
 export default {
-  contentUpdatedAt: "2026-11-18",
+  contentUpdatedAt: "2026-11-25",
   replaceFaqs: true,
   replaceRelatedLinks: true,
-  metaTitle: "BBPS, AEPS & DMT Software Development India | From ₹99,999",
+  metaTitle: "Fintech App Development India | Jaipur BBPS, AEPS & DMT",
   bannerTitle: "Fintech App Development: BBPS, AEPS & DMT Software",
   metaDescription:
-    "White-label BBPS, AEPS, DMT, recharge and UPI software: retailer app, distributor panel and admin. From ₹99,999. You bring the API partner, we build.",
+    "BBPS, AEPS, DMT and recharge software development in Jaipur: retailer app, distributor panel and admin. From ₹99,999 — you bring the licensed API partner.",
   keywords:
     "BBPS AEPS DMT software provider India, white label fintech software India, recharge software company Jaipur, XDMT software India, fintech app development India",
   industries: [],
@@ -254,6 +254,11 @@ export default {
       text: "Play Store retailer clients beside the fintech panels.",
     },
     {
+      href: "/services/ios-app-development",
+      title: "iOS companion apps",
+      text: "When distributors need an App Store client beside the counter app.",
+    },
+    {
       href: "/services/devops",
       title: "secure cloud hosting and monitoring",
       text: "CI/CD, hosting and monitoring for fintech backends.",
@@ -262,6 +267,21 @@ export default {
       href: "/services/fintech-app-development/bbps-software",
       title: "BBPS software",
       text: "Bharat BillPay retailer and distributor panels.",
+    },
+    {
+      href: "/services/fintech-app-development/aeps-software",
+      title: "AEPS software",
+      text: "Aadhaar-enabled cash services — you bring sponsor-bank access.",
+    },
+    {
+      href: "/services/fintech-app-development/dmt-software",
+      title: "DMT software",
+      text: "Domestic money transfer panels — you bring the bank or aggregator.",
+    },
+    {
+      href: "/services/fintech-app-development/recharge-software",
+      title: "recharge software",
+      text: "Mobile and DTH top-up panels — you bring the aggregator API.",
     },
     {
       href: "/solutions/fintech-app-development-jaipur",

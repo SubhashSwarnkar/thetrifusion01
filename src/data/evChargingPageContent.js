@@ -6,9 +6,9 @@ import { siteConfig } from "../config/site";
 
 export const evChargingPageContent = {
   title: "EV Charging Management Software (CMS & App)",
-  metaTitle: "EV Charging Management Software India | OCPP CMS & App",
+  metaTitle: "EV Charging App & CSMS Software Development | OCPP",
   metaDescription:
-    "White-label EV charging CMS and driver app for Indian CPOs: OCPP 1.6J/2.0.1, OCPI roaming, UPI billing, GST invoices. Live client: PlugOne.",
+    "EV charging app and CSMS software development for Indian CPOs: OCPP 1.6J/2.0.1/2.1, OCPI roaming, UPI billing, GST invoices. Live client: PlugOne.",
   keywords:
     "EV charging management software India, EV charging CMS, OCPP CSMS, charge point management system, white label EV charging app, OCPI roaming India, EV charging app development company",
   bannerTitle:
@@ -44,7 +44,7 @@ export const evChargingPageContent = {
     "Share your charger make, OCPP version and number of sites for a written scope.",
   imageAlt:
     "Product mock of EV charging management software CMS and white-label driver app by TheTriFusion in Jaipur for Indian CPOs",
-  contentUpdatedAt: "2026-11-18",
+  contentUpdatedAt: "2026-11-25",
   sitemapPriority: 0.85,
   hideClientStrip: true,
   hidePricingEstimates: true,
@@ -70,7 +70,9 @@ export const evChargingPageContent = {
   quickNav: [
     { href: "#modules", label: "Modules" },
     { href: "#who-its-for", label: "Who it's for" },
+    { href: "#cpo-emsp", label: "CPO / eMSP" },
     { href: "#ocpp-vs-ocpi", label: "OCPP vs OCPI" },
+    { href: "#ocpp-versions", label: "OCPP versions" },
     { href: "#protocols", label: "Protocols" },
     { href: "#white-label", label: "White-label vs SaaS" },
     { href: "#plugone-proof", label: "PlugOne" },
@@ -297,6 +299,24 @@ export const evChargingPageContent = {
       ],
     },
     {
+      id: "cpo-emsp",
+      tocLabel: "CPO / eMSP software",
+      heading: "CPO / eMSP software we build",
+      schemaDescription:
+        "White-label CSMS, driver apps and roaming modules for CPOs and eMSPs in India.",
+      paragraphs: [
+        "A charge point operator (CPO) needs a CSMS that talks OCPP to chargers, plus tariffs, settlement and often a branded driver app. An eMSP focuses on the driver experience and roaming access to partner networks over OCPI. Many Indian briefs blend both under one brand — we scope the first release to the jobs you actually run on day one.",
+        "We are a software studio, not a public charging network. We do not compete with PlugOne for drivers; PlugOne is a client case study of CSMS and app work we shipped. You own the code named in the contract.",
+      ],
+      points: [
+        "CSMS / CMS: charger inventory, remote start/stop, metering, firmware hooks, multi-site admin",
+        "Driver app (iOS & Android): map, QR/RFID start, live session, receipts, support",
+        "Billing & GST: per-kWh or per-minute tariffs, idle fees, invoices through your gateway",
+        "eMSP / roaming: OCPI locations, tokens, sessions and CDRs when a partner exists",
+        "Host & franchise portals: per-site revenue views without handing over the whole network",
+      ],
+    },
+    {
       id: "ocpp-vs-ocpi",
       tocLabel: "How the pieces connect",
       heading: "How do OCPP and OCPI connect in a charging CMS?",
@@ -338,11 +358,60 @@ export const evChargingPageContent = {
       },
     },
     {
+      id: "ocpp-versions",
+      tocLabel: "OCPP versions",
+      heading: "OCPP 1.6J vs 2.0.1 vs 2.1",
+      schemaDescription:
+        "Concise comparison of OCPP 1.6J, 2.0.1 and 2.1 for CSMS buyers: smart charging, ISO 15118, security profiles and device model.",
+      paragraphs: [
+        "Most Indian charger fleets still speak OCPP 1.6J. Newer firmware often adds 2.0.1. OCPP 2.1 extends the 2.x line (including clearer ISO 15118 / Plug & Charge paths). We build the CSMS against the versions your chargers actually run and test those models in discovery — we do not claim Open Charge Alliance certification.",
+      ],
+      comparison: {
+        heading: "OCPP 1.6J vs 2.0.1 vs 2.1",
+        rowHeader: "Capability",
+        columns: ["OCPP 1.6J", "OCPP 2.0.1", "OCPP 2.1"],
+        rows: [
+          {
+            label: "Smart charging",
+            cells: [
+              "Charging profiles and basic load limits as scoped",
+              "Richer TransactionEvent-based control and profiles",
+              "Extends 2.x smart-charging for mixed fleets when firmware supports it",
+            ],
+          },
+          {
+            label: "ISO 15118 / Plug & Charge",
+            cells: [
+              "Limited / vendor-specific extensions only",
+              "Backend readiness for ISO 15118 when scoped — no live PnC network claim",
+              "Clearer 2.x path for ISO 15118 use-cases when your chargers support it",
+            ],
+          },
+          {
+            label: "Security profiles",
+            cells: [
+              "TLS and basic auth patterns common in the field",
+              "Security profiles (including certificate-based options) as scoped",
+              "Continues the 2.x security-profile model; confirm per firmware",
+            ],
+          },
+          {
+            label: "Device model",
+            cells: [
+              "Core, firmware and config keys; limited structured device tree",
+              "Full device model for components, variables and monitoring",
+              "Builds on the 2.0.1 device model for newer charger firmware",
+            ],
+          },
+        ],
+      },
+    },
+    {
       id: "protocols",
       tocLabel: "Protocols & standards",
       heading: "Which protocols does the CMS support?",
       schemaDescription:
-        "OCPP 1.6J, OCPP 2.0.1 and OCPI 2.2.1 built to the specification and tested against your chargers.",
+        "OCPP 1.6J, 2.0.1 and 2.1 plus OCPI 2.2.1 built to the specification and tested against your chargers.",
       paragraphs: [
         "We build to the published specifications and test against the charger models in your scope. That is not an Open Charge Alliance certification claim. Tested / integrated with (on PlugOne): Ecoplug, Sonic, ChargeMOD, and ChargeIndia (OCPI hub).",
       ],
@@ -366,6 +435,13 @@ export const evChargingPageContent = {
             ],
           },
           {
+            label: "OCPP 2.1",
+            cells: [
+              "2.x extensions including clearer ISO 15118 paths when firmware supports them",
+              "Scoped only when your charger models speak 2.1",
+            ],
+          },
+          {
             label: "OCPI 2.2.1",
             cells: [
               "Credentials, locations, tariffs, tokens, sessions, CDRs, commands",
@@ -375,7 +451,7 @@ export const evChargingPageContent = {
           {
             label: "ISO 15118 / Plug & Charge",
             cells: [
-              "Backend readiness on the OCPP 2.0.1 path when scoped",
+              "Backend readiness on the OCPP 2.x path when scoped",
               "No live Plug & Charge network claim",
             ],
           },

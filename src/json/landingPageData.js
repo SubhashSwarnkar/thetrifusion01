@@ -103,14 +103,13 @@ export const Portfolios = [
     imageUrl: liveShot("plugone-ev-charging-platform"),
     type: "Mobile Apps",
     featured: true,
-    contentUpdatedAt: "2026-11-16",
+    contentUpdatedAt: "2026-11-25",
     cardDescription:
       "EV charging management software — OCPP + OCPI, live charger map, iOS + Android + web",
     relatedServiceSlug: "ev-charging-app-development",
-    seoTitle:
-      "PlugOne EV Charging Platform Case Study | OCPP & OCPI CMS | TheTriFusion",
+    seoTitle: "PlugOne EV Charging Platform | OCPP CSMS | India",
     seoDescription:
-      "Owner-approved PlugOne case study: TheTriFusion built the EV charging CMS and driver apps with OCPP, OCPI roaming via ChargeIndia, and Ecoplug, Sonic and ChargeMOD integrations. Live at plugone.in.",
+      "Case study: TheTriFusion built PlugOne’s EV charging platform — OCPP CSMS, driver apps and OCPI roaming in India. Live at plugone.in.",
     description:
       "PlugOne is India's unified EV charging platform. It connects EV owners to nearby charging stations in real time, with an interactive map, charging-status tracking, a smart mobility dashboard, and session management across charging networks.",
     responsibility: [
@@ -169,10 +168,13 @@ export const Portfolios = [
     imageUrl: liveShot("connect-dairy-supply-chain"),
     type: "Mobile Apps",
     featured: true,
-    contentUpdatedAt: "2026-11-09",
+    contentUpdatedAt: "2026-11-25",
     cardDescription:
       "Agri logistics web & mobile — milk/feed fleets, live tracking, role dashboards",
     relatedServiceSlug: "crm-erp-development",
+    seoTitle: "Connect Dairy Supply Chain | Portfolio | TheTriFusion",
+    seoDescription:
+      "Connect Dairy case study: agri-logistics web and mobile — milk/feed fleets, live tracking, role dashboards and P&L. Live at connectdairy.in.",
     description:
       "Connect Dairy (AtharvNarayan) is a live agri-logistics platform for dairy and feed operations: milk-truck management, feed-truck distribution, feed business workflows, live fleet tracking, role-based dashboards, and P&L variance analytics.",
     responsibility: [
@@ -200,7 +202,7 @@ export const Portfolios = [
     imageUrl: liveShot("atharv-narayan-dairy-logistics-website"),
     type: "Website",
     featured: true,
-    contentUpdatedAt: "2026-11-09",
+    contentUpdatedAt: "2026-11-25",
     tags: [
       "dairy logistics",
       "milk transportation",
@@ -216,6 +218,9 @@ export const Portfolios = [
     cardDescription:
       "Bilingual dairy logistics website — Bhilwara & Jaipur milk transport, manpower, cattle feed, tenders",
     relatedServiceSlug: "website-development",
+    seoTitle: "Atharv Narayan Dairy Solutions | Portfolio | TheTriFusion",
+    seoDescription:
+      "Atharv Narayan Dairy Solutions: bilingual English/Hindi dairy logistics website for Bhilwara and Jaipur — milk transport, manpower, cattle feed and tenders.",
     description:
       "Atharv Narayan Dairy Solutions is a live bilingual (English/Hindi) website for a dairy logistics and manpower partner in Bhilwara and Jaipur, Rajasthan. The site presents hygienic temperature-controlled milk transportation, trained dairy manpower, cattle-feed supply, and tender documentation support, with service pages, enquiry forms, and WhatsApp-ready contact. Group verticals on the live site include Manvender Singh Enterprises, Atharv Narayan Cattle Feed, and Atharv Narayan Tenders.",
     responsibility: [
@@ -243,10 +248,13 @@ export const Portfolios = [
     imageUrl: Recruiting,
     type: "Mobile Apps",
     featured: true,
-    contentUpdatedAt: "2026-11-09",
+    contentUpdatedAt: "2026-11-25",
     cardDescription:
       "Ecommerce + POS admin — checkout, inventory, online and offline Indian retail",
     relatedServiceSlug: "website-development",
+    seoTitle: "DailyConcepts Ecommerce + POS | Portfolio | TheTriFusion",
+    seoDescription:
+      "DailyConcepts India case study: ecommerce storefront with POS-style admin for online and offline retail. Live at dailyconceptsindia.com.",
     description:
       "Daily Concepts India is an e-commerce platform offering a seamless shopping experience with an integrated Point of Sales (POS) system in the Admin Panel. It features UI/UX-focused design, efficient order management, and a smooth checkout process, making it ideal for both online and offline sales.",
     responsibility: [

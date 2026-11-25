@@ -8,14 +8,14 @@ import { NAP_LINE, SOURCES, TEAM } from "./_shared";
  * Owner-confirmed 2026-11-13: PlugOne uses OCPP (direct) + OCPI (roaming); integrated Ecoplug, Sonic, ChargeMOD, ChargeIndia OCPI hub.
  */
 export default {
-  contentUpdatedAt: "2026-11-18",
+  contentUpdatedAt: "2026-11-25",
   replaceFaqs: true,
   replaceRelatedLinks: true,
-  metaTitle: "EV Charging Management Software India | OCPP CMS & App",
+  metaTitle: "EV Charging App & CSMS Software Development | OCPP",
   bannerTitle:
     "EV Charging Management Software & White-Label Charging App for CPOs in India",
   metaDescription:
-    "White-label EV charging CMS and driver app for Indian CPOs: OCPP 1.6J/2.0.1, OCPI roaming, UPI billing, GST invoices. Live client: PlugOne.",
+    "EV charging app and CSMS software development for Indian CPOs: OCPP 1.6J/2.0.1/2.1, OCPI roaming, UPI billing, GST invoices. Live client: PlugOne.",
   keywords:
     "EV charging management software India, EV charging CMS, OCPP CSMS, charge point management system, white label EV charging app, OCPI roaming India, EV charging app development company",
   whyHeading: "Why charge point operators choose TheTriFusion",

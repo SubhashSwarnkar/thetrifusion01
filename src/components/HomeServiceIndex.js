@@ -115,6 +115,13 @@ const GROUPS = [
         price: "From ₹3,00,000",
       },
       {
+        href: absoluteSiteUrl("/services/erp-software-development"),
+        slug: "erp-software-development",
+        title: "ERP software",
+        benefit: "GST finance, inventory, and multi-branch",
+        price: "From ₹6,00,000",
+      },
+      {
         href: absoluteSiteUrl("/services/rpa"),
         slug: "rpa",
         title: "RPA services",
