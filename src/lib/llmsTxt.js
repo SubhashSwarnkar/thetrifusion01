@@ -309,7 +309,7 @@ Who: CPOs & startups, franchise/DOCO owners, fleets, OEMs, real estate/RWAs/hosp
 Price from: ₹4,50,000 / ₹9,00,000 / ₹18,00,000 ex-GST after discovery (starting ranges, not a fixed package).
 Live client: PlugOne (https://plugone.in) — OCPP + OCPI; Ecoplug, Sonic, ChargeMOD, ChargeIndia (OCPI hub).
 Contact: ${apex("/contact")} · WhatsApp +91 63781 33780
-Protocol docs: OCPP https://openchargealliance.org/protocols/ocpp/ · OCPI https://evroaming.org/
+Protocol docs: OCPP https://openchargealliance.org/protocols/open-charge-point-protocol/ · OCPI https://evroaming.org/
 
 ### CRM development
 URL: ${apex("/services/crm-erp-development")}
