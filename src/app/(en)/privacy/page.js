@@ -6,7 +6,7 @@ import { buildMetadata } from "lib/seoConfig";
 export const metadata = buildMetadata({
   title: "Privacy Policy | TheTriFusion",
   description:
-    "How Trifusion Infotech Private Limited collects and uses enquiry data.",
+    "How Trifusion Infotech Pvt Ltd (TheTriFusion) in Jaipur collects, uses and stores enquiry and website data when you contact us or use thetrifusion.in.",
   keywords: "privacy policy, TheTriFusion",
   path: "/privacy",
 });

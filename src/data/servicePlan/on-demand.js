@@ -11,7 +11,7 @@ export default {
   metaTitle: "Hire Dedicated Developers India | React & Node from Jaipur",
   bannerTitle: "Hire Dedicated Developers in India",
   metaDescription:
-    "Hire React, Next.js, Node and mobile developers from Jaipur — part-time or full-time, named lead, IST/UK overlap. Project work from ₹50,000; monthly rates scoped.",
+    "Hire React, Next.js, Node and mobile developers from Jaipur — named lead, IST/UK overlap. Project work from ₹50,000; monthly rates scoped in writing.",
   keywords:
     "hire dedicated developers India, hire React developers India, staff augmentation company Jaipur, hire Node developers India, dedicated development team Jaipur, hire developers Jaipur",
   industries: [],

@@ -6,7 +6,7 @@ import { buildMetadata } from "lib/seoConfig";
 export const metadata = buildMetadata({
   title: "Terms of Service | TheTriFusion",
   description:
-    "Terms for using the TheTriFusion website and requesting project work.",
+    "Terms for using thetrifusion.in and hiring Trifusion Infotech Pvt Ltd (TheTriFusion) in Jaipur for software, websites, apps and digital projects.",
   keywords: "terms of service, TheTriFusion",
   path: "/terms",
 });

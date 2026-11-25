@@ -18,7 +18,7 @@ export const pages = {
   "/about": {
     title: "About TheTriFusion | Software Company in Jaipur",
     description:
-      "Trifusion Infotech Private Limited (TheTriFusion) is a Jaipur software company founded in 2026, DPIIT-recognised under Startup India, building EV charging software, apps, and websites.",
+      "TheTriFusion (Trifusion Infotech Pvt Ltd) is a Jaipur software company founded in 2026, DPIIT-recognised under Startup India — EV charging software, apps and websites.",
     keywords:
       "software company Jaipur, IT company Rajasthan, about TheTriFusion, Startup India, EV charging software Jaipur",
   },

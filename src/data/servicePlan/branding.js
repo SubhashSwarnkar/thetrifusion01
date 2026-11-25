@@ -13,7 +13,7 @@ export default {
   metaTitle: "Branding Agency India | Identity Systems from Jaipur",
   bannerTitle: "Brand strategy and identity systems from Jaipur",
   metaDescription:
-    "Brand strategy, naming, logo suite, colour, typography and guidelines PDF from Jaipur for Indian businesses — then a website that uses the system. Packs from ₹30,000.",
+    "Brand strategy, naming, logo suite, colour, type and guidelines from Jaipur for Indian businesses — then a website that uses the system. From ₹30,000.",
   keywords:
     "branding agency India, brand strategy Jaipur, brand identity system India, brand guidelines company Jaipur, naming and logo identity",
   description:
