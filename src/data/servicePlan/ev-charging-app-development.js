@@ -8,7 +8,7 @@ import { NAP_LINE, SOURCES, TEAM } from "./_shared";
  * Owner-confirmed 2026-11-13: PlugOne uses OCPP (direct) + OCPI (roaming); integrated Ecoplug, Sonic, ChargeMOD, ChargeIndia OCPI hub.
  */
 export default {
-  contentUpdatedAt: "2026-11-25",
+  contentUpdatedAt: "2026-11-28",
   replaceFaqs: true,
   replaceRelatedLinks: true,
   metaTitle: "EV Charging App & CSMS Software Development | OCPP",

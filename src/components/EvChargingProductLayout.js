@@ -12,6 +12,7 @@ import FounderByline from "components/FounderByline";
 import EvArchitectureDiagram from "components/EvArchitectureDiagram";
 import ShortLeadForm from "components/ShortLeadForm";
 import WhatsAppButton from "components/WhatsAppButton";
+import RelatedGuides from "components/RelatedGuides";
 import { FOUNDER } from "data/founder";
 import { trackEvent, AnalyticsEvents } from "utils/analytics";
 import { COMPANY_PHONE_DISPLAY, WHATSAPP_NUMBER } from "data/companyInfo";
@@ -197,6 +198,7 @@ function StickyCtaBar({ whatsappHref, slug }) {
 export default function EvChargingProductLayout({
   service,
   relatedLinks = [],
+  relatedGuides = [],
 }) {
   const modulesSection = service.detailSections?.find((s) => s.id === "modules");
   const whoSection = service.detailSections?.find((s) => s.id === "who-its-for");
@@ -389,6 +391,19 @@ export default function EvChargingProductLayout({
           <p className="mt-3 text-sm leading-relaxed text-gray-600">
             {FOUNDER.bio} {service.title} content is reviewed by {FOUNDER.name}.
           </p>
+          {service.contentUpdatedAt ? (
+            <p className="mt-2 text-sm text-gray-500">
+              Last reviewed{" "}
+              <time dateTime={service.contentUpdatedAt}>
+                {new Date(service.contentUpdatedAt).toLocaleDateString("en-IN", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </time>{" "}
+              · reviewed by {FOUNDER.name}, CEO
+            </p>
+          ) : null}
         </div>
       </section>
 
@@ -1025,6 +1040,14 @@ export default function EvChargingProductLayout({
             ))}
           </div>
         </section>
+      ) : null}
+
+      {relatedGuides.length > 0 ? (
+        <RelatedGuides
+          guides={relatedGuides}
+          heading="Guides for this service"
+          kicker="Blog"
+        />
       ) : null}
 
       {/* Related links — single section */}

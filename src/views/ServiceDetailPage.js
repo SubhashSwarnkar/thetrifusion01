@@ -466,6 +466,7 @@ export default function ServiceDetailPage({
           <EvChargingProductLayout
             service={service}
             relatedLinks={mergedLinks}
+            relatedGuides={relatedGuides}
             otherServices={otherServices}
           />
         </main>
