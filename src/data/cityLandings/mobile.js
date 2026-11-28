@@ -30,7 +30,7 @@ export const mobileCityLandings = [
     ],
     outcomeLine:
       "A Jaipur jeweller, hotel or field team gets one React Native or Flutter app on both stores, with the admin the shop actually uses — scoped at Patrakar Colony from ₹50,000.",
-    intro: `TheTriFusion is a mobile app development company in Jaipur. We ship one product for iOS and Android, usually on React Native or Flutter, plus the backend and web admin. The studio is ${NAP}. Published mobile work starts from ${PRICE.basic}. Store-only native MVPs are listed from ₹2,50,000 each on pricing. This page is the Jaipur service area. The parent capability write-up is mobile app development.`,
+    intro: `TheTriFusion is a [mobile app development company in India](${PARENT}) with its studio in Jaipur. We ship one product for iOS and Android, usually on React Native or Flutter, plus the backend and web admin. The studio is ${NAP}. Published mobile work starts from ${PRICE.basic}. Store-only native MVPs are listed from ₹2,50,000 each on pricing. This page is the Jaipur service area.`,
     sections: [
       {
         title: "Apps Jaipur businesses actually ask for",

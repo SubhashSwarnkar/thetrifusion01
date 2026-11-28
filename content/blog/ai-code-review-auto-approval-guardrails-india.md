@@ -5,6 +5,10 @@ slug: "ai-code-review-auto-approval-guardrails-india"
 date: "2026-11-24"
 author: "TheTriFusion team"
 targetService: "devops"
+secondary_service_urls:
+  - "/services/ai-development"
+  - "/services/business-modernization"
+  - "/services/ev-charging-app-development"
 sources:
   - title: "TechCrunch: Anthropic launches Claude Ship for AI agents on pull requests"
     url: "https://techcrunch.com/2026/11/23/anthropic-launches-claude-ship-letting-ai-agents-review-fix-and-approve-code-changes/"

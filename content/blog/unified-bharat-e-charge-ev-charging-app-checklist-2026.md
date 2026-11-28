@@ -5,6 +5,9 @@ slug: "unified-bharat-e-charge-ev-charging-app-checklist-2026"
 date: "2026-11-28"
 author: "TheTriFusion team"
 targetService: "ev-charging-app-development"
+secondary_service_urls:
+  - "/services/fintech-app-development"
+  - "/services/mobile-app-development"
 sources:
   - title: "The Hindu BusinessLine: Govt testing unified EV charging in 5 states"
     url: "https://www.thehindubusinessline.com/news/national/govt-testing-unified-ev-charging-in-5-states-aims-to-scale-it-further/article71724968.ece"

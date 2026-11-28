@@ -5,6 +5,9 @@ slug: "mailchimp-sale-email-marketing-plan-india"
 date: "2026-11-21"
 author: "TheTriFusion team"
 targetService: "digital-marketing"
+secondary_service_urls:
+  - "/services/crm-erp-development"
+  - "/services/website-development"
 sources:
   - title: "TechCrunch: Bending Spoons buys Mailchimp for $3.68 billion"
     url: "https://techcrunch.com/2026/11/20/bending-spoons-buys-mailchimp-for-3-68-billion/"

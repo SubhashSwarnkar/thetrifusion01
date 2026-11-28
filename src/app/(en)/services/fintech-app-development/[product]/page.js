@@ -5,9 +5,15 @@ import {
   FINTECH_PRODUCT_SLUGS,
   getFintechProductBySlug,
 } from "data/fintechProductPages";
-import { breadcrumbSchema, faqSchema, serviceSchema } from "lib/schema";
+import {
+  breadcrumbSchema,
+  faqSchema,
+  serviceSchema,
+  webPageSchema,
+} from "lib/schema";
 import { buildMetadata } from "lib/seoConfig";
 import { getMarkdownGuidesForService } from "lib/blogMarkdown";
+import { absoluteSiteUrl } from "config/site";
 
 export function generateStaticParams() {
   return FINTECH_PRODUCT_SLUGS.map((product) => ({ product }));
@@ -32,6 +38,8 @@ export default function RoutePage({ params }) {
   const page = getFintechProductBySlug(params.product);
   if (!page) notFound();
 
+  const pageUrl = absoluteSiteUrl(page.path);
+
   return (
     <>
       <JsonLd
@@ -41,6 +49,7 @@ export default function RoutePage({ params }) {
           description: page.metaDescription,
           path: page.path,
           price: 99999,
+          areaServed: [{ "@type": "Country", name: "India" }],
         })}
       />
       <JsonLd
@@ -51,12 +60,20 @@ export default function RoutePage({ params }) {
           { name: page.breadcrumbName, path: page.path },
         ])}
       />
+      <JsonLd
+        data={webPageSchema({
+          path: page.path,
+          name: page.metaTitle,
+          dateModified: page.contentUpdatedAt,
+          aboutId: `${pageUrl}#service`,
+        })}
+      />
       <JsonLd data={faqSchema(page.faqs)} />
       <FintechProductPage
         slug={params.product}
         relatedGuides={getMarkdownGuidesForService(
           `fintech-app-development/${params.product}`,
-          3
+          4
         )}
       />
     </>

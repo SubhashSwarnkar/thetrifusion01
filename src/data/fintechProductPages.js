@@ -14,7 +14,7 @@ export const fintechProductPages = [
     slug: "bbps-software",
     path: `${FINTECH_HUB_PATH}/bbps-software`,
     breadcrumbName: "BBPS software",
-    contentUpdatedAt: "2026-11-25",
+    contentUpdatedAt: "2026-11-28",
     metaTitle: "BBPS Software Development India | Bharat BillPay Panels",
     h1: "Bharat BillPay (BBPS) software for Indian retailer networks",
     metaDescription:
@@ -22,6 +22,20 @@ export const fintechProductPages = [
     keywords:
       "BBPS software development India, Bharat BillPay retailer app, BBPOU bill payment software Jaipur, white label BBPS panels",
     serviceType: "BBPS software development",
+    lead: "White-label Bharat BillPay panels from Jaipur for retailer networks that already have BBPOU access.",
+    answerFirst: {
+      id: "quick-answer",
+      heading: "What is BBPS software and what does it cost?",
+      text:
+        "TheTriFusion (Trifusion Infotech Pvt Ltd) in Jaipur builds white-label BBPS software for Indian retailer networks: fetch/pay at the counter, distributor wallets and reconciliation admin. Published plans start at ₹99,999. You bring BBPOU or Bharat BillPay API access — we are not a BBPOU and do not issue NPCI permissions.",
+      facts: [
+        { label: "Studio", value: "Jaipur, Rajasthan — remote delivery across India" },
+        { label: "Starting price", value: "From ₹99,999 (published Basic fintech plan)" },
+        { label: "You bring", value: "BBPOU / Bharat BillPay API access" },
+        { label: "You own the code", value: "After completion and payment" },
+        { label: "Office", value: NAP_LINE },
+      ],
+    },
     answer:
       "Bharat BillPay (BBPS) is NPCI’s common rail for collecting payments against enrolled billers — electricity, water, gas, broadband, education fees and other categories your BBPOU enables. TheTriFusion builds the white-label software layer from Jaipur: a retailer counter flow for fetch and pay, distributor wallets that fund those counters, and an admin that reconciles attempts against BBPOU reports. You arrange BBPOU or aggregator credentials on Bharat BillPay; we do not issue NPCI permissions or act as a BBPOU. Published fintech plans start at ₹99,999 (Basic), with Standard at ₹1,99,999 and Premium at ₹3,99,999. Partner fees, settlement windows and complaint SLAs stay on your BBPOU contract. Primary product overview: [NPCI Bharat BillPay](" +
       SOURCES.npciBbps +
@@ -32,6 +46,55 @@ export const fintechProductPages = [
       { label: "We build", value: "Fetch/pay UI, wallet hierarchy, reconciliation admin" },
       { label: "Office", value: NAP_LINE },
     ],
+    comparison: {
+      heading: "Ready-made portal vs white-label vs custom build",
+      intro:
+        "Same published fintech plans apply whether you start from a white-label panel or a custom brief. Licences and API access always stay with you.",
+      rowHeader: " ",
+      columns: ["Ready-made portal", "White-label build", "Custom build"],
+      rows: [
+        {
+          label: "Who owns the code",
+          cells: [
+            "Vendor keeps the product; you rent access",
+            "You own the source after completion and payment",
+            "You own the source after completion and payment",
+          ],
+        },
+        {
+          label: "Branding",
+          cells: [
+            "Often limited to logo and colours on their shell",
+            "Your brand, domain and app chrome",
+            "Your brand plus workflows that do not fit a panel",
+          ],
+        },
+        {
+          label: "Who holds licences / APIs",
+          cells: [
+            "Still you — a portal does not issue BBPOU, bank or aggregator rights",
+            "You bring BBPOU, sponsor bank or API partner credentials",
+            "You bring the same credentials; we wire only what the brief locks",
+          ],
+        },
+        {
+          label: "Change requests",
+          cells: [
+            "Wait on the vendor roadmap",
+            "Scoped change requests on your repo",
+            "Scoped change requests on your repo",
+          ],
+        },
+        {
+          label: "Typical fit",
+          cells: [
+            "Trying a rail with minimal commitment",
+            "Retailer networks that need their own brand on a known rail",
+            "Unusual hierarchy, multi-rail ops or integrations a panel will not hold",
+          ],
+        },
+      ],
+    },
     sections: [
       {
         heading: "What Bharat BillPay software is for",
@@ -146,7 +209,7 @@ export const fintechProductPages = [
     slug: "aeps-software",
     path: `${FINTECH_HUB_PATH}/aeps-software`,
     breadcrumbName: "AEPS software",
-    contentUpdatedAt: "2026-11-25",
+    contentUpdatedAt: "2026-11-28",
     metaTitle: "AEPS Software Development India | AePS Retailer Apps",
     h1: "AePS software for Aadhaar-enabled payments at Indian counters",
     metaDescription:
@@ -154,6 +217,20 @@ export const fintechProductPages = [
     keywords:
       "AEPS software development India, AePS retailer app Jaipur, Aadhaar enabled payment system software, white label AePS biometric",
     serviceType: "AEPS software development",
+    lead: "White-label AePS retailer software from Jaipur for networks with sponsor-bank biometric access.",
+    answerFirst: {
+      id: "quick-answer",
+      heading: "What is AePS software and what does it cost?",
+      text:
+        "TheTriFusion (Trifusion Infotech Pvt Ltd) in Jaipur builds white-label AePS software for Indian counters: biometric retailer flow, distributor hierarchy and admin reports. Published plans start at ₹99,999. You bring sponsor-bank AePS access and bank-accepted devices — we do not certify sensors or sell a micro-ATM licence.",
+      facts: [
+        { label: "Studio", value: "Jaipur, Rajasthan — remote delivery across India" },
+        { label: "Starting price", value: "From ₹99,999 (published Basic fintech plan)" },
+        { label: "You bring", value: "Sponsor bank AePS access + bank-accepted devices" },
+        { label: "You own the code", value: "After completion and payment" },
+        { label: "Office", value: NAP_LINE },
+      ],
+    },
     answer:
       "AePS (Aadhaar Enabled Payment System) lets an authorised retailer authenticate a customer with Aadhaar biometrics and offer cash withdrawal, balance enquiry, mini statement and related services the sponsor bank enables. TheTriFusion builds white-label AePS software from Jaipur: the retailer capture flow against devices your bank already accepts, distributor hierarchy and admin reports. You arrange sponsor-bank / NPCI AePS access and the certified device list that bank requires. We do not certify sensors, issue bank permissions or sell a micro-ATM licence. Published plans: ₹99,999 / ₹1,99,999 / ₹3,99,999.",
     facts: [
@@ -162,6 +239,55 @@ export const fintechProductPages = [
       { label: "We build", value: "Biometric retailer flow, hierarchy, admin reports" },
       { label: "Office", value: NAP_LINE },
     ],
+    comparison: {
+      heading: "Ready-made portal vs white-label vs custom build",
+      intro:
+        "Same published fintech plans apply whether you start from a white-label panel or a custom brief. Licences and API access always stay with you.",
+      rowHeader: " ",
+      columns: ["Ready-made portal", "White-label build", "Custom build"],
+      rows: [
+        {
+          label: "Who owns the code",
+          cells: [
+            "Vendor keeps the product; you rent access",
+            "You own the source after completion and payment",
+            "You own the source after completion and payment",
+          ],
+        },
+        {
+          label: "Branding",
+          cells: [
+            "Often limited to logo and colours on their shell",
+            "Your brand, domain and app chrome",
+            "Your brand plus workflows that do not fit a panel",
+          ],
+        },
+        {
+          label: "Who holds licences / APIs",
+          cells: [
+            "Still you — a portal does not issue BBPOU, bank or aggregator rights",
+            "You bring BBPOU, sponsor bank or API partner credentials",
+            "You bring the same credentials; we wire only what the brief locks",
+          ],
+        },
+        {
+          label: "Change requests",
+          cells: [
+            "Wait on the vendor roadmap",
+            "Scoped change requests on your repo",
+            "Scoped change requests on your repo",
+          ],
+        },
+        {
+          label: "Typical fit",
+          cells: [
+            "Trying a rail with minimal commitment",
+            "Retailer networks that need their own brand on a known rail",
+            "Unusual hierarchy, multi-rail ops or integrations a panel will not hold",
+          ],
+        },
+      ],
+    },
     sections: [
       {
         heading: "Who needs AePS software (and who does not)",
@@ -289,7 +415,7 @@ export const fintechProductPages = [
     slug: "dmt-software",
     path: `${FINTECH_HUB_PATH}/dmt-software`,
     breadcrumbName: "DMT software",
-    contentUpdatedAt: "2026-11-25",
+    contentUpdatedAt: "2026-11-28",
     metaTitle: "DMT Software Development India | Money Transfer Panels",
     h1: "DMT software for domestic money transfer retailer networks",
     metaDescription:
@@ -297,6 +423,20 @@ export const fintechProductPages = [
     keywords:
       "DMT software development India, domestic money transfer retailer app, XDMT software Jaipur, IMPS NEFT remittance panels",
     serviceType: "DMT software development",
+    lead: "White-label DMT / remittance panels from Jaipur for agent networks with a bank or aggregator contract.",
+    answerFirst: {
+      id: "quick-answer",
+      heading: "What is DMT software and what does it cost?",
+      text:
+        "TheTriFusion (Trifusion Infotech Pvt Ltd) in Jaipur builds white-label DMT software for Indian retailer networks: remitter KYC, beneficiaries, transfer status and float admin. Published plans start at ₹99,999. You bring the bank or aggregator remittance contract — we do not issue RBI licences or move the money ourselves.",
+      facts: [
+        { label: "Studio", value: "Jaipur, Rajasthan — remote delivery across India" },
+        { label: "Starting price", value: "From ₹99,999 (published Basic fintech plan)" },
+        { label: "You bring", value: "Bank or aggregator DMT / remittance contract" },
+        { label: "You own the code", value: "After completion and payment" },
+        { label: "Office", value: NAP_LINE },
+      ],
+    },
     answer:
       "Domestic money transfer (DMT) — and partner-branded XDMT variants — lets a retailer collect a send-money request, apply remitter KYC rules, pick or add a beneficiary, and push funds through the bank or aggregator you contract (typically IMPS or NEFT as that partner exposes). TheTriFusion builds the white-label DMT software from Jaipur: sender onboarding, beneficiary handling, charge breakup, distributor float and admin reconciliation. DMT is not an NPCI-branded product in the same way Bharat BillPay and AePS are; your commercial rail is the bank or aggregator. Published plans start at ₹99,999. We do not issue RBI licences or invent per-transaction payout rates on this page.",
     facts: [
@@ -305,6 +445,55 @@ export const fintechProductPages = [
       { label: "We build", value: "Remitter KYC UI, beneficiaries, transfer status, float admin" },
       { label: "Office", value: NAP_LINE },
     ],
+    comparison: {
+      heading: "Ready-made portal vs white-label vs custom build",
+      intro:
+        "Same published fintech plans apply whether you start from a white-label panel or a custom brief. Licences and API access always stay with you.",
+      rowHeader: " ",
+      columns: ["Ready-made portal", "White-label build", "Custom build"],
+      rows: [
+        {
+          label: "Who owns the code",
+          cells: [
+            "Vendor keeps the product; you rent access",
+            "You own the source after completion and payment",
+            "You own the source after completion and payment",
+          ],
+        },
+        {
+          label: "Branding",
+          cells: [
+            "Often limited to logo and colours on their shell",
+            "Your brand, domain and app chrome",
+            "Your brand plus workflows that do not fit a panel",
+          ],
+        },
+        {
+          label: "Who holds licences / APIs",
+          cells: [
+            "Still you — a portal does not issue BBPOU, bank or aggregator rights",
+            "You bring BBPOU, sponsor bank or API partner credentials",
+            "You bring the same credentials; we wire only what the brief locks",
+          ],
+        },
+        {
+          label: "Change requests",
+          cells: [
+            "Wait on the vendor roadmap",
+            "Scoped change requests on your repo",
+            "Scoped change requests on your repo",
+          ],
+        },
+        {
+          label: "Typical fit",
+          cells: [
+            "Trying a rail with minimal commitment",
+            "Retailer networks that need their own brand on a known rail",
+            "Unusual hierarchy, multi-rail ops or integrations a panel will not hold",
+          ],
+        },
+      ],
+    },
     sections: [
       {
         heading: "Domestic money transfer for agent networks in India",
@@ -434,7 +623,7 @@ export const fintechProductPages = [
     slug: "recharge-software",
     path: `${FINTECH_HUB_PATH}/recharge-software`,
     breadcrumbName: "Recharge software",
-    contentUpdatedAt: "2026-11-25",
+    contentUpdatedAt: "2026-11-28",
     metaTitle: "Recharge Software Development India | Mobile & DTH Panels",
     h1: "Recharge software for mobile and DTH retailer networks in India",
     metaDescription:
@@ -442,6 +631,20 @@ export const fintechProductPages = [
     keywords:
       "recharge software development India, mobile DTH recharge panel Jaipur, white label recharge aggregator software, prepaid top-up retailer app",
     serviceType: "Recharge software development",
+    lead: "White-label mobile and DTH recharge panels from Jaipur for networks with an aggregator API.",
+    answerFirst: {
+      id: "quick-answer",
+      heading: "What is recharge software and what does it cost?",
+      text:
+        "TheTriFusion (Trifusion Infotech Pvt Ltd) in Jaipur builds white-label recharge software for Indian retailer networks: operator and plan UI, commissions and high-volume status admin. Published plans start at ₹99,999. You bring the recharge aggregator API — we do not hold telecom inventory or resell airtime as an operator.",
+      facts: [
+        { label: "Studio", value: "Jaipur, Rajasthan — remote delivery across India" },
+        { label: "Starting price", value: "From ₹99,999 (published Basic fintech plan)" },
+        { label: "You bring", value: "Recharge aggregator API and commercial margin sheet" },
+        { label: "You own the code", value: "After completion and payment" },
+        { label: "Office", value: NAP_LINE },
+      ],
+    },
     answer:
       "Recharge software lets a retailer sell prepaid mobile, DTH and similar top-ups through a branded app — operator lists, plans and denominations come from the recharge API partner you contract. TheTriFusion builds the retailer flow, distributor stock and admin from Jaipur. We do not hold telecom inventory, resell airtime as an operator, or claim TRAI channel partnerships. Published fintech plans start at ₹99,999 (Basic), ₹1,99,999 (Standard) and ₹3,99,999 (Premium). Margins, reserve balances and operator downtime stay on the aggregator’s side of the ledger.",
     facts: [
@@ -450,6 +653,55 @@ export const fintechProductPages = [
       { label: "We build", value: "Operator/plan UI, commission config, high-volume status admin" },
       { label: "Office", value: NAP_LINE },
     ],
+    comparison: {
+      heading: "Ready-made portal vs white-label vs custom build",
+      intro:
+        "Same published fintech plans apply whether you start from a white-label panel or a custom brief. Licences and API access always stay with you.",
+      rowHeader: " ",
+      columns: ["Ready-made portal", "White-label build", "Custom build"],
+      rows: [
+        {
+          label: "Who owns the code",
+          cells: [
+            "Vendor keeps the product; you rent access",
+            "You own the source after completion and payment",
+            "You own the source after completion and payment",
+          ],
+        },
+        {
+          label: "Branding",
+          cells: [
+            "Often limited to logo and colours on their shell",
+            "Your brand, domain and app chrome",
+            "Your brand plus workflows that do not fit a panel",
+          ],
+        },
+        {
+          label: "Who holds licences / APIs",
+          cells: [
+            "Still you — a portal does not issue BBPOU, bank or aggregator rights",
+            "You bring BBPOU, sponsor bank or API partner credentials",
+            "You bring the same credentials; we wire only what the brief locks",
+          ],
+        },
+        {
+          label: "Change requests",
+          cells: [
+            "Wait on the vendor roadmap",
+            "Scoped change requests on your repo",
+            "Scoped change requests on your repo",
+          ],
+        },
+        {
+          label: "Typical fit",
+          cells: [
+            "Trying a rail with minimal commitment",
+            "Retailer networks that need their own brand on a known rail",
+            "Unusual hierarchy, multi-rail ops or integrations a panel will not hold",
+          ],
+        },
+      ],
+    },
     sections: [
       {
         heading: "Prepaid top-ups as a product (not Bharat BillPay)",

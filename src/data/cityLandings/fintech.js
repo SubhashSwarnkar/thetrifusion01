@@ -30,7 +30,7 @@ export const fintechCityLandings = [
     ],
     outcomeLine:
       "A Rajasthan retailer network gets BBPS, AEPS, DMT or recharge panels built in Jaipur — you bring the bank or aggregator; we build the software. We do not issue NPCI licences.",
-    intro: `TheTriFusion builds white-label BBPS, AEPS, DMT, recharge and UPI software from ${NAP}: retailer app, distributor panel and admin. Published plans start from ${PRICE.basic}. You bring the bank, BBPOU or API partner. We do not issue RBI or NPCI licences. Parent page: fintech app development.`,
+    intro: `TheTriFusion builds white-label BBPS, AEPS, DMT, recharge and UPI software from ${NAP}: retailer app, distributor panel and admin. Published plans start from ${PRICE.basic}. You bring the bank, BBPOU or API partner. We do not issue RBI or NPCI licences. Parent page: [fintech app development](${PARENT}).`,
     sections: [
       {
         title: "What Rajasthan operators actually need",

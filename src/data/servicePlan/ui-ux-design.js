@@ -6,7 +6,7 @@ import { NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: designer bios beyond the team-page name and role.
  */
 export default {
-  contentUpdatedAt: "2026-11-09",
+  contentUpdatedAt: "2026-11-28",
   metaTitle: "UI/UX Design Agency in India | Figma Product Design from Jaipur",
   bannerTitle: "UI/UX Design Agency in India — Jaipur Studio",
   metaDescription:
@@ -70,6 +70,15 @@ export default {
       heading: "Who leads the work",
       paragraphs: [
         `Named person on the [team page](/team): ${TEAM.design}. ${TEAM.frontend} implement when the same engagement includes build.`,
+      ],
+    },
+    {
+      id: "ux-how-to-choose",
+      heading: "How to choose / when we're not the right fit",
+      paragraphs: [
+        "Choose this page when you need product flows, Figma screens and a developer-ready handoff for a website or app — not posters or social kits.",
+        "We are not the right fit for campaign creatives alone ([graphic design](/services/graphic-design)) or a full brand identity programme ([branding](/services/branding)). A mood board with no flows or component set is a poor fit.",
+        "If the build is already locked and you only need extra React or mobile hours, use [hire dedicated developers](/services/on-demand). If you want the same Jaipur team to ship the product after design, start from [website development](/services/website-development) or [mobile app development](/services/mobile-app-development) and include UI/UX in that brief.",
       ],
     },
   ],

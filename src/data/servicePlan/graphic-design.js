@@ -7,7 +7,7 @@ import { NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: real design samples with permission.
  */
 export default {
-  contentUpdatedAt: "2026-11-23",
+  contentUpdatedAt: "2026-11-28",
   replaceFaqs: true,
   replaceRelatedLinks: true,
   metaTitle: "Graphic Design Company in India | Social, Ads & Print from Jaipur",
@@ -195,6 +195,15 @@ export default {
       paragraphs: [
         "Final exports in the sizes listed in the brief, a simple naming convention so ads managers can find files, and source files when the contract includes AI / PSD / Figma. For print, PDF/X or printer-requested formats as scoped.",
         "We do not invent engagement metrics, “creatives that guarantee sales,” or client logos we cannot show. Samples appear only with permission.",
+      ],
+    },
+    {
+      id: "graphic-how-to-choose",
+      heading: "How to choose / when we're not the right fit",
+      paragraphs: [
+        "Choose this page when the brand system already exists and you need social, ad, brochure, catalogue or packaging artwork that matches the live site.",
+        "We are not the right fit if you still need a logo, naming and guidelines — that is [branding](/services/branding). Product wireframes and Figma UI for an app or SaaS screen set belong on [UI/UX design](/services/ui-ux-design).",
+        "Skip a creative retainer if you also need someone to buy the media and report leads; that work is [digital marketing](/services/digital-marketing). We will not invent engagement metrics or “creatives that guarantee sales.”",
       ],
     },
     {

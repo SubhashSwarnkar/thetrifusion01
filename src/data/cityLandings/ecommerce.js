@@ -30,7 +30,7 @@ export const ecommerceCityLandings = [
     ],
     outcomeLine:
       "A Jaipur jeweller or craft brand gets a store that states metal, size and GST the way a buyer checks out — from ₹25,000, built at Patrakar Colony.",
-    intro: `TheTriFusion builds ecommerce websites in Jaipur: Shopify, WooCommerce or custom stores with Razorpay/UPI, Shiprocket when you already have a courier, and GST invoices on the order. The studio is ${NAP}. Published packages: website ${PRICE.website}, + Android ${PRICE.android}, + Android + iOS ${PRICE.ios}, high-end logistics ${PRICE.logistics}. The parent India write-up is ecommerce website development.`,
+    intro: `TheTriFusion builds ecommerce websites in Jaipur: Shopify, WooCommerce or custom stores with Razorpay/UPI, Shiprocket when you already have a courier, and GST invoices on the order. The studio is ${NAP}. Published packages: website ${PRICE.website}, + Android ${PRICE.android}, + Android + iOS ${PRICE.ios}, high-end logistics ${PRICE.logistics}. The parent India write-up is [ecommerce website development company in India](${PARENT}).`,
     sections: [
       {
         title: "Jewellery and craft catalogues that can check out",

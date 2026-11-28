@@ -6,6 +6,7 @@ import Header from "parts/Header";
 import Footer from "parts/Footer";
 import Breadcrumbs from "components/Breadcrumbs";
 import BrandTrustStrip from "components/BrandTrustStrip";
+import RelatedGuides from "components/RelatedGuides";
 import SEO from "components/common/SEO";
 import ServiceIcon from "components/ServiceIcon";
 import { accentAt } from "lib/themeAccents";
@@ -207,7 +208,7 @@ function ServiceCard({ service, accent }) {
   );
 }
 
-export default function ServicesPage() {
+export default function ServicesPage({ relatedGuides = [] }) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -290,6 +291,98 @@ export default function ServicesPage() {
                 </a>
               ))}
             </nav>
+          </div>
+        </section>
+
+        <section
+          id="quick-answer"
+          aria-label="What does TheTriFusion build?"
+          className="container mx-auto px-5 pb-10"
+        >
+          <div className="max-w-4xl rounded-2xl border border-theme-purple/20 bg-light-theme-purple/20 p-6 md:p-8">
+            <h2 className="text-2xl sm:text-3xl font-black text-theme-blue tracking-tight mb-3">
+              What does TheTriFusion build?
+            </h2>
+            <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
+              TheTriFusion (Trifusion Infotech Pvt Ltd) in Jaipur builds{" "}
+              <a
+                href={absoluteSiteUrl("/services/software-development")}
+                className="font-semibold text-theme-purple hover:underline"
+              >
+                custom software
+              </a>
+              ,{" "}
+              <a
+                href={absoluteSiteUrl("/services/website-development")}
+                className="font-semibold text-theme-purple hover:underline"
+              >
+                websites
+              </a>
+              ,{" "}
+              <a
+                href={absoluteSiteUrl("/services/mobile-app-development")}
+                className="font-semibold text-theme-purple hover:underline"
+              >
+                mobile apps
+              </a>
+              ,{" "}
+              <a
+                href={absoluteSiteUrl("/services/crm-erp-development")}
+                className="font-semibold text-theme-purple hover:underline"
+              >
+                CRM
+              </a>
+              ,{" "}
+              <a
+                href={absoluteSiteUrl("/services/fintech-app-development")}
+                className="font-semibold text-theme-purple hover:underline"
+              >
+                fintech panels
+              </a>
+              , and{" "}
+              <a
+                href={absoluteSiteUrl("/services/ev-charging-app-development")}
+                className="font-semibold text-theme-purple hover:underline"
+              >
+                EV charging software
+              </a>{" "}
+              for Indian businesses. You own the code after completion and
+              payment; published starting prices are on each service page.
+            </p>
+            <dl className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="rounded-xl bg-white border border-gray-100 px-4 py-3">
+                <dt className="text-xs font-bold uppercase tracking-widest text-gray-500">
+                  Studio
+                </dt>
+                <dd className="mt-1 text-sm font-semibold text-theme-blue">
+                  Jaipur, Rajasthan — remote delivery across India
+                </dd>
+              </div>
+              <div className="rounded-xl bg-white border border-gray-100 px-4 py-3">
+                <dt className="text-xs font-bold uppercase tracking-widest text-gray-500">
+                  You own
+                </dt>
+                <dd className="mt-1 text-sm font-semibold text-theme-blue">
+                  Source code after completion and payment
+                </dd>
+              </div>
+              <div className="rounded-xl bg-white border border-gray-100 px-4 py-3">
+                <dt className="text-xs font-bold uppercase tracking-widest text-gray-500">
+                  Starting prices
+                </dt>
+                <dd className="mt-1 text-sm font-semibold text-theme-blue">
+                  Published on each service page and /pricing
+                </dd>
+              </div>
+              <div className="rounded-xl bg-white border border-gray-100 px-4 py-3">
+                <dt className="text-xs font-bold uppercase tracking-widest text-gray-500">
+                  Office
+                </dt>
+                <dd className="mt-1 text-sm font-semibold text-theme-blue">
+                  {siteConfig.addressLine}
+                </dd>
+              </div>
+            </dl>
           </div>
         </section>
 
@@ -402,6 +495,12 @@ export default function ServicesPage() {
             </ul>
           </div>
         </section>
+
+        <RelatedGuides
+          guides={relatedGuides}
+          heading="Guides for this service"
+          kicker="Blog"
+        />
 
         <section id="faq" className="container mx-auto px-5 py-12">
           <div className="max-w-3xl mx-auto">

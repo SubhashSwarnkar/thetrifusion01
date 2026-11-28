@@ -4,6 +4,7 @@ import { services } from "data/servicesData";
 import { SERVICE_HUB_FAQS } from "data/serviceHub";
 import { breadcrumbSchema, faqSchema, itemListSchema } from "lib/schema";
 import { pageMetadata } from "lib/seoConfig";
+import { getLatestMarkdownGuides } from "lib/blogMarkdown";
 
 export const metadata = pageMetadata("/services");
 
@@ -26,7 +27,7 @@ export default function RoutePage() {
         })}
       />
       <JsonLd data={faqSchema(SERVICE_HUB_FAQS)} />
-      <Page />
+      <Page relatedGuides={getLatestMarkdownGuides(4)} />
     </>
   );
 }

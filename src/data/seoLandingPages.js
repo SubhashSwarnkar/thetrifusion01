@@ -66,12 +66,12 @@ export const seoLandingPages = [
     slug: "ecommerce-website-development",
     // TODO OWNER: live store links + GMV/conversion outcomes beyond DailyConcepts.
     // TODO OWNER: client quotes (Google/Clutch-verifiable).
-    title: "Ecommerce Website Development Jaipur | From ₹25,000",
-    h1: "Ecommerce Website Development Company in Jaipur, India",
+    title: "Ecommerce Website Development Company in India | From ₹25,000",
+    h1: "Ecommerce Website Development Company in India",
     navLabel: "Ecommerce website development",
     metaDescription:
-      "Shopify, WooCommerce and custom stores with Razorpay/UPI, Shiprocket and GST invoices. Built in Jaipur from ₹25,000; apps and logistics packages available.",
-    updatedAt: "2026-11-25",
+      "Shopify, WooCommerce and custom stores with Razorpay/UPI, Shiprocket and GST invoices for Indian brands. Built from Jaipur from ₹25,000; apps and logistics packages available.",
+    updatedAt: "2026-11-28",
     primaryKeyword: "ecommerce website development company",
     secondaryKeywords: [
       "ecommerce website development company in India",
@@ -86,7 +86,7 @@ export const seoLandingPages = [
       "ecommerce development services",
     ],
     intro:
-      "Ecommerce website development is the work of planning, designing, building and launching an online store: product catalog, cart, checkout, payments, shipping and an admin panel to run orders. TheTriFusion (Trifusion Infotech Pvt. Ltd.) is an ecommerce website development company in Jaipur, Rajasthan that builds Shopify, WooCommerce and custom ecommerce websites, B2B ordering portals and multi-vendor marketplaces for businesses in Jaipur, across India, and abroad.",
+      "Ecommerce website development is the work of planning, designing, building and launching an online store: product catalog, cart, checkout, payments, shipping and an admin panel to run orders. TheTriFusion (Trifusion Infotech Pvt. Ltd.) is an ecommerce website development company in India, based in Jaipur, Rajasthan, that builds Shopify, WooCommerce and custom ecommerce websites, B2B ordering portals and multi-vendor marketplaces for businesses across India and abroad. For Jaipur-local jewellery, craft and D2C briefs, see [ecommerce website development in Jaipur](/solutions/ecommerce-website-development-jaipur).",
     keyFacts: [
       { label: "Company", value: `TheTriFusion — Trifusion Infotech Pvt. Ltd., ${siteConfig.addressLine}` },
       { label: "Platforms", value: "Shopify, WooCommerce, and custom builds (Next.js, React, Node.js)" },
@@ -363,6 +363,10 @@ export const seoLandingPages = [
         href: "/solutions/ecommerce-website-development#ecommerce-website",
         label:
           "Ecommerce packages: Website ₹25,000 · + Android ₹35,000 · + Android + iOS ₹45,000 · High-End logistics ₹99,000 — website live in 48 hours",
+      },
+      {
+        href: "/solutions/ecommerce-website-development-jaipur",
+        label: "Ecommerce website development in Jaipur — jewellery, craft and D2C",
       },
       {
         href: "/portfolio/dailyconcepts-ecommerce-pos",

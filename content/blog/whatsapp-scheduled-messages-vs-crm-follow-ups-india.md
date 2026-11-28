@@ -5,6 +5,9 @@ slug: "whatsapp-scheduled-messages-vs-crm-follow-ups-india"
 date: "2026-11-26"
 author: "TheTriFusion team"
 targetService: "crm-erp-development"
+secondary_service_urls:
+  - "/services/rpa"
+  - "/services/ai-development"
 sources:
   - title: "TechCrunch: WhatsApp now lets you schedule messages in group and individual chats"
     url: "https://techcrunch.com/2026/11/25/whatsapp-now-lets-you-schedule-messages-in-group-and-individual-chats/"

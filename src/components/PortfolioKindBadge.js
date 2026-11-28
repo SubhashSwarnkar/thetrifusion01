@@ -2,9 +2,9 @@ export default function PortfolioKindBadge({ kind }) {
   const isLive = kind === "live";
   const label =
     kind === "concept"
-      ? "Concept / demo"
+      ? "Concept demo"
       : kind === "demo"
-        ? "Hosted demo"
+        ? "Concept demo"
         : "Live client site";
 
   return (

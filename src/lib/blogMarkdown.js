@@ -142,6 +142,76 @@ function estimateReadTime(html) {
   return `${minutes} min read`;
 }
 
+/**
+ * Normalize a service path, URL, or slug to the matching key used by
+ * getMarkdownGuidesForService (e.g. "website-development" or
+ * "fintech-app-development/bbps-software").
+ */
+export function normalizeServiceKey(value) {
+  if (!value) return null;
+  let raw = String(value).trim();
+  if (!raw) return null;
+  try {
+    if (/^https?:\/\//i.test(raw)) {
+      raw = new URL(raw).pathname;
+    }
+  } catch {
+    // keep raw
+  }
+  raw = raw.replace(/\/+$/, "");
+  const servicesIdx = raw.indexOf("/services/");
+  if (servicesIdx >= 0) {
+    raw = raw.slice(servicesIdx + "/services/".length);
+  } else if (raw.startsWith("services/")) {
+    raw = raw.slice("services/".length);
+  } else if (raw.startsWith("/")) {
+    raw = raw.slice(1);
+  }
+  raw = raw.replace(/^\/+|\/+$/g, "");
+  return raw || null;
+}
+
+function parseSecondaryServiceUrls(raw) {
+  if (!Array.isArray(raw)) return [];
+  const seen = new Set();
+  const keys = [];
+  for (const item of raw) {
+    const key = normalizeServiceKey(item);
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    keys.push(key);
+  }
+  return keys;
+}
+
+function postMatchesService(post, serviceSlug) {
+  if (!serviceSlug || !post) return false;
+  const target = normalizeServiceKey(serviceSlug);
+  if (!target) return false;
+  const keys = [
+    post.targetService,
+    ...(post.secondaryServiceKeys || []),
+  ].filter(Boolean);
+  if (keys.includes(target)) return true;
+  // Parent fintech hub also surfaces posts aimed at its children.
+  if (target === "fintech-app-development") {
+    return keys.some((key) =>
+      String(key).startsWith("fintech-app-development/")
+    );
+  }
+  return false;
+}
+
+function guideCard(post) {
+  return {
+    slug: post.slug,
+    href: `/blog/${post.slug}`,
+    title: post.title,
+    excerpt: post.excerpt,
+    date: post.date,
+  };
+}
+
 function normalizePost(filePath, raw) {
   const { data, content } = matter(raw);
   const fileSlug = path.basename(filePath, path.extname(filePath));
@@ -159,7 +229,20 @@ function normalizePost(filePath, raw) {
 
   const htmlBody = wrapTables(marked.parse(content || ""));
   const { html, toc } = injectHeadingIds(htmlBody);
-  const targetService = String(data.targetService || "").trim() || null;
+  // Prefer existing targetService slug; accept target_service_url as alias.
+  const targetService =
+    normalizeServiceKey(data.targetService) ||
+    normalizeServiceKey(data.target_service_url) ||
+    null;
+  const secondaryFromUrls = parseSecondaryServiceUrls(
+    data.secondary_service_urls
+  );
+  const secondaryFromLegacy = parseSecondaryServiceUrls(
+    data.secondaryServiceUrls || data.secondaryServices
+  );
+  const secondaryServiceKeys = [
+    ...new Set([...secondaryFromUrls, ...secondaryFromLegacy]),
+  ].filter((key) => key && key !== targetService);
   const service = targetService ? getServiceBySlug(targetService) : null;
   const faqs = parseFaqs(data.faqs);
   const sources = parseSources(data.sources);
@@ -179,6 +262,7 @@ function normalizePost(filePath, raw) {
       : updatedAt.toISOString().slice(0, 10),
     author,
     targetService,
+    secondaryServiceKeys,
     serviceTitle: service
       ? service.bannerTitle || service.title
       : null,
@@ -252,18 +336,18 @@ export function getRelatedMarkdownPosts(slug, limit = 3) {
 export function getMarkdownGuidesForService(serviceSlug, limit = 6) {
   if (!serviceSlug) return [];
   return getPublishedMarkdownPosts()
-    .filter((post) => post.targetService === serviceSlug)
+    .filter((post) => postMatchesService(post, serviceSlug))
     .slice(0, limit)
-    .map((post) => ({
-      slug: post.slug,
-      href: `/blog/${post.slug}`,
-      title: post.title,
-      excerpt: post.excerpt,
-    }));
+    .map(guideCard);
 }
 
 export function getLatestMarkdownPosts(limit = 3) {
   return getPublishedMarkdownPosts().slice(0, limit);
+}
+
+/** Latest posts as RelatedGuides cards (home + /services hub). */
+export function getLatestMarkdownGuides(limit = 4) {
+  return getLatestMarkdownPosts(limit).map(guideCard);
 }
 
 export const BLOG_CONTENT_DIR = "content/blog";

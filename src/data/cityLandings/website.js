@@ -32,7 +32,7 @@ export const websiteCityLandings = [
     ],
     outcomeLine:
       "A Jaipur jeweller, hotel, exporter or coaching firm can brief the Patrakar Colony studio in person and leave with a site that names the product the way a buyer in Johari Bazaar or on Google actually searches it.",
-    intro: `TheTriFusion (Trifusion Infotech Private Limited) is a website development company in Jaipur. The studio is at ${NAP}. Phone ${PHONE}. Hours: ${HOURS}. This page is for businesses that sit in Jaipur — gems and jewellery, hotels around Amer and C-Scheme, Sitapura and Vishwakarma exporters, hospitals, and coaching — and want a company site, catalogue or lead funnel built here, not a generic “India agency” brochure. Published plans start at ${PRICE.basic} for up to five pages.`,
+    intro: `TheTriFusion (Trifusion Infotech Private Limited) is a [website development company in India](${PARENT}) with its studio in Jaipur. The studio is at ${NAP}. Phone ${PHONE}. Hours: ${HOURS}. This page is for businesses that sit in Jaipur — gems and jewellery, hotels around Amer and C-Scheme, Sitapura and Vishwakarma exporters, hospitals, and coaching — and want a company site, catalogue or lead funnel built here, not a generic “India agency” brochure. Published plans start at ${PRICE.basic} for up to five pages.`,
     sections: [
       {
         title: "What Jaipur businesses actually put on a website",

@@ -7,7 +7,7 @@ import { NAP_LINE, TEAM } from "./_shared";
  * TODO OWNER: Google Partner / Meta Partner badges if held.
  */
 export default {
-  contentUpdatedAt: "2026-11-09",
+  contentUpdatedAt: "2026-11-28",
   metaTitle: "Digital Marketing Agency in India | SEO & Ads from Jaipur, ₹15,000",
   bannerTitle: "Digital Marketing Agency in India — Jaipur Studio",
   metaDescription:
@@ -63,6 +63,15 @@ export default {
       heading: "Who leads the work",
       paragraphs: [
         `Named people on the [team page](/team): ${TEAM.pm}; ${TEAM.frontend} for landing pages. Partner badges are not in this repo.`,
+      ],
+    },
+    {
+      id: "dm-how-to-choose",
+      heading: "How to choose / when we're not the right fit",
+      paragraphs: [
+        "Choose this page when you already have a site or store that can take traffic, and you want SEO, Google Ads, Meta Ads or landing-page CRO with monthly reports against a written metric. Ad spend stays on your Ads or Meta account.",
+        "We are not the right fit if you still need the website or store before ads can land — start with [website development](/services/website-development) or [ecommerce](/solutions/ecommerce-website-development). We will not guarantee first-page rankings, invent ROAS, or run campaigns against a brochure that cannot convert.",
+        "Skip us if you only need social creatives with no media plan ([graphic design](/services/graphic-design)), or a full brand identity before any campaign ([branding](/services/branding)).",
       ],
     },
   ],

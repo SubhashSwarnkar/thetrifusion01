@@ -11,6 +11,7 @@ import {
   videoObjectSchema,
 } from "lib/schema";
 import { pageMetadata } from "lib/seoConfig";
+import { getLatestMarkdownGuides } from "lib/blogMarkdown";
 
 export const metadata = pageMetadata("/");
 
@@ -35,7 +36,7 @@ export default function RoutePage() {
       <JsonLd data={faqSchema(HOME_FAQS)} />
       <JsonLd data={videoObjectSchema()} />
       <link rel="preload" as="image" href="/images/Web.avif" type="image/avif" fetchPriority="high" />
-      <Page below={<HomeRest />} />
+      <Page below={<HomeRest latestGuides={getLatestMarkdownGuides(3)} />} />
     </>
   );
 }

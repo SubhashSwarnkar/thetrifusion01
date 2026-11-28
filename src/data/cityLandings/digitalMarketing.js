@@ -30,7 +30,7 @@ export const digitalMarketingCityLandings = [
     ],
     outcomeLine:
       "A Jaipur jeweller, hotel or exporter gets SEO and ads on the site they already have — monthly reports, ad spend in their own accounts, no invented first-page promise.",
-    intro: `TheTriFusion runs SEO, Google Business Profile help, Google Ads and Meta Ads from ${NAP}. Published plans start at ${PRICE.basic}. Ad spend is billed to your Ads or Meta account, not included in the fee. We do not guarantee rankings. This page is the Jaipur service area. The parent write-up is digital marketing. We do not use the redirected slug digital-marketing-agency.`,
+    intro: `TheTriFusion runs SEO, Google Business Profile help, Google Ads and Meta Ads from ${NAP}. Published plans start at ${PRICE.basic}. Ad spend is billed to your Ads or Meta account, not included in the fee. We do not guarantee rankings. This page is the Jaipur service area. The parent write-up is [digital marketing](${PARENT}). We do not use the redirected slug digital-marketing-agency.`,
     sections: [
       {
         title: "Local SEO for a real Jaipur NAP",

@@ -14,14 +14,20 @@ import TrustBadges from "components/TrustBadges";
 import FeaturedCaseStudy from "components/FeaturedCaseStudy";
 import SpecializedSolutions from "components/SpecializedSolutions";
 import HomeServiceIndex from "components/HomeServiceIndex";
+import RelatedGuides from "components/RelatedGuides";
 import { HOME_FAQS } from "data/companyInfo";
 
 /** Below-the-fold homepage. Server-rendered so Swiper and section JS stay off the client graph. */
-export default function HomeRest() {
+export default function HomeRest({ latestGuides = [] }) {
   return (
     <div className="cv-auto">
       <Service data={Services} />
       <SpecializedSolutions />
+      <RelatedGuides
+        guides={latestGuides}
+        heading="Latest guides"
+        kicker="Blog"
+      />
 
       <section className="container mx-auto px-5 py-12">
         <div className="max-w-3xl mx-auto text-center">

@@ -4,10 +4,14 @@
  * (same source as sitemap-blog.xml). Page/service/solution URLs come from
  * buildSitemapParts() so retired / 410 paths cannot reappear.
  */
-import { getPublishedMarkdownPosts } from "lib/blogMarkdown";
+import {
+  getPublishedMarkdownPosts,
+  normalizeServiceKey,
+} from "lib/blogMarkdown";
 import { buildSitemapParts, childSitemapLocs } from "lib/sitemaps";
 import { services } from "data/servicesData";
 import { servicePageSeo } from "data/servicePageSeo";
+import { servicePlanContent } from "data/servicePlan/index";
 import { fintechProductPages } from "data/fintechProductPages";
 import { seoLandingPages, getSeoLandingBySlug } from "data/seoLandingPages";
 import { Portfolios, isIndexablePortfolio } from "json/landingPageData";
@@ -37,13 +41,46 @@ function blogLines(posts) {
   );
 }
 
-function guidesForService(posts, serviceSlug, label = "Related guide") {
-  return posts
-    .filter((post) => post.targetService === serviceSlug)
-    .map(
-      (post) =>
-        `- ${label}: ${apex(`/blog/${post.slug}`)} — ${post.title}`
+function plainAnswer(text) {
+  return String(text || "")
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function postMatchesServiceKey(post, serviceSlug) {
+  const target = normalizeServiceKey(serviceSlug);
+  if (!target || !post) return false;
+  const keys = [
+    post.targetService,
+    ...(post.secondaryServiceKeys || []),
+  ].filter(Boolean);
+  if (keys.includes(target)) return true;
+  if (target === "fintech-app-development") {
+    return keys.some((key) =>
+      String(key).startsWith("fintech-app-development/")
     );
+  }
+  return false;
+}
+
+function guidesForService(posts, serviceSlug, label = "Guides") {
+  const matched = posts.filter((post) =>
+    postMatchesServiceKey(post, serviceSlug)
+  );
+  if (!matched.length) return [];
+  return [
+    `- ${label}:`,
+    ...matched.map(
+      (post) => `  - ${apex(`/blog/${post.slug}`)} — ${post.title}`
+    ),
+  ];
+}
+
+function shortAnswerForSlug(slug) {
+  const plan = servicePlanContent[slug] || servicePageSeo[slug];
+  const text = plan?.answerFirst?.text;
+  return text ? plainAnswer(text) : null;
 }
 
 function serviceTitle(slug) {
@@ -65,12 +102,65 @@ export function buildLlmsTxt() {
   const websiteGuides = guidesForService(posts, "website-development");
   const softwareGuides = guidesForService(posts, "software-development");
   const mobileGuides = guidesForService(posts, "mobile-app-development");
+  const iosGuides = guidesForService(posts, "ios-app-development");
+  const androidGuides = guidesForService(posts, "android-app-development");
   const devopsGuides = guidesForService(posts, "devops");
   const aiGuides = guidesForService(posts, "ai-development");
   const marketingGuides = guidesForService(posts, "digital-marketing");
   const modernizationGuides = guidesForService(
     posts,
     "business-modernization"
+  );
+  const crmGuides = guidesForService(posts, "crm-erp-development");
+  const evGuides = guidesForService(posts, "ev-charging-app-development");
+  const fintechGuides = guidesForService(posts, "fintech-app-development");
+  const rpaGuides = guidesForService(posts, "rpa");
+  const uiuxGuides = guidesForService(posts, "ui-ux-design");
+  const bbpsGuides = guidesForService(
+    posts,
+    "fintech-app-development/bbps-software"
+  );
+  const aepsGuides = guidesForService(
+    posts,
+    "fintech-app-development/aeps-software"
+  );
+  const dmtGuides = guidesForService(
+    posts,
+    "fintech-app-development/dmt-software"
+  );
+  const rechargeGuides = guidesForService(
+    posts,
+    "fintech-app-development/recharge-software"
+  );
+
+  const short = {
+    software: shortAnswerForSlug("software-development"),
+    website: shortAnswerForSlug("website-development"),
+    mobile: shortAnswerForSlug("mobile-app-development"),
+    ios: shortAnswerForSlug("ios-app-development"),
+    android: shortAnswerForSlug("android-app-development"),
+    uiux: shortAnswerForSlug("ui-ux-design"),
+    graphic: shortAnswerForSlug("graphic-design"),
+    marketing: shortAnswerForSlug("digital-marketing"),
+    branding: shortAnswerForSlug("branding"),
+    rpa: shortAnswerForSlug("rpa"),
+    modernization: shortAnswerForSlug("business-modernization"),
+    salesforce: shortAnswerForSlug("salesforce"),
+    ai: shortAnswerForSlug("ai-development"),
+    devops: shortAnswerForSlug("devops"),
+    onDemand: shortAnswerForSlug("on-demand"),
+    mlm: shortAnswerForSlug("mlm-crm-development"),
+    fintech: shortAnswerForSlug("fintech-app-development"),
+    ev: shortAnswerForSlug("ev-charging-app-development"),
+    crm: shortAnswerForSlug("crm-erp-development"),
+    erp: shortAnswerForSlug("erp-software-development"),
+  };
+
+  const fintechChildren = Object.fromEntries(
+    fintechProductPages.map((page) => [
+      page.slug,
+      plainAnswer(page.answerFirst?.text || page.answer),
+    ])
   );
 
   const blogSection =
@@ -116,18 +206,23 @@ Canonical page for each service is the /services/* URL below. Ecommerce's canoni
 
 ### Ecommerce website development
 URL: ${apex("/solutions/ecommerce-website-development")}
-Best for: Shopify, WooCommerce, or custom stores with Razorpay/UPI and Shiprocket, built in Jaipur.
+Title: Ecommerce Website Development Company in India | From ₹25,000
+Best for: Shopify, WooCommerce, or custom stores with Razorpay/UPI and Shiprocket, built in Jaipur for Indian brands.
 Not for: marketplace-only sellers who only need an Amazon/Flipkart account.
+Short answer: TheTriFusion (Trifusion Infotech Pvt Ltd) in Jaipur builds Shopify, WooCommerce and custom ecommerce stores for Indian businesses, with Razorpay/UPI and GST invoices. Packaged stores start at ₹25,000; apps and logistics packages are published on the page.
 What: Shopify, WooCommerce, and custom (Next.js / React / Node.js) online stores, B2B ordering portals, and multi-vendor marketplaces.
 Platforms: Shopify, WooCommerce, Next.js, React, Node.js; payments via Razorpay, Cashfree, PayU, CCAvenue, Stripe, UPI; shipping via Shiprocket, Delhivery.
 Who: D2C brands, wholesalers, and marketplace operators in India and remote clients elsewhere.
 Price from: ₹25,000 Ecommerce Website; ₹35,000 Website + Android; ₹45,000 Website + Android + iOS; ₹99,000 High-End with Logistics + Android + iOS. Custom / marketplace builds are quoted after discovery.
+Live proof: ${apex("/portfolio/dailyconcepts-ecommerce-pos")} ; https://dailyconceptsindia.com
+Jaipur page: ${apex("/solutions/ecommerce-website-development-jaipur")}
 
 ### Custom software development
 URL: ${apex("/services/software-development")}
 Primary topic: custom software development company in India (studio in Jaipur, Rajasthan).
 Best for: Indian SMEs that need portals, CRM/ERP modules, APIs, or a SaaS MVP they will own.
 Not for: teams that only need a brochure website (see website development).
+Short answer: ${short.software || "TheTriFusion builds custom software for Indian SMEs from Jaipur."}
 What: Business portals, CRM/ERP modules, APIs, and admin tools scoped to a workflow.
 Platforms: React, Node.js, Python, Java, PostgreSQL, MongoDB.
 Who: Indian SMEs replacing spreadsheet operations (remote delivery; single HQ in Jaipur — no invented branch network).
@@ -139,7 +234,7 @@ URL: ${apex("/services/website-development")}
 Primary topic: website development company in India (studio in Jaipur, Rajasthan).
 Best for: business websites, WordPress or Next.js sites, and lead-generation sites.
 Not for: full ecommerce catalogues (see ecommerce website development).
-Short answer: TheTriFusion builds business websites, lead-generation sites, and content sites on React, Next.js, and WordPress for clients across India and worldwide from a Jaipur studio.
+Short answer: ${short.website || "TheTriFusion builds business websites from a Jaipur studio."}
 What: Marketing sites, lead funnels, and related web work with titles, sitemap, Search Console setup, and hosting after launch.
 Platforms: React, Next.js, Node.js, MongoDB, PostgreSQL, WordPress.
 Who: Indian businesses that need a public site, not an internal operating system.
@@ -152,7 +247,7 @@ URL: ${apex("/services/mobile-app-development")}
 Primary topic: mobile app development company in India — cross-platform both stores (studio in Jaipur, Rajasthan).
 Best for: one product shipping to both App Store and Google Play.
 Not for: App Store-only (iOS page) or Play Store-first (Android page) first releases.
-Short answer: TheTriFusion builds one product for both iOS and Android, usually on React Native or Flutter, with the backend and web admin behind it.
+Short answer: ${short.mobile || "TheTriFusion builds one product for both iOS and Android from Jaipur."}
 What: One product on iOS and Android, with a shared data model and web admin.
 Platforms: React Native, Flutter, Swift, Kotlin, Firebase.
 Who: Teams across India shipping both stores in the same release. Typical MVP is 8–12 weeks after discovery.
@@ -164,183 +259,221 @@ URL: ${apex("/services/ios-app-development")}
 Primary topic: iOS app development company in India (team based in Jaipur, Rajasthan).
 Best for: iPhone-first or App Store-only products.
 Not for: Play Store-only first releases (see Android).
-Short answer: TheTriFusion builds iPhone apps in Swift, or React Native when Android will follow, and handles TestFlight, the App Store Connect listing, and review responses.
+Short answer: ${short.ios || "TheTriFusion builds iPhone apps from Jaipur."}
 What: App Store apps with TestFlight and review support, plus the API and web admin when scoped.
 Platforms: Swift or React Native, Firebase, Node.js, AWS.
 Who: Businesses that need an App Store-only or iPhone-first app. Typical MVP is 8–12 weeks of build plus Apple review time.
 Price from: ₹2,50,000 (focused iOS MVP). Published plans: ₹2,50,000 / ₹5,00,000 / ₹9,00,000.
-Live proof: PlugOne (https://plugone.in) includes an iOS driver experience.
-
+Live proof: PlugOne (https://plugone.in) includes an iOS driver experience; ${apex("/portfolio/plugone-ev-charging-platform")}
+${iosGuides.length ? iosGuides.join("\n") + "\n" : ""}
 ### Android app development
 URL: ${apex("/services/android-app-development")}
 Primary topic: Android app development company in Jaipur.
 Best for: Play Store-first apps, field apps, UPI-ready Android products.
 Not for: App Store-only first releases (see iOS).
-Short answer: TheTriFusion builds Play Store apps in Kotlin, or React Native or Flutter when iOS should follow, and handles signing, the store listing, and the first production release. The Play Console account stays in the client's name.
+Short answer: ${short.android || "TheTriFusion builds Play Store apps from Jaipur."}
 What: Play Store apps with listing support, testing tracks, crash monitoring, and the API and web admin when scoped.
 Platforms: Kotlin, React Native, Flutter, Firebase, Node.js, AWS.
 Who: Businesses that need a Play Store-first app. Typical MVP is 8–12 weeks after discovery.
 Price from: ₹2,50,000 (focused Android MVP). Published plans: ₹2,50,000 / ₹5,00,000 / ₹9,00,000.
-Live apps: PlugOne (https://plugone.in) and Connect Dairy (https://connectdairy.in).
-
+Live proof: PlugOne (https://plugone.in) and Connect Dairy (https://connectdairy.in); ${apex("/portfolio/plugone-ev-charging-platform")} ; ${apex("/portfolio/connect-dairy-supply-chain")}
+${androidGuides.length ? androidGuides.join("\n") + "\n" : ""}
 ### UI/UX design
 URL: ${apex("/services/ui-ux-design")}
 Best for: Figma product UI, flows, and developer handoff for apps and websites.
 Not for: campaign posters or social kits (see graphic design).
+Short answer: ${short.uiux || "TheTriFusion designs product UI/UX in Figma from Jaipur."}
 What: Product flows, screens, and a component set handed to engineering.
 Platforms: Figma, Adobe XD, Sketch.
 Who: Teams building a website or app, not a poster.
 Price from: ₹20,000.
-
+Live proof: You own the design files after completion and payment.
+${uiuxGuides.length ? uiuxGuides.join("\n") + "\n" : ""}
 ### Graphic design
 URL: ${apex("/services/graphic-design")}
 Best for: social creatives, ads, brochures, catalogues, and packaging matched to a live site.
 Not for: product UI screens (see UI/UX) or full brand identity (see branding).
+Short answer: ${short.graphic || "TheTriFusion designs campaign creatives from Jaipur."}
 What: Social kits, ad creatives, brochures, catalogues, packaging, and campaign visuals that match a live website.
 Platforms: Adobe Illustrator, Photoshop, InDesign.
 Who: Indian brands running a campaign next to an existing site.
 Price from: ₹10,000.
+Live proof: You own source files when scoped in the contract.
 
 ### Digital marketing
 URL: ${apex("/services/digital-marketing")}
 Best for: SEO, Google Ads, Meta Ads, and landing-page CRO on a site that already exists.
 Not for: teams that still need a website or store before they buy ads.
+Short answer: ${short.marketing || "TheTriFusion runs SEO and ads from Jaipur."}
 What: SEO, Google Ads, Meta Ads, and landing pages measured against leads.
 Platforms: Google Analytics, Google Ads, Meta Ads.
 Who: Indian brands that already have a site or store to send traffic to.
 Price from: ₹15,000.
+Live proof: Monthly written reports against the metrics in the scope — no invented ROAS.
 ${marketingGuides.length ? marketingGuides.join("\n") + "\n" : ""}
 ### Branding
 URL: ${apex("/services/branding")}
 Best for: logo, brand identity, and guidelines from a branding agency in Jaipur.
 Not for: one-off social posts without an identity (see graphic design).
+Short answer: ${short.branding || "TheTriFusion builds brand identity systems from Jaipur."}
 What: Brand strategy, naming, logo, colour, typography, and guidelines, then a website that uses them.
 Platforms: Adobe Creative Suite, Figma.
 Who: Companies that need the mark and the site to match.
 Price from: ₹30,000.
+Live proof: You own the identity files after completion and payment.
 
 ### RPA
 URL: ${apex("/services/rpa")}
 Best for: invoice entry, Tally sync, report pulls, and CRM updates with a human exception path.
 Not for: unstructured "AI that decides" without a written process.
+Short answer: ${short.rpa || "TheTriFusion builds RPA bots for Indian SMEs from Jaipur."}
 What: Bots for repetitive office work, with a human handoff where a bot should not decide.
 Platforms: UiPath, Automation Anywhere, Python.
 Who: Indian SMEs with a written process list.
 Price from: ₹50,000.
-
+Live proof: You own the automation code after completion and payment.
+${rpaGuides.length ? rpaGuides.join("\n") + "\n" : ""}
 ### Business modernization
 URL: ${apex("/services/business-modernization")}
 Best for: legacy software modernization and replacing Excel/WhatsApp workflows with phased web apps.
 Not for: a full ERP RFP on day one (see CRM/ERP).
+Short answer: ${short.modernization || "TheTriFusion modernizes Excel and legacy workflows from Jaipur."}
 What: Phased replacement of spreadsheet workflows with a web or mobile app.
 Platforms: Web apps, CRM, and mobile, scoped per workflow.
 Who: Indian SMEs that have outgrown Excel and are not buying a full ERP.
 Price from: ₹1,50,000.
+Live proof: You own the code after completion and payment.
 ${modernizationGuides.length ? modernizationGuides.join("\n") + "\n" : ""}
 ### Salesforce
 URL: ${apex("/services/salesforce")}
 Best for: Flows, Apex, and integrations on an org you already pay for.
 Not for: teams that need a custom commissions CRM instead (see CRM/ERP).
+Short answer: ${short.salesforce || "TheTriFusion customises Salesforce orgs from Jaipur."}
 What: Objects, flows, and integrations in an existing Salesforce org.
 Platforms: Sales Cloud, Service Cloud, Lightning, Apex.
 Who: Indian sales teams that already pay for Salesforce.
 Price from: ₹80,000.
+Live proof: Work stays in the Salesforce org you already pay for.
 
 ### AI development
 URL: ${apex("/services/ai-development")}
 Best for: WhatsApp AI chatbots, RAG search, document extraction, and AI agents with a human review step.
 Not for: research-lab model training.
+Short answer: ${short.ai || "TheTriFusion adds practical AI features to products from Jaipur."}
 What: Assistants, document operations, and search, with a human step in the workflow.
 Platforms: Python, existing model APIs, AWS.
 Who: Product teams adding a practical AI feature, not a research lab.
 Price from: ₹2,00,000.
+Live proof: You own the application code after completion and payment.
 ${aiGuides.length ? aiGuides.join("\n") + "\n" : ""}
 ### DevOps and cloud
 URL: ${apex("/services/devops")}
 Primary topic: DevOps services in Jaipur and India.
 Best for: CI/CD, Kubernetes, Terraform, and a free infrastructure audit before a written plan.
 Not for: buying cloud credits or a 24/7 NOC claim this page does not make.
-Short answer: TheTriFusion provides CI/CD pipelines, infrastructure as code, Kubernetes management, DevSecOps readiness, cloud cost optimization, cloud migration, and managed DevOps on AWS, Azure, and Google Cloud, starting with a free infrastructure audit.
+Short answer: ${short.devops || "TheTriFusion provides DevOps and cloud services from Jaipur."}
 What: Pipelines, infrastructure as code, Kubernetes where it earns its place, monitoring, and cloud migration on AWS, Azure, or GCP.
 Platforms: Jenkins, GitLab CI, Docker, Kubernetes, Terraform, AWS, Azure, Ansible.
 Who: Teams in India and elsewhere that need the operations layer under a product. The infrastructure audit is free. Published /pricing plans start at ₹1,00,000; retainers are scoped after the audit.
+Live proof: Free infrastructure audit before a written plan.
 ${devopsGuides.length ? devopsGuides.join("\n") + "\n" : ""}
 ### On-demand / hire dedicated developers
 URL: ${apex("/services/on-demand")}
 Best for: hiring dedicated React, Node, or mobile developers from Jaipur with a named lead.
 Not for: handing over an entire unscoped product (see software development).
+Short answer: ${short.onDemand || "TheTriFusion staffs dedicated developers from Jaipur."}
 What: Extra React, Node, or mobile hours with a named lead.
 Platforms: React, Node.js, Python, Java, mobile.
 Who: Indian product teams that need capacity without handing over the whole project.
 Price from: ₹50,000 (published starting project price; monthly role rates are scoped).
+Live proof: Named lead and weekly demos — not anonymous bench filling.
 
 ### MLM software
 URL: ${apex("/services/mlm-crm-development")}
 Best for: custom MLM software (binary, unilevel, matrix, hybrid) with genealogy, e-wallet, KYC, and payouts.
 Not for: a generic sales CRM without a compensation plan (see CRM/ERP).
+Short answer: ${short.mlm || "TheTriFusion builds custom MLM software from Jaipur."}
 What: Compensation software with genealogy, KYC, e-wallet, and lead tools, plus iOS and Android field apps.
 Platforms: Web admin plus iOS and Android field apps.
 Who: Network-marketing operators with a written compensation plan.
 Price from: ₹3,50,000.
+Live proof: You own the code after completion and payment.
 Compliance: Consumer Protection (Direct Selling) Rules, 2021 — https://consumeraffairs.nic.in/
 
 ### Fintech app development
 URL: ${apex("/services/fintech-app-development")}
 Best for: white-label BBPS, AEPS, DMT, recharge and UPI software. You bring the bank/API partner.
 Not for: obtaining NPCI or RBI licences — we build software only.
+Short answer: ${short.fintech || "TheTriFusion builds white-label fintech panels from Jaipur; you bring the bank or API partner."}
 What: BBPS, AEPS, DMT, and XDMT software with retailer, distributor, and admin panels, plus UPI and KYC.
 Platforms: iOS, Android, and web. The client brings bank or NPCI access.
 Who: Retailers, distributors, and fintech operators in India.
 Price from: ₹99,999. Published plans: ₹99,999 / ₹1,99,999 / ₹3,99,999.
+Live proof: You own the code after completion and payment — you bring BBPOU/sponsor bank/API partner.
 Sources: NPCI https://www.npci.org.in/ · RBI https://www.rbi.org.in/
+${fintechGuides.length ? fintechGuides.join("\n") + "\n" : ""}
 - BBPS software: ${apex("/services/fintech-app-development/bbps-software")}
+  Short answer: ${fintechChildren["bbps-software"] || ""}
+${bbpsGuides.length ? bbpsGuides.join("\n") + "\n" : ""}
 - AEPS software: ${apex("/services/fintech-app-development/aeps-software")}
+  Short answer: ${fintechChildren["aeps-software"] || ""}
+${aepsGuides.length ? aepsGuides.join("\n") + "\n" : ""}
 - DMT software: ${apex("/services/fintech-app-development/dmt-software")}
+  Short answer: ${fintechChildren["dmt-software"] || ""}
+${dmtGuides.length ? dmtGuides.join("\n") + "\n" : ""}
 - Recharge software: ${apex("/services/fintech-app-development/recharge-software")}
-
+  Short answer: ${fintechChildren["recharge-software"] || ""}
+${rechargeGuides.length ? rechargeGuides.join("\n") + "\n" : ""}
 ### EV Charging Management Software (CMS & App)
 URL: ${apex("/services/ev-charging-app-development")}
 Summary: Jaipur software studio building white-label EV charging CMS/CSMS and driver apps for Indian CPOs, fleets and charger owners — not a CPO and not a charger maker. Client owns the code.
 Best for: operators who want their own brand on OCPP chargers, UPI/GST billing, and optional OCPI roaming.
 Not for: buying charger hardware or renting TheTriFusion as a public network.
+Short answer: ${short.ev || "TheTriFusion builds white-label EV charging CMS and driver apps from Jaipur."}
 Modules: CMS/CSMS · driver app (iOS/Android/web) · billing & settlement · OCPI roaming (UEI can be scoped) · load management · O&M/ticketing · fleet/depot · APIs.
 Protocols: OCPP 1.6J/2.0.1 · OCPI 2.2.1 — built to the spec and tested against your chargers (no OCA certification claim).
 Who: CPOs & startups, franchise/DOCO owners, fleets, OEMs, real estate/RWAs/hospitality; DISCOMs/PSUs can be scoped.
 Price from: ₹4,50,000 / ₹9,00,000 / ₹18,00,000 ex-GST after discovery (starting ranges, not a fixed package).
-Live client: PlugOne (https://plugone.in) — OCPP + OCPI; Ecoplug, Sonic, ChargeMOD, ChargeIndia (OCPI hub).
+Live proof: PlugOne (https://plugone.in) — OCPP + OCPI; ${apex("/portfolio/plugone-ev-charging-platform")}
 Contact: ${apex("/contact")} · WhatsApp +91 63781 33780
 Protocol docs: OCPP https://openchargealliance.org/protocols/open-charge-point-protocol/ · OCPI https://evroaming.org/
-
+${evGuides.length ? evGuides.join("\n") + "\n" : ""}
 ### CRM development
 URL: ${apex("/services/crm-erp-development")}
 Primary topic: custom CRM development company in India (studio in Jaipur, Rajasthan).
 Best for: custom CRM with leads, pipelines, quotations, WhatsApp notes, and code you own.
 Not for: a Salesforce consulting-partner engagement (see Salesforce); full warehouse/GST ERP (see ERP software).
+Short answer: ${short.crm || "TheTriFusion builds custom CRM software from Jaipur."}
 What: Custom sales CRM for pipelines, follow-ups, and quotations.
 Platforms: Web admin, iOS, and Android.
 Who: Indian operators that need a sales system shaped to their process (remote delivery from Jaipur HQ — no invented national office network).
 Price from: ₹3,00,000.
 Live proof: ${apex("/portfolio/connect-dairy-supply-chain")} ; ${apex("/portfolio/dailyconcepts-ecommerce-pos")}
-
+${crmGuides.length ? crmGuides.join("\n") + "\n" : ""}
 ### ERP software development
 URL: ${apex("/services/erp-software-development")}
 Best for: custom ERP with GST finance, inventory, procurement, manufacturing, HR/payroll, multi-branch, and reporting.
 Not for: sales-pipeline-only CRM (see CRM development); boxed Tally/SAP/Odoo when those already fit.
+Short answer: ${short.erp || "TheTriFusion builds phased ERP modules for Indian SMEs from Jaipur."}
 What: Phased ERP modules for Indian manufacturers, traders, and multi-branch operators.
 Platforms: Web admin, iOS, and Android companions when scoped.
 Who: Jaipur and Rajasthan SMEs, and Indian operators remote from the Jaipur studio.
 Price from: ₹6,00,000 (multi-module; published plans also list ₹3,00,000 and ₹11,00,000).
+Live proof: You own the code after completion and payment; ops references include Connect Dairy and DailyConcepts.
 
 - All services: ${apex("/services")}
 
 ## Ecommerce website development
 
 Primary page: ${apex("/solutions/ecommerce-website-development")}
-Summary: TheTriFusion (Trifusion Infotech Pvt. Ltd., Jaipur, India) is an ecommerce website development company building Shopify, WooCommerce and custom (Next.js / React / Node.js) online stores, B2B / wholesale ordering portals and multi-vendor marketplaces for clients in Jaipur, across India, and worldwide (remote).
+Title: Ecommerce Website Development Company in India | From ₹25,000
+Summary: TheTriFusion (Trifusion Infotech Pvt. Ltd., Jaipur, India) is an ecommerce website development company in India building Shopify, WooCommerce and custom (Next.js / React / Node.js) online stores, B2B / wholesale ordering portals and multi-vendor marketplaces for clients across India and worldwide (remote).
+Short answer: TheTriFusion builds Shopify, WooCommerce and custom ecommerce stores for Indian businesses from Jaipur, with Razorpay/UPI and GST invoices. Packaged stores start at ₹25,000.
 - Packaged pricing (published on the canonical page): Ecommerce Website ₹25,000; Website + Android App ₹35,000; Website + Android + iOS App ₹45,000; High-End Ecommerce with Logistics + Android + iOS App ₹99,000; website live within 48 hours after a locked brief and assets.
 - Custom / B2B / ERP-integrated builds: quoted after discovery; a typical custom ecommerce MVP takes 4–10 weeks.
 - Integrations: Razorpay, Cashfree, PayU, CCAvenue, Stripe, UPI; Shiprocket, Delhivery; offline POS / inventory sync (live example: DailyConcepts India).
 - Platform comparison (Shopify vs WooCommerce vs custom): ${apex("/solutions/ecommerce-website-development")}
+- Jaipur page: ${apex("/solutions/ecommerce-website-development-jaipur")}
 - Case study: ${apex("/portfolio/dailyconcepts-ecommerce-pos")}
 - Contact: +91 63781 33780 · contact@thetrifusion.in
 
@@ -553,7 +686,7 @@ ${coreLines.join("\n")}
 
 ## Ecommerce (canonical page)
 
-- ${apex("/solutions/ecommerce-website-development")} — Ecommerce website development company in Jaipur and India: Shopify, WooCommerce and custom stores, B2B portals, multi-vendor marketplaces. Packages: Website ₹25,000; + Android ₹35,000; + Android + iOS ₹45,000; High-End logistics + both apps ₹99,000; custom / marketplace builds quoted after discovery.
+- ${apex("/solutions/ecommerce-website-development")} — Ecommerce Website Development Company in India | From ₹25,000: Shopify, WooCommerce and custom stores, B2B portals, multi-vendor marketplaces. Packages: Website ₹25,000; + Android ₹35,000; + Android + iOS ₹45,000; High-End logistics + both apps ₹99,000; custom / marketplace builds quoted after discovery.
 
 ## Service detail pages (canonical)
 

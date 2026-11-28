@@ -161,7 +161,7 @@ export default function RoutePage({ params }) {
             />
           ) : null
         }
-        relatedGuides={getMarkdownGuidesForService(service.slug, 3)}
+        relatedGuides={getMarkdownGuidesForService(service.slug, 4)}
       />
     </>
   );

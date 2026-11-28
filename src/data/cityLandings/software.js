@@ -30,7 +30,7 @@ export const softwareCityLandings = [
     ],
     outcomeLine:
       "A Jaipur exporter, jeweller or hotel can sit with the Patrakar Colony team and leave with a written module list — dealer login, inventory, or GST-ready ops — not a boxed SaaS with a logo swap.",
-    intro: `TheTriFusion builds custom software in Jaipur: dealer portals for gems and handicrafts, hotel and coaching ops tools, inventory for Sitapura units, and APIs that talk to Tally or a website you already have. The studio is ${NAP}. This URL is the Jaipur service-area page. The India-wide capability write-up is the parent software development service. Published starter MVPs start from ${PRICE.basic}. We do not use the redirected slug software-development-company-jaipur.`,
+    intro: `TheTriFusion builds [custom software development](${PARENT}) in Jaipur: dealer portals for gems and handicrafts, hotel and coaching ops tools, inventory for Sitapura units, and APIs that talk to Tally or a website you already have. The studio is ${NAP}. This URL is the Jaipur service-area page. Published starter MVPs start from ${PRICE.basic}. We do not use the redirected slug software-development-company-jaipur.`,
     sections: [
       {
         title: "Jaipur workflows we actually automate",

@@ -5,6 +5,9 @@ slug: "open-source-vs-frontier-ai-models-business-india"
 date: "2026-11-20"
 author: "TheTriFusion team"
 targetService: "ai-development"
+secondary_service_urls:
+  - "/services/devops"
+  - "/services/software-development"
 sources:
   - title: "TechCrunch: Anthropic rival says companies can mostly skip the pricey models"
     url: "https://techcrunch.com/2026/11/19/anthropic-rival-says-companies-can-mostly-skip-the-pricey-models/"

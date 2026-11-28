@@ -648,6 +648,19 @@ export default function ServiceDetailPage({
           <p className="mt-3 text-sm leading-relaxed text-gray-600">
             {FOUNDER.bio} {service.title} content is reviewed by {FOUNDER.name}.
           </p>
+          {service.contentUpdatedAt ? (
+            <p className="mt-2 text-sm text-gray-500">
+              Last reviewed{" "}
+              <time dateTime={service.contentUpdatedAt}>
+                {new Date(service.contentUpdatedAt).toLocaleDateString("en-IN", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </time>{" "}
+              · reviewed by {FOUNDER.name}, CEO
+            </p>
+          ) : null}
         </div>
       </section>
 
@@ -1107,7 +1120,7 @@ export default function ServiceDetailPage({
       {relatedGuides.length > 0 ? (
         <RelatedGuides
           guides={relatedGuides}
-          heading="Latest insights"
+          heading="Guides for this service"
           kicker="Blog"
         />
       ) : relatedBlog ? (

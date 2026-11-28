@@ -5,6 +5,8 @@ slug: "ai-shopping-agents-online-store-readiness-india"
 date: "2026-11-25"
 author: "TheTriFusion team"
 targetService: "website-development"
+secondary_service_urls:
+  - "/services/ai-development"
 sources:
   - title: "TechCrunch: Walmart teams up with Meta for Black Friday deals on Muse"
     url: "https://techcrunch.com/2026/11/24/walmart-teams-up-with-meta-to-bring-black-friday-deals-to-ai-agent-muse/"

@@ -5,6 +5,9 @@ slug: "legacy-software-modernization-ai-cyberattacks-india"
 date: "2026-11-19"
 author: "TheTriFusion team"
 targetService: "business-modernization"
+secondary_service_urls:
+  - "/services/devops"
+  - "/services/software-development"
 sources:
   - title: "TechCrunch: Satya Nadella on unpatchable critical infrastructure"
     url: "https://techcrunch.com/2026/11/18/amidst-fears-of-ai-cyberattacks-satya-nadella-says-lots-of-critical-infrastructure-is-unpatchable/"

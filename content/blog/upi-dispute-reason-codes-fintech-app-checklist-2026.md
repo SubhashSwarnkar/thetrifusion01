@@ -5,6 +5,9 @@ slug: "upi-dispute-reason-codes-fintech-app-checklist-2026"
 date: "2026-11-27"
 author: "TheTriFusion team"
 targetService: "fintech-app-development"
+secondary_service_urls:
+  - "/services/fintech-app-development/bbps-software"
+  - "/services/fintech-app-development/aeps-software"
 sources:
   - title: "TeamLease RegTech: NPCI Standardisation of UPI Dispute Management Rules in URCS"
     url: "https://teamleaseregtech.com/updates/article/61096/npci-standardisation-of-upi-dispute-management-rules-in-urcs/"

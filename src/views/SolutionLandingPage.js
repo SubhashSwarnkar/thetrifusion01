@@ -26,6 +26,30 @@ import {
 } from "data/ecommerceDevelopmentData";
 import RelatedGuides from "components/RelatedGuides";
 
+function InlineText({ text }) {
+  if (!text) return null;
+  const re = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const nodes = [];
+  let last = 0;
+  let match;
+  let key = 0;
+  while ((match = re.exec(text))) {
+    if (match.index > last) nodes.push(text.slice(last, match.index));
+    nodes.push(
+      <Link
+        key={key++}
+        href={canonicalInternalHref(match[2])}
+        className="font-semibold text-theme-purple hover:underline"
+      >
+        {match[1]}
+      </Link>
+    );
+    last = match.index + match[0].length;
+  }
+  if (last < text.length) nodes.push(text.slice(last));
+  return nodes;
+}
+
 export default function SolutionLandingPage({
   relatedBlog = null,
   relatedGuides = [],
@@ -85,7 +109,7 @@ export default function SolutionLandingPage({
               {page.outcomeLine}
             </p>
             <p className="text-base sm:text-lg text-gray-600 font-light leading-relaxed mb-8">
-              {page.intro}
+              <InlineText text={page.intro} />
             </p>
             <div className="flex flex-col sm:flex-row gap-3 mb-3">
               <Link

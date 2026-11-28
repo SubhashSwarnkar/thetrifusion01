@@ -68,8 +68,8 @@ export function portfolioKind(project) {
 
 export function portfolioKindLabel(project) {
   const kind = portfolioKind(project);
-  if (kind === "concept") return "Concept / demo";
-  if (kind === "demo") return "Hosted demo";
+  if (kind === "concept") return "Concept demo";
+  if (kind === "demo") return "Concept demo";
   return "Live client site";
 }
 
@@ -544,29 +544,42 @@ export const Portfolios = [
 export const Advantages = [
   [
     {
-      title: "Communicative",
+      title: "Written scope before build",
       description:
-        "We communicate our project ideas and progress to make it clear.",
+        "Every engagement starts with a written scope and estimate before we write code — not a vague verbal promise.",
       imageUrl: "/images/advantages/Communicative.png",
     },
     {
-      title: "Management",
+      title: "You own the code",
       description:
-        "We manage our project properly to make our project done well.",
+        "After completion and payment, you own the source code repository. Hosting and store accounts stay in your company's name.",
       imageUrl: "/images/advantages/Management.png",
     },
   ],
   [
     {
-      title: "Collaborative​",
+      title: "Jaipur office, real hours",
       description:
-        "Our team are very collaborative to make our project done well.",
+        "Studio at 5th Floor, Amoro Building, Patrakar Colony, Jaipur 302020. Monday to Saturday, 10:00 AM to 7:00 PM IST.",
       imageUrl: "/images/advantages/Collaborative.png",
     },
     {
-      title: "Favorite",
-      description: "We've did so many project and all of our client love it.",
+      title: "Named live projects",
+      description:
+        "Open these portfolio pages — live URLs you can verify yourself:",
       imageUrl: "/images/advantages/Favorite.png",
+      links: [
+        { href: "/portfolio/plugone-ev-charging-platform", label: "PlugOne" },
+        { href: "/portfolio/connect-dairy-supply-chain", label: "Connect Dairy" },
+        {
+          href: "/portfolio/dailyconcepts-ecommerce-pos",
+          label: "DailyConcepts",
+        },
+        {
+          href: "/portfolio/atharv-narayan-dairy-logistics-website",
+          label: "Atharv Narayan",
+        },
+      ],
     },
   ],
 ];
@@ -614,12 +627,12 @@ export const Testimonials = [
   {
     id: 5,
     name: "Meditative",
-    company: "Case: yoga platform demo",
+    company: "Concept demo: yoga platform",
     testimoni:
-      "Public yoga-platform build (design + front-end) hosted for review — open the URL to inspect layout and interactions; this is not a star rating.",
+      "Public yoga-platform concept demo (design + front-end) hosted for review — open the URL to inspect layout and interactions; this is not a client case study or star rating.",
     imageUrl: liveShot("meditative-yoga-platform"),
     url: "https://yoga-80f.pages.dev/",
-    linkLabel: "Open demo → yoga-80f.pages.dev",
+    linkLabel: "Open concept demo → yoga-80f.pages.dev",
   },
 ];
 
